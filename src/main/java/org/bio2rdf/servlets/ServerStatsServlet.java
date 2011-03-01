@@ -1,4 +1,4 @@
-package org.queryall.servlets;
+package org.bio2rdf.servlets;
 
 import java.io.*;
 import java.util.*;

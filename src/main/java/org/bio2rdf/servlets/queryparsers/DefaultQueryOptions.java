@@ -1,4 +1,4 @@
-package org.queryall.servlets.queryparsers;
+package org.bio2rdf.servlets.queryparsers;
 
 import org.queryall.helpers.Settings;
 import java.util.regex.Pattern;

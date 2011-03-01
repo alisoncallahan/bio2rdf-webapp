@@ -1,4 +1,4 @@
-package org.queryall.servlets;
+package org.bio2rdf.servlets;
 
 import java.io.*;
 import java.util.*;
@@ -6,7 +6,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import org.queryall.*;
-import org.queryall.servlets.queryparsers.*;
+import org.bio2rdf.servlets.queryparsers.*;
 import org.queryall.helpers.*;
 import org.queryall.blacklist.*;
 

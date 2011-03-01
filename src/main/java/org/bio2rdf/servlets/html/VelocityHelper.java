@@ -1,5 +1,5 @@
 
-package org.queryall.servlets.html;
+package org.bio2rdf.servlets.html;
 
 import javax.servlet.ServletContext;
 

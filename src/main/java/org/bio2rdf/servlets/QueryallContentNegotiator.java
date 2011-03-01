@@ -1,4 +1,4 @@
-package org.queryall.servlets;
+package org.bio2rdf.servlets;
 
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;

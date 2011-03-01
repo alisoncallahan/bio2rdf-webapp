@@ -94,7 +94,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                     nextNamespaces.add(nextNamespace);
                     nextNamespacesList.add(nextNamespaces);
                     
-                    Collection<Provider> namespaceProviders = Settings.getProvidersForNamespaceUris(nextNamespacesList, QueryTypeImpl.queryNamespaceMatchAny);
+                    Collection<Provider> namespaceProviders = Settings.getProvidersForNamespaceUris(nextNamespacesList, QueryTypeImpl.getQueryNamespaceMatchAny());
                     
                     providersByNamespace.put(nextNamespace, namespaceProviders);
                     
@@ -111,7 +111,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                                 nextQueryTypesByNamespaces.add(nextNamespace);
                                 nextQueryTypesByNamespacesList.add(nextQueryTypesByNamespaces);
                                 
-                                Collection<Provider> queryTypesByNamespace = Settings.getProvidersForQueryTypeForNamespaceUris(nextQueryKey, nextQueryTypesByNamespacesList, QueryTypeImpl.queryNamespaceMatchAny);
+                                Collection<Provider> queryTypesByNamespace = Settings.getProvidersForQueryTypeForNamespaceUris(nextQueryKey, nextQueryTypesByNamespacesList, QueryTypeImpl.getQueryNamespaceMatchAny());
                                 
                                 allQueryTypesByNamespace.put(nextQueryKey + " " + nextNamespace, queryTypesByNamespace);
                                 
@@ -350,7 +350,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                                     {
                                         out.write("<li><span class='debug'><a href='"+nextEndpointUrl+"'>"+nextEndpointUrl);
                                         
-                                        if(nextQueryNamespaceProvider.getEndpointMethod().equals(ProviderImpl.providerHttpPostSparql.stringValue()) && nextQueryNamespaceProvider.getUseSparqlGraph())
+                                        if(nextQueryNamespaceProvider.getEndpointMethod().equals(ProviderImpl.getProviderHttpPostSparql().stringValue()) && nextQueryNamespaceProvider.getUseSparqlGraph())
                                         {
                                             out.write(" graph="+nextQueryNamespaceProvider.getSparqlGraphUri());
                                         }
@@ -359,7 +359,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                                     }
                                 }
                             }
-                            else if(nextQueryNamespaceProvider.getEndpointMethod().equals(ProviderImpl.providerNoCommunication.stringValue()))
+                            else if(nextQueryNamespaceProvider.getEndpointMethod().equals(ProviderImpl.getProviderNoCommunication().stringValue()))
                             {
                                 if(log.isDebugEnabled())
                                 {

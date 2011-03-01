@@ -541,7 +541,7 @@ public class GeneralServlet extends HttpServlet
                         Utilities.insertResultIntoRepository(nextResult, tempRepository);
                         
                         tempRepository = (Repository)SparqlQueryCreator.normaliseByStage(
-                            NormalisationRuleImpl.rdfruleStageAfterResultsImport,
+                            NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
                             tempRepository, 
                             Settings.getSortedRulesForProvider(nextResult.originalQueryBundle.getProvider(), 
                                 Settings.HIGHEST_ORDER_FIRST ), 
@@ -600,7 +600,7 @@ public class GeneralServlet extends HttpServlet
             
             // FIXME: check whether myRepository is modified by this method
             Repository convertedPool = (Repository)SparqlQueryCreator.normaliseByStage(
-                NormalisationRuleImpl.rdfruleStageAfterResultsToPool,
+                NormalisationRuleImpl.getRdfruleStageAfterResultsToPool(),
                 myRepository, 
                 Settings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
                     Settings.HIGHEST_ORDER_FIRST ), 

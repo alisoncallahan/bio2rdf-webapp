@@ -25,7 +25,9 @@ public class VelocityHelper
     private static final Logger log = Logger.getLogger(VelocityHelper.class
             .getName());
     private static final boolean _TRACE = VelocityHelper.log.isTraceEnabled();
+    @SuppressWarnings("unused")
     private static final boolean _DEBUG = VelocityHelper.log.isDebugEnabled();
+    @SuppressWarnings("unused")
     private static final boolean _INFO = VelocityHelper.log.isInfoEnabled();
     
     private final static String VELOCITY_ENGINE = VelocityHelper.class

@@ -5,7 +5,6 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import org.queryall.*;
 import org.bio2rdf.servlets.html.*;
 import org.queryall.queryutils.*;
 import org.queryall.statistics.*;
@@ -14,7 +13,6 @@ import org.queryall.impl.*;
 
 
 import org.openrdf.*;
-import org.openrdf.model.*;
 import org.openrdf.rio.*;
 import org.openrdf.repository.*;
 import org.openrdf.repository.sail.*;
@@ -47,11 +45,7 @@ public class QueryAllSchemaServlet extends HttpServlet
 
         // String propertiesSubversionId = Settings.SUBVERSION_INFO;
         
-        Date queryStartTime = new Date();
-        
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
-        
-        String serverName = request.getServerName();
         
         String originalRequestedContentType = QueryallContentNegotiator.getResponseContentType(request.getHeader("Accept"), request.getHeader("User-Agent"));
         
@@ -63,8 +57,6 @@ public class QueryAllSchemaServlet extends HttpServlet
         {
             queryString = "";
         }
-        
-        String requesterIpAddress = request.getRemoteAddr();
         
         String locale = request.getLocale().toString();
         
@@ -200,11 +192,9 @@ public class QueryAllSchemaServlet extends HttpServlet
             Repository myRepository = new SailRepository(new MemoryStore());
             myRepository.initialize();
             
-            ValueFactory f = myRepository.getValueFactory();
-            
             try
             {
-                if(!new ProviderImpl().schemaToRdf(myRepository, ProviderImpl.providerNamespace, apiVersion))
+                if(!ProviderImpl.schemaToRdf(myRepository, ProviderImpl.providerNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: Provider schema was not placed correctly in the rdf store");
                 }
@@ -217,7 +207,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new ProjectImpl().schemaToRdf(myRepository, ProjectImpl.projectNamespace, apiVersion))
+                if(!ProjectImpl.schemaToRdf(myRepository, ProjectImpl.projectNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: Project schema was not placed correctly in the rdf store");
                 }
@@ -230,7 +220,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new QueryTypeImpl().schemaToRdf(myRepository, QueryTypeImpl.queryNamespace, apiVersion))
+                if(!QueryTypeImpl.schemaToRdf(myRepository, QueryTypeImpl.queryNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: QueryType schema was not placed correctly in the rdf store");
                 }
@@ -264,7 +254,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new RuleTestImpl().schemaToRdf(myRepository, RuleTestImpl.getRuletestNamespace(), apiVersion))
+                if(!RuleTestImpl.schemaToRdf(myRepository, RuleTestImpl.getRuletestNamespace(), apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: RuleTest schema was not placed correctly in the rdf store");
                 }
@@ -277,7 +267,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new NamespaceEntryImpl().schemaToRdf(myRepository, NamespaceEntryImpl.namespaceNamespace, apiVersion))
+                if(!NamespaceEntryImpl.schemaToRdf(myRepository, NamespaceEntryImpl.namespaceNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: NamespaceEntry schema was not placed correctly in the rdf store");
                 }
@@ -290,7 +280,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new ProfileImpl().schemaToRdf(myRepository, ProfileImpl.profileNamespace, apiVersion))
+                if(!ProfileImpl.schemaToRdf(myRepository, ProfileImpl.profileNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: Profile schema was not placed correctly in the rdf store");
                 }
@@ -303,7 +293,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new StatisticsEntry().schemaToRdf(myRepository, StatisticsEntry.statisticsNamespace, apiVersion))
+                if(!StatisticsEntry.schemaToRdf(myRepository, StatisticsEntry.statisticsNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: Statistics schema was not placed correctly in the rdf store");
                 }
@@ -316,7 +306,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new ProvenanceRecord().schemaToRdf(myRepository, ProvenanceRecord.provenanceNamespace, apiVersion))
+                if(!ProvenanceRecord.schemaToRdf(myRepository, ProvenanceRecord.provenanceNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: Provenance schema was not placed correctly in the rdf store");
                 }
@@ -329,7 +319,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             try
             {
-                if(!new QueryBundle().schemaToRdf(myRepository, QueryBundle.queryBundleNamespace, apiVersion))
+                if(!QueryBundle.schemaToRdf(myRepository, QueryBundle.queryBundleNamespace, apiVersion))
                 {
                     log.error("QueryAllSchemaServlet: QueryBundle schema was not placed correctly in the rdf store");
                 }

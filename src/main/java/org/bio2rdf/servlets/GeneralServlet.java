@@ -43,8 +43,6 @@ public class GeneralServlet extends HttpServlet
         
         PrintWriter out = response.getWriter();
         
-        String propertiesSubversionId = Settings.SUBVERSION_INFO;
-        
         Date queryStartTime = new Date();
         
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
@@ -398,7 +396,6 @@ public class GeneralServlet extends HttpServlet
                 
                 // keep track of the strings so that we don't print multiples of exactly the same information more than once
                 Collection<String> currentStaticStrings = new HashSet<String>();
-                Collection<String> currentNormalisedResultStrings = new HashSet<String>();
                 
                 // If there were no planned query bundles, then we fall back on a small set of additions as configured
                 if(multiProviderQueryBundles.size() == 0)
@@ -437,8 +434,6 @@ public class GeneralServlet extends HttpServlet
                             // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")\n");
                         // }
                     }
-                    
-                    Collection<String> backupStaticRdfXmlStrings = new HashSet<String>();
                     
                     Collection<URI> staticQueryTypesForUnknown = Settings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
                     
@@ -603,6 +598,7 @@ public class GeneralServlet extends HttpServlet
             
             // For each of the providers, get the rules, and universally sort them and perform a single normalisation for this stage
             
+            // FIXME: check whether myRepository is modified by this method
             Repository convertedPool = (Repository)SparqlQueryCreator.normaliseByStage(
                 NormalisationRuleImpl.rdfruleStageAfterResultsToPool,
                 myRepository, 

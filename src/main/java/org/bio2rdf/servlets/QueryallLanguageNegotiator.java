@@ -12,6 +12,7 @@ public class QueryallLanguageNegotiator
     private static final Logger log = Logger.getLogger(QueryallLanguageNegotiator.class.getName());
     private static final boolean _TRACE = log.isTraceEnabled();
     private static final boolean _DEBUG = log.isDebugEnabled();
+    @SuppressWarnings("unused")
     private static final boolean _INFO = log.isInfoEnabled();
     
     private final static ContentTypeNegotiator contentNegotiator;

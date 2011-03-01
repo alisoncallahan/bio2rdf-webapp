@@ -91,9 +91,7 @@ public class ConfigurationServlet extends HttpServlet
         }
         
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
-        
-        String serverName = request.getServerName();
-        
+                
         String queryString = requestConfigurationQueryOptions.getParsedRequest();
         
         if(queryString == null)
@@ -152,8 +150,6 @@ public class ConfigurationServlet extends HttpServlet
         try
         {
             myRepository.initialize();
-            
-            ValueFactory f = myRepository.getValueFactory();
             
             if(requestConfigurationQueryOptions.containsAdminConfiguration())
             {

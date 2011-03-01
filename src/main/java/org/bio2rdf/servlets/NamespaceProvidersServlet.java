@@ -7,9 +7,7 @@ import javax.servlet.http.*;
 
 import org.queryall.*;
 import org.queryall.impl.*;
-import org.queryall.queryutils.*;
 import org.queryall.helpers.*;
-import org.queryall.blacklist.*;
 
 import org.apache.log4j.Logger;
 
@@ -37,18 +35,18 @@ public class NamespaceProvidersServlet extends HttpServlet
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         
-        String subversionId = "$Id: $";
+        @SuppressWarnings("unused")
+		String subversionId = "$Id: $";
         
         Date currentDate = new Date();
         String now = Utilities.ISO8601UTC().format(currentDate);
         
+        @SuppressWarnings("unused")
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort())+"/";
         
         Map<URI, Provider> allProviders = Settings.getAllProviders();
         
         Map<URI, NamespaceEntry> allNamespaceEntries = Settings.getAllNamespaceEntries();
-        
-        Map<URI, QueryType> allCustomQueries = Settings.getAllCustomQueries();
         
         Map<URI, NormalisationRule> allRdfRules = Settings.getAllNormalisationRules();
         

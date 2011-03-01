@@ -4,23 +4,15 @@ import org.bio2rdf.servlets.GeneralServlet;
 import org.queryall.queryutils.*;
 import org.queryall.helpers.*;
 
-import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.Collection;
 import java.util.List;
 import java.util.HashSet;
 
 import org.openrdf.repository.Repository;
-import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.OpenRDFException;
 import org.openrdf.model.Statement;
 import org.openrdf.model.Value;
-import org.openrdf.model.URI;
-import info.aduna.xml.XMLUtil;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletContext;
 
 import org.apache.velocity.context.Context;
@@ -42,8 +34,10 @@ public class HtmlPageRenderer
 {
     private static final Logger log = Logger.getLogger(HtmlPageRenderer.class.getName());
     private static final boolean _TRACE = log.isTraceEnabled();
-    private static final boolean _DEBUG = log.isDebugEnabled();
-    private static final boolean _INFO = log.isInfoEnabled();
+    @SuppressWarnings("unused")
+	private static final boolean _DEBUG = log.isDebugEnabled();
+    @SuppressWarnings("unused")
+	private static final boolean _INFO = log.isInfoEnabled();
     
     public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset) throws OpenRDFException
     {

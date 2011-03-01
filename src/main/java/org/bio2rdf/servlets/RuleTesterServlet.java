@@ -8,7 +8,6 @@ import javax.servlet.http.*;
 import org.queryall.*;
 import org.bio2rdf.servlets.queryparsers.*;
 import org.queryall.helpers.*;
-import org.queryall.blacklist.*;
 
 import org.apache.log4j.Logger;
 
@@ -39,18 +38,6 @@ public class RuleTesterServlet extends HttpServlet
         
         PrintWriter out = response.getWriter();
     
-        String propertiesSubversionId = Settings.SUBVERSION_INFO;
-        
-        Date queryStartTime = new Date();
-        
-        String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
-        
-        String serverName = request.getServerName();
-        
-        // String queryString = requestRuleTesterQueryOptions.getParsedRequest();
-        
-        String requesterIpAddress = request.getRemoteAddr();
-        
         String methodToTest = "";
         
         if(requestRuleTesterQueryOptions.hasTestUri())
@@ -64,6 +51,7 @@ public class RuleTesterServlet extends HttpServlet
         
         boolean allTestsPassed = true;
         
+        @SuppressWarnings("unused")
         List<String> automatedTestResults = new ArrayList<String>();
         
         if(!Settings.runRuleTests(allRuleTests.values()))

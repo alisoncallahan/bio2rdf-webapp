@@ -7,7 +7,6 @@ import javax.servlet.http.*;
 
 import org.queryall.*;
 import org.queryall.helpers.*;
-import org.queryall.blacklist.*;
 
 import org.apache.log4j.Logger;
 
@@ -35,6 +34,7 @@ public class ProfilesServlet extends HttpServlet
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         
+        @SuppressWarnings("unused")
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort())+"/";
         
         Map<URI, Provider> allProviders = Settings.getAllProviders();

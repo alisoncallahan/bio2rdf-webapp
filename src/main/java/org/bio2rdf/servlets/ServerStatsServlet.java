@@ -5,14 +5,11 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import org.queryall.*;
 import org.queryall.queryutils.*;
 import org.queryall.helpers.*;
 import org.queryall.blacklist.*;
 
 import org.apache.log4j.Logger;
-
-import org.openrdf.model.URI;
 
 /** 
  * 
@@ -36,9 +33,8 @@ public class ServerStatsServlet extends HttpServlet
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
         
+        @SuppressWarnings("unused")
         String subversionId = "$Id: errorstats.jsp 910 2010-12-03 22:07:48Z p_ansell $";
-        
-        String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort())+"/";
         
         BlacklistController.doBlacklistExpiry();
         BlacklistController.clearStatisticsUploadList();

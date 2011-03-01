@@ -1,9 +1,5 @@
 package org.bio2rdf.servlets.queryparsers;
 
-import org.queryall.helpers.Settings;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
 import org.apache.log4j.Logger;
 
 /** 

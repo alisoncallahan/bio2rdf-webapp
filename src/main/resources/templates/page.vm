@@ -1,0 +1,31 @@
+#parse("header.vm")
+
+<div id="imagebox">
+#if ($images)
+#foreach ($image in $images)
+#set ($xmlEncoded_image = $image.stringValue())
+    <div class="image"><img src="$xmlEncoded_image" alt="Depiction of $title" /></div>
+#end
+#end
+</div>
+
+<div id="commentsbox">
+#if ($comments)
+#foreach ($comment in $comments)
+#set ($xmlEncoded_comment = $comment.stringValue())
+    <p class="comment">$xmlEncoded_comment</p>
+#end
+#end
+</div>
+
+<!-- start proptable.vm -->
+#parse("proptable.vm")
+<!-- end proptable.vm -->
+
+#if ($debug_level_debug)
+<!-- start endpoints.vm -->
+#parse("endpoints.vm")
+<!-- end endpoints.vm -->
+#end
+
+#parse("footer.vm")

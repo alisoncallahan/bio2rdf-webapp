@@ -1,0 +1,162 @@
+<pipeConfig>
+  <id>bio2rdf_uri_rank</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>10</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>keywords</default>
+      </parameter>
+      <parameter>
+         <id>separator</id>
+         <label>Separator</label>
+         <default>:</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <simplemix>
+         <source>
+            <construct>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic">
+                           <para name="identifier">${identifier}</para>
+                           <para name="namespace">${namespace}</para>
+                           <para name="query_type">/countlinks/</para>
+                           <para name="separator">${separator}</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>CONSTRUCT { ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCount&gt; ?linkcount . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri . ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCountResult&gt; ?resultUri . } WHERE { ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:xCountLinks&gt; ?countlinksuri . ?countlinksuri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCountResult&gt; ?resultUri . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCount&gt; ?linkcount . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri . FILTER(?linkcount &gt; 0) } ORDER BY DESC(?linkcount)</query>
+            </construct>
+         </source>
+         <source>
+            <construct>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic">
+                           <para name="identifier">${identifier}</para>
+                           <para name="namespace">${namespace}</para>
+                           <para name="query_type">/counttriples/</para>
+                           <para name="separator">${separator}</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>CONSTRUCT  {  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCount&gt; ?triplecount .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri .  ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCountResult&gt; ?resultUri .  }  WHERE  {  ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:xCountTriples&gt; ?countlinksuri .  ?countlinksuri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCountResult&gt; ?resultUri .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCount&gt; ?triplecount .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri .  FILTER(?triplecount &gt; 0)  } ORDER BY DESC(?triplecount)</query>
+            </construct>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="297" y="743">
+      <simplemix x="318" y="638">
+         <source>
+            <construct x="104" y="511">
+               <source>
+                  <rdf-extract x="140" y="430">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic" x="74" y="186">
+                           <para name="identifier">
+                              <parameter x="26" y="18">
+                                 <id>identifier</id>
+                                 <label>Identifier</label>
+                                 <default>10</default>
+                              </parameter>
+                           </para>
+                           <para name="namespace">
+                              <parameter x="288" y="21">
+                                 <id>namespace</id>
+                                 <label>Namespace</label>
+                                 <default>keywords</default>
+                              </parameter>
+                           </para>
+                           <para name="query_type">/countlinks/</para>
+                           <para name="separator">
+                              <parameter x="502" y="21">
+                                 <id>separator</id>
+                                 <label>Separator</label>
+                                 <default>:</default>
+                              </parameter>
+                           </para>
+                           <para name="server_address">
+                              <parameter x="712" y="17">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>CONSTRUCT { ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCount&gt; ?linkcount . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri . ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCountResult&gt; ?resultUri . } WHERE { ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:xCountLinks&gt; ?countlinksuri . ?countlinksuri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCountResult&gt; ?resultUri . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasLinkCount&gt; ?linkcount . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl . ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri . FILTER(?linkcount &gt; 0) } ORDER BY DESC(?linkcount)</query>
+            </construct>
+         </source>
+         <source>
+            <construct x="473" y="492">
+               <source>
+                  <rdf-extract x="493" y="425">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic" x="482" y="189">
+                           <para name="identifier">
+                              <parameter x="26" y="18">
+                                 <id>identifier</id>
+                                 <label>Identifier</label>
+                                 <default>10</default>
+                              </parameter>
+                           </para>
+                           <para name="namespace">
+                              <parameter x="288" y="21">
+                                 <id>namespace</id>
+                                 <label>Namespace</label>
+                                 <default>keywords</default>
+                              </parameter>
+                           </para>
+                           <para name="query_type">/counttriples/</para>
+                           <para name="separator">
+                              <parameter x="502" y="21">
+                                 <id>separator</id>
+                                 <label>Separator</label>
+                                 <default>:</default>
+                              </parameter>
+                           </para>
+                           <para name="server_address">
+                              <parameter x="712" y="17">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>CONSTRUCT  {  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCount&gt; ?triplecount .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri .  ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCountResult&gt; ?resultUri .  }  WHERE  {  ?linkeduri &lt;http://bio2rdf.org/ns/bio2rdf:xCountTriples&gt; ?countlinksuri .  ?countlinksuri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCountResult&gt; ?resultUri .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:hasTripleCount&gt; ?triplecount .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlEndpointUrl&gt; ?endpointUrl .  ?resultUri &lt;http://bio2rdf.org/ns/bio2rdf:sparqlGraphUri&gt; ?graphUri .  FILTER(?triplecount &gt; 0)  } ORDER BY DESC(?triplecount)</query>
+            </construct>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

@@ -1,0 +1,119 @@
+<pipeConfig>
+  <id>bio2rdf_ecocyc_promoter_transcriptionunits</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>PM0-2441</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>ecocyc</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <for>
+         <sourcelist>
+            <select>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic">
+                           <para name="identifier">${identifier}</para>
+                           <para name="namespace">${namespace}</para>
+                           <para name="query_type">/</para>
+                           <para name="separator">:</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT ?transcriptionUnit WHERE { ?promoter &lt;http://bio2rdf.org/ns/ecocyc:componentOf&gt; ?transcriptionUnit . }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri">
+                     <para name="bio2rdf_uri">${{transcriptionUnit}}</para>
+                     <para name="query_type">/</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="546" y="542">
+      <for x="488" y="357">
+         <sourcelist>
+            <select x="134" y="324">
+               <source>
+                  <rdf-extract x="83" y="262">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic" x="28" y="5">
+                           <para name="identifier">
+                              <parameter x="528" y="15">
+                                 <id>identifier</id>
+                                 <label>Identifier</label>
+                                 <default>PM0-2441</default>
+                              </parameter>
+                           </para>
+                           <para name="namespace">
+                              <parameter x="771" y="125">
+                                 <id>namespace</id>
+                                 <label>Namespace</label>
+                                 <default>ecocyc</default>
+                              </parameter>
+                           </para>
+                           <para name="query_type">/</para>
+                           <para name="separator">:</para>
+                           <para name="server_address">
+                              <parameter x="768" y="8">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server Address</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT ?transcriptionUnit WHERE { ?promoter &lt;http://bio2rdf.org/ns/ecocyc:componentOf&gt; ?transcriptionUnit . }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract x="318" y="606">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri" x="137" y="463">
+                     <para name="bio2rdf_uri">${{transcriptionUnit}}</para>
+                     <para name="query_type">/</para>
+                     <para name="server_address">
+                        <parameter x="768" y="8">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

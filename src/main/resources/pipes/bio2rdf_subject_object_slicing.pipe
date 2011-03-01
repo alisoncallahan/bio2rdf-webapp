@@ -1,0 +1,125 @@
+<pipeConfig>
+  <id>bio2rdf_subject_object_slicing</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>976</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>hgnc</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <simplemix>
+         <source>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic">
+                     <para name="identifier">${identifier}</para>
+                     <para name="namespace">${namespace}</para>
+                     <para name="query_type">/</para>
+                     <para name="separator">:</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+         <source>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic">
+                     <para name="identifier">${identifier}</para>
+                     <para name="namespace">${namespace}</para>
+                     <para name="query_type">/links/</para>
+                     <para name="separator">:</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="454" y="521">
+      <simplemix x="496" y="449">
+         <source>
+            <rdf-extract x="225" y="385">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic" x="166" y="159">
+                     <para name="identifier">
+                        <parameter x="355" y="13">
+                           <id>identifier</id>
+                           <label>Identifier</label>
+                           <default>976</default>
+                        </parameter>
+                     </para>
+                     <para name="namespace">
+                        <parameter x="664" y="21">
+                           <id>namespace</id>
+                           <label>Namespace</label>
+                           <default>hgnc</default>
+                        </parameter>
+                     </para>
+                     <para name="query_type">/</para>
+                     <para name="separator">:</para>
+                     <para name="server_address">
+                        <parameter x="75" y="11">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+         <source>
+            <rdf-extract x="796" y="378">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic" x="730" y="157">
+                     <para name="identifier">
+                        <parameter x="355" y="13">
+                           <id>identifier</id>
+                           <label>Identifier</label>
+                           <default>976</default>
+                        </parameter>
+                     </para>
+                     <para name="namespace">
+                        <parameter x="664" y="21">
+                           <id>namespace</id>
+                           <label>Namespace</label>
+                           <default>hgnc</default>
+                        </parameter>
+                     </para>
+                     <para name="query_type">/links/</para>
+                     <para name="separator">:</para>
+                     <para name="server_address">
+                        <parameter x="75" y="11">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

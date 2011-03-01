@@ -1,0 +1,20 @@
+##############################################################
+##### DEFAULT REGION  ########################################
+
+jcs.default=httpResponseCache
+jcs.default.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.default.cacheattributes.MaxObjects=2
+jcs.default.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+
+##############################################################
+##### AUXILIARY CACHES
+# Indexed Disk Cache
+jcs.auxiliary.httpResponseCache=org.apache.jcs.auxiliary.disk.indexed.IndexedDiskCacheFactory
+jcs.auxiliary.httpResponseCache.attributes=org.apache.jcs.auxiliary.disk.indexed.IndexedDiskCacheAttributes
+jcs.auxiliary.httpResponseCache.attributes.DiskPath=${java.io.tmpdir}/indexed-disk-cache
+jcs.auxiliary.httpResponseCache.attributes.MaxPurgatorySize=10000
+jcs.auxiliary.httpResponseCache.attributes.MaxKeySize=2000
+jcs.auxiliary.httpResponseCache.attributes.OptimizeAtRemoveCount=300000
+jcs.auxiliary.httpResponseCache.attributes.OptimizeOnShutdown=true
+jcs.auxiliary.httpResponseCache.attributes.MaxRecycleBinSize=7500
+

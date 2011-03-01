@@ -1,0 +1,824 @@
+# bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-ruletests-config.n3 966 2011-02-20 07:20:10Z p_ansell $)
+
+<http://bio2rdf.org/ruletest:diseasomegenes_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:diseasomegenes> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/diseasome_genes:CYP17" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/diseasome/resource/genes/CYP17" .
+
+<http://bio2rdf.org/ruletest:tripleslashns_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tripleslashns> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/pubchem#Substance" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/ns/ns/ns/pubchem#Substance" .
+
+<http://bio2rdf.org/ruletest:doubleslashns_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:doubleslashns> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/pubmed:Article" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/ns/ns/pubmed:Article" .
+
+<http://bio2rdf.org/ruletest:badnsfoaf_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:badnsfoaf> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/foaf:Nei,T" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/ns/foaf:Nei,T" .
+
+<http://bio2rdf.org/ruletest:siderdrugs_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:siderdrugs> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/sider_drugs:10100" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/sider/resource/drugs/10100" .
+
+<http://bio2rdf.org/ruletest:tcmeffect_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tcmeffect> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/tcm_effect:immunohistochemical" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/effect/immunohistochemical" .
+
+<http://bio2rdf.org/ruletest:geospeciesfamilies_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesfamilies> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_families:Diptera" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/families/Diptera" .
+
+<http://bio2rdf.org/ruletest:linkedctoversight_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctoversight> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_oversight:36" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/oversight/36" .
+
+<http://bio2rdf.org/ruletest:tcmdisease_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tcmdisease> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/tcm_disease:Carcinoma_Lewis_Lung" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/disease/Carcinoma_Lewis_Lung" .
+
+<http://bio2rdf.org/ruletest:linkedctlink_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctlink> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_link:198" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/link/198" .
+
+<http://bio2rdf.org/ruletest:myexperimentfriendship_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentfriendship> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_friendship:132" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Friendship/132" .
+
+<http://bio2rdf.org/ruletest:slashowl_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:slashowl> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/bio2rdf:Item" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/owl/bio2rdf:Item" .
+
+<http://bio2rdf.org/ruletest:myexperimentuser_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentuser> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/html/myexp_user:6" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/users/6" .
+
+<http://bio2rdf.org/ruletest:geospeciesobservations_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesobservations> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_observations:73a72dcd-5270-469a-bbb1-98b004f81573" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/observations/73a72dcd-5270-469a-bbb1-98b004f81573/" .
+
+<http://bio2rdf.org/ruletest:geospeciesfamiliesrdf_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesfamiliesrdf> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/rdf/geospecies_families:Diptera" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/families/Diptera.rdf" .
+
+<http://bio2rdf.org/ruletest:linkedcttrials_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedcttrials> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_trial:NCT00660374" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/trials/NCT00660374" .
+
+<http://bio2rdf.org/ruletest:diseasomediseases_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:diseasomediseases> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/diseasome_diseases:1284" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseases/1284" .
+
+<http://bio2rdf.org/ruletest:obogo_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obogo> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/go:0019961" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/GO#GO_0019961" .
+
+<http://bio2rdf.org/ruletest:taxonomy2taxon_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:taxonomy2taxon> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/taxon:10090" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/taxonomy:10090" .
+
+<http://bio2rdf.org/ruletest:pubmedlinks_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:pubmedlinks> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pubmed:15861414" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/links/pubmed:15861414" .
+
+<http://bio2rdf.org/ruletest:linkedctcondition_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctcondition> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_condition:146" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/condition/146" .
+
+<http://bio2rdf.org/ruletest:obouberonbasic_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obouberonbasic> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/uberon:0000056" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/UBERON#UBERON_0000056" .
+
+<http://bio2rdf.org/ruletest:diseasomediseaseclass_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:diseasomediseaseclass> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/diseasome_diseaseclass:Endocrine" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseaseClass/Endocrine" .
+
+<http://bio2rdf.org/ruletest:myexperimentcomment_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentcomment> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_comment:108" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Comment/108" .
+
+<http://bio2rdf.org/ruletest:myexperimentworkflow_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentworkflow> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_workflow:4" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/workflows/4" .
+
+<http://bio2rdf.org/ruletest:geospeciesfamilyconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesfamilyconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_family:712fcca8-1569-434b-ad97-4c6a6c18bd6c" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/family_concept_uuid/712fcca8-1569-434b-ad97-4c6a6c18bd6c/" .
+
+<http://bio2rdf.org/ruletest:myexperimentmembership_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentmembership> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_membership:430" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Membership/430" .
+
+<http://bio2rdf.org/ruletest:diseasomeontology_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:diseasomeontology> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/diseasome_ontology:activeIngredient" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseasome/activeIngredient" .
+
+<http://bio2rdf.org/ruletest:geospeciesobservationconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesobservationconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_observation:73a72dcd-5270-469a-bbb1-98b004f81573" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/observation_uuid/73a72dcd-5270-469a-bbb1-98b004f81573/" .
+
+<http://bio2rdf.org/ruletest:myexperimentfavourite_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentfavourite> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_favourite:30" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Favourite/30" .
+
+<http://bio2rdf.org/ruletest:geospeciesphyla_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesphyla> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_phyla:Arthropoda" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/phyla/Arthropoda/" .
+
+<http://bio2rdf.org/ruletest:geospeciesbioclassconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesbioclassconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_bioclass:13" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/bioclass_concept_id/13/" .
+
+<http://bio2rdf.org/ruletest:drugbankdrugs_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankdrugs> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_drugs:DB00277" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00277" .
+
+<http://bio2rdf.org/ruletest:oboenvo_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:oboenvo> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/envo:00000198" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/ENVO#ENVO_00000198" .
+
+<http://bio2rdf.org/ruletest:linkedctprimaryoutcomes_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctprimaryoutcomes> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_primary_outcomes:155" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/primary_outcomes/155" .
+
+<http://bio2rdf.org/ruletest:pmid2pubmed_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:pmid2pubmed> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pmid:10090" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/pubmed:10090" .
+
+<http://bio2rdf.org/ruletest:goevidencenamespace_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:goevidencenamespace> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/go_evidence:ISS" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/go:evidence-ISS" .
+
+<http://bio2rdf.org/ruletest:geospeciesorderconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesorderconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_order:25abd6a5-9acd-41ae-8a2e-3aae7c7b5d58" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/order_concept_uuid/25abd6a5-9acd-41ae-8a2e-3aae7c7b5d58/" .
+
+<http://bio2rdf.org/ruletest:bioguiddoi_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:bioguiddoi> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/doi:10.1093/bib/bbn022" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bioguid.info/doi:10.1093/bib/bbn022" .
+
+<http://bio2rdf.org/ruletest:neurocommonsncbitaxonomy_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:neurocommonsncbitaxonomy> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/taxon:10090" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/commons/record/ncbi_taxonomy/10090" .
+
+<http://bio2rdf.org/ruletest:prositepdoccapitalisation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:prositepdoccapitalisation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/prosite:PDOC00633" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/prosite:pdoc00633" .
+
+<http://bio2rdf.org/ruletest:tcmingredient_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tcmingredient> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/tcm_ingredient:phosphatidylserine" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/ingredient/phosphatidylserine" .
+
+<http://bio2rdf.org/ruletest:obopato_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obopato> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pato:0001291" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/PATO#PATO_0001291" .
+
+<http://bio2rdf.org/ruletest:geospecieslocationconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospecieslocationconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_location:1bdde98c-2d38-4d20-8da0-19f1f187f31e" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/location_uuid/1bdde98c-2d38-4d20-8da0-19f1f187f31e/" .
+
+<http://bio2rdf.org/ruletest:taxon2taxonomy_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:taxon2taxonomy> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/taxonomy:10090" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/taxon:10090" .
+
+<http://bio2rdf.org/ruletest:sidersideeffects_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:sidersideeffects> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/sider_sideeffects:C0001418" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/sider/resource/side_effects/C0001418" .
+
+<http://bio2rdf.org/ruletest:myexperimentcontenttype_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentcontenttype> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_contenttype:1" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/content_types/1" .
+
+<http://bio2rdf.org/ruletest:owldotbio2rdfdotorg_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorg> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/bio2rdf:Item" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://owl.bio2rdf.org/bio2rdf:Item" .
+
+<http://bio2rdf.org/ruletest:dbpediaclass_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dbpediaclass> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dbpediaclass:Thing" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://dbpedia.org/class/Thing" .
+
+<http://bio2rdf.org/ruletest:oldontologyterms_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:oldontologyterms> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/geneid:Gene" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/geneid#Gene" .
+
+<http://bio2rdf.org/ruletest:owldotbio2rdfdotorgunmangling_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorgunmangling> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/geneid:Gene" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/ns/geneid-Gene" .
+
+<http://bio2rdf.org/ruletest:geospecieskingdoms_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospecieskingdoms> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_kingdoms:Animalia" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/kingdoms/Animalia/" .
+
+<http://bio2rdf.org/ruletest:myexperimentworkflowversioncomponent_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentworkflowversioncomponent> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_workflowversioncomponent:8-14" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/WorkflowVersion/8/Component/14" .
+
+<http://bio2rdf.org/ruletest:myexperimenttagstaggings_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimenttagstaggings> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_tagstaggings:1139-2952" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/tags/1139/taggings/2952" .
+
+<http://bio2rdf.org/ruletest:myexperimentlicense_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentlicense> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_license:2" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/licenses/2" .
+
+<http://bio2rdf.org/ruletest:myexperimentviewings_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentviewings> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_viewings:120388" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Viewings/120388" .
+
+<http://bio2rdf.org/ruletest:geospeciesordersrdf_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesordersrdf> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/rdf/geospecies_orders:Diptera" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/orders/Diptera.rdf" .
+
+<http://bio2rdf.org/ruletest:rxlistgeneric2_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:rxlistgeneric2> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/rxlist:daunorubicin" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.rxlist.com/cgi/generic2/daunorubicin.htm" .
+
+<http://bio2rdf.org/ruletest:linkedctintervention_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctintervention> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_intervention:10" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/intervention/10" .
+
+<http://bio2rdf.org/ruletest:dbpediaresource_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dbpediaresource> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/wikipedia:Brisbane" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://dbpedia.org/resource/Brisbane" .
+
+<http://bio2rdf.org/ruletest:myexperimentlocalpackentry_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentlocalpackentry> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_localpackentry:398" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/LocalPackEntry/398" .
+
+<http://bio2rdf.org/ruletest:oboobi_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:oboobi> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/obi:0000343" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.obofoundry.org/obo/OBI_0000343" .
+
+<http://bio2rdf.org/ruletest:prodomcapitalisation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:prodomcapitalisation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/prodom:PD000600" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/prodom:pd000600" .
+
+<http://bio2rdf.org/ruletest:geospeciesspecconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesspecconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_spec:1eab68dd-9629-4f84-b58a-4fd4b7a4657e" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/spec_concept_uuid/1eab68dd-9629-4f84-b58a-4fd4b7a4657e/" .
+
+<http://bio2rdf.org/ruletest:obodoid_2> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obodoid> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/doid:14265" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/DOID#DOID_14265" .
+
+<http://bio2rdf.org/ruletest:dailymedingredient_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dailymedingredient> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dailymed_ingredient:crospovidone" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/dailymed/resource/ingredient/crospovidone" .
+
+<http://bio2rdf.org/ruletest:obodoid_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obodoid> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/doid:9931" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/DOID#DOID_9931" .
+
+<http://bio2rdf.org/ruletest:myexperimentcreditation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentcreditation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_creditation:1152" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Creditation/1152" .
+
+<http://bio2rdf.org/ruletest:linkedctontology_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctresource> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_resource:intervention_id" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/linkedct/intervention_id" .
+
+<http://bio2rdf.org/ruletest:geospeciesorders_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesorders> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_orders:Diptera" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/orders/Diptera" .
+
+<http://bio2rdf.org/ruletest:drugbankdrugcategory_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankdrugcategory> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_drugcategory:bronchodilatorAgents" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugcategory/bronchodilatorAgents" .
+
+<http://bio2rdf.org/ruletest:geospeciesspecimenconcept_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesspecimenconcept> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geospecies_specimen:21821c69-e940-4695-91b3-a35f3c219883" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/specimen_uuid/21821c69-e940-4695-91b3-a35f3c219883/" .
+
+<http://bio2rdf.org/ruletest:openmoleculesinchi_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:openmoleculesinchi> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/inchi:1/CH4/h1H4" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://rdf.openmolecules.net/?InChI=1/CH4/h1H4" .
+
+<http://bio2rdf.org/ruletest:chempediasubstance_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:chempediasubstance> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/chempedia_substance:6-3551-8801-2109" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://chempedia.com/substances/6-3551-8801-2109" .
+
+<http://bio2rdf.org/ruletest:chempedianame_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:chempedianame> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/chempedia_name:6-3551-8801-2109/1" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://chempedia.com/substances/6-3551-8801-2109/naming1" .
+
+<http://bio2rdf.org/ruletest:linkedctreference_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctreference> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_reference:36" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/reference/36" .
+
+<http://bio2rdf.org/ruletest:obotrans_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obotrans> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/trans:00000198" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/TRANS#TRANS_00000198" .
+
+<http://bio2rdf.org/ruletest:rxlistgeneric_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:rxlistgeneric> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/rxlist:daunorubicin" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.rxlist.com/cgi/generic/daunorubicin.htm" .
+
+<http://bio2rdf.org/ruletest:diseasomechromosomallocation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:diseasomechromosomallocation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/diseasome_chromosomallocation:10q24.3" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/diseasome/resource/chromosomalLocation/10q24.3" .
+
+<http://bio2rdf.org/ruletest:symboldotbio2rdfdotorg_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/symbol:ATP5D" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://symbol.bio2rdf.org/symbol:ATP5D" .
+
+<http://bio2rdf.org/ruletest:dbdotbio2rdfdotorg_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dbdotbio2rdfdotorg> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/geneid:12345" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://geneid.bio2rdf.org/geneid:12345" .
+
+<http://bio2rdf.org/ruletest:myexperimenttagging_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimenttagging> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_tagging:2199" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Tagging/2199" .
+
+<http://bio2rdf.org/ruletest:myexperimentgroup_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentgroup> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_group:99" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/groups/99" .
+
+<http://bio2rdf.org/ruletest:myexperimentdownloads_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentdownloads> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_downloads:37" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Downloads/37" .
+
+<http://bio2rdf.org/ruletest:linkedctsecondaryoutcomes_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctsecondaryoutcomes> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_secondary_outcomes:36" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/secondary_outcomes/36" .
+
+<http://bio2rdf.org/ruletest:linkedctresultsreference_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctresultsreference> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_results_reference:443" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/results_reference/443" .
+
+<http://bio2rdf.org/ruletest:linkedctoverallofficial_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctoverallofficial> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_overall_official:177" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/overall_official/177" .
+
+<http://bio2rdf.org/ruletest:obopro_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obopro> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pro:000001615" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/PRO#PRO_000001615" .
+
+<http://bio2rdf.org/ruletest:tcmgene_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tcmgene> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/tcm_gene:HLA-DRB1" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/gene/HLA-DRB1" .
+
+<http://bio2rdf.org/ruletest:geospeciesobservationsrdf_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:geospeciesobservationsrdf> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/rdf/geospecies_observations:73a72dcd-5270-469a-bbb1-98b004f81573" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://species.geospecies.org/observations/73a72dcd-5270-469a-bbb1-98b004f81573.rdf" .
+
+<http://bio2rdf.org/ruletest:siderontology_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:siderontology> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/sider_ontology:sideEffect" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/sider/resource/sider/sideEffect" .
+
+<http://bio2rdf.org/ruletest:pfampbcapitalisation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:pfampbcapitalisation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pfam:PB172118" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/pfam:pb172118" .
+
+<http://bio2rdf.org/ruletest:dailymedontology_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dailymedontology> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dailymed_ontology:activeIngredient" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/activeIngredient" .
+
+<http://bio2rdf.org/ruletest:dbpediaproperty_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dbpediaproperty> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dbpedia_property:reference" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://dbpedia.org/property/reference" .
+
+<http://bio2rdf.org/ruletest:linkedctarmgroup_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctarmgroup> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_arm:36" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/arm_group/36" .
+
+<http://bio2rdf.org/ruletest:goflybasefix_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:goflybasefix> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/flybase:FBrf0136627" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/fb:FBrf0136627" .
+
+<http://bio2rdf.org/ruletest:drugbankdrugtype_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankdrugtype> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_drugtype:approved" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugtype/approved" .
+
+<http://bio2rdf.org/ruletest:drugbankontology_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankontology> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_ontology:absorption" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/absorption" .
+
+<http://bio2rdf.org/ruletest:chebisourcenamespace_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:chebisourcenamespace> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/chebi_source:ChEBI" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/chebi:source-ChEBI" .
+
+<http://bio2rdf.org/ruletest:oboeo_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:oboeo> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/eo:0007291" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/EO#EO_0007291" .
+
+<http://bio2rdf.org/ruletest:myexperimentpack_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentpack> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_pack:36" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Pack/36" .
+
+<http://bio2rdf.org/ruletest:drugbanknamespacefix_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbanknamespacefix> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_drugs:DB00694" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/drugbank:DB00694" .
+
+<http://bio2rdf.org/ruletest:oboso_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:oboso> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/so:0001018" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/SO#SO_0001018" .
+
+<http://bio2rdf.org/ruletest:myexperimentpolicy_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentpolicy> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_policy:864" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Policy/864" .
+
+<http://bio2rdf.org/ruletest:bioguidpmid_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:bioguidpmid> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pubmed:10090" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bioguid.info/pmid:10090" .
+
+<http://bio2rdf.org/ruletest:dailymeddrugs_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dailymeddrugs> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dailymed_drugs:2" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugs/2" .
+
+<http://bio2rdf.org/ruletest:pfampfcapitalisation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:pfampfcapitalisation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pfam:PF08039" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/pfam:pf08039" .
+
+<http://bio2rdf.org/ruletest:pubmed2pmid_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:pubmed2pmid> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/pubmed:10090" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/pmid:10090" .
+
+<http://bio2rdf.org/ruletest:prositecapitalisation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:prositecapitalisation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/prosite:PS00011" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/prosite:ps00011" .
+
+<http://bio2rdf.org/ruletest:myexperimenttag_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimenttag> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_tag:517" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/Tag/517" .
+
+<http://bio2rdf.org/ruletest:tcmmedicine_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tcmmedicine> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/tcm_medicine:Scutellaria_baicalensis" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/net/tcm/tcm.lifescience.ntu.edu.tw/id/medicine/Scutellaria_baicalensis" .
+
+<http://bio2rdf.org/ruletest:omimstatusnamespace_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:omimstatusnamespace> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/omim_status:P" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/omim:status-P" .
+
+<http://bio2rdf.org/ruletest:interprocapitalisation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:interprocapitalisation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/interpro:IPR004526" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/interpro:ipr004526" .
+
+<http://bio2rdf.org/ruletest:dailymedorganization_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dailymedorganization> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dailymed_organization:Berlex" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/dailymed/resource/organization/Berlex" .
+
+<http://bio2rdf.org/ruletest:myexperimentuser_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentuser> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_user:6" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/users/6" .
+
+<http://bio2rdf.org/ruletest:obobspo_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obobspo> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/bspo:0000015" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/BSPO#BSPO_0000015" .
+
+<http://bio2rdf.org/ruletest:linkedctagent_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctagent> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_agent:103" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/collabagency/103" .
+
+<http://bio2rdf.org/ruletest:drugbanktargets_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbanktargets> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_targets:871" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/targets/871" .
+
+<http://bio2rdf.org/ruletest:myexperimentworkflowversion_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentworkflowversion> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_workflowversion:8" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/WorkflowVersion/8" .
+
+<http://bio2rdf.org/ruletest:linkedctlocation_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:linkedctlocation> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/linkedct_location:177" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://data.linkedct.org/resource/location/177" .
+
+<http://bio2rdf.org/ruletest:drugbankenzymes_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankenzymes> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_enzymes:2" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/enzymes/2" .
+
+<http://bio2rdf.org/ruletest:drugbankdruginteractions_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankdruginteractions> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_druginteractions:DB00277_DB00008" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drug_interactions/DB00277_DB00008" .
+
+<http://bio2rdf.org/ruletest:tcminterlink_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:tcminterlink> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/tcm_interlink:648" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/net/tcm/id/interlink/648" .
+
+<http://bio2rdf.org/ruletest:myexperimentfile_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentfile> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_file:160" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/files/160" .
+
+<http://bio2rdf.org/ruletest:goassociationnamespace_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:goassociationnamespace> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/go_association:54093" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/go:association-54093" .
+
+<http://bio2rdf.org/ruletest:dbpediaresourcewww_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dbpediaresourcewww> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/wikipedia:Seizure" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.dbpedia.org/resource/Seizure" .
+
+<http://bio2rdf.org/ruletest:obomiro_2> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obomiro> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/miro:30000016" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/MIRO#MIRO_30000016" .
+
+<http://bio2rdf.org/ruletest:dailymedrouteofadministration_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dailymedrouteofadministration> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dailymed_routeofadministration:Oral" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/dailymed/resource/routeOfAdministration/Oral" .
+
+<http://bio2rdf.org/ruletest:obomiro_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:obomiro> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/miro:20000108" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/MIRO#MIRO_20000108" .
+
+<http://bio2rdf.org/ruletest:myexperimentgroupannouncement_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentgroupannouncement> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/myexp_groupannouncement:3" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/GroupAnnouncement/3" .
+
+<http://bio2rdf.org/ruletest:drugbankdosageforms_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:drugbankdosageforms> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/drugbank_dosageforms:tabletOral" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/dosageforms/tabletOral" .
+
+<http://bio2rdf.org/ruletest:oboto_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:oboto> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/to:0000523" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://purl.org/obo/owl/TO#TO_0000523" .
+
+<http://bio2rdf.org/ruletest:mgigeneexpressiondatabase_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:mgigeneexpressiondatabase> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/mgi_gxd:107793" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/gene_expression_database_gxd_at_mgi:MGI:107793" .
+
+<http://bio2rdf.org/ruletest:chebistatusnamespace_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:chebistatusnamespace> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/chebi_status:C" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/chebi:status-C" .
+
+<http://bio2rdf.org/ruletest:myexperimentwwwworkflow_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:myexperimentwwwworkflow> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/html/myexp_workflow:6" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www.myexperiment.org/workflows/6" .
+
+<http://bio2rdf.org/ruletest:dailymedinactiveingredient_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:dailymedinactiveingredient> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/dailymed_inactiveingredient:corn_starch" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://www4.wiwiss.fu-berlin.de/dailymed/resource/inactiveIngredient/corn_starch" .
+	
+<http://bio2rdf.org/ruletest:ontologyhashtocolon_1> a <http://purl.org/queryall/ruletest:RuleTest> ;
+    <http://purl.org/queryall/ruletest:testsStages> <http://purl.org/queryall/rdfrule:queryVariables> , <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+	<http://purl.org/queryall/ruletest:testsRules> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> ;
+	<http://purl.org/queryall/ruletest:inputTestString> "http://bio2rdf.org/ns/namespace:ontologyterm" ;
+	<http://purl.org/queryall/ruletest:outputTestString> "http://bio2rdf.org/ns/namespace#ontologyterm" .
+

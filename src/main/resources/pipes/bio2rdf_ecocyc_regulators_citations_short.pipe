@@ -1,0 +1,79 @@
+<pipeConfig>
+  <id>bio2rdf_ecocyc_regulators_citations_short</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>PM0-2441</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>ecocyc</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <construct>
+         <source>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_ecocyc_regulators_citations">
+                     <para name="identifier">${identifier}</para>
+                     <para name="namespace">${namespace}</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+         <query>CONSTRUCT  {  ?citation &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .  ?citation &lt;http://purl.org/dc/elements/1.1/date&gt; ?date . ?citation &lt;http://bio2rdf.org/ns/bio2rdf:url&gt; ?url .  } WHERE  { ?citation &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .  ?citation &lt;http://purl.org/dc/elements/1.1/date&gt; ?date . ?citation &lt;http://bio2rdf.org/ns/bio2rdf:url&gt; ?url .  }</query>
+      </construct>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="400" y="467">
+      <construct x="140" y="351">
+         <source>
+            <rdf-extract x="117" y="200">
+               <source>
+                  <pipe-call pipeid="bio2rdf_ecocyc_regulators_citations" x="78" y="27">
+                     <para name="identifier">
+                        <parameter x="476" y="52">
+                           <id>identifier</id>
+                           <label>Identifier</label>
+                           <default>PM0-2441</default>
+                        </parameter>
+                     </para>
+                     <para name="namespace">
+                        <parameter x="754" y="104">
+                           <id>namespace</id>
+                           <label>Namespace</label>
+                           <default>ecocyc</default>
+                        </parameter>
+                     </para>
+                     <para name="server_address">
+                        <parameter x="647" y="266">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+         <query>CONSTRUCT  {  ?citation &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .  ?citation &lt;http://purl.org/dc/elements/1.1/date&gt; ?date . ?citation &lt;http://bio2rdf.org/ns/bio2rdf:url&gt; ?url .  } WHERE  { ?citation &lt;http://purl.org/dc/elements/1.1/title&gt; ?title .  ?citation &lt;http://purl.org/dc/elements/1.1/date&gt; ?date . ?citation &lt;http://bio2rdf.org/ns/bio2rdf:url&gt; ?url .  }</query>
+      </construct>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

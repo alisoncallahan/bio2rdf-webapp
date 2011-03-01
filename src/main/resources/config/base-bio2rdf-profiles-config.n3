@@ -1,0 +1,52 @@
+# bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-profiles-config.n3 977 2011-02-28 06:21:00Z p_ansell $)
+
+<http://bio2rdf.org/profile:mirrorbalancing> a <http://purl.org/queryall/profile:Profile> ;
+	<http://purl.org/queryall/profile:Title> "Balances across the known Bio2RDF.org Resolving mirrors" ;
+	<http://purl.org/queryall/profile:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:allowImplicitQueryInclusions> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitProviderInclusions> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitRdfRuleInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:defaultProfileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
+	<http://purl.org/queryall/profile:includesProvider> <http://bio2rdf.org/provider:bio2rdfresolvermirrors> ;
+    <http://purl.org/queryall/profile:includesQuery> <http://bio2rdf.org/query:catchalldefault> .
+
+<http://bio2rdf.org/profile:carleton> a <http://purl.org/queryall/profile:Profile> ;
+	<http://purl.org/queryall/profile:Title> "Carleton University profile" ;
+	<http://purl.org/queryall/profile:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:allowImplicitQueryInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitProviderInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitRdfRuleInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:defaultProfileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:excludesProvider> <http://bio2rdf.org/provider:quebecmainqueries> , <http://bio2rdf.org/provider:mqutermainqueries> , <http://bio2rdf.org/provider:bio2rdfresolvermirrors> , <http://bio2rdf.org/provider:qutrestrictedproxy> ;
+    <http://purl.org/queryall/profile:excludesQuery> <http://bio2rdf.org/query:catchalldefault> .
+
+<http://bio2rdf.org/profile:mquter> a <http://purl.org/queryall/profile:Profile> ;
+	<http://purl.org/queryall/profile:Title> "A selected profile including providers not publically accessible but available inside the Queensland University of Technology network." ;
+	<http://purl.org/queryall/profile:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:allowImplicitQueryInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitProviderInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitRdfRuleInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:defaultProfileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:includesRdfRule> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> ; 	
+	<http://purl.org/queryall/profile:includesProvider> <http://bio2rdf.org/provider:qutrestrictedproxy> , <http://bio2rdf.org/provider:mquterstatistics> , <http://bio2rdf.org/provider:mquterterm> , <http://bio2rdf.org/provider:mqutertermreverse> ;
+#	<http://bio2rdf.org/provider:mquterkeggrnunsafe> , <http://bio2rdf.org/provider:mquterkeggrnunsafereverse> , <http://bio2rdf.org/provider:mquterkeggpathunsafe> , <http://bio2rdf.org/provider:mquterkeggpathunsafereverse> , <http://bio2rdf.org/provider:dbpediapagelinks> , <http://bio2rdf.org/provider:mquterflybase> , <http://bio2rdf.org/provider:mquterdrugbank1> , <http://bio2rdf.org/provider:mquterdrugbank2> , <http://bio2rdf.org/provider:mqutertaxonomy> , <http://bio2rdf.org/provider:mquterlinkedct> , <http://bio2rdf.org/provider:mqutergo> , <http://bio2rdf.org/provider:mqutergoreverse> , <http://bio2rdf.org/provider:mquterflyted2flybase> , <http://bio2rdf.org/provider:mquterlinkedctreverse> , <http://bio2rdf.org/provider:mquterbiopatmlhtml> , <http://bio2rdf.org/provider:mquterkeywordsreverse> , <http://bio2rdf.org/provider:mquterdrugbankreverse1> , <http://bio2rdf.org/provider:mquterdrugbankreverse2> , <http://bio2rdf.org/provider:mquterdrugbankreverse3> , <http://bio2rdf.org/provider:mquterchebi> , <http://bio2rdf.org/provider:mquterdrugbank> , <http://bio2rdf.org/provider:mquterflyted> , <http://bio2rdf.org/provider:mquterdrugbankreverseinchikey> , <http://bio2rdf.org/provider:mquterecocycreverse> , <http://bio2rdf.org/provider:mquterecocyc> , <http://bio2rdf.org/provider:mquterkegg2geneid> , <http://bio2rdf.org/provider:mquterkeywords> , <http://bio2rdf.org/provider:mquterbiopatml> , <http://bio2rdf.org/provider:mqutertcm> , <http://bio2rdf.org/provider:mquterprovenancebykey> , <http://bio2rdf.org/provider:mquterprovenance>;
+	<http://purl.org/queryall/profile:excludesProvider> <http://bio2rdf.org/provider:mqutergenerif> , <http://bio2rdf.org/provider:mqutertagquerieslabels> , <http://bio2rdf.org/provider:mqutermainqueriesdnsonly> , 
+	<http://bio2rdf.org/provider:mqutertagqueries> , <http://bio2rdf.org/provider:quebecmainqueries> , <http://bio2rdf.org/provider:mqutermainqueries> , <http://bio2rdf.org/provider:bio2rdfresolvermirrors> ,
+# DBpedia and HCLS are not accessible through the QUT firewall, so using proxy instead
+    <http://bio2rdf.org/provider:hclsderidbpedia> , <http://bio2rdf.org/provider:hclsderidbpedia2meshreverse> , <http://bio2rdf.org/provider:hclsderidbpedia2mesh> , <http://bio2rdf.org/provider:dbpediadefaultreverse> , <http://bio2rdf.org/provider:dbpediapagelinks> , <http://bio2rdf.org/provider:dbpediasecondaryreverse> , <http://bio2rdf.org/provider:dbpediadefault> , <http://bio2rdf.org/provider:hclsderiobo2dbpedia> , <http://bio2rdf.org/provider:hclsderimeshconstruct> , <http://bio2rdf.org/provider:hclsderimeshreverseconstruct> ,
+# The new OBO SPARQL endpoint is not accessible through the QUT firewall, so using proxy instead
+    <http://bio2rdf.org/provider:bioontology_aeo> , <http://bio2rdf.org/provider:bioontology_imgt> ;
+#	<http://bio2rdf.org/provider:fuberlindrugbank> , 
+#	, <http://bio2rdf.org/provider:mirroredgo> , <http://bio2rdf.org/provider:fuberlindrugbankreverse1> , <http://bio2rdf.org/provider:fuberlindrugbankreverse2> , <http://bio2rdf.org/provider:fuberlindrugbank2> , <http://bio2rdf.org/provider:fuberlindrugbank1> , <http://bio2rdf.org/provider:quebecdbpediareverse> , <http://bio2rdf.org/provider:quebecdbpedia> , <http://bio2rdf.org/provider:officiallinkedct> , <http://bio2rdf.org/provider:officiallinkedctreverse> ,
+    <http://purl.org/queryall/profile:excludesQuery> <http://bio2rdf.org/query:catchalldefault> .
+
+<http://bio2rdf.org/profile:quebec> a <http://purl.org/queryall/profile:Profile> ;
+	<http://purl.org/queryall/profile:Title> "A common profile which allows a mix of providers suitable for clients close to the Quebec region." ;
+	<http://purl.org/queryall/profile:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:allowImplicitQueryInclusions> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitProviderInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitRdfRuleInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:defaultProfileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:excludesProvider>     <http://bio2rdf.org/provider:quebecmainqueries> , <http://bio2rdf.org/provider:mqutermainqueries> , <http://bio2rdf.org/provider:bio2rdfresolvermirrors> , <http://bio2rdf.org/provider:qutrestrictedproxy> ;
+    <http://purl.org/queryall/profile:excludesQuery> <http://bio2rdf.org/query:catchalldefault> .
+

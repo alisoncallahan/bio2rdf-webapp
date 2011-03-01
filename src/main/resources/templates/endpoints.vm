@@ -1,0 +1,31 @@
+    <table class="description">
+      <tr><th width="25%">Endpoint</th><th>Query</th><th>Query Type</th><th>Provider</th></tr>
+#foreach ($query_bundle in $query_bundles)
+#if ($velocityCount % 2 == 0)
+#set ($odd_even = "tr_even")
+#else
+#set ($odd_even = "tr_odd")
+#end
+#set ($xmlEncoded_queryEndpoint = $query_bundle.queryEndpoint)
+#set ($xmlEncoded_query = $query_bundle.query)
+#set ($tempQueryTypeKey = $query_bundle.queryType.getKey())
+#set ($xmlEncoded_queryTypeKey = $tempQueryTypeKey.stringValue())
+#set ($tempProviderKey = $query_bundle.provider.getKey())
+#set ($xmlEncoded_providerKey = $tempProviderKey.stringValue())
+    
+      <tr class="$odd_even">
+        <td class="endpoint">
+            $xmlEncoded_queryEndpoint
+        </td>
+        <td class="query">
+            $xmlEncoded_query
+        </td>
+        <td class="queryType">
+            $xmlEncoded_queryTypeKey
+        </td>
+        <td class="provider">
+            $xmlEncoded_providerKey
+        </td>
+      </tr>
+#end
+    </table>

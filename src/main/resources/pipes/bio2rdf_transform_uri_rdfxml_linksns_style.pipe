@@ -1,0 +1,43 @@
+<pipeConfig>
+  <id>bio2rdf_transform_uri_rdfxml_linksns_style</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?><pipe><parameters><parameter><id>bio2rdf_uri</id><label>Bio2RDF URI</label><default>http://bio2rdf.org/ecocyc:REG0-6336</default></parameter><parameter><id>query_type</id><label>Query</label><default>/</default></parameter><parameter><id>server_address</id><label>Bio2RDF Server</label><default>http://localhost</default></parameter><parameter><id>match_regex</id><label>Transform Match Regex</label><default>^http://[^/]*/(.*):(.*)$</default></parameter></parameters><code><xquery><source><simplemix><source><rdffetch format="RDF/XML"><location>noop://localhost/?bio2rdf_uri=%24%7Bbio2rdf_uri%7D&amp;query_type=%24%7Bquery_type%7D&amp;server_address=%24%7Bserver_address%7D&amp;match_regex=%24%7Bmatch_regex%7D</location></rdffetch></source></simplemix></source><contentType>text/xml</contentType><query><![CDATA[xquery version "1.0";
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:bio2rdf="http://bio2rdf.org/ns/bio2rdf:">
+{       
+let $bio2rdf_uri := "${bio2rdf_uri}"       
+let $match_regex := "${match_regex}" 
+let $replace_regex := "${server_address}${query_type}$1/$1:$2"
+let $query_type := "${query_type}"       
+let $server_address := "${server_address}"       
+let $result_uri := fn:replace($bio2rdf_uri,$match_regex,$replace_regex)      return 		
+<rdf:Description rdf:about="{$result_uri}">
+<bio2rdf:hasStandardURI rdf:resource="{$bio2rdf_uri}"/><bio2rdf:transformedWithMatchRegex>{$match_regex}</bio2rdf:transformedWithMatchRegex>                        
+<bio2rdf:transformedWithReplaceRegex>{$replace_regex}</bio2rdf:transformedWithReplaceRegex>
+<bio2rdf:transformedWithQueryType>{$query_type}</bio2rdf:transformedWithQueryType>
+<bio2rdf:transformedWithServerAddress>{$server_address}</bio2rdf:transformedWithServerAddress>
+</rdf:Description> 
+}         
+</rdf:RDF>]]]]><![CDATA[></query></xquery></code></pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?><pipe><parameters/><code x="292" y="990"><xquery x="247" y="680"><source><simplemix x="291" y="596"><source><rdffetch format="RDF/XML" x="278" y="473"><location><urlbuilder x="251" y="205"><base>noop://localhost/</base><para name="bio2rdf_uri"><parameter x="10" y="6"><id>bio2rdf_uri</id><label>Bio2RDF URI</label><default>http://bio2rdf.org/ecocyc:REG0-6336</default></parameter></para><para name="query_type"><parameter x="751" y="10"><id>query_type</id><label>Query</label><default>/</default></parameter></para><para name="server_address"><parameter x="746" y="139"><id>server_address</id><label>Bio2RDF Server</label><default>http://localhost</default></parameter></para><para name="match_regex"><parameter x="236" y="9"><id>match_regex</id><label>Transform Match Regex</label><default>^http://[^/]*/(.*):(.*)$</default></parameter></para></urlbuilder></location></rdffetch></source></simplemix></source><contentType>text/xml</contentType><query><![CDATA[xquery version "1.0";
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:bio2rdf="http://bio2rdf.org/ns/bio2rdf:">
+{       
+let $bio2rdf_uri := "${bio2rdf_uri}"       
+let $match_regex := "${match_regex}" 
+let $replace_regex := "${server_address}${query_type}$1/$1:$2"
+let $query_type := "${query_type}"       
+let $server_address := "${server_address}"       
+let $result_uri := fn:replace($bio2rdf_uri,$match_regex,$replace_regex)      return 		
+<rdf:Description rdf:about="{$result_uri}">
+<bio2rdf:hasStandardURI rdf:resource="{$bio2rdf_uri}"/><bio2rdf:transformedWithMatchRegex>{$match_regex}</bio2rdf:transformedWithMatchRegex>                        
+<bio2rdf:transformedWithReplaceRegex>{$replace_regex}</bio2rdf:transformedWithReplaceRegex>
+<bio2rdf:transformedWithQueryType>{$query_type}</bio2rdf:transformedWithQueryType>
+<bio2rdf:transformedWithServerAddress>{$server_address}</bio2rdf:transformedWithServerAddress>
+</rdf:Description> 
+}         
+</rdf:RDF>]]]]><![CDATA[></query></xquery></code></pipe>]]></config>
+  <password></password>
+</pipeConfig>

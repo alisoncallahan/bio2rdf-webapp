@@ -1,0 +1,107 @@
+<pipeConfig>
+  <id>bio2rdf_basic_from_uri</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>bio2rdf_uri</id>
+         <label>Bio2RDF URI</label>
+         <default>http://bio2rdf.org/ecocyc:REG0-6436</default>
+      </parameter>
+      <parameter>
+         <id>query_type</id>
+         <label>Bio2RDF Query</label>
+         <default>/</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <simplemix>
+         <source>
+            <for>
+               <sourcelist>
+                  <select>
+                     <source>
+                        <rdf-extract>
+                           <source>
+                              <pipe-call pipeid="bio2rdf_transform_uri_rdfxml">
+                                 <para name="bio2rdf_uri">${bio2rdf_uri}</para>
+                                 <para name="match_regex">^http://[^/]*/(.*):(.*)$</para>
+                                 <para name="query_type">${query_type}</para>
+                                 <para name="server_address">${server_address}</para>
+                              </pipe-call>
+                           </source>
+                        </rdf-extract>
+                     </source>
+                     <query>SELECT ?fetchUrl WHERE { ?fetchUrl &lt;http://bio2rdf.org/ns/bio2rdf:hasStandardURI&gt; &lt;${bio2rdf_uri}&gt; . }</query>
+                  </select>
+               </sourcelist>
+               <forloop>
+                  <rdffetch format="RDF/XML">
+                     <location>${{fetchUrl}}</location>
+                  </rdffetch>
+               </forloop>
+            </for>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="80" y="682">
+      <simplemix x="419" y="613">
+         <source>
+            <for x="421" y="542">
+               <sourcelist>
+                  <select x="387" y="411">
+                     <source>
+                        <rdf-extract x="384" y="367">
+                           <source>
+                              <pipe-call pipeid="bio2rdf_transform_uri_rdfxml" x="157" y="185">
+                                 <para name="bio2rdf_uri">
+                                    <parameter x="132" y="40">
+                                       <id>bio2rdf_uri</id>
+                                       <label>Bio2RDF URI</label>
+                                       <default>http://bio2rdf.org/ecocyc:REG0-6436</default>
+                                    </parameter>
+                                 </para>
+                                 <para name="match_regex">^http://[^/]*/(.*):(.*)$</para>
+                                 <para name="query_type">
+                                    <parameter x="492" y="14">
+                                       <id>query_type</id>
+                                       <label>Bio2RDF Query</label>
+                                       <default>/</default>
+                                    </parameter>
+                                 </para>
+                                 <para name="server_address">
+                                    <parameter x="712" y="12">
+                                       <id>server_address</id>
+                                       <label>Bio2RDF Server</label>
+                                       <default>http://localhost</default>
+                                    </parameter>
+                                 </para>
+                              </pipe-call>
+                           </source>
+                        </rdf-extract>
+                     </source>
+                     <query>SELECT ?fetchUrl WHERE { ?fetchUrl &lt;http://bio2rdf.org/ns/bio2rdf:hasStandardURI&gt; &lt;${bio2rdf_uri}&gt; . }</query>
+                  </select>
+               </sourcelist>
+               <forloop>
+                  <rdffetch format="RDF/XML" x="130" y="520">
+                     <location>${{fetchUrl}}</location>
+                  </rdffetch>
+               </forloop>
+            </for>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

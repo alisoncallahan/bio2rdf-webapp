@@ -1,0 +1,171 @@
+<pipeConfig>
+  <id>bio2rdf_gi_geneid_iproclass</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>218928673</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>gi</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <simplemix>
+         <source>
+            <for>
+               <sourcelist>
+                  <select>
+                     <source>
+                        <rdf-extract>
+                           <source>
+                              <pipe-call pipeid="bio2rdf_basic">
+                                 <para name="identifier">${identifier}</para>
+                                 <para name="namespace">${namespace}</para>
+                                 <para name="query_type">/linksns/iproclass/</para>
+                                 <para name="separator">:</para>
+                                 <para name="server_address">${server_address}</para>
+                              </pipe-call>
+                           </source>
+                        </rdf-extract>
+                     </source>
+                     <query>SELECT DISTINCT ?iproclass WHERE { ?iproclass &lt;http://bio2rdf.org/iproclass_resource:xGi&gt; ?gi . }</query>
+                  </select>
+               </sourcelist>
+               <forloop>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic_from_uri">
+                           <para name="bio2rdf_uri">${{iproclass}}</para>
+                           <para name="query_type">/linkstonamespace/geneid/</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </forloop>
+            </for>
+         </source>
+         <source>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic">
+                     <para name="identifier">${identifier}</para>
+                     <para name="namespace">${namespace}</para>
+                     <para name="query_type">/linksns/iproclass/</para>
+                     <para name="separator">:</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="300" y="1091">
+      <simplemix x="322" y="1023">
+         <source>
+            <for x="200" y="458">
+               <sourcelist>
+                  <select x="190" y="353">
+                     <source>
+                        <rdf-extract x="415" y="297">
+                           <source>
+                              <pipe-call pipeid="bio2rdf_basic" x="347" y="72">
+                                 <para name="identifier">
+                                    <parameter x="743" y="37">
+                                       <id>identifier</id>
+                                       <label>Identifier</label>
+                                       <default>218928673</default>
+                                    </parameter>
+                                 </para>
+                                 <para name="namespace">
+                                    <parameter x="752" y="167">
+                                       <id>namespace</id>
+                                       <label>Namespace</label>
+                                       <default>gi</default>
+                                    </parameter>
+                                 </para>
+                                 <para name="query_type">/linksns/iproclass/</para>
+                                 <para name="separator">:</para>
+                                 <para name="server_address">
+                                    <parameter x="753" y="288">
+                                       <id>server_address</id>
+                                       <label>Bio2RDF Server Address</label>
+                                       <default>http://localhost</default>
+                                    </parameter>
+                                 </para>
+                              </pipe-call>
+                           </source>
+                        </rdf-extract>
+                     </source>
+                     <query>SELECT DISTINCT ?iproclass WHERE { ?iproclass &lt;http://bio2rdf.org/iproclass_resource:xGi&gt; ?gi . }</query>
+                  </select>
+               </sourcelist>
+               <forloop>
+                  <rdf-extract x="225" y="747">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic_from_uri" x="169" y="551">
+                           <para name="bio2rdf_uri">${{iproclass}}</para>
+                           <para name="query_type">/linkstonamespace/geneid/</para>
+                           <para name="server_address">
+                              <parameter x="753" y="288">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server Address</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </forloop>
+            </for>
+         </source>
+         <source>
+            <rdf-extract x="415" y="297">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic" x="347" y="72">
+                     <para name="identifier">
+                        <parameter x="743" y="37">
+                           <id>identifier</id>
+                           <label>Identifier</label>
+                           <default>218928673</default>
+                        </parameter>
+                     </para>
+                     <para name="namespace">
+                        <parameter x="752" y="167">
+                           <id>namespace</id>
+                           <label>Namespace</label>
+                           <default>gi</default>
+                        </parameter>
+                     </para>
+                     <para name="query_type">/linksns/iproclass/</para>
+                     <para name="separator">:</para>
+                     <para name="server_address">
+                        <parameter x="753" y="288">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

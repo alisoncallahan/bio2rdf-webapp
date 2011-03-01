@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+        PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+        "http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+<urlrewrite decode-using="utf8">
+	
+	<rule>
+		<from>^/$</from>
+		<to last="true">/index.html</to>
+	</rule>
+
+	<rule>
+		<from>^/robots.txt$</from>
+		<run class="org.queryall.servlets.RobotsTxtServlet" method="doGet" />
+		<to last="true">null</to>
+    </rule>
+	
+	<rule>
+		<from>^/favicon.ico$</from>
+		<to last="true">/static/includes-images/favicon.ico</to>
+    </rule>
+	
+	<rule>
+		<from>^/admin/test/rule/(.*)$</from>
+		<set name="org.queryall.servlets.RuleTesterServlet.testUri">$1</set>
+		<run class="org.queryall.servlets.RuleTesterServlet" method="doGet" />
+		<to last="true">null</to>
+    </rule>
+    
+	<rule>
+		<from>^/admin/test/rules$</from>
+		<run class="org.queryall.servlets.RuleTesterServlet" method="doGet" />
+		<to last="true">null</to>
+    </rule>
+
+	<rule>
+		<from>^/admin/webappconfiguration/.*$</from>
+		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+	<rule>
+		<from>^/admin/configuration/.*$</from>
+		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+	<rule>
+		<from>^(/page|/rdfxml|/n3|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
+		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+	<rule>
+		<from>^/queryall/(.*)$</from>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+	<rule>
+		<from>^/n3/queryall/(.*)$</from>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.chosenContentType">text/rdf+n3</set>
+		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+	<rule>
+		<from>^/rdfxml/queryall/(.*)$</from>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.chosenContentType">application/rdf+xml</set>
+		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+	<rule>
+		<from>^/page/queryall/(.*)$</from>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.queryall.servlets.QueryAllSchemaServlet.chosenContentType">text/html</set>
+		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+	<rule>
+		<from>^/admin/profiles$</from>
+		<run class="org.queryall.servlets.ProfilesServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+	<rule>
+		<from>^/admin/refreshconfiguration$</from>
+		<run class="org.queryall.servlets.ManualRefreshServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+	<rule>
+		<from>^/admin/namespaceproviders$</from>
+		<run class="org.queryall.servlets.NamespaceProvidersServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+    <rule>
+		<from>^/admin/stats$</from>
+		<run class="org.queryall.servlets.ServerStatsServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+	<rule>
+		<from>^(/page|/rdfxml|/n3|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
+		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
+	<!-- The following rules are specific to Bio2RDF.
+	     If you are using this package for another website 
+	     you will want to change them to suit your system -->
+	
+	<rule>
+		<from>^/download</from>
+		<to type="redirect">http://download.bio2rdf.org/</to>
+	</rule>
+	
+	<rule>
+		<from>^/sparql</from>
+		<to type="redirect">http://quebec.bio2rdf.org/sparql</to>
+	</rule>
+	
+	<rule>
+		<from>.*/(searchns|search)/.*$</from>
+		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+    <rule>
+		<from>^/(.*):(.*)$</from>
+		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+</urlrewrite>

@@ -1,0 +1,87 @@
+<pipeConfig>
+  <id>bio2rdf_basic</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://bio2rdf.org</default>
+      </parameter>
+      <parameter>
+         <id>query_type</id>
+         <label>Query Type</label>
+         <default>/</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>keywords</default>
+      </parameter>
+      <parameter>
+         <id>separator</id>
+         <label>Separator</label>
+         <default>:</default>
+      </parameter>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>10</default>
+      </parameter>
+   </parameters>
+   <code>
+      <rdffetch format="RDF/XML">
+         <location>${server_address}${query_type}${namespace}${separator}${identifier}</location>
+      </rdffetch>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="400" y="400">
+      <rdffetch format="RDF/XML" x="154" y="344">
+         <location>
+            <urlbuilder x="56" y="104">
+               <base>
+                  <parameter x="395" y="13">
+                     <id>server_address</id>
+                     <label>Bio2RDF Server Address</label>
+                     <default>http://bio2rdf.org</default>
+                  </parameter>
+               </base>
+               <path>
+                  <parameter x="617" y="9">
+                     <id>query_type</id>
+                     <label>Query Type</label>
+                     <default>/</default>
+                  </parameter>
+               </path>
+               <path>
+                  <parameter x="681" y="168">
+                     <id>namespace</id>
+                     <label>Namespace</label>
+                     <default>keywords</default>
+                  </parameter>
+               </path>
+               <path>
+                  <parameter x="730" y="303">
+                     <id>separator</id>
+                     <label>Separator</label>
+                     <default>:</default>
+                  </parameter>
+               </path>
+               <path>
+                  <parameter x="443" y="179">
+                     <id>identifier</id>
+                     <label>Identifier</label>
+                     <default>10</default>
+                  </parameter>
+               </path>
+            </urlbuilder>
+         </location>
+      </rdffetch>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

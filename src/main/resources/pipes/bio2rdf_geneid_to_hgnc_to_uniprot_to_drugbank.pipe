@@ -1,0 +1,115 @@
+<pipeConfig>
+  <id>bio2rdf_geneid_to_hgnc_to_uniprot_to_drugbank</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>identifier</id>
+         <label>Identifier</label>
+         <default>1644</default>
+      </parameter>
+      <parameter>
+         <id>namespace</id>
+         <label>Namespace</label>
+         <default>geneid</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <for>
+         <sourcelist>
+            <select>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_geneid_to_hgnc_to_uniprot">
+                           <para name="identifier">${identifier}</para>
+                           <para name="namespace">${namespace}</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT DISTINCT ?uniprot WHERE { ?hgnc &lt;http://bio2rdf.org/bio2rdf_resource:xUniProt&gt; ?uniprot . }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri">
+                     <para name="bio2rdf_uri">${{uniprot}}</para>
+                     <para name="query_type">/linksns/drugbank_targets/</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="546" y="542">
+      <for x="488" y="356">
+         <sourcelist>
+            <select x="134" y="322">
+               <source>
+                  <rdf-extract x="83" y="262">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_geneid_to_hgnc_to_uniprot" x="59" y="29">
+                           <para name="identifier">
+                              <parameter x="543" y="13">
+                                 <id>identifier</id>
+                                 <label>Identifier</label>
+                                 <default>1644</default>
+                              </parameter>
+                           </para>
+                           <para name="namespace">
+                              <parameter x="771" y="125">
+                                 <id>namespace</id>
+                                 <label>Namespace</label>
+                                 <default>geneid</default>
+                              </parameter>
+                           </para>
+                           <para name="server_address">
+                              <parameter x="768" y="8">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server Address</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT DISTINCT ?uniprot WHERE { ?hgnc &lt;http://bio2rdf.org/bio2rdf_resource:xUniProt&gt; ?uniprot . }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract x="318" y="606">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri" x="53" y="446">
+                     <para name="bio2rdf_uri">${{uniprot}}</para>
+                     <para name="query_type">/linksns/drugbank_targets/</para>
+                     <para name="server_address">
+                        <parameter x="768" y="8">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

@@ -1,0 +1,10 @@
+.clearboth {
+	clear: both;
+}
+#all {
+	margin: 50px;
+}
+#main {
+	text-align: center; 
+	vertical-align: middle;	
+}

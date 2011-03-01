@@ -1,0 +1,142 @@
+#set ($subjectinitialised = false)
+#set ($predicateinitialised = false)
+#set ($external_subject_link = false)
+#set ($show_subject = true)
+#set ($show_predicate = true)
+#set ($namespaceIndex = 0)
+
+
+<table class="description">
+<tr><th width="20%">Subject</th><th width="20%">Predicate</th><th>Object</th></tr>
+#foreach ($statement in $statements)
+#if ($velocityCount % 2 == 0)
+#set ($odd_even = "even")
+#else
+#set ($odd_even = "odd")
+#end
+#if (!$subjectinitialised || !$statement.getSubject().equals($lastSubject))
+#set ($subjectinitialised = true)
+#set ($show_subject = true)
+#set ($predicateinitialised = false)
+#set ($lastSubject = $statement.getSubject())
+#else
+#set ($show_subject = false)
+#end
+#if (!$predicateinitialised || !$statement.getPredicate().equals($lastPredicate))
+#set ($predicateinitialised = true)
+#set ($show_predicate = true)
+#set ($lastPredicate = $statement.getPredicate())
+#else
+#set ($show_predicate = false)
+#end
+#set ($subjectisblanknode = $statement.getSubject().getClass().getName().equals("org.openrdf.sail.memory.model.MemBNode"))
+#set ($xmlEncoded_subject = $statement.getSubject().stringValue())
+
+#set ($xmlEncoded_predicate = $statement.getPredicate().stringValue())
+## xmlutil is an instance of the class info.aduna.xml.XMLUtil
+#set ($predicateNamespaceSplitPoint = $xmlutil.findURISplitIndex($statement.getPredicate().stringValue()))
+#set ($xmlEncoded_rdfa_predicate_ns_index = $namespaceIndex)
+#set ($namespaceIndex = $namespaceIndex + 1)
+#set ($xmlEncoded_rdfa_predicate_ns = $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getPredicate()).substring(0, $predicateNamespaceSplitPoint))
+#set ($xmlEncoded_rdfa_predicate_value = $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getPredicate()).substring($predicateNamespaceSplitPoint))
+#set ($rdfa_predicate_ns = "xmlns:ns"+$xmlEncoded_rdfa_predicate_ns_index+"=")
+#set ($rdfa_predicate_ns = $rdfa_predicate_ns+'"')
+#set ($rdfa_predicate_ns = $rdfa_predicate_ns+$xmlEncoded_rdfa_predicate_ns)
+#set ($rdfa_predicate_ns = $rdfa_predicate_ns+'"')
+#set ($rdfa_predicate_uri = "ns"+$xmlEncoded_rdfa_predicate_ns_index+":"+$xmlEncoded_rdfa_predicate_value)
+
+#set ($xmlEncoded_object = $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()))
+#set ($xmlEncoded_object_type = $statement.getObject().getClass().getName())
+#set ($objectisblanknode = $statement.getObject().getClass().getName().equals("org.openrdf.sail.memory.model.MemBNode"))
+#set ($objectisuri = $statement.getObject().getClass().getName().equals("org.openrdf.sail.memory.model.MemURI"))
+
+#if ($statement.getSubject().stringValue().startsWith($project_base_url))
+    #set ($xmlEncoded_subject_url = ($server_base + $project_html_url_prefix + $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getSubject()).substring($project_base_url.length()))+$project_html_url_suffix)
+    #set ($external_subject_link = false)
+#elseif ($subjectisblanknode)
+    #set ($external_subject_link = false)
+#else
+    #set ($xmlEncoded_subject_url = $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getSubject()))
+    #set ($external_subject_link = true)
+#end
+
+#set ($objecthaslanguage = false)
+#if ($objectisuri)
+    #set ($objectisnonuriurl = false)
+    #if ($bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()).startsWith($project_base_url))
+        #set ($xmlEncoded_object_url = ($server_base + $project_html_url_prefix + $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()).substring($project_base_url.length()))+$project_html_url_suffix)
+        #set ($external_object_link = false)
+    #else
+        #set ($xmlEncoded_object_url = $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()))
+        #set ($external_object_link = true)
+    #end
+#elseif ($bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()).startsWith($project_base_url))
+    #set ($xmlEncoded_object_url = ($server_base + $project_html_url_prefix + $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()).substring($project_base_url.length()))+$project_html_url_suffix)
+    #set ($external_object_link = false)
+    #set ($objectisnonuriurl = true)
+#elseif ($statement.getObject().stringValue().startsWith("http://") || $statement.getObject().stringValue().startsWith("https://") || $statement.getObject().stringValue().startsWith("ftp://"))
+    #set ($xmlEncoded_object_url = $bio2rdfutil.getUTF8StringValueFromSesameValue($statement.getObject()))
+    #set ($external_object_link = true)
+    #set ($objectisnonuriurl = true)
+#else
+    #if($statement.getObject().getLanguage() && !$statement.getObject().getLanguage().equals(""))
+        #set ($xmlEncoded_object_language = $statement.getObject().getLanguage())
+        #set ($objecthaslanguage = true)
+    #end
+    #set ($external_object_link = false)
+    #set ($objectisnonuriurl = false)
+#end
+
+#if ($subjectisblanknode)
+<tr class="tr_$odd_even">
+#else
+<tr about="$xmlEncoded_subject" class="tr_$odd_even">
+#end
+<td class="subject">
+#if ($show_subject)
+#if ($subjectisblanknode)
+(Unnamed RDF node)
+#else
+<a href="$xmlEncoded_subject_url">$xmlEncoded_subject</a>
+#if ($external_subject_link)
+(External link)
+#end
+#end
+#end
+</td>
+<td class="predicate">
+#if ($show_predicate)
+$xmlEncoded_predicate
+#end
+</td>
+#if ($objectisblanknode)
+<td class="object">
+(Unnamed RDF node)
+#elseif($objectisuri)
+<td class="object" $rdfa_predicate_ns rel="$rdfa_predicate_uri" resource="$xmlEncoded_object">
+<a href="$xmlEncoded_object_url">$xmlEncoded_object</a>
+#elseif($objectisnonuriurl)
+<td class="object">
+<span style="display: none;" $rdfa_predicate_ns property="$rdfa_predicate_uri">$xmlEncoded_object</span>
+<a href="$xmlEncoded_object_url">$xmlEncoded_object</a> (Non-RDF URI)
+#else
+#if ($objecthaslanguage)
+<td $rdfa_predicate_ns property="$rdfa_predicate_uri" class="object" xml:lang="$xmlEncoded_object_language">
+#elseif ($statement.getObject().getDatatype())
+#set ($xmlEncoded_object_datatype = $statement.getObject().getDatatype())
+<td $rdfa_predicate_ns property="$rdfa_predicate_uri" class="object" datatype="$xmlEncoded_object_datatype">
+#else 
+<td $rdfa_predicate_ns property="$rdfa_predicate_uri" class="object">
+#end
+$xmlEncoded_object
+#end
+#if ($objecthaslanguage)
+    (Language: $xmlEncoded_object_language)
+#end
+#if ($external_object_link)
+(External link)
+#end
+</td>
+</tr>
+#end
+</table>

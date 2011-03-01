@@ -1,0 +1,104 @@
+<pipeConfig>
+  <id>bio2rdf_all_partial_common_uris</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>multipleitems</id>
+         <label>MultipleItems</label>
+         <default>http://localhost/multiplesearchns/geneid/apoptosis/k-ras/progesterone</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <for>
+         <sourcelist>
+            <select>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic_from_uri">
+                           <para name="bio2rdf_uri">${multipleitems}</para>
+                           <para name="query_type">/</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT ?commonUri ?uri1 ?uri2 ?predicate1 ?predicate2 WHERE { ?uri1 ?predicate1 ?commonUri . ?uri2 ?predicate2 ?commonUri . FILTER(?uri1 != ?uri2) }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri">
+                     <para name="bio2rdf_uri">${{commonUri}}</para>
+                     <para name="query_type">/</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="546" y="542">
+      <for x="488" y="357">
+         <sourcelist>
+            <select x="135" y="322">
+               <source>
+                  <rdf-extract x="83" y="261">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_basic_from_uri" x="50" y="56">
+                           <para name="bio2rdf_uri">
+                              <parameter x="467" y="18">
+                                 <id>multipleitems</id>
+                                 <label>MultipleItems</label>
+                                 <default>http://localhost/multiplesearchns/geneid/apoptosis/k-ras/progesterone</default>
+                              </parameter>
+                           </para>
+                           <para name="query_type">/</para>
+                           <para name="server_address">
+                              <parameter x="768" y="8">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server Address</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT ?commonUri ?uri1 ?uri2 ?predicate1 ?predicate2 WHERE { ?uri1 ?predicate1 ?commonUri . ?uri2 ?predicate2 ?commonUri . FILTER(?uri1 != ?uri2) }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract x="318" y="606">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri" x="137" y="463">
+                     <para name="bio2rdf_uri">${{commonUri}}</para>
+                     <para name="query_type">/</para>
+                     <para name="server_address">
+                        <parameter x="768" y="8">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

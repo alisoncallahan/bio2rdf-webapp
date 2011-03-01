@@ -1,0 +1,115 @@
+<pipeConfig>
+  <id>bio2rdf_partial_common_uris_by_namespace</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>linkstonamespace</id>
+         <label>Links To Namespace</label>
+         <default>pubmed</default>
+      </parameter>
+      <parameter>
+         <id>multipleitems</id>
+         <label>Multiple Items URI</label>
+         <default>http://bio2rdf.org/multiple/geneid:12234/geneid:1454/geneid:27373/geneid:18627</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2Rdf Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <for>
+         <sourcelist>
+            <select>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_multiple_by_namespace">
+                           <para name="linkstonamespace">${linkstonamespace}</para>
+                           <para name="multipleitems">${multipleitems}</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT DISTINCT ?commonUri WHERE { ?uri1 ?predicate1 ?commonUri . ?uri2 ?predicate2 ?commonUri . FILTER(?uri1 != ?uri2) }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri">
+                     <para name="bio2rdf_uri">${{commonUri}}</para>
+                     <para name="query_type">/label/</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="413" y="687">
+      <for x="514" y="525">
+         <sourcelist>
+            <select x="175" y="412">
+               <source>
+                  <rdf-extract x="194" y="336">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_multiple_by_namespace" x="148" y="174">
+                           <para name="linkstonamespace">
+                              <parameter x="127" y="4">
+                                 <id>linkstonamespace</id>
+                                 <label>Links To Namespace</label>
+                                 <default>pubmed</default>
+                              </parameter>
+                           </para>
+                           <para name="multipleitems">
+                              <parameter x="422" y="15">
+                                 <id>multipleitems</id>
+                                 <label>Multiple Items URI</label>
+                                 <default>http://bio2rdf.org/multiple/geneid:12234/geneid:1454/geneid:27373/geneid:18627</default>
+                              </parameter>
+                           </para>
+                           <para name="server_address">
+                              <parameter x="663" y="5">
+                                 <id>server_address</id>
+                                 <label>Bio2Rdf Server Address</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT DISTINCT ?commonUri WHERE { ?uri1 ?predicate1 ?commonUri . ?uri2 ?predicate2 ?commonUri . FILTER(?uri1 != ?uri2) }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdf-extract x="164" y="692">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri" x="69" y="539">
+                     <para name="bio2rdf_uri">${{commonUri}}</para>
+                     <para name="query_type">/label/</para>
+                     <para name="server_address">
+                        <parameter x="663" y="5">
+                           <id>server_address</id>
+                           <label>Bio2Rdf Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

@@ -1,0 +1,100 @@
+<pipeConfig>
+  <id>bio2rdf_subject_object_slicing_from_uri</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>bio2rdf_uri</id>
+         <label>Bio2RDF URI</label>
+         <default>http://bio2rdf.org/pubmed:16377617</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <simplemix>
+         <source>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri">
+                     <para name="bio2rdf_uri">${bio2rdf_uri}</para>
+                     <para name="query_type">/</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+         <source>
+            <rdf-extract>
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri">
+                     <para name="bio2rdf_uri">${bio2rdf_uri}</para>
+                     <para name="query_type">/links/</para>
+                     <para name="server_address">${server_address}</para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="454" y="521">
+      <simplemix x="496" y="449">
+         <source>
+            <rdf-extract x="225" y="385">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri" x="177" y="156">
+                     <para name="bio2rdf_uri">
+                        <parameter x="501" y="16">
+                           <id>bio2rdf_uri</id>
+                           <label>Bio2RDF URI</label>
+                           <default>http://bio2rdf.org/pubmed:16377617</default>
+                        </parameter>
+                     </para>
+                     <para name="query_type">/</para>
+                     <para name="server_address">
+                        <parameter x="75" y="11">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+         <source>
+            <rdf-extract x="796" y="378">
+               <source>
+                  <pipe-call pipeid="bio2rdf_basic_from_uri" x="626" y="171">
+                     <para name="bio2rdf_uri">
+                        <parameter x="501" y="16">
+                           <id>bio2rdf_uri</id>
+                           <label>Bio2RDF URI</label>
+                           <default>http://bio2rdf.org/pubmed:16377617</default>
+                        </parameter>
+                     </para>
+                     <para name="query_type">/links/</para>
+                     <para name="server_address">
+                        <parameter x="75" y="11">
+                           <id>server_address</id>
+                           <label>Bio2RDF Server Address</label>
+                           <default>http://localhost</default>
+                        </parameter>
+                     </para>
+                  </pipe-call>
+               </source>
+            </rdf-extract>
+         </source>
+      </simplemix>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

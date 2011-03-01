@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:sc="http://sw.deri.org/2007/07/sitemapextension/scschema.xsd">
+
+   <sc:dataset>
+      <sc:datasetLabel>Bio2Rdf NCBI GeneId</sc:datasetLabel>
+      <sc:datasetURI>http://bio2rdf.org/ns/geneid:</sc:datasetURI>
+      <!-- <sc:dataDumpLocation>http://example.org/cataloguedump.rdf</sc:dataDumpLocation> -->
+      <!-- <sc:dataFragmentDumpLocation>http://example.org/cataloguedump_part1.rdf</sc:dataFragmentDumpLocation> -->
+      <!-- <sc:dataFragmentDumpLocation>http://example.org/cataloguedump_part2.rdf</sc:dataFragmentDumpLocation>--> -->
+      <sc:linkedDataPrefix>http://bio2rdf.org/geneid:</sc:linkedDataPrefix>
+      <sc:sparqlEndPoint>http://geneid.bio2rdf.org/sparql</sc:sparqlEndPoint>
+      <sc:sampleURI>http://bio2rdf.org/geneid:12334</sc:sampleURI>
+      <changefreq>monthly</changefreq>
+   </sc:dataset>
+   <sc:dataset>
+      <sc:datasetLabel>Bio2Rdf NCBI Pubmed</sc:datasetLabel>
+      <sc:datasetURI>http://bio2rdf.org/ns/pubmed:</sc:datasetURI>
+      <!-- <sc:dataDumpLocation>http://example.org/cataloguedump.rdf</sc:dataDumpLocation> -->
+      <!-- <sc:dataFragmentDumpLocation>http://example.org/cataloguedump_part1.rdf</sc:dataFragmentDumpLocation> -->
+      <!-- <sc:dataFragmentDumpLocation>http://example.org/cataloguedump_part2.rdf</sc:dataFragmentDumpLocation>--> -->
+      <sc:linkedDataPrefix>http://bio2rdf.org/pubmed:</sc:linkedDataPrefix>
+      <sc:sparqlEndPoint>http://pubmed.bio2rdf.org/sparql</sc:sparqlEndPoint>
+      <sc:sampleURI>http://bio2rdf.org/pubmed:14618389</sc:sampleURI>
+      <changefreq>monthly</changefreq>
+   </sc:dataset>
+</urlset>

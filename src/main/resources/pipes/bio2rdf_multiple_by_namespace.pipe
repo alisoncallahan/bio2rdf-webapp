@@ -1,0 +1,97 @@
+<pipeConfig>
+  <id>bio2rdf_multiple_by_namespace</id>
+  <name></name>
+  <syntax><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters>
+      <parameter>
+         <id>linkstonamespace</id>
+         <label>LinksToNamespace</label>
+         <default>pubmed</default>
+      </parameter>
+      <parameter>
+         <id>multipleitems</id>
+         <label>Multiple Items URI</label>
+         <default>http://bio2rdf.org/multiple/geneid:12234/geneid:1454/geneid:27373/geneid:18627</default>
+      </parameter>
+      <parameter>
+         <id>server_address</id>
+         <label>Bio2RDF Server Address</label>
+         <default>http://localhost</default>
+      </parameter>
+   </parameters>
+   <code>
+      <for>
+         <sourcelist>
+            <select>
+               <source>
+                  <rdf-extract>
+                     <source>
+                        <pipe-call pipeid="bio2rdf_linkstonamespace_from_multiple_helper">
+                           <para name="linkstonamespace">${linkstonamespace}</para>
+                           <para name="multipleitems">${multipleitems}</para>
+                           <para name="server_address">${server_address}</para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT DISTINCT ?fetchURL WHERE { ?fetchURL ?s ?p }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdffetch format="RDF/XML">
+               <location>${{fetchURL}}</location>
+            </rdffetch>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></syntax>
+  <config><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<pipe>
+   <parameters/>
+   <code x="406" y="693">
+      <for x="364" y="513">
+         <sourcelist>
+            <select x="213" y="406">
+               <source>
+                  <rdf-extract x="229" y="333">
+                     <source>
+                        <pipe-call pipeid="bio2rdf_linkstonamespace_from_multiple_helper" x="190" y="161">
+                           <para name="linkstonamespace">
+                              <parameter x="633" y="22">
+                                 <id>linkstonamespace</id>
+                                 <label>LinksToNamespace</label>
+                                 <default>pubmed</default>
+                              </parameter>
+                           </para>
+                           <para name="multipleitems">
+                              <parameter x="342" y="14">
+                                 <id>multipleitems</id>
+                                 <label>Multiple Items URI</label>
+                                 <default>http://bio2rdf.org/multiple/geneid:12234/geneid:1454/geneid:27373/geneid:18627</default>
+                              </parameter>
+                           </para>
+                           <para name="server_address">
+                              <parameter x="75" y="11">
+                                 <id>server_address</id>
+                                 <label>Bio2RDF Server Address</label>
+                                 <default>http://localhost</default>
+                              </parameter>
+                           </para>
+                        </pipe-call>
+                     </source>
+                  </rdf-extract>
+               </source>
+               <query>SELECT DISTINCT ?fetchURL WHERE { ?fetchURL ?s ?p }</query>
+            </select>
+         </sourcelist>
+         <forloop>
+            <rdffetch format="RDF/XML" x="100" y="557">
+               <location>${{fetchURL}}</location>
+            </rdffetch>
+         </forloop>
+      </for>
+   </code>
+</pipe>]]></config>
+  <password></password>
+</pipeConfig>

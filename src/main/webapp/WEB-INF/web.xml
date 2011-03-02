@@ -56,13 +56,6 @@
         <dispatcher>FORWARD</dispatcher> 
 	</filter-mapping>
 	
-	<!-- Servlet declarations -->
-	<servlet>
-        <servlet-name>Settings</servlet-name>
-        <servlet-class>org.queryall.helpers.Settings</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>	
-
     <mime-mapping>
 		<extension>owl</extension>
 		<mime-type>application/rdf+xml</mime-type>

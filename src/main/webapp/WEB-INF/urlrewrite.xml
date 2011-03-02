@@ -11,7 +11,7 @@
 
 	<rule>
 		<from>^/robots.txt$</from>
-		<run class="org.queryall.servlets.RobotsTxtServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.RobotsTxtServlet" method="doGet" />
 		<to last="true">null</to>
     </rule>
 	
@@ -22,97 +22,97 @@
 	
 	<rule>
 		<from>^/admin/test/rule/(.*)$</from>
-		<set name="org.queryall.servlets.RuleTesterServlet.testUri">$1</set>
-		<run class="org.queryall.servlets.RuleTesterServlet" method="doGet" />
+		<set name="org.bio2rdf.servlets.RuleTesterServlet.testUri">$1</set>
+		<run class="org.bio2rdf.servlets.RuleTesterServlet" method="doGet" />
 		<to last="true">null</to>
     </rule>
     
 	<rule>
 		<from>^/admin/test/rules$</from>
-		<run class="org.queryall.servlets.RuleTesterServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.RuleTesterServlet" method="doGet" />
 		<to last="true">null</to>
     </rule>
 
 	<rule>
 		<from>^/admin/webappconfiguration/.*$</from>
-		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ConfigurationServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
 	<rule>
 		<from>^/admin/configuration/.*$</from>
-		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ConfigurationServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
 	<rule>
 		<from>^(/page|/rdfxml|/n3|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
-		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ConfigurationServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	
 	<rule>
 		<from>^/queryall/(.*)$</from>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
-		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<run class="org.bio2rdf.servlets.QueryAllSchemaServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
 	<rule>
 		<from>^/n3/queryall/(.*)$</from>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.chosenContentType">text/rdf+n3</set>
-		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.chosenContentType">text/rdf+n3</set>
+		<run class="org.bio2rdf.servlets.QueryAllSchemaServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	
 	<rule>
 		<from>^/rdfxml/queryall/(.*)$</from>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.chosenContentType">application/rdf+xml</set>
-		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.chosenContentType">application/rdf+xml</set>
+		<run class="org.bio2rdf.servlets.QueryAllSchemaServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	
 	<rule>
 		<from>^/page/queryall/(.*)$</from>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.apiVersion">current</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.queryString">$1</set>
-		<set name="org.queryall.servlets.QueryAllSchemaServlet.chosenContentType">text/html</set>
-		<run class="org.queryall.servlets.QueryAllSchemaServlet" method="doGet" />
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.chosenContentType">text/html</set>
+		<run class="org.bio2rdf.servlets.QueryAllSchemaServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	
 	<rule>
 		<from>^/admin/profiles$</from>
-		<run class="org.queryall.servlets.ProfilesServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ProfilesServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
 	<rule>
 		<from>^/admin/refreshconfiguration$</from>
-		<run class="org.queryall.servlets.ManualRefreshServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ManualRefreshServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	
 	<rule>
 		<from>^/admin/namespaceproviders$</from>
-		<run class="org.queryall.servlets.NamespaceProvidersServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.NamespaceProvidersServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
     <rule>
 		<from>^/admin/stats$</from>
-		<run class="org.queryall.servlets.ServerStatsServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ServerStatsServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
 	<rule>
 		<from>^(/page|/rdfxml|/n3|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
-		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.ConfigurationServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
@@ -132,13 +132,13 @@
 	
 	<rule>
 		<from>.*/(searchns|search)/.*$</from>
-		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	
     <rule>
 		<from>^/(.*):(.*)$</from>
-		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
+		<run class="org.bio2rdf.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 	

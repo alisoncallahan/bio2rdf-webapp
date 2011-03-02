@@ -1,0 +1,13 @@
+The urlrewritefilter-3.2.0.jar is not available using maven repositories, so you must download it manually from
+
+   http://urlrewritefilter.googlecode.com/files/urlrewritefilter-3.2.0.zip
+
+and install the jar file located inside the zip file it into your maven repository using the following command, where /path/to/file is the location you downloaded the file to:
+
+   mvn install:install-file -DgroupId=org.tuckey -DartifactId=urlrewritefilter -Dversion=3.2.0 -Dpackaging=jar -Dfile=/path/to/urlrewritefilter-3.2.0.jar
+
+You also need to download the Maven POM file from:
+
+and install it using the following command
+
+   mvn install:install-file -DgroupId=org.tuckey -DartifactId=urlrewritefilter -Dversion=3.2.0 -Dpackaging=pom -Dfile=/path/to/pom.xml

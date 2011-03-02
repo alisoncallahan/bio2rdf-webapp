@@ -113,7 +113,7 @@ public class HtmlPageRenderer
         context.put("project_html_url_prefix", localSettings.getStringPropertyFromConfig("htmlUrlPrefix"));
         context.put("project_html_url_suffix", localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
         context.put("project_link", localSettings.getStringPropertyFromConfig("projectHomeUrl"));
-        context.put("application_name", localSettings.getStringPropertyFromConfig("userAgent")+ "/"+localSettings.VERSION);
+        context.put("application_name", localSettings.getStringPropertyFromConfig("userAgent")+ "/"+Settings.VERSION);
         context.put("application_help", localSettings.getStringPropertyFromConfig("applicationHelpUrl"));
         context.put("uri", resolvedUri);
         

@@ -68,9 +68,10 @@ public class VelocityHelper
                     "org.apache.velocity.runtime.log.SimpleLog4JLogSystem");
             engineProperties.setProperty("input.encoding", "utf-8");
             engineProperties.setProperty("output.encoding", "utf-8");
+            // FIXME XXX: When Velocity supports loading from WEB-INF/classes/ as well as WEB-INF/lib/ remove this property
             engineProperties.setProperty("file.resource.loader.path",
                     this.servletContext.getRealPath("/")
-                            + "/WEB-INF/templates/");
+                            + "/WEB-INF/classes/templates/");
             engineProperties
                     .setProperty("eventhandler.referenceinsertion.class",
                             "org.apache.velocity.app.event.implement.EscapeHtmlReference");

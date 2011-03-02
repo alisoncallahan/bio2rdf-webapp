@@ -39,6 +39,8 @@ public class GeneralServlet extends HttpServlet
                     HttpServletResponse response)
         throws ServletException, IOException 
     {
+    	Settings localSettings = Settings.getSettings();
+    	
         DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI());
         
         PrintWriter out = response.getWriter();
@@ -77,7 +79,7 @@ public class GeneralServlet extends HttpServlet
         
         if(originalAcceptHeader == null || originalAcceptHeader.equals(""))
         {
-            acceptHeader = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+            acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
         }
         else
         {
@@ -89,16 +91,16 @@ public class GeneralServlet extends HttpServlet
             userAgentHeader = "";
         }
         
-        // if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
+        // if(!localSettings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
         // {
-            // Matcher userAgentBlacklistMatcher = Settings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
+            // Matcher userAgentBlacklistMatcher = localSettings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
             // 
             // if(userAgentBlacklistMatcher.find())
             // {
                 // log.error("GeneralServlet: found blocked user-agent userAgentHeader="+userAgentHeader + " queryString="+queryString+" requesterIpAddress="+requesterIpAddress);
                 // 
                 // response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                // response.sendRedirect(Settings.getStringPropertyFromConfig("blacklistRedirectPage"));
+                // response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage"));
                 // return;
             // }
         // }
@@ -125,7 +127,7 @@ public class GeneralServlet extends HttpServlet
         
         if(writerFormat == null)
         {
-            writerFormat = Rio.getWriterFormatForMIMEType(Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
             
             if(writerFormat == null)
             {
@@ -135,26 +137,26 @@ public class GeneralServlet extends HttpServlet
                 {
                     requestedContentType = "application/rdf+xml";
                     
-                    log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set Settings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
+                    log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
                 }
             }
             else if(!requestedContentType.equals("text/html"))
             {
-                requestedContentType = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
                 
-                log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to Settings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+                log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
             }
         }
         
         
-        Settings.configRefreshCheck(false);
+        localSettings.configRefreshCheck(false);
         
         BlacklistController.doBlacklistExpiry();
         
         boolean useDefaultProviders = true;
         
         // TODO: see if this functionality is necessary anymore, as it dates from very early, circa 0.2, implementations before profiles
-        // if(Settings.ONLY_USE_DEFAULTS_WHEN_DEFAULT_HOST_NAME && !serverName.equals(Settings.getStringPropertyFromConfig("hostName")))
+        // if(localSettings.ONLY_USE_DEFAULTS_WHEN_DEFAULT_HOST_NAME && !serverName.equals(localSettings.getStringPropertyFromConfig("hostName")))
         // {
             // useDefaultProviders = false;
         // }
@@ -179,16 +181,16 @@ public class GeneralServlet extends HttpServlet
             log.warn("GeneralServlet: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
             
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.sendRedirect(Settings.getStringPropertyFromConfig("blacklistRedirectPage"));
+            response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage"));
             return;
         }
         
         /**** Setup completed... now to compile the query ****/
         
         // since we know we don't need to redirect now, we set a custom header indicating that the response is being served from this application
-        response.setHeader("X-Application", Settings.getStringPropertyFromConfig("userAgent") + "/"+Settings.VERSION);
+        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent") + "/"+localSettings.VERSION);
         
-        List<Profile> includedProfiles = Settings.getAndSortProfileList(Settings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
+        List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
         
         RdfFetchController fetchController = new RdfFetchController(queryString, includedProfiles, useDefaultProviders, realHostName, pageOffset, requestedContentType);
         
@@ -216,7 +218,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->");
-                    // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+" -->\n");
+                    // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                     
                     // if(_INFO)
                     // {
@@ -230,7 +232,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
-                    // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+"");
+                    // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                     // 
                     // if(_INFO)
                     // {
@@ -247,16 +249,16 @@ public class GeneralServlet extends HttpServlet
                 
                 for(QueryBundle nextScheduledQueryBundle : multiProviderQueryBundles)
                 {
-                    // log.trace("GeneralServlet: about to generate rdf for query bundle with key="+queryString+Settings.getStringPropertyFromConfig("separator")+nextScheduledQueryBundle.originalProvider.getKey().toLowerCase()+Settings.getStringPropertyFromConfig("separator")+nextScheduledQueryBundle.getQueryType().getKey().toLowerCase()+Settings.getStringPropertyFromConfig("separator")+nextScheduledQueryBundle.queryEndpoint);
+                    // log.trace("GeneralServlet: about to generate rdf for query bundle with key="+queryString+localSettings.getStringPropertyFromConfig("separator")+nextScheduledQueryBundle.originalProvider.getKey().toLowerCase()+localSettings.getStringPropertyFromConfig("separator")+nextScheduledQueryBundle.getQueryType().getKey().toLowerCase()+localSettings.getStringPropertyFromConfig("separator")+nextScheduledQueryBundle.queryEndpoint);
                     
                     nextScheduledQueryBundle.toRdf(
                         myRepository, 
                         Utilities.createURI(Utilities.percentEncode(queryString)
-                        +Settings.getStringPropertyFromConfig("separator")+"pageoffset"+pageOffset
-                        +Settings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.originalProvider.getKey().stringValue().toLowerCase())
-                        +Settings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
-                        +Settings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.queryEndpoint))
-                        , Settings.CONFIG_API_VERSION);
+                        +localSettings.getStringPropertyFromConfig("separator")+"pageoffset"+pageOffset
+                        +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.originalProvider.getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.queryEndpoint))
+                        , localSettings.CONFIG_API_VERSION);
                 }
                 
                 if(_TRACE)
@@ -273,7 +275,7 @@ public class GeneralServlet extends HttpServlet
                 
                 
                 // change response code to indicate that the query was in some way unsuccessful
-                responseCode = Settings.getIntPropertyFromConfig("unknownQueryHttpResponseCode");
+                responseCode = localSettings.getIntPropertyFromConfig("unknownQueryHttpResponseCode");
                 
                 response.setContentType(requestedContentType+"; charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
@@ -286,7 +288,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
-                    // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+" -->\n");
+                    // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                     
                     // if(_INFO)
                     // {
@@ -300,7 +302,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
-                    // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+"");
+                    // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                     
                     // if(_INFO)
                     // {
@@ -314,9 +316,9 @@ public class GeneralServlet extends HttpServlet
                 
                 Collection<String> backupStaticRdfXmlStrings = new HashSet<String>();
                 
-                Collection<URI> staticQueryTypesForUnknown = Settings.getURICollectionPropertiesFromConfig("unknownQueryStaticAdditions");
+                Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownQueryStaticAdditions");
                 
-                Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, Settings.getStringPropertyFromConfig("hostName"), realHostName, pageOffset);
+                Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName"), realHostName, pageOffset);
                 
                 for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                 {
@@ -325,7 +327,7 @@ public class GeneralServlet extends HttpServlet
                         log.debug("GeneralServlet: nextStaticQueryTypeForUnknown="+nextStaticQueryTypeForUnknown);
                     }
                     
-                    Collection<QueryType> allCustomRdfXmlIncludeTypes = Settings.getCustomQueriesByUri(nextStaticQueryTypeForUnknown);
+                    Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getCustomQueriesByUri(nextStaticQueryTypeForUnknown);
                     
                     // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                     for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
@@ -357,7 +359,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     try
                     {
-                        myRepositoryConnection.add(new java.io.StringReader(nextUniqueStaticString), Settings.getDefaultHostAddress()+queryString, RDFFormat.RDFXML);
+                        myRepositoryConnection.add(new java.io.StringReader(nextUniqueStaticString), localSettings.getDefaultHostAddress()+queryString, RDFFormat.RDFXML);
                     }
                     catch(org.openrdf.rio.RDFParseException rdfpe)
                     {
@@ -401,7 +403,7 @@ public class GeneralServlet extends HttpServlet
                 if(multiProviderQueryBundles.size() == 0)
                 {
                     // change response code to indicate that the query was in some way unsuccessful
-                    responseCode = Settings.getIntPropertyFromConfig("unknownNamespaceHttpResponseCode");
+                    responseCode = localSettings.getIntPropertyFromConfig("unknownNamespaceHttpResponseCode");
                     response.setStatus(responseCode);
                     response.flushBuffer();
                     
@@ -411,7 +413,7 @@ public class GeneralServlet extends HttpServlet
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->");
-                        // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+" -->\n");
+                        // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                         
                         // if(_INFO)
                         // {
@@ -425,7 +427,7 @@ public class GeneralServlet extends HttpServlet
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
-                        // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+"");
+                        // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                         
                         // if(_INFO)
                         // {
@@ -435,9 +437,9 @@ public class GeneralServlet extends HttpServlet
                         // }
                     }
                     
-                    Collection<URI> staticQueryTypesForUnknown = Settings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
+                    Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
                     
-                    Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, Settings.getStringPropertyFromConfig("hostName"), realHostName, pageOffset);
+                    Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName"), realHostName, pageOffset);
                     
                     for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                     {
@@ -446,8 +448,8 @@ public class GeneralServlet extends HttpServlet
                             log.debug("GeneralServlet: nextStaticQueryTypeForUnknown="+nextStaticQueryTypeForUnknown);
                         }
                         
-                        Collection<QueryType> allCustomRdfXmlIncludeTypes = Settings.getCustomQueriesByUri(nextStaticQueryTypeForUnknown);
-                        Collection<QueryType> relevantCustomQueries = Settings.getCustomQueriesMatchingQueryString(queryString, includedProfiles);
+                        Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getCustomQueriesByUri(nextStaticQueryTypeForUnknown);
+                        Collection<QueryType> relevantCustomQueries = localSettings.getCustomQueriesMatchingQueryString(queryString, includedProfiles);
                         
                         // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                         for(QueryType closestMatchType : relevantCustomQueries)
@@ -487,7 +489,7 @@ public class GeneralServlet extends HttpServlet
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
-                        // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+" -->\n");
+                        // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                         
                         if(_INFO)
                         {
@@ -502,7 +504,7 @@ public class GeneralServlet extends HttpServlet
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
-                        // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(Settings.USER_PROFILE_LIST_STRING)+"");
+                        // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                         
                         if(_INFO)
                         {
@@ -543,7 +545,7 @@ public class GeneralServlet extends HttpServlet
                         tempRepository = (Repository)SparqlQueryCreator.normaliseByStage(
                             NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
                             tempRepository, 
-                            Settings.getSortedRulesForProvider(nextResult.originalQueryBundle.getProvider(), 
+                            localSettings.getSortedRulesForProvider(nextResult.originalQueryBundle.getProvider(), 
                                 Settings.HIGHEST_ORDER_FIRST ), 
                             includedProfiles );
                         
@@ -579,7 +581,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     try
                     {
-                        myRepositoryConnection.add(new java.io.StringReader(nextUniqueStaticString), Settings.getDefaultHostAddress()+queryString, RDFFormat.RDFXML);
+                        myRepositoryConnection.add(new java.io.StringReader(nextUniqueStaticString), localSettings.getDefaultHostAddress()+queryString, RDFFormat.RDFXML);
                     }
                     catch(org.openrdf.rio.RDFParseException rdfpe)
                     {
@@ -602,7 +604,7 @@ public class GeneralServlet extends HttpServlet
             Repository convertedPool = (Repository)SparqlQueryCreator.normaliseByStage(
                 NormalisationRuleImpl.getRdfruleStageAfterResultsToPool(),
                 myRepository, 
-                Settings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
+                localSettings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
                     Settings.HIGHEST_ORDER_FIRST ), 
                 includedProfiles );
             
@@ -620,7 +622,7 @@ public class GeneralServlet extends HttpServlet
                 
                 try
                 {
-                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, fetchController, debugStrings, queryString, Settings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), pageOffset);
+                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, fetchController, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), pageOffset);
                 }
                 catch(OpenRDFException ordfe)
                 {
@@ -690,7 +692,7 @@ public class GeneralServlet extends HttpServlet
             // update a static record of the blacklist
             // BlacklistController.accumulateBlacklist(fetchController.errorResults);
             // 
-            // if(Settings.RESET_ENDPOINT_FAILURES_ON_SUCCESS)
+            // if(localSettings.RESET_ENDPOINT_FAILURES_ON_SUCCESS)
             // {
                 // BlacklistController.removeEndpointsFromBlacklist(fetchController.successfulResults);
             // }
@@ -703,7 +705,7 @@ public class GeneralServlet extends HttpServlet
             // QueryDebug nextQueryDebug = null;
             
             // Don't keep local error statistics if GeneralServlet debug level is higher than or equal to info and we aren't interested in using the client IP blacklist functionalities
-            // if(INFO || Settings.getBooleanPropertyFromConfig("automaticallyBlacklistClients"))
+            // if(INFO || localSettings.getBooleanPropertyFromConfig("automaticallyBlacklistClients"))
             // {
                 // nextQueryDebug = new QueryDebug();
                 // nextQueryDebug.clientIPAddress = requesterIpAddress;
@@ -728,27 +730,27 @@ public class GeneralServlet extends HttpServlet
                 // }
             // }
             // 
-            // if(Settings.SUBMIT_USAGE_STATISTICS && !Settings.getBooleanPropertyFromConfig("statisticsSubmitStatistics"))
+            // if(localSettings.SUBMIT_USAGE_STATISTICS && !localSettings.getBooleanPropertyFromConfig("statisticsSubmitStatistics"))
             // {
                 // Collection<StatisticsEntry> statisticsEntryList = new HashSet<StatisticsEntry>();
                 // 
                 // Collection<String> profileUris = new HashSet<String>();
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_PROFILES))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_PROFILES))
                 // {
-                    // profileUris = Settings.getStringCollectionPropertiesFromConfig("activeProfiles");
+                    // profileUris = localSettings.getStringCollectionPropertiesFromConfig("activeProfiles");
                 // }
                 // 
                 // Collection<String> configLocations = new HashSet<String>();
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_CONFIGLOCATIONS))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_CONFIGLOCATIONS))
                 // {
-                    // configLocations = Settings.CONFIG_LOCATION_LIST;
+                    // configLocations = localSettings.CONFIG_LOCATION_LIST;
                 // }
                 // 
                 // Collection<String> querytypeUris = new HashSet<String>();
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_QUERYTYPES))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_QUERYTYPES))
                 // {
                     // // TODO: decide whether we only want the final matching query types or all of the initial match query types
                     // // for(QueryType nextRelevantQuery : relevantCustomQueries)
@@ -763,56 +765,56 @@ public class GeneralServlet extends HttpServlet
                 // 
                 // String configVersion = "";
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_CONFIGVERSION))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_CONFIGVERSION))
                 // {
-                    // configVersion = Settings.CONFIG_API_VERSION+"";
+                    // configVersion = localSettings.getSettings().CONFIG_API_VERSION+"";
                 // }
                 // 
                 // int readtimeout = 0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_READTIMEOUT))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_READTIMEOUT))
                 // {
-                    // readtimeout = Settings.getIntPropertyFromConfig("readTimeout");
+                    // readtimeout = localSettings.getIntPropertyFromConfig("readTimeout");
                 // }
                 // 
                 // int connecttimeout = 0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_READTIMEOUT))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_READTIMEOUT))
                 // {
-                    // connecttimeout = Settings.getIntPropertyFromConfig("connectTimeout");
+                    // connecttimeout = localSettings.getIntPropertyFromConfig("connectTimeout");
                 // }
                 // 
                 // String userHostAddress = "";
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_USERHOSTADDRESS))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_USERHOSTADDRESS))
                 // {
                     // userHostAddress = requesterIpAddress;
                 // }
                 // 
                 // String userAgent = "";
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_USERAGENT))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_USERAGENT))
                 // {
                     // userAgent = userAgentHeader;
                 // }
                 // 
                 // String statisticsRealHostName = "";
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_REALHOSTNAME))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_REALHOSTNAME))
                 // {
                     // statisticsRealHostName = realHostName;
                 // }
                 // 
                 // String statisticsQueryString = "";
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_QUERYSTRING))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_QUERYSTRING))
                 // {
                     // statisticsQueryString = queryString;
                 // }
                 // 
                 // long responseTime = -1;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_RESPONSETIME))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_RESPONSETIME))
                 // {
                     // responseTime = nextTotalTime;
                 // }
@@ -825,7 +827,7 @@ public class GeneralServlet extends HttpServlet
                 // // testArray[3] = 44.0;
                 // // testArray[4] = 55.0;
                 // // 
-                // // log.info("test standard deviation = "+ Settings.getStandardDeviation(testArray));
+                // // log.info("test standard deviation = "+ localSettings.getStandardDeviation(testArray));
                 // 
                 // Collection<Long> nonErrorLatencyList = new HashSet<Long>();
                 // Collection<Long> errorLatencyList = new HashSet<Long>();
@@ -848,7 +850,7 @@ public class GeneralServlet extends HttpServlet
                         // 
                         // if(nextResult.endpointUrl != null && !nextResult.endpointUrl.trim().equals(""))
                         // {
-                            // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_SUCCESSFULPROVIDERS))
+                            // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_SUCCESSFULPROVIDERS))
                             // {
                                 // successfulProviderUris.add(nextResult.endpointUrl);
                             // }
@@ -861,7 +863,7 @@ public class GeneralServlet extends HttpServlet
                         // 
                         // if(nextResult.endpointUrl != null && !nextResult.endpointUrl.trim().equals(""))
                         // {
-                            // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_ERRORPROVIDERS))
+                            // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_ERRORPROVIDERS))
                             // {
                                 // errorProviderUris.add(nextResult.endpointUrl);
                             // }
@@ -874,28 +876,28 @@ public class GeneralServlet extends HttpServlet
                 // 
                 // long statisticsSumLatency = 0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_SUMLATENCY))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_SUMLATENCY))
                 // {
                     // statisticsSumLatency = sumLatency;
                 // }
                 // 
                 // long statisticsSumErrorLatency = 0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_SUMERRORLATENCY))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_SUMERRORLATENCY))
                 // {
                     // statisticsSumErrorLatency = sumErrorLatency;
                 // }
                 // 
                 // int statisticsSumQueries = 0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_SUMQUERIES))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_SUMQUERIES))
                 // {
                     // statisticsSumQueries = sumQueries;
                 // }
                 // 
                 // int statisticsSumErrorQueries = 0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_SUMERRORS))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_SUMERRORS))
                 // {
                     // statisticsSumErrorQueries = sumErrorQueries;
                 // }
@@ -904,7 +906,7 @@ public class GeneralServlet extends HttpServlet
                 // 
                 // double statisticsStdevLatency = 0.0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_STDEVLATENCY))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_STDEVLATENCY))
                 // {
                     // statisticsStdevLatency = stdevlatency;
                 // }
@@ -913,14 +915,14 @@ public class GeneralServlet extends HttpServlet
                 // 
                 // double statisticsStdevErrorLatency = 0.0;
                 // 
-                // if(Settings.STATISTICS_TO_SUBMIT_LIST.contains(Settings.STATISTICS_ITEM_STDEVERRORLATENCY))
+                // if(localSettings.STATISTICS_TO_SUBMIT_LIST.contains(localSettings.STATISTICS_ITEM_STDEVERRORLATENCY))
                 // {
                     // statisticsStdevErrorLatency = stdeverrorlatency;
                 // }
                 // 
                 // String statisticsLastServerRestart = Utilities.ISO8601UTC().format(BlacklistController.lastServerStartupDate);
                 // 
-                // String statisticsServerSoftwareVersion = Settings.getStringPropertyFromConfig("userAgent");
+                // String statisticsServerSoftwareVersion = localSettings.getStringPropertyFromConfig("userAgent");
                 // 
                 // String statisticsacceptHeader = originalAcceptHeader;
                 // 
@@ -931,12 +933,12 @@ public class GeneralServlet extends HttpServlet
                     // + (
                         // (queryStartTime.getTime()*(stdevlatency+1))
                         // /
-                        // ((nextTotalTime+1)*Settings.getIntPropertyFromConfig("connectTimeout"))
+                        // ((nextTotalTime+1)*localSettings.getIntPropertyFromConfig("connectTimeout"))
                     // );
                 // 
-                // String key = Settings.getDefaultHostAddress()
-                        // +Settings.DEFAULT_RDF_STATISTICS_NAMESPACE
-                        // +Settings.getStringPropertyFromConfig("separator")
+                // String key = localSettings.getDefaultHostAddress()
+                        // +localSettings.DEFAULT_RDF_STATISTICS_NAMESPACE
+                        // +localSettings.getStringPropertyFromConfig("separator")
                         // +Utilities.percentEncode(keyToUse);
                 // 
                 // if(_INFO)
@@ -972,7 +974,7 @@ public class GeneralServlet extends HttpServlet
                     // statisticsrequestedContentType
                 // ));
                 // 
-                // BlacklistController.persistStatistics(statisticsEntryList, Settings.CONFIG_API_VERSION);
+                // BlacklistController.persistStatistics(statisticsEntryList, localSettings.getSettings().CONFIG_API_VERSION);
             // }
             
             if(_DEBUG)

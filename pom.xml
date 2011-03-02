@@ -43,7 +43,28 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>mquter</id>
+      <properties>
+        <queryall.baseConfigLocation>/config/webapp-config-default-mquter-bio2rdf-template.n3</queryall.baseConfigLocation>
+      </properties>
+    </profile>
+  </profiles>
+  <repositories>
+      <repository>
+          <id>aduna-repo</id>
+          <name>Aduna repository</name>
+          <url>http://repo.aduna-software.org/maven2/releases</url>
+      </repository>
+  </repositories>  
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
   	<plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

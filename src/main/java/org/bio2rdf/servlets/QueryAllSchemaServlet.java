@@ -37,13 +37,15 @@ public class QueryAllSchemaServlet extends HttpServlet
                     HttpServletResponse response)
       throws ServletException, IOException 
   {
-        // Settings.setServletContext(getServletConfig().getServletContext());
+	    Settings localSettings = Settings.getSettings();
+
+	    // localSettings.setServletContext(getServletConfig().getServletContext());
         
         // DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI());
         
         PrintWriter out = response.getWriter();
 
-        // String propertiesSubversionId = Settings.SUBVERSION_INFO;
+        // String propertiesSubversionId = localSettings.SUBVERSION_INFO;
         
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
         
@@ -69,7 +71,7 @@ public class QueryAllSchemaServlet extends HttpServlet
         
         String versionParameter = (String)request.getAttribute("org.queryall.RuleTesterServlet.apiVersion");
         
-        int apiVersion = Settings.CONFIG_API_VERSION;
+		int apiVersion = localSettings.CONFIG_API_VERSION;
         
         if(versionParameter != null && !versionParameter.equals("") && !Settings.CURRENT.equals(versionParameter))
         {
@@ -83,13 +85,13 @@ public class QueryAllSchemaServlet extends HttpServlet
             }
         }
         
-        if(apiVersion > Settings.CONFIG_API_VERSION)
+        if(apiVersion > localSettings.CONFIG_API_VERSION)
         {
-            log.error("QueryAllSchemaServlet: requested API version not supported by this server. apiVersion="+apiVersion+" Settings.CONFIG_API_VERSION="+Settings.CONFIG_API_VERSION);
+            log.error("QueryAllSchemaServlet: requested API version not supported by this server. apiVersion="+apiVersion+" localSettings.CONFIG_API_VERSION="+localSettings.CONFIG_API_VERSION);
             
             response.setContentType("text/plain");
             response.setStatus(400);
-            out.write("Requested API version not supported by this server. Current supported version="+Settings.CONFIG_API_VERSION);
+            out.write("Requested API version not supported by this server. Current supported version="+localSettings.CONFIG_API_VERSION);
             return;
         }
         
@@ -113,7 +115,7 @@ public class QueryAllSchemaServlet extends HttpServlet
         
         if(writerFormat == null)
         {
-            writerFormat = Rio.getWriterFormatForMIMEType(Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
             
             if(writerFormat == null)
             {
@@ -123,14 +125,14 @@ public class QueryAllSchemaServlet extends HttpServlet
                 {
                     requestedContentType = "application/rdf+xml";
                     
-                    log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set Settings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
+                    log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
                 }
             }
             else if(!requestedContentType.equals("text/html"))
             {
-                requestedContentType = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
                 
-                log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to Settings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+                log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
             }
         }
         
@@ -144,7 +146,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             log.warn("QueryAllSchemaServlet: originalRequestedContentType was overwritten originalRequestedContentType="+originalRequestedContentType+" requestedContentType="+requestedContentType);
         }
         
-        Settings.configRefreshCheck(false);
+        localSettings.configRefreshCheck(false);
         
         response.setContentType(requestedContentType);
         response.setCharacterEncoding("UTF-8");
@@ -348,8 +350,8 @@ public class QueryAllSchemaServlet extends HttpServlet
                 {
                     HtmlPageRenderer.renderHtml(
                         getServletContext(), myRepository, stBuff, debugStrings, 
-                        Settings.DEFAULT_ONTOLOGYTERMURI_PREFIX + queryString, 
-                        Settings.DEFAULT_ONTOLOGYTERMURI_PREFIX + queryString, 
+                        localSettings.getOntologyTermUriPrefix() + queryString, 
+                        localSettings.getOntologyTermUriPrefix() + queryString, 
                         realHostName, request.getContextPath(), -1);
                 }
                 catch(OpenRDFException ordfe)

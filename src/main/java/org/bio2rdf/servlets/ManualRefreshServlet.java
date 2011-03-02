@@ -25,15 +25,15 @@ public class ManualRefreshServlet extends HttpServlet
                     HttpServletResponse response)
       throws ServletException, IOException 
     {
-        // Settings.setServletContext(getServletConfig().getServletContext());
+    	Settings localSettings = Settings.getSettings();
         
         PrintWriter out = response.getWriter();
         
-        boolean refreshAllowed = Settings.isManualRefreshAllowed();
+        boolean refreshAllowed = localSettings.isManualRefreshAllowed();
         
         if(refreshAllowed)
         {
-            if(Settings.configRefreshCheck(true))
+            if(localSettings.configRefreshCheck(true))
             {
                 BlacklistController.doBlacklistExpiry();
                 

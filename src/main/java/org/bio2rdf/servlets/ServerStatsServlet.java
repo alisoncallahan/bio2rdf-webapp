@@ -29,6 +29,7 @@ public class ServerStatsServlet extends HttpServlet
         throws ServletException, IOException 
     {
         // Settings.setServletContext(getServletConfig().getServletContext());
+        Settings localSettings = Settings.getSettings();
         
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
@@ -52,12 +53,12 @@ public class ServerStatsServlet extends HttpServlet
         long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
         
         out.write("Current date : "+currentDate.toString()+"<br />\n");
-        out.write("Server Version : "+Settings.VERSION+"<br />\n");
+        out.write("Server Version : "+localSettings.VERSION+"<br />\n");
         out.write("Now : "+now+"<br />\n");
         out.write("Last error reset date: "+BlacklistController.lastExpiryDate.toString()+"<br />\n");
         out.write("Server startup date: "+BlacklistController.lastServerStartupDate.toString()+"<br />\n");
-        out.write("Reset period "+Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")+"<br />\n");
-        out.write("Client blacklist will reset in "+((Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
+        out.write("Reset period "+localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")+"<br />\n");
+        out.write("Client blacklist will reset in "+((localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
         
         if(BlacklistController.allHttpErrorResponseCodesByServer != null)
         {

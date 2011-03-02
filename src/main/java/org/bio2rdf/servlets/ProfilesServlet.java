@@ -29,7 +29,7 @@ public class ProfilesServlet extends HttpServlet
                         HttpServletResponse response)
         throws ServletException, IOException 
     {
-        // Settings.setServletContext(getServletConfig().getServletContext());
+    	Settings localSettings = Settings.getSettings();
         
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
@@ -37,22 +37,22 @@ public class ProfilesServlet extends HttpServlet
         @SuppressWarnings("unused")
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort())+"/";
         
-        Map<URI, Provider> allProviders = Settings.getAllProviders();
+        Map<URI, Provider> allProviders = localSettings.getAllProviders();
         
-        Map<URI, QueryType> allCustomQueries = Settings.getAllCustomQueries();
+        Map<URI, QueryType> allCustomQueries = localSettings.getAllCustomQueries();
         
-        Map<URI, NormalisationRule> allRdfRules = Settings.getAllNormalisationRules();
+        Map<URI, NormalisationRule> allRdfRules = localSettings.getAllNormalisationRules();
         
-        Map<URI, Profile> allProfiles = Settings.getAllProfiles();
+        Map<URI, Profile> allProfiles = localSettings.getAllProfiles();
         
-        List<Profile> enabledProfiles = Settings.getAndSortProfileList(Settings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
+        List<Profile> enabledProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
         
         out.write("<br />Number of queries = " + allCustomQueries.size()+"<br />\n");
         out.write("<br />Number of providers = " + allProviders.size()+"<br />\n");
         out.write("<br />Number of rdf normalisation rules = " + allRdfRules.size()+"<br />\n");
         out.write("<br />Number of profiles = " + allProfiles.size()+"<br />\n");
         
-        out.write("<br />Enabled profiles: ("+Settings.getStringCollectionPropertiesFromConfig("activeProfiles").size()+")<br />\n");
+        out.write("<br />Enabled profiles: ("+localSettings.getStringCollectionPropertiesFromConfig("activeProfiles").size()+")<br />\n");
         
         out.write("<ul>\n");
         
@@ -175,7 +175,7 @@ public class ProfilesServlet extends HttpServlet
             List<Profile> nextProfileAsList = new ArrayList<Profile>(1);
             nextProfileAsList.add(nextProfile);
             
-            if(Settings.getStringCollectionPropertiesFromConfig("activeProfiles").contains(nextProfile.getKey()))
+            if(localSettings.getStringCollectionPropertiesFromConfig("activeProfiles").contains(nextProfile.getKey()))
             {
                 out.write("<div style=\"display:block;\">\n");
                 out.write("Profile:"+nextProfile.getKey()+"\n");

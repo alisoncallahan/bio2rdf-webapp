@@ -47,14 +47,14 @@ public class RuleTesterServlet extends HttpServlet
         
         log.debug("test-regexmethods: testuri="+methodToTest);
         
-        Map<URI, RuleTest> allRuleTests = Settings.getAllRuleTests();
+        Map<URI, RuleTest> allRuleTests = Settings.getSettings().getAllRuleTests();
         
         boolean allTestsPassed = true;
         
         @SuppressWarnings("unused")
         List<String> automatedTestResults = new ArrayList<String>();
         
-        if(!Settings.runRuleTests(allRuleTests.values()))
+        if(!Settings.getSettings().runRuleTests(allRuleTests.values()))
         {
             allTestsPassed = false;
         }

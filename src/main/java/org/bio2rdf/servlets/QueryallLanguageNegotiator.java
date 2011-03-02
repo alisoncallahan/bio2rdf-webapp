@@ -21,10 +21,10 @@ public class QueryallLanguageNegotiator
     {
         contentNegotiator = new ContentTypeNegotiator();
         
-        if(Settings.getStringPropertyFromConfig("preferredDisplayLanguage") != null 
-            && !Settings.getStringPropertyFromConfig("preferredDisplayLanguage").trim().equals(""))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayLanguage") != null 
+            && !Settings.getSettings().getStringPropertyFromConfig("preferredDisplayLanguage").trim().equals(""))
         {
-            contentNegotiator.addVariant(Settings.getStringPropertyFromConfig("preferredDisplayLanguage"));
+            contentNegotiator.addVariant(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayLanguage"));
         }
         
         contentNegotiator.addVariant("en;q=0.9")
@@ -60,7 +60,7 @@ public class QueryallLanguageNegotiator
                 log.trace("QueryallLanguageNegotiator: bestMatch not found, returning en instead");
             }
             
-            return Settings.getStringPropertyFromConfig("preferredDisplayLanguage");
+            return Settings.getSettings().getStringPropertyFromConfig("preferredDisplayLanguage");
         }
         
         if(_TRACE)

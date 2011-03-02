@@ -33,7 +33,7 @@ public class RobotsTxtServlet extends HttpServlet
         
         PrintWriter out = response.getWriter();
     
-        Collection<String> robotsList = Settings.getStringCollectionPropertiesFromConfig("blacklistBaseUserAgents");
+        Collection<String> robotsList = Settings.getSettings().getStringCollectionPropertiesFromConfig("blacklistBaseUserAgents");
         
         if(robotsList != null)
         {

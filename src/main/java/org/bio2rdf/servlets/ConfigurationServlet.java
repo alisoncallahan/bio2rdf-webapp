@@ -38,7 +38,7 @@ public class ConfigurationServlet extends HttpServlet
                         HttpServletResponse response)
         throws ServletException, IOException 
     {
-        // Settings.setServletContext(getServletConfig().getServletContext());
+    	Settings localSettings = Settings.getSettings();
         
         log.debug("request.getRequestURI()="+request.getRequestURI());
         
@@ -55,9 +55,9 @@ public class ConfigurationServlet extends HttpServlet
 
         if(requestConfigurationQueryOptions.isRefresh())
         {
-            if(Settings.isManualRefreshAllowed())
+            if(localSettings.isManualRefreshAllowed())
             {
-                if(Settings.configRefreshCheck(true))
+                if(localSettings.configRefreshCheck(true))
                 {
                     BlacklistController.doBlacklistExpiry();
                     
@@ -75,7 +75,7 @@ public class ConfigurationServlet extends HttpServlet
             else
             {
                 response.setStatus(401);
-                log.error("manualrefresh.jsp: refresh not allowed right now requesterIpAddress="+request.getRemoteAddr()+ " Settings.MANUAL_CONFIGURATION_REFRESH_ALLOWED="+Settings.getStringPropertyFromConfig("enableManualConfigurationRefresh"));
+                log.error("manualrefresh.jsp: refresh not allowed right now requesterIpAddress="+request.getRemoteAddr()+ " localSettings.MANUAL_CONFIGURATION_REFRESH_ALLOWED="+localSettings.getStringPropertyFromConfig("enableManualConfigurationRefresh"));
                 out.write("Refresh not allowed right now.");
             }
             
@@ -101,20 +101,20 @@ public class ConfigurationServlet extends HttpServlet
         
         int apiVersion = requestConfigurationQueryOptions.getApiVersion();
         
-        if(apiVersion > Settings.CONFIG_API_VERSION)
+        if(apiVersion > localSettings.CONFIG_API_VERSION)
         {
-            log.error("ConfigurationServlet: requested API version not supported by this server. apiVersion="+apiVersion+" Settings.CONFIG_API_VERSION="+Settings.CONFIG_API_VERSION);
+            log.error("ConfigurationServlet: requested API version not supported by this server. apiVersion="+apiVersion+" localSettings.CONFIG_API_VERSION="+localSettings.CONFIG_API_VERSION);
             
             response.setContentType("text/plain");
             response.setStatus(400);
-            out.write("Requested API version not supported by this server. Current supported version="+Settings.CONFIG_API_VERSION);
+            out.write("Requested API version not supported by this server. Current supported version="+localSettings.CONFIG_API_VERSION);
             out.flush();
             return;
         }
         
         Collection<String> debugStrings = new HashSet<String>();
         
-        String writerFormatString = Utilities.findWriterFormat(requestedContentType, Settings.getStringPropertyFromConfig("preferredDisplayContentType"), "application/rdf+xml");
+        String writerFormatString = Utilities.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType"), "application/rdf+xml");
         
         RDFFormat writerFormat = null;
         
@@ -128,14 +128,14 @@ public class ConfigurationServlet extends HttpServlet
             log.debug("ConfigurationServlet: requestedContentType="+requestedContentType+ " acceptHeader="+request.getHeader("Accept")+" userAgent="+request.getHeader("User-Agent"));
         }
         
-        Settings.configRefreshCheck(false);
+        localSettings.configRefreshCheck(false);
         
         response.setContentType(requestedContentType);
         response.setCharacterEncoding("UTF-8");
         
         boolean targetOnlyQueryString = false;
         
-        final String queryStringURI = Settings.getDefaultHostAddress()+queryString;
+        final String queryStringURI = localSettings.getDefaultHostAddress()+queryString;
         
         if(Utilities.isPlainNamespaceAndIdentifier(queryString))
         {
@@ -153,7 +153,7 @@ public class ConfigurationServlet extends HttpServlet
             
             if(requestConfigurationQueryOptions.containsAdminConfiguration())
             {
-                Map<URI, Provider> allProviders = Settings.getAllProviders();
+                Map<URI, Provider> allProviders = localSettings.getAllProviders();
                 
                 for(URI nextProviderKey : allProviders.keySet())
                 {
@@ -177,7 +177,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, QueryType> allQueries = Settings.getAllCustomQueries();
+                Map<URI, QueryType> allQueries = localSettings.getAllCustomQueries();
                 
                 for(URI nextQueryKey : allQueries.keySet())
                 {
@@ -201,7 +201,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, Template> allTemplates = Settings.getAllTemplates();
+                Map<URI, Template> allTemplates = localSettings.getAllTemplates();
                 
                 for(URI nextTemplateKey : allTemplates.keySet())
                 {
@@ -222,7 +222,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, NormalisationRule> allNormalisationRules = Settings.getAllNormalisationRules();
+                Map<URI, NormalisationRule> allNormalisationRules = localSettings.getAllNormalisationRules();
                 
                 for(URI nextNormalisationRuleKey : allNormalisationRules.keySet())
                 {
@@ -245,7 +245,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, RuleTest> allRuleTests = Settings.getAllRuleTests();
+                Map<URI, RuleTest> allRuleTests = localSettings.getAllRuleTests();
                 
                 for(URI nextRuleTestKey : allRuleTests.keySet())
                 {
@@ -266,7 +266,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, NamespaceEntry> allNamespaceEntries = Settings.getAllNamespaceEntries();
+                Map<URI, NamespaceEntry> allNamespaceEntries = localSettings.getAllNamespaceEntries();
                 
                 for(URI nextNamespaceEntryKey : allNamespaceEntries.keySet())
                 {
@@ -287,7 +287,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, Profile> allProfiles = Settings.getAllProfiles();
+                Map<URI, Profile> allProfiles = localSettings.getAllProfiles();
                 
                 for(URI nextProfileKey : allProfiles.keySet())
                 {
@@ -317,115 +317,115 @@ public class ConfigurationServlet extends HttpServlet
             {
                 myRepositoryConnection = myRepository.getConnection();
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("userAgent"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("userAgent"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("projectHomeUri"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("projectHomeUri"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("uriPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("uriPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("hostName"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("hostName"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("uriSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("uriSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("separator"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("separator"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("rdfXmlUrlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("rdfXmlUrlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("rdfXmlUrlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("rdfXmlUrlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("n3UrlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("n3UrlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("n3UrlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("n3UrlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("htmlUrlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("htmlUrlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("htmlUrlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("htmlUrlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("queryplanUrlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("queryplanUrlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("queryplanUrlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("queryplanUrlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("pageoffsetUrlOpeningPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetUrlOpeningPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("pageoffsetUrlClosingPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetUrlClosingPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("pageoffsetUrlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetUrlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminUrlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminUrlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminWebappConfigurationPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminWebappConfigurationPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationRefreshPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationRefreshPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationApiVersionOpeningPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationApiVersionOpeningPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationApiVersionClosingPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationApiVersionClosingPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationApiVersionSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationApiVersionSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationHtmlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationHtmlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationHtmlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationHtmlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationRdfxmlPrefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationRdfxmlPrefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationRdfxmlSuffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationRdfxmlSuffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationN3Prefix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationN3Prefix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("adminConfigurationN3Suffix"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationN3Suffix"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("pageoffsetOnlyShowForNsId"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetOnlyShowForNsId"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("plainNamespaceAndIdentifierRegex"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("plainNamespaceAndIdentifierRegex"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("plainNamespaceRegex"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("plainNamespaceRegex"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("tagPatternRegex"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("tagPatternRegex"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("blankTitle"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("blankTitle"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("projectHomeUrl"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("projectHomeUrl"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("projectName"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("projectName"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("applicationHelpUrl"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("applicationHelpUrl"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("blacklistContactEmailAddress"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("blacklistContactEmailAddress"));
                 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("blacklistRedirectPage"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("blacklistRedirectPage"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("autogenerateIncludeStubList"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("autogenerateIncludeStubList"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("titleProperties"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("titleProperties"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("imageProperties"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("imageProperties"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("commentProperties"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("commentProperties"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("urlProperties"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("urlProperties"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("unknownQueryStaticAdditions"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("unknownQueryStaticAdditions"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("unknownQueryHttpResponseCode"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("unknownQueryHttpResponseCode"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("unknownNamespaceStaticAdditions"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("unknownNamespaceStaticAdditions"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("unknownNamespaceHttpResponseCode"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("unknownNamespaceHttpResponseCode"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("useAllEndpointsForEachProvider"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("useAllEndpointsForEachProvider"));
 
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("pageoffsetMaxValue"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("pageoffsetIndividualQueryLimit"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("preferredDisplayContentType"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("preferredDisplayLanguage"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("assumedRequestContentType"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("defaultAcceptHeader"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("useRequestCache"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("convertAlternateNamespacePrefixesToPreferred"));
-                myRepositoryConnection.add(Settings.getStatementPropertiesFromConfig("useVirtuosoMaxRowsParameter"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetMaxValue"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetIndividualQueryLimit"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("preferredDisplayContentType"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("preferredDisplayLanguage"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("assumedRequestContentType"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("defaultAcceptHeader"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("useRequestCache"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("convertAlternateNamespacePrefixesToPreferred"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("useVirtuosoMaxRowsParameter"));
             }
             
             if(myRepositoryConnection != null)
@@ -442,7 +442,7 @@ public class ConfigurationServlet extends HttpServlet
                 
                 try
                 {
-                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, stBuff, debugStrings, queryString, Settings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), -1);
+                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, stBuff, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), -1);
                 }
                 catch(OpenRDFException ordfe)
                 {

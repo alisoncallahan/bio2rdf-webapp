@@ -46,6 +46,11 @@ public class HtmlPageRenderer
     
     public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, RdfFetchController fetchController, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset) throws OpenRDFException
     {
+        renderHtml(servletContext, nextRepository, nextWriter, null, debugStrings, queryString, resolvedUri, realHostName, contextPath, pageoffset, Settings.getSettings());
+    }
+    
+	public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, RdfFetchController fetchController, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset, Settings localSettings) throws OpenRDFException
+    {
         boolean nextpagelinkuseful = false;
         boolean previouspagelinkuseful = false;
         int previouspageoffset = pageoffset - 1;
@@ -71,14 +76,14 @@ public class HtmlPageRenderer
             contextPath = contextPath.substring(1)+"/";
         }
         
-        if(Settings.getBooleanPropertyFromConfig("useHardcodedRequestContext"))
+        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestContext"))
         {
-            contextPath = Settings.getStringPropertyFromConfig("hardcodedRequestContext");
+            contextPath = localSettings.getStringPropertyFromConfig("hardcodedRequestContext");
         }
         
-        if(Settings.getBooleanPropertyFromConfig("useHardcodedRequestHostname"))
+        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestHostname"))
         {
-            realHostName = Settings.getStringPropertyFromConfig("hardcodedRequestHostname");
+            realHostName = localSettings.getStringPropertyFromConfig("hardcodedRequestHostname");
         }
         
         if(_TRACE)
@@ -103,13 +108,13 @@ public class HtmlPageRenderer
         context.put("debug_level_trace", GeneralServlet._TRACE);
         
         
-        context.put("project_name", Settings.getStringPropertyFromConfig("projectName"));
-        context.put("project_base_url", Settings.getStringPropertyFromConfig("projectHomeUrl"));
-        context.put("project_html_url_prefix", Settings.getStringPropertyFromConfig("htmlUrlPrefix"));
-        context.put("project_html_url_suffix", Settings.getStringPropertyFromConfig("htmlUrlSuffix"));
-        context.put("project_link", Settings.getStringPropertyFromConfig("projectHomeUrl"));
-        context.put("application_name", Settings.getStringPropertyFromConfig("userAgent")+ "/"+Settings.VERSION);
-        context.put("application_help", Settings.getStringPropertyFromConfig("applicationHelpUrl"));
+        context.put("project_name", localSettings.getStringPropertyFromConfig("projectName"));
+        context.put("project_base_url", localSettings.getStringPropertyFromConfig("projectHomeUrl"));
+        context.put("project_html_url_prefix", localSettings.getStringPropertyFromConfig("htmlUrlPrefix"));
+        context.put("project_html_url_suffix", localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
+        context.put("project_link", localSettings.getStringPropertyFromConfig("projectHomeUrl"));
+        context.put("application_name", localSettings.getStringPropertyFromConfig("userAgent")+ "/"+localSettings.VERSION);
+        context.put("application_help", localSettings.getStringPropertyFromConfig("applicationHelpUrl"));
         context.put("uri", resolvedUri);
         
         boolean is_plainnsid = false;
@@ -140,9 +145,9 @@ public class HtmlPageRenderer
         context.put("real_hostname", realHostName);
         context.put("context_path", contextPath);
         context.put("server_base", realHostName+contextPath);
-        context.put("rdfxml_link", realHostName+contextPath+Settings.getStringPropertyFromConfig("rdfXmlUrlPrefix")+queryString+Settings.getStringPropertyFromConfig("rdfXmlUrlSuffix"));
-        context.put("rdfn3_link", realHostName+contextPath+Settings.getStringPropertyFromConfig("n3UrlPrefix")+queryString+Settings.getStringPropertyFromConfig("n3UrlSuffix"));
-        context.put("html_link", realHostName+contextPath+Settings.getStringPropertyFromConfig("htmlUrlPrefix")+queryString+Settings.getStringPropertyFromConfig("htmlUrlSuffix"));
+        context.put("rdfxml_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix")+queryString+localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix"));
+        context.put("rdfn3_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("n3UrlPrefix")+queryString+localSettings.getStringPropertyFromConfig("n3UrlSuffix"));
+        context.put("html_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("htmlUrlPrefix")+queryString+localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
         // context.put("disco_link", discoLink);
         // context.put("tabulator_link", tabulatorLink);
         // context.put("openlink_link", openLinkLink);
@@ -167,9 +172,9 @@ public class HtmlPageRenderer
         //Collection<Value> titles = new HashSet<Value>();
         //Collection<Value> comments = new HashSet<Value>();
         //Collection<Value> images = new HashSet<Value>();
-        Collection<Value> titles = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, Settings.getURICollectionPropertiesFromConfig("titleProperties"));
-        Collection<Value> comments = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, Settings.getURICollectionPropertiesFromConfig("commentProperties"));
-        Collection<Value> images = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, Settings.getURICollectionPropertiesFromConfig("imageProperties"));
+        Collection<Value> titles = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("titleProperties"));
+        Collection<Value> comments = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("commentProperties"));
+        Collection<Value> images = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("imageProperties"));
         
         String chosenTitle = "";
         
@@ -185,7 +190,7 @@ public class HtmlPageRenderer
         
         if(chosenTitle.trim().equals(""))
         {
-            context.put("title", Settings.getStringPropertyFromConfig("blankTitle"));
+            context.put("title", localSettings.getStringPropertyFromConfig("blankTitle"));
         }
         else
         {
@@ -196,10 +201,10 @@ public class HtmlPageRenderer
         context.put("comments", comments);
         context.put("images", images);
         
-        // For each URI in Settings.IMAGE_QUERY_TYPES
+        // For each URI in localSettings.IMAGE_QUERY_TYPES
         // Make sure the URI is a valid QueryType
         // If there are any matches, replace the input_NN's with the namespace and identifier known here and then show a link to the image in HTML
-        //Collection<Provider> providersForThisNamespace = Settings.getProvidersForQueryTypeForNamespaceUris(String customService, Collection<Collection<String>> namespaceUris, NamespaceEntry.)
+        //Collection<Provider> providersForThisNamespace = localSettings.getProvidersForQueryTypeForNamespaceUris(String customService, Collection<Collection<String>> namespaceUris, NamespaceEntry.)
         
         List<Statement> allStatements = Utilities.getAllStatementsFromRepository(nextRepository);
         
@@ -216,7 +221,7 @@ public class HtmlPageRenderer
         context.put("bio2rdfutil", new org.queryall.helpers.Utilities());
         
         // our only way of guessing if other pages are available without doing an explicit count
-        if(allStatements.size() >= Settings.getIntPropertyFromConfig("pageoffsetIndividualQueryLimit"))
+        if(allStatements.size() >= localSettings.getIntPropertyFromConfig("pageoffsetIndividualQueryLimit"))
         {
             nextpagelinkuseful = true;
         }
@@ -236,15 +241,15 @@ public class HtmlPageRenderer
         }
         
         // To prevent infinite or extended requests, we have a maximum value that we can go up to
-        if(pageoffset > Settings.getIntPropertyFromConfig("pageoffsetMaxValue"))
+        if(pageoffset > localSettings.getIntPropertyFromConfig("pageoffsetMaxValue"))
         {
             // setup the pageoffset value so it artificially points to the limit so that non-conforming robots that don't follow robots.txt don't accidentally run into issues when people play around with links to very high page offsets
-            previouspageoffset = Settings.getIntPropertyFromConfig("pageoffsetMaxValue");
+            previouspageoffset = localSettings.getIntPropertyFromConfig("pageoffsetMaxValue");
             nextpagelinkuseful = false;
         }
         
         // If configured to only show pageoffset for plain nsid's as opposed to the other queries then decide here whether to show it
-        if(Settings.getBooleanPropertyFromConfig("pageoffsetOnlyShowForNsId") && !is_plainnsid)
+        if(localSettings.getBooleanPropertyFromConfig("pageoffsetOnlyShowForNsId") && !is_plainnsid)
         {
             nextpagelinkuseful = false;
         }
@@ -253,13 +258,13 @@ public class HtmlPageRenderer
         {
             context.put("nextpagelink", realHostName
                 +contextPath
-                +Settings.getStringPropertyFromConfig("htmlUrlPrefix")
-                +Settings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix")
+                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix")
                 +(pageoffset+1)
-                +Settings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix")
                 +queryString
-                +Settings.getStringPropertyFromConfig("pageoffsetUrlSuffix")
-                +Settings.getStringPropertyFromConfig("htmlUrlSuffix"));
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix")
+                +localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
             context.put("nextpagelabel", (pageoffset+1));
         }
         
@@ -267,13 +272,13 @@ public class HtmlPageRenderer
         {
             context.put("previouspagelink", realHostName
                 +contextPath
-                +Settings.getStringPropertyFromConfig("htmlUrlPrefix")
-                +Settings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix")
+                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix")
                 +(previouspageoffset)
-                +Settings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix")
                 +queryString
-                +Settings.getStringPropertyFromConfig("pageoffsetUrlSuffix")
-                +Settings.getStringPropertyFromConfig("htmlUrlSuffix"));
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix")
+                +localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
             context.put("previouspagelabel", previouspageoffset);
         }
         

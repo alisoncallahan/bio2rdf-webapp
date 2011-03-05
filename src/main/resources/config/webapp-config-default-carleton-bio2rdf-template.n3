@@ -4,14 +4,14 @@
 @prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
 @prefix bio2rdf: <http://bio2rdf.org/webapp_configuration:>.
 
-bio2rdf:defaultBaseConfig
+bio2rdf:carletonBaseConfig
 
 a queryall:defaultConfig ;
 
 queryall:webappConfigLocations 
-#"config/webapp-config-bio2rdf-default.n3" , 
+#"/config/webapp-config-bio2rdf-default.n3" , 
 "http://config.bio2rdf.org/admin/webappconfiguration/3/n3" , 
- "config/webapp-config-bio2rdf-carleton.n3" ;
+ "/config/webapp-config-bio2rdf-carleton.n3" ;
 
 queryall:activeWebappConfigs bio2rdf:default , bio2rdf:carleton .
 

@@ -10,12 +10,12 @@ bio2rdf:quebec
 queryall:queryConfigLocations "http://config.bio2rdf.org/admin/configuration/3/n3" ;
 
 queryall:backupQueryConfigLocations 
-"config/base-bio2rdf-namespaceentries-config.n3" , 
-"config/base-bio2rdf-providers-config.n3" , 
-"config/base-bio2rdf-providers-html-config.n3" , 
-"config/base-bio2rdf-providers-licenses-config.n3" , 
-"config/base-bio2rdf-rdfrules-config.n3" , "config/base-bio2rdf-profiles-config.n3" , 
-"config/base-bio2rdf-queries-config.n3" , "config/base-bio2rdf-ruletests-config.n3" ;
+"/config/base-bio2rdf-namespaceentries-config.n3" , 
+"/config/base-bio2rdf-providers-config.n3" , 
+"/config/base-bio2rdf-providers-html-config.n3" , 
+"/config/base-bio2rdf-providers-licenses-config.n3" , 
+"/config/base-bio2rdf-rdfrules-config.n3" , "/config/base-bio2rdf-profiles-config.n3" , 
+"/config/base-bio2rdf-queries-config.n3" , "/config/base-bio2rdf-ruletests-config.n3" ;
 
 queryall:enablePeriodicConfigurationRefresh "true"^^xsd:boolean ;
 

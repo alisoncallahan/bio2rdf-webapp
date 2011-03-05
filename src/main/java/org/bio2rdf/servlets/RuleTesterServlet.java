@@ -19,7 +19,11 @@ import org.openrdf.model.URI;
 
 public class RuleTesterServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(RuleTesterServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7617736644136389429L;
+	public static final Logger log = Logger.getLogger(RuleTesterServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();

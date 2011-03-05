@@ -17,7 +17,11 @@ import org.apache.log4j.Logger;
 
 public class ServerStatsServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(ServerStatsServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4816515030121762308L;
+	public static final Logger log = Logger.getLogger(ServerStatsServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
@@ -53,7 +57,7 @@ public class ServerStatsServlet extends HttpServlet
         long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
         
         out.write("Current date : "+currentDate.toString()+"<br />\n");
-        out.write("Server Version : "+localSettings.VERSION+"<br />\n");
+        out.write("Server Version : "+Settings.VERSION+"<br />\n");
         out.write("Now : "+now+"<br />\n");
         out.write("Last error reset date: "+BlacklistController.lastExpiryDate.toString()+"<br />\n");
         out.write("Server startup date: "+BlacklistController.lastServerStartupDate.toString()+"<br />\n");

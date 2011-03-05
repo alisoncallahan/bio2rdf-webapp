@@ -26,7 +26,11 @@ import org.apache.log4j.Logger;
 
 public class QueryAllSchemaServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(QueryAllSchemaServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4486511923930733168L;
+	public static final Logger log = Logger.getLogger(QueryAllSchemaServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
@@ -71,7 +75,7 @@ public class QueryAllSchemaServlet extends HttpServlet
         
         String versionParameter = (String)request.getAttribute("org.queryall.RuleTesterServlet.apiVersion");
         
-		int apiVersion = localSettings.CONFIG_API_VERSION;
+		int apiVersion = Settings.CONFIG_API_VERSION;
         
         if(versionParameter != null && !versionParameter.equals("") && !Settings.CURRENT.equals(versionParameter))
         {
@@ -85,13 +89,13 @@ public class QueryAllSchemaServlet extends HttpServlet
             }
         }
         
-        if(apiVersion > localSettings.CONFIG_API_VERSION)
+        if(apiVersion > Settings.CONFIG_API_VERSION)
         {
-            log.error("QueryAllSchemaServlet: requested API version not supported by this server. apiVersion="+apiVersion+" localSettings.CONFIG_API_VERSION="+localSettings.CONFIG_API_VERSION);
+            log.error("QueryAllSchemaServlet: requested API version not supported by this server. apiVersion="+apiVersion+" Settings.CONFIG_API_VERSION="+Settings.CONFIG_API_VERSION);
             
             response.setContentType("text/plain");
             response.setStatus(400);
-            out.write("Requested API version not supported by this server. Current supported version="+localSettings.CONFIG_API_VERSION);
+            out.write("Requested API version not supported by this server. Current supported version="+Settings.CONFIG_API_VERSION);
             return;
         }
         

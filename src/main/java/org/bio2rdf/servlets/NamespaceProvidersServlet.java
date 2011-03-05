@@ -19,7 +19,11 @@ import org.openrdf.model.URI;
 
 public class NamespaceProvidersServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(NamespaceProvidersServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7006535158409121292L;
+	public static final Logger log = Logger.getLogger(NamespaceProvidersServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
@@ -309,7 +313,7 @@ public class NamespaceProvidersServlet extends HttpServlet
         {
             for(URI nextUniqueQueryTitle : providersByQueryKey.keySet())
             {
-                Collection<QueryType> queriesForNextTitle = localSettings.getCustomQueriesByUri(nextUniqueQueryTitle);
+                Collection<QueryType> queriesForNextTitle = localSettings.getQueryTypesByUri(nextUniqueQueryTitle);
                 
                 if(queriesForNextTitle.size() == 0)
                 {

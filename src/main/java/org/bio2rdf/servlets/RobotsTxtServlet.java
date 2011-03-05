@@ -14,7 +14,11 @@ import org.apache.log4j.Logger;
 
 public class RobotsTxtServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(RobotsTxtServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3224404845116318101L;
+	public static final Logger log = Logger.getLogger(RobotsTxtServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();

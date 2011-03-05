@@ -15,7 +15,11 @@ import org.apache.log4j.Logger;
 
 public class ManualRefreshServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(ManualRefreshServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8130327002164154880L;
+	public static final Logger log = Logger.getLogger(ManualRefreshServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();

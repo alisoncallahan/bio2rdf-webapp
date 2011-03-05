@@ -27,7 +27,12 @@ import org.apache.log4j.Logger;
 
 public class ConfigurationServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(ConfigurationServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3372992659745059491L;
+	
+	public static final Logger log = Logger.getLogger(ConfigurationServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
@@ -101,13 +106,13 @@ public class ConfigurationServlet extends HttpServlet
         
         int apiVersion = requestConfigurationQueryOptions.getApiVersion();
         
-        if(apiVersion > localSettings.CONFIG_API_VERSION)
+        if(apiVersion > Settings.CONFIG_API_VERSION)
         {
-            log.error("ConfigurationServlet: requested API version not supported by this server. apiVersion="+apiVersion+" localSettings.CONFIG_API_VERSION="+localSettings.CONFIG_API_VERSION);
+            log.error("ConfigurationServlet: requested API version not supported by this server. apiVersion="+apiVersion+" Settings.CONFIG_API_VERSION="+Settings.CONFIG_API_VERSION);
             
             response.setContentType("text/plain");
             response.setStatus(400);
-            out.write("Requested API version not supported by this server. Current supported version="+localSettings.CONFIG_API_VERSION);
+            out.write("Requested API version not supported by this server. Current supported version="+Settings.CONFIG_API_VERSION);
             out.flush();
             return;
         }
@@ -177,7 +182,7 @@ public class ConfigurationServlet extends HttpServlet
                     }
                 }
                 
-                Map<URI, QueryType> allQueries = localSettings.getAllCustomQueries();
+                Map<URI, QueryType> allQueries = localSettings.getAllQueryTypes();
                 
                 for(URI nextQueryKey : allQueries.keySet())
                 {

@@ -18,7 +18,11 @@ import org.openrdf.model.URI;
 
 public class ProfilesServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(ProfilesServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3461270431775779321L;
+	public static final Logger log = Logger.getLogger(ProfilesServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
@@ -39,7 +43,7 @@ public class ProfilesServlet extends HttpServlet
         
         Map<URI, Provider> allProviders = localSettings.getAllProviders();
         
-        Map<URI, QueryType> allCustomQueries = localSettings.getAllCustomQueries();
+        Map<URI, QueryType> allCustomQueries = localSettings.getAllQueryTypes();
         
         Map<URI, NormalisationRule> allRdfRules = localSettings.getAllNormalisationRules();
         

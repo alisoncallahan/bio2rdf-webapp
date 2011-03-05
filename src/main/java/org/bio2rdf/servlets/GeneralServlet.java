@@ -28,7 +28,12 @@ import org.queryall.blacklist.*;
 
 public class GeneralServlet extends HttpServlet 
 {
-    public static final Logger log = Logger.getLogger(GeneralServlet.class.getName());
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 997653377781136004L;
+	
+	public static final Logger log = Logger.getLogger(GeneralServlet.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
@@ -188,7 +193,7 @@ public class GeneralServlet extends HttpServlet
         /**** Setup completed... now to compile the query ****/
         
         // since we know we don't need to redirect now, we set a custom header indicating that the response is being served from this application
-        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent") + "/"+localSettings.VERSION);
+        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent") + "/"+Settings.VERSION);
         
         List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
         
@@ -258,7 +263,7 @@ public class GeneralServlet extends HttpServlet
                         +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.originalProvider.getKey().stringValue().toLowerCase())
                         +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
                         +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.queryEndpoint))
-                        , localSettings.CONFIG_API_VERSION);
+                        , Settings.CONFIG_API_VERSION);
                 }
                 
                 if(_TRACE)
@@ -327,7 +332,7 @@ public class GeneralServlet extends HttpServlet
                         log.debug("GeneralServlet: nextStaticQueryTypeForUnknown="+nextStaticQueryTypeForUnknown);
                     }
                     
-                    Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getCustomQueriesByUri(nextStaticQueryTypeForUnknown);
+                    Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getQueryTypesByUri(nextStaticQueryTypeForUnknown);
                     
                     // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                     for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
@@ -448,8 +453,8 @@ public class GeneralServlet extends HttpServlet
                             log.debug("GeneralServlet: nextStaticQueryTypeForUnknown="+nextStaticQueryTypeForUnknown);
                         }
                         
-                        Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getCustomQueriesByUri(nextStaticQueryTypeForUnknown);
-                        Collection<QueryType> relevantCustomQueries = localSettings.getCustomQueriesMatchingQueryString(queryString, includedProfiles);
+                        Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getQueryTypesByUri(nextStaticQueryTypeForUnknown);
+                        Collection<QueryType> relevantCustomQueries = localSettings.getQueryTypesMatchingQueryString(queryString, includedProfiles);
                         
                         // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                         for(QueryType closestMatchType : relevantCustomQueries)

@@ -18,7 +18,7 @@ public class ConfigurationQueryOptions
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
     
-    private Settings localSettings = Settings.getSettings();
+//    private Settings localSettings = Settings.getSettings();
 
     private boolean _adminPrefixMatch = false;
     private boolean _adminBasicWebappConfigurationMatch = false;
@@ -28,7 +28,7 @@ public class ConfigurationQueryOptions
     private boolean _hasExplicitFormat = false;
     private String _chosenFormat = "";
     private boolean _hasExplicitApiVersionValue = false;
-    private int _apiVersion = localSettings.CONFIG_API_VERSION;
+    private int _apiVersion = Settings.CONFIG_API_VERSION;
     private boolean _isPlainNamespaceAndIdentifier = false;
 
     private String parsedRequestString = "";
@@ -255,7 +255,7 @@ public class ConfigurationQueryOptions
 
             if(_apiVersion == 0)
             {
-                _apiVersion = localSettings.CONFIG_API_VERSION;
+                _apiVersion = Settings.CONFIG_API_VERSION;
             }
             else
             {
@@ -264,7 +264,7 @@ public class ConfigurationQueryOptions
         }
         catch(NumberFormatException nfe)
         {
-            _apiVersion = localSettings.CONFIG_API_VERSION;
+            _apiVersion = Settings.CONFIG_API_VERSION;
             log.error("ConfigurationQueryOptions: nfe", nfe);
         }
         

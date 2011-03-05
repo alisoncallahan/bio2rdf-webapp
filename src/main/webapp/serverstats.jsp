@@ -146,7 +146,7 @@ Collection<String> profileUrisVariable = new HashSet<String>();
 
 if(profileUrisParam != null && !profileUrisParam.trim().equals(""))
 {
-	profileUrisVariable = Utilities.listFromStringArray(profileUrisParam.split(","));
+	profileUrisVariable = RdfUtils.listFromStringArray(profileUrisParam.split(","));
 }
 
 String successfulproviderUrisParam = request.getParameter("successfulproviderUris");
@@ -155,7 +155,7 @@ Collection<String> successfulproviderUrisVariable = new HashSet<String>();
 
 if(successfulproviderUrisParam != null && !successfulproviderUrisParam.trim().equals(""))
 {
-	successfulproviderUrisVariable = Utilities.listFromStringArray(successfulproviderUrisParam.split(","));
+	successfulproviderUrisVariable = RdfUtils.listFromStringArray(successfulproviderUrisParam.split(","));
 
 }
 
@@ -165,7 +165,7 @@ Collection<String> errorproviderUrisVariable = new HashSet<String>();
 
 if(errorproviderUrisParam != null && !errorproviderUrisParam.trim().equals(""))
 {
-	errorproviderUrisVariable = Utilities.listFromStringArray(errorproviderUrisParam.split(","));
+	errorproviderUrisVariable = RdfUtils.listFromStringArray(errorproviderUrisParam.split(","));
 
 }
 
@@ -175,7 +175,7 @@ Collection<String> configLocationsVariable = new HashSet<String>();
 
 if(configLocationsParam != null && !configLocationsParam.trim().equals(""))
 {
-	configLocationsVariable = Utilities.listFromStringArray(configLocationsParam.split(","));
+	configLocationsVariable = RdfUtils.listFromStringArray(configLocationsParam.split(","));
 
 }
 
@@ -185,7 +185,7 @@ Collection<String> querytypeUrisVariable = new HashSet<String>();
 
 if(querytypeUrisParam != null && !querytypeUrisParam.trim().equals(""))
 {
-	querytypeUrisVariable = Utilities.listFromStringArray(querytypeUrisParam.split(","));
+	querytypeUrisVariable = RdfUtils.listFromStringArray(querytypeUrisParam.split(","));
 
 }
 
@@ -195,7 +195,7 @@ Collection<String> namespaceUrisVariable = new HashSet<String>();
 
 if(namespaceUrisParam != null && !namespaceUrisParam.trim().equals(""))
 {
-	namespaceUrisVariable = Utilities.listFromStringArray(namespaceUrisParam.split(","));
+	namespaceUrisVariable = RdfUtils.listFromStringArray(namespaceUrisParam.split(","));
 
 }
 

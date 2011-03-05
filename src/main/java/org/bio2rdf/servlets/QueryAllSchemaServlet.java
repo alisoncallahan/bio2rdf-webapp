@@ -165,7 +165,7 @@ public class QueryAllSchemaServlet extends HttpServlet
         // }
         
         // Start sending output before we fetch the rdf so the client doesn't decide to timeout or re-request
-        // version = Utilities.xmlEncodeString(version).replace("--","- -");
+        // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
         // 
         // if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
         // {
@@ -174,9 +174,9 @@ public class QueryAllSchemaServlet extends HttpServlet
             // 
             // if(log.isInfoEnabled())
             // {
-                // subversionId = Utilities.xmlEncodeString(subversionId).replace("--","- -");
+                // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
                 // out.write("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->\n");
-                // propertiesSubversionId = Utilities.xmlEncodeString(propertiesSubversionId).replace("--","- -");
+                // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
                 // out.write("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
             // }
         // }
@@ -369,7 +369,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             }
             else
             {
-                Utilities.toWriter(myRepository, stBuff, writerFormat);
+                RdfUtils.toWriter(myRepository, stBuff, writerFormat);
             }
             
             String actualRdfString = stBuff.toString();

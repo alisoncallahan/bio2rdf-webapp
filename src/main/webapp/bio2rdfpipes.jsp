@@ -226,7 +226,7 @@ try
     }
     else
     {
-        Utilities.toWriter(myRepository, cleanOutput, writerFormat);
+        RdfUtils.toWriter(myRepository, cleanOutput, writerFormat);
     }
     
     String actualRdfString = cleanOutput.toString();

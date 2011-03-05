@@ -51,7 +51,7 @@ public class ServerStatsServlet extends HttpServlet
             // SimpleDateFormat ISO8601UTC = 
             //   new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");	  
             // ISO8601UTC.setTimeZone(TimeZone.getTimeZone("UTC"));
-            String now = Utilities.ISO8601UTC().format(currentDate);
+            String now = RdfUtils.ISO8601UTC().format(currentDate);
         
         
         long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
@@ -144,7 +144,7 @@ public class ServerStatsServlet extends HttpServlet
             out.write("Total number of queries = " + nextTotalQueryNumbers+"<br />\n");
             out.write("Total query time = " + nextTotalQueryTime+"<br />\n");
             out.write("Average query length = " + nextTotalQueryTime/nextTotalQueryNumbers+"<br />\n");
-            out.write("Standard deviation = " + Utilities.getStandardDeviationFromLongs(nextQueryTimes)+" <br />\n");
+            out.write("Standard deviation = " + MathsUtils.getStandardDeviationFromLongs(nextQueryTimes)+" <br />\n");
             
             userSpecificQueryTimes.add(nextTotalQueryTime);
             overallQueryTime += nextTotalQueryTime;
@@ -156,8 +156,8 @@ public class ServerStatsServlet extends HttpServlet
             out.write("<br />Overall Total number of queries = " + overallQueryNumbers+"<br />\n");
             out.write("Overall Total query time = " + overallQueryTime+"<br />\n");
             out.write("Overall Average query length = " + overallQueryTime/overallQueryNumbers+"<br />\n");
-            out.write("Overall Standard deviation = " + Utilities.getStandardDeviationFromLongs(overallQueryTimes)+" <br />\n");
-            out.write("Overall requestor level Standard deviation = " + Utilities.getStandardDeviationFromLongs(userSpecificQueryTimes)+" <br />\n");
+            out.write("Overall Standard deviation = " + MathsUtils.getStandardDeviationFromLongs(overallQueryTimes)+" <br />\n");
+            out.write("Overall requestor level Standard deviation = " + MathsUtils.getStandardDeviationFromLongs(userSpecificQueryTimes)+" <br />\n");
         }
     
   }

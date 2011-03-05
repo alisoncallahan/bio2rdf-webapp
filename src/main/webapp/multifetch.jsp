@@ -274,7 +274,7 @@ Collection<String> currentNormalisedResultStrings = new HashSet<String>();
 Repository myRepository = new SailRepository(new MemoryStore());
 myRepository.initialize();
 
-Utilities.insertResultsIntoRepository(fetchController.getResults(), myRepository);
+RdfUtils.insertResultsIntoRepository(fetchController.getResults(), myRepository);
 
 
 response.setContentType(requestedContentType);
@@ -306,7 +306,7 @@ if(requestedContentType.equals("text/html"))
 }
 else
 {
-    Utilities.toWriter(myRepository, stBuff, writerFormat);
+    RdfUtils.toWriter(myRepository, stBuff, writerFormat);
 }
 
 String actualRdfString = stBuff.toString();

@@ -54,15 +54,15 @@ public class HtmlPageRenderer
         boolean nextpagelinkuseful = false;
         boolean previouspagelinkuseful = false;
         int previouspageoffset = pageoffset - 1;
-        // String discoLink = "http://www4.wiwiss.fu-berlin.de/rdf_browser/?browse_uri=" + Utilities.percentEncode(resolvedUri);
-        // String tabulatorLink = "http://dig.csail.mit.edu/2005/ajar/ajaw/tab.html?uri=" + Utilities.percentEncode(resolvedUri);
-        // String openLinkLink = "http://demo.openlinksw.com/rdfbrowser/?uri=" + Utilities.percentEncode(resolvedUri);
+        // String discoLink = "http://www4.wiwiss.fu-berlin.de/rdf_browser/?browse_uri=" + RdfUtils.percentEncode(resolvedUri);
+        // String tabulatorLink = "http://dig.csail.mit.edu/2005/ajar/ajaw/tab.html?uri=" + RdfUtils.percentEncode(resolvedUri);
+        // String openLinkLink = "http://demo.openlinksw.com/rdfbrowser/?uri=" + RdfUtils.percentEncode(resolvedUri);
         
         if(fetchController != null)
         {
             for(RdfFetcherQueryRunnable nextResult : fetchController.getResults())
             {
-                debugStrings.add("<!-- "+Utilities.xmlEncodeString(nextResult.resultDebugString).replace("--","- -") + "-->");
+                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.resultDebugString).replace("--","- -") + "-->");
             }
         }
         
@@ -123,11 +123,11 @@ public class HtmlPageRenderer
         {
             context.put("query_string", queryString);
             
-            if(Utilities.isPlainNamespaceAndIdentifier(queryString))
+            if(StringUtils.isPlainNamespaceAndIdentifier(queryString))
             {
                 is_plainnsid = true;
                 
-                List<String> namespaceAndIdentifier = Utilities.getNamespaceAndIdentifier(queryString);
+                List<String> namespaceAndIdentifier = StringUtils.getNamespaceAndIdentifier(queryString);
                 
                 if(namespaceAndIdentifier.size() == 2)
                 {
@@ -172,15 +172,15 @@ public class HtmlPageRenderer
         //Collection<Value> titles = new HashSet<Value>();
         //Collection<Value> comments = new HashSet<Value>();
         //Collection<Value> images = new HashSet<Value>();
-        Collection<Value> titles = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("titleProperties"));
-        Collection<Value> comments = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("commentProperties"));
-        Collection<Value> images = Utilities.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("imageProperties"));
+        Collection<Value> titles = RdfUtils.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("titleProperties"));
+        Collection<Value> comments = RdfUtils.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("commentProperties"));
+        Collection<Value> images = RdfUtils.getValuesFromRepositoryByPredicateUris(nextRepository, localSettings.getURICollectionPropertiesFromConfig("imageProperties"));
         
         String chosenTitle = "";
         
         while(chosenTitle.trim().equals("") && titles.size() > 0)
         {
-            chosenTitle = Utilities.getUTF8StringValueFromSesameValue(Utilities.chooseRandomItemFromCollection(titles));
+            chosenTitle = RdfUtils.getUTF8StringValueFromSesameValue(ListUtils.chooseRandomItemFromCollection(titles));
             
             if(chosenTitle.trim().equals(""))
             {
@@ -206,7 +206,7 @@ public class HtmlPageRenderer
         // If there are any matches, replace the input_NN's with the namespace and identifier known here and then show a link to the image in HTML
         //Collection<Provider> providersForThisNamespace = localSettings.getProvidersForQueryTypeForNamespaceUris(String customService, Collection<Collection<String>> namespaceUris, NamespaceEntry.)
         
-        List<Statement> allStatements = Utilities.getAllStatementsFromRepository(nextRepository);
+        List<Statement> allStatements = RdfUtils.getAllStatementsFromRepository(nextRepository);
         
         // TODO: go through the statements and check an internal label cache to see if there is an existing label available 
         // and if not schedule a thread to retrieve a label for the item so that for other uses it can be shown
@@ -218,7 +218,7 @@ public class HtmlPageRenderer
         context.put("statements", allStatements);
         
         context.put("xmlutil", new info.aduna.xml.XMLUtil());
-        context.put("bio2rdfutil", new org.queryall.helpers.Utilities());
+        context.put("bio2rdfutil", new org.queryall.helpers.RdfUtils());
         
         // our only way of guessing if other pages are available without doing an explicit count
         if(allStatements.size() >= localSettings.getIntPropertyFromConfig("pageoffsetIndividualQueryLimit"))

@@ -217,19 +217,19 @@ public class GeneralServlet extends HttpServlet
                 response.flushBuffer();
                 
                 // Start sending output before we fetch the rdf so the client doesn't decide to timeout or re-request
-                // version = Utilities.xmlEncodeString(version).replace("--","- -");
+                // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                 
                 if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->");
-                    // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
+                    // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                     
                     // if(_INFO)
                     // {
-                        // subversionId = Utilities.xmlEncodeString(subversionId).replace("--","- -");
+                        // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
                         // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->");
-                        // propertiesSubversionId = Utilities.xmlEncodeString(propertiesSubversionId).replace("--","- -");
+                        // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
                         // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->");
                     // }
                 }
@@ -237,7 +237,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
-                    // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
+                    // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                     // 
                     // if(_INFO)
                     // {
@@ -258,11 +258,11 @@ public class GeneralServlet extends HttpServlet
                     
                     nextScheduledQueryBundle.toRdf(
                         myRepository, 
-                        Utilities.createURI(Utilities.percentEncode(queryString)
+                        StringUtils.createURI(StringUtils.percentEncode(queryString)
                         +localSettings.getStringPropertyFromConfig("separator")+"pageoffset"+pageOffset
-                        +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.originalProvider.getKey().stringValue().toLowerCase())
-                        +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
-                        +localSettings.getStringPropertyFromConfig("separator")+Utilities.percentEncode(nextScheduledQueryBundle.queryEndpoint))
+                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.originalProvider.getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.queryEndpoint))
                         , Settings.CONFIG_API_VERSION);
                 }
                 
@@ -287,19 +287,19 @@ public class GeneralServlet extends HttpServlet
                 response.setStatus(responseCode);
                 response.flushBuffer();
                 
-                // version = Utilities.xmlEncodeString(version).replace("--","- -");
+                // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                 
                 if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
-                    // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
+                    // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                     
                     // if(_INFO)
                     // {
-                        // subversionId = Utilities.xmlEncodeString(subversionId).replace("--","- -");
+                        // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
                         // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->");
-                        // propertiesSubversionId = Utilities.xmlEncodeString(propertiesSubversionId).replace("--","- -");
+                        // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
                         // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
                     // }
                 }
@@ -307,7 +307,7 @@ public class GeneralServlet extends HttpServlet
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
-                    // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
+                    // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                     
                     // if(_INFO)
                     // {
@@ -351,7 +351,7 @@ public class GeneralServlet extends HttpServlet
                     
                     if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                     {
-                        debugStrings.add("<!-- Could not find anything at all to match at query level queryString="+Utilities.xmlEncodeString(queryString).replace("--","- -")+" -->");
+                        debugStrings.add("<!-- Could not find anything at all to match at query level queryString="+StringUtils.xmlEncodeString(queryString).replace("--","- -")+" -->");
                     }
                     else if(requestedContentType.equals("text/rdf+n3"))
                     {
@@ -412,19 +412,19 @@ public class GeneralServlet extends HttpServlet
                     response.setStatus(responseCode);
                     response.flushBuffer();
                     
-                    // version = Utilities.xmlEncodeString(version).replace("--","- -");
+                    // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                     
                     if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->");
-                        // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
+                        // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                         
                         // if(_INFO)
                         // {
-                            // subversionId = Utilities.xmlEncodeString(subversionId).replace("--","- -");
+                            // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
                             // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->");
-                            // propertiesSubversionId = Utilities.xmlEncodeString(propertiesSubversionId).replace("--","- -");
+                            // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
                             // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->");
                         // }
                     }
@@ -432,7 +432,7 @@ public class GeneralServlet extends HttpServlet
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
-                        // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
+                        // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                         
                         // if(_INFO)
                         // {
@@ -475,7 +475,7 @@ public class GeneralServlet extends HttpServlet
                         log.error("Could not find anything at all to match at querybundle level queryString="+queryString);
                         if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                         {
-                            debugStrings.add("<!-- Could not find anything at all to match at querybundle level queryString="+Utilities.xmlEncodeString(queryString).replace("--","- -")+" -->\n");
+                            debugStrings.add("<!-- Could not find anything at all to match at querybundle level queryString="+StringUtils.xmlEncodeString(queryString).replace("--","- -")+" -->\n");
                         }
                         else if(requestedContentType.equals("text/rdf+n3"))
                         {
@@ -488,19 +488,19 @@ public class GeneralServlet extends HttpServlet
                     response.setStatus(responseCode);
                     response.flushBuffer();
                     
-                    // version = Utilities.xmlEncodeString(version).replace("--","- -");
+                    // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                     
                     if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
-                        // debugStrings.add("<!-- active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
+                        // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                         
                         if(_INFO)
                         {
-                            // subversionId = Utilities.xmlEncodeString(subversionId).replace("--","- -");
+                            // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
                             // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->\n");
-                            // propertiesSubversionId = Utilities.xmlEncodeString(propertiesSubversionId).replace("--","- -");
+                            // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
                             // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
                             debugStrings.add("<!-- result units="+fetchController.getResults().size()+" -->\n");
                         }
@@ -509,7 +509,7 @@ public class GeneralServlet extends HttpServlet
                     {
                         // always print the version number out for debugging
                         // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
-                        // debugStrings.add("# active profiles="+Utilities.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
+                        // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                         
                         if(_INFO)
                         {
@@ -527,7 +527,7 @@ public class GeneralServlet extends HttpServlet
                             // only write out the debug strings to the document if we are at least at the info or debug levels
                             if(_INFO)
                             {
-                                debugStrings.add("<!-- "+Utilities.xmlEncodeString(nextResult.resultDebugString).replace("--","- -") + "-->");
+                                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.resultDebugString).replace("--","- -") + "-->");
                             }
                         }
                         else if(requestedContentType.equals("text/rdf+n3"))
@@ -545,7 +545,7 @@ public class GeneralServlet extends HttpServlet
                         Repository tempRepository = new SailRepository(new MemoryStore());
                         tempRepository.initialize();
                         
-                        Utilities.insertResultIntoRepository(nextResult, tempRepository);
+                        RdfUtils.insertResultIntoRepository(nextResult, tempRepository);
                         
                         tempRepository = (Repository)SparqlQueryCreator.normaliseByStage(
                             NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
@@ -558,11 +558,11 @@ public class GeneralServlet extends HttpServlet
                         
                         if(_DEBUG)
                         {
-                            log.debug("GeneralServlet: getAllStatementsFromRepository(tempRepository).size()="+Utilities.getAllStatementsFromRepository(tempRepository).size());
+                            log.debug("GeneralServlet: getAllStatementsFromRepository(tempRepository).size()="+RdfUtils.getAllStatementsFromRepository(tempRepository).size());
                             log.debug("GeneralServlet: tempRepositoryConnection.size()=" + tempRepositoryConnection.size());
                         }
                         
-                        Utilities.copyAllStatementsToRepository(myRepository, tempRepository);
+                        RdfUtils.copyAllStatementsToRepository(myRepository, tempRepository);
                     }
                     
                 }
@@ -640,7 +640,7 @@ public class GeneralServlet extends HttpServlet
             }
             else
             {
-                Utilities.toWriter(myRepository, cleanOutput, writerFormat);
+                RdfUtils.toWriter(myRepository, cleanOutput, writerFormat);
             }
             
             String actualRdfString = cleanOutput.toString();
@@ -907,7 +907,7 @@ public class GeneralServlet extends HttpServlet
                     // statisticsSumErrorQueries = sumErrorQueries;
                 // }
                 // 
-                // double stdevlatency = Utilities.getStandardDeviationFromLongs(nonErrorLatencyList);
+                // double stdevlatency = RdfUtils.getStandardDeviationFromLongs(nonErrorLatencyList);
                 // 
                 // double statisticsStdevLatency = 0.0;
                 // 
@@ -916,7 +916,7 @@ public class GeneralServlet extends HttpServlet
                     // statisticsStdevLatency = stdevlatency;
                 // }
                 // 
-                // double stdeverrorlatency = Utilities.getStandardDeviationFromLongs(errorLatencyList);
+                // double stdeverrorlatency = RdfUtils.getStandardDeviationFromLongs(errorLatencyList);
                 // 
                 // double statisticsStdevErrorLatency = 0.0;
                 // 
@@ -925,7 +925,7 @@ public class GeneralServlet extends HttpServlet
                     // statisticsStdevErrorLatency = stdeverrorlatency;
                 // }
                 // 
-                // String statisticsLastServerRestart = Utilities.ISO8601UTC().format(BlacklistController.lastServerStartupDate);
+                // String statisticsLastServerRestart = RdfUtils.ISO8601UTC().format(BlacklistController.lastServerStartupDate);
                 // 
                 // String statisticsServerSoftwareVersion = localSettings.getStringPropertyFromConfig("userAgent");
                 // 
@@ -944,7 +944,7 @@ public class GeneralServlet extends HttpServlet
                 // String key = localSettings.getDefaultHostAddress()
                         // +localSettings.DEFAULT_RDF_STATISTICS_NAMESPACE
                         // +localSettings.getStringPropertyFromConfig("separator")
-                        // +Utilities.percentEncode(keyToUse);
+                        // +RdfUtils.percentEncode(keyToUse);
                 // 
                 // if(_INFO)
                 // {

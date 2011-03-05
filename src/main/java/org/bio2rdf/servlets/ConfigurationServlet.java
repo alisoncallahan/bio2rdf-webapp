@@ -119,7 +119,7 @@ public class ConfigurationServlet extends HttpServlet
         
         Collection<String> debugStrings = new HashSet<String>();
         
-        String writerFormatString = Utilities.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType"), "application/rdf+xml");
+        String writerFormatString = RdfUtils.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType"), "application/rdf+xml");
         
         RDFFormat writerFormat = null;
         
@@ -142,7 +142,7 @@ public class ConfigurationServlet extends HttpServlet
         
         final String queryStringURI = localSettings.getDefaultHostAddress()+queryString;
         
-        if(Utilities.isPlainNamespaceAndIdentifier(queryString))
+        if(StringUtils.isPlainNamespaceAndIdentifier(queryString))
         {
             targetOnlyQueryString = true;
         }
@@ -169,7 +169,7 @@ public class ConfigurationServlet extends HttpServlet
                             if(!allProviders.get(nextProviderKey).toRdf(myRepository, nextProviderKey, apiVersion))
                             {
                                 log.error("ConfigurationServlet: Provider was not placed correctly in the rdf store key="+nextProviderKey);
-                                // out.write("<!-- "+Utilities.xmlEncodeString(allProviders.get(nextProviderKey).toString()).replace("--","- -")+" -->");
+                                // out.write("<!-- "+RdfUtils.xmlEncodeString(allProviders.get(nextProviderKey).toString()).replace("--","- -")+" -->");
                             }
                         }
                         catch(Exception ex)
@@ -177,7 +177,7 @@ public class ConfigurationServlet extends HttpServlet
                             log.error("ConfigurationServlet: Problem generating Provider RDF with key: "+nextProviderKey+" type="+ex.getClass().getName());
                             log.error(ex.getMessage());
                             // out.write("Problem generating Provider RDF with key: "+nextProviderKey+"<br />\n");
-                            // out.write(Utilities.xmlEncodeString(allProviders.get(nextProviderKey).toString()));
+                            // out.write(RdfUtils.xmlEncodeString(allProviders.get(nextProviderKey).toString()));
                         }
                     }
                 }
@@ -193,7 +193,7 @@ public class ConfigurationServlet extends HttpServlet
                             if(!allQueries.get(nextQueryKey).toRdf(myRepository, nextQueryKey, apiVersion))
                             {
                                 log.error("ConfigurationServlet: Custom Query was not placed correctly in the rdf store key="+nextQueryKey);
-                                // out.write(Utilities.xmlEncodeString(allQueries.get(nextQueryKey).toString()));
+                                // out.write(RdfUtils.xmlEncodeString(allQueries.get(nextQueryKey).toString()));
                             }
                         }
                         catch(Exception ex)
@@ -201,7 +201,7 @@ public class ConfigurationServlet extends HttpServlet
                             log.error("ConfigurationServlet: Problem generating Query RDF with key: "+nextQueryKey+" type="+ex.getClass().getName());
                             log.error(ex.getMessage());
                             // out.write("Problem generating Query RDF with key: "+nextQueryKey+"<br />\n");
-                            // out.write(Utilities.xmlEncodeString(allQueries.get(nextQueryKey).toString()));
+                            // out.write(RdfUtils.xmlEncodeString(allQueries.get(nextQueryKey).toString()));
                         }
                     }
                 }
@@ -245,7 +245,7 @@ public class ConfigurationServlet extends HttpServlet
                             log.error("ConfigurationServlet: Problem generating Rdf Rule RDF with key: "+nextNormalisationRuleKey+" type="+ex.getClass().getName());
                             log.error(ex.getMessage());
                             // out.write("Problem generating Rdf Rule RDF with key: "+nextNormalisationRuleKey+"<br />\n");
-                            // out.write(Utilities.xmlEncodeString(allNormalisationRules.get(nextNormalisationRuleKey).toString()));
+                            // out.write(RdfUtils.xmlEncodeString(allNormalisationRules.get(nextNormalisationRuleKey).toString()));
                         }
                     }
                 }
@@ -305,7 +305,7 @@ public class ConfigurationServlet extends HttpServlet
                             if(!allProfiles.get(nextProfileKey).toRdf(myRepository, allProfiles.get(nextProfileKey).getKey(), apiVersion))
                             {
                                 log.error("ConfigurationServlet: Profile was not placed correctly in the rdf store key="+nextProfileKey);
-                                // out.write(Utilities.xmlEncodeString(allNormalisationRules.get(nextNormalisationRuleKey).toString()));
+                                // out.write(RdfUtils.xmlEncodeString(allNormalisationRules.get(nextNormalisationRuleKey).toString()));
                             }
                         }
                         catch(Exception ex)
@@ -313,7 +313,7 @@ public class ConfigurationServlet extends HttpServlet
                             log.error("ConfigurationServlet: Problem generating Profile RDF with key: "+nextProfileKey+" type="+ex.getClass().getName());
                             log.error(ex.getMessage());
                             // out.write("Problem generating Rdf Rule RDF with key: "+nextNormalisationRuleKey+"<br />\n");
-                            // out.write(Utilities.xmlEncodeString(allNormalisationRules.get(nextNormalisationRuleKey).toString()));
+                            // out.write(RdfUtils.xmlEncodeString(allNormalisationRules.get(nextNormalisationRuleKey).toString()));
                         }
                     }
                 }
@@ -460,7 +460,7 @@ public class ConfigurationServlet extends HttpServlet
             }
             else
             {
-                Utilities.toWriter(myRepository, stBuff, writerFormat);
+                RdfUtils.toWriter(myRepository, stBuff, writerFormat);
             }
         
         }

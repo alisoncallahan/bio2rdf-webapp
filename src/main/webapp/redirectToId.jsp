@@ -61,13 +61,13 @@ String redirectPoint = "";
 if(querytype != null && querytype.equals("search"))
 {
     String searchterm = request.getParameter("searchterm");
-    redirectPoint = contextPath+"search/"+Utilities.percentEncode(searchterm);
+    redirectPoint = contextPath+"search/"+RdfUtils.percentEncode(searchterm);
 }
 else if(querytype != null && querytype.equals("linksns"))
 {
     String linksns = request.getParameter("linksns");
     String nsid = request.getParameter("nsid");
-    redirectPoint = contextPath+"linksns/"+Utilities.percentEncode(linksns)+"/"+nsid;
+    redirectPoint = contextPath+"linksns/"+RdfUtils.percentEncode(linksns)+"/"+nsid;
 }
 else
 {

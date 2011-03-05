@@ -1,7 +1,8 @@
 package org.bio2rdf.servlets.queryparsers;
 
 import org.queryall.helpers.Settings;
-import org.queryall.helpers.Utilities;
+import org.queryall.helpers.StringUtils;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -73,7 +74,7 @@ public class ConfigurationQueryOptions
         {
             requestString = parseForNsIdFormat(requestString);
             
-            if(Utilities.isPlainNamespaceAndIdentifier(requestString))
+            if(StringUtils.isPlainNamespaceAndIdentifier(requestString))
             {
                 _isPlainNamespaceAndIdentifier = true;
             }

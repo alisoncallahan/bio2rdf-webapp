@@ -74,7 +74,7 @@ public class NamespaceProvidersServlet extends HttpServlet
         {
             Provider nextProvider = allProviders.get(nextKey);
             
-            for(URI nextQueryKey : nextProvider.getIncludedInCustomQueries())
+            for(URI nextQueryKey : nextProvider.getIncludedInQueryTypes())
             {
                 if(!providersByQueryKey.containsKey(nextQueryKey))
                 {
@@ -106,7 +106,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                     
                     for(Provider nextNamespaceProvider : namespaceProviders)
                     {
-                        for(URI nextQueryKey : nextNamespaceProvider.getIncludedInCustomQueries())
+                        for(URI nextQueryKey : nextNamespaceProvider.getIncludedInQueryTypes())
                         {
                             if(!allQueryTypesByNamespace.containsKey(nextQueryKey.stringValue() + " " + nextNamespace.stringValue()))
                             {
@@ -161,7 +161,7 @@ public class NamespaceProvidersServlet extends HttpServlet
             
             for(Provider nextProviderForNextNamespace : providersForNextNamespace)
             {
-                for(URI nextIncludedQuery : nextProviderForNextNamespace.getIncludedInCustomQueries())
+                for(URI nextIncludedQuery : nextProviderForNextNamespace.getIncludedInQueryTypes())
                 {
                     if(!implementedQueriesForNextNamespace.contains(nextIncludedQuery))
                     {

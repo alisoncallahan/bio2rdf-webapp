@@ -337,7 +337,7 @@ public class GeneralServlet extends HttpServlet
                     // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                     for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                     {
-                        String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles) + "\n";
+                        String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions") , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules")) + "\n";
                         
                         nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
                         
@@ -461,7 +461,7 @@ public class GeneralServlet extends HttpServlet
                         {
                             for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                             {
-                                String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles) + "\n";
+                                String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions") , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules")) + "\n";
                                 
                                 nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
                                 
@@ -552,7 +552,7 @@ public class GeneralServlet extends HttpServlet
                             tempRepository, 
                             localSettings.getSortedRulesForProvider(nextResult.originalQueryBundle.getProvider(), 
                                 Constants.HIGHEST_ORDER_FIRST ), 
-                            includedProfiles );
+                            includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
                         
                         RepositoryConnection tempRepositoryConnection = tempRepository.getConnection();
                         
@@ -611,7 +611,7 @@ public class GeneralServlet extends HttpServlet
                 myRepository, 
                 localSettings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
                     Constants.HIGHEST_ORDER_FIRST ), 
-                includedProfiles );
+                includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
             
             
             java.io.StringWriter cleanOutput = new java.io.StringWriter();

@@ -78,7 +78,7 @@ public class ProfilesServlet extends HttpServlet
         
         for(Provider nextProvider : allProviders.values())
         {
-            if(Settings.isProviderUsedWithProfileList(nextProvider.getKey(), nextProvider.getProfileIncludeExcludeOrder(), enabledProfiles))
+            if(nextProvider.isProviderUsedWithProfileList(enabledProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitProviderInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedProviders")))
             {
                 // included for this profile...
                 //out.write("Provider included: "+nextProvider.getKey()+"<br />\n");
@@ -93,7 +93,7 @@ public class ProfilesServlet extends HttpServlet
         
         for(QueryType nextQuery : allCustomQueries.values())
         {
-            if(Settings.isQueryUsedWithProfileList(nextQuery.getKey(), nextQuery.getProfileIncludeExcludeOrder(), enabledProfiles))
+            if(nextQuery.isQueryUsedWithProfileList(enabledProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitQueryInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedQueries")))
             {
                 // included for this profile...
                 //out.write("Query included: "+nextQuery.getKey()+"<br />\n");
@@ -108,7 +108,7 @@ public class ProfilesServlet extends HttpServlet
         
         for(NormalisationRule nextRdfRule : allRdfRules.values())
         {
-            if(Settings.isRdfRuleUsedWithProfileList(nextRdfRule.getKey(), nextRdfRule.getProfileIncludeExcludeOrder(), enabledProfiles))
+            if(nextRdfRule.isRdfRuleUsedWithProfileList(enabledProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules")))
             {
                 // included for this profile...
                 //out.write("Rdfrule included: "+nextRdfrule.getKey()+"<br />\n");
@@ -197,7 +197,7 @@ public class ProfilesServlet extends HttpServlet
             
             for(Provider nextProvider : allProviders.values())
             {
-                if(Settings.isProviderUsedWithProfileList(nextProvider.getKey(), nextProvider.getProfileIncludeExcludeOrder(), nextProfileAsList))
+                if(nextProvider.isProviderUsedWithProfileList(nextProfileAsList, localSettings.getBooleanPropertyFromConfig("recogniseImplicitProviderInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedProviders")))
                 {
                     // included for this profile...
                     //out.write("Provider included: "+nextProvider.getKey()+"<br />\n");
@@ -212,7 +212,7 @@ public class ProfilesServlet extends HttpServlet
             
             for(QueryType nextQuery : allCustomQueries.values())
             {
-                if(Settings.isQueryUsedWithProfileList(nextQuery.getKey(), nextQuery.getProfileIncludeExcludeOrder(), nextProfileAsList))
+                if(nextQuery.isQueryUsedWithProfileList(nextProfileAsList, localSettings.getBooleanPropertyFromConfig("recogniseImplicitQueryInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedQueries")))
                 {
                     // included for this profile...
                     //out.write("Query included: "+nextQuery.getKey()+"<br />\n");
@@ -227,7 +227,7 @@ public class ProfilesServlet extends HttpServlet
             
             for(NormalisationRule nextRdfRule : allRdfRules.values())
             {
-                if(Settings.isRdfRuleUsedWithProfileList(nextRdfRule.getKey(), nextRdfRule.getProfileIncludeExcludeOrder(), nextProfileAsList))
+                if(nextRdfRule.isRdfRuleUsedWithProfileList(nextProfileAsList, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules")))
                 {
                     // included for this profile...
                     //out.write("RdfRule included: "+nextRdfRule.getKey()+"<br />\n");

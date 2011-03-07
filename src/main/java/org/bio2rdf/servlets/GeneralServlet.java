@@ -197,7 +197,7 @@ public class GeneralServlet extends HttpServlet
         
         List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Constants.LOWEST_ORDER_FIRST);
         
-        RdfFetchController fetchController = new RdfFetchController(queryString, includedProfiles, useDefaultProviders, realHostName, pageOffset, requestedContentType);
+        RdfFetchController fetchController = new RdfFetchController(localSettings, queryString, includedProfiles, useDefaultProviders, realHostName, pageOffset, requestedContentType);
         
         Collection<QueryBundle> multiProviderQueryBundles = fetchController.getQueryBundles();
         

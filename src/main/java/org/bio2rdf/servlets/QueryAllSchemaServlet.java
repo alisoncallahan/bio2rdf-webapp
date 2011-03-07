@@ -77,7 +77,7 @@ public class QueryAllSchemaServlet extends HttpServlet
         
 		int apiVersion = Settings.CONFIG_API_VERSION;
         
-        if(versionParameter != null && !versionParameter.equals("") && !Settings.CURRENT.equals(versionParameter))
+        if(versionParameter != null && !versionParameter.equals("") && !Constants.CURRENT.equals(versionParameter))
         {
             try
             {

@@ -195,7 +195,7 @@ public class GeneralServlet extends HttpServlet
         // since we know we don't need to redirect now, we set a custom header indicating that the response is being served from this application
         response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent") + "/"+Settings.VERSION);
         
-        List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
+        List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Constants.LOWEST_ORDER_FIRST);
         
         RdfFetchController fetchController = new RdfFetchController(queryString, includedProfiles, useDefaultProviders, realHostName, pageOffset, requestedContentType);
         
@@ -551,7 +551,7 @@ public class GeneralServlet extends HttpServlet
                             NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
                             tempRepository, 
                             localSettings.getSortedRulesForProvider(nextResult.originalQueryBundle.getProvider(), 
-                                Settings.HIGHEST_ORDER_FIRST ), 
+                                Constants.HIGHEST_ORDER_FIRST ), 
                             includedProfiles );
                         
                         RepositoryConnection tempRepositoryConnection = tempRepository.getConnection();
@@ -610,7 +610,7 @@ public class GeneralServlet extends HttpServlet
                 NormalisationRuleImpl.getRdfruleStageAfterResultsToPool(),
                 myRepository, 
                 localSettings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
-                    Settings.HIGHEST_ORDER_FIRST ), 
+                    Constants.HIGHEST_ORDER_FIRST ), 
                 includedProfiles );
             
             

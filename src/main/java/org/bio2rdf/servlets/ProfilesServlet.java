@@ -49,7 +49,7 @@ public class ProfilesServlet extends HttpServlet
         
         Map<URI, Profile> allProfiles = localSettings.getAllProfiles();
         
-        List<Profile> enabledProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Settings.LOWEST_ORDER_FIRST);
+        List<Profile> enabledProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Constants.LOWEST_ORDER_FIRST);
         
         out.write("<br />Number of queries = " + allCustomQueries.size()+"<br />\n");
         out.write("<br />Number of providers = " + allProviders.size()+"<br />\n");

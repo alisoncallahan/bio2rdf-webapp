@@ -157,9 +157,9 @@ public class HtmlPageRenderer
         {
             for(QueryBundle nextQueryBundle : fetchController.getQueryBundles())
             {
-                if(!endpointsList.contains(nextQueryBundle.queryEndpoint))
+                if(!endpointsList.contains(nextQueryBundle.getQueryEndpoint()))
                 {
-                    endpointsList.add(nextQueryBundle.queryEndpoint);
+                    endpointsList.add(nextQueryBundle.getQueryEndpoint());
                 }
             }
         }

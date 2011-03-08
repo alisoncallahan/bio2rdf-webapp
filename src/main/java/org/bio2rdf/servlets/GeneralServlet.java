@@ -260,9 +260,9 @@ public class GeneralServlet extends HttpServlet
                         myRepository, 
                         StringUtils.createURI(StringUtils.percentEncode(queryString)
                         +localSettings.getStringPropertyFromConfig("separator")+"pageoffset"+pageOffset
-                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.originalProvider.getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getOriginalProvider().getKey().stringValue().toLowerCase())
                         +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
-                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.queryEndpoint))
+                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryEndpoint()))
                         , Settings.CONFIG_API_VERSION);
                 }
                 
@@ -389,7 +389,7 @@ public class GeneralServlet extends HttpServlet
                         && nextScheduledQueryBundle.getProvider().needsRedirect()
                     )
                     {
-                        response.sendRedirect(nextScheduledQueryBundle.queryEndpoint);
+                        response.sendRedirect(nextScheduledQueryBundle.getQueryEndpoint());
                         
                         return;
                     }
@@ -569,7 +569,7 @@ public class GeneralServlet extends HttpServlet
                 
                 for(QueryBundle nextPotentialQueryBundle : multiProviderQueryBundles)
                 {
-                    String nextStaticString = nextPotentialQueryBundle.staticRdfXmlString;
+                    String nextStaticString = nextPotentialQueryBundle.getStaticRdfXmlString();
                     
                     if(_TRACE)
                     {

@@ -247,9 +247,9 @@ public class GeneralServlet extends HttpServlet
                     // }
                 }
                 
-                if(_TRACE)
+                if(_DEBUG)
                 {
-                    log.trace("GeneralServlet: Found pretend query");
+                    log.debug("GeneralServlet: Found pretend query");
                 }
                 
                 for(QueryBundle nextScheduledQueryBundle : multiProviderQueryBundles)
@@ -273,9 +273,9 @@ public class GeneralServlet extends HttpServlet
             } // end isPretendQuery
             else if(!fetchController.queryKnown())
             {
-                if(_TRACE)
+                if(_DEBUG)
                 {
-                    log.trace("GeneralServlet: starting !fetchController.queryKnown() section");
+                    log.debug("GeneralServlet: starting !fetchController.queryKnown() section");
                 }
                 
                 
@@ -289,8 +289,8 @@ public class GeneralServlet extends HttpServlet
                 
                 // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                 
-                if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
-                {
+//                if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
+//                {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
                     // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
@@ -302,9 +302,9 @@ public class GeneralServlet extends HttpServlet
                         // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
                         // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
                     // }
-                }
-                else if(requestedContentType.equals("text/rdf+n3"))
-                {
+//                }
+//                else if(requestedContentType.equals("text/rdf+n3"))
+//                {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
                     // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
@@ -315,7 +315,7 @@ public class GeneralServlet extends HttpServlet
                         // 
                         // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")");
                     // }
-                }
+//                }
                 
                 Collection<String> currentStaticStrings = new HashSet<String>();
                 
@@ -378,7 +378,7 @@ public class GeneralServlet extends HttpServlet
                     log.trace("GeneralServlet: ending !fetchController.queryKnown() section");
                 }
             }
-            else // !fetchController.queryKnown
+            else // fetchController.queryKnown
             {
                 // for now we redirect if we find any in the set that have redirect enabled as HTTP GET URL's, otherwise fall through to the POST SPARQL RDF/XML and GET URL fetching
                 for(QueryBundle nextScheduledQueryBundle : multiProviderQueryBundles)
@@ -611,7 +611,9 @@ public class GeneralServlet extends HttpServlet
                 myRepository, 
                 localSettings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
                     Constants.HIGHEST_ORDER_FIRST ), 
-                includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
+                includedProfiles, 
+                localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), 
+                localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
             
             
             java.io.StringWriter cleanOutput = new java.io.StringWriter();
@@ -623,6 +625,7 @@ public class GeneralServlet extends HttpServlet
                 if(_DEBUG)
                 {
                     log.debug("GeneralServlet: about to call html rendering method");
+                    log.debug("GeneralServlet: fetchController.queryKnown()="+fetchController.queryKnown());
                 }
                 
                 try

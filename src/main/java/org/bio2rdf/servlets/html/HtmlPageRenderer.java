@@ -46,7 +46,7 @@ public class HtmlPageRenderer
     
     public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, RdfFetchController fetchController, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset) throws OpenRDFException
     {
-        renderHtml(servletContext, nextRepository, nextWriter, null, debugStrings, queryString, resolvedUri, realHostName, contextPath, pageoffset, Settings.getSettings());
+        renderHtml(servletContext, nextRepository, nextWriter, fetchController, debugStrings, queryString, resolvedUri, realHostName, contextPath, pageoffset, Settings.getSettings());
     }
     
 	public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, RdfFetchController fetchController, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset, Settings localSettings) throws OpenRDFException
@@ -303,13 +303,23 @@ public class HtmlPageRenderer
         
         try
         {
-            if(fetchController != null && !fetchController.queryKnown())
+            if(fetchController == null || fetchController.queryKnown())
             {
-                template.renderXHTML("error.vm", nextWriter);
+                if(_DEBUG)
+                {
+                    log.debug("HtmlPageRenderer.renderHtml: fetchController.queryKnown(), using page.vm template");
+                }
+                
+                template.renderXHTML("page.vm", nextWriter);
             }
             else
             {
-                template.renderXHTML("page.vm", nextWriter);
+                if(_DEBUG)
+                {
+                    log.debug("HtmlPageRenderer.renderHtml: !fetchController.queryKnown(), using error.vm template");
+                }
+    
+                template.renderXHTML("error.vm", nextWriter);
             }
         }
         catch(Exception ex)

@@ -985,9 +985,9 @@ public class GeneralServlet extends HttpServlet
                 // BlacklistController.persistStatistics(statisticsEntryList, localSettings.getSettings().CONFIG_API_VERSION);
             // }
             
-            if(_DEBUG)
+            if(_INFO)
             {
-                log.debug("GeneralServlet: finished returning information to client requesterIpAddress="+requesterIpAddress+" queryString="+queryString + " pageOffset="+pageOffset+" totalTime="+nextTotalTime);
+                log.info("GeneralServlet: finished returning information to client requesterIpAddress="+requesterIpAddress+" queryString="+queryString + " pageOffset="+pageOffset+" totalTime="+nextTotalTime);
             }    
         }
         catch(OpenRDFException ordfe)

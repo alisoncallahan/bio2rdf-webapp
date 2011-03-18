@@ -1,11 +1,13 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" version="XHTML+RDFa 1.0">
   <head>
 #set ($xmlEncoded_server_base = $server_base)
 #set ($xmlEncoded_project_name = $project_name)
 #set ($xmlEncoded_project_link = $project_link)
 
     <title>Error</title>
-    <link rel="stylesheet" type="text/css" href="${xmlEncoded_server_base}includes-css/html_page_styles.css" />
-    <script type="text/javascript" src="${xmlEncoded_server_base}includes-scripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="${xmlEncoded_server_base}static/includes-css/html_page_styles.css" />
+    <script type="text/javascript" src="${xmlEncoded_server_base}static/includes-scripts/script.js"></script>
   </head>
   <body>
   <body onload="init();">

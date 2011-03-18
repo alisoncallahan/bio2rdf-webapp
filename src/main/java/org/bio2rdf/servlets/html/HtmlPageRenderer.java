@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
  * A servlet for serving the HTML page describing a resource.
  * Invokes a Velocity template.
  * 
- * Originally created for Pubby by...
+ * Originally created for Pubby using Jena by...
  * @author Richard Cyganiak (richard@cyganiak.de)
  * Ported to Sesame for Bio2RDF by...
  * @author Peter Ansell (p_ansell@yahoo.com)
@@ -34,7 +34,6 @@ public class HtmlPageRenderer
 {
     private static final Logger log = Logger.getLogger(HtmlPageRenderer.class.getName());
     private static final boolean _TRACE = log.isTraceEnabled();
-    @SuppressWarnings("unused")
 	private static final boolean _DEBUG = log.isDebugEnabled();
     @SuppressWarnings("unused")
 	private static final boolean _INFO = log.isInfoEnabled();
@@ -62,7 +61,7 @@ public class HtmlPageRenderer
         {
             for(RdfFetcherQueryRunnable nextResult : fetchController.getResults())
             {
-                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.resultDebugString).replace("--","- -") + "-->");
+                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.getResultDebugString()).replace("--","- -") + "-->");
             }
         }
         

@@ -527,20 +527,20 @@ public class GeneralServlet extends HttpServlet
                             // only write out the debug strings to the document if we are at least at the info or debug levels
                             if(_INFO)
                             {
-                                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.resultDebugString).replace("--","- -") + "-->");
+                                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.getResultDebugString()).replace("--","- -") + "-->");
                             }
                         }
                         else if(requestedContentType.equals("text/rdf+n3"))
                         {
                             if(_INFO)
                             {
-                                debugStrings.add("# "+ nextResult.resultDebugString.replace("\n","").replace("\r","") +")");
+                                debugStrings.add("# "+ nextResult.getResultDebugString().replace("\n","").replace("\r","") +")");
                             }
                         }
                         
                         if(_TRACE)
                         {
-                            log.trace("GeneralServlet: normalised result string : " + nextResult.normalisedResult);
+                            log.trace("GeneralServlet: normalised result string : " + nextResult.getNormalisedResult());
                         }
                         Repository tempRepository = new SailRepository(new MemoryStore());
                         tempRepository.initialize();
@@ -550,7 +550,7 @@ public class GeneralServlet extends HttpServlet
                         tempRepository = (Repository)SparqlQueryCreator.normaliseByStage(
                             NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
                             tempRepository, 
-                            localSettings.getSortedRulesForProvider(nextResult.originalQueryBundle.getProvider(), 
+                            localSettings.getSortedRulesForProvider(nextResult.getOriginalQueryBundle().getProvider(), 
                                 Constants.HIGHEST_ORDER_FIRST ), 
                             includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
                         
@@ -630,7 +630,7 @@ public class GeneralServlet extends HttpServlet
                 
                 try
                 {
-                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, fetchController, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), pageOffset);
+                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, fetchController, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), pageOffset, localSettings);
                 }
                 catch(OpenRDFException ordfe)
                 {

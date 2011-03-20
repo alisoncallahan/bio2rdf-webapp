@@ -75,14 +75,14 @@ public class HtmlPageRenderer
             contextPath = contextPath.substring(1)+"/";
         }
         
-        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestContext"))
+        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestContext", true))
         {
-            contextPath = localSettings.getStringPropertyFromConfig("hardcodedRequestContext");
+            contextPath = localSettings.getStringPropertyFromConfig("hardcodedRequestContext", "");
         }
         
-        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestHostname"))
+        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestHostname", true))
         {
-            realHostName = localSettings.getStringPropertyFromConfig("hardcodedRequestHostname");
+            realHostName = localSettings.getStringPropertyFromConfig("hardcodedRequestHostname", "");
         }
         
         if(_TRACE)
@@ -107,13 +107,13 @@ public class HtmlPageRenderer
         context.put("debug_level_trace", GeneralServlet._TRACE);
         
         
-        context.put("project_name", localSettings.getStringPropertyFromConfig("projectName"));
-        context.put("project_base_url", localSettings.getStringPropertyFromConfig("projectHomeUrl"));
-        context.put("project_html_url_prefix", localSettings.getStringPropertyFromConfig("htmlUrlPrefix"));
-        context.put("project_html_url_suffix", localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
-        context.put("project_link", localSettings.getStringPropertyFromConfig("projectHomeUrl"));
-        context.put("application_name", localSettings.getStringPropertyFromConfig("userAgent")+ "/"+Settings.VERSION);
-        context.put("application_help", localSettings.getStringPropertyFromConfig("applicationHelpUrl"));
+        context.put("project_name", localSettings.getStringPropertyFromConfig("projectName", ""));
+        context.put("project_base_url", localSettings.getStringPropertyFromConfig("projectHomeUrl", ""));
+        context.put("project_html_url_prefix", localSettings.getStringPropertyFromConfig("htmlUrlPrefix", ""));
+        context.put("project_html_url_suffix", localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
+        context.put("project_link", localSettings.getStringPropertyFromConfig("projectHomeUrl", ""));
+        context.put("application_name", localSettings.getStringPropertyFromConfig("userAgent", "")+ "/"+Settings.VERSION);
+        context.put("application_help", localSettings.getStringPropertyFromConfig("applicationHelpUrl", ""));
         context.put("uri", resolvedUri);
         
         boolean is_plainnsid = false;
@@ -144,9 +144,9 @@ public class HtmlPageRenderer
         context.put("real_hostname", realHostName);
         context.put("context_path", contextPath);
         context.put("server_base", realHostName+contextPath);
-        context.put("rdfxml_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix")+queryString+localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix"));
-        context.put("rdfn3_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("n3UrlPrefix")+queryString+localSettings.getStringPropertyFromConfig("n3UrlSuffix"));
-        context.put("html_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("htmlUrlPrefix")+queryString+localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
+        context.put("rdfxml_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", ""));
+        context.put("rdfn3_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("n3UrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("n3UrlSuffix", ""));
+        context.put("html_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
         // context.put("disco_link", discoLink);
         // context.put("tabulator_link", tabulatorLink);
         // context.put("openlink_link", openLinkLink);
@@ -189,7 +189,7 @@ public class HtmlPageRenderer
         
         if(chosenTitle.trim().equals(""))
         {
-            context.put("title", localSettings.getStringPropertyFromConfig("blankTitle"));
+            context.put("title", localSettings.getStringPropertyFromConfig("blankTitle", ""));
         }
         else
         {
@@ -220,7 +220,7 @@ public class HtmlPageRenderer
         context.put("bio2rdfutil", new org.queryall.helpers.RdfUtils());
         
         // our only way of guessing if other pages are available without doing an explicit count
-        if(allStatements.size() >= localSettings.getIntPropertyFromConfig("pageoffsetIndividualQueryLimit"))
+        if(allStatements.size() >= localSettings.getIntPropertyFromConfig("pageoffsetIndividualQueryLimit", 0))
         {
             nextpagelinkuseful = true;
         }
@@ -240,15 +240,15 @@ public class HtmlPageRenderer
         }
         
         // To prevent infinite or extended requests, we have a maximum value that we can go up to
-        if(pageoffset > localSettings.getIntPropertyFromConfig("pageoffsetMaxValue"))
+        if(pageoffset > localSettings.getIntPropertyFromConfig("pageoffsetMaxValue", 0))
         {
             // setup the pageoffset value so it artificially points to the limit so that non-conforming robots that don't follow robots.txt don't accidentally run into issues when people play around with links to very high page offsets
-            previouspageoffset = localSettings.getIntPropertyFromConfig("pageoffsetMaxValue");
+            previouspageoffset = localSettings.getIntPropertyFromConfig("pageoffsetMaxValue", 0);
             nextpagelinkuseful = false;
         }
         
         // If configured to only show pageoffset for plain nsid's as opposed to the other queries then decide here whether to show it
-        if(localSettings.getBooleanPropertyFromConfig("pageoffsetOnlyShowForNsId") && !is_plainnsid)
+        if(localSettings.getBooleanPropertyFromConfig("pageoffsetOnlyShowForNsId", true) && !is_plainnsid)
         {
             nextpagelinkuseful = false;
         }
@@ -257,13 +257,13 @@ public class HtmlPageRenderer
         {
             context.put("nextpagelink", realHostName
                 +contextPath
-                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix")
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix")
+                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "")
                 +(pageoffset+1)
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "")
                 +queryString
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix")
-                +localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "")
+                +localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
             context.put("nextpagelabel", (pageoffset+1));
         }
         
@@ -271,13 +271,13 @@ public class HtmlPageRenderer
         {
             context.put("previouspagelink", realHostName
                 +contextPath
-                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix")
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix")
+                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "")
                 +(previouspageoffset)
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "")
                 +queryString
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix")
-                +localSettings.getStringPropertyFromConfig("htmlUrlSuffix"));
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "")
+                +localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
             context.put("previouspagelabel", previouspageoffset);
         }
         

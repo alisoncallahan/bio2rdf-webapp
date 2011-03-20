@@ -119,24 +119,24 @@ public class QueryAllSchemaServlet extends HttpServlet
         
         if(writerFormat == null)
         {
-            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
+            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML));
             
             if(writerFormat == null)
             {
                 writerFormat = RDFFormat.RDFXML;
                 
-                if(!requestedContentType.equals("text/html"))
+                if(!requestedContentType.equals(Constants.TEXT_HTML))
                 {
-                    requestedContentType = "application/rdf+xml";
+                    requestedContentType = Constants.APPLICATION_RDF_XML;
                     
                     log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
                 }
             }
-            else if(!requestedContentType.equals("text/html"))
+            else if(!requestedContentType.equals(Constants.TEXT_HTML))
             {
-                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
+                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML);
                 
-                log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
+                log.error("QueryAllSchemaServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType", ""));
             }
         }
         
@@ -340,7 +340,7 @@ public class QueryAllSchemaServlet extends HttpServlet
             
             java.io.StringWriter stBuff = new java.io.StringWriter();
             
-            if(requestedContentType.equals("text/html"))
+            if(requestedContentType.equals(Constants.TEXT_HTML))
             {
                 // if(myRepositoryConnection != null)
                     // myRepositoryConnection.close();
@@ -379,7 +379,7 @@ public class QueryAllSchemaServlet extends HttpServlet
                 log.trace("QueryAllSchemaServlet: actualRdfString="+actualRdfString);
             }
             
-            if(requestedContentType.equals("application/rdf+xml"))
+            if(requestedContentType.equals(Constants.APPLICATION_RDF_XML))
             {
                 out.write(actualRdfString);
                 //out.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
@@ -391,7 +391,7 @@ public class QueryAllSchemaServlet extends HttpServlet
                 // HACK: can't find a way to get sesame to print out the rdf without the xml PI
                 //out.write(actualRdfString.replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", ""));
             }
-            else if(requestedContentType.equals("text/rdf+n3"))
+            else if(requestedContentType.equals(Constants.TEXT_RDF_N3))
             {
                 // for(String nextDebugString : debugStrings)
                 // {

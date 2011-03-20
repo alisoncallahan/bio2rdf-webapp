@@ -25,7 +25,7 @@ public class QueryallContentNegotiator
         
         contentNegotiator = new ContentTypeNegotiator();
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType").equals("application/rdf+xml"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", "").equals("application/rdf+xml"))
         {
             contentNegotiator.addVariant("application/rdf+xml;q=0.99");
             // Avoid putting application/xml into this mix, as it prevents common browsers from ever seeing text/html
@@ -40,7 +40,7 @@ public class QueryallContentNegotiator
             //    .addAliasMediaType("text/xml;q=0.4");
         }
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType").equals("text/rdf+n3"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", "").equals("text/rdf+n3"))
         {
             contentNegotiator.addVariant("text/rdf+n3;q=0.99")
             .addAliasMediaType("text/n3;q=0.5")
@@ -55,7 +55,7 @@ public class QueryallContentNegotiator
             .addAliasMediaType("application/n3;q=0.5");
         }
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType").equals("text/turtle"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", "").equals("text/turtle"))
         {
             // See http://www.w3.org/TeamSubmission/turtle/ for reasoning here
             contentNegotiator.addVariant("text/turtle;q=0.99")
@@ -70,7 +70,7 @@ public class QueryallContentNegotiator
             .addAliasMediaType("application/x-turtle;q=0.5");
         }
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType").equals("text/html"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", "").equals("text/html"))
         {
             contentNegotiator.addVariant("text/html;q=0.99")
             .addAliasMediaType("application/html;q=0.8")
@@ -106,7 +106,7 @@ public class QueryallContentNegotiator
                 log.trace("QueryallContentNegotiator: bestMatch not found, returning Settings:preferredDisplayContentType instead");
             }
             
-            return Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType");
+            return Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", "");
         }
         
         return bestMatch.getMediaType();

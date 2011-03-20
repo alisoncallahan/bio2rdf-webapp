@@ -80,7 +80,7 @@ public class ConfigurationServlet extends HttpServlet
             else
             {
                 response.setStatus(401);
-                log.error("manualrefresh.jsp: refresh not allowed right now requesterIpAddress="+request.getRemoteAddr()+ " localSettings.MANUAL_CONFIGURATION_REFRESH_ALLOWED="+localSettings.getStringPropertyFromConfig("enableManualConfigurationRefresh"));
+                log.error("manualrefresh.jsp: refresh not allowed right now requesterIpAddress="+request.getRemoteAddr()+ " localSettings.MANUAL_CONFIGURATION_REFRESH_ALLOWED="+localSettings.getStringPropertyFromConfig("enableManualConfigurationRefresh", ""));
                 out.write("Refresh not allowed right now.");
             }
             
@@ -119,7 +119,7 @@ public class ConfigurationServlet extends HttpServlet
         
         Collection<String> debugStrings = new HashSet<String>();
         
-        String writerFormatString = RdfUtils.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType"), "application/rdf+xml");
+        String writerFormatString = RdfUtils.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType", ""), "application/rdf+xml");
         
         RDFFormat writerFormat = null;
         

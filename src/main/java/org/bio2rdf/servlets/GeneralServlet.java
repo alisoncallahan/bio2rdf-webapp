@@ -84,7 +84,7 @@ public class GeneralServlet extends HttpServlet
         
         if(originalAcceptHeader == null || originalAcceptHeader.equals(""))
         {
-            acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
+            acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "");
         }
         else
         {
@@ -132,7 +132,7 @@ public class GeneralServlet extends HttpServlet
         
         if(writerFormat == null)
         {
-            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
+            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType", ""));
             
             if(writerFormat == null)
             {
@@ -147,9 +147,9 @@ public class GeneralServlet extends HttpServlet
             }
             else if(!requestedContentType.equals("text/html"))
             {
-                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
+                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "");
                 
-                log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
+                log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType", ""));
             }
         }
         
@@ -186,14 +186,14 @@ public class GeneralServlet extends HttpServlet
             log.warn("GeneralServlet: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
             
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage"));
+            response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage", ""));
             return;
         }
         
         /**** Setup completed... now to compile the query ****/
         
         // since we know we don't need to redirect now, we set a custom header indicating that the response is being served from this application
-        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent") + "/"+Settings.VERSION);
+        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent", "") + "/"+Settings.VERSION);
         
         List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Constants.LOWEST_ORDER_FIRST);
         
@@ -259,10 +259,10 @@ public class GeneralServlet extends HttpServlet
                     nextScheduledQueryBundle.toRdf(
                         myRepository, 
                         StringUtils.createURI(StringUtils.percentEncode(queryString)
-                        +localSettings.getStringPropertyFromConfig("separator")+"pageoffset"+pageOffset
-                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getOriginalProvider().getKey().stringValue().toLowerCase())
-                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
-                        +localSettings.getStringPropertyFromConfig("separator")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryEndpoint()))
+                        +localSettings.getStringPropertyFromConfig("separator", "")+"pageoffset"+pageOffset
+                        +localSettings.getStringPropertyFromConfig("separator", "")+StringUtils.percentEncode(nextScheduledQueryBundle.getOriginalProvider().getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator", "")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryType().getKey().stringValue().toLowerCase())
+                        +localSettings.getStringPropertyFromConfig("separator", "")+StringUtils.percentEncode(nextScheduledQueryBundle.getQueryEndpoint()))
                         , Settings.CONFIG_API_VERSION);
                 }
                 
@@ -280,7 +280,7 @@ public class GeneralServlet extends HttpServlet
                 
                 
                 // change response code to indicate that the query was in some way unsuccessful
-                responseCode = localSettings.getIntPropertyFromConfig("unknownQueryHttpResponseCode");
+                responseCode = localSettings.getIntPropertyFromConfig("unknownQueryHttpResponseCode", 0);
                 
                 response.setContentType(requestedContentType+"; charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
@@ -323,7 +323,7 @@ public class GeneralServlet extends HttpServlet
                 
                 Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownQueryStaticAdditions");
                 
-                Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName"), realHostName, pageOffset);
+                Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset);
                 
                 for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                 {
@@ -337,7 +337,7 @@ public class GeneralServlet extends HttpServlet
                     // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                     for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                     {
-                        String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions") , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules")) + "\n";
+                        String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true)) + "\n";
                         
                         nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
                         
@@ -408,7 +408,7 @@ public class GeneralServlet extends HttpServlet
                 if(multiProviderQueryBundles.size() == 0)
                 {
                     // change response code to indicate that the query was in some way unsuccessful
-                    responseCode = localSettings.getIntPropertyFromConfig("unknownNamespaceHttpResponseCode");
+                    responseCode = localSettings.getIntPropertyFromConfig("unknownNamespaceHttpResponseCode", 0);
                     response.setStatus(responseCode);
                     response.flushBuffer();
                     
@@ -444,7 +444,7 @@ public class GeneralServlet extends HttpServlet
                     
                     Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
                     
-                    Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName"), realHostName, pageOffset);
+                    Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset);
                     
                     for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                     {
@@ -461,7 +461,7 @@ public class GeneralServlet extends HttpServlet
                         {
                             for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                             {
-                                String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions") , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules")) + "\n";
+                                String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true)) + "\n";
                                 
                                 nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
                                 
@@ -552,7 +552,7 @@ public class GeneralServlet extends HttpServlet
                             tempRepository, 
                             localSettings.getSortedRulesForProvider(nextResult.getOriginalQueryBundle().getProvider(), 
                                 Constants.HIGHEST_ORDER_FIRST ), 
-                            includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
+                            includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true) );
                         
                         RepositoryConnection tempRepositoryConnection = tempRepository.getConnection();
                         
@@ -612,8 +612,8 @@ public class GeneralServlet extends HttpServlet
                 localSettings.getSortedRulesForProviders(fetchController.getAllUsedProviders(), 
                     Constants.HIGHEST_ORDER_FIRST ), 
                 includedProfiles, 
-                localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions"), 
-                localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules") );
+                localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true), 
+                localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true) );
             
             
             java.io.StringWriter cleanOutput = new java.io.StringWriter();

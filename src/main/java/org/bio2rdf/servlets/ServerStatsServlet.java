@@ -51,7 +51,7 @@ public class ServerStatsServlet extends HttpServlet
             // SimpleDateFormat ISO8601UTC = 
             //   new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");	  
             // ISO8601UTC.setTimeZone(TimeZone.getTimeZone("UTC"));
-            String now = RdfUtils.ISO8601UTC().format(currentDate);
+            String now = Constants.ISO8601UTC().format(currentDate);
         
         
         long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
@@ -61,8 +61,8 @@ public class ServerStatsServlet extends HttpServlet
         out.write("Now : "+now+"<br />\n");
         out.write("Last error reset date: "+BlacklistController.lastExpiryDate.toString()+"<br />\n");
         out.write("Server startup date: "+BlacklistController.lastServerStartupDate.toString()+"<br />\n");
-        out.write("Reset period "+localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")+"<br />\n");
-        out.write("Client blacklist will reset in "+((localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
+        out.write("Reset period "+localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 0L)+"<br />\n");
+        out.write("Client blacklist will reset in "+((localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 0L)-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
         
         if(BlacklistController.allHttpErrorResponseCodesByServer != null)
         {

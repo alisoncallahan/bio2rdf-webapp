@@ -84,7 +84,7 @@ public class GeneralServlet extends HttpServlet
         
         if(originalAcceptHeader == null || originalAcceptHeader.equals(""))
         {
-            acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "");
+            acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML);
         }
         else
         {
@@ -130,29 +130,22 @@ public class GeneralServlet extends HttpServlet
         // even if they request a random format, we need to make sure that Rio has a writer compatible with it, otherwise we revert to one of the defaults as a failsafe mechanism
         RDFFormat writerFormat = Rio.getWriterFormatForMIMEType(requestedContentType);
         
-        if(writerFormat == null)
+        if(!requestedContentType.equals(Constants.TEXT_HTML))
         {
-            writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType", ""));
-            
             if(writerFormat == null)
             {
-                writerFormat = RDFFormat.RDFXML;
+                writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML));
                 
-                if(!requestedContentType.equals("text/html"))
+                if(writerFormat == null)
                 {
-                    requestedContentType = "application/rdf+xml";
+                    writerFormat = RDFFormat.RDFXML;
+                    
+                    requestedContentType = Constants.APPLICATION_RDF_XML;
                     
                     log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
                 }
             }
-            else if(!requestedContentType.equals("text/html"))
-            {
-                requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "");
-                
-                log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\")="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType", ""));
-            }
-        }
-        
+        }        
         
         localSettings.configRefreshCheck(false);
         
@@ -211,6 +204,11 @@ public class GeneralServlet extends HttpServlet
             
             if(isPretendQuery)
             {
+                if(_DEBUG)
+                {
+                    log.debug("GeneralServlet: Found pretend query");
+                }
+                
                 response.setContentType(requestedContentType);
                 response.setCharacterEncoding("UTF-8");
                 response.setStatus(responseCode);
@@ -245,11 +243,6 @@ public class GeneralServlet extends HttpServlet
                         // 
                         // // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")");
                     // }
-                }
-                
-                if(_DEBUG)
-                {
-                    log.debug("GeneralServlet: Found pretend query");
                 }
                 
                 for(QueryBundle nextScheduledQueryBundle : multiProviderQueryBundles)

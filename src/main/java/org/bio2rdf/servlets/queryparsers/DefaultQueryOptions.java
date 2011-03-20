@@ -1,5 +1,6 @@
 package org.bio2rdf.servlets.queryparsers;
 
+import org.queryall.helpers.Constants;
 import org.queryall.helpers.Settings;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -47,17 +48,17 @@ public class DefaultQueryOptions
     
     private String parseForFormat(String requestString)
     {
-        String htmlUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlPrefix", "");
+        String htmlUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlPrefix", "page/");
         String htmlUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlSuffix", "");
-        String rdfXmlUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlPrefix", "");
+        String rdfXmlUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlPrefix", "rdfxml/");
         String rdfXmlUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
-        String n3UrlPrefix = Settings.getSettings().getStringPropertyFromConfig("n3UrlPrefix", "");
+        String n3UrlPrefix = Settings.getSettings().getStringPropertyFromConfig("n3UrlPrefix", "n3/");
         String n3UrlSuffix = Settings.getSettings().getStringPropertyFromConfig("n3UrlSuffix", "");
         
         if(matchesPrefixAndSuffix(requestString, htmlUrlPrefix, htmlUrlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "text/html";
+            _chosenFormat = Constants.TEXT_HTML;
             log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, htmlUrlPrefix, htmlUrlSuffix);
             log.debug("requestString="+requestString);
@@ -65,7 +66,7 @@ public class DefaultQueryOptions
         else if(matchesPrefixAndSuffix(requestString, rdfXmlUrlPrefix, rdfXmlUrlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "application/rdf+xml";
+            _chosenFormat = Constants.APPLICATION_RDF_XML;
             log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, rdfXmlUrlPrefix, rdfXmlUrlSuffix);
             log.debug("requestString="+requestString);
@@ -73,7 +74,7 @@ public class DefaultQueryOptions
         else if(matchesPrefixAndSuffix(requestString, n3UrlPrefix, n3UrlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "text/rdf+n3";
+            _chosenFormat = Constants.TEXT_RDF_N3;
             log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, n3UrlPrefix, n3UrlSuffix);
             log.debug("requestString="+requestString);
@@ -106,7 +107,7 @@ public class DefaultQueryOptions
 
     private String parseForQueryPlan(String requestString)
     {
-        String queryplanUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("queryplanUrlPrefix", "");
+        String queryplanUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("queryplanUrlPrefix", "queryplan/");
         String queryplanUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("queryplanUrlSuffix", "");
         
         if(matchesPrefixAndSuffix(requestString, queryplanUrlPrefix, queryplanUrlSuffix))
@@ -122,14 +123,14 @@ public class DefaultQueryOptions
     
     private String parseForPageOffset(String requestString)
     {
-        String pageoffsetUrlOpeningPrefix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "");
-        String pageoffsetUrlClosingPrefix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "");
+        String pageoffsetUrlOpeningPrefix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
+        String pageoffsetUrlClosingPrefix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
         String pageoffsetUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
 
         String queryPlanPatternString = "^"+pageoffsetUrlOpeningPrefix+"(\\d+)"+pageoffsetUrlClosingPrefix+"(.+)"+pageoffsetUrlSuffix+"$";
 
         if(_DEBUG)
-            log.debug("queryPlanPatternString="+queryPlanPatternString);
+            log.debug("pageOffsetPatternString="+queryPlanPatternString);
         
         Pattern queryPlanPattern = Pattern.compile(queryPlanPatternString);
         

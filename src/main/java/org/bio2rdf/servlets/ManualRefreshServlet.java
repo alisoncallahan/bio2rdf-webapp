@@ -29,7 +29,8 @@ public class ManualRefreshServlet extends HttpServlet
                     HttpServletResponse response)
       throws ServletException, IOException 
     {
-    	Settings localSettings = Settings.getSettings();
+        Settings localSettings = Settings.getSettings();
+        BlacklistController localBlacklistController = new BlacklistController(localSettings);
         
         PrintWriter out = response.getWriter();
         
@@ -39,7 +40,7 @@ public class ManualRefreshServlet extends HttpServlet
         {
             if(localSettings.configRefreshCheck(true))
             {
-                BlacklistController.doBlacklistExpiry();
+                localBlacklistController.doBlacklistExpiry();
                 
                 response.setStatus(HttpServletResponse.SC_OK);
                 log.info("manualrefresh.jsp: manual refresh succeeded requesterIpAddress="+request.getRemoteAddr());

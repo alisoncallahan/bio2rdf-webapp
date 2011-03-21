@@ -32,8 +32,8 @@ public class ServerStatsServlet extends HttpServlet
                         HttpServletResponse response)
         throws ServletException, IOException 
     {
-        // Settings.setServletContext(getServletConfig().getServletContext());
         Settings localSettings = Settings.getSettings();
+        BlacklistController localBlacklistController = new BlacklistController(localSettings);
         
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
@@ -41,8 +41,8 @@ public class ServerStatsServlet extends HttpServlet
         @SuppressWarnings("unused")
         String subversionId = "$Id: errorstats.jsp 910 2010-12-03 22:07:48Z p_ansell $";
         
-        BlacklistController.doBlacklistExpiry();
-        BlacklistController.clearStatisticsUploadList();
+        localBlacklistController.doBlacklistExpiry();
+        localBlacklistController.clearStatisticsUploadList();
         
         Date currentDate = new Date();
         
@@ -54,27 +54,27 @@ public class ServerStatsServlet extends HttpServlet
             String now = Constants.ISO8601UTC().format(currentDate);
         
         
-        long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
+        long differenceMilliseconds = currentDate.getTime() - localBlacklistController.lastExpiryDate.getTime();
         
         out.write("Current date : "+currentDate.toString()+"<br />\n");
         out.write("Server Version : "+Settings.VERSION+"<br />\n");
         out.write("Now : "+now+"<br />\n");
-        out.write("Last error reset date: "+BlacklistController.lastExpiryDate.toString()+"<br />\n");
-        out.write("Server startup date: "+BlacklistController.lastServerStartupDate.toString()+"<br />\n");
+        out.write("Last error reset date: "+localBlacklistController.lastExpiryDate.toString()+"<br />\n");
+        out.write("Server startup date: "+localBlacklistController.lastServerStartupDate.toString()+"<br />\n");
         out.write("Reset period "+localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 0L)+"<br />\n");
         out.write("Client blacklist will reset in "+((localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 0L)-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
         
-        if(BlacklistController.allHttpErrorResponseCodesByServer != null)
+        if(localBlacklistController.allHttpErrorResponseCodesByServer != null)
         {
-            if(BlacklistController.allHttpErrorResponseCodesByServer.size() > 0)
+            if(localBlacklistController.allHttpErrorResponseCodesByServer.size() > 0)
             {
                 out.write("All HTTP response error codes by endpoint since last server restart:<br /><br />\n");
                 
-                for(String nextKey : BlacklistController.allHttpErrorResponseCodesByServer.keySet())
+                for(String nextKey : localBlacklistController.allHttpErrorResponseCodesByServer.keySet())
                 {
                     out.write("Endpoint="+nextKey+"<br />\n");
                     
-                    Hashtable<Integer, Integer> errorCodeList = BlacklistController.allHttpErrorResponseCodesByServer.get(nextKey);
+                    Hashtable<Integer, Integer> errorCodeList = localBlacklistController.allHttpErrorResponseCodesByServer.get(nextKey);
                     
                     out.write("<ul>\n");
                     
@@ -88,27 +88,27 @@ public class ServerStatsServlet extends HttpServlet
             }
         }
         
-        if(BlacklistController.allServerQueryTotals != null)
+        if(localBlacklistController.allServerQueryTotals != null)
         {
-            if(BlacklistController.allServerQueryTotals.size() > 0)
+            if(localBlacklistController.allServerQueryTotals.size() > 0)
             {
                 out.write("Total queries by endpoint since last server restart:<br />\n");
                 
                 out.write("<ul>\n");
                 
-                for(String nextKey : BlacklistController.allServerQueryTotals.keySet())
+                for(String nextKey : localBlacklistController.allServerQueryTotals.keySet())
                 {
-                    out.write("<li>Endpoint=" + nextKey + " : " + BlacklistController.allServerQueryTotals.get(nextKey)+"</li>\n");
+                    out.write("<li>Endpoint=" + nextKey + " : " + localBlacklistController.allServerQueryTotals.get(nextKey)+"</li>\n");
                 }
                 
                 out.write("</ul>\n");
             }
         }
         
-        for(String nextKey : BlacklistController.accumulatedBlacklistStatistics.keySet())
+        for(String nextKey : localBlacklistController.accumulatedBlacklistStatistics.keySet())
         {
-            out.write(BlacklistController.accumulatedBlacklistStatistics.get(nextKey).toString()+"<br />\n");
-            out.write(BlacklistController.accumulatedBlacklistStatistics.get(nextKey).errorMessageSummaryToString()+"<br />\n");
+            out.write(localBlacklistController.accumulatedBlacklistStatistics.get(nextKey).toString()+"<br />\n");
+            out.write(localBlacklistController.accumulatedBlacklistStatistics.get(nextKey).errorMessageSummaryToString()+"<br />\n");
         }
         
         Collection<Long> overallQueryTimes = new HashSet<Long>();
@@ -118,11 +118,11 @@ public class ServerStatsServlet extends HttpServlet
         
         
         
-        for(String nextKey : BlacklistController.currentQueryDebugInformation.keySet())
+        for(String nextKey : localBlacklistController.currentQueryDebugInformation.keySet())
         {
             out.write("<br />Queries by : "+nextKey+"<br />\n");
             
-            Collection<QueryDebug> nextSetOfQueries = BlacklistController.currentQueryDebugInformation.get(nextKey);
+            Collection<QueryDebug> nextSetOfQueries = localBlacklistController.currentQueryDebugInformation.get(nextKey);
             
             Collection<Long> nextQueryTimes = new HashSet<Long>();
             long nextTotalQueryTime = 0;

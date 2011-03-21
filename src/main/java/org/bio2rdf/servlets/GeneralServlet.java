@@ -45,8 +45,9 @@ public class GeneralServlet extends HttpServlet
         throws ServletException, IOException 
     {
     	Settings localSettings = Settings.getSettings();
-    	
-        DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI());
+    	BlacklistController localBlacklistController = new BlacklistController(localSettings);
+
+    	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI());
         
         PrintWriter out = response.getWriter();
         
@@ -149,7 +150,7 @@ public class GeneralServlet extends HttpServlet
         
         localSettings.configRefreshCheck(false);
         
-        BlacklistController.doBlacklistExpiry();
+        localBlacklistController.doBlacklistExpiry();
         
         boolean useDefaultProviders = true;
         
@@ -174,7 +175,7 @@ public class GeneralServlet extends HttpServlet
         // {
         // }
         
-        if(BlacklistController.isClientBlacklisted(requesterIpAddress))
+        if(localBlacklistController.isClientBlacklisted(requesterIpAddress))
         {
             log.warn("GeneralServlet: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
             
@@ -190,7 +191,7 @@ public class GeneralServlet extends HttpServlet
         
         List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Constants.LOWEST_ORDER_FIRST);
         
-        RdfFetchController fetchController = new RdfFetchController(localSettings, queryString, includedProfiles, useDefaultProviders, realHostName, pageOffset, requestedContentType);
+        RdfFetchController fetchController = new RdfFetchController(localSettings, localBlacklistController, queryString, includedProfiles, useDefaultProviders, realHostName, pageOffset, requestedContentType);
         
         Collection<QueryBundle> multiProviderQueryBundles = fetchController.getQueryBundles();
         

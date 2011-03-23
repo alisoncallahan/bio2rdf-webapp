@@ -436,7 +436,7 @@
 	<http://purl.org/queryall/provider:endpointUrl> "http://bioguid.info/openurl.php?display=rdf&id=doi:${input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:doi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:bioguidpmid> , <http://bio2rdf.org/rdfrule:bioguiddoi> .
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:bioguidpmid> , <http://bio2rdf.org/rdfrule:bioguiddoi> , <http://bio2rdf.org/rdfrule:bioguidissn> , <http://bio2rdf.org/rdfrule:bioguidgi> .
 
 <http://bio2rdf.org/provider:mirroredgeneid> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;

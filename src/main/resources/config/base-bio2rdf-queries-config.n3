@@ -1845,7 +1845,7 @@
 	<http://purl.org/queryall/query:namespaceMatchMethod> <http://purl.org/queryall/query:namespaceMatchAny> ;
 	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/query:inputRegex> "^([\\w-]+):(.+)" ;
-	<http://purl.org/queryall/query:templateString> "CONSTRUCT { <${inputUrlEncoded_normalisedStandardUri}> <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?s . ?s ?p ?o} WHERE { ${graphStart} ?s <http://purl.org/dc/elements/1.1/identifier> \"${input_1}${defaultSeparator}${input_2}\" . ?s ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
+	<http://purl.org/queryall/query:templateString> "CONSTRUCT { <${normalisedStandardUri}> <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?s . ?s ?p ?o} WHERE { ${graphStart} ?s <http://purl.org/dc/elements/1.1/identifier> ?identifier . FILTER(str(?identifier) = \"${input_1}${defaultSeparator}${input_2}\") . ?s ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:sameAs xmlns:ns0pred=\"http://www.w3.org/2002/07/owl#\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_endpointSpecificUri}\"/></rdf:Description>" ;
@@ -1865,7 +1865,7 @@
 	<http://purl.org/queryall/query:namespaceToHandle> <http://bio2rdf.org/ns:doi> ;
  	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/query:inputRegex> "^([\\w-]+):(.+)" ;
-	<http://purl.org/queryall/query:templateString> "CONSTRUCT { <${normalisedStandardUri}> <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?s . ?s ?p ?o} WHERE { ${graphStart} ?s <http://purl.org/ontology/bibo/doi> \"${input_2}\" . ?s ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
+	<http://purl.org/queryall/query:templateString> "CONSTRUCT { <${normalisedStandardUri}> <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?s . ?s ?p ?o} WHERE { ${graphStart} ?s <http://purl.org/ontology/bibo/doi> ?doi . FILTER(?str(?doi) = \"${input_2}\") . ?s ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:sameAs xmlns:ns0pred=\"http://www.w3.org/2002/07/owl#\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_endpointSpecificUri}\"/></rdf:Description>" ;

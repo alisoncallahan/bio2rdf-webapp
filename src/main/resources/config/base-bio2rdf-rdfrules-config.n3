@@ -663,6 +663,30 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
+<http://bio2rdf.org/rdfrule:bioguidissn> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
+	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:issn> ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
+    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/issn:" ;
+	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://bioguid\\.info/issn:" ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://bioguid\\.info/issn:" ;
+	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/issn:" ;
+	<http://purl.org/queryall/rdfrule:description> "Provides conversion between the BioGuid ISSN namespace and the Bio2RDF ISSN namespace" ;
+	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
+
+<http://bio2rdf.org/rdfrule:bioguidgi> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
+	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:gi> ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
+    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/gi:" ;
+	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://bioguid\\.info/gi:" ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://bioguid\\.info/gi:" ;
+	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/gi:" ;
+	<http://purl.org/queryall/rdfrule:description> "Provides conversion between the BioGuid GI namespace and the Bio2RDF GI namespace" ;
+	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
+
 <http://bio2rdf.org/rdfrule:geospeciesorders> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
     <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/geospecies_orders:([\\w-]+)" ;

@@ -47,7 +47,7 @@ public class GeneralServlet extends HttpServlet
     	Settings localSettings = Settings.getSettings();
     	BlacklistController localBlacklistController = new BlacklistController(localSettings);
 
-    	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI());
+    	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI(), localSettings);
         
         PrintWriter out = response.getWriter();
         
@@ -317,7 +317,7 @@ public class GeneralServlet extends HttpServlet
                 
                 Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownQueryStaticAdditions");
                 
-                Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset);
+                Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset, localSettings);
                 
                 for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                 {
@@ -331,7 +331,7 @@ public class GeneralServlet extends HttpServlet
                     // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                     for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                     {
-                        String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true)) + "\n";
+                        String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true), localSettings) + "\n";
                         
                         nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
                         
@@ -438,7 +438,7 @@ public class GeneralServlet extends HttpServlet
                     
                     Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
                     
-                    Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset);
+                    Map<String, String> attributeList = SparqlQueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset, localSettings);
                     
                     for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                     {
@@ -455,7 +455,7 @@ public class GeneralServlet extends HttpServlet
                         {
                             for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                             {
-                                String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true)) + "\n";
+                                String nextBackupString = SparqlQueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true), localSettings) + "\n";
                                 
                                 nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
                                 
@@ -539,7 +539,7 @@ public class GeneralServlet extends HttpServlet
                         Repository tempRepository = new SailRepository(new MemoryStore());
                         tempRepository.initialize();
                         
-                        RdfUtils.insertResultIntoRepository(nextResult, tempRepository);
+                        RdfUtils.insertResultIntoRepository(nextResult, tempRepository, localSettings);
                         
                         tempRepository = (Repository)SparqlQueryCreator.normaliseByStage(
                             NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),

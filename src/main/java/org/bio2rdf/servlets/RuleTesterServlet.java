@@ -34,6 +34,7 @@ public class RuleTesterServlet extends HttpServlet
                         HttpServletResponse response)
         throws ServletException, IOException 
     {
+        Settings localSettings = Settings.getSettings();
         // Settings.setServletContext(getServletConfig().getServletContext());
         
         log.debug("testUri parameter="+request.getAttribute("org.queryall.RuleTesterServlet.testUri"));
@@ -51,14 +52,14 @@ public class RuleTesterServlet extends HttpServlet
         
         log.debug("test-regexmethods: testuri="+methodToTest);
         
-        Map<URI, RuleTest> allRuleTests = Settings.getSettings().getAllRuleTests();
+        Map<URI, RuleTest> allRuleTests = localSettings.getAllRuleTests();
         
         boolean allTestsPassed = true;
         
         @SuppressWarnings("unused")
         List<String> automatedTestResults = new ArrayList<String>();
         
-        if(!Settings.getSettings().runRuleTests(allRuleTests.values()))
+        if(!localSettings.runRuleTests(allRuleTests.values()))
         {
             allTestsPassed = false;
         }

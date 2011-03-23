@@ -48,7 +48,7 @@ public class ConfigurationServlet extends HttpServlet
         
         log.debug("request.getRequestURI()="+request.getRequestURI());
         
-        ConfigurationQueryOptions requestConfigurationQueryOptions = new ConfigurationQueryOptions(request.getRequestURI());
+        ConfigurationQueryOptions requestConfigurationQueryOptions = new ConfigurationQueryOptions(request.getRequestURI(), localSettings);
         
         PrintWriter out = response.getWriter();
         java.io.StringWriter stBuff = new java.io.StringWriter();
@@ -143,7 +143,7 @@ public class ConfigurationServlet extends HttpServlet
         
         final String queryStringURI = localSettings.getDefaultHostAddress()+queryString;
         
-        if(StringUtils.isPlainNamespaceAndIdentifier(queryString))
+        if(StringUtils.isPlainNamespaceAndIdentifier(queryString, localSettings))
         {
             targetOnlyQueryString = true;
         }
@@ -448,7 +448,7 @@ public class ConfigurationServlet extends HttpServlet
                 
                 try
                 {
-                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, stBuff, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), -1);
+                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, stBuff, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), -1, localSettings);
                 }
                 catch(OpenRDFException ordfe)
                 {

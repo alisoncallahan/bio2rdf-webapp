@@ -356,7 +356,7 @@ public class QueryAllSchemaServlet extends HttpServlet
                         getServletContext(), myRepository, stBuff, debugStrings, 
                         localSettings.getOntologyTermUriPrefix() + queryString, 
                         localSettings.getOntologyTermUriPrefix() + queryString, 
-                        realHostName, request.getContextPath(), -1);
+                        realHostName, request.getContextPath(), -1, localSettings);
                 }
                 catch(OpenRDFException ordfe)
                 {

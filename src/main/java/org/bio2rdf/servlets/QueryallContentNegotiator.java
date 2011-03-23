@@ -10,11 +10,11 @@ import org.queryall.helpers.*;
 
 public class QueryallContentNegotiator
 {
-    private static final Logger log = Logger.getLogger(QueryallContentNegotiator.class.getName());
-    private static final boolean _TRACE = log.isTraceEnabled();
-    private static final boolean _DEBUG = log.isDebugEnabled();
+    public static final Logger log = Logger.getLogger(QueryallContentNegotiator.class.getName());
+    public static final boolean _TRACE = log.isTraceEnabled();
+    public static final boolean _DEBUG = log.isDebugEnabled();
     @SuppressWarnings("unused")
-    private static final boolean _INFO = log.isInfoEnabled();
+    public static final boolean _INFO = log.isInfoEnabled();
     
     private static ContentTypeNegotiator contentNegotiator = null;
     
@@ -25,7 +25,7 @@ public class QueryallContentNegotiator
         
         contentNegotiator = new ContentTypeNegotiator();
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals("application/rdf+xml"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals(Constants.APPLICATION_RDF_XML))
         {
             contentNegotiator.addVariant("application/rdf+xml;q=0.99");
             // Avoid putting application/xml into this mix, as it prevents common browsers from ever seeing text/html
@@ -40,7 +40,7 @@ public class QueryallContentNegotiator
             //    .addAliasMediaType("text/xml;q=0.4");
         }
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals("text/rdf+n3"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals(Constants.TEXT_RDF_N3))
         {
             contentNegotiator.addVariant("text/rdf+n3;q=0.99")
             .addAliasMediaType("text/n3;q=0.5")
@@ -55,7 +55,7 @@ public class QueryallContentNegotiator
             .addAliasMediaType("application/n3;q=0.5");
         }
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals("text/turtle"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals(Constants.TEXT_TURTLE))
         {
             // See http://www.w3.org/TeamSubmission/turtle/ for reasoning here
             contentNegotiator.addVariant("text/turtle;q=0.99")
@@ -70,7 +70,7 @@ public class QueryallContentNegotiator
             .addAliasMediaType("application/x-turtle;q=0.5");
         }
         
-        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals("text/html"))
+        if(Settings.getSettings().getStringPropertyFromConfig("preferredDisplayContentType", Constants.TEXT_HTML).equals(Constants.TEXT_HTML))
         {
             contentNegotiator.addVariant("text/html;q=0.99")
             .addAliasMediaType("application/html;q=0.8")

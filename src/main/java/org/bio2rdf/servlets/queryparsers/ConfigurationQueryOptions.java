@@ -19,7 +19,7 @@ public class ConfigurationQueryOptions
     public static final boolean _DEBUG = log.isDebugEnabled();
     public static final boolean _INFO = log.isInfoEnabled();
     
-//    private Settings localSettings = Settings.getSettings();
+//    private Settings localSettings = localSettings;
 
     private boolean _adminPrefixMatch = false;
     private boolean _adminBasicWebappConfigurationMatch = false;
@@ -33,11 +33,13 @@ public class ConfigurationQueryOptions
     private boolean _isPlainNamespaceAndIdentifier = false;
 
     private String parsedRequestString = "";
+    private Settings localSettings;
 
     
-    public ConfigurationQueryOptions(String requestUri)
+    public ConfigurationQueryOptions(String requestUri, Settings localSettings)
     {
         String requestString = requestUri;
+        this.localSettings = localSettings;
         
         if(requestString == null)
         {
@@ -74,7 +76,7 @@ public class ConfigurationQueryOptions
         {
             requestString = parseForNsIdFormat(requestString);
             
-            if(StringUtils.isPlainNamespaceAndIdentifier(requestString))
+            if(StringUtils.isPlainNamespaceAndIdentifier(requestString, localSettings))
             {
                 _isPlainNamespaceAndIdentifier = true;
             }
@@ -85,7 +87,7 @@ public class ConfigurationQueryOptions
     
     private String parseForAdminPrefix(String requestString)
     {
-        String adminUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("adminUrlPrefix", "");
+        String adminUrlPrefix = localSettings.getStringPropertyFromConfig("adminUrlPrefix", "");
         
         if(matchesPrefixAndSuffix(requestString, adminUrlPrefix, ""))
         {
@@ -99,9 +101,9 @@ public class ConfigurationQueryOptions
     
     private String parseForAdminConfiguration(String requestString)
     {
-        String adminConfigurationPrefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationPrefix", "");
+        String adminConfigurationPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationPrefix", "");
 
-        String adminWebappConfigurationPrefix = Settings.getSettings().getStringPropertyFromConfig("adminWebappConfigurationPrefix", "");
+        String adminWebappConfigurationPrefix = localSettings.getStringPropertyFromConfig("adminWebappConfigurationPrefix", "");
         
         if(matchesPrefixAndSuffix(requestString, adminConfigurationPrefix, ""))
         {
@@ -121,7 +123,7 @@ public class ConfigurationQueryOptions
 
     private String parseForRefresh(String requestString)
     {
-        String adminConfigurationRefreshPrefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationRefreshPrefix", "");
+        String adminConfigurationRefreshPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationRefreshPrefix", "");
         
         if(matchesPrefixAndSuffix(requestString, adminConfigurationRefreshPrefix, ""))
         {
@@ -134,12 +136,12 @@ public class ConfigurationQueryOptions
     
     private String parseForAdminFormat(String requestString)
     {
-        String adminConfigurationHtmlPrefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationHtmlPrefix", "");
-        String adminConfigurationHtmlSuffix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationHtmlSuffix", "");
-        String adminConfigurationRdfxmlPrefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationRdfxmlPrefix", "");
-        String adminConfigurationRdfxmlSuffix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationRdfxmlSuffix", "");
-        String adminConfigurationN3Prefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationN3Prefix", "");
-        String adminConfigurationN3Suffix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationN3Suffix", "");
+        String adminConfigurationHtmlPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationHtmlPrefix", "");
+        String adminConfigurationHtmlSuffix = localSettings.getStringPropertyFromConfig("adminConfigurationHtmlSuffix", "");
+        String adminConfigurationRdfxmlPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationRdfxmlPrefix", "");
+        String adminConfigurationRdfxmlSuffix = localSettings.getStringPropertyFromConfig("adminConfigurationRdfxmlSuffix", "");
+        String adminConfigurationN3Prefix = localSettings.getStringPropertyFromConfig("adminConfigurationN3Prefix", "");
+        String adminConfigurationN3Suffix = localSettings.getStringPropertyFromConfig("adminConfigurationN3Suffix", "");
         
         if(matchesPrefixAndSuffix(requestString, adminConfigurationHtmlPrefix, adminConfigurationHtmlSuffix))
         {
@@ -171,12 +173,12 @@ public class ConfigurationQueryOptions
 
     private String parseForNsIdFormat(String requestString)
     {
-        String nsIdHtmlPrefix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlPrefix", "");
-        String nsIdHtmlSuffix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlSuffix", "");
-        String nsIdRdfxmlPrefix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlPrefix", "");
-        String nsIdRdfxmlSuffix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
-        String nsIdN3Prefix = Settings.getSettings().getStringPropertyFromConfig("n3UrlPrefix", "");
-        String nsIdN3Suffix = Settings.getSettings().getStringPropertyFromConfig("n3UrlSuffix", "");
+        String nsIdHtmlPrefix = localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "");
+        String nsIdHtmlSuffix = localSettings.getStringPropertyFromConfig("htmlUrlSuffix", "");
+        String nsIdRdfxmlPrefix = localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "");
+        String nsIdRdfxmlSuffix = localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
+        String nsIdN3Prefix = localSettings.getStringPropertyFromConfig("n3UrlPrefix", "");
+        String nsIdN3Suffix = localSettings.getStringPropertyFromConfig("n3UrlSuffix", "");
         
         if(matchesPrefixAndSuffix(requestString, nsIdHtmlPrefix, nsIdHtmlSuffix))
         {
@@ -231,9 +233,9 @@ public class ConfigurationQueryOptions
 
     private String parseForApiVersion(String requestString)
     {
-        String adminConfigurationApiOpeningPrefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationApiVersionOpeningPrefix", "");
-        String adminConfigurationApiClosingPrefix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationApiVersionClosingPrefix", "");
-        String adminConfigurationApiSuffix = Settings.getSettings().getStringPropertyFromConfig("adminConfigurationApiVersionSuffix", "");
+        String adminConfigurationApiOpeningPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationApiVersionOpeningPrefix", "");
+        String adminConfigurationApiClosingPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationApiVersionClosingPrefix", "");
+        String adminConfigurationApiSuffix = localSettings.getStringPropertyFromConfig("adminConfigurationApiVersionSuffix", "");
 
         String apiVersionPatternString = "^"+adminConfigurationApiOpeningPrefix+"(\\d+)"+adminConfigurationApiClosingPrefix+"(.*)"+adminConfigurationApiSuffix+"$";
         

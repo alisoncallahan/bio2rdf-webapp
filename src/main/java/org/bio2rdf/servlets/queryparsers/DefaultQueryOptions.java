@@ -26,9 +26,12 @@ public class DefaultQueryOptions
 
     private String parsedRequestString = "";
     
-    public DefaultQueryOptions(String requestUri)
+    private Settings localSettings;
+    
+    public DefaultQueryOptions(String requestUri, Settings localSettings)
     {
         String requestString = requestUri;
+        this.localSettings = localSettings;
         
         if(requestString.startsWith("/"))
         {
@@ -48,12 +51,12 @@ public class DefaultQueryOptions
     
     private String parseForFormat(String requestString)
     {
-        String htmlUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlPrefix", "page/");
-        String htmlUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("htmlUrlSuffix", "");
-        String rdfXmlUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlPrefix", "rdfxml/");
-        String rdfXmlUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
-        String n3UrlPrefix = Settings.getSettings().getStringPropertyFromConfig("n3UrlPrefix", "n3/");
-        String n3UrlSuffix = Settings.getSettings().getStringPropertyFromConfig("n3UrlSuffix", "");
+        String htmlUrlPrefix = localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "page/");
+        String htmlUrlSuffix = localSettings.getStringPropertyFromConfig("htmlUrlSuffix", "");
+        String rdfXmlUrlPrefix = localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "rdfxml/");
+        String rdfXmlUrlSuffix = localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
+        String n3UrlPrefix = localSettings.getStringPropertyFromConfig("n3UrlPrefix", "n3/");
+        String n3UrlSuffix = localSettings.getStringPropertyFromConfig("n3UrlSuffix", "");
         
         if(matchesPrefixAndSuffix(requestString, htmlUrlPrefix, htmlUrlSuffix))
         {
@@ -107,8 +110,8 @@ public class DefaultQueryOptions
 
     private String parseForQueryPlan(String requestString)
     {
-        String queryplanUrlPrefix = Settings.getSettings().getStringPropertyFromConfig("queryplanUrlPrefix", "queryplan/");
-        String queryplanUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("queryplanUrlSuffix", "");
+        String queryplanUrlPrefix = localSettings.getStringPropertyFromConfig("queryplanUrlPrefix", "queryplan/");
+        String queryplanUrlSuffix = localSettings.getStringPropertyFromConfig("queryplanUrlSuffix", "");
         
         if(matchesPrefixAndSuffix(requestString, queryplanUrlPrefix, queryplanUrlSuffix))
         {
@@ -123,9 +126,9 @@ public class DefaultQueryOptions
     
     private String parseForPageOffset(String requestString)
     {
-        String pageoffsetUrlOpeningPrefix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
-        String pageoffsetUrlClosingPrefix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
-        String pageoffsetUrlSuffix = Settings.getSettings().getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
+        String pageoffsetUrlOpeningPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
+        String pageoffsetUrlClosingPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
+        String pageoffsetUrlSuffix = localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
 
         String queryPlanPatternString = "^"+pageoffsetUrlOpeningPrefix+"(\\d+)"+pageoffsetUrlClosingPrefix+"(.+)"+pageoffsetUrlSuffix+"$";
 

@@ -38,14 +38,9 @@ public class HtmlPageRenderer
     @SuppressWarnings("unused")
 	private static final boolean _INFO = log.isInfoEnabled();
     
-    public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset) throws OpenRDFException
+    public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset, Settings localSettings) throws OpenRDFException
     {
-        renderHtml(servletContext, nextRepository, nextWriter, null, debugStrings, queryString, resolvedUri, realHostName, contextPath, pageoffset);
-    }
-    
-    public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, RdfFetchController fetchController, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset) throws OpenRDFException
-    {
-        renderHtml(servletContext, nextRepository, nextWriter, fetchController, debugStrings, queryString, resolvedUri, realHostName, contextPath, pageoffset, Settings.getSettings());
+        renderHtml(servletContext, nextRepository, nextWriter, null, debugStrings, queryString, resolvedUri, realHostName, contextPath, pageoffset, localSettings);
     }
     
 	public static void renderHtml(ServletContext servletContext, Repository nextRepository, java.io.Writer nextWriter, RdfFetchController fetchController, Collection<String> debugStrings, String queryString, String resolvedUri, String realHostName, String contextPath, int pageoffset, Settings localSettings) throws OpenRDFException
@@ -122,11 +117,11 @@ public class HtmlPageRenderer
         {
             context.put("query_string", queryString);
             
-            if(StringUtils.isPlainNamespaceAndIdentifier(queryString))
+            if(StringUtils.isPlainNamespaceAndIdentifier(queryString, localSettings))
             {
                 is_plainnsid = true;
                 
-                List<String> namespaceAndIdentifier = StringUtils.getNamespaceAndIdentifier(queryString);
+                List<String> namespaceAndIdentifier = StringUtils.getNamespaceAndIdentifier(queryString, localSettings);
                 
                 if(namespaceAndIdentifier.size() == 2)
                 {

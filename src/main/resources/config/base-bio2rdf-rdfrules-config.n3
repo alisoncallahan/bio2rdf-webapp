@@ -300,18 +300,6 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
     
-<http://bio2rdf.org/rdfrule:myexperimentfile> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_file> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_file:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/files/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/files/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_file:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment file form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:medicaredrugs> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:medicare_drugs> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -591,18 +579,6 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentpolicy> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_policy> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_policy:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Policy/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Policy/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_policy:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment policy form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:chebisourcenamespace> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:chebi_source> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -624,18 +600,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/drugs/" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/sider_drugs:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes sider drug URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentcreditation> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_creditation> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_creditation:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Creditation/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Creditation/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_creditation:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment creditation form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -754,18 +718,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/dosageforms/" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/drugbank_dosageforms:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes drugbank dosage form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentfriendship> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_friendship> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_friendship:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Friendship/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Friendship/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_friendship:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment friendship form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -984,18 +936,6 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentgroupannouncement> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_groupannouncement> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_groupannouncement:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/GroupAnnouncement/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/GroupAnnouncement/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_groupannouncement:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment groupannouncement form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:neurocommonsscienceowl> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:sciencecommons_ontology> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1076,30 +1016,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://purl\\.org/obo/owl/DOID#DOID_" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/doid:" ;
 	<http://purl.org/queryall/rdfrule:description> "Provides conversion between the OBO DOID namespace and the Bio2RDF DOID namespace" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentworkflow> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_workflow> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_workflow:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/workflows/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/workflows/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_workflow:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment workflow form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentdownloads> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_downloads> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_downloads:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Downloads/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Downloads/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_downloads:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment downloads form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -1218,18 +1134,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/genes/" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/diseasome_genes:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes diseasome gene form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentcomment> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_comment> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_comment:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Comment/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Comment/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_comment:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment comment form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -1395,30 +1299,6 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentcontenttype> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_contenttype> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_contenttype:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/content_types/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/content_types/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_contenttype:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment contenttype form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentlicense> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_license> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_license:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/licenses/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/licenses/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_license:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment license form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:drugbankontology> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:drugbank_ontology> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1453,30 +1333,6 @@
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/medicare_drugtype:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes medicare drugtype form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentrdfformat> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://bio2rdf\\.org/myexp_([\\w-]+):(\\d+)\\.rdf" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/rdfxml/myexp_$1:$2" ;
-	<http://purl.org/queryall/rdfrule:description> "Reformats the output of MyExperiment style document URIs from .rdf to /rdfxml/" ;
-	<http://purl.org/queryall/rdfrule:order> "50"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentxmlformat> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://bio2rdf\\.org/myexp_([\\w-]+):(\\d+)\\.xml" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/xml/myexp_$1:$2" ;
-	<http://purl.org/queryall/rdfrule:description> "Reformats the output of MyExperiment style document URIs from .xml to /xml/" ;
-	<http://purl.org/queryall/rdfrule:order> "50"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimenthtmlformat> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://bio2rdf\\.org/myexp_([\\w-]+):(\\d+)\\.html" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/html/myexp_$1:$2" ;
-	<http://purl.org/queryall/rdfrule:description> "Reformats the output of MyExperiment style document URIs from .html to /html/" ;
-	<http://purl.org/queryall/rdfrule:order> "50"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
 <http://bio2rdf.org/rdfrule:obomiro> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
@@ -1550,31 +1406,6 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentworkflowversioncomponent> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_workflowversioncomponent> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_workflowversioncomponent:(\\d+)-(\\d+)" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/WorkflowVersion/$1/Component/$2" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/WorkflowVersion/(\\d+)/Component/(\\d+)" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_workflowversioncomponent:$1-$2" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment workflowversion component form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "90"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimenttagstaggings> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_tagstaggings> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_tagstaggings:(\\d+)-(\\d+)" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/tags/$1/taggings/$2" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/tags/(\\d+)/taggings/(\\d+)" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_tagstaggings:$1-$2" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment tags taggings form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "90"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-
 <http://bio2rdf.org/rdfrule:drugbankdrugtype> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:drugbank_drugtype> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1634,18 +1465,6 @@
 	<http://purl.org/queryall/rdfrule:order> "200"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentuser> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_user> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_user:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/users/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/users/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_user:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment user form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:sidersideeffects> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:sider_sideeffects> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1655,18 +1474,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/side_effects/" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/sider_sideeffects:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes sider side effects URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentmembership> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_membership> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_membership:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Membership/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Membership/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_membership:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment membership form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -1704,31 +1511,6 @@
 	<http://purl.org/queryall/rdfrule:order> "200"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentgroup> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_group> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_group:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/groups/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/groups/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_group:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment group form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentusermembership> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_user_membership> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_user_membership:(\\d+):(\\d+)" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/users/$1/memberships/$2" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/users/(\\d+)/memberships/(\\d+)" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_user_membership:$1:$2" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment user membership form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "90"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-
 <http://bio2rdf.org/rdfrule:neurocommonsgeneid> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:geneid> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1762,29 +1544,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://purl\\.org/obo/owl/TO#TO_" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/to:" ;
 	<http://purl.org/queryall/rdfrule:description> "Provides conversion between the OBO TO namespace and the Bio2RDF TO namespace" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentwwwworkflow> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/html/myexp_workflow:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/workflows/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/workflows/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/html/myexp_workflow:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment www workflow form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentlocalpackentry> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_localpackentry> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_localpackentry:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/LocalPackEntry/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/LocalPackEntry/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_localpackentry:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment localpackentry form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -1858,18 +1617,6 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentviewings> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_viewings> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_viewings:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Viewings/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Viewings/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_viewings:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment viewings form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:obogo> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:go> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1940,30 +1687,6 @@
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimenttagging> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_tagging> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_tagging:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Tagging/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Tagging/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_tagging:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment tagging form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentfavourite> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_favourite> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_favourite:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Favourite/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Favourite/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_favourite:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment favourite form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:oboso> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:so> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -1973,18 +1696,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://purl\\.org/obo/owl/SO#SO_" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/so:" ;
 	<http://purl.org/queryall/rdfrule:description> "Provides conversion between the OBO SO namespace and the Bio2RDF SO namespace" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimenttag> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_tag> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_tag:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Tag/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Tag/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_tag:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment tag form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
@@ -2068,18 +1779,6 @@
 	<http://purl.org/queryall/rdfrule:order> "40"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/rdfrule:myexperimentworkflowversion> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_workflowversion> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_workflowversion:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/WorkflowVersion/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/WorkflowVersion/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_workflowversion:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment workflowversion form URI's into Bio2RDF identifiers" ;
-	<http://purl.org/queryall/rdfrule:order> "110"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
 <http://bio2rdf.org/rdfrule:siderontology> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:sider_ontology> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
@@ -2133,18 +1832,6 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://symbol\\.bio2rdf\\.org/symbol:" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/symbol:" ;
 	<http://purl.org/queryall/rdfrule:description> "Fixes the RDF from some databases which have experimental db.bio2rdf.org/db:id URI's instead of the standard bio2rdf.org" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
-
-<http://bio2rdf.org/rdfrule:myexperimentpack> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
-	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:myexp_pack> ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
-    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/myexp_pack:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://www\\.myexperiment\\.org/Pack/" ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://www\\.myexperiment\\.org/Pack/" ;
-	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/myexp_pack:" ;
-	<http://purl.org/queryall/rdfrule:description> "Makes myexperiment pack form URI's into Bio2RDF identifiers" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 

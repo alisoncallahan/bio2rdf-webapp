@@ -13,7 +13,6 @@ public class QueryallContentNegotiator
     public static final Logger log = Logger.getLogger(QueryallContentNegotiator.class.getName());
     public static final boolean _TRACE = log.isTraceEnabled();
     public static final boolean _DEBUG = log.isDebugEnabled();
-    @SuppressWarnings("unused")
     public static final boolean _INFO = log.isInfoEnabled();
     
     private static ContentTypeNegotiator contentNegotiator = null;

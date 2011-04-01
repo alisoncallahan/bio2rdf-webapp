@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Query>
+<Query  virtualSchemaName = "default" formatter = "TSV" header = "0" uniqueRows = "0" count = "" datasetConfigVersion = "0.6" >
+			
+	<Dataset name = "hsapiens_gene_ensembl" interface = "default" >
+		<Attribute name = "ensembl_gene_id" />
+	</Dataset>
+			
+	<Dataset name = "pathway" interface = "default" >
+		<Filter name = "pathway_id_list" value = "REACT_1698"/>
+		<Attribute name = "stableidentifier_identifier" />
+		<Attribute name = "pathway_db_id" />
+	</Dataset>
+</Query>

@@ -545,7 +545,7 @@ public class GeneralServlet extends HttpServlet
                         tempRepository = (Repository)SparqlQueryCreator.normaliseByStage(
                             NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
                             tempRepository, 
-                            localSettings.getSortedRulesForProvider(nextResult.getOriginalQueryBundle().getProvider(), 
+                            localSettings.getNormalisationRulesForUris(nextResult.getOriginalQueryBundle().getProvider().getNormalisationUris(), 
                                 Constants.HIGHEST_ORDER_FIRST ), 
                             includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true) );
                         

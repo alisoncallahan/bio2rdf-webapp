@@ -5,8 +5,8 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import org.queryall.*;
 import org.bio2rdf.servlets.queryparsers.*;
+import org.queryall.api.RuleTest;
 import org.queryall.helpers.*;
 
 import org.apache.log4j.Logger;

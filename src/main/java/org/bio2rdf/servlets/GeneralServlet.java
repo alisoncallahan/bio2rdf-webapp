@@ -14,12 +14,13 @@ import org.openrdf.sail.memory.*;
 
 import org.apache.log4j.Logger;
 
-import org.queryall.*;
 import org.queryall.impl.*;
 import org.bio2rdf.servlets.queryparsers.*;
 import org.bio2rdf.servlets.html.*;
 import org.queryall.queryutils.*;
 import org.queryall.helpers.*;
+import org.queryall.api.Profile;
+import org.queryall.api.QueryType;
 import org.queryall.blacklist.*;
 
 /** 

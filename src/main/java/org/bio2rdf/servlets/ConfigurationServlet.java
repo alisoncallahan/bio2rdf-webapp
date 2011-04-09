@@ -5,10 +5,16 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import org.queryall.*;
 import org.bio2rdf.servlets.queryparsers.*;
 import org.bio2rdf.servlets.html.*;
 import org.queryall.helpers.*;
+import org.queryall.api.NamespaceEntry;
+import org.queryall.api.NormalisationRule;
+import org.queryall.api.Profile;
+import org.queryall.api.Provider;
+import org.queryall.api.QueryType;
+import org.queryall.api.RuleTest;
+import org.queryall.api.Template;
 import org.queryall.blacklist.*;
 
 import org.openrdf.*;

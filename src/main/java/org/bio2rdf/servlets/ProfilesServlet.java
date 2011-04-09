@@ -5,7 +5,10 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import org.queryall.*;
+import org.queryall.api.NormalisationRule;
+import org.queryall.api.Profile;
+import org.queryall.api.Provider;
+import org.queryall.api.QueryType;
 import org.queryall.helpers.*;
 
 import org.apache.log4j.Logger;

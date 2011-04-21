@@ -274,52 +274,35 @@ public class GeneralServlet extends HttpServlet
                 }
                 
                 
-                // change response code to indicate that the query was in some way unsuccessful
-                responseCode = localSettings.getIntPropertyFromConfig("unknownQueryHttpResponseCode", 0);
+                // change response code to indicate that the query was in some way incorrect according to our current knowledge
+                if(fetchController.anyNamespaceNotRecognised())
+                {
+                	// 404 for document not found, as a query type matched somewhere without having the namespace recognised
+                	// There are still no results, but this is a more specific exception
+                    responseCode = localSettings.getIntPropertyFromConfig("unknownNamespaceHttpResponseCode", 404);
+                }
+                else
+                {
+                	// 400 for query completely unrecognised, even when not including namespace in each query type calculation
+                	responseCode = localSettings.getIntPropertyFromConfig("unknownQueryHttpResponseCode", 400);
+                }
                 
                 response.setContentType(requestedContentType+"; charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
                 response.setStatus(responseCode);
                 response.flushBuffer();
-                
-                // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
-                
-//                if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
-//                {
-                    // always print the version number out for debugging
-                    // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
-                    // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
-                    
-                    // if(_INFO)
-                    // {
-                        // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
-                        // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->");
-                        // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
-                        // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
-                    // }
-//                }
-//                else if(requestedContentType.equals("text/rdf+n3"))
-//                {
-                    // always print the version number out for debugging
-                    // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
-                    // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
-                    
-                    // if(_INFO)
-                    // {
-                        // debugStrings.add("# bio2rdf sourceforge subversion copy Id ("+ subversionId.replace("\n","").replace("\r","") +")");
-                        // 
-                        // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")");
-                    // }
-//                }
-                
+                                
                 Collection<String> currentStaticStrings = new HashSet<String>();
                 
                 Collection<String> backupStaticRdfXmlStrings = new HashSet<String>();
                 
-                Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownQueryStaticAdditions");
+                Collection<URI> staticQueryTypesForUnknown = null;
                 
-                Map<String, String> attributeList = QueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset, localSettings);
-                
+                if(fetchController.anyNamespaceNotRecognised())
+                    staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
+                else
+                	staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownQueryStaticAdditions");
+
                 for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
                 {
                     if(_DEBUG)
@@ -332,6 +315,8 @@ public class GeneralServlet extends HttpServlet
                     // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
                     for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
                     {
+                        Map<String, String> attributeList = QueryCreator.getAttributeListFor(nextQueryType, new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset, localSettings);
+                        
                         String nextBackupString = QueryCreator.createStaticRdfXmlString(nextQueryType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true), localSettings) + "\n";
                         
                         nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
@@ -399,169 +384,86 @@ public class GeneralServlet extends HttpServlet
                 // keep track of the strings so that we don't print multiples of exactly the same information more than once
                 Collection<String> currentStaticStrings = new HashSet<String>();
                 
-                // If there were no planned query bundles, then we fall back on a small set of additions as configured
-                if(multiProviderQueryBundles.size() == 0)
+                response.setStatus(responseCode);
+                response.flushBuffer();
+                
+                // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
+                
+                if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
                 {
-                    // change response code to indicate that the query was in some way unsuccessful
-                    responseCode = localSettings.getIntPropertyFromConfig("unknownNamespaceHttpResponseCode", 0);
-                    response.setStatus(responseCode);
-                    response.flushBuffer();
+                    // always print the version number out for debugging
+                    // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
+                    // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
                     
-                    // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
-                    
-                    if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
+                    if(_INFO)
                     {
-                        // always print the version number out for debugging
-                        // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->");
-                        // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
-                        
-                        // if(_INFO)
-                        // {
-                            // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
-                            // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->");
-                            // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
-                            // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->");
-                        // }
-                    }
-                    else if(requestedContentType.equals("text/rdf+n3"))
-                    {
-                        // always print the version number out for debugging
-                        // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
-                        // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
-                        
-                        // if(_INFO)
-                        // {
-                            // debugStrings.add("# bio2rdf sourceforge subversion copy Id ("+ subversionId.replace("\n","").replace("\r","") +")\n");
-                            // 
-                            // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")\n");
-                        // }
-                    }
-                    
-                    Collection<URI> staticQueryTypesForUnknown = localSettings.getURICollectionPropertiesFromConfig("unknownNamespaceStaticAdditions");
-                    
-                    Map<String, String> attributeList = QueryCreator.getAttributeListFor(new ProviderImpl(), queryString, localSettings.getStringPropertyFromConfig("hostName", ""), realHostName, pageOffset, localSettings);
-                    
-                    for(URI nextStaticQueryTypeForUnknown : staticQueryTypesForUnknown)
-                    {
-                        if(_DEBUG)
-                        {
-                            log.debug("GeneralServlet: nextStaticQueryTypeForUnknown="+nextStaticQueryTypeForUnknown);
-                        }
-                        
-                        Collection<QueryType> allCustomRdfXmlIncludeTypes = localSettings.getQueryTypesByUri(nextStaticQueryTypeForUnknown);
-                        Collection<QueryType> relevantCustomQueries = localSettings.getQueryTypesMatchingQueryString(queryString, includedProfiles);
-                        
-                        // use the closest matches, even though they didn't eventuate into actual planned query bundles they matched the query string somehow
-                        for(QueryType closestMatchType : relevantCustomQueries)
-                        {
-                            for(QueryType nextQueryType : allCustomRdfXmlIncludeTypes)
-                            {
-                                String nextBackupString = QueryCreator.createStaticRdfXmlString(closestMatchType, nextQueryType, new ProviderImpl(), attributeList, includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true) , localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true), localSettings) + "\n";
-                                
-                                nextBackupString = "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\">" + nextBackupString + "</rdf:RDF>";
-                                
-                                currentStaticStrings.add(nextBackupString);
-                            }
-                        }
-                    }
-                    
-                    if(currentStaticStrings.size() == 0)
-                    {
-                        log.error("Could not find anything at all to match at querybundle level queryString="+queryString);
-                        if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
-                        {
-                            debugStrings.add("<!-- Could not find anything at all to match at querybundle level queryString="+StringUtils.xmlEncodeString(queryString).replace("--","- -")+" -->\n");
-                        }
-                        else if(requestedContentType.equals("text/rdf+n3"))
-                        {
-                            debugStrings.add("# Could not find anything at all to match at querybundle level queryString="+queryString.replace("\n","").replace("\r","")+"\n");
-                        }
+                        // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
+                        // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->\n");
+                        // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
+                        // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
+                        debugStrings.add("<!-- result units="+fetchController.getResults().size()+" -->\n");
                     }
                 }
-                else
+                else if(requestedContentType.equals("text/rdf+n3"))
                 {
-                    response.setStatus(responseCode);
-                    response.flushBuffer();
+                    // always print the version number out for debugging
+                    // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
+                    // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
                     
-                    // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
-                    
-                    if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
+                    if(_INFO)
                     {
-                        // always print the version number out for debugging
-                        // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
-                        // debugStrings.add("<!-- active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+" -->\n");
-                        
-                        if(_INFO)
-                        {
-                            // subversionId = RdfUtils.xmlEncodeString(subversionId).replace("--","- -");
-                            // debugStrings.add("<!-- bio2rdf sourceforge subversion copy Id ("+ subversionId +") -->\n");
-                            // propertiesSubversionId = RdfUtils.xmlEncodeString(propertiesSubversionId).replace("--","- -");
-                            // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->\n");
-                            debugStrings.add("<!-- result units="+fetchController.getResults().size()+" -->\n");
-                        }
+                        // debugStrings.add("# bio2rdf sourceforge subversion copy Id ("+ subversionId.replace("\n","").replace("\r","") +")\n");
+                        // 
+                        // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")\n");
+                        debugStrings.add("# result units="+fetchController.getResults().size()+" \n");
                     }
-                    else if(requestedContentType.equals("text/rdf+n3"))
-                    {
-                        // always print the version number out for debugging
-                        // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
-                        // debugStrings.add("# active profiles="+RdfUtils.xmlEncodeString(localSettings.USER_PROFILE_LIST_STRING)+"");
-                        
-                        if(_INFO)
-                        {
-                            // debugStrings.add("# bio2rdf sourceforge subversion copy Id ("+ subversionId.replace("\n","").replace("\r","") +")\n");
-                            // 
-                            // debugStrings.add("# bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId.replace("\n","").replace("\r","") +")\n");
-                            debugStrings.add("# result units="+fetchController.getResults().size()+" \n");
-                        }
-                    }
-                    
-                    for(RdfFetcherQueryRunnable nextResult : fetchController.getResults())
-                    {
-                        if(requestedContentType.equals("application/rdf+xml"))
-                        {
-                            // only write out the debug strings to the document if we are at least at the info or debug levels
-                            if(_INFO)
-                            {
-                                debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.getResultDebugString()).replace("--","- -") + "-->");
-                            }
-                        }
-                        else if(requestedContentType.equals("text/rdf+n3"))
-                        {
-                            if(_INFO)
-                            {
-                                debugStrings.add("# "+ nextResult.getResultDebugString().replace("\n","").replace("\r","") +")");
-                            }
-                        }
-                        
-                        if(_TRACE)
-                        {
-                            log.trace("GeneralServlet: normalised result string : " + nextResult.getNormalisedResult());
-                        }
-                        Repository tempRepository = new SailRepository(new MemoryStore());
-                        tempRepository.initialize();
-                        
-                        RdfUtils.insertResultIntoRepository(nextResult, tempRepository, localSettings);
-                        
-                        tempRepository = (Repository)QueryCreator.normaliseByStage(
-                            NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
-                            tempRepository, 
-                            localSettings.getNormalisationRulesForUris(nextResult.getOriginalQueryBundle().getProvider().getNormalisationUris(), 
-                                Constants.HIGHEST_ORDER_FIRST ), 
-                            includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true) );
-                        
-                        RepositoryConnection tempRepositoryConnection = tempRepository.getConnection();
-                        
-                        if(_DEBUG)
-                        {
-                            log.debug("GeneralServlet: getAllStatementsFromRepository(tempRepository).size()="+RdfUtils.getAllStatementsFromRepository(tempRepository).size());
-                            log.debug("GeneralServlet: tempRepositoryConnection.size()=" + tempRepositoryConnection.size());
-                        }
-                        
-                        RdfUtils.copyAllStatementsToRepository(myRepository, tempRepository);
-                    }
-                    
                 }
                 
+                for(RdfFetcherQueryRunnable nextResult : fetchController.getResults())
+                {
+                    if(requestedContentType.equals("application/rdf+xml"))
+                    {
+                        // only write out the debug strings to the document if we are at least at the info or debug levels
+                        if(_INFO)
+                        {
+                            debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.getResultDebugString()).replace("--","- -") + "-->");
+                        }
+                    }
+                    else if(requestedContentType.equals("text/rdf+n3"))
+                    {
+                        if(_INFO)
+                        {
+                            debugStrings.add("# "+ nextResult.getResultDebugString().replace("\n","").replace("\r","") +")");
+                        }
+                    }
+                    
+                    if(_TRACE)
+                    {
+                        log.trace("GeneralServlet: normalised result string : " + nextResult.getNormalisedResult());
+                    }
+                    Repository tempRepository = new SailRepository(new MemoryStore());
+                    tempRepository.initialize();
+                    
+                    RdfUtils.insertResultIntoRepository(nextResult, tempRepository, localSettings);
+                    
+                    tempRepository = (Repository)QueryCreator.normaliseByStage(
+                        NormalisationRuleImpl.getRdfruleStageAfterResultsImport(),
+                        tempRepository, 
+                        localSettings.getNormalisationRulesForUris(nextResult.getOriginalQueryBundle().getProvider().getNormalisationUris(), 
+                            Constants.HIGHEST_ORDER_FIRST ), 
+                        includedProfiles, localSettings.getBooleanPropertyFromConfig("recogniseImplicitRdfRuleInclusions", true), localSettings.getBooleanPropertyFromConfig("includeNonProfileMatchedRdfRules", true) );
+                    
+                    RepositoryConnection tempRepositoryConnection = tempRepository.getConnection();
+                    
+                    if(_DEBUG)
+                    {
+                        log.debug("GeneralServlet: getAllStatementsFromRepository(tempRepository).size()="+RdfUtils.getAllStatementsFromRepository(tempRepository).size());
+                        log.debug("GeneralServlet: tempRepositoryConnection.size()=" + tempRepositoryConnection.size());
+                    }
+                    
+                    RdfUtils.copyAllStatementsToRepository(myRepository, tempRepository);
+                }
+                    
                 for(QueryBundle nextPotentialQueryBundle : multiProviderQueryBundles)
                 {
                     String nextStaticString = nextPotentialQueryBundle.getStaticRdfXmlString();

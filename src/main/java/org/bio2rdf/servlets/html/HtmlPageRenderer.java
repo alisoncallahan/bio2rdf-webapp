@@ -312,7 +312,10 @@ public class HtmlPageRenderer
                 {
                     log.debug("HtmlPageRenderer.renderHtml: !fetchController.queryKnown(), using error.vm template");
                 }
-    
+
+                context.put("namespaceRecognised", !fetchController.anyNamespaceNotRecognised());
+                context.put("queryKnown", fetchController.queryKnown());
+                
                 template.renderXHTML("error.vm", nextWriter);
             }
         }

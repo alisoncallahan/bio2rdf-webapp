@@ -862,7 +862,7 @@
 	<http://purl.org/queryall/query:templateString> "" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}ns${defaultSeparator}${input_1}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
-	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:containsUnknownNamespaceForThisQuery xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_normalisedQueryUri}\"/><rdf:type xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"http://bio2rdf.org/bio2rdf_resource:Error\"/><rdf:type xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"http://bio2rdf.org/bio2rdf_resource:UnknownNamespaceForThisQueryError\"/></rdf:Description>" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><rdf:type xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"http://bio2rdf.org/bio2rdf_resource:Error\"/><rdf:type xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"http://bio2rdf.org/bio2rdf_resource:UnknownNamespaceForThisQueryError\"/></rdf:Description>" ;
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;

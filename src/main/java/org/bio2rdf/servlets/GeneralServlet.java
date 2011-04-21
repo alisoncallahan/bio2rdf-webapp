@@ -45,14 +45,14 @@ public class GeneralServlet extends HttpServlet
                     HttpServletResponse response)
         throws ServletException, IOException 
     {
+        Date queryStartTime = new Date();
+        
     	Settings localSettings = Settings.getSettings();
     	BlacklistController localBlacklistController = new BlacklistController(localSettings);
 
     	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI(), localSettings);
         
         PrintWriter out = response.getWriter();
-        
-        Date queryStartTime = new Date();
         
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
         

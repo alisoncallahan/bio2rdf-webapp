@@ -851,7 +851,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
 <http://bio2rdf.org/query:unknownnamespace> a <http://purl.org/queryall/query:Query> ;
-    <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+    <http://purl.org/queryall/query:isDummyQueryType> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unknownnamespace" ;
 	<http://purl.org/queryall/query:handleAllNamespaces> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
@@ -860,8 +860,8 @@
 	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/query:inputRegex> "^unknownnamespace/([\\w-]+):(.+)" ;
 	<http://purl.org/queryall/query:templateString> "" ;
-	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}ns${defaultSeparator}${input_1}" ;
-	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}${queryString}" ;
+	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${queryString}" ;
 	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><rdf:type xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"http://bio2rdf.org/bio2rdf_resource:Error\"/><rdf:type xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"http://bio2rdf.org/bio2rdf_resource:UnknownNamespaceForThisQueryError\"/></rdf:Description>" ;
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
@@ -1521,7 +1521,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
 <http://bio2rdf.org/query:unknownquery> a <http://purl.org/queryall/query:Query> ;
-    <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+    <http://purl.org/queryall/query:isDummyQueryType> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unknownquery" ;
 	<http://purl.org/queryall/query:handleAllNamespaces> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;

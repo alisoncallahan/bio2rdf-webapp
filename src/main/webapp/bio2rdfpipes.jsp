@@ -1,4 +1,4 @@
-<%@ page pageEncoding="utf-8" session="false" %><%@page import="java.io.*,org.bio2rdf.*,org.openrdf.OpenRDFException,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable, java.util.Collection,java.util.ArrayList,java.util.Map,java.io.File,java.io.BufferedWriter,java.io.CharArrayWriter,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger,org.deri.pipes.core.Engine,org.deri.pipes.core.Pipe,org.deri.pipes.core.ExecBuffer,org.deri.pipes.store.FilePipeStore,org.deri.pipes.endpoints.PipeConfig,java.net.URLDecoder
+<%@ page pageEncoding="utf-8" session="false" %><%@page import="java.io.*,org.queryall.helpers.*,org.bio2rdf.servlets.html.*,org.openrdf.OpenRDFException,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable, java.util.Collection,java.util.ArrayList,java.util.Map,java.io.File,java.io.BufferedWriter,java.io.CharArrayWriter,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger,org.deri.pipes.core.Engine,org.deri.pipes.core.Pipe,org.deri.pipes.core.ExecBuffer,org.deri.pipes.store.FilePipeStore,org.deri.pipes.endpoints.PipeConfig,java.net.URLDecoder
 "%>
 <%
 // -------------------------------------------------------------------------------
@@ -26,6 +26,8 @@
 String subversionId = "$Id: bio2rdfpipes.jsp 936 2011-02-06 05:34:23Z p_ansell $";
 
 Logger log = Logger.getLogger("org.bio2rdf.bio2rdfpipes");
+
+Settings localSettings = Settings.getSettings();
 
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort()+"/");
 
@@ -59,7 +61,7 @@ Collection<String> debugStrings = new ArrayList<String>(5);
 
 if(originalAcceptHeader == null || originalAcceptHeader.equals(""))
 {
-	acceptHeader = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+	acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "application/rdf+xml");
 }
 else
 {
@@ -71,16 +73,16 @@ if(userAgentHeader == null)
 	userAgentHeader = "";
 }
 
-if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
+if(!localSettings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
 {
-    Matcher userAgentBlacklistMatcher = Settings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
+    Matcher userAgentBlacklistMatcher = localSettings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
     
     if(userAgentBlacklistMatcher.find())
     {
         log.error("Atlas2Rdf: found blocked user-agent userAgentHeader="+userAgentHeader + " queryString="+queryString+" requesterIpAddress="+requesterIpAddress);
         
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-        response.sendRedirect(Settings.getStringPropertyFromConfig("blacklistRedirectPage"));
+        response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage", "/admin/blacklist"));
         return;
     }
 }
@@ -107,7 +109,7 @@ RDFFormat writerFormat = Rio.getWriterFormatForMIMEType(requestedContentType);
 
 if(writerFormat == null)
 {
-    writerFormat = Rio.getWriterFormatForMIMEType(Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+    writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "application/rdf+xml"));
     
     if(writerFormat == null)
     {
@@ -117,23 +119,23 @@ if(writerFormat == null)
         {
             requestedContentType = "application/rdf+xml";
             
-            log.error("Atlas2Rdf.jsp: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set Settings.getStringPropertyFromConfig("preferredDisplayContentType") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
+            log.error("Atlas2Rdf.jsp: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set preferredDisplayContentType to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
         }
     }
     else if(!requestedContentType.equals("text/html"))
     {
-        requestedContentType = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+        requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "application/rdf+xml");
         
-        log.error("Atlas2Rdf.jsp: content negotiation failed to find a suitable content type for results. Defaulting to Settings.getStringPropertyFromConfig("preferredDisplayContentType")="+Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+        log.error("Atlas2Rdf.jsp: content negotiation failed to find a suitable content type for results. Defaulting to preferredDisplayContentType"+localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
     }
 }
 
-if(BlacklistController.isClientBlacklisted(requesterIpAddress))
+if(blacklistController.isClientBlacklisted(requesterIpAddress))
 {
     log.warn("Atlas2RDF: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
 	
 	response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-	response.sendRedirect(Settings.getStringPropertyFromConfig("blacklistRedirectPage"));
+	response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage" , "/admin/blacklist"));
 	return;
 }
 
@@ -196,7 +198,7 @@ try
 	
 	currentPipeResult.stream(currentPipeOutput);
 	
-    myRepositoryConnection.add(new java.io.StringReader(currentPipeOutput.toString("UTF-8")), Settings.getDefaultHostAddress(), Rio.getParserFormatForMIMEType(Settings.getStringPropertyFromConfig("assumedRequestContentType")));
+    myRepositoryConnection.add(new java.io.StringReader(currentPipeOutput.toString("UTF-8")), localSettings.getDefaultHostAddress(), Rio.getParserFormatForMIMEType(Settings.getStringPropertyFromConfig("assumedRequestContentType")));
     myRepositoryConnection.commit();
 	// out.write(currentPipeOutput.toString("UTF-8").replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>",""));
     
@@ -206,14 +208,14 @@ try
     
     if(requestedContentType.equals("text/html"))
     {
-        if(Settings._ATLASDEBUG)
+        if(log.isDebugEnabled())
         {
             log.debug("Atlas2Rdf.jsp: about to call html rendering method");
         }
         
         try
         {
-            HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, debugStrings, queryString, Settings.getDefaultHostAddress() + "/" + queryString, realHostName + "/", request.getContextPath(), 1);
+            HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, debugStrings, queryString, localSettings.getDefaultHostAddress() + "/" + queryString, realHostName + "/", request.getContextPath(), 1);
         }
         catch(OpenRDFException ordfe)
         {
@@ -231,7 +233,7 @@ try
     
     String actualRdfString = cleanOutput.toString();
     
-    if(Settings._ATLASTRACE)
+    if(log.isTraceEnabled())
     {
         log.trace("Atlas2Rdf.jsp: actualRdfString="+actualRdfString);
     }

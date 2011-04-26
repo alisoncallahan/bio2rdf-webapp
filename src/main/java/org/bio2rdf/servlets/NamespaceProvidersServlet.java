@@ -84,10 +84,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                 if(!providersByQueryKey.containsKey(nextQueryKey))
                 {
                     Collection<Provider> queryProviders = localSettings.getProvidersForQueryType(nextQueryKey);
-                    
-                    // TODO: implement interface Comparable for Provider
-                    // Collections.sort(queryProviders)
-                    
+                                        
                     providersByQueryKey.put(nextQueryKey, queryProviders);
                     
                     overallQueryTypeProviders += queryProviders.size();

@@ -1,5 +1,5 @@
 <%@page
-import="java.io.File,org.bio2rdf.*,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.Collection,java.util.HashSet,java.util.Hashtable,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger"%><%
+import="java.io.File,org.queryall.statistics.*,org.queryall.blacklist.*,org.queryall.helpers.*,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.Collection,java.util.HashSet,java.util.Hashtable,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger"%><%
 // -------------------------------------------------------------------------------
 // Bio2RDF is a creation of
 // 
@@ -30,18 +30,13 @@ import="java.io.File,org.bio2rdf.*,org.openrdf.repository.Repository,org.openrdf
 // DO NOT EDIT version. It is auto-replaced by the build process in order to debug when people have issues with this file
 String subversionId = "$Id: serverstats.jsp 917 2010-12-10 22:09:50Z p_ansell $";
 String version = "%%__VERSION__%%";
-String propertiesSubversionId = Settings.SUBVERSION_INFO;
+String propertiesSubversionId = "";
 
 Logger log = Logger.getLogger("org.bio2rdf.serverstats");
+Settings localSettings = Settings.getSettings();
+BlacklistController blacklistController = BlacklistController.getDefaultController();
 
-// HACK: remove when we turn this class into a servlet
-if(Settings.WEBINFPATH == null || Settings.WEBINFPATH.trim().equals(""))
-{
-	log.info("serverstats.jsp: setting up Settings.WEBINFPATH="+getServletContext().getRealPath("/") + File.separator +"WEB-INF"+ File.separator);
-	Settings.WEBINFPATH = getServletContext().getRealPath("/") + File.separator +"WEB-INF"+ File.separator;
-}
-
-if(Settings.getBooleanPropertyFromConfig("statisticsSubmitStatistics"))
+if(localSettings.getBooleanPropertyFromConfig("statisticsSubmitStatistics", false))
 {
     return;
 }
@@ -58,7 +53,7 @@ String userAgentHeader = request.getHeader("User-Agent");
 
 if(acceptHeader == null || acceptHeader.equals(""))
 {
-	acceptHeader = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+	acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "application/rdf+xml");
 }
 
 if(userAgentHeader == null)
@@ -66,9 +61,9 @@ if(userAgentHeader == null)
 	userAgentHeader = "";
 }
 
-if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
+if(!localSettings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
 {
-    Matcher userAgentBlacklistMatcher = Settings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
+    Matcher userAgentBlacklistMatcher = localSettings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
     
     if(userAgentBlacklistMatcher.find())
     {
@@ -84,7 +79,7 @@ if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
 Thread.sleep(10);
 // log.info("serverstats: woke up... about to clear statistics upload list");
 
-if(BlacklistController.isClientBlacklisted(requesterIpAddress))
+if(blacklistController.isClientBlacklisted(requesterIpAddress))
 {
     log.warn("Atlas2RDF: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
 	
@@ -93,7 +88,7 @@ if(BlacklistController.isClientBlacklisted(requesterIpAddress))
 	return;
 }
 
-BlacklistController.clearStatisticsUploadList();
+blacklistController.clearStatisticsUploadList();
 
 String keyParam = request.getParameter("key");
 
@@ -146,7 +141,7 @@ Collection<String> profileUrisVariable = new HashSet<String>();
 
 if(profileUrisParam != null && !profileUrisParam.trim().equals(""))
 {
-	profileUrisVariable = RdfUtils.listFromStringArray(profileUrisParam.split(","));
+	profileUrisVariable = ListUtils.listFromStringArray(profileUrisParam.split(","));
 }
 
 String successfulproviderUrisParam = request.getParameter("successfulproviderUris");
@@ -155,7 +150,7 @@ Collection<String> successfulproviderUrisVariable = new HashSet<String>();
 
 if(successfulproviderUrisParam != null && !successfulproviderUrisParam.trim().equals(""))
 {
-	successfulproviderUrisVariable = RdfUtils.listFromStringArray(successfulproviderUrisParam.split(","));
+	successfulproviderUrisVariable = ListUtils.listFromStringArray(successfulproviderUrisParam.split(","));
 
 }
 
@@ -165,7 +160,7 @@ Collection<String> errorproviderUrisVariable = new HashSet<String>();
 
 if(errorproviderUrisParam != null && !errorproviderUrisParam.trim().equals(""))
 {
-	errorproviderUrisVariable = RdfUtils.listFromStringArray(errorproviderUrisParam.split(","));
+	errorproviderUrisVariable = ListUtils.listFromStringArray(errorproviderUrisParam.split(","));
 
 }
 
@@ -175,7 +170,7 @@ Collection<String> configLocationsVariable = new HashSet<String>();
 
 if(configLocationsParam != null && !configLocationsParam.trim().equals(""))
 {
-	configLocationsVariable = RdfUtils.listFromStringArray(configLocationsParam.split(","));
+	configLocationsVariable = ListUtils.listFromStringArray(configLocationsParam.split(","));
 
 }
 
@@ -185,7 +180,7 @@ Collection<String> querytypeUrisVariable = new HashSet<String>();
 
 if(querytypeUrisParam != null && !querytypeUrisParam.trim().equals(""))
 {
-	querytypeUrisVariable = RdfUtils.listFromStringArray(querytypeUrisParam.split(","));
+	querytypeUrisVariable = ListUtils.listFromStringArray(querytypeUrisParam.split(","));
 
 }
 
@@ -195,7 +190,7 @@ Collection<String> namespaceUrisVariable = new HashSet<String>();
 
 if(namespaceUrisParam != null && !namespaceUrisParam.trim().equals(""))
 {
-	namespaceUrisVariable = RdfUtils.listFromStringArray(namespaceUrisParam.split(","));
+	namespaceUrisVariable = ListUtils.listFromStringArray(namespaceUrisParam.split(","));
 
 }
 
@@ -422,7 +417,7 @@ if(stdeverrorlatencyParam != null && !stdeverrorlatencyParam.trim().equals(""))
 	
 	currentStatistics.add(nextStatsEntry);
 	
-	BlacklistController.persistStatistics(currentStatistics, Settings.CONFIG_API_VERSION);
+	blacklistController.persistStatistics(currentStatistics, Settings.CONFIG_API_VERSION);
 	
     if(log.isInfoEnabled())
     {

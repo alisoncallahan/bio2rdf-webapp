@@ -24,7 +24,9 @@
 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>  
-<%@page import="org.bio2rdf.*"%>
+<%@page import="org.bio2rdf.servlets.*"%>
+<%@page import="org.queryall.helpers.*"%>
+<%@page import="org.queryall.blacklist.*"%>
 <%@page import="java.io.StringReader,java.util.Date,java.util.Collection,java.util.HashSet,java.util.regex.Matcher"%>
 <%@page import="org.apache.log4j.Logger"%>
 <%
@@ -32,6 +34,8 @@
 Logger log = Logger.getLogger("org.bio2rdf.blacklisterror");
 
 Date queryStartTime = new Date();
+
+Settings localSettings = Settings.getSettings();
 
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
 
@@ -92,7 +96,7 @@ else
         
         for(String nextQueryDebugTitle : nextQueryDebug.matchingQueryTitles)
         {
-            for(QueryType nextQueryDebugType : Settings.getCustomQueriesByUri(nextQueryDebugTitle))
+            for(QueryType nextQueryDebugType : localSettings.getQueryTypesByUri(nextQueryDebugTitle))
             {
                 if(nextQueryDebugType.inRobotsTxt())
                 {

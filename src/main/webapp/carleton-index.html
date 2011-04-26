@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
-<head id="ctl00_Head1">	
-<title>
-	Carleton | Bio2RDF.org
-</title>
+<head>	
+	<title>
+		Carleton | Bio2RDF.org
+	</title>
     <!-- compliance patch for microsoft browsers -->
     <!--[if lt IE 7]>
 	<style type="text/css" media="screen">
@@ -87,8 +87,8 @@ Visit our main Bio2RDF application at http://www.bio2rdf.org
 	<div id="main">
 		<img src="includes-images/Bio2RDF.jpg" width="547" height="81" border="0" alt="Bio2Rdf.org" />
 		<h2>Semantic web atlas of postgenomic knowledge</h2>
-		<form name="samplestartform" action="/noscript/" onsubmit="document.location=document.location.href+samplestartform.submitted_bio2rdf_id.value;return false;" method="GET">
-			<select name="exampleselectvalue" size="1" onChange="samplestartform.submitted_bio2rdf_id.value = this.options[this.selectedIndex].value;">
+		<form name="samplestartform" action="/noscript/" onsubmit="document.location=document.location.href+samplestartform.submitted_bio2rdf_id.value;return false;" method="get">
+			<select name="exampleselectvalue" size="1" onchange="samplestartform.submitted_bio2rdf_id.value = this.options[this.selectedIndex].value;">
 				<option value="" selected="selected" >Select an ID example</option>
 				<option value="search/Paget">Semantic discovery for "Paget" in Bio2RDF</option>
 				<option value="search/hexokinase">Semantic discovery for "hexokinase" in Bio2RDF</option>

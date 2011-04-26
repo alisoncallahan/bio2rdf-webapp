@@ -21,20 +21,22 @@
 // Visit our main Bio2RDF application at http://www.bio2rdf.org
 // -------------------------------------------------------------------------------
 
---%><%@ page contentType="text/html;charset=UTF-8" %><%@page import="org.bio2rdf.*,java.util.Random,java.net.URLEncoder,java.util.List,java.util.Hashtable,java.util.Collection,java.util.Enumeration,org.apache.log4j.Logger"%><%
+--%><%@ page contentType="text/html;charset=UTF-8" %><%@page import="org.queryall.helpers.*,java.util.Random,java.net.URLEncoder,java.util.List,java.util.Hashtable,java.util.Collection,java.util.Enumeration,org.apache.log4j.Logger"%><%
 // DO NOT EDIT version. It is auto-replaced by the build process in order to debug when people have issues with this file
 String subversionId = "$Id: redirectToId.jsp 910 2010-12-03 22:07:48Z p_ansell $";
 String version = "%%__VERSION__%%";
 
 Logger log = Logger.getLogger("atlas2rdf");
 
+Settings localSettings = Settings.getSettings();
+
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort())+"/";
 
 String contextPath = request.getContextPath();
 
-if(Settings.getBooleanPropertyFromConfig("useHardcodedRequestContext")PATH)
+if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestContext", false))
 {
-    contextPath = Settings.getStringPropertyFromConfig("hardcodedRequestContext")PATH;
+    contextPath = localSettings.getStringPropertyFromConfig("hardcodedRequestContext", contextPath);
 }
 
 if(contextPath == null || contextPath.equals("/"))
@@ -47,9 +49,9 @@ else if(contextPath.startsWith("/") && contextPath.length() > 1 )
     contextPath = contextPath.substring(1)+"/";
 }
 
-if(Settings.getBooleanPropertyFromConfig("useHardcodedRequestHostname"))
+if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestHostname", false))
 {
-    realHostName = Settings.getStringPropertyFromConfig("hardcodedRequestHostname");
+    realHostName = localSettings.getStringPropertyFromConfig("hardcodedRequestHostname", realHostName);
 }
 
 String serverName = request.getServerName();
@@ -61,13 +63,13 @@ String redirectPoint = "";
 if(querytype != null && querytype.equals("search"))
 {
     String searchterm = request.getParameter("searchterm");
-    redirectPoint = contextPath+"search/"+RdfUtils.percentEncode(searchterm);
+    redirectPoint = contextPath+"search/"+StringUtils.percentEncode(searchterm);
 }
 else if(querytype != null && querytype.equals("linksns"))
 {
     String linksns = request.getParameter("linksns");
     String nsid = request.getParameter("nsid");
-    redirectPoint = contextPath+"linksns/"+RdfUtils.percentEncode(linksns)+"/"+nsid;
+    redirectPoint = contextPath+"linksns/"+StringUtils.percentEncode(linksns)+"/"+nsid;
 }
 else
 {

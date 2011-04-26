@@ -155,12 +155,6 @@ public class GeneralServlet extends HttpServlet
         
         boolean useDefaultProviders = true;
         
-        // TODO: see if this functionality is necessary anymore, as it dates from very early, circa 0.2, implementations before profiles
-        // if(localSettings.ONLY_USE_DEFAULTS_WHEN_DEFAULT_HOST_NAME && !serverName.equals(localSettings.getStringPropertyFromConfig("hostName")))
-        // {
-            // useDefaultProviders = false;
-        // }
-        
         if(_INFO)
         {
             log.info("GeneralServlet: query started on "+serverName+" requesterIpAddress="+requesterIpAddress+" queryString="+queryString+" explicitPageOffset="+requestQueryOptions.containsExplicitPageOffsetValue()+" pageOffset="+pageOffset+" isPretendQuery="+isPretendQuery+" useDefaultProviders="+useDefaultProviders);
@@ -171,10 +165,6 @@ public class GeneralServlet extends HttpServlet
                 log.info("GeneralServlet: originalRequestedContentType was overwritten originalRequestedContentType="+originalRequestedContentType+" requestedContentType="+requestedContentType);
             }
         }
-        
-        // if(_DEBUG)
-        // {
-        // }
         
         if(localBlacklistController.isClientBlacklisted(requesterIpAddress))
         {
@@ -502,7 +492,6 @@ public class GeneralServlet extends HttpServlet
             
             // For each of the providers, get the rules, and universally sort them and perform a single normalisation for this stage
             
-            // FIXME: check whether myRepository is modified by this method
             Repository convertedPool = (Repository)QueryCreator.normaliseByStage(
                 NormalisationRuleImpl.getRdfruleStageAfterResultsToPool(),
                 myRepository, 
@@ -527,7 +516,7 @@ public class GeneralServlet extends HttpServlet
                 
                 try
                 {
-                    HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, fetchController, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), pageOffset, localSettings);
+                    HtmlPageRenderer.renderHtml(getServletContext(), convertedPool, cleanOutput, fetchController, debugStrings, queryString, localSettings.getDefaultHostAddress() + queryString, realHostName, request.getContextPath(), pageOffset, localSettings);
                 }
                 catch(OpenRDFException ordfe)
                 {
@@ -540,7 +529,7 @@ public class GeneralServlet extends HttpServlet
             }
             else
             {
-                RdfUtils.toWriter(myRepository, cleanOutput, writerFormat);
+                RdfUtils.toWriter(convertedPool, cleanOutput, writerFormat);
             }
             
             String actualRdfString = cleanOutput.toString();

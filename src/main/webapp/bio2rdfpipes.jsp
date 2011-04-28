@@ -1,4 +1,5 @@
-<%@ page pageEncoding="utf-8" session="false" %><%@page import="java.io.*,org.queryall.helpers.*,org.bio2rdf.servlets.html.*,org.openrdf.OpenRDFException,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable, java.util.Collection,java.util.ArrayList,java.util.Map,java.io.File,java.io.BufferedWriter,java.io.CharArrayWriter,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger,org.deri.pipes.core.Engine,org.deri.pipes.core.Pipe,org.deri.pipes.core.ExecBuffer,org.deri.pipes.store.FilePipeStore,org.deri.pipes.endpoints.PipeConfig,java.net.URLDecoder
+<%@ page pageEncoding="utf-8" session="false" %>
+<%@page import="java.io.*,org.bio2rdf.servlets.*,org.queryall.queryutils.*,org.queryall.blacklist.*,org.queryall.helpers.*,org.bio2rdf.servlets.html.*,org.openrdf.OpenRDFException,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable, java.util.Collection,java.util.ArrayList,java.util.Map,java.io.File,java.io.BufferedWriter,java.io.CharArrayWriter,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger,org.deri.pipes.core.Engine,org.deri.pipes.core.Pipe,org.deri.pipes.core.ExecBuffer,org.deri.pipes.store.FilePipeStore,org.deri.pipes.endpoints.PipeConfig,java.net.URLDecoder
 "%>
 <%
 // -------------------------------------------------------------------------------
@@ -28,6 +29,8 @@ String subversionId = "$Id: bio2rdfpipes.jsp 936 2011-02-06 05:34:23Z p_ansell $
 Logger log = Logger.getLogger("org.bio2rdf.bio2rdfpipes");
 
 Settings localSettings = Settings.getSettings();
+
+BlacklistController blacklistController = BlacklistController.getDefaultController();
 
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort()+"/");
 
@@ -82,7 +85,7 @@ if(!localSettings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
         log.error("Atlas2Rdf: found blocked user-agent userAgentHeader="+userAgentHeader + " queryString="+queryString+" requesterIpAddress="+requesterIpAddress);
         
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-        response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage", "/admin/blacklist"));
+        response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage", "error/blacklist"));
         return;
     }
 }
@@ -95,7 +98,7 @@ String explicitUrlContentType = request.getParameter("chosenContentType");
 
 if(explicitUrlContentType != null && !explicitUrlContentType.equals(""))
 {
-    if(Settings._ATLASDEBUG)
+    if(log.isDebugEnabled())
     {
         log.debug("Atlas2Rdf.jsp: found explicitUrlContentType="+explicitUrlContentType);
 	}
@@ -215,7 +218,7 @@ try
         
         try
         {
-            HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, debugStrings, queryString, localSettings.getDefaultHostAddress() + "/" + queryString, realHostName + "/", request.getContextPath(), 1);
+            HtmlPageRenderer.renderHtml(getServletContext(), myRepository, cleanOutput, debugStrings, queryString, localSettings.getDefaultHostAddress() + "/" + queryString, realHostName + "/", request.getContextPath(), 1, localSettings);
         }
         catch(OpenRDFException ordfe)
         {

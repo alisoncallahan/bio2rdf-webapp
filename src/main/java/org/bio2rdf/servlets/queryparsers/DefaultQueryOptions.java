@@ -28,17 +28,34 @@ public class DefaultQueryOptions
     
     private Settings localSettings;
 	private Pattern queryPlanPattern;
+	private String queryplanUrlPrefix;
+	private String queryplanUrlSuffix;
+	private String pageoffsetUrlOpeningPrefix;
+	private String pageoffsetUrlClosingPrefix;
+	private String pageoffsetUrlSuffix;
+	private String htmlUrlPrefix;
+	private String htmlUrlSuffix;
+	private String rdfXmlUrlPrefix;
+	private String rdfXmlUrlSuffix;
+	private String n3UrlPrefix;
+	private String n3UrlSuffix;
     
-    public DefaultQueryOptions(String requestUri, Settings localSettings)
+    public DefaultQueryOptions(String requestUri, Settings nextSettings)
     {
-        this.localSettings = localSettings;
+        this.localSettings = nextSettings;
 
-        String requestString = requestUri;
+        pageoffsetUrlOpeningPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
+        pageoffsetUrlClosingPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
+        pageoffsetUrlSuffix = localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
+        htmlUrlPrefix = localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "page/");
+        htmlUrlSuffix = localSettings.getStringPropertyFromConfig("htmlUrlSuffix", "");
+        rdfXmlUrlPrefix = localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "rdfxml/");
+        rdfXmlUrlSuffix = localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
+        n3UrlPrefix = localSettings.getStringPropertyFromConfig("n3UrlPrefix", "n3/");
+        n3UrlSuffix = localSettings.getStringPropertyFromConfig("n3UrlSuffix", "");
+        queryplanUrlPrefix = localSettings.getStringPropertyFromConfig("queryplanUrlPrefix", "queryplan/");
+        queryplanUrlSuffix = localSettings.getStringPropertyFromConfig("queryplanUrlSuffix", "");
         
-        String pageoffsetUrlOpeningPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
-        String pageoffsetUrlClosingPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
-        String pageoffsetUrlSuffix = localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
-
         String pageOffsetPatternString = "^"+pageoffsetUrlOpeningPrefix+"(\\d+)"+pageoffsetUrlClosingPrefix+"(.+)"+pageoffsetUrlSuffix+"$";
 
         if(_DEBUG)
@@ -46,11 +63,15 @@ public class DefaultQueryOptions
         
         queryPlanPattern = Pattern.compile(pageOffsetPatternString);
 
+        String requestString = requestUri;
+        
         if(requestString.startsWith("/"))
         {
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
             requestString = requestString.substring(1);
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
         }
         
         requestString = parseForFormat(requestString);
@@ -64,36 +85,35 @@ public class DefaultQueryOptions
     
     private String parseForFormat(String requestString)
     {
-        String htmlUrlPrefix = localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "page/");
-        String htmlUrlSuffix = localSettings.getStringPropertyFromConfig("htmlUrlSuffix", "");
-        String rdfXmlUrlPrefix = localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "rdfxml/");
-        String rdfXmlUrlSuffix = localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
-        String n3UrlPrefix = localSettings.getStringPropertyFromConfig("n3UrlPrefix", "n3/");
-        String n3UrlSuffix = localSettings.getStringPropertyFromConfig("n3UrlSuffix", "");
-        
         if(matchesPrefixAndSuffix(requestString, htmlUrlPrefix, htmlUrlSuffix))
         {
             _hasExplicitFormat = true;
             _chosenFormat = Constants.TEXT_HTML;
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, htmlUrlPrefix, htmlUrlSuffix);
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
         }
         else if(matchesPrefixAndSuffix(requestString, rdfXmlUrlPrefix, rdfXmlUrlSuffix))
         {
             _hasExplicitFormat = true;
             _chosenFormat = Constants.APPLICATION_RDF_XML;
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, rdfXmlUrlPrefix, rdfXmlUrlSuffix);
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
         }
         else if(matchesPrefixAndSuffix(requestString, n3UrlPrefix, n3UrlSuffix))
         {
             _hasExplicitFormat = true;
             _chosenFormat = Constants.TEXT_RDF_N3;
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, n3UrlPrefix, n3UrlSuffix);
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
         }
         
         return requestString;
@@ -123,15 +143,14 @@ public class DefaultQueryOptions
 
     private String parseForQueryPlan(String requestString)
     {
-        String queryplanUrlPrefix = localSettings.getStringPropertyFromConfig("queryplanUrlPrefix", "queryplan/");
-        String queryplanUrlSuffix = localSettings.getStringPropertyFromConfig("queryplanUrlSuffix", "");
-        
         if(matchesPrefixAndSuffix(requestString, queryplanUrlPrefix, queryplanUrlSuffix))
         {
             _hasQueryPlanRequest = true;
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, queryplanUrlPrefix, queryplanUrlSuffix);
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
         }
         
         return requestString;
@@ -163,8 +182,11 @@ public class DefaultQueryOptions
         
         requestString = matcher.group(2);
         
-        log.debug("pageoffset="+pageoffset);
-        log.debug("requestString="+requestString);
+        if(_DEBUG)
+        {
+        	log.debug("pageoffset="+pageoffset);
+        	log.debug("requestString="+requestString);
+        }
 
         return requestString;
     }

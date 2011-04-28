@@ -27,12 +27,25 @@ public class DefaultQueryOptions
     private String parsedRequestString = "";
     
     private Settings localSettings;
+	private Pattern queryPlanPattern;
     
     public DefaultQueryOptions(String requestUri, Settings localSettings)
     {
-        String requestString = requestUri;
         this.localSettings = localSettings;
+
+        String requestString = requestUri;
         
+        String pageoffsetUrlOpeningPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
+        String pageoffsetUrlClosingPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
+        String pageoffsetUrlSuffix = localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
+
+        String pageOffsetPatternString = "^"+pageoffsetUrlOpeningPrefix+"(\\d+)"+pageoffsetUrlClosingPrefix+"(.+)"+pageoffsetUrlSuffix+"$";
+
+        if(_DEBUG)
+            log.debug("pageOffsetPatternString="+pageOffsetPatternString);
+        
+        queryPlanPattern = Pattern.compile(pageOffsetPatternString);
+
         if(requestString.startsWith("/"))
         {
             log.debug("requestString="+requestString);
@@ -126,17 +139,6 @@ public class DefaultQueryOptions
     
     private String parseForPageOffset(String requestString)
     {
-        String pageoffsetUrlOpeningPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset");
-        String pageoffsetUrlClosingPrefix = localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/");
-        String pageoffsetUrlSuffix = localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "");
-
-        String queryPlanPatternString = "^"+pageoffsetUrlOpeningPrefix+"(\\d+)"+pageoffsetUrlClosingPrefix+"(.+)"+pageoffsetUrlSuffix+"$";
-
-        if(_DEBUG)
-            log.debug("pageOffsetPatternString="+queryPlanPatternString);
-        
-        Pattern queryPlanPattern = Pattern.compile(queryPlanPatternString);
-        
         Matcher matcher = queryPlanPattern.matcher(requestString);
         
         if(!matcher.matches())

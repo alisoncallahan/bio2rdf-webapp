@@ -37,8 +37,6 @@ Date queryStartTime = new Date();
 
 Settings localSettings = Settings.getSettings();
 
-BlacklistController blacklistController = BlacklistController.getDefaultController();
-
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
 
 String serverName = request.getServerName();
@@ -52,15 +50,15 @@ if(userAgentHeader == null)
 	userAgentHeader = "";
 }
 
-blacklistController.doBlacklistExpiry();
+BlacklistController.doBlacklistExpiry();
 
-boolean userIsBlocked = blacklistController.isClientBlacklisted(requesterIpAddress);
+boolean userIsBlocked = BlacklistController.isClientBlacklisted(requesterIpAddress);
 
-boolean userIsPermanentlyBlocked = blacklistController.isClientPermanentlyBlacklisted(requesterIpAddress);
+boolean userIsPermanentlyBlocked = BlacklistController.isClientPermanentlyBlacklisted(requesterIpAddress);
 
 if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
 {
-    Matcher userAgentBlacklistMatcher = localSettings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
+    Matcher userAgentBlacklistMatcher = Settings.USER_AGENT_BLACKLIST_PATTERN.matcher(userAgentHeader);
     
     if(userAgentBlacklistMatcher.find())
     {
@@ -71,12 +69,12 @@ if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
     }
 }
 
-Collection<QueryDebug> allQueriesByUser = blacklistController.getCurrentDebugInformationFor(requesterIpAddress);
+Collection<QueryDebug> allQueriesByUser = BlacklistController.getCurrentDebugInformationFor(requesterIpAddress);
 
 // get the list from the permanent block evidence if they are permanently blocked
 if(userIsPermanentlyBlocked)
 {
-	allQueriesByUser = blacklistController.permanentServletLifetimeIPBlacklistEvidence.get(requesterIpAddress);
+	allQueriesByUser = BlacklistController.permanentServletLifetimeIPBlacklistEvidence.get(requesterIpAddress);
 }
 
 int overallCount = 0;
@@ -144,24 +142,24 @@ if(log.isTraceEnabled())
 	log.trace("BlacklistError.jsp: results requesterIpAddress="+requesterIpAddress+" robotsTxtCount="+robotsTxtCount +" overallCount="+overallCount+ " robotsPercentage="+robotsPercentage);
 }
 
-if(!userIsPermanentlyBlocked && localSettings.getBooleanPropertyFromConfig("automaticallyBlacklistClients", false))
+if(!userIsPermanentlyBlocked && Settings.getBooleanPropertyFromConfig("automaticallyBlacklistClients"))
 {
-	if(localSettings.getBooleanPropertyFromConfig("blacklistResetClientBlacklistWithEndpoints", true))
+	if(Settings.getBooleanPropertyFromConfig("blacklistResetClientBlacklistWithEndpoints"))
 	{
 		Date currentDate = new Date();
 		
-		long differenceMilliseconds = currentDate.getTime() - blacklistController.lastExpiryDate.getTime();
+		long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
 		
 		
 		out.write("Current date : "+currentDate.toString()+"<br />\n");
-		out.write("Last error reset date: "+blacklistController.lastExpiryDate.toString()+"<br />\n");
-		out.write("Server startup date: "+blacklistController.lastServerStartupDate.toString()+"<br />\n");
-		out.write("Reset period "+localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 120000)+"<br />\n");
-		out.write("Client blacklist will reset in "+((localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 120000)-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
+		out.write("Last error reset date: "+BlacklistController.lastExpiryDate.toString()+"<br />\n");
+		out.write("Server startup date: "+BlacklistController.lastServerStartupDate.toString()+"<br />\n");
+		out.write("Reset period "+Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")+"<br />\n");
+		out.write("Client blacklist will reset in "+((Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
 		
-		if(!userIsBlocked && overallCount < localSettings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules", 20))
+		if(!userIsBlocked && overallCount < Settings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules"))
 		{
-			out.write("You have "+(localSettings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules", 20)-overallCount)+" queries left in this period before you are subject to the blacklisting rules, after which time you must keep your percentage of robots.txt disallowed queries below "+Settings.getFloatPropertyFromConfig("blacklistPercentageOfRobotTxtQueriesBeforeAutomatic")*100+"%.<br />\n");
+			out.write("You have "+(Settings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules")-overallCount)+" queries left in this period before you are subject to the blacklisting rules, after which time you must keep your percentage of robots.txt disallowed queries below "+Settings.getFloatPropertyFromConfig("blacklistPercentageOfRobotTxtQueriesBeforeAutomatic")*100+"%.<br />\n");
 		}
 	}
 	else
@@ -172,7 +170,7 @@ if(!userIsPermanentlyBlocked && localSettings.getBooleanPropertyFromConfig("auto
 
 if(userIsBlocked)
 {
-	out.write("<span class=\"error\">Please contact <a href=\"mailto:"+localSettings.BLACKLIST_CONTACT_ADDRESS+">"+localSettings.BLACKLIST_CONTACT_ADDRESS+"</a> for information about how to avoid getting this message, and why robots.txt disallowed queries should not called repeatedly within a short space of time and why the robots.txt maximum request rate must be respected</span><br />\n");
+	out.write("<span class=\"error\">Please contact <a href=\"mailto:"+Settings.BLACKLIST_CONTACT_ADDRESS+">"+Settings.BLACKLIST_CONTACT_ADDRESS+"</a> for information about how to avoid getting this message, and why robots.txt disallowed queries should not called repeatedly within a short space of time and why the robots.txt maximum request rate must be respected</span><br />\n");
 }
 
 if(userIsPermanentlyBlocked)

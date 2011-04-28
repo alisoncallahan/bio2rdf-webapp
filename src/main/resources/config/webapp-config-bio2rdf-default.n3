@@ -153,6 +153,7 @@ queryall:convertAlternateNamespacePrefixesToPreferred "false"^^xsd:boolean ;
 
 queryall:useVirtuosoMaxRowsParameter "false"^^xsd:boolean ;
 
+
 .
 
 

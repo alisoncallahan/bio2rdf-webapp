@@ -1,36 +1,3 @@
-# bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-providers-config.n3 977 2011-02-28 06:21:00Z p_ansell $)
-
-<http://bio2rdf.org/provider:dummyuniversalfilterprovider> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "This provider contains a universal query type, and a set of normalisation rules that will filter all queries" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:dummyuniversalfilterquery> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:sparqlowlsameastrivialdelete> , <http://bio2rdf.org/rdfrule:sparqllinkedtofromunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:sparqlremoveplaintextemailaddresses> , <http://bio2rdf.org/rdfrule:sparqlobodbxrefunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:removeemptynamespaceucscuris> .
-
-<http://bio2rdf.org/provider:bio2rdfresolvermirrors> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "Contains a list of all of the known currently available Bio2RDF.org resolver mirrors" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-    <http://purl.org/queryall/provider:acceptHeader> "application/rdf+xml" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://qut.bio2rdf.org/rdfxml/pageoffset${pageoffset}/${queryString}" , "http://quebec.bio2rdf.org/rdfxml/pageoffset${pageoffset}/${queryString}" , "http://cu.bio2rdf.org/rdfxml/pageoffset${pageoffset}/${queryString}" ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:catchalldefault> .
-
-<http://bio2rdf.org/provider:qutrestrictedproxy> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "Use other mirrors to get access to sites that QUT restricts for the QUT mirror" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
-	<http://purl.org/queryall/provider:endpointUrl>  "http://quebec.bio2rdf.org/rdfxml/pageoffset${pageoffset}/${queryString}" , "http://cu.bio2rdf.org/rdfxml/pageoffset${pageoffset}/${queryString}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> , <http://bio2rdf.org/ns:mesh> , <http://bio2rdf.org/ns:obo> , <http://bio2rdf.org/ns:obi> , <http://bio2rdf.org/ns:envo> , <http://bio2rdf.org/ns:pro> , <http://bio2rdf.org/ns:pato> , <http://bio2rdf.org/ns:to> , <http://bio2rdf.org/ns:trans> , <http://bio2rdf.org/ns:bspo> , <http://bio2rdf.org/ns:doid> , <http://bio2rdf.org/ns:eo> , <http://bio2rdf.org/ns:miro> , <http://bio2rdf.org/ns:uberon> , <http://bio2rdf.org/ns:so> , <http://bio2rdf.org/ns:obo_aeo> , <http://bio2rdf.org/ns:imgt_ontology> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> .
-#	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:biocartacategorynamespace> .
-
 
 <http://bio2rdf.org/provider:carletonndc> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "Contains the NDC dataset" ;
@@ -122,18 +89,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:biopaxurls> , <http://bio2rdf.org/rdfrule:biopaxontology> , <http://bio2rdf.org/rdfrule:biopaxgofix> .
     
-<http://bio2rdf.org/provider:wikipathwaysdata> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.wikipathways.org/wpi/wpi.php?action=downloadFile&type=txt&pwTitle=Pathway:${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipathways> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
-
 <http://bio2rdf.org/provider:fuberlindailymed> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -173,19 +128,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:goinprositeconstruct> , <http://bio2rdf.org/query:goinprositelinks> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:neurocommonsscienceowl> , <http://bio2rdf.org/rdfrule:neurocommonsgo> , <http://bio2rdf.org/rdfrule:neurocommonsprosite> .
 
-<http://bio2rdf.org/provider:gopubmedrdf> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/RDF?m=1000&q=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gopubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:rawrdf> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
 <http://bio2rdf.org/provider:quebecaffymetrixreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -211,18 +153,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mgi> , <http://bio2rdf.org/ns:symbol> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:ncbipubmedrelated> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?itool=pubmed_Abstract&db=pubmed&cmd=Display&dopt=pubmed_pubmed&retmode=ref&from_uid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
 <http://bio2rdf.org/provider:quebecpubchem> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -276,18 +206,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:oldontologyterms> .
 
-<http://bio2rdf.org/provider:bioguidhandle> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bioguid.info/openhandle/handle.php?include=&index=&format=rdf&mimetype=application%2Frdf%2Bxml&submit=Submit+Query&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:handle> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> .
-
 <http://bio2rdf.org/provider:quebecatlasunsafe> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -313,55 +231,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:iproclass> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
-
-<http://bio2rdf.org/provider:dbpediardf> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://dbpedia.org/resource/${input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsaferawrdf> .
-
-<http://bio2rdf.org/provider:ncbigeneidxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
-
-<http://bio2rdf.org/provider:ebigoxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/QuickGO/GTerm?format=oboxml&id=GO:${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
-
-<http://bio2rdf.org/provider:mqutertagquerieslabels> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.mquter.qut.edu.au/tags/${urlEncoded_input_1}:${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> , <http://bio2rdf.org/ns:mquter_gene> , <http://bio2rdf.org/ns:go> , <http://bio2rdf.org/ns:keywords> , <http://bio2rdf.org/ns:term> , <http://bio2rdf.org/ns:terminstance> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:taglabels> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
 <http://bio2rdf.org/provider:quebecatlasreversefromlowercase> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -389,16 +258,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> , <http://bio2rdf.org/query:unsafeconstruct> , <http://bio2rdf.org/query:unsafelinks> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:countlinksbynamespace> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:doubleslashns> , <http://bio2rdf.org/rdfrule:badnsfoaf> , <http://bio2rdf.org/rdfrule:bio2drfmisspelling> .
 
-<http://bio2rdf.org/provider:lsidproxyinsertion> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:lsidproxyinsertion> , <http://bio2rdf.org/query:lsidstandardinsertion> .
-
 <http://bio2rdf.org/provider:mirroredhomologenereverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -424,19 +283,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:flyted2flybase> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:labelsearchforgo> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:bioguiddoi> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bioguid.info/openurl.php?display=rdf&id=doi:${input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:doi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:bioguidpmid> , <http://bio2rdf.org/rdfrule:bioguiddoi> , <http://bio2rdf.org/rdfrule:bioguidissn> , <http://bio2rdf.org/rdfrule:bioguidgi> .
 
 <http://bio2rdf.org/provider:mirroredgeneid> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -544,29 +390,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:rxlistgeneric> , <http://bio2rdf.org/rdfrule:rxlistgeneric2> , <http://bio2rdf.org/rdfrule:drugbankdruginteractions> , <http://bio2rdf.org/rdfrule:drugbankdosageforms> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:drugbankenzymes> , <http://bio2rdf.org/rdfrule:drugbankpubmedreferences> ,  <http://bio2rdf.org/rdfrule:drugbankdrugtype> , <http://bio2rdf.org/rdfrule:drugbankdrugcategory> , <http://bio2rdf.org/rdfrule:drugbankontology> , <http://bio2rdf.org/rdfrule:drugbanktargets> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:diseasomediseases> , <http://bio2rdf.org/rdfrule:dbpediaresource> , <http://bio2rdf.org/rdfrule:linkedctintervention> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:drugbankkeggdr> .
 
-<http://bio2rdf.org/provider:fuberlindrugbankdrugslinkeddata> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "Linked Data provider for DrugBank, provided by the Linked Open Drug Data group and Free University, Berlin" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:drugbank_drugs> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:rxlistgeneric> , <http://bio2rdf.org/rdfrule:rxlistgeneric2> , <http://bio2rdf.org/rdfrule:drugbankdruginteractions> , <http://bio2rdf.org/rdfrule:drugbankdosageforms> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:drugbankenzymes> , <http://bio2rdf.org/rdfrule:drugbankpubmedreferences> ,  <http://bio2rdf.org/rdfrule:drugbankdrugtype> , <http://bio2rdf.org/rdfrule:drugbankdrugcategory> , <http://bio2rdf.org/rdfrule:drugbankontology> , <http://bio2rdf.org/rdfrule:drugbanktargets> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:diseasomediseases> , <http://bio2rdf.org/rdfrule:dbpediaresource> , <http://bio2rdf.org/rdfrule:linkedctintervention> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:drugbankkeggdr> .
-
-<http://bio2rdf.org/provider:prositedata> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://expasy.org/cgi-bin/get-prosite-raw.pl?${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prosite> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
-
 <http://bio2rdf.org/provider:mquterdrugbankreverse2> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -615,7 +438,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/nmrshiftdb/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nmrshiftdb_molecule> , <http://bio2rdf.org/ns:nmrshiftdb_spectrum> , <http://bio2rdf.org/ns:nmrshiftdb_peak> , <http://bio2rdf.org/ns:nmrshiftdb_bib> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:nmrshiftdb_molecule> , <http://bio2rdf.org/rdfrule:nmrshiftdb_spectrum> , <http://bio2rdf.org/rdfrule:nmrshiftdb_peak> , <http://bio2rdf.org/rdfrule:nmrshiftdb_bib> .
@@ -628,7 +451,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/nmrshiftdb/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cas> , <http://bio2rdf.org/ns:nmrshiftdb_spectrum> , <http://bio2rdf.org/ns:nmrshiftdb_peak> , <http://bio2rdf.org/ns:nmrshiftdb_bib> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:nmrshiftdb_molecule> , <http://bio2rdf.org/rdfrule:nmrshiftdb_spectrum> , <http://bio2rdf.org/rdfrule:nmrshiftdb_peak> , <http://bio2rdf.org/rdfrule:nmrshiftdb_bib> .
@@ -641,7 +464,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/nmrshiftdb/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:doi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstructfromdoifornmrshiftdbspectrum> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:nmrshiftdb_molecule> , <http://bio2rdf.org/rdfrule:nmrshiftdb_spectrum> , <http://bio2rdf.org/rdfrule:nmrshiftdb_peak> , <http://bio2rdf.org/rdfrule:nmrshiftdb_bib> .
@@ -654,7 +477,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/nmrshiftdb/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:inchi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchi> , <http://bio2rdf.org/query:spectrumfrominchi> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:nmrshiftdb_molecule> , <http://bio2rdf.org/rdfrule:nmrshiftdb_spectrum> , <http://bio2rdf.org/rdfrule:nmrshiftdb_peak> , <http://bio2rdf.org/rdfrule:nmrshiftdb_bib> .
@@ -667,7 +490,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/nmrshiftdb/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:inchikey> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchikey> , <http://bio2rdf.org/query:spectrumfrominchikey> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:nmrshiftdb_molecule> , <http://bio2rdf.org/rdfrule:nmrshiftdb_spectrum> , <http://bio2rdf.org/rdfrule:nmrshiftdb_peak> , <http://bio2rdf.org/rdfrule:nmrshiftdb_bib> .
@@ -680,7 +503,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/nmrshiftdb/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nmrshiftdb_spectrumtype> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:linksfromnmrshiftdbspectrumtype> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:nmrshiftdb_spectrum> , <http://bio2rdf.org/rdfrule:nmrshiftdb_peak> , <http://bio2rdf.org/rdfrule:nmrshiftdb_bib> .
@@ -711,18 +534,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:pubmed2pmid> , <http://bio2rdf.org/rdfrule:goassociationnamespace> , <http://bio2rdf.org/rdfrule:goflybasefix> , <http://bio2rdf.org/rdfrule:goevidencenamespace> .
 
-<http://bio2rdf.org/provider:ncbigenbankgenbankfull> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=gbwithparts&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:genbankfull> .
-
 <http://bio2rdf.org/provider:quebecinoh> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -735,18 +546,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:inoh> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorgunmangling> , <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:dbdotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:slashowl> , <http://bio2rdf.org/rdfrule:oldontologyterms> , <http://bio2rdf.org/rdfrule:biopaxurls> , <http://bio2rdf.org/rdfrule:biopaxontology> .
-
-<http://bio2rdf.org/provider:gopubmedxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/Xml?m=1000&q=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gopubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
 <http://bio2rdf.org/provider:mirroreduniprotunsafe> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -813,18 +612,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:hubmedpubmed> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.hubmed.org/display.cgi?uids=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:hubmed> .
-
 <http://bio2rdf.org/provider:neurocommonsmedlinesubjectheadingsreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -837,30 +624,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mesh> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:neurocommonsscienceowl> , <http://bio2rdf.org/rdfrule:neurocommonspmidrecord> , <http://bio2rdf.org/rdfrule:neurocommonsmeshrecord> .
-
-<http://bio2rdf.org/provider:asn1pubmed> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=asn.1&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
-
-<http://bio2rdf.org/provider:printsrelated> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://srs.embl.de/srs/showEntryView.do?query=[prints-AccNumber:${urlEncoded_input_2}]" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prints> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
 <http://bio2rdf.org/provider:hclsderidbpedia> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -913,18 +676,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:tissues> , <http://bio2rdf.org/ns:mesh> , <http://bio2rdf.org/ns:mgc> , <http://bio2rdf.org/ns:refseq> , <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:tng> , <http://bio2rdf.org/ns:gm99-gb4> , <http://bio2rdf.org/ns:decode> , <http://bio2rdf.org/ns:ncbi_rh> , <http://bio2rdf.org/ns:nhgri-7> , <http://bio2rdf.org/ns:wustl-x> , <http://bio2rdf.org/ns:cleanex> , <http://bio2rdf.org/ns:ensembl> , <http://bio2rdf.org/ns:h_inv> , <http://bio2rdf.org/ns:hsa> , <http://bio2rdf.org/ns:cpd> , <http://bio2rdf.org/ns:smart> , <http://bio2rdf.org/ns:rn> , <http://bio2rdf.org/ns:pkb> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructfromlowercase> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksfromlowercase> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksfromlowercase> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:counttriplesfromlowercase> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:oldontologyterms> .
-
-<http://bio2rdf.org/provider:ncbibiosystemspubmedrefs> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&DbFrom=biosystems&Cmd=Link&LinkName=biosystems_pubmed&ordinalpos=1&IdsFromResult=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biosystems> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedrefs> .
 
 <http://bio2rdf.org/provider:mquterterm> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -1015,30 +766,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mesh> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:unsafeconstruct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:unsafelinks> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:ncbipubmedxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&tool=bio2rdf&email=bio2rdf@googlegroups.com&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
-
-<http://bio2rdf.org/provider:taxon2taxonomy> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxon> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
 
 <http://bio2rdf.org/provider:fuberlinmedicarereverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -1159,91 +886,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:prositecapitalisation> , <http://bio2rdf.org/rdfrule:prositepdoccapitalisation> .
 
-<http://bio2rdf.org/provider:rcsbpdbimage1> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/images/${urlEncoded_lowercase_input_2}_bio_r_500.jpg?getBest=true" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
-<http://bio2rdf.org/provider:rcsbpdbimage2> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/images/${urlEncoded_lowercase_input_2}_asym_r_500.jpg?getBest=true" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
-<http://bio2rdf.org/provider:rcsbpdbrelated> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore/relatedCitations.do?structureId=${urlEncoded_lowercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
-
-<http://bio2rdf.org/provider:rcsbpdbdata> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://dx.doi.org/10.2210/pdb${urlEncoded_lowercase_input_2}/pdb" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
-
-<http://bio2rdf.org/provider:rcsbpdbfasta> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=FASTA&compression=NO&structureId=${urlEncoded_lowercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fasta> .
-
-<http://bio2rdf.org/provider:rcsbpdbpubmedrefs> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore/pubmedArticle.do?structureId=${urlEncoded_lowercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedrefs> .
-
-<http://bio2rdf.org/provider:quebecmainqueries> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://quebec.bio2rdf.org/rdfxml/pageoffset${pageoffset}/${queryString}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:listfbbi> , <http://bio2rdf.org/ns:drugbank_targets> , <http://bio2rdf.org/ns:dailymed_drugs> , <http://bio2rdf.org/ns:sopharm> , <http://bio2rdf.org/ns:map6> , <http://bio2rdf.org/ns:ypo> , <http://bio2rdf.org/ns:ehdaa> , <http://bio2rdf.org/ns:gro> , <http://bio2rdf.org/ns:envo> , <http://bio2rdf.org/ns:flyted2flybase> , <http://bio2rdf.org/ns:iev> , <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:homologene> , <http://bio2rdf.org/ns:uniprot> , <http://bio2rdf.org/ns:spu> , <http://bio2rdf.org/ns:linkedct_overall_official> , <http://bio2rdf.org/ns:cfa> , <http://bio2rdf.org/ns:cellmap> , <http://bio2rdf.org/ns:uberon> , <http://bio2rdf.org/ns:mdo> , <http://bio2rdf.org/ns:spd> , <http://bio2rdf.org/ns:drugbank_drugcategory> , <http://bio2rdf.org/ns:keywords> , <http://bio2rdf.org/ns:ido> , <http://bio2rdf.org/ns:kegg> , <http://bio2rdf.org/ns:pubmed> , <http://bio2rdf.org/ns:dailymed_inactiveingredient> , <http://bio2rdf.org/ns:term> , <http://bio2rdf.org/ns:pfam> , <http://bio2rdf.org/ns:pato> , <http://bio2rdf.org/ns:ekbe> , <http://bio2rdf.org/ns:pid> , <http://bio2rdf.org/ns:xtr> , <http://bio2rdf.org/ns:diseasome_chromosomallocation> , <http://bio2rdf.org/ns:path> , <http://bio2rdf.org/ns:sbo> , <http://bio2rdf.org/ns:mcc> , <http://bio2rdf.org/ns:modbase> , <http://bio2rdf.org/ns:uo> , <http://bio2rdf.org/ns:linkedct_trial> , <http://bio2rdf.org/ns:emap> , <http://bio2rdf.org/ns:linkedct_intervention> , <http://bio2rdf.org/ns:cl_emapa> , <http://bio2rdf.org/ns:fix> , <http://bio2rdf.org/ns:mod> , <http://bio2rdf.org/ns:tto> , <http://bio2rdf.org/ns:linkedct_link> , <http://bio2rdf.org/ns:obo> , <http://bio2rdf.org/ns:cpd> , <http://bio2rdf.org/ns:eco> , <http://bio2rdf.org/ns:obi> , <http://bio2rdf.org/ns:linkedct_primary_outcomes> , <http://bio2rdf.org/ns:hp> , <http://bio2rdf.org/ns:ptr> , <http://bio2rdf.org/ns:diseasome_genes> , <http://bio2rdf.org/ns:ecoo157cyc> , <http://bio2rdf.org/ns:xsp> , <http://bio2rdf.org/ns:sao> , <http://bio2rdf.org/ns:cpath> , <http://bio2rdf.org/ns:drugbank> , <http://bio2rdf.org/ns:to> , <http://bio2rdf.org/ns:linkedct_location> , <http://bio2rdf.org/ns:bspo> , <http://bio2rdf.org/ns:ncithesaurus> , <http://bio2rdf.org/ns:hugo> , <http://bio2rdf.org/ns:propreo> , <http://bio2rdf.org/ns:swoogle> , <http://bio2rdf.org/ns:mat> , <http://bio2rdf.org/ns:tads> , <http://bio2rdf.org/ns:linkedct_arm> , <http://bio2rdf.org/ns:go> , <http://bio2rdf.org/ns:pathguide> , <http://bio2rdf.org/ns:zfa> , <http://bio2rdf.org/ns:mmu> , <http://bio2rdf.org/ns:gl> , <http://bio2rdf.org/ns:oaa> , <http://bio2rdf.org/ns:dailymed_organization> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:prosite> , <http://bio2rdf.org/ns:linkedct_results_reference> , <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:doid> , <http://bio2rdf.org/ns:iproclass> , <http://bio2rdf.org/ns:iao> , <http://bio2rdf.org/ns:so> , <http://bio2rdf.org/ns:trans> , <http://bio2rdf.org/ns:cath> , <http://bio2rdf.org/ns:uniref> , <http://bio2rdf.org/ns:imr> , <http://bio2rdf.org/ns:bto> , <http://bio2rdf.org/ns:ddanat> , <http://bio2rdf.org/ns:ncbitaxon> , <http://bio2rdf.org/ns:emapa> , <http://bio2rdf.org/ns:linkedct_resource> , <http://bio2rdf.org/ns:cgsc> , <http://bio2rdf.org/ns:terminstance> , <http://bio2rdf.org/ns:core> , <http://bio2rdf.org/ns:pro> , <http://bio2rdf.org/ns:bta> , <http://bio2rdf.org/ns:birn_annot> , <http://bio2rdf.org/ns:rex> , <http://bio2rdf.org/ns:linkedct_secondary_outcomes> , <http://bio2rdf.org/ns:drugbank_enzymes> , <http://bio2rdf.org/ns:aao> , <http://bio2rdf.org/ns:ro> , <http://bio2rdf.org/ns:rn> , <http://bio2rdf.org/ns:mpath> , <http://bio2rdf.org/ns:hsa> , <http://bio2rdf.org/ns:marker> , <http://bio2rdf.org/ns:inoh> , <http://bio2rdf.org/ns:biopax> , <http://bio2rdf.org/ns:synonym> , <http://bio2rdf.org/ns:protein> , <http://bio2rdf.org/ns:dbpediaclass> , <http://bio2rdf.org/ns:b8467> , <http://bio2rdf.org/ns:obo_rel> , <http://bio2rdf.org/ns:citations> , <http://bio2rdf.org/ns:ame> , <http://bio2rdf.org/ns:fbbt_root> , <http://bio2rdf.org/ns:uniparc> , <http://bio2rdf.org/ns:eo> , <http://bio2rdf.org/ns:taxonomy> , <http://bio2rdf.org/ns:caro> , <http://bio2rdf.org/ns:flyted> , <http://bio2rdf.org/ns:oboinowl> , <http://bio2rdf.org/ns:bfo> , <http://bio2rdf.org/ns:ec> , <http://bio2rdf.org/ns:drugbank_druginteractions> , <http://bio2rdf.org/ns:diseasome_ontology> , <http://bio2rdf.org/ns:wikipathways> , <http://bio2rdf.org/ns:ehda> , <http://bio2rdf.org/ns:prodom> , <http://bio2rdf.org/ns:dc_cl> , <http://bio2rdf.org/ns:dre> , <http://bio2rdf.org/ns:fbsp> , <http://bio2rdf.org/ns:dr> , <http://bio2rdf.org/ns:pubmedcentral> , <http://bio2rdf.org/ns:gopubmed> , <http://bio2rdf.org/ns:mesh> , <http://bio2rdf.org/ns:tgma> , <http://bio2rdf.org/ns:pw> , <http://bio2rdf.org/ns:pdb> , <http://bio2rdf.org/ns:ecogene> , <http://bio2rdf.org/ns:po> , <http://bio2rdf.org/ns:miro> , <http://bio2rdf.org/ns:reactome> , <http://bio2rdf.org/ns:dc> , <http://bio2rdf.org/ns:unists> , <http://bio2rdf.org/ns:wbbt> , <http://bio2rdf.org/ns:wikipedia> , <http://bio2rdf.org/ns:ekb> , <http://bio2rdf.org/ns:wikipedia> , <http://bio2rdf.org/ns:interpro> , <http://bio2rdf.org/ns:tca> , <http://bio2rdf.org/ns:fbbi_root> , <http://bio2rdf.org/ns:sid> , <http://bio2rdf.org/ns:protege> , <http://bio2rdf.org/ns:diseasome_diseases> , <http://bio2rdf.org/ns:ecocyc> , <http://bio2rdf.org/ns:flybase> , <http://bio2rdf.org/ns:wbphenotype> , <http://bio2rdf.org/ns:cl> , <http://bio2rdf.org/ns:geneid> , <http://bio2rdf.org/ns:linkedct_reference> , <http://bio2rdf.org/ns:gene> , <http://bio2rdf.org/ns:drugbank_ontology> , <http://bio2rdf.org/ns:bils> , <http://bio2rdf.org/ns:linkedct_condition> , <http://bio2rdf.org/ns:mged> , <http://bio2rdf.org/ns:enzyme> , <http://bio2rdf.org/ns:span> , <http://bio2rdf.org/ns:xao> , <http://bio2rdf.org/ns:rno> , <http://bio2rdf.org/ns:swissmodel> , <http://bio2rdf.org/ns:snap> , <http://bio2rdf.org/ns:omim> , <http://bio2rdf.org/ns:bila> , <http://bio2rdf.org/ns:drugbank_drugtype> , <http://bio2rdf.org/ns:a8467> , <http://bio2rdf.org/ns:tao> , <http://bio2rdf.org/ns:obo_annot> , <http://bio2rdf.org/ns:fbdv> , <http://bio2rdf.org/ns:bb> , <http://bio2rdf.org/ns:cid> , <http://bio2rdf.org/ns:nar> , <http://bio2rdf.org/ns:wbls> , <http://bio2rdf.org/ns:wwbphenotype> , <http://bio2rdf.org/ns:decode> , <http://bio2rdf.org/ns:ms> , <http://bio2rdf.org/ns:tissues> , <http://bio2rdf.org/ns:ssc> , <http://bio2rdf.org/ns:mp> , <http://bio2rdf.org/ns:fbcv> , <http://bio2rdf.org/ns:obol> , <http://bio2rdf.org/ns:mgi> , <http://bio2rdf.org/ns:dailymed_routeofadministration> , <http://bio2rdf.org/ns:mi> , <http://bio2rdf.org/ns:linkedct_agent> , <http://bio2rdf.org/ns:mgc> , <http://bio2rdf.org/ns:xla> , <http://bio2rdf.org/ns:diseasome_diseaseclass> , <http://bio2rdf.org/ns:srs> , <http://bio2rdf.org/ns:ma> , <http://bio2rdf.org/ns:osa> , <http://bio2rdf.org/ns:fao> , <http://bio2rdf.org/ns:linkedct_oversight> , <http://bio2rdf.org/ns:drugbank_drugs> , <http://bio2rdf.org/ns:hgnc> , <http://bio2rdf.org/ns:taxon> , <http://bio2rdf.org/ns:plo> , <http://bio2rdf.org/ns:mfo> , <http://bio2rdf.org/ns:dailymed_ontology> , <http://bio2rdf.org/ns:gga> , <http://bio2rdf.org/ns:fbbt> , <http://bio2rdf.org/ns:symbol> , <http://bio2rdf.org/ns:refseq> , <http://bio2rdf.org/ns:fbdv_root> , <http://bio2rdf.org/ns:biopatml> , <http://bio2rdf.org/ns:fma> , <http://bio2rdf.org/ns:chebi> , <http://bio2rdf.org/ns:dbpediaproperty> , <http://bio2rdf.org/ns:blattner> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructnoinclude> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:oldontologyterms> .
-
 <http://bio2rdf.org/provider:mquterecocyc> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1284,18 +926,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:plusurlencodedprimaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:drugbanknamespacefix> .
 
-<http://bio2rdf.org/provider:ncbigirelated> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=nucleotide&dopt=GenBank&qty=1&list_uids=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
-
 <http://bio2rdf.org/provider:mirroredobo> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1309,42 +939,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:oboobidescriptionfile> .
 
-<http://bio2rdf.org/provider:rebasesuppliers> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://rebase.neb.com/cgi-bin/ecget?${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:rebase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:suppliers> .
-
-<http://bio2rdf.org/provider:ihoppubmed> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ihop-net.org/UniPub/iHOP/index.html?field=all&organism_id=0&search=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ihop> .
-
-<http://bio2rdf.org/provider:ncbipubmedfulltext> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?cmd=prlinks&dbfrom=pubmed&retmode=ref&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fulltext> .
-
 <http://bio2rdf.org/provider:mquterkeywordsreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1357,42 +951,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:ncbigenbankxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=xml&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
-
-<http://bio2rdf.org/provider:swooglesearch> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://swoogle.umbc.edu/index.php?option=com_frontpage&service=search&queryType=search_swd_all&view=raw&searchString=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swoogle> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:virtuosobifcontainssearch> .
-
-<http://bio2rdf.org/provider:lsidresolution> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "${realHostName}${input_1}${defaultSeparator}${input_2}" ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:lsidresolution> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:bio2rdf2lsid> .
 
 <http://bio2rdf.org/provider:quebecintactreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -1474,6 +1032,19 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstructfromlowercase> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:pfampfcapitalisation> , <http://bio2rdf.org/rdfrule:pfampbcapitalisation> , <http://bio2rdf.org/rdfrule:prositecapitalisation> , <http://bio2rdf.org/rdfrule:prositepdoccapitalisation> .
 
+<http://bio2rdf.org/provider:myexperimentsparql> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
+	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/provider:graphUri> "" ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.myexperiment.org/sparql?formatting=XML&query=${percentEncoded_endpointQuery}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:myexp_ontology_base> , <http://bio2rdf.org/ns:myexp_ontology_contributions> , <http://bio2rdf.org/ns:myexp_ontology_snarm> , <http://bio2rdf.org/ns:myexp_ontology_annotations> , <http://bio2rdf.org/ns:myexp_ontology_experiments> , <http://bio2rdf.org/ns:myexp_ontology_components> , <http://bio2rdf.org/ns:myexp_ontology_attribcredit> , <http://bio2rdf.org/ns:myexp_ontology_packs> , <http://bio2rdf.org/ns:myexp_ontology_viewdown> , <http://bio2rdf.org/ns:myexp_ontology_specific> , <http://bio2rdf.org/ns:myexp_downloads> , <http://bio2rdf.org/ns:myexp_workflow> , <http://bio2rdf.org/ns:myexp_user> , <http://bio2rdf.org/ns:myexp_pack> , <http://bio2rdf.org/ns:myexp_localpackentry> , <http://bio2rdf.org/ns:myexp_viewings> , <http://bio2rdf.org/ns:myexp_tagging> , <http://bio2rdf.org/ns:myexp_favourite> , <http://bio2rdf.org/ns:myexp_policy> , <http://bio2rdf.org/ns:myexp_file> , <http://bio2rdf.org/ns:myexp_license> , <http://bio2rdf.org/ns:myexp_tagstaggings> , <http://bio2rdf.org/ns:myexp_friendship> , <http://bio2rdf.org/ns:myexp_tag> , <http://bio2rdf.org/ns:myexp_creditation> , <http://bio2rdf.org/ns:myexp_group> , <http://bio2rdf.org/ns:myexp_membership> , <http://bio2rdf.org/ns:myexp_comment> , <http://bio2rdf.org/ns:myexp_groupannouncement> , <http://bio2rdf.org/ns:myexp_workflowversion> , <http://bio2rdf.org/ns:myexp_workflowversioncomponent> , <http://bio2rdf.org/ns:myexp_contenttype> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> , <http://bio2rdf.org/query:unsafelinkstonamespace> , <http://bio2rdf.org/query:unsafelinks> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:unsafelinksbynamespace> , <http://bio2rdf.org/query:sparqlregexsearch> , <http://bio2rdf.org/query:sparqlregexsearchbynamespace> ;
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:myexperimenthtmlformat> , <http://bio2rdf.org/rdfrule:myexperimentxmlformat> , <http://bio2rdf.org/rdfrule:myexperimentrdfformat> , <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:myexperimentworkflowversioncomponent> , <http://bio2rdf.org/rdfrule:myexperimenttagstaggings> , <http://bio2rdf.org/rdfrule:myexperimentlicense> , <http://bio2rdf.org/rdfrule:myexperimentdownloads> , <http://bio2rdf.org/rdfrule:myexperimentworkflow> , <http://bio2rdf.org/rdfrule:myexperimentuser> , <http://bio2rdf.org/rdfrule:myexperimentpack> , <http://bio2rdf.org/rdfrule:myexperimentlocalpackentry> , <http://bio2rdf.org/rdfrule:myexperimentviewings> , <http://bio2rdf.org/rdfrule:myexperimentfavourite> , <http://bio2rdf.org/rdfrule:myexperimenttagging> , <http://bio2rdf.org/rdfrule:myexperimentpolicy> , <http://bio2rdf.org/rdfrule:myexperimentfile> , <http://bio2rdf.org/rdfrule:myexperimentfriendship> , <http://bio2rdf.org/rdfrule:myexperimenttag> , <http://bio2rdf.org/rdfrule:myexperimentcreditation> , <http://bio2rdf.org/rdfrule:myexperimentgroup> , <http://bio2rdf.org/rdfrule:myexperimentmembership> , <http://bio2rdf.org/rdfrule:myexperimentcomment> , <http://bio2rdf.org/rdfrule:myexperimentgroupannouncement> , <http://bio2rdf.org/rdfrule:myexperimentworkflowversion> , <http://bio2rdf.org/rdfrule:myexperimentcontenttype> .
+
 <http://bio2rdf.org/provider:myexperimentsparqlreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1538,18 +1109,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> , <http://bio2rdf.org/ns:go_association> , <http://bio2rdf.org/ns:go_evidence> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:labelsearchforgo> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:pubmed2pmid> , <http://bio2rdf.org/rdfrule:goflybasefix> .
-
-<http://bio2rdf.org/provider:rcsbpdbxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/files/${urlEncoded_input_2}.xml?headerOnly=YES" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
 <http://bio2rdf.org/provider:quebecuniparc> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -1720,18 +1279,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstructfromdrugbankinchikey> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:rxlistgeneric2> , <http://bio2rdf.org/rdfrule:drugbankdruginteractions> , <http://bio2rdf.org/rdfrule:drugbankdosageforms> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:drugbankenzymes> , <http://bio2rdf.org/rdfrule:drugbankpubmedreferences> ,  <http://bio2rdf.org/rdfrule:drugbankdrugtype> , <http://bio2rdf.org/rdfrule:drugbankdrugcategory> , <http://bio2rdf.org/rdfrule:drugbankontology> , <http://bio2rdf.org/rdfrule:drugbanktargets> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:diseasomediseases> , <http://bio2rdf.org/rdfrule:dbpediaresource> , <http://bio2rdf.org/rdfrule:linkedctintervention> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:drugbankkeggdr> .
 
-<http://bio2rdf.org/provider:ncbipubchemimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=l&sid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:sid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
 <http://bio2rdf.org/provider:neurocommonsgenepubmedgeneid> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1827,18 +1374,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:biopaxurls> , <http://bio2rdf.org/rdfrule:biopaxontology> , <http://bio2rdf.org/rdfrule:biopaxgofix> .
 
-<http://bio2rdf.org/provider:taxonomy2taxon> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxonomy> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxon2taxonomy> .
-
 <http://bio2rdf.org/provider:quebecatlasgeneid> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1893,19 +1428,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:myexperimentsparql> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.myexperiment.org/sparql?formatting=XML&query=${percentEncoded_endpointQuery}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:myexp_ontology_base> , <http://bio2rdf.org/ns:myexp_ontology_contributions> , <http://bio2rdf.org/ns:myexp_ontology_snarm> , <http://bio2rdf.org/ns:myexp_ontology_annotations> , <http://bio2rdf.org/ns:myexp_ontology_experiments> , <http://bio2rdf.org/ns:myexp_ontology_components> , <http://bio2rdf.org/ns:myexp_ontology_attribcredit> , <http://bio2rdf.org/ns:myexp_ontology_packs> , <http://bio2rdf.org/ns:myexp_ontology_viewdown> , <http://bio2rdf.org/ns:myexp_ontology_specific> , <http://bio2rdf.org/ns:myexp_downloads> , <http://bio2rdf.org/ns:myexp_workflow> , <http://bio2rdf.org/ns:myexp_user> , <http://bio2rdf.org/ns:myexp_pack> , <http://bio2rdf.org/ns:myexp_localpackentry> , <http://bio2rdf.org/ns:myexp_viewings> , <http://bio2rdf.org/ns:myexp_tagging> , <http://bio2rdf.org/ns:myexp_favourite> , <http://bio2rdf.org/ns:myexp_policy> , <http://bio2rdf.org/ns:myexp_file> , <http://bio2rdf.org/ns:myexp_license> , <http://bio2rdf.org/ns:myexp_tagstaggings> , <http://bio2rdf.org/ns:myexp_friendship> , <http://bio2rdf.org/ns:myexp_tag> , <http://bio2rdf.org/ns:myexp_creditation> , <http://bio2rdf.org/ns:myexp_group> , <http://bio2rdf.org/ns:myexp_membership> , <http://bio2rdf.org/ns:myexp_comment> , <http://bio2rdf.org/ns:myexp_groupannouncement> , <http://bio2rdf.org/ns:myexp_workflowversion> , <http://bio2rdf.org/ns:myexp_workflowversioncomponent> , <http://bio2rdf.org/ns:myexp_contenttype> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> , <http://bio2rdf.org/query:unsafelinkstonamespace> , <http://bio2rdf.org/query:unsafelinks> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:unsafelinksbynamespace> , <http://bio2rdf.org/query:sparqlregexsearch> , <http://bio2rdf.org/query:sparqlregexsearchbynamespace> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:myexperimenthtmlformat> , <http://bio2rdf.org/rdfrule:myexperimentxmlformat> , <http://bio2rdf.org/rdfrule:myexperimentrdfformat> , <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:myexperimentworkflowversioncomponent> , <http://bio2rdf.org/rdfrule:myexperimenttagstaggings> , <http://bio2rdf.org/rdfrule:myexperimentlicense> , <http://bio2rdf.org/rdfrule:myexperimentdownloads> , <http://bio2rdf.org/rdfrule:myexperimentworkflow> , <http://bio2rdf.org/rdfrule:myexperimentuser> , <http://bio2rdf.org/rdfrule:myexperimentpack> , <http://bio2rdf.org/rdfrule:myexperimentlocalpackentry> , <http://bio2rdf.org/rdfrule:myexperimentviewings> , <http://bio2rdf.org/rdfrule:myexperimentfavourite> , <http://bio2rdf.org/rdfrule:myexperimenttagging> , <http://bio2rdf.org/rdfrule:myexperimentpolicy> , <http://bio2rdf.org/rdfrule:myexperimentfile> , <http://bio2rdf.org/rdfrule:myexperimentfriendship> , <http://bio2rdf.org/rdfrule:myexperimenttag> , <http://bio2rdf.org/rdfrule:myexperimentcreditation> , <http://bio2rdf.org/rdfrule:myexperimentgroup> , <http://bio2rdf.org/rdfrule:myexperimentmembership> , <http://bio2rdf.org/rdfrule:myexperimentcomment> , <http://bio2rdf.org/rdfrule:myexperimentgroupannouncement> , <http://bio2rdf.org/rdfrule:myexperimentworkflowversion> , <http://bio2rdf.org/rdfrule:myexperimentcontenttype> .
-
 <http://bio2rdf.org/provider:mirroredchebi> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1934,18 +1456,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:diseasomeontology> , <http://bio2rdf.org/rdfrule:diseasomediseases> , <http://bio2rdf.org/rdfrule:diseasomegenes> , <http://bio2rdf.org/rdfrule:diseasomechromosomallocation> , <http://bio2rdf.org/rdfrule:diseasomediseaseclass> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:sidersideeffects> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> .
 
-<http://bio2rdf.org/provider:cpdimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.genome.jp/Fig/compound/${urlEncoded_input_2}.gif" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cpd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
 <http://bio2rdf.org/provider:fuberlindiseasome> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -1958,17 +1468,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:diseasome_diseases> , <http://bio2rdf.org/ns:diseasome_genes> , <http://bio2rdf.org/ns:diseasome_chromosomallocation> , <http://bio2rdf.org/ns:diseasome_diseaseclass> , <http://bio2rdf.org/ns:diseasome_ontology> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:diseasomeontology> , <http://bio2rdf.org/rdfrule:diseasomediseases> , <http://bio2rdf.org/rdfrule:diseasomegenes> , <http://bio2rdf.org/rdfrule:diseasomechromosomallocation> , <http://bio2rdf.org/rdfrule:diseasomediseaseclass> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:sidersideeffects> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> .
-
-<http://bio2rdf.org/provider:mqutertagqueries> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.mquter.qut.edu.au/tags/${urlEncoded_input_1}:${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:tags> .
 
 <http://bio2rdf.org/provider:neurocommonsmedlinesubjectheadings> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -2022,66 +1521,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:reverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
 
-<http://bio2rdf.org/provider:ebichebiimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/chebi/displayImage.do?defaultImage=true&imageIndex=0&chebiId=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chebi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
-<http://bio2rdf.org/provider:ncbipubchemxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&sid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:sid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
-
-<http://bio2rdf.org/provider:swooglerdf> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://swoogle.umbc.edu/index.php?option=com_frontpage&service=search&queryType=search_swd_ontology&view=raw&searchString=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swoogle> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:rawrdf> .
-
-<http://bio2rdf.org/provider:ncbigeneidasn1> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=asn.1&id=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
-
-<http://bio2rdf.org/provider:ncbipubchemcidxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&cid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
-
 <http://bio2rdf.org/provider:neurocommonsgeneinfo> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -2106,19 +1545,6 @@
 	<http://purl.org/queryall/provider:endpointUrl> "http://cu.biocyc.bio2rdf.org/sparql", "http://quebec.biocyc.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocyc> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:mqutermainqueries> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.mquter.qut.edu.au/rdfxml/pageoffset${pageoffset}/${queryString}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:term> , <http://bio2rdf.org/ns:statistics> , <http://bio2rdf.org/ns:terminstance> , <http://bio2rdf.org/ns:taxon> , <http://bio2rdf.org/ns:taxonomy> , <http://bio2rdf.org/ns:biopatml> , <http://bio2rdf.org/ns:chebi> , <http://bio2rdf.org/ns:chebi_status> , <http://bio2rdf.org/ns:chebi_source> , <http://bio2rdf.org/ns:go> , <http://bio2rdf.org/ns:go_association> , <http://bio2rdf.org/ns:go_evidence> , <http://bio2rdf.org/ns:keywords> , <http://bio2rdf.org/ns:flyted2flybase> , <http://bio2rdf.org/ns:flyted> , <http://bio2rdf.org/ns:flybase> , <http://bio2rdf.org/ns:ecocyc> , <http://bio2rdf.org/ns:ecoo157cyc> , <http://bio2rdf.org/ns:ecogene> , <http://bio2rdf.org/ns:blattner> , <http://bio2rdf.org/ns:modbase> , <http://bio2rdf.org/ns:swissmodel> , <http://bio2rdf.org/ns:cgsc> , <http://bio2rdf.org/ns:geneid> , <http://bio2rdf.org/ns:ame> , <http://bio2rdf.org/ns:xtr> , <http://bio2rdf.org/ns:xla> , <http://bio2rdf.org/ns:tca> , <http://bio2rdf.org/ns:ssc> , <http://bio2rdf.org/ns:spu> , <http://bio2rdf.org/ns:rno> , <http://bio2rdf.org/ns:ptr> , <http://bio2rdf.org/ns:osa> , <http://bio2rdf.org/ns:oaa> , <http://bio2rdf.org/ns:mmu> , <http://bio2rdf.org/ns:mdo> , <http://bio2rdf.org/ns:mcc> , <http://bio2rdf.org/ns:hsa> , <http://bio2rdf.org/ns:gga> , <http://bio2rdf.org/ns:dre> , <http://bio2rdf.org/ns:cfa> , <http://bio2rdf.org/ns:bta> , <http://bio2rdf.org/ns:wikipedia> , <http://bio2rdf.org/ns:cas> , <http://bio2rdf.org/ns:ecol199310cyc> , <http://bio2rdf.org/ns:sfle198214cyc> , <http://bio2rdf.org/ns:shigellacyc> , <http://bio2rdf.org/ns:echobase> , <http://bio2rdf.org/ns:iupac> , <http://bio2rdf.org/ns:smiles> , <http://bio2rdf.org/ns:tcm> , <http://bio2rdf.org/ns:tcm_ontology> , <http://bio2rdf.org/ns:tcm_gene> , <http://bio2rdf.org/ns:tcm_disease> , <http://bio2rdf.org/ns:tcm_medicine> , <http://bio2rdf.org/ns:tcm_ingredient> , <http://bio2rdf.org/ns:tcm_effect> , <http://bio2rdf.org/ns:drugbank> , <http://bio2rdf.org/ns:drugbank_ontology> , <http://bio2rdf.org/ns:drugbank_drugcategory> , <http://bio2rdf.org/ns:drugbank_drugtype> , <http://bio2rdf.org/ns:drugbank_enzymes> , <http://bio2rdf.org/ns:drugbank_drugs> , <http://bio2rdf.org/ns:drugbank_druginteractions> , <http://bio2rdf.org/ns:drugbank_targets> , <http://bio2rdf.org/ns:drugbank_dosageforms> , <http://bio2rdf.org/ns:inchi> , <http://bio2rdf.org/ns:inchikey> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructnoinclude> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
 <http://bio2rdf.org/provider:dbpediadefaultreverse> a <http://purl.org/queryall/provider:Provider> ;
@@ -2213,18 +1639,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mesh> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> , <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:ncbigenbankimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/nuccore/${urlEncoded_uppercase_input_2}?report=graph" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
 
 <http://bio2rdf.org/provider:mirroredpdb> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -2333,18 +1747,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biopatml> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:ncbigenbankfasta> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=fasta&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fasta> .
 
 <http://bio2rdf.org/provider:quebecinterpro> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -2476,43 +1878,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorgunmangling> , <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:dbdotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:slashowl> , <http://bio2rdf.org/rdfrule:oldontologyterms> .
 
-<http://bio2rdf.org/provider:mqutermainqueriesdnsonly> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.mquter.qut.edu.au/rdfxml/pageoffset${pageoffset}/${queryString}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:term> , <http://bio2rdf.org/ns:terminstance> , <http://bio2rdf.org/ns:biopatml> , <http://bio2rdf.org/ns:flyted2flybase> , <http://bio2rdf.org/ns:flyted> , <http://bio2rdf.org/ns:flybase> , <http://bio2rdf.org/ns:ecocyc> , <http://bio2rdf.org/ns:ecoo157cyc> , <http://bio2rdf.org/ns:ecogene> , <http://bio2rdf.org/ns:blattner> , <http://bio2rdf.org/ns:modbase> , <http://bio2rdf.org/ns:swissmodel> , <http://bio2rdf.org/ns:cgsc> , <http://bio2rdf.org/ns:cas> , <http://bio2rdf.org/ns:ecol199310cyc> , <http://bio2rdf.org/ns:sfle198214cyc> , <http://bio2rdf.org/ns:shigellacyc> , <http://bio2rdf.org/ns:echobase> , <http://bio2rdf.org/ns:tcm> , <http://bio2rdf.org/ns:tcm_ontology> , <http://bio2rdf.org/ns:tcm_gene> , <http://bio2rdf.org/ns:tcm_disease> , <http://bio2rdf.org/ns:tcm_medicine> , <http://bio2rdf.org/ns:tcm_ingredient> , <http://bio2rdf.org/ns:tcm_effect> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
-<http://bio2rdf.org/provider:ncbigenbankgenbankpartial> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=genbank&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:genbankpartial> .
-
-<http://bio2rdf.org/provider:msdchemimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/msd-srv/msdchem/cgi-bin/ligand/GetGif?${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:msdchem> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
 <http://bio2rdf.org/provider:mirroredecreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -2630,19 +1995,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorgunmangling> , <http://bio2rdf.org/rdfrule:owldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:dbdotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:slashowl> , <http://bio2rdf.org/rdfrule:oldontologyterms> .
 
-<http://bio2rdf.org/provider:geospecies> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "${endpointSpecificUri}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geospecies_kingdoms> , <http://bio2rdf.org/ns:geospecies_phyla> , <http://bio2rdf.org/ns:geospecies_order> , <http://bio2rdf.org/ns:geospecies_orders> , <http://bio2rdf.org/ns:geospecies_family> , <http://bio2rdf.org/ns:geospecies_families> , <http://bio2rdf.org/ns:geospecies_bioclass> , <http://bio2rdf.org/ns:geospecies_observation> , <http://bio2rdf.org/ns:geospecies_location> , <http://bio2rdf.org/ns:geospecies_spec> , <http://bio2rdf.org/ns:geospecies_specimen> , <http://bio2rdf.org/ns:geospecies_observations> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:rawrdf> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:geospecieskingdoms> , <http://bio2rdf.org/rdfrule:geospeciesphyla> , <http://bio2rdf.org/rdfrule:geospeciesorderconcept> , <http://bio2rdf.org/rdfrule:geospeciesbioclassconcept> , <http://bio2rdf.org/rdfrule:geospeciesfamilyconcept> , <http://bio2rdf.org/rdfrule:geospeciesobservationsrdf> , <http://bio2rdf.org/rdfrule:geospeciesordersrdf> , <http://bio2rdf.org/rdfrule:geospeciesfamiliesrdf> , <http://bio2rdf.org/rdfrule:geospeciesfamilies> , <http://bio2rdf.org/rdfrule:geospeciesorders> , <http://bio2rdf.org/rdfrule:geospeciesobservationconcept> , <http://bio2rdf.org/rdfrule:geospecieslocationconcept> , <http://bio2rdf.org/rdfrule:geospeciesspecconcept> , <http://bio2rdf.org/rdfrule:geospeciesspecimenconcept> , <http://bio2rdf.org/rdfrule:dbpediaresource> .
-
 <http://bio2rdf.org/provider:quebecaffymetrix> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -2695,30 +2047,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:secondaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:linkedctresource> , <http://bio2rdf.org/rdfrule:linkedctintervention> , <http://bio2rdf.org/rdfrule:linkedcttrials> , <http://bio2rdf.org/rdfrule:linkedctagent> , <http://bio2rdf.org/rdfrule:linkedctcondition> , <http://bio2rdf.org/rdfrule:linkedctlink> , <http://bio2rdf.org/rdfrule:linkedctlocation> , <http://bio2rdf.org/rdfrule:linkedctoverallofficial> , <http://bio2rdf.org/rdfrule:linkedctoversight> , <http://bio2rdf.org/rdfrule:linkedctprimaryoutcomes> , <http://bio2rdf.org/rdfrule:linkedctreference> , <http://bio2rdf.org/rdfrule:linkedctresultsreference> , <http://bio2rdf.org/rdfrule:linkedctsecondaryoutcomes> , <http://bio2rdf.org/rdfrule:linkedctarmgroup> , <http://bio2rdf.org/rdfrule:drugbankdruginteractions> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:drugbankenzymes> , <http://bio2rdf.org/rdfrule:drugbankpubmedreferences> ,  <http://bio2rdf.org/rdfrule:drugbankdrugtype> , <http://bio2rdf.org/rdfrule:drugbankdrugcategory> , <http://bio2rdf.org/rdfrule:drugbankontology> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:dbpediaresource> .
 
-<http://bio2rdf.org/provider:ebigoimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/ego/gohierarchy?code=GO:${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
-<http://bio2rdf.org/provider:ncbiomimxml> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=omim&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:omim> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
-
 <http://bio2rdf.org/provider:quebecprodomreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -2731,30 +2059,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prosite> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:prodomcapitalisation> , <http://bio2rdf.org/rdfrule:interprocapitalisation> , <http://bio2rdf.org/rdfrule:prositecapitalisation> , <http://bio2rdf.org/rdfrule:prositepdoccapitalisation> , <http://bio2rdf.org/rdfrule:pfampfcapitalisation> , <http://bio2rdf.org/rdfrule:pfampbcapitalisation> .
-
-<http://bio2rdf.org/provider:medlinepubmed> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=text&rettype=medline&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:medline> .
-
-<http://bio2rdf.org/provider:ncbigenbankasn1> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=asn1&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
 
 <http://bio2rdf.org/provider:quebecpfam> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -2860,61 +2164,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:ncbihomologenerelated> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/HomoloGene/HGDownload.cgi?hid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:homologene> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
-
-<http://bio2rdf.org/provider:ncbipubchemcidimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=l&cid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:cid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
-
-<http://bio2rdf.org/provider:ebiinterprouniprotispy> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/ISpy?ac=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:uniprot> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
-	
-
-<http://bio2rdf.org/provider:ebiinterproispy> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/ISpy?ipr=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:interpro> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
-
-<http://bio2rdf.org/provider:ebiinterprosignatureispy> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/ISpy?sig=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:panther> , <http://bio2rdf.org/ns:pfam> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
-
 <http://bio2rdf.org/provider:mirroredomimreverse> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -2980,18 +2229,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:prosite2goconstruct> , <http://bio2rdf.org/query:prosite2golinks> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:neurocommonsscienceowl> , <http://bio2rdf.org/rdfrule:neurocommonsgo> , <http://bio2rdf.org/rdfrule:neurocommonsprosite> .
 
-<http://bio2rdf.org/provider:pubmedcentraldata> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&pubmedid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedcentral> .
-
 <http://bio2rdf.org/provider:mirroredsgd> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -3044,17 +2281,6 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:localpipesimilardrugsbygeneid> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "${realHostName}/pipes/bio2rdf_similar_drugbank_drugs_by_drugbank_targets/namespace=${input_1}/identifier=${input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:similardrugsbygeneid> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
-
 <http://bio2rdf.org/provider:chempedia> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
@@ -3063,7 +2289,7 @@
 	<http://purl.org/queryall/provider:graphUri> "http://chempedia.org/" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/cc0/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/cc0/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chempedia_substance> , <http://bio2rdf.org/ns:chempedia_name> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:chempedianame> , <http://bio2rdf.org/rdfrule:chempediasubstance> .
@@ -3076,7 +2302,7 @@
 	<http://purl.org/queryall/provider:graphUri> "http://chempedia.org/" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/cc0/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/cc0/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chempedia_substance> , <http://bio2rdf.org/ns:chempedia_name> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafesecondaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:chempedianame> , <http://bio2rdf.org/rdfrule:chempediasubstance> .
@@ -3090,22 +2316,10 @@
 	<http://purl.org/queryall/provider:graphUri> "http://chempedia.org/" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pele.farmbio.uu.se/cc0/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/cc0/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:inchi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstructfromiupacinchi> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:openmoleculesinchi> , <http://bio2rdf.org/rdfrule:chempedianame> , <http://bio2rdf.org/rdfrule:chempediasubstance> .
-
-<http://bio2rdf.org/provider:biocartapathwaysimage> a <http://purl.org/queryall/provider:Provider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.biocarta.com/pathfiles/${urlEncoded_input_2}.gif" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocarta> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> .
 
 <http://bio2rdf.org/provider:bioontology_imgt> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -3119,7 +2333,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:imgt_ontology> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:bioontology_imgt_ontology> .
-
 
 <http://bio2rdf.org/provider:bioontology_aeo> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
@@ -3173,5 +2386,4 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:pubmed> , <http://bio2rdf.org/ns:ebi> , <http://bio2rdf.org/ns:chebi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:secondaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
-
-
+                                                      

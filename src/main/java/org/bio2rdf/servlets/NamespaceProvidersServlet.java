@@ -6,12 +6,14 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import org.queryall.impl.*;
+import org.queryall.api.HttpProvider;
 import org.queryall.api.NamespaceEntry;
 import org.queryall.api.NormalisationRule;
 import org.queryall.api.Profile;
 import org.queryall.api.Provider;
 import org.queryall.api.QueryType;
 import org.queryall.api.RuleTest;
+import org.queryall.api.SparqlProvider;
 import org.queryall.helpers.*;
 
 import org.apache.log4j.Logger;
@@ -348,21 +350,29 @@ public class NamespaceProvidersServlet extends HttpServlet
                         
                         for(Provider nextQueryNamespaceProvider : queryTypesForNamespace)
                         {
-                            if(nextQueryNamespaceProvider.getEndpointUrls() != null)
+                            if(nextQueryNamespaceProvider instanceof HttpProvider)
                             {
-                                for(String nextEndpointUrl : nextQueryNamespaceProvider.getEndpointUrls())
-                                {
-                                    if(log.isDebugEnabled())
-                                    {
-                                        out.write("<li><span class='debug'><a href='"+nextEndpointUrl+"'>"+nextEndpointUrl);
-                                        
-                                        if(nextQueryNamespaceProvider.getEndpointMethod().equals(ProviderImpl.getProviderHttpPostSparql().stringValue()) && nextQueryNamespaceProvider.getUseSparqlGraph())
-                                        {
-                                            out.write(" graph="+nextQueryNamespaceProvider.getSparqlGraphUri());
-                                        }
-                                        
-                                        out.write("</a></span></li>\n");
-                                    }
+                            	HttpProvider nextHttpProvider = (HttpProvider)nextQueryNamespaceProvider;
+                            	if (nextHttpProvider.getEndpointUrls() != null)
+                            	{
+	                                for(String nextEndpointUrl : nextHttpProvider.getEndpointUrls())
+	                                {
+	                                    if(log.isDebugEnabled())
+	                                    {
+	                                        out.write("<li><span class='debug'><a href='"+nextEndpointUrl+"'>"+nextEndpointUrl);
+	                                        
+	                                        if(nextQueryNamespaceProvider instanceof SparqlProvider)
+	                                        {
+	                                        	SparqlProvider nextSparqlProvider = (SparqlProvider)nextQueryNamespaceProvider;
+		                                        if(nextSparqlProvider.getUseSparqlGraph())
+		                                        {
+		                                        	out.write(" graph="+nextSparqlProvider.getSparqlGraphUri());
+		                                        }
+	                                        }
+	                                        
+	                                        out.write("</a></span></li>\n");
+	                                    }
+	                                }
                                 }
                             }
                             else if(nextQueryNamespaceProvider.getEndpointMethod().equals(ProviderImpl.getProviderNoCommunication().stringValue()))

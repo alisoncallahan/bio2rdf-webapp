@@ -9,10 +9,14 @@ bio2rdf:mquter
 
 queryall:queryConfigLocations 
 "/config/base-bio2rdf-namespaceentries-config.n3" , 
-"/config/base-bio2rdf-providers-config.n3" , 
+"/config/base-bio2rdf-providers-httpgetproxy-config.n3" , 
+"/config/base-bio2rdf-providers-httpgetredirect-config.n3" , 
+"/config/base-bio2rdf-providers-nocommunication-config.n3" , 
+"/config/base-bio2rdf-providers-sparql-config.n3" , 
 "/config/base-bio2rdf-providers-html-config.n3" , 
 "/config/base-bio2rdf-providers-licenses-config.n3" , 
 "/config/base-bio2rdf-rdfrules-config.n3" , 
+"/config/base-bio2rdf-rdfrules-sparql-config.n3" , 
 "/config/base-bio2rdf-rdfrules-xslt-config.n3" , 
 "/config/base-bio2rdf-profiles-config.n3" , 
 "/config/base-bio2rdf-queries-config.n3" , 
@@ -21,10 +25,14 @@ queryall:queryConfigLocations
 
 queryall:backupQueryConfigLocations 
 "/config/base-bio2rdf-namespaceentries-config.n3" , 
-"/config/base-bio2rdf-providers-config.n3" , 
+"/config/base-bio2rdf-providers-httpgetproxy-config.n3" , 
+"/config/base-bio2rdf-providers-httpgetredirect-config.n3" , 
+"/config/base-bio2rdf-providers-nocommunication-config.n3" , 
+"/config/base-bio2rdf-providers-sparql-config.n3" , 
 "/config/base-bio2rdf-providers-html-config.n3" , 
 "/config/base-bio2rdf-providers-licenses-config.n3" , 
 "/config/base-bio2rdf-rdfrules-config.n3" , 
+"/config/base-bio2rdf-rdfrules-sparql-config.n3" , 
 "/config/base-bio2rdf-rdfrules-xslt-config.n3" , 
 "/config/base-bio2rdf-profiles-config.n3" , 
 "/config/base-bio2rdf-queries-config.n3" , 

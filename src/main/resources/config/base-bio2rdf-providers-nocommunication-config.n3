@@ -1,0 +1,39 @@
+<http://bio2rdf.org/provider:lsidproxyinsertion> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:lsidproxyinsertion> , <http://bio2rdf.org/query:lsidstandardinsertion> .
+
+<http://bio2rdf.org/provider:taxon2taxonomy> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxon> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
+
+<http://bio2rdf.org/provider:taxonomy2taxon> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/provider:graphUri> "" ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxonomy> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxon2taxonomy> .
+
+<http://bio2rdf.org/provider:dummyuniversalfilterprovider> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "This provider contains a universal query type, and a set of normalisation rules that will filter all queries" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:dummyuniversalfilterquery> ;
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:sparqlowlsameastrivialdelete> , <http://bio2rdf.org/rdfrule:sparqllinkedtofromunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:sparqlremoveplaintextemailaddresses> , <http://bio2rdf.org/rdfrule:sparqlobodbxrefunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:removeemptynamespaceucscuris> .
+

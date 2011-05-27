@@ -19,6 +19,7 @@ import org.bio2rdf.servlets.queryparsers.*;
 import org.bio2rdf.servlets.html.*;
 import org.queryall.queryutils.*;
 import org.queryall.helpers.*;
+import org.queryall.api.HttpProvider;
 import org.queryall.api.Profile;
 import org.queryall.api.QueryType;
 import org.queryall.blacklist.*;
@@ -353,16 +354,20 @@ public class GeneralServlet extends HttpServlet
                 // for now we redirect if we find any in the set that have redirect enabled as HTTP GET URL's, otherwise fall through to the POST SPARQL RDF/XML and GET URL fetching
                 for(QueryBundle nextScheduledQueryBundle : multiProviderQueryBundles)
                 {
-                    // TODO: (Based on a configuration setting) run a quick test on the redirected URL to make sure at least we can access it, and try to use another one if we can't
-                    if(nextScheduledQueryBundle.getProvider().hasEndpointUrl() 
-                        && nextScheduledQueryBundle.getProvider().isHttpGetUrl()
-                        && nextScheduledQueryBundle.getProvider().needsRedirect()
-                    )
-                    {
-                        response.sendRedirect(nextScheduledQueryBundle.getQueryEndpoint());
-                        
-                        return;
-                    }
+                	if(nextScheduledQueryBundle.getProvider() != null && nextScheduledQueryBundle.getProvider() instanceof HttpProvider)
+                	{
+                		HttpProvider nextScheduledHttpProvider = (HttpProvider)nextScheduledQueryBundle.getProvider();
+	                    // TODO: (Based on a configuration setting) run a quick test on the redirected URL to make sure at least we can access it, and try to use another one if we can't
+	                    if(nextScheduledHttpProvider.hasEndpointUrl() 
+	                        && nextScheduledHttpProvider.isHttpGetUrl()
+	                        && nextScheduledQueryBundle.getProvider().needsRedirect()
+	                    )
+	                    {
+	                        response.sendRedirect(nextScheduledQueryBundle.getQueryEndpoint());
+	                        
+	                        return;
+	                    }
+                	}
                 }
                 
                 response.setContentType(requestedContentType);

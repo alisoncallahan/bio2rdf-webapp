@@ -1,8 +1,8 @@
-<%@ page pageEncoding="utf-8" session="false" %><%@page import="java.io.*,org.queryall.helpers.*,org.bio2rdf.servlets.html.*,org.openrdf.OpenRDFException,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable, java.util.Collection,java.util.ArrayList,java.util.Map,java.io.File,java.io.BufferedWriter,java.io.CharArrayWriter,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger,org.deri.pipes.core.Engine,org.deri.pipes.core.Pipe,org.deri.pipes.core.ExecBuffer,org.deri.pipes.store.FilePipeStore,org.deri.pipes.endpoints.PipeConfig,java.net.URLDecoder
+<%@ page pageEncoding="utf-8" session="false" %><%@page import="java.io.*,org.queryall.blacklist.*,org.queryall.helpers.*,org.bio2rdf.servlets.html.*,org.openrdf.OpenRDFException,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable, java.util.Collection,java.util.ArrayList,java.util.Map,java.io.File,java.io.BufferedWriter,java.io.CharArrayWriter,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger,org.deri.pipes.core.Engine,org.deri.pipes.core.Pipe,org.deri.pipes.core.ExecBuffer,org.deri.pipes.store.FilePipeStore,org.deri.pipes.endpoints.PipeConfig,java.net.URLDecoder
 "%>
 <%
 // -------------------------------------------------------------------------------
-// The Bio2RDF software is copyright Peter Ansell, 2007-2009
+// The Bio2RDF software is copyright Peter Ansell, 2007-2011
 // as part of the Microsoft QUT eResearch Centre
 // 
 // This program is released under the GPL (GNU General Public License) v2.0 or later licence
@@ -28,6 +28,7 @@ String subversionId = "$Id: bio2rdfpipes.jsp 936 2011-02-06 05:34:23Z p_ansell $
 Logger log = Logger.getLogger("org.bio2rdf.bio2rdfpipes");
 
 Settings localSettings = Settings.getSettings();
+BlacklistController blacklistController = BlacklistController.getDefaultController();
 
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 ? "" : ":"+ request.getServerPort()+"/");
 
@@ -198,7 +199,7 @@ try
 	
 	currentPipeResult.stream(currentPipeOutput);
 	
-    myRepositoryConnection.add(new java.io.StringReader(currentPipeOutput.toString("UTF-8")), localSettings.getDefaultHostAddress(), Rio.getParserFormatForMIMEType(Settings.getStringPropertyFromConfig("assumedRequestContentType")));
+    myRepositoryConnection.add(new java.io.StringReader(currentPipeOutput.toString("UTF-8")), localSettings.getDefaultHostAddress(), Rio.getParserFormatForMIMEType(localSettings.getStringPropertyFromConfig("assumedRequestContentType", "application/rdf+xml")));
     myRepositoryConnection.commit();
 	// out.write(currentPipeOutput.toString("UTF-8").replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>",""));
     

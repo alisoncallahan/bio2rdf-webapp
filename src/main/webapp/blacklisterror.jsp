@@ -36,6 +36,7 @@ Logger log = Logger.getLogger("org.bio2rdf.blacklisterror");
 Date queryStartTime = new Date();
 
 Settings localSettings = Settings.getSettings();
+BlacklistController blacklistController = BlacklistController.getDefaultController();
 
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
 
@@ -50,11 +51,11 @@ if(userAgentHeader == null)
 	userAgentHeader = "";
 }
 
-BlacklistController.doBlacklistExpiry();
+blacklistController.doBlacklistExpiry();
 
-boolean userIsBlocked = BlacklistController.isClientBlacklisted(requesterIpAddress);
+boolean userIsBlocked = blacklistController.isClientBlacklisted(requesterIpAddress);
 
-boolean userIsPermanentlyBlocked = BlacklistController.isClientPermanentlyBlacklisted(requesterIpAddress);
+boolean userIsPermanentlyBlocked = blacklistController.isClientPermanentlyBlacklisted(requesterIpAddress);
 
 if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
 {
@@ -69,12 +70,12 @@ if(!Settings.USER_AGENT_BLACKLIST_REGEX.trim().equals(""))
     }
 }
 
-Collection<QueryDebug> allQueriesByUser = BlacklistController.getCurrentDebugInformationFor(requesterIpAddress);
+Collection<QueryDebug> allQueriesByUser = blacklistController.getCurrentDebugInformationFor(requesterIpAddress);
 
 // get the list from the permanent block evidence if they are permanently blocked
 if(userIsPermanentlyBlocked)
 {
-	allQueriesByUser = BlacklistController.permanentServletLifetimeIPBlacklistEvidence.get(requesterIpAddress);
+	allQueriesByUser = blacklistController.permanentServletLifetimeIPBlacklistEvidence.get(requesterIpAddress);
 }
 
 int overallCount = 0;
@@ -134,7 +135,7 @@ else
         out.write("<li>"+nextQuery.toString()+"</li>");
     }
     
-    out.write("Count of queries not allowed for bots by <a href=\""+realHostName+"robots.txt\">robots.txt</a>="+robotsTxtCount +"<br />\n Overall query count="+overallCount+ "<br />\n Percentage of queries in robots.txt="+robotsPercentage+"<br />\n Maximum allowed percentage of queries in robots.txt="+Settings.getFloatPropertyFromConfig("blacklistPercentageOfRobotTxtQueriesBeforeAutomatic")+"<br />\n Maximum allowed queries in current period ="+Settings.getIntPropertyFromConfig("blacklistClientMaxQueriesPerPeriod")+" <br />\n");
+    out.write("Count of queries not allowed for bots by <a href=\""+realHostName+"robots.txt\">robots.txt</a>="+robotsTxtCount +"<br />\n Overall query count="+overallCount+ "<br />\n Percentage of queries in robots.txt="+robotsPercentage+"<br />\n Maximum allowed percentage of queries in robots.txt="+Settings.getFloatPropertyFromConfig("blacklistPercentageOfRobotTxtQueriesBeforeAutomatic", 0.75f)+"<br />\n Maximum allowed queries in current period ="+Settings.getIntPropertyFromConfig("blacklistClientMaxQueriesPerPeriod", 2000)+" <br />\n");
 }
 
 if(log.isTraceEnabled())
@@ -142,24 +143,24 @@ if(log.isTraceEnabled())
 	log.trace("BlacklistError.jsp: results requesterIpAddress="+requesterIpAddress+" robotsTxtCount="+robotsTxtCount +" overallCount="+overallCount+ " robotsPercentage="+robotsPercentage);
 }
 
-if(!userIsPermanentlyBlocked && Settings.getBooleanPropertyFromConfig("automaticallyBlacklistClients"))
+if(!userIsPermanentlyBlocked && Settings.getBooleanPropertyFromConfig("automaticallyBlacklistClients", false))
 {
-	if(Settings.getBooleanPropertyFromConfig("blacklistResetClientBlacklistWithEndpoints"))
+	if(Settings.getBooleanPropertyFromConfig("blacklistResetClientBlacklistWithEndpoints", true))
 	{
 		Date currentDate = new Date();
 		
-		long differenceMilliseconds = currentDate.getTime() - BlacklistController.lastExpiryDate.getTime();
+		long differenceMilliseconds = currentDate.getTime() - blacklistController.lastExpiryDate.getTime();
 		
 		
 		out.write("Current date : "+currentDate.toString()+"<br />\n");
-		out.write("Last error reset date: "+BlacklistController.lastExpiryDate.toString()+"<br />\n");
-		out.write("Server startup date: "+BlacklistController.lastServerStartupDate.toString()+"<br />\n");
-		out.write("Reset period "+Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")+"<br />\n");
-		out.write("Client blacklist will reset in "+((Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds")-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
+		out.write("Last error reset date: "+blacklistController.lastExpiryDate.toString()+"<br />\n");
+		out.write("Server startup date: "+blacklistController.lastServerStartupDate.toString()+"<br />\n");
+		out.write("Reset period "+Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 100000)+"<br />\n");
+		out.write("Client blacklist will reset in "+((Settings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 100000)-differenceMilliseconds)/1000)+" seconds.<br /><br />\n");
 		
-		if(!userIsBlocked && overallCount < Settings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules"))
+		if(!userIsBlocked && overallCount < Settings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules", 20))
 		{
-			out.write("You have "+(Settings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules")-overallCount)+" queries left in this period before you are subject to the blacklisting rules, after which time you must keep your percentage of robots.txt disallowed queries below "+Settings.getFloatPropertyFromConfig("blacklistPercentageOfRobotTxtQueriesBeforeAutomatic")*100+"%.<br />\n");
+			out.write("You have "+(Settings.getIntPropertyFromConfig("blacklistMinimumQueriesBeforeBlacklistRules", 20)-overallCount)+" queries left in this period before you are subject to the blacklisting rules, after which time you must keep your percentage of robots.txt disallowed queries below "+Settings.getFloatPropertyFromConfig("blacklistPercentageOfRobotTxtQueriesBeforeAutomatic", 0.75f)*100+"%.<br />\n");
 		}
 	}
 	else

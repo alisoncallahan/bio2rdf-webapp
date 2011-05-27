@@ -27,15 +27,16 @@ Visit our wiki at http://bio2rdf.wiki.sourceforge.net/
 Visit our main Bio2RDF application at http://www.bio2rdf.org
 -------------------------------------------------------------------------------
 
---%><%@page import="org.bio2rdf.*,org.openrdf.OpenRDFException,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.rio.RDFFormat,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable,java.util.regex.Matcher,java.util.regex.Pattern,java.util.Collection,org.apache.log4j.Logger"%><%
+--%><%@page import="org.queryall.queryutils.*,org.queryall.helpers.*,org.openrdf.OpenRDFException,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.rio.RDFFormat,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.List,java.util.HashSet,java.util.Hashtable,java.util.regex.Matcher,java.util.regex.Pattern,java.util.Collection,org.apache.log4j.Logger"%><%
 // DO NOT EDIT version. It is auto-replaced by the build process in order to debug when people have issues with this file
 String subversionId = "$Id: multifetch.jsp 940 2011-02-08 04:11:58Z p_ansell $";
 String version = "%%__VERSION__%%";
-String propertiesSubversionId = Settings.SUBVERSION_INFO;
 
 Logger log = Logger.getLogger("org.bio2rdf.multifetch");
 
 Date queryStartTime = new Date();
+
+Settings localSettings = Settings.getSettings();
 
 String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
 
@@ -84,7 +85,7 @@ RDFFormat writerFormat = Rio.getWriterFormatForMIMEType(requestedContentType);
 
 if(writerFormat == null)
 {
-    writerFormat = Rio.getWriterFormatForMIMEType(Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+    writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType"));
     
     if(writerFormat == null)
     {
@@ -94,14 +95,14 @@ if(writerFormat == null)
         {
             requestedContentType = "application/rdf+xml";
             
-            log.error("multifetch.jsp: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set Settings.getStringPropertyFromConfig("preferredDisplayContentType") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
+            log.error("multifetch.jsp: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set preferredDisplayContentType to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
         }
     }
     else if(!requestedContentType.equals("text/html"))
     {
-        requestedContentType = Settings.getStringPropertyFromConfig("preferredDisplayContentType");
+        requestedContentType = localSettings.getStringPropertyFromConfig("preferredDisplayContentType");
         
-        log.error("multifetch.jsp: content negotiation failed to find a suitable content type for results. Defaulting to Settings.getStringPropertyFromConfig("preferredDisplayContentType")="+Settings.getStringPropertyFromConfig("preferredDisplayContentType"));
+        log.error("multifetch.jsp: content negotiation failed to find a suitable content type for results. Defaulting to preferredDisplayContentType="+localSettings.getStringPropertyFromConfig("preferredDisplayContentType", "application/rdf+xml"));
     }
 }
 
@@ -124,7 +125,7 @@ if(BlacklistController.isClientBlacklisted(requesterIpAddress))
     log.warn("Atlas2RDF: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
 	
 	response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-	response.sendRedirect(Settings.getStringPropertyFromConfig("blacklistRedirectPage"));
+	response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage"));
 	return;
 }
 

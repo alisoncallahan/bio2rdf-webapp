@@ -346,7 +346,7 @@
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://beta.uniprot.org/taxonomy/${urlEncoded_input_2}" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.uniprot.org/taxonomy/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxon> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 

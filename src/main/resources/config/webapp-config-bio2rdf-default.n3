@@ -73,7 +73,7 @@ queryall:plainNamespaceAndIdentifierRegex "^([\\w-]+):(.+)$" ;
 
 queryall:plainNamespaceRegex "^([\\w-]+)$" ;
 
-queryall:tagPatternRegex "(\\$\\{[\\w_-]+\\})" ;
+queryall:tagPatternRegex ".*(\\$\\{[\\w_-]+\\}).*" ;
 
 queryall:blankTitle "(No title found)" ;
 

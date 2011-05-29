@@ -2,857 +2,857 @@
 
 <http://bio2rdf.org/provider:drugbankhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.drugbank.ca/drugs/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:drugbank_drugs> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:oclchtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.worldcat.org/oclc/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:oclc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:gdbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gdb.org/gdb-bin/genera/accno?accessionNum=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pathhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genome.jp/dbget-bin/show_pathway?${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:path> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:metahtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://biocyc.org/META/new-image?object=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:metacyc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:rgdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rgd.mcw.edu/tools/query/query.cgi?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:rgd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:phosphositehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.phosphosite.org/uniprotAccAction.do?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:phosphosite> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:dictybasetrialshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://dictybase.org/db/cgi-bin/gene_page.pl?primary_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:dictybase_trials> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ipihtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-newId+[IPI-AllText:${urlEncoded_input_2}*]+-lv+30+-view+SeqSimpleView+-page+qResult" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ipi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:rebasehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rebase.neb.com/rebase/enz/${urlEncoded_input_2}.html" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:rebase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:chemidplushtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://chem.sis.nlm.nih.gov/chemidplus/direct.jsp?regno=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chemidplus> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cgschtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://cgsc.biology.yale.edu/Site.php?ID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cgsc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cathhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://cathwww.biochem.ucl.ac.uk/cgi-bin/cath/GotoCath.pl?cath=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cath> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:nmrshiftdbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://nmrshiftdb.ice.mpg.de/portal/js_pane/P-Results/nmrshiftdbaction/showDetailsFromHome/molNumber/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nmrshiftdb_molecule> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:msdchemhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/ligand/ligandsummary.do?hetId=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:msdchem> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:printshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prints> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbicoghtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cog> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbicddhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=${urlEncoded_uppercase_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cdd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:mquterbiopatmlhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.mquter.qut.edu.au/rdftag/BioPatMLTestPage.aspx?biopatmlid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biopatml> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:isbnhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://en.wikipedia.org/wiki/Special:BookSources/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:isbn> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:smarthtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY&DOMAIN=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:smart> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:rcsbpdbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore.do?structureId=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:uniprothtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://purl.uniprot.org/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:uniprot> , <http://bio2rdf.org/ns:uniref> , <http://bio2rdf.org/ns:uniparc> , <http://bio2rdf.org/ns:keywords> , <http://bio2rdf.org/ns:taxonomy> , <http://bio2rdf.org/ns:citations> , <http://bio2rdf.org/ns:nextbio> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:interprohtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/IEntry?ac=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:interpro> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:eckhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ecogene.org/geneInfo.php?eck_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:eck> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sideffectsdrugsemblhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://sideeffects.embl.de/drugs/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sider_drugs> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:umbbdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=c&compID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:um-bbd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ebisrshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+LibInfo+-id+1DdHI1WEmGK+-lib+${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:srs> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:clinicaltrialshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://clinicaltrials.gov/show/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:linkedct_trial> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbiomimhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/dispomim.cgi?id=${urlEncoded_uppercase_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:omim> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hgnchtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genenames.org/data/hgnc_data.php?hgnc_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hgnc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:gopubmedhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/Documents?m=1000&q=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gopubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbirefseqhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=${urlEncoded_uppercase_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:refseq> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cgdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.candidagenome.org/cgi-bin/locus.pl?dbid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cgd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:uniprottaxonhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://beta.uniprot.org/taxonomy/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxon> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:scophtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://scop.mrc-lmb.cam.ac.uk/scop/search.cgi?key=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:scop> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:unistshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/genome/sts/sts.cgi?uid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:unists> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:swooglehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://swoogle.umbc.edu/index.php?option=com_frontpage&ervice=search&queryType=search_swd_ontology&searchStart=1&searchString=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swoogle> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:iproclasshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pir.georgetown.edu/cgi-bin/ipcidmapping?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:iproclass> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pirpsdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pir.georgetown.edu/cgi-bin/pirsearch?search=entry&choice=psd&query=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pir_psd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:myexperimentusershtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.myexperiment.org/users/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:myexp_user> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ecogenehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ecogene.org/geneInfo.php?eg_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ecogene> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:mahtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.informatics.jax.org/searches/AMA.cgi?id=MA:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ma> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:nistchemistrywebbookhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://webbook.nist.gov/cgi/cbook.cgi?ID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nist_chemistry_webbook> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:dictybasehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://dictybase.org/db/cgi-bin/gene_page.pl?dictybaseid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:dictybase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:expasypdbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.expasy.org/cgi-bin/get-pdb.pl?${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:flybasehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://flybase.org/reports/${urlEncoded_input_2}.html" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:flybase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:issnhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.worldcat.org/issn/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:issn> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:narhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.oxfordjournals.org/nar/database/summary/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nar> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cashtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://webbook.nist.gov/cgi/cbook.cgi?ID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cas> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbipubchemsidhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:sid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pfamhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pfam.sanger.ac.uk/family?entry=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pfam> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:enwikipediahtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://en.wikipedia.org/wiki/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:brendahtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.brenda-enzymes.info/php/result_flat.php4?ecno=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:brenda> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbigeneidhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&dopt=full_report&list_uids=${urlEncoded_uppercase_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:genedbpfalciparumhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genedb.org/genedb/Dispatcher?formType=navBar&submit=Search+for&organism=All%3Apombe%3Acerevisiae%3Adicty%3Aasp%3Atryp%3Aleish%3Amalaria%3Astyphi%3Aglossina&desc=yes&ohmr=%2F&name=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genedb_pfalciparum> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:emblhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&Submit=Go&id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:embl> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:expasyprositehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://expasy.org/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prosite> , <http://bio2rdf.org/ns:enzyme> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cpdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genome.jp/dbget-bin/www_bget?${urlEncoded_input_1}:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cpd> , <http://bio2rdf.org/ns:dr> , <http://bio2rdf.org/ns:ec> , <http://bio2rdf.org/ns:gl> , <http://bio2rdf.org/ns:rn> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:prodomhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN&query=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prodom> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:mgihtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.informatics.jax.org/searches/accession_report.cgi?id=mgi:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mgi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:reactomehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.reactome.org/cgi-bin/eventbrowser?DB=gk_current&ID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:reactome> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:arrayexpresshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/microarray-as/ae/browse.html?keywords=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:arrayexpress> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:wikipathwayshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.wikipathways.org/index.php/Pathway:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipathways> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ebigohtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/ego/DisplayGoTerm?id=GO:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbibiosystemshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/biosystems/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biosystems> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbihomologenehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/homologene/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:homologene> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:meshhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=&term=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mesh> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ebichebihtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chebi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:wikipediahtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://en.wikipedia.org/wiki/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:wikipediacategoryhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://en.wikipedia.org/wiki/Category:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipediacategory> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hugohtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genenames.org/data/hgnc_data.php?gd_app_sym=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hugo> , <http://bio2rdf.org/ns:symbol> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cpathhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.pathwaycommons.org/pc/record2.do?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cpath> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbigenbankhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/nuccore/${urlEncoded_uppercase_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hprdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.hprd.org/protein/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hprd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:genedbspombehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genedb.org/genedb/Dispatcher?formType=navBar&submit=Search+for&organism=All%3Apombe%3Acerevisiae%3Adicty%3Aasp%3Atryp%3Aleish%3Amalaria%3Astyphi%3Aglossina&desc=yes&ohmr=%2F&name=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genedb_spombe> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbipubchemcidhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ebiintacthtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/intact/search/do/search?searchString=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:intact> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:doihtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://dx.doi.org/${input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:doi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sideffectsemblhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://sideeffects.embl.de/se/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sider_sideeffects> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pathguidehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.pathguide.org/fullrecord.php?organisms=all&availability=all&standards=all&order=alphabetic&DBID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pathguide> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbipubmedhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/pubmed/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sgdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.yeastgenome.org/cgi-bin/locus.fpl?sgdid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sgd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ensemblhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ensembl.org/perl/protview?peptide=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ensembl> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:myexperimentworkflowshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.myexperiment.org/workflows/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:myexp_workflow> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:myexperimentworkflowsxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
@@ -862,7 +862,7 @@
 
 <http://bio2rdf.org/provider:myexperimentuserxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
@@ -872,7 +872,7 @@
 
 <http://bio2rdf.org/provider:diphtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
@@ -882,697 +882,697 @@
 
 <http://bio2rdf.org/provider:biogridhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.thebiogrid.org/SearchResults/summary/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biogrid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:aceviewhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/IEB/Research/Acembly/av.cgi?c=geneid&l=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:aceview> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hugenavigatorhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://hugenavigator.net/HuGENavigator/huGEPedia.do?firstQuery=anything&typeSubmit=GO&check=y&typeOption=gene&which=2&pubOrderType=pubD&geneID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:huge_navigator> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ccdshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=GENEID&itool=EntrezSystem2.PEntrez.Gene.Gene_ResultsPanel.Gene_RVFullReport.GeneRightColMenuLinksP&ordinalpos=NaN%27&DATA=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ccds> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:mgchtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://mgc.nci.nih.gov/Genes/CloneList?ORG=Hs&LIST=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mgc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:bindhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://bind.ca/Action?idsearch=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:bind> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 
 <http://bio2rdf.org/provider:sgnhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sgn> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sgnrefhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.sgn.cornell.edu/chado/publication.pl?pub_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sgn_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 
 <http://bio2rdf.org/provider:seedhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.theseed.org/linkin.cgi?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:seed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sgdlocushtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://db.yeastgenome.org/cgi-bin/locus.pl?locus=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sgd_locus> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sgdrefhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sgd_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:tgdlocushtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://db.ciliate.org/cgi-bin/locus.pl?locus=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:tgd_locus> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:tgdrefhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:tgd_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pamgovmdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pamgo_vmd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pharmgkbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.pharmgkb.org/do/serve?objId=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pharmgkb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pohtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:po> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pseudocaphtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://v2.pseudomonas.com/getAnnotation.do?locusID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pseudocap> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:psimodhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:psimod> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:songhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://song.sourceforge.net/SOterm_tables.html#${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:so> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:tairarabidopsishtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://arabidopsis.org/servlets/TairObject?accession=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:tair_arabidopsis> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:tchtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.tcdb.org/tcdb/index.php?tc=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:tc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:dbsnphtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?type=rs&rs=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:dbsnp> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pdbsumhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/pdbsum/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdbsum> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:xenbasehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.xenbase.org/gene/showgene.do?method=display&geneId=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:xenbase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:zfinhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://zfin.org/cgi-bin/webdriver?MIval=aa-markerview.apg&OID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:zfin> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:agilocuscodehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://arabidopsis.org/servlets/TairObject?type=locus&name=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:agi_locuscode> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:asaphtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "https://asap.ahabs.wisc.edu/annotation/php/feature_info.php?FeatureID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:asap> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 
 <http://bio2rdf.org/provider:aspgdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:aspgd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:aspgdlocushtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.aspergillusgenome.org/cgi-bin/locus.pl?locus=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:aspgd_locus> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:aspgdrefhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.aspergillusgenome.org/cgi-bin/reference/reference.pl?refNo=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:aspgd_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:biomodelshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biomodels> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ddbjhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ddbj> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:echobasehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:echobase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:grhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gramene.org/db/searches/browser?search_type=All&RGN=on&query=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gr> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:grproteinhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gramene.org/db/protein/protein_search?acc=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gr_protein> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:grgenehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gramene.org/db/genes/search_gene?acc=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gr_gene> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:grqtlhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gr_qtl> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:grrefhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gramene.org/db/literature/pub_search?ref_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gr_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:goarefhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/QuickGO/GAnnotation?ref=GOA%5FREF%3A${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:goa_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hinvdbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:h-invdb> , <http://bio2rdf.org/ns:h_inv> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hpahtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.proteinatlas.org/tissue_profile.php?antibody_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hpa> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hpaantibodyhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.proteinatlas.org/antibody_info.php?antibody_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hpa_antibody> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:lifedbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:lifedb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ncbigphtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=genomeprj&Cmd=Retrieve&list_uids=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gp> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:cleanexhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.cleanex.isb-sib.ch/cgi-bin/get_doc?db=cleanex&format=nice&entry=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cleanex> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hogenomhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pbil.univ-lyon1.fr/cgi-bin/acnuc-ac2tree?db=HOGENOM&query=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hogenom> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 
 <http://bio2rdf.org/provider:genecardshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genecards.org/cgi-bin/carddisp.pl?gc_id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genecards> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ctdhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://ctd.mdibl.org/detail.go?type=gene&db=GENE&acc=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ctd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:hovergenhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pbil.univ-lyon1.fr/cgi-bin/acnuc-ac2tree?db=HOVERGEN&query=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hovergen> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:pridehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/pride/searchSummary.do?queryTypeSelected=identification%20accession%20number&identificationAccessionNumber=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pride> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:inparanoidhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://inparanoid.sbc.su.se/cgi-bin/gene_search.cgi?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:inparanoid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:genevestigatorhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genevestigator.com/gv/directlink.jsp?geneIDType=SwissProt&geneIDs=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genevestigator> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:peptideatlashtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/Search?action=GO&search_key=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:peptideatlas> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ratmaphtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://ratmap.gen.gu.se/ShowSingleLocus.htm?accno=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ratmap> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:euroscarfhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://web.uni-frankfurt.de/fb15/mikro/euroscarf/data/${urlEncoded_input_2}.html" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:euroscarf> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:chempediasubstancehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://chempedia.com/substances/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chempedia_substance> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:modbasehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://modbase.compbio.ucsf.edu/modbase-cgi-new/model_search.cgi?searchkw=name&kword=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:modbase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:swissmodelhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://swissmodel.expasy.org/repository/smr.php?job=2&sptr_ac=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swissmodel> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ecoliwikihtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://ecoliwiki.net/colipedia/index.php/${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ecoliwiki> , <http://bio2rdf.org/ns:blattner> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:ecocychtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://biocyc.org/ECOLI/NEW-IMAGE?object=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ecocyc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:mutdbhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://mutdb.org/cgi-bin/mutdb.pl?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mutdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:genatlashtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://genatlas.medecine.univ-paris5.fr/gensearch.php?type=0&SYMBOL=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genatlas> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:alfredhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://alfred.med.yale.edu/alfred/recordinfop.asp?UNID=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:alfred> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:biocartacategoryhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.biocarta.com/genes/${urlEncoded_input_2}.asp" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocarta_category> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:biocartapathwayshtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.biocarta.com/pathfiles/${urlEncoded_input_2}.asp" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocarta> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:sabiorkhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://sabio.villa-bosch.de/SABIORK/index2.jsp?reac=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sabio-rk> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:patenthtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://v3.espacenet.com/textdoc?DB=EPODOC&IDX=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:patent> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:whoatchtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.whocc.no/atc_ddd_index/?code=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:atc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:nmpdrhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.nmpdr.org/linkin.cgi?id=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nmpdr> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> .
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 # GermOnline does not have any way of getting directly to the HTML page just using the identifier, unless it is in Homo sapiens, in which case the unisearch functionality works
 # http://bio2rdf.org/germonline:CG10197 should redirect to the following, but there is not enough information to determine this location due to the broken website design

@@ -359,7 +359,7 @@ public class GeneralServlet extends HttpServlet
                 		HttpProvider nextScheduledHttpProvider = (HttpProvider)nextScheduledQueryBundle.getProvider();
 	                    // TODO: (Based on a configuration setting) run a quick test on the redirected URL to make sure at least we can access it, and try to use another one if we can't
 	                    if(nextScheduledHttpProvider.hasEndpointUrl() 
-	                        && nextScheduledHttpProvider.isHttpGetUrl()
+	                        //&& nextScheduledHttpProvider.isHttpGetUrl()
 	                        && nextScheduledQueryBundle.getProvider().needsRedirect()
 	                    )
 	                    {

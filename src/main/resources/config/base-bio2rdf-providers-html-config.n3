@@ -546,8 +546,18 @@
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&dopt=full_report&list_uids=${urlEncoded_uppercase_input_2}" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/gene/${urlEncoded_uppercase_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
+
+<http://bio2rdf.org/provider:ncbinucleotidehtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/nucest/${urlEncoded_uppercase_input_2}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nucleotide> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
 <http://bio2rdf.org/provider:genedbpfalciparumhtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
@@ -916,7 +926,7 @@
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=GENEID&itool=EntrezSystem2.PEntrez.Gene.Gene_ResultsPanel.Gene_RVFullReport.GeneRightColMenuLinksP&ordinalpos=NaN%27&DATA=${urlEncoded_input_2}" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=CCDS&ORGANISM=0&BUILDS=CURRENTBUILDS&DATA=${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ccds> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 

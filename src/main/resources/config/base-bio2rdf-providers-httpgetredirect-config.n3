@@ -522,6 +522,16 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:panther> , <http://bio2rdf.org/ns:pfam> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
 
+<http://bio2rdf.org/provider:ebipanditpfam> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/goldman-srv/pandit/pandit.cgi?action=browse&fam=${urlEncoded_input_2}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pfam> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pandit> .
+
 <http://bio2rdf.org/provider:pubmedcentraldata> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;

@@ -1993,4 +1993,24 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:similardrugsbygeneid> .
 	
+<http://bio2rdf.org/query:pandit> a <http://purl.org/queryall/query:Query> ;
+    <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+    <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/dc/elements/1.1/title> "similardrugsbygeneid" ;
+	<http://purl.org/queryall/query:handleAllNamespaces> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:isNamespaceSpecific> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:namespaceMatchMethod> <http://purl.org/queryall/query:namespaceMatchAny> ;
+	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:inputRegex> "^pandit/([\\w-]+):(.+)" ;
+	<http://purl.org/queryall/query:templateString> "" ;
+	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}pandit/${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:hasPanditLinkUrl xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_inputUrlEncoded_normalisedQueryUri}</ns0pred:hasSimilarDrugsUrl></rdf:Description>" ;
+	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/query:namespaceToHandle> <http://bio2rdf.org/ns:pfam> ;
+	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:pandit> .
+	
 

@@ -81,7 +81,7 @@ queryall:projectHomeUrl "http://bio2rdf.org/" ;
 
 queryall:projectName "Bio2RDF" ;
 
-queryall:applicationHelpUrl "http://bio2rdf.wiki.sourceforge.net/" ;
+queryall:applicationHelpUrl "http://sourceforge.net/apps/mediawiki/bio2rdf/" ;
 
 queryall:blacklistContactEmailAddress "bio2rdf@googlegroups.com" ;
 

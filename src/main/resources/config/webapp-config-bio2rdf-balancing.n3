@@ -34,7 +34,7 @@ queryall:manualConfigurationMinimumMilliseconds "120000"^^xsd:int ;
 
 queryall:activeProfiles bio2rdf_profile:mirrorbalancing ;
 
-queryall:readTimeout "35000"^^xsd:int ;
+queryall:readTimeout "45000"^^xsd:int ;
 
 queryall:connectTimeout "1500"^^xsd:int ;
 

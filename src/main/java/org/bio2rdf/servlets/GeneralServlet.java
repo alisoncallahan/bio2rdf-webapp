@@ -51,7 +51,7 @@ public class GeneralServlet extends HttpServlet
     	Settings localSettings = Settings.getSettings();
     	BlacklistController localBlacklistController = new BlacklistController(localSettings);
 
-    	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI(), localSettings);
+    	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI(), request.getContextPath(), localSettings);
         
         PrintWriter out = response.getWriter();
         
@@ -129,7 +129,7 @@ public class GeneralServlet extends HttpServlet
             // override whatever was requested with the urlrewrite variable
             requestedContentType = explicitUrlContentType;
         }
-        
+
         // even if they request a random format, we need to make sure that Rio has a writer compatible with it, otherwise we revert to one of the defaults as a failsafe mechanism
         RDFFormat writerFormat = Rio.getWriterFormatForMIMEType(requestedContentType);
         
@@ -149,6 +149,138 @@ public class GeneralServlet extends HttpServlet
                 }
             }
         }        
+        
+        if(!requestQueryOptions.containsExplicitFormat())
+        {
+        	if(localSettings.getBooleanPropertyFromConfig("alwaysRedirectToExplicitFormatUrl", true))
+        	{
+        		int redirectCode = localSettings.getIntPropertyFromConfig("redirectToExplicitFormatHttpCode", 303);
+        		
+        		StringBuilder redirectString = new StringBuilder();
+        		boolean ignoreContextPath = false;
+        		
+        		if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestHostname", false))
+        		{
+        			redirectString.append(localSettings.getStringPropertyFromConfig("hardcodedRequestHostname", ""));
+        		}
+        		
+        		if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestContext", false))
+        		{
+        			redirectString.append(localSettings.getStringPropertyFromConfig("hardcodedRequestContext", ""));
+        			ignoreContextPath = true;
+        		}
+        		
+        		if(!ignoreContextPath)
+    			{
+        			if(request.getContextPath().equals(""))
+        				redirectString.append("/");
+        			else
+        			{
+        				redirectString.append(request.getContextPath());
+        				redirectString.append("/");
+        			}
+        			
+        		}
+        		
+				if(requestedContentType.equals(Constants.TEXT_HTML))
+        		{
+        			redirectString.append(localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "page/"));
+
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlPrefix","queryplan/"));
+        			}
+        			
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix","pageoffset"));
+        				redirectString.append(requestQueryOptions.getPageOffset());
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix","/"));
+        			}
+        			
+    				redirectString.append(requestQueryOptions.getParsedRequest());
+
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix",""));
+        			}
+        			
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlSuffix",""));
+        			}
+        			
+    				redirectString.append(localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
+        		}
+        		else if(requestedContentType.equals(Constants.TEXT_RDF_N3))
+        		{
+        			redirectString.append(localSettings.getStringPropertyFromConfig("n3UrlPrefix", "n3/"));
+
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlPrefix","queryplan/"));
+        			}
+        			
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix","pageoffset"));
+        				redirectString.append(requestQueryOptions.getPageOffset());
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix","/"));
+        			}
+        			
+    				redirectString.append(requestQueryOptions.getParsedRequest());
+
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix",""));
+        			}
+        			
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlSuffix",""));
+        			}
+        			
+        			redirectString.append(localSettings.getStringPropertyFromConfig("n3UrlSuffix", ""));
+        		}
+        		else if(requestedContentType.equals(Constants.APPLICATION_RDF_XML))
+        		{
+        			redirectString.append(localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "rdfxml/"));
+
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlPrefix","queryplan/"));
+        			}
+        			
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix","pageoffset"));
+        				redirectString.append(requestQueryOptions.getPageOffset());
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix","/"));
+        			}
+        			
+    				redirectString.append(requestQueryOptions.getParsedRequest());
+
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix",""));
+        			}
+        			
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlSuffix",""));
+        			}
+        			
+        			redirectString.append(localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", ""));
+        		}
+        		
+        		log.warn("Sending redirect using redirectCode="+redirectCode+" to redirectString="+redirectString.toString());
+        		log.warn("contextPath="+request.getContextPath());
+        		response.setStatus(redirectCode);
+    			response.sendRedirect(redirectString.toString());
+    			//return;
+        	}
+        }
+        
         
         localSettings.configRefreshCheck(false);
         

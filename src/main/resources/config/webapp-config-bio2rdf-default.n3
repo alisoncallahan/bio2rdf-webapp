@@ -31,6 +31,10 @@ queryall:htmlUrlPrefix "page/" ;
 
 queryall:htmlUrlSuffix "" ;
 
+queryall:alwaysRedirectToExplicitFormatUrl "false"^^xsd:boolean ;
+
+queryall:redirectToExplicitFormatHttpCode "303"^^xsd:int ;
+
 queryall:queryplanUrlPrefix "queryplan/" ;
 
 queryall:queryplanUrlSuffix "" ;

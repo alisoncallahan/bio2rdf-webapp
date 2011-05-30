@@ -23,7 +23,8 @@ public class DefaultQueryOptions
     private boolean _hasExplicitPageOffsetValue = false;
     private int pageoffset = 1;
     private boolean _hasQueryPlanRequest = false;
-
+    private boolean isRootContext = false;
+    
     private String parsedRequestString = "";
     
     private Settings localSettings;
@@ -40,7 +41,7 @@ public class DefaultQueryOptions
 	private String n3UrlPrefix;
 	private String n3UrlSuffix;
     
-    public DefaultQueryOptions(String requestUri, Settings nextSettings)
+    public DefaultQueryOptions(String requestUri, String contextPath, Settings nextSettings)
     {
         this.localSettings = nextSettings;
 
@@ -58,11 +59,30 @@ public class DefaultQueryOptions
         
         String pageOffsetPatternString = "^"+pageoffsetUrlOpeningPrefix+"(\\d+)"+pageoffsetUrlClosingPrefix+"(.+)"+pageoffsetUrlSuffix+"$";
 
-        if(_DEBUG)
-            log.debug("pageOffsetPatternString="+pageOffsetPatternString);
+        if(_TRACE)
+            log.trace("pageOffsetPatternString="+pageOffsetPatternString);
         
         queryPlanPattern = Pattern.compile(pageOffsetPatternString);
 
+        if(contextPath.equals(""))
+        {
+        	isRootContext = true;
+        }
+        else
+        {
+        	isRootContext = false;
+        }
+        
+        if(!isRootContext)
+        {
+        	if(requestUri.startsWith(contextPath))
+        	{
+        		log.debug("requestUri before removing contextPath requestUri="+requestUri);
+        		requestUri = requestUri.substring(contextPath.length());
+        		log.debug("removed contextPath from requestUri contextPath="+contextPath+" requestUri="+requestUri);
+        	}
+        }
+        
         String requestString = requestUri;
         
         if(requestString.startsWith("/"))

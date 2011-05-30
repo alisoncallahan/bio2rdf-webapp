@@ -3,8 +3,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.wikipathways.org/wpi/wpi.php?action=downloadFile&type=txt&pwTitle=Pathway:${urlEncoded_input_2}" ;
@@ -15,8 +13,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?itool=pubmed_Abstract&db=pubmed&cmd=Display&dopt=pubmed_pubmed&retmode=ref&from_uid=${urlEncoded_input_2}" ;
@@ -27,8 +23,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
@@ -39,8 +33,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/QuickGO/GTerm?format=oboxml&id=GO:${urlEncoded_uppercase_input_2}" ;
@@ -51,8 +43,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://expasy.org/cgi-bin/get-prosite-raw.pl?${urlEncoded_input_2}" ;
@@ -63,8 +53,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=gbwithparts&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
@@ -75,8 +63,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/Xml?m=1000&q=${urlEncoded_input_2}" ;
@@ -87,8 +73,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.hubmed.org/display.cgi?uids=${urlEncoded_input_2}" ;
@@ -99,8 +83,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=asn.1&id=${urlEncoded_input_2}" ;
@@ -111,8 +93,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://srs.embl.de/srs/showEntryView.do?query=[prints-AccNumber:${urlEncoded_input_2}]" ;
@@ -123,8 +103,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&DbFrom=biosystems&Cmd=Link&LinkName=biosystems_pubmed&ordinalpos=1&IdsFromResult=${urlEncoded_input_2}" ;
@@ -135,8 +113,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&tool=bio2rdf&email=bio2rdf@googlegroups.com&id=${urlEncoded_input_2}" ;
@@ -147,8 +123,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/images/${urlEncoded_lowercase_input_2}_bio_r_500.jpg?getBest=true" ;
@@ -159,8 +133,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/images/${urlEncoded_lowercase_input_2}_asym_r_500.jpg?getBest=true" ;
@@ -171,8 +143,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore/relatedCitations.do?structureId=${urlEncoded_lowercase_input_2}" ;
@@ -183,8 +153,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://dx.doi.org/10.2210/pdb${urlEncoded_lowercase_input_2}/pdb" ;
@@ -195,8 +163,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=FASTA&compression=NO&structureId=${urlEncoded_lowercase_input_2}" ;
@@ -207,8 +173,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore/pubmedArticle.do?structureId=${urlEncoded_lowercase_input_2}" ;
@@ -219,8 +183,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=nucleotide&dopt=GenBank&qty=1&list_uids=${urlEncoded_uppercase_input_2}" ;
@@ -231,8 +193,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rebase.neb.com/cgi-bin/ecget?${urlEncoded_input_2}" ;
@@ -243,8 +203,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ihop-net.org/UniPub/iHOP/index.html?field=all&organism_id=0&search=${urlEncoded_input_2}" ;
@@ -255,8 +213,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?cmd=prlinks&dbfrom=pubmed&retmode=ref&id=${urlEncoded_input_2}" ;
@@ -267,8 +223,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=xml&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
@@ -279,8 +233,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/files/${urlEncoded_input_2}.xml?headerOnly=YES" ;
@@ -291,8 +243,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=l&sid=${urlEncoded_input_2}" ;
@@ -303,8 +253,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.genome.jp/Fig/compound/${urlEncoded_input_2}.gif" ;
@@ -315,8 +263,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/chebi/displayImage.do?defaultImage=true&imageIndex=0&chebiId=${urlEncoded_input_2}" ;
@@ -327,8 +273,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&sid=${urlEncoded_input_2}" ;
@@ -339,8 +283,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://swoogle.umbc.edu/index.php?option=com_frontpage&service=search&queryType=search_swd_ontology&view=raw&searchString=${urlEncoded_input_2}" ;
@@ -351,8 +293,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=asn.1&id=${urlEncoded_uppercase_input_2}" ;
@@ -363,8 +303,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&cid=${urlEncoded_input_2}" ;
@@ -375,8 +313,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/nuccore/${urlEncoded_uppercase_input_2}?report=graph" ;
@@ -387,8 +323,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=fasta&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
@@ -399,8 +333,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=genbank&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
@@ -411,8 +343,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/msd-srv/msdchem/cgi-bin/ligand/GetGif?${urlEncoded_input_2}" ;
@@ -423,8 +353,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/ego/gohierarchy?code=GO:${urlEncoded_input_2}" ;
@@ -435,8 +363,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=omim&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
@@ -447,8 +373,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=text&rettype=medline&id=${urlEncoded_input_2}" ;
@@ -459,8 +383,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=asn1&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
@@ -471,8 +393,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/HomoloGene/HGDownload.cgi?hid=${urlEncoded_input_2}" ;
@@ -483,8 +403,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/image/imgsrv.fcgi?t=l&cid=${urlEncoded_input_2}" ;
@@ -501,7 +419,6 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:uniprot> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
 	
-
 <http://bio2rdf.org/provider:ebiinterproispy> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
@@ -536,8 +453,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&pubmedid=${urlEncoded_input_2}" ;
@@ -548,8 +463,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.biocarta.com/pathfiles/${urlEncoded_input_2}.gif" ;

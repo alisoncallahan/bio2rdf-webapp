@@ -20,8 +20,6 @@
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:taxonomy> ;

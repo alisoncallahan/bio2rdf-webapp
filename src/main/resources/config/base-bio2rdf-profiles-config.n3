@@ -43,7 +43,7 @@
 <http://bio2rdf.org/profile:quebec> a <http://purl.org/queryall/profile:Profile> ;
 	<http://purl.org/queryall/profile:Title> "A common profile which allows a mix of providers suitable for clients close to the Quebec region." ;
 	<http://purl.org/queryall/profile:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:allowImplicitQueryInclusions> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:allowImplicitQueryInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:allowImplicitProviderInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:allowImplicitRdfRuleInclusions> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:defaultProfileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;

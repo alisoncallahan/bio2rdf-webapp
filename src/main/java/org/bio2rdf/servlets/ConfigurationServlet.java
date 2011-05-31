@@ -52,9 +52,13 @@ public class ConfigurationServlet extends HttpServlet
         Settings localSettings = Settings.getSettings();
         BlacklistController localBlacklistController = new BlacklistController(localSettings);
         
-        log.debug("request.getRequestURI()="+request.getRequestURI());
+        if(_INFO)
+        {
+            log.info("request.getRequestURI()="+request.getRequestURI());
+            log.info("ConfigurationServlet: acceptHeader="+request.getHeader("Accept")+" userAgent="+request.getHeader("User-Agent"));
+        }
         
-        ConfigurationQueryOptions requestConfigurationQueryOptions = new ConfigurationQueryOptions(request.getRequestURI(), localSettings);
+       ConfigurationQueryOptions requestConfigurationQueryOptions = new ConfigurationQueryOptions(request.getRequestURI(), localSettings);
         
         PrintWriter out = response.getWriter();
         java.io.StringWriter stBuff = new java.io.StringWriter();
@@ -102,6 +106,11 @@ public class ConfigurationServlet extends HttpServlet
             requestedContentType = explicitUrlContentType;
         }
         
+        if(_INFO)
+        {
+        	log.info("requestedContentType="+requestedContentType);
+        }
+        
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
                 
         String queryString = requestConfigurationQueryOptions.getParsedRequest();
@@ -135,11 +144,6 @@ public class ConfigurationServlet extends HttpServlet
             writerFormat = Rio.getWriterFormatForMIMEType(writerFormatString);
         }
 
-        if(log.isDebugEnabled())
-        {
-            log.debug("ConfigurationServlet: requestedContentType="+requestedContentType+ " acceptHeader="+request.getHeader("Accept")+" userAgent="+request.getHeader("User-Agent"));
-        }
-        
         localSettings.configRefreshCheck(false);
         
         response.setContentType(requestedContentType);
@@ -447,9 +451,9 @@ public class ConfigurationServlet extends HttpServlet
             
             if(requestedContentType.equals("text/html"))
             {
-                if(_DEBUG)
+                if(_INFO)
                 {
-                    log.debug("Atlas2Rdf.jsp: about to call html rendering method");
+                    log.info("about to call html rendering method");
                 }
                 
                 try
@@ -458,15 +462,19 @@ public class ConfigurationServlet extends HttpServlet
                 }
                 catch(OpenRDFException ordfe)
                 {
-                    log.error("Atlas2Rdf.jsp: couldn't render HTML because of an RDF exception", ordfe);
+                    log.error("couldn't render HTML because of an RDF exception", ordfe);
                 }
                 catch(Exception ex)
                 {
-                    log.error("Atlas2Rdf.jsp: couldn't render HTML because of an unknown exception", ex);
+                    log.error("couldn't render HTML because of an unknown exception", ex);
                 }
             }
             else
             {
+                if(_INFO)
+                {
+                    log.info("about to call rdf rendering method");
+                }
                 RdfUtils.toWriter(myRepository, stBuff, writerFormat);
             }
         
@@ -476,9 +484,22 @@ public class ConfigurationServlet extends HttpServlet
             log.error("ConfigurationServlet: error", ordfe);
         }
         
+        if(_INFO)
+        {
+            log.info("about to call out.write");
+        }
         out.write(stBuff.toString());
         
+        if(_INFO)
+        {
+            log.info("about to call out.flush");
+        }
         out.flush();
+
+        if(_INFO)
+        {
+            log.info("finished");
+        }
     }
 }
 

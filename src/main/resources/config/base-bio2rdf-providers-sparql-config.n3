@@ -292,9 +292,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> 
-	#"http://cu.geneid.bio2rdf.org/sparql", 
-	"http://quebec.geneid.bio2rdf.org/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://cu.geneid.bio2rdf.org/sparql", "http://quebec.geneid.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> , <http://bio2rdf.org/ns:geneid_record> , <http://bio2rdf.org/ns:geneid_resource> , <http://bio2rdf.org/ns:ncbi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:mgigeneexpressiondatabase> , <http://bio2rdf.org/rdfrule:geneidgdbfix> , <http://bio2rdf.org/rdfrule:geneidgdbreversefix> .
@@ -853,9 +851,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> 
-	#"http://cu.geneid.bio2rdf.org/sparql", 
-	"http://quebec.geneid.bio2rdf.org/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://cu.geneid.bio2rdf.org/sparql", "http://quebec.geneid.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ncbi> , <http://bio2rdf.org/ns:pubmed> , <http://bio2rdf.org/ns:geneid_resource> , <http://bio2rdf.org/ns:snornabase> , <http://bio2rdf.org/ns:dictybase> , <http://bio2rdf.org/ns:sptrembl> , <http://bio2rdf.org/ns:human_abc> , <http://bio2rdf.org/ns:pbr> , <http://bio2rdf.org/ns:cytochrome_p450_homepage> , <http://bio2rdf.org/ns:ddbj> , <http://bio2rdf.org/ns:uniprot-swiss-prot> , <http://bio2rdf.org/ns:dbest> , <http://bio2rdf.org/ns:qtl_database> , <http://bio2rdf.org/ns:jgi> , <http://bio2rdf.org/ns:maizegdb> , <http://bio2rdf.org/ns:hssp> , <http://bio2rdf.org/ns:arkdb> , <http://bio2rdf.org/ns:aceview-wormgenes> , <http://bio2rdf.org/ns:imgt-gene-db> , <http://bio2rdf.org/ns:inra> , <http://bio2rdf.org/ns:the_human_olfactory> , <http://bio2rdf.org/ns:mirbase> , <http://bio2rdf.org/ns:kiaa> , <http://bio2rdf.org/ns:hgmd> , <http://bio2rdf.org/ns:xenbase> , <http://bio2rdf.org/ns:newentry> , <http://bio2rdf.org/ns:pathema> , <http://bio2rdf.org/ns:huge_navigator> , <http://bio2rdf.org/ns:ratmap> , <http://bio2rdf.org/ns:uniprot-trembl> , <http://bio2rdf.org/ns:sgd> , <http://bio2rdf.org/ns:hugenet> , <http://bio2rdf.org/ns:gxd> , <http://bio2rdf.org/ns:cgnc> , <http://bio2rdf.org/ns:vog> , <http://bio2rdf.org/ns:zfin> , <http://bio2rdf.org/ns:genedb> , <http://bio2rdf.org/ns:goa> , <http://bio2rdf.org/ns:gdb> , <http://bio2rdf.org/ns:bind> , <http://bio2rdf.org/ns:sanger> , <http://bio2rdf.org/ns:nucleotide-protein> , <http://bio2rdf.org/ns:rhizobase> , <http://bio2rdf.org/ns:hprd> , <http://bio2rdf.org/ns:wormbase> , <http://bio2rdf.org/ns:hgnc> , <http://bio2rdf.org/ns:cyanobase> , <http://bio2rdf.org/ns:tair> , <http://bio2rdf.org/ns:flybase> , <http://bio2rdf.org/ns:ucsc> , <http://bio2rdf.org/ns:aceview> , <http://bio2rdf.org/ns:homologene> , <http://bio2rdf.org/ns:locus_tag> , <http://bio2rdf.org/ns:ccds> , <http://bio2rdf.org/ns:mgc> , <http://bio2rdf.org/ns:rgd> , <http://bio2rdf.org/ns:ensembl> , <http://bio2rdf.org/ns:vectorbase> , <http://bio2rdf.org/ns:atcc> , <http://bio2rdf.org/ns:cog> , <http://bio2rdf.org/ns:tigr> , <http://bio2rdf.org/ns:biogrid> , <http://bio2rdf.org/ns:unigene> , <http://bio2rdf.org/ns:modelmaker> , <http://bio2rdf.org/ns:evidence_viewer> , <http://bio2rdf.org/ns:locusid> , <http://bio2rdf.org/ns:id> , <http://bio2rdf.org/ns:cdd> , <http://bio2rdf.org/ns:nucleotide> , <http://bio2rdf.org/ns:protein> , <http://bio2rdf.org/ns:proteinid> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:mgi_gxd> , <http://bio2rdf.org/ns:unists> , <http://bio2rdf.org/ns:reactome> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:mgigeneexpressiondatabase> , <http://bio2rdf.org/rdfrule:geneidgdbfix> , <http://bio2rdf.org/rdfrule:geneidgdbreversefix> .
@@ -1012,9 +1008,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> 
-# Disabled as it is out of date "http://cu.hgnc.bio2rdf.org/sparql", 
-	"http://quebec.hgnc.bio2rdf.org/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://cu.hgnc.bio2rdf.org/sparql", "http://quebec.hgnc.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chr> , <http://bio2rdf.org/ns:ensembl> , <http://bio2rdf.org/ns:gdb> , <http://bio2rdf.org/ns:gene> , <http://bio2rdf.org/ns:hugo> , <http://bio2rdf.org/ns:refseq> , <http://bio2rdf.org/ns:symbol> , <http://bio2rdf.org/ns:hgnc_resource> , <http://bio2rdf.org/ns:hgnc_record> , <http://bio2rdf.org/ns:cosmic> , <http://bio2rdf.org/ns:ccds> , <http://bio2rdf.org/ns:ncbi> , <http://bio2rdf.org/ns:omim> , <http://bio2rdf.org/ns:uniprot> , <http://bio2rdf.org/ns:uscs> , <http://bio2rdf.org/ns:rgd> , <http://bio2rdf.org/ns:vega> , <http://bio2rdf.org/ns:ec> , <http://bio2rdf.org/ns:orphanet> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:geneidgdbreversefix> .
@@ -1326,9 +1320,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> 
-# Disabled as it is out of date "http://cu.hgnc.bio2rdf.org/sparql", 
-	"http://quebec.hgnc.bio2rdf.org/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://cu.hgnc.bio2rdf.org/sparql", "http://quebec.hgnc.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hugo> , <http://bio2rdf.org/ns:symbol> , <http://bio2rdf.org/ns:gene> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructfromlowercase> , <http://bio2rdf.org/query:linksfromlowercase> , <http://bio2rdf.org/query:countlinksfromlowercase> , <http://bio2rdf.org/query:counttriplesfromlowercase> .
 #	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
@@ -1408,9 +1400,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> 
-	#"http://cu.hgnc.bio2rdf.org/sparql", 
-	"http://quebec.hgnc.bio2rdf.org/sparql" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://cu.hgnc.bio2rdf.org/sparql", "http://quebec.hgnc.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hgnc> , <http://bio2rdf.org/ns:hugo> , <http://bio2rdf.org/ns:hgnc_resource> , <http://bio2rdf.org/ns:hgnc_record> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> .
 	#<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .

@@ -276,8 +276,8 @@ public class GeneralServlet extends HttpServlet
         		log.warn("Sending redirect using redirectCode="+redirectCode+" to redirectString="+redirectString.toString());
         		log.warn("contextPath="+request.getContextPath());
         		response.setStatus(redirectCode);
-    			response.sendRedirect(redirectString.toString());
-    			//return;
+    			response.setHeader("Location",redirectString.toString());
+    			return;
         	}
         }
         

@@ -53,7 +53,6 @@ public class GeneralServlet extends HttpServlet
 
     	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI(), request.getContextPath(), localSettings);
         
-        PrintWriter out = response.getWriter();
         
         String realHostName = request.getScheme() + "://" + request.getServerName() + (request.getServerPort() == 80 && request.getScheme().equals("http") ? "" : ":"+ request.getServerPort())+"/";
         
@@ -304,7 +303,7 @@ public class GeneralServlet extends HttpServlet
             log.warn("GeneralServlet: sending requesterIpAddress="+requesterIpAddress+" to blacklist redirect page");
             
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.sendRedirect(localSettings.getStringPropertyFromConfig("blacklistRedirectPage", ""));
+            response.setHeader("Location", localSettings.getStringPropertyFromConfig("blacklistRedirectPage", "/error/blacklist"));
             return;
         }
         
@@ -321,6 +320,8 @@ public class GeneralServlet extends HttpServlet
         
         Collection<String> debugStrings = new ArrayList<String>(multiProviderQueryBundles.size()+5);
         
+        PrintWriter out = response.getWriter();
+
         try
         {
             Repository myRepository = new SailRepository(new MemoryStore());
@@ -502,7 +503,7 @@ public class GeneralServlet extends HttpServlet
                 	}
                 }
                 
-                response.setContentType(requestedContentType);
+                response.setContentType(requestedContentType+"; charset=UTF-8");
                 response.setCharacterEncoding("UTF-8");
                 
                 // 3. Attempt to fetch information as needed
@@ -669,12 +670,12 @@ public class GeneralServlet extends HttpServlet
                 RdfUtils.toWriter(convertedPool, cleanOutput, writerFormat);
             }
             
-            String actualRdfString = cleanOutput.toString();
+            //String actualRdfString = cleanOutput.toString();
             
-            if(_TRACE)
-            {
-                log.trace("GeneralServlet: actualRdfString="+actualRdfString);
-            }
+//            if(_TRACE)
+//            {
+//                log.trace("GeneralServlet: actualRdfString="+actualRdfString);
+//            }
             
             if(requestedContentType.equals("application/rdf+xml"))
             {
@@ -684,8 +685,16 @@ public class GeneralServlet extends HttpServlet
                 {
                     out.write(nextDebugString+"\n");
                 }
-                // HACK: can't find a way to get sesame to print out the rdf without the xml PI
-                out.write(actualRdfString.replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", ""));
+                StringBuffer buffer = cleanOutput.getBuffer();
+
+                // HACK: aduna sesame developers refuse to believe that anyone would want to get an RDF/XML string without the xml PI, so this is to get around their stubborness
+                if(buffer.length()>38)
+                {
+	                for(int i = 38; i < cleanOutput.getBuffer().length(); i++)
+	                	out.write(buffer.charAt(i));
+	                // HACK: can't find a way to get sesame to print out the rdf without the xml PI
+	                //out.write(actualRdfString.replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", ""));
+                }
             }
             else if(requestedContentType.equals("text/rdf+n3"))
             {
@@ -693,8 +702,11 @@ public class GeneralServlet extends HttpServlet
                 {
                     out.write(nextDebugString+"\n");
                 }
-                
-                out.write(actualRdfString);
+
+                StringBuffer buffer = cleanOutput.getBuffer();
+                for(int i = 0; i < cleanOutput.getBuffer().length(); i++)
+                	out.write(buffer.charAt(i));
+                //out.write(actualRdfString);
             }
             else
             {
@@ -714,7 +726,10 @@ public class GeneralServlet extends HttpServlet
                     // log.error("GeneralServlet: unsupported encoding exception for UTF-8");
                 // }
                 
-                out.write(actualRdfString);
+                StringBuffer buffer = cleanOutput.getBuffer();
+                for(int i = 0; i < cleanOutput.getBuffer().length(); i++)
+                	out.write(buffer.charAt(i));
+                //out.write(actualRdfString);
             }
             out.flush();
             

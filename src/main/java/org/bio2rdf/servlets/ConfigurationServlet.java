@@ -488,7 +488,10 @@ public class ConfigurationServlet extends HttpServlet
         {
             log.info("about to call out.write");
         }
-        out.write(stBuff.toString());
+        
+        for(int i = 0; i < stBuff.getBuffer().length(); i++)
+        	out.write(stBuff.getBuffer().charAt(i));
+//        out.write(stBuff.toString());
         
         if(_INFO)
         {

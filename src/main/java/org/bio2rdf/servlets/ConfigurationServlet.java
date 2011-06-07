@@ -61,6 +61,7 @@ public class ConfigurationServlet extends HttpServlet
        ConfigurationQueryOptions requestConfigurationQueryOptions = new ConfigurationQueryOptions(request.getRequestURI(), localSettings);
         
         PrintWriter out = response.getWriter();
+        
         java.io.StringWriter stBuff = new java.io.StringWriter();
         
         String originalRequestedContentType = QueryallContentNegotiator.getResponseContentType(request.getHeader("Accept"), request.getHeader("User-Agent"));

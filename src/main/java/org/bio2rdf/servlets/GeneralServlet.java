@@ -149,9 +149,11 @@ public class GeneralServlet extends HttpServlet
             }
         }        
         
+        // allow for users to perform redirections if the query did not contain an explicit format
+        // some LD provenance systems cannot handle the fact that a document would be delivered from an address that also had RDF statements about it
         if(!requestQueryOptions.containsExplicitFormat())
         {
-        	if(localSettings.getBooleanPropertyFromConfig("alwaysRedirectToExplicitFormatUrl", true))
+        	if(localSettings.getBooleanPropertyFromConfig("alwaysRedirectToExplicitFormatUrl", false))
         	{
         		int redirectCode = localSettings.getIntPropertyFromConfig("redirectToExplicitFormatHttpCode", 303);
         		
@@ -307,10 +309,7 @@ public class GeneralServlet extends HttpServlet
             return;
         }
         
-        /**** Setup completed... now to compile the query ****/
-        
-        // since we know we don't need to redirect now, we set a custom header indicating that the response is being served from this application
-        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent", "") + "/"+Settings.VERSION);
+        response.setHeader("X-Application", localSettings.getStringPropertyFromConfig("userAgent", "queryall") + "/"+Settings.VERSION);
         
         List<Profile> includedProfiles = localSettings.getAndSortProfileList(localSettings.getURICollectionPropertiesFromConfig("activeProfiles"), Constants.LOWEST_ORDER_FIRST);
         
@@ -335,6 +334,7 @@ public class GeneralServlet extends HttpServlet
                     log.debug("GeneralServlet: Found pretend query");
                 }
                 
+                response.setCharacterEncoding("UTF-8");
                 response.setContentType(requestedContentType);
                 response.setCharacterEncoding("UTF-8");
                 response.setStatus(responseCode);
@@ -733,20 +733,20 @@ public class GeneralServlet extends HttpServlet
             }
             out.flush();
             
-            // Housekeeping
-            
-            // update a static record of the blacklist
-            // BlacklistController.accumulateBlacklist(fetchController.errorResults);
-            // 
-            // if(localSettings.RESET_ENDPOINT_FAILURES_ON_SUCCESS)
-            // {
-                // BlacklistController.removeEndpointsFromBlacklist(fetchController.successfulResults);
-            // }
-            
-            
             Date queryEndTime = new Date();
             
             long nextTotalTime = queryEndTime.getTime()-queryStartTime.getTime();
+            
+            // Housekeeping
+            
+            // update a static record of the blacklist
+            localBlacklistController.accumulateBlacklist(fetchController.getErrorResults(), localSettings.getLongPropertyFromConfig("blacklistResetPeriodMilliseconds", 3600000), localSettings.getBooleanPropertyFromConfig("blacklistResetClientBlacklistWithEndpoints", false));
+             
+            if(localSettings.getBooleanPropertyFromConfig("blacklistResetEndpointFailuresOnSuccess", true))
+            {
+            	localBlacklistController.removeEndpointsFromBlacklist(fetchController.getSuccessfulResults(), nextTotalTime, useDefaultProviders);
+            }
+            
             
             // QueryDebug nextQueryDebug = null;
             

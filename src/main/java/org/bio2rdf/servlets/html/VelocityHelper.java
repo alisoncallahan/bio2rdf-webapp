@@ -14,8 +14,8 @@ import org.apache.velocity.context.Context;
  * servlet context, and the rendering of templates into the servlet response
  * output stream.
  * 
- * @author Richard Cyganiak (richard @ cyganiak.de) Adapted for use by Bio2RDF
- *         by...
+ * @author Richard Cyganiak (richard @ cyganiak.de) 
+ * Adapted for use by Bio2RDF by...
  * @author Peter Ansell (p_ansell @ yahoo.com)
  * @version $Id: VelocityHelper.java 944 2011-02-08 10:23:08Z p_ansell $
  */

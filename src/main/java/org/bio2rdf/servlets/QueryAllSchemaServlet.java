@@ -16,6 +16,7 @@ import org.openrdf.*;
 import org.openrdf.rio.*;
 import org.openrdf.repository.*;
 import org.openrdf.repository.sail.*;
+import org.openrdf.sail.inferencer.fc.ForwardChainingRDFSInferencer;
 import org.openrdf.sail.memory.*;
 
 import org.apache.log4j.Logger;
@@ -188,188 +189,7 @@ public class QueryAllSchemaServlet extends HttpServlet
 
 		try
 		{
-			Repository myRepository = new SailRepository(new MemoryStore());
-			myRepository.initialize();
-
-			try
-			{
-				if(!ProviderImpl.schemaToRdf(myRepository,
-						ProviderImpl.providerNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: Provider schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating Provider schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!ProjectImpl.schemaToRdf(myRepository,
-						ProjectImpl.projectNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: Project schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating Project schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!QueryTypeImpl.schemaToRdf(myRepository,
-						QueryTypeImpl.queryNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: QueryType schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating QueryType schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!RegexNormalisationRuleImpl.schemaToRdf(myRepository,
-						NormalisationRuleImpl.rdfruleNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: RegexNormalisationRuleImpl schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating RegexNormalisationRuleImpl schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!SparqlNormalisationRuleImpl.schemaToRdf(myRepository,
-						NormalisationRuleImpl.rdfruleNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: SparqlNormalisationRuleImpl schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating SparqlNormalisationRuleImpl schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!XsltNormalisationRuleImpl.schemaToRdf(myRepository,
-						NormalisationRuleImpl.rdfruleNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: XsltNormalisationRuleImpl schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating SparqlNormalisationRuleImpl schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!RuleTestImpl.schemaToRdf(myRepository,
-						RuleTestImpl.getRuletestNamespace(), apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: RuleTest schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating RuleTest schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!NamespaceEntryImpl.schemaToRdf(myRepository,
-						NamespaceEntryImpl.namespaceNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: NamespaceEntry schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating NamespaceEntry schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!ProfileImpl.schemaToRdf(myRepository,
-						ProfileImpl.profileNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: Profile schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating Profile schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!StatisticsEntry.schemaToRdf(myRepository,
-						StatisticsEntry.statisticsNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: Statistics schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating Statistics schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!ProvenanceRecord.schemaToRdf(myRepository,
-						ProvenanceRecord.provenanceNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: Provenance schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating Provenance schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
-
-			try
-			{
-				if(!QueryBundle.schemaToRdf(myRepository,
-						QueryBundle.queryBundleNamespace, apiVersion))
-				{
-					log.error("QueryAllSchemaServlet: QueryBundle schema was not placed correctly in the rdf store");
-				}
-			}
-			catch(Exception ex)
-			{
-				log.error(
-						"QueryAllSchemaServlet: Problem generating QueryBundle schema RDF with type="
-								+ ex.getClass().getName(), ex);
-			}
+			Repository myRepository = Settings.getSchemas();
 
 			java.io.StringWriter stBuff = new java.io.StringWriter();
 
@@ -441,13 +261,6 @@ public class QueryAllSchemaServlet extends HttpServlet
 						+ queryString
 						+ " totalTime=" + Long.toString(nextTotalTime));
 			}
-		}
-		catch(OpenRDFException ordfe)
-		{
-			log.fatal("QueryAllSchemaServlet.doGet: caught RDF exception",
-					ordfe);
-			throw new RuntimeException(
-					"QueryAllSchemaServlet.doGet failed due to an RDF exception. See log for details");
 		}
 		catch(RuntimeException rex)
 		{

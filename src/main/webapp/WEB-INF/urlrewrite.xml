@@ -136,6 +136,13 @@
 		<to last="true">null</to>
 	</rule>
 	
+	<!-- We use this dummy URI format for testing in Bio2RDF -->
+	<rule>
+		<from>^(/page|/rdfxml|/n3|)/\w+test/$</from>
+		<run class="org.bio2rdf.servlets.GeneralServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
     <rule>
 		<from>^/(.*):(.*)$</from>
 		<run class="org.bio2rdf.servlets.GeneralServlet" method="doGet" />

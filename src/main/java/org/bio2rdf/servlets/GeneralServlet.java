@@ -1,6 +1,7 @@
 package org.bio2rdf.servlets;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -129,28 +130,14 @@ public class GeneralServlet extends HttpServlet
             requestedContentType = explicitUrlContentType;
         }
 
-        // even if they request a random format, we need to make sure that Rio has a writer compatible with it, otherwise we revert to one of the defaults as a failsafe mechanism
+        // Make sure that their requestedContentType is valid as an RDFFormat, or is text/html using this method
+        requestedContentType = RdfUtils.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML), Constants.APPLICATION_RDF_XML);
+
+        // this will be null if they chose text/html, but it will be a valid format in other cases due to the above method
         RDFFormat writerFormat = Rio.getWriterFormatForMIMEType(requestedContentType);
         
-        if(!requestedContentType.equals(Constants.TEXT_HTML))
-        {
-            if(writerFormat == null)
-            {
-                writerFormat = Rio.getWriterFormatForMIMEType(localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML));
-                
-                if(writerFormat == null)
-                {
-                    writerFormat = RDFFormat.RDFXML;
-                    
-                    requestedContentType = Constants.APPLICATION_RDF_XML;
-                    
-                    log.error("GeneralServlet: content negotiation failed to find a suitable content type for results. Defaulting to hard coded RDF/XML writer. Please set localSettings.getStringPropertyFromConfig(\"preferredDisplayContentType\") to a MIME type which is understood by the RDF package being used by the servlet to ensure this message doesn't appear.");
-                }
-            }
-        }        
-        
         // allow for users to perform redirections if the query did not contain an explicit format
-        // some LD provenance systems cannot handle the fact that a document would be delivered from an address that also had RDF statements about it
+        // some Linked Data provenance systems cannot handle the fact that a document would be delivered from an address that also had "real world"(TM) RDF statements including the URI
         if(!requestQueryOptions.containsExplicitFormat())
         {
         	if(localSettings.getBooleanPropertyFromConfig("alwaysRedirectToExplicitFormatUrl", false))
@@ -174,7 +161,9 @@ public class GeneralServlet extends HttpServlet
         		if(!ignoreContextPath)
     			{
         			if(request.getContextPath().equals(""))
+        			{
         				redirectString.append("/");
+        			}
         			else
         			{
         				redirectString.append(request.getContextPath());
@@ -319,7 +308,7 @@ public class GeneralServlet extends HttpServlet
         
         Collection<String> debugStrings = new ArrayList<String>(multiProviderQueryBundles.size()+5);
         
-        PrintWriter out = response.getWriter();
+        Writer out = new OutputStreamWriter(response.getOutputStream(), Charset.forName("UTF-8"));
 
         try
         {
@@ -490,7 +479,7 @@ public class GeneralServlet extends HttpServlet
                 	if(nextScheduledQueryBundle.getProvider() != null && nextScheduledQueryBundle.getProvider() instanceof HttpProvider)
                 	{
                 		HttpProvider nextScheduledHttpProvider = (HttpProvider)nextScheduledQueryBundle.getProvider();
-	                    // TODO: (Based on a configuration setting) run a quick test on the redirected URL to make sure at least we can access it, and try to use another one if we can't
+
 	                    if(nextScheduledHttpProvider.hasEndpointUrl() 
 	                        //&& nextScheduledHttpProvider.isHttpGetUrl()
 	                        && nextScheduledQueryBundle.getProvider().needsRedirect()

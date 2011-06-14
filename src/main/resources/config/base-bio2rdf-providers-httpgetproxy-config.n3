@@ -113,7 +113,7 @@
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://dbpedia.org/resource/${input_2}" ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://dbpedia.org/data/${input_2}.rdf" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsaferawrdf> .
 

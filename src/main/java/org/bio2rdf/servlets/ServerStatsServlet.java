@@ -33,7 +33,7 @@ public class ServerStatsServlet extends HttpServlet
         throws ServletException, IOException 
     {
         Settings localSettings = Settings.getSettings();
-        BlacklistController localBlacklistController = new BlacklistController(localSettings);
+        BlacklistController localBlacklistController = BlacklistController.getDefaultController();
         
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");

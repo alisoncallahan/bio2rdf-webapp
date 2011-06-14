@@ -50,7 +50,7 @@ public class ConfigurationServlet extends HttpServlet
         throws ServletException, IOException 
     {
         Settings localSettings = Settings.getSettings();
-        BlacklistController localBlacklistController = new BlacklistController(localSettings);
+        BlacklistController localBlacklistController = BlacklistController.getDefaultController();
         
         if(_INFO)
         {

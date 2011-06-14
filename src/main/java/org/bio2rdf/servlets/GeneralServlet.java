@@ -50,7 +50,7 @@ public class GeneralServlet extends HttpServlet
         Date queryStartTime = new Date();
         
     	Settings localSettings = Settings.getSettings();
-    	BlacklistController localBlacklistController = new BlacklistController(localSettings);
+    	BlacklistController localBlacklistController = BlacklistController.getDefaultController();
 
     	DefaultQueryOptions requestQueryOptions = new DefaultQueryOptions(request.getRequestURI(), request.getContextPath(), localSettings);
         

@@ -42,7 +42,9 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:fasta> .
+	
 
 <http://bio2rdf.org/query:fastainclude> a <http://purl.org/queryall/query:Query> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
@@ -52,7 +54,7 @@
 	<http://purl.org/queryall/query:isNamespaceSpecific> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/query:namespaceMatchMethod> <http://purl.org/queryall/query:namespaceMatchAny> ;
 	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/query:inputRegex> "^fasta/([\\w-]+):(.+)" ;
+	<http://purl.org/queryall/query:inputRegex> "^([\\w-]+):(.+)" ;
 	<http://purl.org/queryall/query:templateString> "" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}fasta/${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
@@ -60,7 +62,8 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:fastainclude> .
 
 
 
@@ -961,7 +964,9 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:image> .
+	
 
 <http://bio2rdf.org/query:imageinclude> a <http://purl.org/queryall/query:Query> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
@@ -979,7 +984,8 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:imageinclude> .
 
 
 <http://bio2rdf.org/query:homologeneconstruct> a <http://purl.org/queryall/query:Query> ;

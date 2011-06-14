@@ -1,0 +1,40 @@
+<http://bio2rdf.org/provider:sangercosmicfastaprotein> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=CAPN2${urlEncoded_input_2};format=aa" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cosmic> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fasta> , <http://bio2rdf.org/query:fastainclude> .
+
+<http://bio2rdf.org/provider:sangercosmicfastacdna> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.sanger.ac.uk/perl/genetics/CGP/cosmic_sequence?ln=CAPN2${urlEncoded_input_2};format=cds" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cosmic> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fasta> , <http://bio2rdf.org/query:fastainclude> .
+
+<http://bio2rdf.org/provider:rcsbpdbfasta> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=FASTA&compression=NO&structureId=${urlEncoded_lowercase_input_2}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fasta> , <http://bio2rdf.org/query:fastainclude> .
+
+<http://bio2rdf.org/provider:ncbigenbankfasta> a <http://purl.org/queryall/provider:Provider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=fasta&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fasta> , <http://bio2rdf.org/query:fastainclude> .
+

@@ -10,6 +10,16 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:drugbank_drugs> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
 
+<http://bio2rdf.org/provider:sangercosmichtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
+	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://www.sanger.ac.uk/perl/genetics/CGP/cosmic?action=gene&ln=${urlEncoded_input_2}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cosmic> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:html> , <http://bio2rdf.org/query:htmlinclude> .
+
 <http://bio2rdf.org/provider:oclchtml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;

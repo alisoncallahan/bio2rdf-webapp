@@ -14,6 +14,8 @@ queryall:queryConfigLocations
 "/config/base-bio2rdf-providers-nocommunication-config.n3" , 
 "/config/base-bio2rdf-providers-sparql-config.n3" , 
 "/config/base-bio2rdf-providers-html-config.n3" , 
+"/config/base-bio2rdf-providers-image-config.n3" , 
+"/config/base-bio2rdf-providers-fasta-config.n3" , 
 "/config/base-bio2rdf-providers-licenses-config.n3" , 
 "/config/base-bio2rdf-rdfrules-config.n3" , 
 "/config/base-bio2rdf-rdfrules-sparql-config.n3" , 
@@ -25,7 +27,6 @@ queryall:queryConfigLocations
 "/config/myexperiment_namespaceentries-config.n3" ,
 "/config/myexperiment_rdfrules-config.n3" ;
 
-
 queryall:backupQueryConfigLocations 
 "/config/base-bio2rdf-namespaceentries-config.n3" , 
 "/config/base-bio2rdf-providers-httpgetproxy-config.n3" , 
@@ -33,6 +34,8 @@ queryall:backupQueryConfigLocations
 "/config/base-bio2rdf-providers-nocommunication-config.n3" , 
 "/config/base-bio2rdf-providers-sparql-config.n3" , 
 "/config/base-bio2rdf-providers-html-config.n3" , 
+"/config/base-bio2rdf-providers-image-config.n3" , 
+"/config/base-bio2rdf-providers-fasta-config.n3" , 
 "/config/base-bio2rdf-providers-licenses-config.n3" , 
 "/config/base-bio2rdf-rdfrules-config.n3" , 
 "/config/base-bio2rdf-rdfrules-sparql-config.n3" , 

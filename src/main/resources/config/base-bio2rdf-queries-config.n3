@@ -38,11 +38,31 @@
 	<http://purl.org/queryall/query:templateString> "" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}fasta/${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
-	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedStandardUri}\"><ns0pred:fastaUrl xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedQueryUri}</ns0pred:fastaUrl></rdf:Description>" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:urlFasta xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_endpointUrl}</ns0pred:urlFasta></rdf:Description>" ;
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://bio2rdf.org/query:fastainclude> a <http://purl.org/queryall/query:Query> ;
+    <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+    <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/dc/elements/1.1/title> "fasta" ;
+	<http://purl.org/queryall/query:handleAllNamespaces> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:isNamespaceSpecific> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:namespaceMatchMethod> <http://purl.org/queryall/query:namespaceMatchAny> ;
+	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:inputRegex> "^fasta/([\\w-]+):(.+)" ;
+	<http://purl.org/queryall/query:templateString> "" ;
+	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}fasta/${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedStandardUri}\"><ns0pred:urlFastaList xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedQueryUri}\"></ns0pred:urlFastaList></rdf:Description>" ;
+	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+
 
 <http://bio2rdf.org/query:constructtwolevel> a <http://purl.org/queryall/query:Query> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
@@ -532,7 +552,7 @@
 	<http://purl.org/queryall/query:templateString> "" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}image/${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
-	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedStandardUri}\"><ns0pred:urlImage xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedQueryUri}</ns0pred:urlImage></rdf:Description>" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedStandardUri}\"><ns0pred:urlImageList xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_privateuppercase_normalisedQueryUri\"></ns0pred:urlImageList></rdf:Description>" ;
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
@@ -937,11 +957,30 @@
 	<http://purl.org/queryall/query:templateString> "" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}image/${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
-	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:urlImage xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_inputUrlEncoded_normalisedQueryUri}</ns0pred:urlImage></rdf:Description>" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:urlImage xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_endpointUrl}</ns0pred:urlImage></rdf:Description>" ;
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<http://bio2rdf.org/query:imageinclude> a <http://purl.org/queryall/query:Query> ;
+    <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+    <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/dc/elements/1.1/title> "image" ;
+	<http://purl.org/queryall/query:handleAllNamespaces> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:isNamespaceSpecific> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:namespaceMatchMethod> <http://purl.org/queryall/query:namespaceMatchAny> ;
+	<http://purl.org/queryall/query:includeDefaults> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/query:inputRegex> "^([\\w-]+):(.+)" ;
+	<http://purl.org/queryall/query:templateString> "" ;
+	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}image/${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:urlImageList xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_normalisedQueryUri}\"></ns0pred:urlImageList></rdf:Description>" ;
+	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+
 
 <http://bio2rdf.org/query:homologeneconstruct> a <http://purl.org/queryall/query:Query> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
@@ -1403,7 +1442,7 @@
 	<http://purl.org/queryall/query:templateString> "" ;
 	<http://purl.org/queryall/query:queryUriTemplateString> "${defaultHostAddress}html/${input_1}${defaultSeparator}${input_2}" ;
 	<http://purl.org/queryall/query:standardUriTemplateString> "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
-	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:url xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\">${xmlEncoded_normalisedQueryUri}</ns0pred:url></rdf:Description>" ;
+	<http://purl.org/queryall/query:outputRdfXmlString> "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:urlList xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${xmlEncoded_normalisedQueryUri}\"></ns0pred:urlList></rdf:Description>" ;
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;

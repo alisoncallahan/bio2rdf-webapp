@@ -185,7 +185,7 @@
 	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.mquter.qut.edu.au/tags/${urlEncoded_input_1}:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:tags> .
 

@@ -46,12 +46,6 @@
 	</rule>
 
 	<rule>
-		<from>^(/page|/rdfxml|/n3|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
-		<run class="org.bio2rdf.servlets.ConfigurationServlet" method="doGet" />
-		<to last="true">null</to>
-	</rule>
-	
-	<rule>
 		<from>^/queryall/(.*)$</from>
 		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
 		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>

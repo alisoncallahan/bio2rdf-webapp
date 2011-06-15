@@ -1,0 +1,29 @@
+#if ($debugStrings)
+#foreach ($debugString in $debugStrings)
+$debugString
+#end
+#end
+#set ($xmlEncoded_title = $title)
+#set ($xmlEncoded_project_name = $project_name)
+#set ($xmlEncoded_project_link = $project_link)
+#set ($xmlEncoded_server_base = $server_base)
+#set ($xmlEncoded_shortcut_icon = $shortcut_icon)
+	<title>${xmlEncoded_title}</title>
+	<link rel="shortcut icon" href="${xmlEncoded_server_base}${xmlEncoded_shortcut_icon}">
+
+#foreach ($next_stylesheet in $stylesheets)
+#set ($xmlEncoded_next_stylesheet = $next_stylesheet)
+<link rel="stylesheet" type="text/css" href="${xmlEncoded_next_stylesheet}" media="all" />
+#end
+#foreach ($next_local_stylesheet in $local_stylesheets)
+#set ($xmlEncoded_next_local_stylesheet = $next_local_stylesheet)
+<link rel="stylesheet" type="text/css" href="${xmlEncoded_server_base}${xmlEncoded_next_local_stylesheet}" media="all" />
+#end
+#foreach ($next_script in $scripts)
+#set ($xmlEncoded_next_script = $next_script)
+<script type="text/javascript" src="${xmlEncoded_next_script}"></script>
+#end
+#foreach ($next_local_script in $local_scripts)
+#set ($xmlEncoded_next_local_script = $next_local_script)
+<script type="text/javascript" src="${xmlEncoded_server_base}${xmlEncoded_next_local_script}"></script>
+#end

@@ -438,7 +438,7 @@ public class ConfigurationServlet extends HttpServlet
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetIndividualQueryLimit"));
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("preferredDisplayContentType"));
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("preferredDisplayLanguage"));
-                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("assumedRequestContentType"));
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("assumedResponseContentType"));
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("defaultAcceptHeader"));
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("useRequestCache"));
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("convertAlternateNamespacePrefixesToPreferred"));

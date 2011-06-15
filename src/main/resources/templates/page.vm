@@ -22,10 +22,15 @@
 #parse("proptable.vm")
 <!-- end proptable.vm -->
 
-#if ($debug_level_debug)
+
+<div 
+#if (!$debug_level_debug) 
+style="display:none;"
+#end 
+>
 <!-- start endpoints.vm -->
 #parse("endpoints.vm")
 <!-- end endpoints.vm -->
-#end
+</div>
 
 #parse("footer.vm")

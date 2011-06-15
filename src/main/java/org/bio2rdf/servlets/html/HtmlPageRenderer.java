@@ -4,6 +4,7 @@ import org.bio2rdf.servlets.GeneralServlet;
 import org.queryall.queryutils.*;
 import org.queryall.helpers.*;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 import java.util.HashSet;
@@ -82,7 +83,7 @@ public class HtmlPageRenderer
         
         if(_TRACE)
         {
-            log.trace("HtmlPageRenderer.renderHtml: about to create VelocityHelper class");
+            log.trace("renderHtml: about to create VelocityHelper class");
         }
         
         
@@ -92,7 +93,7 @@ public class HtmlPageRenderer
         
         if(_TRACE)
         {
-            log.trace("HtmlPageRenderer.renderHtml: finished creating VelocityHelper class");
+            log.trace("renderHtml: finished creating VelocityHelper class");
         }
         
         Context context = template.getVelocityContext();
@@ -194,6 +195,12 @@ public class HtmlPageRenderer
         context.put("titles", titles);
         context.put("comments", comments);
         context.put("images", images);
+
+        context.put("shortcut_icon", localSettings.getStringPropertyFromConfig("shortcutIconPath","static/includes-images/favicon.ico"));
+        context.put("scripts", localSettings.getStringCollectionPropertiesFromConfig("resultsPageScripts"));
+        context.put("local_scripts", localSettings.getStringCollectionPropertiesFromConfig("resultsPageScriptsLocal"));
+        context.put("stylesheets", localSettings.getStringCollectionPropertiesFromConfig("resultsPageStylesheets"));
+        context.put("local_stylesheets", localSettings.getStringCollectionPropertiesFromConfig("resultsPageStylesheetsLocal"));
         
         // For each URI in localSettings.IMAGE_QUERY_TYPES
         // Make sure the URI is a valid QueryType
@@ -235,10 +242,10 @@ public class HtmlPageRenderer
         }
         
         // To prevent infinite or extended requests, we have a maximum value that we can go up to
-        if(pageoffset > localSettings.getIntPropertyFromConfig("pageoffsetMaxValue", 0))
+        if(pageoffset > localSettings.getIntPropertyFromConfig("pageoffsetMaxValue", 20))
         {
             // setup the pageoffset value so it artificially points to the limit so that non-conforming robots that don't follow robots.txt don't accidentally run into issues when people play around with links to very high page offsets
-            previouspageoffset = localSettings.getIntPropertyFromConfig("pageoffsetMaxValue", 0);
+            previouspageoffset = localSettings.getIntPropertyFromConfig("pageoffsetMaxValue", 20);
             nextpagelinkuseful = false;
         }
         
@@ -252,10 +259,10 @@ public class HtmlPageRenderer
         {
             context.put("nextpagelink", realHostName
                 +contextPath
-                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "")
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "")
+                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "page/")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset")
                 +(pageoffset+1)
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/")
                 +queryString
                 +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "")
                 +localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
@@ -266,10 +273,10 @@ public class HtmlPageRenderer
         {
             context.put("previouspagelink", realHostName
                 +contextPath
-                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "")
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "")
+                +localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "page/")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix", "pageoffset")
                 +(previouspageoffset)
-                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "")
+                +localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix", "/")
                 +queryString
                 +localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix", "")
                 +localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
@@ -292,7 +299,7 @@ public class HtmlPageRenderer
         
         if(_TRACE)
         {
-            log.trace("HtmlPageRenderer.renderHtml: about to render XHTML to nextWriter="+nextWriter);
+            log.trace("renderHtml: about to render XHTML to nextWriter="+nextWriter);
         }
         
         try
@@ -301,7 +308,7 @@ public class HtmlPageRenderer
             {
                 if(_DEBUG)
                 {
-                    log.debug("HtmlPageRenderer.renderHtml: fetchController.queryKnown(), using page.vm template");
+                    log.debug("renderHtml: fetchController.queryKnown(), using page.vm template");
                 }
                 
                 template.renderXHTML("page.vm", nextWriter);
@@ -310,7 +317,7 @@ public class HtmlPageRenderer
             {
                 if(_DEBUG)
                 {
-                    log.debug("HtmlPageRenderer.renderHtml: !fetchController.queryKnown(), using error.vm template");
+                    log.debug("renderHtml: !fetchController.queryKnown(), using error.vm template");
                 }
 
                 context.put("namespaceRecognised", !fetchController.anyNamespaceNotRecognised());
@@ -321,12 +328,109 @@ public class HtmlPageRenderer
         }
         catch(Exception ex)
         {
-            log.fatal("HtmlPageRenderer.renderHtml: caught exception while rendering XHTML",ex);
+            log.fatal("renderHtml: caught exception while rendering XHTML",ex);
+
+            try
+            {
+            	nextWriter.write("Fatal error. See logs for details");
+            }
+            catch(IOException ioe)
+            {
+            	log.fatal("renderHtml: Could not write out error message to nextWriter");
+            }
         }
         
         if(_TRACE)
         {
-            log.trace("HtmlPageRenderer.renderHtml: finished rendering XHTML");
+            log.trace("renderHtml: finished rendering XHTML");
         }
     }
+	
+	public static void renderIndexPage(Settings localSettings, ServletContext servletContext, java.io.Writer nextWriter, Collection<String> debugStrings, String realHostName, String contextPath) throws OpenRDFException
+	{
+        if(contextPath == null || contextPath.equals("/"))
+        {
+            contextPath = "";
+        }
+        else if(contextPath.startsWith("/") && contextPath.length() > 1 )
+        {
+            // take off the first slash and add one to the end for our purposes
+            contextPath = contextPath.substring(1)+"/";
+        }
+        
+        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestContext", true))
+        {
+            contextPath = localSettings.getStringPropertyFromConfig("hardcodedRequestContext", "");
+        }
+        
+        if(localSettings.getBooleanPropertyFromConfig("useHardcodedRequestHostname", true))
+        {
+            realHostName = localSettings.getStringPropertyFromConfig("hardcodedRequestHostname", "");
+        }
+        
+        if(_TRACE)
+        {
+            log.trace("renderIndexPage: about to create VelocityHelper class");
+        }
+
+        VelocityHelper template = new VelocityHelper(servletContext);
+		
+        Context context = template.getVelocityContext();
+        context.put("statistics_providers", Integer.toString(localSettings.getAllProviders().size()));
+        context.put("statistics_namespaceentries", Integer.toString(localSettings.getAllNamespaceEntries().size()));
+        context.put("statistics_normalisationrules", Integer.toString(localSettings.getAllNormalisationRules().size()));
+        context.put("statistics_normalisationruletests", Integer.toString(localSettings.getAllRuleTests().size()));
+        context.put("statistics_querytypes", Integer.toString(localSettings.getAllQueryTypes().size()));
+        
+        context.put("debug_level_info", GeneralServlet._INFO);
+        context.put("debug_level_debug", GeneralServlet._DEBUG);
+        context.put("debug_level_trace", GeneralServlet._TRACE);
+        
+        context.put("title", localSettings.getStringPropertyFromConfig("projectName", "Bio2RDF"));
+
+        context.put("project_name", localSettings.getStringPropertyFromConfig("projectName", "Bio2RDF"));
+        context.put("project_base_url", localSettings.getStringPropertyFromConfig("projectHomeUrl", "http://bio2rdf.org/"));
+        context.put("project_html_url_prefix", localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "html/"));
+        context.put("project_html_url_suffix", localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
+        context.put("project_link", localSettings.getStringPropertyFromConfig("projectHomeUrl", "http://bio2rdf.org/"));
+        context.put("application_name", localSettings.getStringPropertyFromConfig("userAgent", "queryall")+ "/"+Settings.VERSION);
+        context.put("application_help", localSettings.getStringPropertyFromConfig("applicationHelpUrl", "http://sourceforge.net/apps/mediawiki/bio2rdf/"));
+
+        context.put("index_banner_image", localSettings.getStringPropertyFromConfig("indexBannerImagePath","static/includes-images/Bio2RDF.jpg"));
+        
+        context.put("shortcut_icon", localSettings.getStringPropertyFromConfig("shortcutIconPath","static/includes-images/favicon.ico"));
+        context.put("scripts", localSettings.getStringCollectionPropertiesFromConfig("indexPageScripts"));
+        context.put("local_scripts", localSettings.getStringCollectionPropertiesFromConfig("indexPageScriptsLocal"));
+        context.put("stylesheets", localSettings.getStringCollectionPropertiesFromConfig("indexPageStylesheets"));
+        context.put("local_stylesheets", localSettings.getStringCollectionPropertiesFromConfig("indexPageStylesheetsLocal"));
+        
+        context.put("real_hostname", realHostName);
+        context.put("context_path", contextPath);
+        context.put("server_base", realHostName+contextPath);
+
+        String templateLocation = localSettings.getStringPropertyFromConfig("indexTemplate", "default-index.vm");
+
+		try
+		{
+			template.renderXHTML(templateLocation, nextWriter);
+		}
+		catch(Exception ex)
+		{
+            log.fatal("renderIndexPage: caught exception while rendering XHTML",ex);
+
+            try
+            {
+            	nextWriter.write("Fatal error. See logs for details");
+            }
+            catch(IOException ioe)
+            {
+            	log.fatal("renderIndexPage: Could not write out error message to nextWriter");
+            }
+        }
+        
+        if(_TRACE)
+        {
+            log.trace("renderIndexPage: finished rendering XHTML");
+        }
+	}
 }

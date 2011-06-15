@@ -129,6 +129,27 @@ queryall:commentProperties
 queryall:urlProperties 
 <http://bio2rdf.org/bio2rdf_resource:url> , <http://xmlns.com/foaf/0.1/page> , <http://xmlns.com/foaf/0.1/homepage> , <http://rdf.myexperiment.org/ontologies/base/human-start-page> , <http://purl.org/dc/terms/hasFormat> , <http://rdf.myexperiment.org/ontologies/base/content-url> ;
 
+queryall:indexTemplate "default-index.vm" ;
+
+queryall:indexPageScripts "http://www.google.com/jsapi" , "http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js" ;
+
+queryall:indexPageScriptsLocal "static/includes-scripts/script.js" ;
+
+queryall:indexPageStylesheets "http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css" ;
+
+# TODO: create a stylesheet if necessary for the refitted front page
+#queryall:indexPageStylesheetsLocal "static/includes-css/html_page_styles.css" ;
+
+queryall:resultsPageScripts "http://www.google.com/jsapi" , "http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js" ;
+
+queryall:resultsPageScriptsLocal "static/includes-scripts/script.js" ;
+
+queryall:resultsPageStylesheetsLocal "static/includes-css/html_page_styles.css" ;
+
+queryall:shortcutIconPath "static/includes-images/favicon.ico" ;
+
+queryall:indexBannerImagePath "static/includes-images/Bio2RDF.jpg" ;
+
 queryall:unknownQueryStaticAdditions <http://bio2rdf.org/query:unknownquery> ;
 
 queryall:unknownQueryHttpResponseCode "400"^^xsd:int ;
@@ -147,9 +168,9 @@ queryall:preferredDisplayContentType "text/html" ;
 
 queryall:preferredDisplayLanguage "en" ;
 
-queryall:assumedRequestContentType "application/rdf+xml" ;
+queryall:assumedResponseContentType "application/rdf+xml" ;
 
-queryall:defaultAcceptHeader "application/rdf+xml, text/rdf+n3, text/turtle;q=0.8, application/x-turtle;q=0.35, text/n3;q=0.35, application/xhtml+xml;q=0.3, text/html;q=0.3, text/xml;q=0.2, application/xml;q=0.2, text/plain;q=0.1" ;
+queryall:defaultAcceptHeader "application/rdf+xml, text/rdf+n3, text/turtle;q=0.8, text/plain;q=0.7, application/x-turtle;q=0.35, text/n3;q=0.35, application/xhtml+xml;q=0.3, text/html;q=0.3, text/xml;q=0.2, application/xml;q=0.2" ;
 
 queryall:useRequestCache "true"^^xsd:boolean ;
 

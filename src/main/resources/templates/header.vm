@@ -14,7 +14,8 @@ $debugString
 #set ($xmlEncoded_query_string = $query_string)
 
     <title>$xmlEncoded_title | $xmlEncoded_project_name</title>
-    <link rel="shortcut icon" href="${xmlEncoded_server_base}static/includes-images/favicon.ico" />
+	<link rel="shortcut icon" href="${xmlEncoded_server_base}${xmlEncoded_shortcut_icon}">
+
 #if ($rdfxml_link)
 #set ($xmlEncoded_rdfxml_link = $rdfxml_link)
     <link rel="alternate" type="application/rdf+xml" href="$xmlEncoded_rdfxml_link" title="RDF/XML alternate representation" />

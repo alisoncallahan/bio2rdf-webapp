@@ -1,0 +1,7 @@
+<div id="footer">
+#if($application_name && $application_help)
+#set ($xmlEncoded_application_name = $application_name)
+#set ($xmlEncoded_application_help = $application_help)
+Powered by <a href="$xmlEncoded_application_help">$xmlEncoded_application_name</a>
+#end
+</div>

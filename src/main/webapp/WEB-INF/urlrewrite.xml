@@ -5,8 +5,14 @@
 <urlrewrite decode-using="utf8">
 	
 	<rule>
+		<from>^/index.html$</from>
+		<to>/</to>
+	</rule>
+
+	<rule>
 		<from>^/$</from>
-		<to last="true">/index.html</to>
+		<run class="org.bio2rdf.servlets.IndexPageServlet" method="doGet" />
+		<to last="true">null</to>
 	</rule>
 
 	<rule>
@@ -15,6 +21,7 @@
 		<to last="true">null</to>
     </rule>
 	
+	<!-- TODO: serve this through a servlet with a configurable location using the key queryall:shortcutIconPath -->
 	<rule>
 		<from>^/favicon.ico$</from>
 		<to last="true">/static/includes-images/favicon.ico</to>

@@ -199,7 +199,7 @@ try
 	
 	currentPipeResult.stream(currentPipeOutput);
 	
-    myRepositoryConnection.add(new java.io.StringReader(currentPipeOutput.toString("UTF-8")), localSettings.getDefaultHostAddress(), Rio.getParserFormatForMIMEType(localSettings.getStringPropertyFromConfig("assumedRequestContentType", "application/rdf+xml")));
+    myRepositoryConnection.add(new java.io.StringReader(currentPipeOutput.toString("UTF-8")), localSettings.getDefaultHostAddress(), Rio.getParserFormatForMIMEType(localSettings.getStringPropertyFromConfig("assumedResponseContentType", "application/rdf+xml")));
     myRepositoryConnection.commit();
 	// out.write(currentPipeOutput.toString("UTF-8").replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>",""));
     

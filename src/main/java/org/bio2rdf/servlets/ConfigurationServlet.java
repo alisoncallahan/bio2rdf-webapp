@@ -334,7 +334,10 @@ public class ConfigurationServlet extends HttpServlet
             {
                 myRepositoryConnection = myRepository.getConnection();
 
+                // TODO: put this list into a properties or RDf file
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("userAgent"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("robotHelpUrl"));
                 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("projectHomeUri"));
                 
@@ -358,6 +361,10 @@ public class ConfigurationServlet extends HttpServlet
                 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("htmlUrlSuffix"));
                 
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("alwaysRedirectToExplicitFormatUrl"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("redirectToExplicitFormatHttpCode"));
+
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("queryplanUrlPrefix"));
                 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("queryplanUrlSuffix"));
@@ -423,6 +430,32 @@ public class ConfigurationServlet extends HttpServlet
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("commentProperties"));
 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("urlProperties"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("indexTemplate"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("resultsTemplate"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("errorTemplate"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("indexPageScripts"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("indexPageScriptsLocal"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("indexPageStylesheets"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("indexPageStylesheetsLocal"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("resultsPageScripts"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("resultsPageScriptsLocal"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("resultsPageStylesheets"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("resultsPageStylesheetsLocal"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("shortcutIconPath"));
+
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("indexBannerImagePath"));
 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("unknownQueryStaticAdditions"));
 

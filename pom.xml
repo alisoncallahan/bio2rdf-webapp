@@ -53,13 +53,6 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<artifactId>sesame-core</artifactId>
-			<groupId>org.openrdf.sesame</groupId>
-			<version>2.3.2</version>
-			<type>pom</type>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<artifactId>velocity</artifactId>
 			<groupId>org.apache.velocity</groupId>
 			<type>jar</type>
@@ -200,5 +193,10 @@
 			<name>DBIS Maven Releases Repository</name>
 			<url>http://on.cs.unibas.ch/maven/repository</url>
 		</repository>
+        <repository>
+            <id>repo.rasea.org</id>
+            <name>Rasea Maven Repository (only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name>
+            <url>http://repo.rasea.org/maven2/</url>
+        </repository> 
 	</repositories>
 </project>

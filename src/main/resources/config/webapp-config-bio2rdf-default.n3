@@ -9,6 +9,8 @@ bio2rdf:default a queryall:webappConfig ;
 
 queryall:userAgent "Bio2RDF" ;
 
+queryall:robotHelpUrl "https://sourceforge.net/apps/mediawiki/bio2rdf/index.php?title=RobotHelp" ;
+
 queryall:projectHomeUri "http://bio2rdf.org/" ;
 
 queryall:uriPrefix "http://" ;
@@ -130,6 +132,10 @@ queryall:urlProperties
 <http://bio2rdf.org/bio2rdf_resource:url> , <http://xmlns.com/foaf/0.1/page> , <http://xmlns.com/foaf/0.1/homepage> , <http://rdf.myexperiment.org/ontologies/base/human-start-page> , <http://purl.org/dc/terms/hasFormat> , <http://rdf.myexperiment.org/ontologies/base/content-url> ;
 
 queryall:indexTemplate "default-index.vm" ;
+
+queryall:resultsTemplate "page.vm" ;
+
+queryall:errorTemplate "error.vm" ;
 
 queryall:indexPageScripts "http://www.google.com/jsapi" , "http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js" ;
 

@@ -79,6 +79,15 @@
 	</rule>
 	
 	<rule>
+		<from>^/json/queryall/(.*)$</from>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>
+		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.chosenContentType">application/json</set>
+		<run class="org.bio2rdf.servlets.QueryAllSchemaServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
+	<rule>
 		<from>^/page/queryall/(.*)$</from>
 		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.apiVersion">current</set>
 		<set name="org.bio2rdf.servlets.QueryAllSchemaServlet.queryString">$1</set>
@@ -112,7 +121,7 @@
 	</rule>
 
 	<rule>
-		<from>^(/page|/rdfxml|/n3|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
+		<from>^(/page|/rdfxml|/n3|/json|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
 		<run class="org.bio2rdf.servlets.ConfigurationServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
@@ -139,7 +148,7 @@
 	
 	<!-- We use this dummy URI format for testing in Bio2RDF -->
 	<rule>
-		<from>^(/page|/rdfxml|/n3|)/\w+test/$</from>
+		<from>^(/page|/rdfxml|/n3|/json|)/\w+test/$</from>
 		<run class="org.bio2rdf.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>

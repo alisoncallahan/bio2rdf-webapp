@@ -40,6 +40,8 @@ public class DefaultQueryOptions
 	private String rdfXmlUrlSuffix;
 	private String n3UrlPrefix;
 	private String n3UrlSuffix;
+	private String jsonUrlPrefix;
+	private String jsonUrlSuffix;
     
     public DefaultQueryOptions(String requestUri, String contextPath, Settings nextSettings)
     {
@@ -54,6 +56,8 @@ public class DefaultQueryOptions
         rdfXmlUrlSuffix = localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
         n3UrlPrefix = localSettings.getStringPropertyFromConfig("n3UrlPrefix", "n3/");
         n3UrlSuffix = localSettings.getStringPropertyFromConfig("n3UrlSuffix", "");
+        jsonUrlPrefix = localSettings.getStringPropertyFromConfig("jsonUrlPrefix", "json/");
+        jsonUrlSuffix = localSettings.getStringPropertyFromConfig("jsonUrlSuffix", "");
         queryplanUrlPrefix = localSettings.getStringPropertyFromConfig("queryplanUrlPrefix", "queryplan/");
         queryplanUrlSuffix = localSettings.getStringPropertyFromConfig("queryplanUrlSuffix", "");
         
@@ -77,9 +81,11 @@ public class DefaultQueryOptions
         {
         	if(requestUri.startsWith(contextPath))
         	{
-        		log.debug("requestUri before removing contextPath requestUri="+requestUri);
+        		if(_DEBUG)
+        			log.debug("requestUri before removing contextPath requestUri="+requestUri);
         		requestUri = requestUri.substring(contextPath.length());
-        		log.debug("removed contextPath from requestUri contextPath="+contextPath+" requestUri="+requestUri);
+        		if(_DEBUG)
+        			log.debug("removed contextPath from requestUri contextPath="+contextPath+" requestUri="+requestUri);
         	}
         }
         
@@ -132,6 +138,16 @@ public class DefaultQueryOptions
             if(_DEBUG)
             	log.debug("requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, n3UrlPrefix, n3UrlSuffix);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
+        }
+        else if(matchesPrefixAndSuffix(requestString, jsonUrlPrefix, jsonUrlSuffix))
+        {
+            _hasExplicitFormat = true;
+            _chosenFormat = Constants.APPLICATION_JSON;
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
+            requestString = takeOffPrefixAndSuffix(requestString, jsonUrlPrefix, jsonUrlSuffix);
             if(_DEBUG)
             	log.debug("requestString="+requestString);
         }

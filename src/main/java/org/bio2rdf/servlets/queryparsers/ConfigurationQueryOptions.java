@@ -1,5 +1,6 @@
 package org.bio2rdf.servlets.queryparsers;
 
+import org.queryall.helpers.Constants;
 import org.queryall.helpers.Settings;
 import org.queryall.helpers.StringUtils;
 
@@ -49,9 +50,11 @@ public class ConfigurationQueryOptions
         
         if(requestString.startsWith("/"))
         {
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
             requestString = requestString.substring(1);
-            log.debug("requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("requestString="+requestString);
         }
         
         requestString = parseForAdminPrefix(requestString);
@@ -142,30 +145,48 @@ public class ConfigurationQueryOptions
         String adminConfigurationRdfxmlSuffix = localSettings.getStringPropertyFromConfig("adminConfigurationRdfxmlSuffix", "");
         String adminConfigurationN3Prefix = localSettings.getStringPropertyFromConfig("adminConfigurationN3Prefix", "");
         String adminConfigurationN3Suffix = localSettings.getStringPropertyFromConfig("adminConfigurationN3Suffix", "");
+        String adminConfigurationJsonPrefix = localSettings.getStringPropertyFromConfig("adminConfigurationJsonPrefix", "");
+        String adminConfigurationJsonSuffix = localSettings.getStringPropertyFromConfig("adminConfigurationJsonSuffix", "");
         
         if(matchesPrefixAndSuffix(requestString, adminConfigurationHtmlPrefix, adminConfigurationHtmlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "text/html";
-            log.debug("html: requestString="+requestString);
+            _chosenFormat = Constants.TEXT_HTML;
+            if(_DEBUG)
+            	log.debug("html: requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, adminConfigurationHtmlPrefix, adminConfigurationHtmlSuffix);
-            log.debug("html: requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("html: requestString="+requestString);
         }
         else if(matchesPrefixAndSuffix(requestString, adminConfigurationRdfxmlPrefix, adminConfigurationRdfxmlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "application/rdf+xml";
-            log.debug("rdfxml: requestString="+requestString);
+            _chosenFormat = Constants.APPLICATION_RDF_XML;
+            if(_DEBUG)
+            	log.debug("rdfxml: requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, adminConfigurationRdfxmlPrefix, adminConfigurationRdfxmlSuffix);
-            log.debug("rdfxml: requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("rdfxml: requestString="+requestString);
         }
         else if(matchesPrefixAndSuffix(requestString, adminConfigurationN3Prefix, adminConfigurationN3Suffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "text/rdf+n3";
-            log.debug("n3: requestString="+requestString);
+            _chosenFormat = Constants.TEXT_RDF_N3;
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, adminConfigurationN3Prefix, adminConfigurationN3Suffix);
-            log.debug("n3: requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
+        }
+        else if(matchesPrefixAndSuffix(requestString, adminConfigurationJsonPrefix, adminConfigurationJsonSuffix))
+        {
+            _hasExplicitFormat = true;
+            _chosenFormat = Constants.APPLICATION_JSON;
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
+            requestString = takeOffPrefixAndSuffix(requestString, adminConfigurationJsonPrefix, adminConfigurationJsonSuffix);
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
         }
         
         return requestString;
@@ -179,30 +200,49 @@ public class ConfigurationQueryOptions
         String nsIdRdfxmlSuffix = localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", "");
         String nsIdN3Prefix = localSettings.getStringPropertyFromConfig("n3UrlPrefix", "");
         String nsIdN3Suffix = localSettings.getStringPropertyFromConfig("n3UrlSuffix", "");
+        String nsIdJsonPrefix = localSettings.getStringPropertyFromConfig("jsonUrlPrefix", "");
+        String nsIdJsonSuffix = localSettings.getStringPropertyFromConfig("jsonUrlSuffix", "");
+        
         
         if(matchesPrefixAndSuffix(requestString, nsIdHtmlPrefix, nsIdHtmlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "text/html";
-            log.debug("html: requestString="+requestString);
+            _chosenFormat = Constants.TEXT_HTML;
+            if(_DEBUG)
+            	log.debug("html: requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, nsIdHtmlPrefix, nsIdHtmlSuffix);
-            log.debug("html: requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("html: requestString="+requestString);
         }
         else if(matchesPrefixAndSuffix(requestString, nsIdRdfxmlPrefix, nsIdRdfxmlSuffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "application/rdf+xml";
-            log.debug("rdfxml: requestString="+requestString);
+            _chosenFormat = Constants.APPLICATION_RDF_XML;
+            if(_DEBUG)
+            	log.debug("rdfxml: requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, nsIdRdfxmlPrefix, nsIdRdfxmlSuffix);
-            log.debug("rdfxml: requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("rdfxml: requestString="+requestString);
         }
         else if(matchesPrefixAndSuffix(requestString, nsIdN3Prefix, nsIdN3Suffix))
         {
             _hasExplicitFormat = true;
-            _chosenFormat = "text/rdf+n3";
-            log.debug("n3: requestString="+requestString);
+            _chosenFormat = Constants.TEXT_RDF_N3;
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
             requestString = takeOffPrefixAndSuffix(requestString, nsIdN3Prefix, nsIdN3Suffix);
-            log.debug("n3: requestString="+requestString);
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
+        }
+        else if(matchesPrefixAndSuffix(requestString, nsIdJsonPrefix, nsIdJsonSuffix))
+        {
+            _hasExplicitFormat = true;
+            _chosenFormat = Constants.APPLICATION_JSON;
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
+            requestString = takeOffPrefixAndSuffix(requestString, nsIdJsonPrefix, nsIdJsonSuffix);
+            if(_DEBUG)
+            	log.debug("n3: requestString="+requestString);
         }
         
         return requestString;
@@ -239,8 +279,11 @@ public class ConfigurationQueryOptions
 
         String apiVersionPatternString = "^"+adminConfigurationApiOpeningPrefix+"(\\d+)"+adminConfigurationApiClosingPrefix+"(.*)"+adminConfigurationApiSuffix+"$";
         
-        log.debug("apiVersionPatternString="+apiVersionPatternString);
-        log.debug("requestString="+requestString);
+        if(_DEBUG)
+        {
+        	log.debug("apiVersionPatternString="+apiVersionPatternString);
+        	log.debug("requestString="+requestString);
+        }
         
         Pattern apiVersionPattern = Pattern.compile(apiVersionPatternString);
         
@@ -273,9 +316,12 @@ public class ConfigurationQueryOptions
         
         requestString = matcher.group(2);
         
-        log.debug("apiVersion="+_apiVersion);
-        log.debug("requestString="+requestString);
-
+        if(_DEBUG)
+        {
+        	log.debug("apiVersion="+_apiVersion);
+        	log.debug("requestString="+requestString);
+        }
+        
         return requestString;
     }
     

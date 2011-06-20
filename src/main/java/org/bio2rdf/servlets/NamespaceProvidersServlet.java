@@ -65,6 +65,8 @@ public class NamespaceProvidersServlet extends HttpServlet
         
         Map<URI, Profile> allProfiles = localSettings.getAllProfiles();
         
+        Map<URI, QueryType> allQueryTypes = localSettings.getAllQueryTypes();
+
         Map<URI, Collection<Provider>> providersByNamespace = new Hashtable<URI, Collection<Provider>>();
         
         Map<URI, Collection<Provider>> providersByQueryKey = new Hashtable<URI, Collection<Provider>>();
@@ -121,7 +123,7 @@ public class NamespaceProvidersServlet extends HttpServlet
                                 
                                 Collection<Provider> queryTypesByNamespace = localSettings.getProvidersForQueryTypeForNamespaceUris(nextQueryKey, nextQueryTypesByNamespacesList, QueryTypeImpl.getQueryNamespaceMatchAny());
                                 
-                                allQueryTypesByNamespace.put(nextQueryKey + " " + nextNamespace, queryTypesByNamespace);
+                                allQueryTypesByNamespace.put(nextQueryKey.stringValue() + " " + nextNamespace.stringValue(), queryTypesByNamespace);
                                 
                                 overallQueryTypeByNamespaceProviders += queryTypesByNamespace.size();
                             }
@@ -134,7 +136,7 @@ public class NamespaceProvidersServlet extends HttpServlet
         
         out.write("<br />Number of namespaces that are known = " + allNamespaceEntries.size()+"<br />\n");
         out.write("<br />Number of namespaces that have providers = " + providersByNamespace.size()+"<br />\n");
-        out.write("<br />Number of query titles = " + providersByQueryKey.size()+"<br />\n");
+        out.write("<br />Number of query titles = " + allQueryTypes.size()+"<br />\n");
         out.write("<br />Number of providers = " + allProviders.size()+"<br />\n");
         out.write("<br />Number of rdf normalisation rules = " + allRdfRules.size()+"<br />\n");
         out.write("<br />Number of rdf normalisation rule tests = " + allRdfRuleTests.size()+"<br />\n");
@@ -161,34 +163,42 @@ public class NamespaceProvidersServlet extends HttpServlet
             
             Collection<Provider> providersForNextNamespace = providersByNamespace.get(nextUniqueNamespace);
             
-            Collection<URI> implementedQueriesForNextNamespace = new HashSet<URI>();
-            
-            for(Provider nextProviderForNextNamespace : providersForNextNamespace)
+            if(providersForNextNamespace.size() == 0)
             {
-                for(URI nextIncludedQuery : nextProviderForNextNamespace.getIncludedInQueryTypes())
-                {
-                    if(!implementedQueriesForNextNamespace.contains(nextIncludedQuery))
-                    {
-                        implementedQueriesForNextNamespace.add(nextIncludedQuery);
-                    }
-                }
+            	out.write("NO Providers known for this namespace");
+            	log.info("No providers known for namespace="+nextUniqueNamespace.stringValue());
             }
-            
-            out.write("Queries for this namespace ("+implementedQueriesForNextNamespace.size()+")");
-            
-            if(implementedQueriesForNextNamespace.size() > 0)
+            else
             {
-                out.write("<ol>");
-            }
-            
-            for(URI nextImplementedQuery : implementedQueriesForNextNamespace)
-            {
-                out.write("<li>"+nextImplementedQuery.stringValue()+"</li>");
-            }
-            
-            if(implementedQueriesForNextNamespace.size() > 0)
-            {
-                out.write("</ol>");
+	            Collection<URI> implementedQueriesForNextNamespace = new HashSet<URI>();
+	            
+	            for(Provider nextProviderForNextNamespace : providersForNextNamespace)
+	            {
+	                for(URI nextIncludedQuery : nextProviderForNextNamespace.getIncludedInQueryTypes())
+	                {
+	                    if(!implementedQueriesForNextNamespace.contains(nextIncludedQuery))
+	                    {
+	                        implementedQueriesForNextNamespace.add(nextIncludedQuery);
+	                    }
+	                }
+	            }
+	            
+	            out.write("Queries for this namespace ("+implementedQueriesForNextNamespace.size()+")");
+	            
+	            if(implementedQueriesForNextNamespace.size() > 0)
+	            {
+	                out.write("<ol>");
+	            }
+	            
+	            for(URI nextImplementedQuery : implementedQueriesForNextNamespace)
+	            {
+	                out.write("<li>"+nextImplementedQuery.stringValue()+"</li>");
+	            }
+	            
+	            if(implementedQueriesForNextNamespace.size() > 0)
+	            {
+	                out.write("</ol>");
+	            }
             }
         }
         

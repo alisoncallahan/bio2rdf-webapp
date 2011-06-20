@@ -361,6 +361,10 @@ public class ConfigurationServlet extends HttpServlet
                 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("htmlUrlSuffix"));
                 
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("jsonUrlPrefix"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("jsonUrlSuffix"));
+                
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("alwaysRedirectToExplicitFormatUrl"));
 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("redirectToExplicitFormatHttpCode"));
@@ -400,6 +404,10 @@ public class ConfigurationServlet extends HttpServlet
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationN3Prefix"));
                 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationN3Suffix"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationJsonPrefix"));
+                
+                myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("adminConfigurationJsonSuffix"));
                 
                 myRepositoryConnection.add(localSettings.getStatementPropertiesFromConfig("pageoffsetOnlyShowForNsId"));
                 

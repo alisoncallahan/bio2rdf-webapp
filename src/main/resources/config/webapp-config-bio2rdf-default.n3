@@ -33,6 +33,10 @@ queryall:htmlUrlPrefix "page/" ;
 
 queryall:htmlUrlSuffix "" ;
 
+queryall:jsonUrlPrefix "json/" ;
+
+queryall:jsonUrlSuffix "" ;
+
 queryall:alwaysRedirectToExplicitFormatUrl "false"^^xsd:boolean ;
 
 queryall:redirectToExplicitFormatHttpCode "303"^^xsd:int ;
@@ -72,6 +76,10 @@ queryall:adminConfigurationRdfxmlSuffix "rdfxml" ;
 queryall:adminConfigurationN3Prefix "" ;
 
 queryall:adminConfigurationN3Suffix "n3" ;
+
+queryall:adminConfigurationJsonPrefix "" ;
+
+queryall:adminConfigurationJsonSuffix "json" ;
 
 queryall:pageoffsetOnlyShowForNsId "true"^^xsd:boolean ;
 

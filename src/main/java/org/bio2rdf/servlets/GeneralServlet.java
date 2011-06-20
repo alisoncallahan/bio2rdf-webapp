@@ -87,7 +87,7 @@ public class GeneralServlet extends HttpServlet
         
         if(originalAcceptHeader == null || originalAcceptHeader.equals(""))
         {
-            acceptHeader = localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML);
+            acceptHeader = localSettings.getStringPropertyFromConfig(Constants.PREFERRED_DISPLAY_CONTENT_TYPE, Constants.APPLICATION_RDF_XML);
         }
         else
         {
@@ -131,13 +131,14 @@ public class GeneralServlet extends HttpServlet
         }
 
         // Make sure that their requestedContentType is valid as an RDFFormat, or is text/html using this method
-        requestedContentType = RdfUtils.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig("preferredDisplayContentType", Constants.APPLICATION_RDF_XML), Constants.APPLICATION_RDF_XML);
-
+        requestedContentType = RdfUtils.findWriterFormat(requestedContentType, localSettings.getStringPropertyFromConfig(Constants.PREFERRED_DISPLAY_CONTENT_TYPE, Constants.APPLICATION_RDF_XML), Constants.APPLICATION_RDF_XML);
+        
         // this will be null if they chose text/html, but it will be a valid format in other cases due to the above method
-        RDFFormat writerFormat = Rio.getWriterFormatForMIMEType(requestedContentType);
+        RDFFormat writerFormat = RdfUtils.getWriterFormat(requestedContentType);
         
         // allow for users to perform redirections if the query did not contain an explicit format
         // some Linked Data provenance systems cannot handle the fact that a document would be delivered from an address that also had "real world"(TM) RDF statements including the URI
+        // TODO: cleanup this code
         if(!requestQueryOptions.containsExplicitFormat())
         {
         	if(localSettings.getBooleanPropertyFromConfig("alwaysRedirectToExplicitFormatUrl", false))
@@ -263,6 +264,37 @@ public class GeneralServlet extends HttpServlet
         			redirectString.append(localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", ""));
         		}
         		
+        		else if(requestedContentType.equals(Constants.APPLICATION_JSON))
+        		{
+        			redirectString.append(localSettings.getStringPropertyFromConfig("jsonUrlPrefix", "json/"));
+
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlPrefix","queryplan/"));
+        			}
+        			
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlOpeningPrefix","pageoffset"));
+        				redirectString.append(requestQueryOptions.getPageOffset());
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlClosingPrefix","/"));
+        			}
+        			
+    				redirectString.append(requestQueryOptions.getParsedRequest());
+
+        			if(requestQueryOptions.containsExplicitPageOffsetValue())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("pageoffsetUrlSuffix",""));
+        			}
+        			
+        			if(requestQueryOptions.isQueryPlanRequest())
+        			{
+        				redirectString.append(localSettings.getStringPropertyFromConfig("queryplanUrlSuffix",""));
+        			}
+        			
+        			redirectString.append(localSettings.getStringPropertyFromConfig("jsonUrlSuffix", ""));
+        		}
+        		
         		log.warn("Sending redirect using redirectCode="+redirectCode+" to redirectString="+redirectString.toString());
         		log.warn("contextPath="+request.getContextPath());
         		response.setStatus(redirectCode);
@@ -332,7 +364,7 @@ public class GeneralServlet extends HttpServlet
                 // Start sending output before we fetch the rdf so the client doesn't decide to timeout or re-request
                 // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                 
-                if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
+                if(requestedContentType.equals(Constants.APPLICATION_RDF_XML) || requestedContentType.equals(Constants.TEXT_HTML))
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->");
@@ -346,7 +378,7 @@ public class GeneralServlet extends HttpServlet
                         // debugStrings.add("<!-- bio2rdf sourceforge properties file subversion copy Id ("+ propertiesSubversionId +") -->");
                     // }
                 }
-                else if(requestedContentType.equals("text/rdf+n3"))
+                else if(requestedContentType.equals(Constants.TEXT_RDF_N3))
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")");
@@ -506,7 +538,7 @@ public class GeneralServlet extends HttpServlet
                 
                 // version = RdfUtils.xmlEncodeString(version).replace("--","- -");
                 
-                if(requestedContentType.equals("application/rdf+xml") || requestedContentType.equals("text/html"))
+                if(requestedContentType.equals(Constants.APPLICATION_RDF_XML) || requestedContentType.equals(Constants.TEXT_HTML))
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("<!-- bio2rdf sourceforge package version ("+ version +") -->\n");
@@ -521,7 +553,7 @@ public class GeneralServlet extends HttpServlet
                         debugStrings.add("<!-- result units="+fetchController.getResults().size()+" -->\n");
                     }
                 }
-                else if(requestedContentType.equals("text/rdf+n3"))
+                else if(requestedContentType.equals(Constants.TEXT_RDF_N3))
                 {
                     // always print the version number out for debugging
                     // debugStrings.add("# bio2rdf sourceforge package version ("+ version.replace("\n","").replace("\r","") +")\n");
@@ -538,7 +570,7 @@ public class GeneralServlet extends HttpServlet
                 
                 for(RdfFetcherQueryRunnable nextResult : fetchController.getResults())
                 {
-                    if(requestedContentType.equals("application/rdf+xml"))
+                    if(requestedContentType.equals(Constants.APPLICATION_RDF_XML) || requestedContentType.equals(Constants.TEXT_HTML))
                     {
                         // only write out the debug strings to the document if we are at least at the info or debug levels
                         if(_INFO)
@@ -546,7 +578,7 @@ public class GeneralServlet extends HttpServlet
                             debugStrings.add("<!-- "+StringUtils.xmlEncodeString(nextResult.getResultDebugString()).replace("--","- -") + "-->");
                         }
                     }
-                    else if(requestedContentType.equals("text/rdf+n3"))
+                    else if(requestedContentType.equals(Constants.TEXT_RDF_N3))
                     {
                         if(_INFO)
                         {
@@ -633,7 +665,7 @@ public class GeneralServlet extends HttpServlet
             
             //java.io.StringWriter cleanOutput = new java.io.StringWriter(new BufferedWriter(new CharArrayWriter()));
             
-            if(requestedContentType.equals("text/html"))
+            if(requestedContentType.equals(Constants.TEXT_HTML))
             {
                 if(_DEBUG)
                 {
@@ -666,7 +698,7 @@ public class GeneralServlet extends HttpServlet
 //                log.trace("GeneralServlet: actualRdfString="+actualRdfString);
 //            }
             
-            if(requestedContentType.equals("application/rdf+xml"))
+            if(requestedContentType.equals(Constants.APPLICATION_RDF_XML))
             {
                 out.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
                 
@@ -685,7 +717,7 @@ public class GeneralServlet extends HttpServlet
 	                //out.write(actualRdfString.replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>", ""));
                 }
             }
-            else if(requestedContentType.equals("text/rdf+n3"))
+            else if(requestedContentType.equals(Constants.TEXT_RDF_N3))
             {
                 for(String nextDebugString : debugStrings)
                 {

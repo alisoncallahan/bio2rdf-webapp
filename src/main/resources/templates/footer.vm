@@ -27,6 +27,13 @@ Powered by <a href="$xmlEncoded_application_help">$xmlEncoded_application_name</
       <a href="$xmlEncoded_html_link">View as HTML</a>
 #set ($has_text = true)
 #end
+#if ($json_link)
+#if ($has_text)
+      |
+#end
+      <a href="$xmlEncoded_json_link">View as JSON</a>
+#set ($has_text = true)
+#end
     </div>
   </body>
 </html>

@@ -143,6 +143,7 @@ public class HtmlPageRenderer
         context.put("rdfxml_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("rdfXmlUrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("rdfXmlUrlSuffix", ""));
         context.put("rdfn3_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("n3UrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("n3UrlSuffix", ""));
         context.put("html_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("htmlUrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("htmlUrlSuffix", ""));
+        context.put("json_link", realHostName+contextPath+localSettings.getStringPropertyFromConfig("jsonUrlPrefix", "")+queryString+localSettings.getStringPropertyFromConfig("jsonUrlSuffix", ""));
         // context.put("disco_link", discoLink);
         // context.put("tabulator_link", tabulatorLink);
         // context.put("openlink_link", openLinkLink);

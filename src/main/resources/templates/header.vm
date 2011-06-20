@@ -28,6 +28,10 @@ $debugString
 #set ($xmlEncoded_html_link = $html_link)
     <link rel="alternate" type="text/html" href="$xmlEncoded_html_link" title="HTML alternate representation" />
 #end
+#if ($json_link)
+#set ($xmlEncoded_json_link = $json_link)
+    <link rel="alternate" type="application/json" href="$xmlEncoded_json_link" title="JSON alternate representation" />
+#end
     <link rel="canonical" href="${xmlEncoded_uri}" />
 #if ($previouspagelink && $previouspagelabel)
 #set ($xmlEncoded_previouspagelink = $previouspagelink)

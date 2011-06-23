@@ -154,9 +154,15 @@ public class ConfigurationServlet extends HttpServlet
         
         final String queryStringURI = localSettings.getDefaultHostAddress()+queryString;
         
+        if(_INFO)
+        	log.info("queryStringUri="+queryStringURI);
+        
         if(StringUtils.isPlainNamespaceAndIdentifier(queryString, localSettings))
         {
             targetOnlyQueryString = true;
+
+            if(_INFO)
+            	log.info("requested plain namespace and identifier from configuration");
         }
         
         
@@ -168,7 +174,7 @@ public class ConfigurationServlet extends HttpServlet
         {
             myRepository.initialize();
             
-            if(requestConfigurationQueryOptions.containsAdminConfiguration())
+            if(requestConfigurationQueryOptions.containsAdminConfiguration() || targetOnlyQueryString)
             {
                 Map<URI, Provider> allProviders = localSettings.getAllProviders();
                 
@@ -215,6 +221,10 @@ public class ConfigurationServlet extends HttpServlet
                             // out.write("Problem generating Query RDF with key: "+nextQueryKey+"<br />\n");
                             // out.write(RdfUtils.xmlEncodeString(allQueries.get(nextQueryKey).toString()));
                         }
+                    }
+                    else
+                    {
+                    	log.info("nextQueryKey did not match");
                     }
                 }
                 

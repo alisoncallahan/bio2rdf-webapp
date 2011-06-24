@@ -144,6 +144,13 @@
 		<to last="true">null</to>
 	</rule>
 
+	<!-- This rule is specific to chembl -->
+	<rule>
+		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/chembl/.*$</from>
+		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+	
 	<!-- The following rules are specific to Bio2RDF.
 	     If you are using this package for another website 
 	     you will want to change them to suit your system -->
@@ -157,7 +164,7 @@
 		<from>^/sparql</from>
 		<to type="redirect">http://quebec.bio2rdf.org/sparql</to>
 	</rule>
-	
+
 	<rule>
 		<from>.*/(searchns|search)/.*$</from>
 		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />

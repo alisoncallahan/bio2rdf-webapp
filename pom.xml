@@ -75,6 +75,20 @@
 	</dependencies>
 	<profiles>
 		<profile>
+			<id>chemblfarmbio</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<queryall.BaseConfigLocation>/config/webapp-config-default-farmbio-chembl-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigUri>http://rdf.farmbio.uu.se/chembl/webapp_configuration/farmbioBaseConfig</queryall.BaseConfigUri>
+				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
+			</properties>
+			<build>
+				<finalName>${project.artifactId}-${project.version}</finalName>
+			</build>
+		</profile>
+		<profile>
 			<id>mquter</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>

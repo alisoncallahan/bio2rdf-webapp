@@ -37,6 +37,14 @@ queryall:jsonUrlPrefix "json/" ;
 
 queryall:jsonUrlSuffix "" ;
 
+queryall:ntriplesUrlPrefix "ntriples/" ;
+
+queryall:ntriplesUrlSuffix "" ;
+
+queryall:nquadsUrlPrefix "nquads/" ;
+
+queryall:nquadsUrlSuffix "" ;
+
 queryall:alwaysRedirectToExplicitFormatUrl "false"^^xsd:boolean ;
 
 queryall:redirectToExplicitFormatHttpCode "303"^^xsd:int ;
@@ -80,6 +88,14 @@ queryall:adminConfigurationN3Suffix "n3" ;
 queryall:adminConfigurationJsonPrefix "" ;
 
 queryall:adminConfigurationJsonSuffix "json" ;
+
+queryall:adminConfigurationNTriplesPrefix "" ;
+
+queryall:adminConfigurationNTriplesSuffix "ntriples" ;
+
+queryall:adminConfigurationNQuadsPrefix "" ;
+
+queryall:adminConfigurationNQuadsSuffix "nquads" ;
 
 queryall:pageoffsetOnlyShowForNsId "true"^^xsd:boolean ;
 

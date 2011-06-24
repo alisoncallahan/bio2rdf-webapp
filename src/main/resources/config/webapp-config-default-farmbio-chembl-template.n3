@@ -1,0 +1,13 @@
+# bio2rdf sourceforge subversion copy Id ($Id: $)
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
+@prefix chembl: <http://rdf.farmbio.uu.se/chembl/webapp_configuration/>.
+
+chembl:farmbioBaseConfig
+
+a queryall:defaultConfig ;
+
+queryall:webappConfigLocations "/config/webapp-config-chembl-default.n3" , "/config/webapp-config-chembl-farmbio.n3" ;
+
+queryall:activeWebappConfigs chembl:default , chembl:farmbio .

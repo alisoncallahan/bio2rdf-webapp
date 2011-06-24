@@ -1,0 +1,13 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:>.
+@prefix chembl_profile: <http://rdf.farmbio.uu.se/chembl/profile/>.
+
+chembl_profile:farmbio a queryall_profile:Profile ;
+	dc:title "Farmbio profile" ;
+	queryall_profile:order "100"^^xsd:int ;
+	queryall_profile:allowImplicitQueryInclusions "true"^^xsd:boolean ;
+	queryall_profile:allowImplicitProviderInclusions "true"^^xsd:boolean ;
+	queryall_profile:allowImplicitRdfRuleInclusions "true"^^xsd:boolean ;
+	queryall_profile:defaultProfileIncludeExcludeOrder queryall_profile:excludeThenInclude .

@@ -1,0 +1,42 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_query: <http://purl.org/queryall/query:>.
+@prefix queryall_provider: <http://purl.org/queryall/provider:>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:>.
+@prefix chembl_query: <http://rdf.farmbio.uu.se/chembl/query/>.
+@prefix chembl_provider: <http://rdf.farmbio.uu.se/chembl/provider/>.
+@prefix chembl_ns: <http://rdf.farmbio.uu.se/chembl/ns/>.
+
+chembl_provider:chembl_farmbio a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "Chembl@Farmbio" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/chembl/sparql" ;
+	queryall_provider:handlesNamespace chembl_ns:chembl_resource , chembl_ns:chembl_target , chembl_ns:chembl_targettype , chembl_ns:chembl_activity , chembl_ns:chembl_assay , chembl_ns:chembl_molecule , chembl_ns:chembl_journal , chembl_ns:chembl_article ;
+	queryall_provider:includedInQuery chembl_query:construct , chembl_query:describe .
+
+chembl_provider:dummyuniversalfilterprovider a queryall_provider:Provider ;
+	dc:title "This provider contains a universal query type, and a set of normalisation rules that will filter all queries" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:includedInQuery chembl_query:dummyuniversalfilterquery ;
+	queryall_provider:needsRdfNormalisation <http://bio2rdf.org/rdfrule:sparqlownequivalentclassblanknoderemoval> , <http://bio2rdf.org/rdfrule:sparqlowlsameastrivialdelete> , <http://bio2rdf.org/rdfrule:sparqllinkedtofromunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:sparqlremoveplaintextemailaddresses> , <http://bio2rdf.org/rdfrule:sparqlobodbxrefunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:removeemptynamespaceucscuris> , <http://bio2rdf.org/rdfrule:sparqlremovelsid> .
+
+chembl_provider:chembl2bio2rdf a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "Chembl namespaces translated to Bio2RDF URIs" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/chembl/sparql" ;
+	queryall_provider:handlesNamespace chembl_ns:chembl_resource , chembl_ns:chembl_target , chembl_ns:chembl_targettype , chembl_ns:chembl_activity , chembl_ns:chembl_assay , chembl_ns:chembl_molecule , chembl_ns:chembl_journal , chembl_ns:chembl_article ;
+	queryall_provider:includedInQuery chembl_query:construct ;
+	queryall_provider:needsRdfNormalisation <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:wwwbio2rdf> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .

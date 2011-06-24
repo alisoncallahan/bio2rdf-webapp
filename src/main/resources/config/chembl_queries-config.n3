@@ -1,0 +1,57 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_query: <http://purl.org/queryall/query:>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:>.
+@prefix chembl_query: <http://rdf.farmbio.uu.se/chembl/query/>.
+
+chembl_query:dummyuniversalfilterquery a queryall_query:Query ;
+    queryall_query:isDummyQueryType "true"^^xsd:boolean ;
+    queryall_query:isPageable "true"^^xsd:boolean ;
+	dc:title "This query is designed to be used as a dummy, no communication query to provider filtering on entire results pools." ;
+	queryall_query:includeDefaults "true"^^xsd:boolean ;
+	queryall_query:inputRegex "^(.*)" ;
+	queryall_query:templateString "" ;
+	queryall_query:queryUriTemplateString "${defaultHostAddress}${input_1}" ;
+	queryall_query:standardUriTemplateString "${defaultHostAddress}${input_1}" ;
+	queryall_query:outputRdfXmlString "" ;
+	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+chembl_query:construct a queryall_query:Query ;
+    queryall_query:isDummyQueryType "false"^^xsd:boolean ;
+    queryall_query:isPageable "true"^^xsd:boolean ;
+	dc:title "construct" ;
+	queryall_query:handleAllNamespaces "true"^^xsd:boolean ;
+	queryall_query:isNamespaceSpecific "true"^^xsd:boolean ;
+	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
+	queryall_query:includeDefaults "false"^^xsd:boolean ;
+	queryall_query:inputRegex "^([\\w-]+)/(.+)" ;
+	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedStandardUri}> ?p ?o . } WHERE { ${graphStart} <${inputUrlEncoded_endpointSpecificUri}> ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
+	queryall_query:queryUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	queryall_query:standardUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	queryall_query:outputRdfXmlString "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:sameAs xmlns:ns0pred=\"http://www.w3.org/2002/07/owl#\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_endpointSpecificUri}\"/></rdf:Description>" ;
+	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
+	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
+	queryall_query:includeQueryType chembl_query:construct .
+
+chembl_query:describe a queryall_query:Query ;
+    queryall_query:isDummyQueryType "false"^^xsd:boolean ;
+    queryall_query:isPageable "true"^^xsd:boolean ;
+	dc:title "describe" ;
+	queryall_query:handleAllNamespaces "true"^^xsd:boolean ;
+	queryall_query:isNamespaceSpecific "true"^^xsd:boolean ;
+	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
+	queryall_query:includeDefaults "false"^^xsd:boolean ;
+	queryall_query:inputRegex "^([\\w-]+)/(.+)" ;
+	queryall_query:templateString "DESCRIBE <${inputUrlEncoded_endpointSpecificUri}> ${limit} ${sparqlOffset}" ;
+	queryall_query:queryUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	queryall_query:standardUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
+	queryall_query:outputRdfXmlString "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:sameAs xmlns:ns0pred=\"http://www.w3.org/2002/07/owl#\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_endpointSpecificUri}\"/></rdf:Description>" ;
+	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
+	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
+	queryall_query:includeQueryType chembl_query:describe .
+

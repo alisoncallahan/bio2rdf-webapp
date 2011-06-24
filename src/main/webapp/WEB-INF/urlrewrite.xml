@@ -146,7 +146,7 @@
 
 	<!-- This rule is specific to chembl -->
 	<rule>
-		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/chembl/.*$</from>
+		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/(chembl|target).*$</from>
 		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>

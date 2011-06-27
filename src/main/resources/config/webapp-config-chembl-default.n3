@@ -107,7 +107,7 @@ queryall:tagPatternRegex ".*(\\$\\{[\\w_-]+\\}).*" ;
 
 queryall:blankTitle "(No title found)" ;
 
-queryall:projectHomeUrl "http://rdf.farmbio.uu.se/" ;
+queryall:projectHomeUrl "http://www.farmbio.uu.se/home/chembl" ;
 
 queryall:projectName "Chembl" ;
 

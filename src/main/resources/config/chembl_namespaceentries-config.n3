@@ -70,7 +70,7 @@ chembl_ns:chembl_targettype a queryall_ns:Namespace ;
     queryall_ns:authority <http://rdf.farmbio.uu.se/chembl/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator "/" ;
-	queryall_ns:preferredPrefix "targettype" ;
+	queryall_ns:preferredPrefix "targetType" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
 	rdfs:comment "" .

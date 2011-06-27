@@ -75,9 +75,9 @@ queryall:useHardcodedRequestHostname "false"^^xsd:boolean ;
 
 queryall:hardcodedRequestHostname "" ;
 
-queryall:useHardcodedRequestContext "false"^^xsd:boolean ;
+queryall:useHardcodedRequestContext "true"^^xsd:boolean ;
 
-queryall:hardcodedRequestContext "" ;
+queryall:hardcodedRequestContext "chembl/" ;
 
 queryall:includeNonProfileMatchedRdfRules "false"^^xsd:boolean ;
 

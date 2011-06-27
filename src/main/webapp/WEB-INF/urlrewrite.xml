@@ -24,9 +24,16 @@
 	<!-- TODO: serve this through a servlet with a configurable location using the key queryall:shortcutIconPath -->
 	<rule>
 		<from>^/favicon.ico$</from>
-		<to last="true">/static/includes-images/favicon.ico</to>
+		<to>/static/includes-images/favicon.ico</to>
     </rule>
 	
+=	<rule>
+		<from>/static/(.*)</from>
+		<set name="org.queryall.servlets.StaticFileServlet.filename">$1</set>
+		<run class="org.queryall.servlets.StaticFileServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
 	<rule>
 		<from>^/admin/test/rule/(.*)$</from>
 		<set name="org.queryall.servlets.RuleTesterServlet.testUri">$1</set>
@@ -145,12 +152,12 @@
 	</rule>
 
 	<!-- This rule is specific to chembl -->
-	<rule>
-		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/(chembl|target).*$</from>
+<!-- 	<rule>
+		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/(chembl|target|assay).*$</from>
 		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
-	
+ -->	
 	<!-- The following rules are specific to Bio2RDF.
 	     If you are using this package for another website 
 	     you will want to change them to suit your system -->
@@ -165,21 +172,22 @@
 		<to type="redirect">http://quebec.bio2rdf.org/sparql</to>
 	</rule>
 
-	<rule>
+<!-- 	<rule>
 		<from>.*/(searchns|search)/.*$</from>
 		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
-	
+ -->	
+
 	<!-- We use this dummy URI format for testing in Bio2RDF -->
-	<rule>
+<!-- 	<rule>
 		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/\w+test/$</from>
 		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
-	
+ -->	
     <rule>
-		<from>^/(.*):(.*)$</from>
+		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/(.+)$</from>
 		<run class="org.queryall.servlets.GeneralServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>

@@ -12,6 +12,7 @@ $debugString
 #set ($xmlEncoded_project_link = $project_link)
 #set ($xmlEncoded_server_base = $server_base)
 #set ($xmlEncoded_query_string = $query_string)
+#set ($xmlEncoded_shortcut_icon = $shortcut_icon)
 
     <title>$xmlEncoded_title | $xmlEncoded_project_name</title>
 	<link rel="shortcut icon" href="${xmlEncoded_server_base}${xmlEncoded_shortcut_icon}">

@@ -178,7 +178,9 @@ queryall:resultsPageStylesheetsLocal "static/includes-css/html_page_styles.css" 
 
 queryall:shortcutIconPath "static/includes-images/favicon.ico" ;
 
-queryall:indexBannerImagePath "static/includes-images/chembl_logo.png" ;
+queryall:indexBannerImagePath "static/includes-images/ebi_logo.jpg" ;
+
+queryall:indexProjectImagePath "static/includes-images/chembl_logo.png" ;
 
 queryall:unknownQueryStaticAdditions <http://bio2rdf.org/query:unknownquery> ;
 

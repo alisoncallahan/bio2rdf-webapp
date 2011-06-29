@@ -1,13 +1,17 @@
 #set ($xmlEncoded_application_help = $application_help)
 #set ($xmlEncoded_server_base = $server_base)
 #set ($xmlEncoded_index_banner_image = $index_banner_image)
+#set ($xmlEncoded_index_project_image = $index_project_image)
 #set ($xmlEncoded_project_html_url_prefix = $project_html_url_prefix)
 #set ($xmlEncoded_project_html_url_suffix = $project_html_url_suffix)
 
 <div id="all">
+	<div id="banner" style="text-align: center;">
+		<img src="${xmlEncoded_server_base}${xmlEncoded_index_banner_image}" alt="${xmlEncoded_project_name}" />
+	</div>
 	<div id="main" style="text-align: center;">
 		<div style="height: 20%;">&nbsp;</div>
-		<img src="${xmlEncoded_server_base}${xmlEncoded_index_banner_image}" alt="${xmlEncoded_project_name}" />
+		<img src="${xmlEncoded_server_base}${xmlEncoded_index_project_image}" alt="${xmlEncoded_project_name}" />
 		<form name="form1" action="/noscript/" onsubmit="document.location='${xmlEncoded_server_base}${xmlEncoded_project_html_url_prefix}'+form1.id.value+'${xmlEncoded_project_html_url_suffix}';return false;" method="POST">
 			<select name="selectvalue" size="1" onChange="form1.id.value = this.options[this.selectedIndex].value;">
 				<option value="" selected="selected" >Select an ID example</option>

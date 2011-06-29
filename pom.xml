@@ -155,7 +155,7 @@
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
 			<build>
-				<finalName>${project.artifactId}-${project.version}</finalName>
+				<finalName>${project.artifactId}-balancing-${project.version}</finalName>
 			</build>
 		</profile>
 	</profiles>

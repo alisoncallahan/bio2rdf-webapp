@@ -14,17 +14,17 @@
 #set ($xmlEncoded_providerKey = $tempProviderKey.stringValue())
     
       <tr class="$odd_even">
+        <td class="provider">
+            $xmlEncoded_providerKey
+        </td>
+        <td class="queryType">
+            $xmlEncoded_queryTypeKey
+        </td>
         <td class="endpoint">
             $xmlEncoded_queryEndpoint
         </td>
         <td class="query">
             $xmlEncoded_query
-        </td>
-        <td class="queryType">
-            $xmlEncoded_queryTypeKey
-        </td>
-        <td class="provider">
-            $xmlEncoded_providerKey
         </td>
       </tr>
 #end

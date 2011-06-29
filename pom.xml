@@ -85,7 +85,7 @@
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
 			<build>
-				<finalName>${project.artifactId}-${project.version}</finalName>
+				<finalName>chembl-farmbio-${project.version}</finalName>
 			</build>
 		</profile>
 		<profile>
@@ -99,7 +99,7 @@
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
 			<build>
-				<finalName>${project.artifactId}-${project.version}</finalName>
+				<finalName>${project.artifactId}-mquter-${project.version}</finalName>
 			</build>
 		</profile>
 		<profile>
@@ -113,7 +113,7 @@
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
 			<build>
-				<finalName>${project.artifactId}-${project.version}</finalName>
+				<finalName>${project.artifactId}-quebec-${project.version}</finalName>
 			</build>
 		</profile>
 		<profile>
@@ -127,7 +127,21 @@
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
 			<build>
-				<finalName>${project.artifactId}-${project.version}</finalName>
+				<finalName>${project.artifactId}-carleton-${project.version}</finalName>
+			</build>
+		</profile>
+		<profile>
+			<id>protech</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<queryall.BaseConfigLocation>/config/webapp-config-default-protech-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:protechBaseConfig</queryall.BaseConfigUri>
+				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
+			</properties>
+			<build>
+				<finalName>${project.artifactId}-protech-${project.version}</finalName>
 			</build>
 		</profile>
 		<profile>

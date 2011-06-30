@@ -45,7 +45,7 @@ queryall:nquadsUrlPrefix "nquads/" ;
 
 queryall:nquadsUrlSuffix "" ;
 
-queryall:alwaysRedirectToExplicitFormatUrl "false"^^xsd:boolean ;
+queryall:alwaysRedirectToExplicitFormatUrl "true"^^xsd:boolean ;
 
 queryall:redirectToExplicitFormatHttpCode "303"^^xsd:int ;
 
@@ -194,7 +194,7 @@ queryall:useAllEndpointsForEachProvider "false"^^xsd:boolean ;
 
 queryall:pageoffsetMaxValue "20"^^xsd:int ;
 
-queryall:pageoffsetIndividualQueryLimit "500"^^xsd:int ; # SPARQL_MAX_RESULTS_LIMIT
+queryall:pageoffsetIndividualQueryLimit "500"^^xsd:int ; # SPARQL_LIMIT
 
 queryall:preferredDisplayContentType "text/html" ;
 

@@ -1,6 +1,17 @@
 # bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-providers-config.n3 977 2011-02-28 06:21:00Z p_ansell $)
 
-
+<http://bio2rdf.org/provider:ncbipubmedxmltoxslt> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+	<http://purl.org/dc/elements/1.1/title> "Pulls the latest Pubmed XML document and converts it using the XSLT stylesheet to NTriples, which is indicated through the use of text/plain as the assumedContentType." ;
+	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
+	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
+	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
+	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&tool=bio2rdf&email=bio2rdf@googlegroups.com&id=${urlEncoded_input_2}" ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
+	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
+	<http://purl.org/queryall/provider:assumedContentType> "text/plain" ;
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:xsltNlmPubmed> .
+	
 <http://bio2rdf.org/provider:bio2rdfresolvermirrors> a <http://purl.org/queryall/provider:Provider> ;
 	<http://purl.org/dc/elements/1.1/title> "Contains a list of all of the known currently available Bio2RDF.org resolver mirrors" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;

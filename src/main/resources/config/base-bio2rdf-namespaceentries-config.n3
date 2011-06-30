@@ -457,7 +457,7 @@
 	<http://purl.org/queryall/ns:preferredPrefix> "registry_dataset" ;
 	<http://purl.org/queryall/ns:convertToPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/ns:identifierRegex> "" ;
-	<http://purl.org/queryall/ns:description> "Namespace for the Bio2RDF Namespace Registry" .
+	<http://purl.org/queryall/ns:description> "Namespace for the Bio2RDF Dataset Registry" .
 
 <http://bio2rdf.org/ns:registry_namespace> a <http://purl.org/queryall/ns:Namespace> ;
     <http://purl.org/queryall/ns:authority> <http://bio2rdf.org/> ;
@@ -475,7 +475,7 @@
 	<http://purl.org/queryall/ns:preferredPrefix> "registry_agent" ;
 	<http://purl.org/queryall/ns:convertToPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/ns:identifierRegex> "" ;
-	<http://purl.org/queryall/ns:description> "Agent for the Bio2RDF Agent Registry" .
+	<http://purl.org/queryall/ns:description> "Namespace for the Bio2RDF Agent Registry" .
 
 <http://bio2rdf.org/ns:grid> a <http://purl.org/queryall/ns:Namespace> ;
     <http://purl.org/queryall/ns:authority> <http://bio2rdf.org/> ;

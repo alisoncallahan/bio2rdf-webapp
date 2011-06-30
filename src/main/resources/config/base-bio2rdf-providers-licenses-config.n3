@@ -99,14 +99,14 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:drugbank> , <http://bio2rdf.org/ns:drugbank_ontology> , <http://bio2rdf.org/ns:drugbank_drugcategory> , <http://bio2rdf.org/ns:drugbank_drugtype> , <http://bio2rdf.org/ns:drugbank_enzymes> , <http://bio2rdf.org/ns:drugbank_drugs> , <http://bio2rdf.org/ns:drugbank_druginteractions> , <http://bio2rdf.org/ns:drugbank_targets> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
 
-<http://bio2rdf.org/provider:diseaseomelicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:diseasomelicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://www.pnas.org/content/104/21/8685.full" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:diseaseome> , <http://bio2rdf.org/ns:diseasome_diseases> , <http://bio2rdf.org/ns:diseasome_genes> , <http://bio2rdf.org/ns:diseasome_chromosomallocation> , <http://bio2rdf.org/ns:diseasome_diseaseclass> ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:diseasome_diseases> , <http://bio2rdf.org/ns:diseasome_genes> , <http://bio2rdf.org/ns:diseasome_chromosomallocation> , <http://bio2rdf.org/ns:diseasome_diseaseclass> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
 
 <http://bio2rdf.org/provider:ecocyclicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;

@@ -468,7 +468,7 @@
 	<http://purl.org/queryall/ns:identifierRegex> "" ;
 	<http://purl.org/queryall/ns:description> "Namespace for the Bio2RDF Namespace Registry" .
 
-<http://bio2rdf.org/ns:registry_agent> a <http://purl.org/queryall/ns:Agent> ;
+<http://bio2rdf.org/ns:registry_agent> a <http://purl.org/queryall/ns:Namespace> ;
     <http://purl.org/queryall/ns:authority> <http://bio2rdf.org/> ;
     <http://purl.org/queryall/ns:uriTemplate> "${authority}${agent}${separator}${identifier}" ;
     <http://purl.org/queryall/ns:separator> ":" ;
@@ -2265,6 +2265,24 @@
     <http://purl.org/queryall/ns:uriTemplate> "${authority}${namespace}${separator}${identifier}" ;
     <http://purl.org/queryall/ns:separator> ":" ;
 	<http://purl.org/queryall/ns:preferredPrefix> "genbank" ;
+	<http://purl.org/queryall/ns:convertToPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/ns:identifierRegex> "" ;
+	<http://purl.org/queryall/ns:description> "" .
+
+<http://bio2rdf.org/ns:genbank_record> a <http://purl.org/queryall/ns:Namespace> ;
+    <http://purl.org/queryall/ns:authority> <http://bio2rdf.org/> ;
+    <http://purl.org/queryall/ns:uriTemplate> "${authority}${namespace}${separator}${identifier}" ;
+    <http://purl.org/queryall/ns:separator> ":" ;
+	<http://purl.org/queryall/ns:preferredPrefix> "genbank_record" ;
+	<http://purl.org/queryall/ns:convertToPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/ns:identifierRegex> "" ;
+	<http://purl.org/queryall/ns:description> "" .
+
+<http://bio2rdf.org/ns:genbank_resource> a <http://purl.org/queryall/ns:Namespace> ;
+    <http://purl.org/queryall/ns:authority> <http://bio2rdf.org/> ;
+    <http://purl.org/queryall/ns:uriTemplate> "${authority}${namespace}${separator}${identifier}" ;
+    <http://purl.org/queryall/ns:separator> ":" ;
+	<http://purl.org/queryall/ns:preferredPrefix> "genbank_resource" ;
 	<http://purl.org/queryall/ns:convertToPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/ns:identifierRegex> "" ;
 	<http://purl.org/queryall/ns:description> "" .

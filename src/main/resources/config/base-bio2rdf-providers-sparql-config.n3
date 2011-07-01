@@ -2369,43 +2369,29 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:primaryreverseconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologydotbio2rdfdotorghhpid> .
 
-# TODO: complete this provider!!!
 <http://bio2rdf.org/provider:chembl> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "http://rdf.farmbio.uu.se/chembl/" ;
+	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/chembl/sparql" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chembl_resource> , <http://bio2rdf.org/ns:chembl_target> , <http://bio2rdf.org/ns:chembl_targettype> , <http://bio2rdf.org/ns:chembl_activity> , <http://bio2rdf.org/ns:chembl_assay> , <http://bio2rdf.org/ns:chembl_molecule> , <http://bio2rdf.org/ns:chembl_journal> , <http://bio2rdf.org/ns:chembl_article> ;
+	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chembl_resource> , <http://bio2rdf.org/ns:chembl_target> , <http://bio2rdf.org/ns:chembl_targettype> , <http://bio2rdf.org/ns:chembl_activity> , <http://bio2rdf.org/ns:chembl_assay> , <http://bio2rdf.org/ns:chembl_molecule> , <http://bio2rdf.org/ns:chembl_journal> , <http://bio2rdf.org/ns:chembl_article> , <http://bio2rdf.org/ns:chembl_journal> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:wwwbio2rdf> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:farmbiochembljournal> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
 
 <http://bio2rdf.org/provider:chemblsecondaryreverse> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "http://rdf.farmbio.uu.se/chembl/" ;
+	<http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+	<http://purl.org/queryall/provider:graphUri> "" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/chembl/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:uniprot> , <http://bio2rdf.org/ns:pubmed> , <http://bio2rdf.org/ns:ebi> , <http://bio2rdf.org/ns:chebi> , <http://bio2rdf.org/ns:chembl_resource> , <http://bio2rdf.org/ns:chembl_target> , <http://bio2rdf.org/ns:chembl_targettype> , <http://bio2rdf.org/ns:chembl_activity> , <http://bio2rdf.org/ns:chembl_assay> , <http://bio2rdf.org/ns:chembl_molecule> , <http://bio2rdf.org/ns:chembl_journal> , <http://bio2rdf.org/ns:chembl_article> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:secondaryreverseconstruct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:wwwbio2rdf> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
+	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:farmbiochembljournal> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
 
-<http://bio2rdf.org/provider:chemblsecondaryreversenowww> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "This provider caters for Bio2RDF links that are correctly linked without www." ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> ;
-	<http://purl.org/queryall/provider:requiresGraphUri> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/provider:graphUri> "http://rdf.farmbio.uu.se/chembl/" ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/chembl/sparql" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:pubmed> , <http://bio2rdf.org/ns:ebi> , <http://bio2rdf.org/ns:chebi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:secondaryreverseconstruct> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
-                                                      

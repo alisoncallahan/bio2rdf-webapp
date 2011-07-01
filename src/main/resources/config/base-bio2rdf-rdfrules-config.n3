@@ -89,9 +89,9 @@
 	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:chembl_activity> ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
     <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/chembl_activity:" ;
-	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://rdf.farmbio.uu.se/chembl/activity/a" ;
+	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://rdf.farmbio.uu.se/chembl/activitiy/a" ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://rdf.farmbio.uu.se/chembl/activity/a" ;
+    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://rdf.farmbio.uu.se/chembl/activitiy/a" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/chembl_activity:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes RDF Farm Bio Chembl Activity URIs resolvable using Bio2RDF" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
@@ -106,6 +106,18 @@
     <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://rdf.farmbio.uu.se/chembl/assay/a" ;
 	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/chembl_assay:" ;
 	<http://purl.org/queryall/rdfrule:description> "Makes RDF Farm Bio Chembl Assay URIs resolvable using Bio2RDF" ;
+	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
+
+<http://bio2rdf.org/rdfrule:farmbiochembljournal> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
+	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:chembl_journal> ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:queryVariables> ;
+    <http://purl.org/queryall/rdfrule:inputMatchRegex> "http://bio2rdf\\.org/chembl_journal:" ;
+	<http://purl.org/queryall/rdfrule:inputReplaceRegex> "http://rdf.farmbio.uu.se/chembl/journal/j" ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
+    <http://purl.org/queryall/rdfrule:outputMatchRegex> "http://rdf.farmbio.uu.se/chembl/journal/j" ;
+	<http://purl.org/queryall/rdfrule:outputReplaceRegex> "http://bio2rdf\\.org/chembl_journal:" ;
+	<http://purl.org/queryall/rdfrule:description> "Makes RDF Farm Bio Chembl Journal URIs resolvable using Bio2RDF" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 

@@ -45,7 +45,7 @@ queryall:nquadsUrlPrefix "nquads/" ;
 
 queryall:nquadsUrlSuffix "" ;
 
-queryall:alwaysRedirectToExplicitFormatUrl "true"^^xsd:boolean ;
+queryall:alwaysRedirectToExplicitFormatUrl "false"^^xsd:boolean ;
 
 queryall:redirectToExplicitFormatHttpCode "303"^^xsd:int ;
 

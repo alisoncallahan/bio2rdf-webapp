@@ -14,6 +14,7 @@ queryall:queryConfigLocations
 "/config/chembl_namespaceentries-config.n3" ,
 "/config/chembl_profiles-config.n3" ,
 "/config/chembl_providers-config.n3" ,
+"/config/chembl_rdfrules-config.n3" ,
 "/config/chembl_queries-config.n3" ;
 
 queryall:backupQueryConfigLocations 

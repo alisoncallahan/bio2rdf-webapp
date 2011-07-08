@@ -80,3 +80,14 @@
 	<http://purl.org/queryall/rdfrule:description> "Add symbol URI based on Neurocommons gene symbol literals" ;
 	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
+
+<http://bio2rdf.org/rdfrule:bioontology_obo_aeo_sparql> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:RegexNormalisationRule> ;
+	<http://purl.org/queryall/rdfrule:hasRelatedNamespace> <http://bio2rdf.org/ns:obo_aeo> ;
+	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:afterResultsImport> ;
+    <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "" ;
+    <http://purl.org/queryall/rdfrule:sparqlWherePattern> " " ;
+	<http://purl.org/queryall/rdfrule:description> "Converts between the URIs used by the BioOntology SPARQL endpoint for the OBO AEO ontology and the Bio2RDF normalised URIs" ;
+	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
+
+	

@@ -139,6 +139,12 @@
 		<to last="true">null</to>
 	</rule>
 
+	<rule>
+		<from>^/admin/provideriplist$</from>
+		<run class="org.queryall.servlets.ProvidersIPListServlet" method="doGet" />
+		<to last="true">null</to>
+	</rule>
+
     <rule>
 		<from>^/admin/stats$</from>
 		<run class="org.queryall.servlets.ServerStatsServlet" method="doGet" />

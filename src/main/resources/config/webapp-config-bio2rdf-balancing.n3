@@ -7,7 +7,7 @@
 
 bio2rdf:mirrorbalancing
 
-queryall:queryConfigLocations "http://config.bio2rdf.org/admin/configuration/4/n3" ;
+queryall:queryConfigLocations "http://config.bio2rdf.org/admin/configuration/5/n3" ;
 
 queryall:backupQueryConfigLocations 
 "/config/base-bio2rdf-namespaceentries-config.n3" , 

@@ -1,5 +1,5 @@
 <http://bio2rdf.org/rdfrule:sparqlowlsameastrivialdelete> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri <http://www.w3.org/2002/07/owl#sameAs> ?myUri ." ;
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> "?myUri <http://www.w3.org/2002/07/owl#sameAs> ?myUri ." ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:afterResultsToPool> ;
@@ -8,7 +8,7 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
 <http://bio2rdf.org/rdfrule:removeemptynamespaceucscuris> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri ?property <http://bio2rdf.org/ucsc:> . " ;
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> "?myUri ?property <http://bio2rdf.org/ucsc:> . " ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:afterResultsToPool> ;
@@ -17,7 +17,7 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
 <http://bio2rdf.org/rdfrule:sparqllinkedtofromunretrievedblanknoderemoval> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?blanknode . ";
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> "?myUri <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?blanknode . FILTER(isBlank(?blanknode)) OPTIONAL { ?blanknode ?pred ?obj } .
          FILTER (!bound(?obj)) " ;
@@ -27,7 +27,7 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
  
 <http://bio2rdf.org/rdfrule:sparqlobodbxrefunretrievedblanknoderemoval> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri <http://bio2rdf.org/obo_resource:dbxref> ?blanknode . " ;
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> "?myUri <http://bio2rdf.org/obo_resource:dbxref> ?blanknode . FILTER(isBlank(?blanknode)) OPTIONAL { ?blanknode ?pred ?obj } .
          FILTER (!bound(?obj))" ;
@@ -37,7 +37,7 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
 <http://bio2rdf.org/rdfrule:sparqlownequivalentclassblanknoderemoval> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri <http://www.w3.org/2002/07/owl#equivalentClass> ?blanknode ." ;
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> "?myUri <http://www.w3.org/2002/07/owl#equivalentClass> ?blanknode . FILTER(isBlank(?blanknode)) OPTIONAL { ?blanknode ?pred ?obj } .
          FILTER (!bound(?obj)) " ;
@@ -47,7 +47,7 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
 <http://bio2rdf.org/rdfrule:sparqlremoveplaintextemailaddresses> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri <http://xmlns.com/foaf/0.1/mbox> ?email . " ;
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> "?myUri <http://xmlns.com/foaf/0.1/mbox> ?email . FILTER(REGEX(str(?email), \"mailto:.*\") || REGEX(str(?email), \".*@.*\") ) " ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:afterResultsToPool> ;
@@ -56,7 +56,7 @@
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
 <http://bio2rdf.org/rdfrule:sparqlremovelsid> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:SparqlNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatches> ;
+    <http://purl.org/queryall/rdfrule:mode> <http://purl.org/queryall/rdfrule:onlyDeleteMatchingTriples> ;
     <http://purl.org/queryall/rdfrule:sparqlConstructQueryTarget> "?myUri <http://bio2rdf.org/bio2rdf_resource:lsid> ?lsid . " ;
     <http://purl.org/queryall/rdfrule:sparqlWherePattern> " ?myUri <http://bio2rdf.org/bio2rdf_resource:lsid> ?lsid . " ;
 	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:afterResultsToPool> ;

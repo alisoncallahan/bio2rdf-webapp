@@ -21,7 +21,7 @@
 // Visit our main Bio2RDF application at http://www.bio2rdf.org
 // -------------------------------------------------------------------------------
 
---%><%@ page contentType="text/html;charset=UTF-8" %><%@page import="org.queryall.helpers.*,java.util.Random,java.net.URLEncoder,java.util.List,java.util.Hashtable,java.util.Collection,java.util.Enumeration,org.apache.log4j.Logger"%><%
+--%><%@ page contentType="text/html;charset=UTF-8" %><%@page import="org.queryall.enumerations.*,java.util.Random,java.net.URLEncoder,java.util.List,java.util.Hashtable,java.util.Collection,java.util.Enumeration,org.apache.log4j.Logger"%><%
 // DO NOT EDIT version. It is auto-replaced by the build process in order to debug when people have issues with this file
 String subversionId = "$Id: redirectToId.jsp 910 2010-12-03 22:07:48Z p_ansell $";
 String version = "%%__VERSION__%%";

@@ -1,5 +1,5 @@
 <%@page
-import="java.io.File,org.queryall.statistics.*,org.queryall.blacklist.*,org.queryall.helpers.*,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.Collection,java.util.HashSet,java.util.Hashtable,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger"%><%
+import="java.io.File,org.queryall.statistics.*,org.queryall.blacklist.*,org.queryall.enumerations.*,org.openrdf.repository.Repository,org.openrdf.repository.RepositoryConnection,org.openrdf.repository.sail.SailRepository,org.openrdf.sail.memory.MemoryStore,org.openrdf.query.GraphQueryResult,org.openrdf.query.QueryLanguage,org.openrdf.rio.RDFFormat,org.openrdf.rio.Rio,org.openrdf.rio.RDFParseException,java.io.StringReader,java.util.Date,java.util.Collection,java.util.HashSet,java.util.Hashtable,java.util.regex.Pattern,java.util.regex.Matcher,org.apache.log4j.Logger"%><%
 // -------------------------------------------------------------------------------
 // Bio2RDF is a creation of
 // 

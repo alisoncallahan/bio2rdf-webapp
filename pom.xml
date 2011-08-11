@@ -208,6 +208,48 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
+					<webAppConfig>
+						<contextPath>/bio2rdf-test</contextPath>
+					</webAppConfig>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>9090</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<!-- <requestLog implementation="org.mortbay.jetty.NCSARequestLog"> 
+						<filename>target/yyyy_mm_dd.request.log</filename> <retainDays>90</retainDays> 
+						<append>true</append> <extended>false</extended> <logTimeZone>UTC+10</logTimeZone> 
+						</requestLog> -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+							<daemon>true</daemon>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<repositories>
@@ -221,10 +263,10 @@
 			<name>DBIS Maven Releases Repository</name>
 			<url>http://on.cs.unibas.ch/maven/repository</url>
 		</repository>
-        <repository>
-            <id>repo.rasea.org</id>
-            <name>Rasea Maven Repository (only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name>
-            <url>http://repo.rasea.org/maven2/</url>
-        </repository> 
+		<repository>
+			<id>repo.rasea.org</id>
+			<name>Rasea Maven Repository (only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name>
+			<url>http://repo.rasea.org/maven2/</url>
+		</repository>
 	</repositories>
 </project>

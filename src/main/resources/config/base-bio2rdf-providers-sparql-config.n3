@@ -193,13 +193,13 @@
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> , <http://bio2rdf.org/rdfrule:drugbanknamespacefix> .
 
 <http://bio2rdf.org/provider:mirroredunists> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:SparqlProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
+	<http://purl.org/dc/elements/1.1/title> "Unists (disabled by default)" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> ;
 	<http://purl.org/queryall/provider:requiresGraphUri> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/provider:graphUri> "http://bio2rdf.org/unists" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://cu.unists.bio2rdf.org/sparql", "http://quebec.unists.bio2rdf.org/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:unists> , <http://bio2rdf.org/ns:decode> , <http://bio2rdf.org/ns:marker> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructdnsonly> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> ;
@@ -2284,7 +2284,7 @@
 	<http://purl.org/queryall/provider:requiresGraphUri> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/provider:graphUri> "http://chempedia.org/" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/cc0/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chempedia_substance> , <http://bio2rdf.org/ns:chempedia_name> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> ;
@@ -2297,7 +2297,7 @@
 	<http://purl.org/queryall/provider:requiresGraphUri> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/provider:graphUri> "http://chempedia.org/" ;
 	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
+	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> ;
 	<http://purl.org/queryall/provider:endpointUrl> "http://rdf.farmbio.uu.se/cc0/sparql" ;
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chempedia_substance> , <http://bio2rdf.org/ns:chempedia_name> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafesecondaryreverseconstruct> ;

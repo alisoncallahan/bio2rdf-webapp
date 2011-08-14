@@ -50,14 +50,7 @@
 			<groupId>org.queryall</groupId>
 			<artifactId>queryall-webapp</artifactId>
 			<version>1.0.2-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<artifactId>velocity</artifactId>
-			<groupId>org.apache.velocity</groupId>
-			<type>jar</type>
-			<version>1.6.4</version>
-			<scope>compile</scope>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tuckey</groupId>
@@ -75,8 +68,22 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>2.4</version>
+			<version>2.5</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+			<type>jar</type>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<type>jar</type>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<profiles>
@@ -210,21 +217,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>aduna-repo</id>
-			<name>Aduna repository</name>
-			<url>http://repo.aduna-software.org/maven2/releases</url>
-		</repository>
-		<repository>
-			<id>on.cs.unibas.ch</id>
-			<name>DBIS Maven Releases Repository</name>
-			<url>http://on.cs.unibas.ch/maven/repository</url>
-		</repository>
-        <repository>
-            <id>repo.rasea.org</id>
-            <name>Rasea Maven Repository (only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name>
-            <url>http://repo.rasea.org/maven2/</url>
-        </repository> 
-	</repositories>
 </project>

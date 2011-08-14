@@ -1,4 +1,4 @@
-#parse("header.vm")
+#parse("/templates/header.vm")
 
 #foreach ($resource in $resources)
 #if ($resource.Label)
@@ -7,9 +7,9 @@
     <h2>Anonymous Resource #$velocityCount</h2>
 #end
 #set ($properties = $resource.Properties)
-#parse("proptable.vm")
+#parse("/templates/proptable.vm")
 #end
 
-#parse("endpoints.vm")
+#parse("/templates/endpoints.vm")
 
-#parse("footer.vm")
+#parse("/templates/footer.vm")

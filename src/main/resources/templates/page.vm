@@ -1,4 +1,4 @@
-#parse("header.vm")
+#parse("/templates/header.vm")
 
 <div id="imagebox">
 #if ($images)
@@ -19,7 +19,7 @@
 </div>
 
 <!-- start proptable.vm -->
-#parse("proptable.vm")
+#parse("/templates/proptable.vm")
 <!-- end proptable.vm -->
 
 
@@ -29,8 +29,8 @@ style="display:none;"
 #end 
 >
 <!-- start endpoints.vm -->
-#parse("endpoints.vm")
+#parse("/templates/endpoints.vm")
 <!-- end endpoints.vm -->
 </div>
 
-#parse("footer.vm")
+#parse("/templates/footer.vm")

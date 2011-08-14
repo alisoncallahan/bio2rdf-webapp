@@ -155,11 +155,11 @@ queryall:commentProperties
 queryall:urlProperties 
 <http://bio2rdf.org/bio2rdf_resource:url> , <http://xmlns.com/foaf/0.1/page> , <http://xmlns.com/foaf/0.1/homepage> , <http://rdf.myexperiment.org/ontologies/base/human-start-page> , <http://purl.org/dc/terms/hasFormat> , <http://rdf.myexperiment.org/ontologies/base/content-url> ;
 
-queryall:indexTemplate "default-index.vm" ;
+queryall:indexTemplate "/templates/default-index.vm" ;
 
-queryall:resultsTemplate "page.vm" ;
+queryall:resultsTemplate "/templates/page.vm" ;
 
-queryall:errorTemplate "error.vm" ;
+queryall:errorTemplate "/templates/error.vm" ;
 
 queryall:indexPageScripts "http://www.google.com/jsapi" , "http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js" ;
 

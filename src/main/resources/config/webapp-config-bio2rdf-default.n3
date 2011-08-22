@@ -196,6 +196,8 @@ queryall:pageoffsetMaxValue "20"^^xsd:int ;
 
 queryall:pageoffsetIndividualQueryLimit "500"^^xsd:int ; # SPARQL_MAX_RESULTS_LIMIT
 
+queryall:pageoffsetQuickQueryLimit "20"^^xsd:int ;
+
 queryall:preferredDisplayContentType "text/html" ;
 
 queryall:preferredDisplayLanguage "en" ;

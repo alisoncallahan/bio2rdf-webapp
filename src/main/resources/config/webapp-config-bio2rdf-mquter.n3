@@ -63,19 +63,19 @@ queryall:connectTimeout "1500"^^xsd:int ;
 
 queryall:submitStatistics "false"^^xsd:boolean ;
 
-queryall:automaticallyBlacklistClients "false"^^xsd:boolean ;
+queryall:automaticallyBlacklistClients "true"^^xsd:boolean ;
 
 queryall:blacklistResetClientBlacklistWithEndpoints "true"^^xsd:boolean ;
 
-queryall:blacklistResetPeriodMilliseconds "1440000"^^xsd:long ;
+queryall:blacklistResetPeriodMilliseconds "120000"^^xsd:long ;
 
-queryall:blacklistMaxAccumulatedFailures "15"^^xsd:int ;
+queryall:blacklistMaxAccumulatedFailures "4"^^xsd:int ;
 
 queryall:blacklistResetEndpointFailuresOnSuccess "false"^^xsd:boolean ;
 
-queryall:blacklistClientMaxQueriesPerPeriod "1500"^^xsd:int ;
+queryall:blacklistClientMaxQueriesPerPeriod "15"^^xsd:int ;
 
-queryall:blacklistMinimumQueriesBeforeBlacklistRules "150"^^xsd:int ;
+queryall:blacklistMinimumQueriesBeforeBlacklistRules "3"^^xsd:int ;
 
 queryall:blacklistPercentageOfRobotTxtQueriesBeforeAutomatic "0.75"^^xsd:float ;
 

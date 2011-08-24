@@ -5,6 +5,10 @@
 		Bio2RDF Web Application
 	</description>
 
+	<listener>
+	    <listener-class>org.queryall.servlets.helpers.SettingsContextListener</listener-class>
+	</listener>
+
 	<filter> 
 		 <filter-name>UrlRewriteFilter</filter-name> 
 		 <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class> 

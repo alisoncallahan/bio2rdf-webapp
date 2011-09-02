@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>bio2rdf-webapp</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<name>Bio2RDF Webapp</name>
 	<url>http://bio2rdf.org</url>
 	<developers>
@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>org.queryall</groupId>
 			<artifactId>queryall-webapp</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
+			<version>1.1.0-SNAPSHOT</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -263,10 +263,10 @@
 			<name>DBIS Maven Releases Repository</name>
 			<url>http://on.cs.unibas.ch/maven/repository</url>
 		</repository>
-        <repository>
+<!--         <repository>
             <id>repo.rasea.org</id>
             <name>Rasea Maven Repository (only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name>
             <url>http://repo.rasea.org/maven2/</url>
-        </repository> 
+        </repository>  -->
 	</repositories>
 </project>

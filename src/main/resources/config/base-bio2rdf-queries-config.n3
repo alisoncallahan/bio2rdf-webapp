@@ -1,6 +1,6 @@
 # bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-queries-config.n3 977 2011-02-28 06:21:00Z p_ansell $)
 
-<http://bio2rdf.org/query:dummyuniversalfilterquery> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:dummyuniversalfilterquery> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "This query is designed to be used as a dummy, no communication query to provider filtering on entire results pools." ;
@@ -13,7 +13,7 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/query:catchalldefault> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:catchalldefault> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "Catch all default query definition. Do not enable this unless you want it to match everything." ;
@@ -26,7 +26,7 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:includeThenExclude> .
 
-<http://bio2rdf.org/query:fasta> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:fasta> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "fasta" ;
@@ -46,7 +46,7 @@
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:fasta> .
 	
 
-<http://bio2rdf.org/query:fastainclude> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:fastainclude> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "fasta" ;
@@ -67,7 +67,7 @@
 
 
 
-<http://bio2rdf.org/query:constructtwolevel> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:constructtwolevel> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "constructtwolevel" ;
@@ -87,7 +87,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:construct> .
 
-<http://bio2rdf.org/query:xmlfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:xmlfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "xmlfromlowercase" ;
@@ -105,7 +105,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:linksbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:linksbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "linksns" ;
@@ -123,7 +123,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> , "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:fulllinksbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:fulllinksbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "fulllinksns" ;
@@ -141,7 +141,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> , "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:provenancebykey> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:provenancebykey> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "provenancebykey" ;
@@ -157,7 +157,7 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/query:unsafelinksbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafelinksbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafelinksbynamespace" ;
@@ -175,7 +175,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> , "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:plusurlencodedlinksbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedlinksbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "plusurlencodedlinksbynamespace" ;
@@ -193,7 +193,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> , "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unsafeprimaryreverseconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafeprimaryreverseconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafeprimaryreverseconstruct" ;
@@ -212,7 +212,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:unsafeconstruct> .
 
-<http://bio2rdf.org/query:unsafesecondaryreverseconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafesecondaryreverseconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafesecondaryreverseconstruct" ;
@@ -231,7 +231,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:unsafeconstruct> .
 
-<http://bio2rdf.org/query:plusurlencodedprimaryreverseconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedprimaryreverseconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "plusurlencodedprimaryreverseconstruct" ;
@@ -250,7 +250,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:plusurlencodedconstruct> .
 
-<http://bio2rdf.org/query:plusurlencodedsecondaryreverseconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedsecondaryreverseconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "plusurlencodedsecondaryreverseconstruct" ;
@@ -269,7 +269,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:plusurlencodedconstruct> .
 
-<http://bio2rdf.org/query:namespacebytype> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:namespacebytype> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "typens" ;
@@ -287,7 +287,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:data> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:data> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "data" ;
@@ -305,7 +305,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:construct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:construct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "construct" ;
@@ -324,7 +324,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:construct> .
 
-<http://bio2rdf.org/query:constructdnsonly> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:constructdnsonly> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "constructdnsonly" ;
@@ -343,7 +343,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:construct> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromdrugbankinchikey> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromdrugbankinchikey> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromdrugbankinchikey" ;
@@ -364,7 +364,7 @@
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromdrugbankinchikey> .
 
 # TODO: FIXME: make this work for ATC codes and the prefix/suffix information about them found in wikipedia
-<http://bio2rdf.org/query:primaryreverseconstructfromdbpediaatctwopart> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromdbpediaatctwopart> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromdbpediaatc" ;
@@ -384,7 +384,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromdrugbankinchikey> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchikey> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchikey> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromblueobeliskinchikey" ;
@@ -404,7 +404,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchikey> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchi> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchi> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromblueobeliskinchi" ;
@@ -424,7 +424,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromblueobeliskinchi> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromiupacinchi> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromiupacinchi> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromiupacinchi" ;
@@ -444,7 +444,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromiupacinchi> .
 
-<http://bio2rdf.org/query:spectrumfrominchi> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:spectrumfrominchi> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "spectrumfrominchi" ;
@@ -464,7 +464,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:spectrumfrominchi> .
 
-<http://bio2rdf.org/query:spectrumfrominchikey> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:spectrumfrominchikey> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "spectrumfrominchikey" ;
@@ -484,7 +484,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:spectrumfrominchikey> .
 
-<http://bio2rdf.org/query:linksfromnmrshiftdbspectrumtype> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:linksfromnmrshiftdbspectrumtype> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "linksfromnmrshiftdbspectrumtype" ;
@@ -504,7 +504,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:linksfromnmrshiftdbspectrumtype> .
 
-<http://bio2rdf.org/query:genbankinsertions> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:genbankinsertions> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "genbankinsertions" ;
@@ -524,7 +524,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:asn1> , <http://bio2rdf.org/query:fasta> , <http://bio2rdf.org/query:genbankpartial> , <http://bio2rdf.org/query:genbankfull> , <http://bio2rdf.org/query:xmlfromlowercase> , <http://bio2rdf.org/query:imagefromlowercase> , <http://bio2rdf.org/query:relatedfromlowercase> .
 
-<http://bio2rdf.org/query:nsinterlinksbetweentypes> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:nsinterlinksbetweentypes> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "namespacetypeinternallinks" ;
@@ -543,7 +543,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:namespaceuricount> .
 
-<http://bio2rdf.org/query:imagefromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:imagefromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "imagefromlowercase" ;
@@ -561,7 +561,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:constructnodefaults> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:constructnodefaults> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "constructnodefaults" ;
@@ -580,7 +580,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:construct> .
 
-<http://bio2rdf.org/query:labelsearch> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:labelsearch> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "label" ;
@@ -598,7 +598,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:biopaxxrefresolution> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:biopaxxrefresolution> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "biopaxxrefresolution" ;
@@ -617,7 +617,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:biopaxxrefreverselinksbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:biopaxxrefreverselinksbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "biopaxxrefreverselinksbynamespace" ;
@@ -637,7 +637,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:counttriplesfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:counttriplesfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "counttriplesfromlowercase" ;
@@ -656,7 +656,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:counttriplesfromlowercase> , <http://bio2rdf.org/query:constructfromlowercase> .
 
-<http://bio2rdf.org/query:genbankfull> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:genbankfull> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "genbankfull" ;
@@ -674,7 +674,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromlowercase" ;
@@ -693,7 +693,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:constructfromlowercase> .
 
-<http://bio2rdf.org/query:prosite2golinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:prosite2golinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "prosite2golinks" ;
@@ -712,7 +712,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unsafelinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafelinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafelinks" ;
@@ -730,7 +730,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:plusurlencodedlinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedlinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "plusurlencodedlinks" ;
@@ -748,7 +748,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:labelsearchforgo> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:labelsearchforgo> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "golabel" ;
@@ -767,7 +767,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:pubmedcentral> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:pubmedcentral> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "pubmedcentral" ;
@@ -786,7 +786,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:virtuosobifcontainssearch> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:virtuosobifcontainssearch> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "virtuosobifcontainssearch" ;
@@ -802,7 +802,7 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/query:sparqlregexsearch> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:sparqlregexsearch> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "sparqlregexsearch" ;
@@ -818,7 +818,7 @@
 	<http://purl.org/queryall/query:inRobotsTxt> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
 
-<http://bio2rdf.org/query:rawrdf> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:rawrdf> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "rdf" ;
@@ -836,7 +836,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unsaferawrdf> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsaferawrdf> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "rdf" ;
@@ -855,7 +855,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:xml> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:xml> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "xml" ;
@@ -873,7 +873,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unknownnamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unknownnamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unknownnamespace" ;
@@ -892,7 +892,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:unknownnamespace> .
 
-<http://bio2rdf.org/query:countlinksfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:countlinksfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "countlinksfromlowercase" ;
@@ -911,7 +911,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:countlinksfromlowercase> , <http://bio2rdf.org/query:constructfromlowercase> .
 
-<http://bio2rdf.org/query:pubmedrefs> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:pubmedrefs> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "pubmedrefs" ;
@@ -929,7 +929,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:homologenelinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:homologenelinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "homologenelinks" ;
@@ -948,7 +948,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:image> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:image> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "image" ;
@@ -968,7 +968,7 @@
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:image> .
 	
 
-<http://bio2rdf.org/query:imageinclude> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:imageinclude> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "image" ;
@@ -988,7 +988,7 @@
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:imageinclude> .
 
 
-<http://bio2rdf.org/query:homologeneconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:homologeneconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "homologeneconstruct" ;
@@ -1007,7 +1007,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:ispy> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:ispy> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "ispy" ;
@@ -1025,7 +1025,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:related> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:related> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "related" ;
@@ -1043,7 +1043,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:proteinlinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:proteinlinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "proteinlinks" ;
@@ -1061,7 +1061,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:hubmed> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:hubmed> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "hubmed" ;
@@ -1080,7 +1080,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:goinprositeconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:goinprositeconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "goinprositeconstruct" ;
@@ -1099,7 +1099,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unsafeconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafeconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafeconstruct" ;
@@ -1118,7 +1118,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:unsafeconstruct> .
 
-<http://bio2rdf.org/query:plusurlencodedconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "plusurlencodedconstruct" ;
@@ -1137,7 +1137,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:plusurlencodedconstruct> .
 
-<http://bio2rdf.org/query:tags> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:tags> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "tags" ;
@@ -1157,7 +1157,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:tags> .
 
-<http://bio2rdf.org/query:goinprositelinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:goinprositelinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "goinprositelinks" ;
@@ -1176,7 +1176,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:fulltext> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:fulltext> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "fulltext" ;
@@ -1194,7 +1194,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:index> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:index> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "index" ;
@@ -1212,7 +1212,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:countlinksbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:countlinksbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "countlinksns" ;
@@ -1231,7 +1231,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:countlinksbynamespace> .
 
-<http://bio2rdf.org/query:genbankpartial> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:genbankpartial> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "genbankpartial" ;
@@ -1249,7 +1249,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:primaryreverseconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstruct" ;
@@ -1268,7 +1268,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstruct> .
 
-<http://bio2rdf.org/query:secondaryreverseconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:secondaryreverseconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "secondaryreverseconstruct" ;
@@ -1287,7 +1287,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:secondaryreverseconstruct> .
 
-<http://bio2rdf.org/query:namespacecount> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:namespacecount> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "namespacecount" ;
@@ -1305,7 +1305,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:relatedfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:relatedfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "relatedfromlowercase" ;
@@ -1323,7 +1323,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:links> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:links> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "links" ;
@@ -1341,7 +1341,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfrompubcheminchi> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfrompubcheminchi> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfrompubcheminchi" ;
@@ -1361,7 +1361,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfrompubcheminchi> .
 
-<http://bio2rdf.org/query:licensefromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:licensefromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "licensefromlowercase" ;
@@ -1380,7 +1380,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:licensefromlowercase> .
 
-<http://bio2rdf.org/query:lsidresolution> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:lsidresolution> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "lsidresolution" ;
@@ -1399,7 +1399,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:lsidresolution> .
 
-<http://bio2rdf.org/query:asn1> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:asn1> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "asn1" ;
@@ -1417,7 +1417,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:html> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:html> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "html" ;
@@ -1436,7 +1436,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:html> .
 
-<http://bio2rdf.org/query:htmlinclude> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:htmlinclude> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "html" ;
@@ -1455,7 +1455,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:htmlinclude> .
 
-<http://bio2rdf.org/query:unsafehtml> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafehtml> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafe html" ;
@@ -1473,7 +1473,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:namespaceuricount> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:namespaceuricount> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "namespaceuricount" ;
@@ -1492,7 +1492,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:nsinterlinksbetweentypes> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:namespaceuricount> .
 
-<http://bio2rdf.org/query:ihop> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:ihop> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "ihop" ;
@@ -1511,7 +1511,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:constructfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:constructfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "constructfromlowercase" ;
@@ -1530,7 +1530,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:constructfromlowercase> .
 
-<http://bio2rdf.org/query:countlinksbynamespacefromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:countlinksbynamespacefromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "countlinksnsfromlowercase" ;
@@ -1549,7 +1549,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:countlinksbynamespacefromlowercase> .
 
-<http://bio2rdf.org/query:lsidproxyinsertion> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:lsidproxyinsertion> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "lsidproxyinsertion" ;
@@ -1568,7 +1568,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:lsidproxyinsertion> .
 
-<http://bio2rdf.org/query:linksfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:linksfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "linksfromlowercase" ;
@@ -1586,7 +1586,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unknownquery> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unknownquery> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unknownquery" ;
@@ -1605,7 +1605,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "0"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:unknownquery> .
 
-<http://bio2rdf.org/query:htmlfromlowercase> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:htmlfromlowercase> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "htmlfromlowercase" ;
@@ -1623,7 +1623,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:linkstonamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:linkstonamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "linkstonamespace" ;
@@ -1641,7 +1641,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> , "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "2"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:unsafelinkstonamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:unsafelinkstonamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "unsafelinkstonamespace" ;
@@ -1659,7 +1659,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> , "2"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "2"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:homepage> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:homepage> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "homepage" ;
@@ -1677,7 +1677,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:lsidstandardinsertion> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:lsidstandardinsertion> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "lsidstandardinsertion" ;
@@ -1696,7 +1696,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:lsidstandardinsertion> .
 
-<http://bio2rdf.org/query:license> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:license> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "license" ;
@@ -1715,7 +1715,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:license> .
 
-<http://bio2rdf.org/query:licenseendpoint> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:licenseendpoint> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "A direct reference to the endpoint without using a redirect URL" ;
@@ -1734,7 +1734,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:licenseendpoint> .
 
-<http://bio2rdf.org/query:plusurlencodedlicense> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedlicense> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "license" ;
@@ -1753,7 +1753,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
     <http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:plusurlencodedlicense> .
 
-<http://bio2rdf.org/query:plusurlencodedlicenseendpoint> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:plusurlencodedlicenseendpoint> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "license" ;
@@ -1773,7 +1773,7 @@
     <http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:plusurlencodedlicenseendpoint> .
 
 
-<http://bio2rdf.org/query:countlinks> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:countlinks> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "countlinks" ;
@@ -1792,7 +1792,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:countlinks> .
 
-<http://bio2rdf.org/query:virtuosobifcontainsquicksearchbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:virtuosobifcontainsquicksearchbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "virtuosobifcontainsquicksearchbynamespace" ;
@@ -1811,7 +1811,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> .
 
-<http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "virtuosobifcontainssearchbynamespace" ;
@@ -1830,7 +1830,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> .
 
-<http://bio2rdf.org/query:sparqlregexsearchbynamespace> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:sparqlregexsearchbynamespace> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "sparqlregexsearchbynamespace" ;
@@ -1849,7 +1849,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:sparqlregexsearchbynamespace> .
 
-<http://bio2rdf.org/query:constructnoextras> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:constructnoextras> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "constructnoextras" ;
@@ -1867,7 +1867,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:constructnoinclude> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:constructnoinclude> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "constructnoextras" ;
@@ -1885,7 +1885,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:suppliers> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:suppliers> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "suppliers" ;
@@ -1903,7 +1903,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:taglabels> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:taglabels> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "taglabels" ;
@@ -1921,7 +1921,7 @@
 	<http://purl.org/queryall/query:namespaceToHandle> <http://bio2rdf.org/ns:geneid> , <http://bio2rdf.org/ns:mquter_gene> , <http://bio2rdf.org/ns:go> , <http://bio2rdf.org/ns:keywords> , <http://bio2rdf.org/ns:term> , <http://bio2rdf.org/ns:terminstance> ;
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromdcidentifier> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromdcidentifier> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromdcidentifier" ;
@@ -1940,7 +1940,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromdcidentifier> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromdoi> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromdoi> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromdoi" ;
@@ -1960,7 +1960,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromdoi> .
 
-<http://bio2rdf.org/query:primaryreverseconstructfromdoifornmrshiftdbspectrum> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:primaryreverseconstructfromdoifornmrshiftdbspectrum> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "primaryreverseconstructfromdoifornmrshiftdbspectrum" ;
@@ -1980,7 +1980,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:primaryreverseconstructfromdoifornmrshiftdbspectrum> .
 
-<http://bio2rdf.org/query:counttriples> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:counttriples> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "counttriples" ;
@@ -1999,7 +1999,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:counttriples> .
 
-<http://bio2rdf.org/query:prosite2goconstruct> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:prosite2goconstruct> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "prosite2goconstruct" ;
@@ -2018,7 +2018,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:medline> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:medline> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "medline" ;
@@ -2037,7 +2037,7 @@
 	<http://purl.org/queryall/query:hasPublicIdentifierIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
 
-<http://bio2rdf.org/query:similardrugsbygeneid> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:similardrugsbygeneid> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "similardrugsbygeneid" ;
@@ -2057,7 +2057,7 @@
 	<http://purl.org/queryall/query:hasNamespaceInputIndex> "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
 	<http://purl.org/queryall/query:includeQueryType> <http://bio2rdf.org/query:similardrugsbygeneid> .
 	
-<http://bio2rdf.org/query:pandit> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:pandit> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "similardrugsbygeneid" ;
@@ -2079,7 +2079,7 @@
 	
 
 
-<http://bio2rdf.org/query:I18NTest> a <http://purl.org/queryall/query:Query> ;
+<http://bio2rdf.org/query:I18NTest> a <http://purl.org/queryall/query:Query> , <http://purl.org/queryall/query:RegexInputQuery> ;
     <http://purl.org/queryall/query:isDummyQueryType> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
     <http://purl.org/queryall/query:isPageable> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
 	<http://purl.org/dc/elements/1.1/title> "i18n test" ;

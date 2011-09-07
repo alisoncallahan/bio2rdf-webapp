@@ -1,5 +1,5 @@
 
-<http://bio2rdf.org/provider:wikipathwaysdata> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:wikipathwaysdata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -9,7 +9,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipathways> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
 
-<http://bio2rdf.org/provider:ncbipubmedrelated> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbipubmedrelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -19,7 +19,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
-<http://bio2rdf.org/provider:ncbigeneidxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigeneidxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -29,7 +29,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:ebigoxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ebigoxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -39,7 +39,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:prositedata> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:prositedata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -49,7 +49,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prosite> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
 
-<http://bio2rdf.org/provider:ncbigenbankgenbankfull> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigenbankgenbankfull> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -59,7 +59,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:genbankfull> .
 
-<http://bio2rdf.org/provider:gopubmedxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:gopubmedxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -69,7 +69,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gopubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:hubmedpubmed> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:hubmedpubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -79,7 +79,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:hubmed> .
 
-<http://bio2rdf.org/provider:asn1pubmed> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:asn1pubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -89,7 +89,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
 
-<http://bio2rdf.org/provider:printsrelated> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:printsrelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -99,7 +99,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prints> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
-<http://bio2rdf.org/provider:ncbibiosystemspubmedrefs> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbibiosystemspubmedrefs> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -109,7 +109,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biosystems> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedrefs> .
 
-<http://bio2rdf.org/provider:ncbipubmedxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbipubmedxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -119,7 +119,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:rcsbpdbrelated> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:rcsbpdbrelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -129,7 +129,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
-<http://bio2rdf.org/provider:rcsbpdbdata> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:rcsbpdbdata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -139,7 +139,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
 
-<http://bio2rdf.org/provider:rcsbpdbpubmedrefs> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:rcsbpdbpubmedrefs> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -149,7 +149,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedrefs> .
 
-<http://bio2rdf.org/provider:ncbigirelated> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigirelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -159,7 +159,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
-<http://bio2rdf.org/provider:rebasesuppliers> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:rebasesuppliers> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -169,7 +169,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:rebase> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:suppliers> .
 
-<http://bio2rdf.org/provider:ihoppubmed> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ihoppubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -179,7 +179,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ihop> .
 
-<http://bio2rdf.org/provider:ncbipubmedfulltext> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbipubmedfulltext> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -189,7 +189,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fulltext> .
 
-<http://bio2rdf.org/provider:ncbigenbankxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigenbankxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -199,7 +199,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:rcsbpdbxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:rcsbpdbxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -209,7 +209,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:ncbipubchemxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbipubchemxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -219,7 +219,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:sid> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:swooglerdf> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:swooglerdf> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -229,7 +229,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swoogle> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:rawrdf> .
 
-<http://bio2rdf.org/provider:ncbigeneidasn1> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigeneidasn1> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -239,7 +239,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
 
-<http://bio2rdf.org/provider:ncbipubchemcidxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbipubchemcidxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -249,7 +249,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cid> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
 
-<http://bio2rdf.org/provider:ncbigenbankgenbankpartial> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigenbankgenbankpartial> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -259,7 +259,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:genbankpartial> .
 
-<http://bio2rdf.org/provider:ncbiomimxml> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbiomimxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -269,7 +269,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:omim> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
 
-<http://bio2rdf.org/provider:medlinepubmed> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:medlinepubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -279,7 +279,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:medline> .
 
-<http://bio2rdf.org/provider:ncbigenbankasn1> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbigenbankasn1> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -289,7 +289,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
 
-<http://bio2rdf.org/provider:ncbihomologenerelated> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ncbihomologenerelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -299,7 +299,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:homologene> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
 
-<http://bio2rdf.org/provider:ebiinterprouniprotispy> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ebiinterprouniprotispy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -309,7 +309,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:uniprot> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
 	
-<http://bio2rdf.org/provider:ebiinterproispy> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ebiinterproispy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -319,7 +319,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:interpro> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
 
-<http://bio2rdf.org/provider:ebiinterprosignatureispy> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ebiinterprosignatureispy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -329,7 +329,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:panther> , <http://bio2rdf.org/ns:pfam> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
 
-<http://bio2rdf.org/provider:ebipanditpfam> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:ebipanditpfam> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -339,7 +339,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pfam> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pandit> .
 
-<http://bio2rdf.org/provider:pubmedcentraldata> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:pubmedcentraldata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;

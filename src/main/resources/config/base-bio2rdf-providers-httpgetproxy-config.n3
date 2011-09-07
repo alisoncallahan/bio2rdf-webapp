@@ -12,7 +12,7 @@
 	<http://purl.org/queryall/provider:assumedContentType> "text/plain" ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:xsltNlmPubmed> .
 	
-<http://bio2rdf.org/provider:bio2rdfresolvermirrors> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:bio2rdfresolvermirrors> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "Contains a list of all of the known currently available Bio2RDF.org resolver mirrors" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -23,7 +23,7 @@
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:catchalldefault> .
 
-<http://bio2rdf.org/provider:qutrestrictedproxy> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:qutrestrictedproxy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "Use other mirrors to get access to sites that QUT restricts for the QUT mirror" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -34,7 +34,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> , <http://bio2rdf.org/query:proteinlinks> .
 #	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:biocartacategorynamespace> .
 
-<http://bio2rdf.org/provider:gopubmedrdf> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:gopubmedrdf> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -47,7 +47,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:rawrdf> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:bioguidhandle> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:bioguidhandle> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -59,7 +59,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:handle> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> .
 
-<http://bio2rdf.org/provider:bioguiddoi> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:bioguiddoi> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -72,7 +72,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:bioguidpmid> , <http://bio2rdf.org/rdfrule:bioguiddoi> , <http://bio2rdf.org/rdfrule:bioguidissn> , <http://bio2rdf.org/rdfrule:bioguidgi> .
 
-<http://bio2rdf.org/provider:dxdoiorgdoi> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:dxdoiorgdoi> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -83,7 +83,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsafeconstruct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:crossref_issn> , <http://bio2rdf.org/rdfrule:crossref_doi> , <http://bio2rdf.org/rdfrule:crossref_contributor> .
 
-<http://bio2rdf.org/provider:crossrefissn> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:crossrefissn> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -94,7 +94,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:crossref_issn> .
 
-<http://bio2rdf.org/provider:crossrefcontributor> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:crossrefcontributor> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -105,7 +105,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:crossref_contributor> .
 
-<http://bio2rdf.org/provider:dataincubatorissn> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:dataincubatorissn> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -116,7 +116,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> .
 #	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:dbpediardf> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:dbpediardf> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -128,7 +128,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:unsaferawrdf> .
 
-<http://bio2rdf.org/provider:mqutertagquerieslabels> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:mqutertagquerieslabels> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -141,7 +141,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:taglabels> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:fuberlindrugbankdrugslinkeddata> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:fuberlindrugbankdrugslinkeddata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "Linked Data provider for DrugBank, provided by the Linked Open Drug Data group and Free University, Berlin" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -152,7 +152,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:rxlistgeneric> , <http://bio2rdf.org/rdfrule:rxlistgeneric2> , <http://bio2rdf.org/rdfrule:drugbankdruginteractions> , <http://bio2rdf.org/rdfrule:drugbankdosageforms> , <http://bio2rdf.org/rdfrule:drugbankdrugs> , <http://bio2rdf.org/rdfrule:drugbankenzymes> , <http://bio2rdf.org/rdfrule:drugbankpubmedreferences> ,  <http://bio2rdf.org/rdfrule:drugbankdrugtype> , <http://bio2rdf.org/rdfrule:drugbankdrugcategory> , <http://bio2rdf.org/rdfrule:drugbankontology> , <http://bio2rdf.org/rdfrule:drugbanktargets> , <http://bio2rdf.org/rdfrule:dailymeddrugs> , <http://bio2rdf.org/rdfrule:diseasomediseases> , <http://bio2rdf.org/rdfrule:dbpediaresource> , <http://bio2rdf.org/rdfrule:linkedctintervention> , <http://bio2rdf.org/rdfrule:symboldotbio2rdfdotorg> , <http://bio2rdf.org/rdfrule:drugbankkeggdr> .
 
-<http://bio2rdf.org/provider:quebecmainqueries> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:quebecmainqueries> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -165,7 +165,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructnoinclude> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:oldontologyterms> .
 
-<http://bio2rdf.org/provider:swooglesearch> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:swooglesearch> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -177,7 +177,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swoogle> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:virtuosobifcontainssearch> .
 
-<http://bio2rdf.org/provider:lsidresolution> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:lsidresolution> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -189,7 +189,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:lsidresolution> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:bio2rdf2lsid> .
 
-<http://bio2rdf.org/provider:mqutertagqueries> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:mqutertagqueries> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -200,7 +200,7 @@
 	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.mquter.qut.edu.au/tags/${urlEncoded_input_1}:${urlEncoded_input_2}" ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:tags> .
 
-<http://bio2rdf.org/provider:mqutermainqueries> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:mqutermainqueries> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -213,7 +213,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:constructnoinclude> , <http://bio2rdf.org/query:constructnoextras> , <http://bio2rdf.org/query:constructnodefaults> , <http://bio2rdf.org/query:labelsearch> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> , <http://bio2rdf.org/query:index> , <http://bio2rdf.org/query:countlinks> , <http://bio2rdf.org/query:countlinksbynamespace> , <http://bio2rdf.org/query:counttriples> , <http://bio2rdf.org/query:namespacebytype> , <http://bio2rdf.org/query:namespaceuricount> , <http://bio2rdf.org/query:namespacecount> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:mqutermainqueriesdnsonly> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:mqutermainqueriesdnsonly> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -226,7 +226,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:virtuosobifcontainssearch> , <http://bio2rdf.org/query:virtuosobifcontainssearchbynamespace> , <http://bio2rdf.org/query:linkstonamespace> , <http://bio2rdf.org/query:links> , <http://bio2rdf.org/query:linksbynamespace> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> .
 
-<http://bio2rdf.org/provider:geospecies> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:geospecies> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;
@@ -239,7 +239,7 @@
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:construct> , <http://bio2rdf.org/query:rawrdf> ;
 	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:ontologyhashtocolon> , <http://bio2rdf.org/rdfrule:ontologycolontonsunderscore> , <http://bio2rdf.org/rdfrule:geospecieskingdoms> , <http://bio2rdf.org/rdfrule:geospeciesphyla> , <http://bio2rdf.org/rdfrule:geospeciesorderconcept> , <http://bio2rdf.org/rdfrule:geospeciesbioclassconcept> , <http://bio2rdf.org/rdfrule:geospeciesfamilyconcept> , <http://bio2rdf.org/rdfrule:geospeciesobservationsrdf> , <http://bio2rdf.org/rdfrule:geospeciesordersrdf> , <http://bio2rdf.org/rdfrule:geospeciesfamiliesrdf> , <http://bio2rdf.org/rdfrule:geospeciesfamilies> , <http://bio2rdf.org/rdfrule:geospeciesorders> , <http://bio2rdf.org/rdfrule:geospeciesobservationconcept> , <http://bio2rdf.org/rdfrule:geospecieslocationconcept> , <http://bio2rdf.org/rdfrule:geospeciesspecconcept> , <http://bio2rdf.org/rdfrule:geospeciesspecimenconcept> , <http://bio2rdf.org/rdfrule:dbpediaresource> .
 
-<http://bio2rdf.org/provider:localpipesimilardrugsbygeneid> a <http://purl.org/queryall/provider:Provider> ;
+<http://bio2rdf.org/provider:localpipesimilardrugsbygeneid> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httpgeturl> ;

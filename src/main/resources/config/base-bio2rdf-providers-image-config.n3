@@ -1,4 +1,4 @@
-<http://bio2rdf.org/provider:biocartapathwaysimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:biocartapathwaysimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -8,7 +8,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocarta> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:ncbipubchemcidimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:ncbipubchemcidimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -18,7 +18,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:cid> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:msdchemimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:msdchemimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -28,7 +28,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:msdchem> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:ebigoimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:ebigoimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -38,7 +38,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:ncbigenbankimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:ncbigenbankimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -48,7 +48,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:ncbipubchemimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:ncbipubchemimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -58,7 +58,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:sid> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:cpdimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:cpdimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -68,7 +68,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cpd> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:ebichebiimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:ebichebiimage> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -78,7 +78,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chebi> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:rcsbpdbimage1> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:rcsbpdbimage1> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
@@ -88,7 +88,7 @@
 	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
 	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:image> , <http://bio2rdf.org/query:imageinclude> .
 
-<http://bio2rdf.org/provider:rcsbpdbimage2> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
+<http://bio2rdf.org/provider:rcsbpdbimage2> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> , <http://purl.org/queryall/provider:NoCommunicationProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "" ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
 	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;

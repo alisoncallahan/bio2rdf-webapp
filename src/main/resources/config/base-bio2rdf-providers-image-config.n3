@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_provider:biocartapathwaysimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:biocartapathwaysimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -17,7 +17,7 @@ bio2rdf_provider:biocartapathwaysimage a queryall_provider:Provider , queryall_p
 	queryall_provider:handlesNamespace bio2rdf_ns:biocarta ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:ncbipubchemcidimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:ncbipubchemcidimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -27,7 +27,7 @@ bio2rdf_provider:ncbipubchemcidimage a queryall_provider:Provider , queryall_pro
 	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:cid ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:msdchemimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:msdchemimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -37,7 +37,7 @@ bio2rdf_provider:msdchemimage a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:handlesNamespace bio2rdf_ns:msdchem ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:ebigoimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:ebigoimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -47,7 +47,7 @@ bio2rdf_provider:ebigoimage a queryall_provider:Provider , queryall_provider:Htt
 	queryall_provider:handlesNamespace bio2rdf_ns:go ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:ncbigenbankimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:ncbigenbankimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -57,7 +57,7 @@ bio2rdf_provider:ncbigenbankimage a queryall_provider:Provider , queryall_provid
 	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:ncbipubchemimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:ncbipubchemimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -67,7 +67,7 @@ bio2rdf_provider:ncbipubchemimage a queryall_provider:Provider , queryall_provid
 	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:sid ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:cpdimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:cpdimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -77,7 +77,7 @@ bio2rdf_provider:cpdimage a queryall_provider:Provider , queryall_provider:HttpP
 	queryall_provider:handlesNamespace bio2rdf_ns:cpd ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:ebichebiimage a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:ebichebiimage a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -87,7 +87,7 @@ bio2rdf_provider:ebichebiimage a queryall_provider:Provider , queryall_provider:
 	queryall_provider:handlesNamespace bio2rdf_ns:chebi ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:rcsbpdbimage1 a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:rcsbpdbimage1 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -97,7 +97,7 @@ bio2rdf_provider:rcsbpdbimage1 a queryall_provider:Provider , queryall_provider:
 	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
 	queryall_provider:includedInQuery bio2rdf_query:image , bio2rdf_query:imageinclude .
 
-bio2rdf_provider:rcsbpdbimage2 a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:rcsbpdbimage2 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;

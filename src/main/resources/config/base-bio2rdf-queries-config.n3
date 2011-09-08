@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_query:dummyuniversalfilterquery a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:dummyuniversalfilterquery a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "true"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "This query is designed to be used as a dummy, no communication query to provider filtering on entire results pools." ;
@@ -20,7 +20,7 @@ bio2rdf_query:dummyuniversalfilterquery a queryall_query:Query , queryall_query:
 	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_query:catchalldefault a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:catchalldefault a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "Catch all default query definition. Do not enable this unless you want it to match everything." ;
@@ -33,7 +33,7 @@ bio2rdf_query:catchalldefault a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude .
 
-bio2rdf_query:fasta a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:fasta a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "fasta" ;
@@ -53,7 +53,7 @@ bio2rdf_query:fasta a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:includeQueryType bio2rdf_query:fasta .
 	
 
-bio2rdf_query:fastainclude a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:fastainclude a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "fasta" ;
@@ -74,7 +74,7 @@ bio2rdf_query:fastainclude a queryall_query:Query , queryall_query:RegexInputQue
 
 
 
-bio2rdf_query:constructtwolevel a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:constructtwolevel a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "constructtwolevel" ;
@@ -94,7 +94,7 @@ bio2rdf_query:constructtwolevel a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:construct .
 
-bio2rdf_query:xmlfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:xmlfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "xmlfromlowercase" ;
@@ -112,7 +112,7 @@ bio2rdf_query:xmlfromlowercase a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:linksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:linksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "linksns" ;
@@ -130,7 +130,7 @@ bio2rdf_query:linksbynamespace a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int , "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:fulllinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:fulllinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "fulllinksns" ;
@@ -148,7 +148,7 @@ bio2rdf_query:fulllinksbynamespace a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int , "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:provenancebykey a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:provenancebykey a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "provenancebykey" ;
@@ -164,7 +164,7 @@ bio2rdf_query:provenancebykey a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_query:unsafelinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafelinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "unsafelinksbynamespace" ;
@@ -182,7 +182,7 @@ bio2rdf_query:unsafelinksbynamespace a queryall_query:Query , queryall_query:Reg
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int , "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:plusurlencodedlinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedlinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "plusurlencodedlinksbynamespace" ;
@@ -200,7 +200,7 @@ bio2rdf_query:plusurlencodedlinksbynamespace a queryall_query:Query , queryall_q
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int , "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:unsafeprimaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafeprimaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "unsafeprimaryreverseconstruct" ;
@@ -219,7 +219,7 @@ bio2rdf_query:unsafeprimaryreverseconstruct a queryall_query:Query , queryall_qu
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:unsafeconstruct .
 
-bio2rdf_query:unsafesecondaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafesecondaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "unsafesecondaryreverseconstruct" ;
@@ -238,7 +238,7 @@ bio2rdf_query:unsafesecondaryreverseconstruct a queryall_query:Query , queryall_
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:unsafeconstruct .
 
-bio2rdf_query:plusurlencodedprimaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedprimaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "plusurlencodedprimaryreverseconstruct" ;
@@ -257,7 +257,7 @@ bio2rdf_query:plusurlencodedprimaryreverseconstruct a queryall_query:Query , que
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:plusurlencodedconstruct .
 
-bio2rdf_query:plusurlencodedsecondaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedsecondaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "plusurlencodedsecondaryreverseconstruct" ;
@@ -276,7 +276,7 @@ bio2rdf_query:plusurlencodedsecondaryreverseconstruct a queryall_query:Query , q
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:plusurlencodedconstruct .
 
-bio2rdf_query:namespacebytype a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:namespacebytype a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "typens" ;
@@ -294,7 +294,7 @@ bio2rdf_query:namespacebytype a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:data a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:data a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "data" ;
@@ -312,7 +312,7 @@ bio2rdf_query:data a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:construct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:construct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "construct" ;
@@ -331,7 +331,7 @@ bio2rdf_query:construct a queryall_query:Query , queryall_query:RegexInputQuery 
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:construct .
 
-bio2rdf_query:constructdnsonly a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:constructdnsonly a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "constructdnsonly" ;
@@ -350,7 +350,7 @@ bio2rdf_query:constructdnsonly a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:construct .
 
-bio2rdf_query:primaryreverseconstructfromdrugbankinchikey a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromdrugbankinchikey a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromdrugbankinchikey" ;
@@ -371,7 +371,7 @@ bio2rdf_query:primaryreverseconstructfromdrugbankinchikey a queryall_query:Query
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromdrugbankinchikey .
 
 # TODO: FIXME: make this work for ATC codes and the prefix/suffix information about them found in wikipedia
-bio2rdf_query:primaryreverseconstructfromdbpediaatctwopart a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromdbpediaatctwopart a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromdbpediaatc" ;
@@ -391,7 +391,7 @@ bio2rdf_query:primaryreverseconstructfromdbpediaatctwopart a queryall_query:Quer
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromdrugbankinchikey .
 
-bio2rdf_query:primaryreverseconstructfromblueobeliskinchikey a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromblueobeliskinchikey a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromblueobeliskinchikey" ;
@@ -411,7 +411,7 @@ bio2rdf_query:primaryreverseconstructfromblueobeliskinchikey a queryall_query:Qu
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromblueobeliskinchikey .
 
-bio2rdf_query:primaryreverseconstructfromblueobeliskinchi a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromblueobeliskinchi a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromblueobeliskinchi" ;
@@ -431,7 +431,7 @@ bio2rdf_query:primaryreverseconstructfromblueobeliskinchi a queryall_query:Query
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromblueobeliskinchi .
 
-bio2rdf_query:primaryreverseconstructfromiupacinchi a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromiupacinchi a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromiupacinchi" ;
@@ -451,7 +451,7 @@ bio2rdf_query:primaryreverseconstructfromiupacinchi a queryall_query:Query , que
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromiupacinchi .
 
-bio2rdf_query:spectrumfrominchi a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:spectrumfrominchi a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "spectrumfrominchi" ;
@@ -471,7 +471,7 @@ bio2rdf_query:spectrumfrominchi a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:spectrumfrominchi .
 
-bio2rdf_query:spectrumfrominchikey a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:spectrumfrominchikey a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "spectrumfrominchikey" ;
@@ -491,7 +491,7 @@ bio2rdf_query:spectrumfrominchikey a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:spectrumfrominchikey .
 
-bio2rdf_query:linksfromnmrshiftdbspectrumtype a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:linksfromnmrshiftdbspectrumtype a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "linksfromnmrshiftdbspectrumtype" ;
@@ -511,7 +511,7 @@ bio2rdf_query:linksfromnmrshiftdbspectrumtype a queryall_query:Query , queryall_
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:linksfromnmrshiftdbspectrumtype .
 
-bio2rdf_query:genbankinsertions a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:genbankinsertions a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "genbankinsertions" ;
@@ -531,7 +531,7 @@ bio2rdf_query:genbankinsertions a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:asn1 , bio2rdf_query:fasta , bio2rdf_query:genbankpartial , bio2rdf_query:genbankfull , bio2rdf_query:xmlfromlowercase , bio2rdf_query:imagefromlowercase , bio2rdf_query:relatedfromlowercase .
 
-bio2rdf_query:nsinterlinksbetweentypes a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:nsinterlinksbetweentypes a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "namespacetypeinternallinks" ;
@@ -550,7 +550,7 @@ bio2rdf_query:nsinterlinksbetweentypes a queryall_query:Query , queryall_query:R
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:namespacecount , bio2rdf_query:namespaceuricount .
 
-bio2rdf_query:imagefromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:imagefromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "imagefromlowercase" ;
@@ -568,7 +568,7 @@ bio2rdf_query:imagefromlowercase a queryall_query:Query , queryall_query:RegexIn
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:constructnodefaults a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:constructnodefaults a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "constructnodefaults" ;
@@ -587,7 +587,7 @@ bio2rdf_query:constructnodefaults a queryall_query:Query , queryall_query:RegexI
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:construct .
 
-bio2rdf_query:labelsearch a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:labelsearch a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "label" ;
@@ -605,7 +605,7 @@ bio2rdf_query:labelsearch a queryall_query:Query , queryall_query:RegexInputQuer
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:biopaxxrefresolution a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:biopaxxrefresolution a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "biopaxxrefresolution" ;
@@ -624,7 +624,7 @@ bio2rdf_query:biopaxxrefresolution a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:biopaxxrefreverselinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:biopaxxrefreverselinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "biopaxxrefreverselinksbynamespace" ;
@@ -644,7 +644,7 @@ bio2rdf_query:biopaxxrefreverselinksbynamespace a queryall_query:Query , queryal
 	queryall_query:hasPublicIdentifierIndex "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:counttriplesfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:counttriplesfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "counttriplesfromlowercase" ;
@@ -663,7 +663,7 @@ bio2rdf_query:counttriplesfromlowercase a queryall_query:Query , queryall_query:
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:counttriplesfromlowercase , bio2rdf_query:constructfromlowercase .
 
-bio2rdf_query:genbankfull a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:genbankfull a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "genbankfull" ;
@@ -681,7 +681,7 @@ bio2rdf_query:genbankfull a queryall_query:Query , queryall_query:RegexInputQuer
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:primaryreverseconstructfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromlowercase" ;
@@ -700,7 +700,7 @@ bio2rdf_query:primaryreverseconstructfromlowercase a queryall_query:Query , quer
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:constructfromlowercase .
 
-bio2rdf_query:prosite2golinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:prosite2golinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "prosite2golinks" ;
@@ -719,7 +719,7 @@ bio2rdf_query:prosite2golinks a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:unsafelinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafelinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "unsafelinks" ;
@@ -737,7 +737,7 @@ bio2rdf_query:unsafelinks a queryall_query:Query , queryall_query:RegexInputQuer
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:plusurlencodedlinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedlinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "plusurlencodedlinks" ;
@@ -755,7 +755,7 @@ bio2rdf_query:plusurlencodedlinks a queryall_query:Query , queryall_query:RegexI
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:labelsearchforgo a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:labelsearchforgo a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "golabel" ;
@@ -774,7 +774,7 @@ bio2rdf_query:labelsearchforgo a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:pubmedcentral a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:pubmedcentral a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "pubmedcentral" ;
@@ -793,7 +793,7 @@ bio2rdf_query:pubmedcentral a queryall_query:Query , queryall_query:RegexInputQu
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:virtuosobifcontainssearch a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:virtuosobifcontainssearch a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "virtuosobifcontainssearch" ;
@@ -809,7 +809,7 @@ bio2rdf_query:virtuosobifcontainssearch a queryall_query:Query , queryall_query:
 	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_query:sparqlregexsearch a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:sparqlregexsearch a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "sparqlregexsearch" ;
@@ -825,7 +825,7 @@ bio2rdf_query:sparqlregexsearch a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_query:rawrdf a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:rawrdf a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "rdf" ;
@@ -843,7 +843,7 @@ bio2rdf_query:rawrdf a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:unsaferawrdf a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsaferawrdf a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "rdf" ;
@@ -862,7 +862,7 @@ bio2rdf_query:unsaferawrdf a queryall_query:Query , queryall_query:RegexInputQue
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:xml a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:xml a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "xml" ;
@@ -880,7 +880,7 @@ bio2rdf_query:xml a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:unknownnamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unknownnamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "true"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "unknownnamespace" ;
@@ -899,7 +899,7 @@ bio2rdf_query:unknownnamespace a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:unknownnamespace .
 
-bio2rdf_query:countlinksfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:countlinksfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "countlinksfromlowercase" ;
@@ -918,7 +918,7 @@ bio2rdf_query:countlinksfromlowercase a queryall_query:Query , queryall_query:Re
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:countlinksfromlowercase , bio2rdf_query:constructfromlowercase .
 
-bio2rdf_query:pubmedrefs a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:pubmedrefs a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "pubmedrefs" ;
@@ -936,7 +936,7 @@ bio2rdf_query:pubmedrefs a queryall_query:Query , queryall_query:RegexInputQuery
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:homologenelinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:homologenelinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "homologenelinks" ;
@@ -955,7 +955,7 @@ bio2rdf_query:homologenelinks a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:image a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:image a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "image" ;
@@ -975,7 +975,7 @@ bio2rdf_query:image a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:includeQueryType bio2rdf_query:image .
 	
 
-bio2rdf_query:imageinclude a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:imageinclude a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "image" ;
@@ -995,7 +995,7 @@ bio2rdf_query:imageinclude a queryall_query:Query , queryall_query:RegexInputQue
 	queryall_query:includeQueryType bio2rdf_query:imageinclude .
 
 
-bio2rdf_query:homologeneconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:homologeneconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "homologeneconstruct" ;
@@ -1014,7 +1014,7 @@ bio2rdf_query:homologeneconstruct a queryall_query:Query , queryall_query:RegexI
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:ispy a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:ispy a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "ispy" ;
@@ -1032,7 +1032,7 @@ bio2rdf_query:ispy a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:related a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:related a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "related" ;
@@ -1050,7 +1050,7 @@ bio2rdf_query:related a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:proteinlinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:proteinlinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "proteinlinks" ;
@@ -1068,7 +1068,7 @@ bio2rdf_query:proteinlinks a queryall_query:Query , queryall_query:RegexInputQue
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:hubmed a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:hubmed a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "hubmed" ;
@@ -1087,7 +1087,7 @@ bio2rdf_query:hubmed a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:goinprositeconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:goinprositeconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "goinprositeconstruct" ;
@@ -1106,7 +1106,7 @@ bio2rdf_query:goinprositeconstruct a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:unsafeconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafeconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "unsafeconstruct" ;
@@ -1125,7 +1125,7 @@ bio2rdf_query:unsafeconstruct a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:unsafeconstruct .
 
-bio2rdf_query:plusurlencodedconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "plusurlencodedconstruct" ;
@@ -1144,7 +1144,7 @@ bio2rdf_query:plusurlencodedconstruct a queryall_query:Query , queryall_query:Re
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:plusurlencodedconstruct .
 
-bio2rdf_query:tags a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:tags a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "tags" ;
@@ -1164,7 +1164,7 @@ bio2rdf_query:tags a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:tags .
 
-bio2rdf_query:goinprositelinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:goinprositelinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "goinprositelinks" ;
@@ -1183,7 +1183,7 @@ bio2rdf_query:goinprositelinks a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:fulltext a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:fulltext a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "fulltext" ;
@@ -1201,7 +1201,7 @@ bio2rdf_query:fulltext a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:index a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:index a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "index" ;
@@ -1219,7 +1219,7 @@ bio2rdf_query:index a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:countlinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:countlinksbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "countlinksns" ;
@@ -1238,7 +1238,7 @@ bio2rdf_query:countlinksbynamespace a queryall_query:Query , queryall_query:Rege
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:countlinksbynamespace .
 
-bio2rdf_query:genbankpartial a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:genbankpartial a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "genbankpartial" ;
@@ -1256,7 +1256,7 @@ bio2rdf_query:genbankpartial a queryall_query:Query , queryall_query:RegexInputQ
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:primaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstruct" ;
@@ -1275,7 +1275,7 @@ bio2rdf_query:primaryreverseconstruct a queryall_query:Query , queryall_query:Re
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstruct .
 
-bio2rdf_query:secondaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:secondaryreverseconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "secondaryreverseconstruct" ;
@@ -1294,7 +1294,7 @@ bio2rdf_query:secondaryreverseconstruct a queryall_query:Query , queryall_query:
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:secondaryreverseconstruct .
 
-bio2rdf_query:namespacecount a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:namespacecount a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "namespacecount" ;
@@ -1312,7 +1312,7 @@ bio2rdf_query:namespacecount a queryall_query:Query , queryall_query:RegexInputQ
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:relatedfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:relatedfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "relatedfromlowercase" ;
@@ -1330,7 +1330,7 @@ bio2rdf_query:relatedfromlowercase a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:links a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:links a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "links" ;
@@ -1348,7 +1348,7 @@ bio2rdf_query:links a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:primaryreverseconstructfrompubcheminchi a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfrompubcheminchi a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfrompubcheminchi" ;
@@ -1368,7 +1368,7 @@ bio2rdf_query:primaryreverseconstructfrompubcheminchi a queryall_query:Query , q
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfrompubcheminchi .
 
-bio2rdf_query:licensefromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:licensefromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "licensefromlowercase" ;
@@ -1387,7 +1387,7 @@ bio2rdf_query:licensefromlowercase a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:licensefromlowercase .
 
-bio2rdf_query:lsidresolution a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:lsidresolution a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "lsidresolution" ;
@@ -1406,7 +1406,7 @@ bio2rdf_query:lsidresolution a queryall_query:Query , queryall_query:RegexInputQ
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:lsidresolution .
 
-bio2rdf_query:asn1 a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:asn1 a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "asn1" ;
@@ -1424,7 +1424,7 @@ bio2rdf_query:asn1 a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:html a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:html a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "html" ;
@@ -1443,7 +1443,7 @@ bio2rdf_query:html a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:html .
 
-bio2rdf_query:htmlinclude a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:htmlinclude a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "html" ;
@@ -1462,7 +1462,7 @@ bio2rdf_query:htmlinclude a queryall_query:Query , queryall_query:RegexInputQuer
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:htmlinclude .
 
-bio2rdf_query:unsafehtml a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafehtml a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "unsafe html" ;
@@ -1480,7 +1480,7 @@ bio2rdf_query:unsafehtml a queryall_query:Query , queryall_query:RegexInputQuery
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:namespaceuricount a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:namespaceuricount a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "namespaceuricount" ;
@@ -1499,7 +1499,7 @@ bio2rdf_query:namespaceuricount a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:nsinterlinksbetweentypes , bio2rdf_query:namespacecount , bio2rdf_query:namespaceuricount .
 
-bio2rdf_query:ihop a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:ihop a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "ihop" ;
@@ -1518,7 +1518,7 @@ bio2rdf_query:ihop a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:constructfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:constructfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "constructfromlowercase" ;
@@ -1537,7 +1537,7 @@ bio2rdf_query:constructfromlowercase a queryall_query:Query , queryall_query:Reg
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:constructfromlowercase .
 
-bio2rdf_query:countlinksbynamespacefromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:countlinksbynamespacefromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "countlinksnsfromlowercase" ;
@@ -1556,7 +1556,7 @@ bio2rdf_query:countlinksbynamespacefromlowercase a queryall_query:Query , querya
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:countlinksbynamespacefromlowercase .
 
-bio2rdf_query:lsidproxyinsertion a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:lsidproxyinsertion a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "lsidproxyinsertion" ;
@@ -1575,7 +1575,7 @@ bio2rdf_query:lsidproxyinsertion a queryall_query:Query , queryall_query:RegexIn
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:lsidproxyinsertion .
 
-bio2rdf_query:linksfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:linksfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "linksfromlowercase" ;
@@ -1593,7 +1593,7 @@ bio2rdf_query:linksfromlowercase a queryall_query:Query , queryall_query:RegexIn
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:unknownquery a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unknownquery a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "true"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "unknownquery" ;
@@ -1612,7 +1612,7 @@ bio2rdf_query:unknownquery a queryall_query:Query , queryall_query:RegexInputQue
 	queryall_query:hasNamespaceInputIndex "0"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:unknownquery .
 
-bio2rdf_query:htmlfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:htmlfromlowercase a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "htmlfromlowercase" ;
@@ -1630,7 +1630,7 @@ bio2rdf_query:htmlfromlowercase a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:linkstonamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:linkstonamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "linkstonamespace" ;
@@ -1648,7 +1648,7 @@ bio2rdf_query:linkstonamespace a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int , "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "2"^^xsd:int .
 
-bio2rdf_query:unsafelinkstonamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:unsafelinkstonamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "unsafelinkstonamespace" ;
@@ -1666,7 +1666,7 @@ bio2rdf_query:unsafelinkstonamespace a queryall_query:Query , queryall_query:Reg
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int , "2"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "2"^^xsd:int .
 
-bio2rdf_query:homepage a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:homepage a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "homepage" ;
@@ -1684,7 +1684,7 @@ bio2rdf_query:homepage a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:lsidstandardinsertion a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:lsidstandardinsertion a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "lsidstandardinsertion" ;
@@ -1703,7 +1703,7 @@ bio2rdf_query:lsidstandardinsertion a queryall_query:Query , queryall_query:Rege
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:lsidstandardinsertion .
 
-bio2rdf_query:license a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:license a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "license" ;
@@ -1722,7 +1722,7 @@ bio2rdf_query:license a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:license .
 
-bio2rdf_query:licenseendpoint a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:licenseendpoint a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "A direct reference to the endpoint without using a redirect URL" ;
@@ -1741,7 +1741,7 @@ bio2rdf_query:licenseendpoint a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:licenseendpoint .
 
-bio2rdf_query:plusurlencodedlicense a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedlicense a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "license" ;
@@ -1760,7 +1760,7 @@ bio2rdf_query:plusurlencodedlicense a queryall_query:Query , queryall_query:Rege
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
     queryall_query:includeQueryType bio2rdf_query:plusurlencodedlicense .
 
-bio2rdf_query:plusurlencodedlicenseendpoint a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:plusurlencodedlicenseendpoint a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "license" ;
@@ -1780,7 +1780,7 @@ bio2rdf_query:plusurlencodedlicenseendpoint a queryall_query:Query , queryall_qu
     queryall_query:includeQueryType bio2rdf_query:plusurlencodedlicenseendpoint .
 
 
-bio2rdf_query:countlinks a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:countlinks a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "countlinks" ;
@@ -1799,7 +1799,7 @@ bio2rdf_query:countlinks a queryall_query:Query , queryall_query:RegexInputQuery
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:construct , bio2rdf_query:countlinks .
 
-bio2rdf_query:virtuosobifcontainsquicksearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:virtuosobifcontainsquicksearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "virtuosobifcontainsquicksearchbynamespace" ;
@@ -1818,7 +1818,7 @@ bio2rdf_query:virtuosobifcontainsquicksearchbynamespace a queryall_query:Query ,
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:virtuosobifcontainssearchbynamespace .
 
-bio2rdf_query:virtuosobifcontainssearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:virtuosobifcontainssearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "virtuosobifcontainssearchbynamespace" ;
@@ -1837,7 +1837,7 @@ bio2rdf_query:virtuosobifcontainssearchbynamespace a queryall_query:Query , quer
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:virtuosobifcontainssearchbynamespace .
 
-bio2rdf_query:sparqlregexsearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:sparqlregexsearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "sparqlregexsearchbynamespace" ;
@@ -1856,7 +1856,7 @@ bio2rdf_query:sparqlregexsearchbynamespace a queryall_query:Query , queryall_que
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:sparqlregexsearchbynamespace .
 
-bio2rdf_query:constructnoextras a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:constructnoextras a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "constructnoextras" ;
@@ -1874,7 +1874,7 @@ bio2rdf_query:constructnoextras a queryall_query:Query , queryall_query:RegexInp
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:constructnoinclude a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:constructnoinclude a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "constructnoextras" ;
@@ -1892,7 +1892,7 @@ bio2rdf_query:constructnoinclude a queryall_query:Query , queryall_query:RegexIn
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:suppliers a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:suppliers a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "suppliers" ;
@@ -1910,7 +1910,7 @@ bio2rdf_query:suppliers a queryall_query:Query , queryall_query:RegexInputQuery 
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:taglabels a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:taglabels a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "taglabels" ;
@@ -1928,7 +1928,7 @@ bio2rdf_query:taglabels a queryall_query:Query , queryall_query:RegexInputQuery 
 	queryall_query:namespaceToHandle bio2rdf_ns:geneid , bio2rdf_ns:mquter_gene , bio2rdf_ns:go , bio2rdf_ns:keywords , bio2rdf_ns:term , bio2rdf_ns:terminstance ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int .
 
-bio2rdf_query:primaryreverseconstructfromdcidentifier a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromdcidentifier a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromdcidentifier" ;
@@ -1947,7 +1947,7 @@ bio2rdf_query:primaryreverseconstructfromdcidentifier a queryall_query:Query , q
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromdcidentifier .
 
-bio2rdf_query:primaryreverseconstructfromdoi a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromdoi a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromdoi" ;
@@ -1967,7 +1967,7 @@ bio2rdf_query:primaryreverseconstructfromdoi a queryall_query:Query , queryall_q
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromdoi .
 
-bio2rdf_query:primaryreverseconstructfromdoifornmrshiftdbspectrum a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:primaryreverseconstructfromdoifornmrshiftdbspectrum a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "primaryreverseconstructfromdoifornmrshiftdbspectrum" ;
@@ -1987,7 +1987,7 @@ bio2rdf_query:primaryreverseconstructfromdoifornmrshiftdbspectrum a queryall_que
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:primaryreverseconstructfromdoifornmrshiftdbspectrum .
 
-bio2rdf_query:counttriples a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:counttriples a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "counttriples" ;
@@ -2006,7 +2006,7 @@ bio2rdf_query:counttriples a queryall_query:Query , queryall_query:RegexInputQue
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:construct , bio2rdf_query:counttriples .
 
-bio2rdf_query:prosite2goconstruct a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:prosite2goconstruct a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
 	dc:title "prosite2goconstruct" ;
@@ -2025,7 +2025,7 @@ bio2rdf_query:prosite2goconstruct a queryall_query:Query , queryall_query:RegexI
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:medline a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:medline a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "medline" ;
@@ -2044,7 +2044,7 @@ bio2rdf_query:medline a queryall_query:Query , queryall_query:RegexInputQuery ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int .
 
-bio2rdf_query:similardrugsbygeneid a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:similardrugsbygeneid a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "similardrugsbygeneid" ;
@@ -2064,7 +2064,7 @@ bio2rdf_query:similardrugsbygeneid a queryall_query:Query , queryall_query:Regex
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:similardrugsbygeneid .
 	
-bio2rdf_query:pandit a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:pandit a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "similardrugsbygeneid" ;
@@ -2086,7 +2086,7 @@ bio2rdf_query:pandit a queryall_query:Query , queryall_query:RegexInputQuery ;
 	
 
 
-bio2rdf_query:I18NTest a queryall_query:Query , queryall_query:RegexInputQuery ;
+bio2rdf_query:I18NTest a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfXmlOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "false"^^xsd:boolean ;
 	dc:title "i18n test" ;

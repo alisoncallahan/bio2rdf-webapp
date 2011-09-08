@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_provider:sangercosmicfastaprotein a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:sangercosmicfastaprotein a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -16,7 +16,7 @@ bio2rdf_provider:sangercosmicfastaprotein a queryall_provider:Provider , queryal
 	queryall_provider:handlesNamespace bio2rdf_ns:cosmic ;
 	queryall_provider:includedInQuery bio2rdf_query:fasta , bio2rdf_query:fastainclude .
 
-bio2rdf_provider:sangercosmicfastacdna a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:sangercosmicfastacdna a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -25,7 +25,7 @@ bio2rdf_provider:sangercosmicfastacdna a queryall_provider:Provider , queryall_p
 	queryall_provider:handlesNamespace bio2rdf_ns:cosmic ;
 	queryall_provider:includedInQuery bio2rdf_query:fasta , bio2rdf_query:fastainclude .
 
-bio2rdf_provider:rcsbpdbfasta a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:rcsbpdbfasta a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
@@ -34,7 +34,7 @@ bio2rdf_provider:rcsbpdbfasta a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
 	queryall_provider:includedInQuery bio2rdf_query:fasta , bio2rdf_query:fastainclude .
 
-bio2rdf_provider:ncbigenbankfasta a queryall_provider:Provider , queryall_provider:HttpProvider ;
+bio2rdf_provider:ncbigenbankfasta a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;

@@ -1,352 +1,368 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_provider: <http://purl.org/queryall/provider:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-<http://bio2rdf.org/provider:wikipathwaysdata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.wikipathways.org/wpi/wpi.php?action=downloadFile&type=txt&pwTitle=Pathway:${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipathways> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
+bio2rdf_provider:wikipathwaysdata a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.wikipathways.org/wpi/wpi.php?action=downloadFile&type=txt&pwTitle=Pathway:${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:wikipathways ;
+	queryall_provider:includedInQuery bio2rdf_query:data .
 
-<http://bio2rdf.org/provider:ncbipubmedrelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?itool=pubmed_Abstract&db=pubmed&cmd=Display&dopt=pubmed_pubmed&retmode=ref&from_uid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
+bio2rdf_provider:ncbipubmedrelated a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?itool=pubmed_Abstract&db=pubmed&cmd=Display&dopt=pubmed_pubmed&retmode=ref&from_uid=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:related .
 
-<http://bio2rdf.org/provider:ncbigeneidxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:ncbigeneidxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:geneid ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:ebigoxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/QuickGO/GTerm?format=oboxml&id=GO:${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:ebigoxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ebi.ac.uk/QuickGO/GTerm?format=oboxml&id=GO:${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:go ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:prositedata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://expasy.org/cgi-bin/get-prosite-raw.pl?${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prosite> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
+bio2rdf_provider:prositedata a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://expasy.org/cgi-bin/get-prosite-raw.pl?${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:prosite ;
+	queryall_provider:includedInQuery bio2rdf_query:data .
 
-<http://bio2rdf.org/provider:ncbigenbankgenbankfull> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=gbwithparts&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:genbankfull> .
+bio2rdf_provider:ncbigenbankgenbankfull a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=gbwithparts&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi ;
+	queryall_provider:includedInQuery bio2rdf_query:genbankfull .
 
-<http://bio2rdf.org/provider:gopubmedxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/Xml?m=1000&q=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gopubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:gopubmedxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/Xml?m=1000&q=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:gopubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:hubmedpubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.hubmed.org/display.cgi?uids=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:hubmed> .
+bio2rdf_provider:hubmedpubmed a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.hubmed.org/display.cgi?uids=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:hubmed .
 
-<http://bio2rdf.org/provider:asn1pubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=asn.1&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
+bio2rdf_provider:asn1pubmed a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=asn.1&id=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:asn1 .
 
-<http://bio2rdf.org/provider:printsrelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://srs.embl.de/srs/showEntryView.do?query=[prints-AccNumber:${urlEncoded_input_2}]" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prints> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
+bio2rdf_provider:printsrelated a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://srs.embl.de/srs/showEntryView.do?query=[prints-AccNumber:${urlEncoded_input_2}]" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:prints ;
+	queryall_provider:includedInQuery bio2rdf_query:related .
 
-<http://bio2rdf.org/provider:ncbibiosystemspubmedrefs> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&DbFrom=biosystems&Cmd=Link&LinkName=biosystems_pubmed&ordinalpos=1&IdsFromResult=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biosystems> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedrefs> .
+bio2rdf_provider:ncbibiosystemspubmedrefs a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=pubmed&DbFrom=biosystems&Cmd=Link&LinkName=biosystems_pubmed&ordinalpos=1&IdsFromResult=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:biosystems ;
+	queryall_provider:includedInQuery bio2rdf_query:pubmedrefs .
 
-<http://bio2rdf.org/provider:ncbipubmedxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&tool=bio2rdf&email=bio2rdf@googlegroups.com&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:ncbipubmedxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&tool=bio2rdf&email=bio2rdf@googlegroups.com&id=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:rcsbpdbrelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore/relatedCitations.do?structureId=${urlEncoded_lowercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
+bio2rdf_provider:rcsbpdbrelated a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.rcsb.org/pdb/explore/relatedCitations.do?structureId=${urlEncoded_lowercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
+	queryall_provider:includedInQuery bio2rdf_query:related .
 
-<http://bio2rdf.org/provider:rcsbpdbdata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://dx.doi.org/10.2210/pdb${urlEncoded_lowercase_input_2}/pdb" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
+bio2rdf_provider:rcsbpdbdata a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://dx.doi.org/10.2210/pdb${urlEncoded_lowercase_input_2}/pdb" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
+	queryall_provider:includedInQuery bio2rdf_query:data .
 
-<http://bio2rdf.org/provider:rcsbpdbpubmedrefs> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/explore/pubmedArticle.do?structureId=${urlEncoded_lowercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedrefs> .
+bio2rdf_provider:rcsbpdbpubmedrefs a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.rcsb.org/pdb/explore/pubmedArticle.do?structureId=${urlEncoded_lowercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
+	queryall_provider:includedInQuery bio2rdf_query:pubmedrefs .
 
-<http://bio2rdf.org/provider:ncbigirelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=nucleotide&dopt=GenBank&qty=1&list_uids=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:gi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
+bio2rdf_provider:ncbigirelated a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=nucleotide&dopt=GenBank&qty=1&list_uids=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:gi ;
+	queryall_provider:includedInQuery bio2rdf_query:related .
 
-<http://bio2rdf.org/provider:rebasesuppliers> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://rebase.neb.com/cgi-bin/ecget?${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:rebase> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:suppliers> .
+bio2rdf_provider:rebasesuppliers a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rebase.neb.com/cgi-bin/ecget?${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rebase ;
+	queryall_provider:includedInQuery bio2rdf_query:suppliers .
 
-<http://bio2rdf.org/provider:ihoppubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ihop-net.org/UniPub/iHOP/index.html?field=all&organism_id=0&search=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ihop> .
+bio2rdf_provider:ihoppubmed a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ihop-net.org/UniPub/iHOP/index.html?field=all&organism_id=0&search=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:ihop .
 
-<http://bio2rdf.org/provider:ncbipubmedfulltext> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?cmd=prlinks&dbfrom=pubmed&retmode=ref&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:fulltext> .
+bio2rdf_provider:ncbipubmedfulltext a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?cmd=prlinks&dbfrom=pubmed&retmode=ref&id=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:fulltext .
 
-<http://bio2rdf.org/provider:ncbigenbankxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=xml&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:ncbigenbankxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=xml&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:rcsbpdbxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.rcsb.org/pdb/files/${urlEncoded_input_2}.xml?headerOnly=YES" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:rcsbpdbxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.rcsb.org/pdb/files/${urlEncoded_input_2}.xml?headerOnly=YES" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:ncbipubchemxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&sid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:sid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:ncbipubchemxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&sid=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:sid ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:swooglerdf> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://swoogle.umbc.edu/index.php?option=com_frontpage&service=search&queryType=search_swd_ontology&view=raw&searchString=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:swoogle> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:rawrdf> .
+bio2rdf_provider:swooglerdf a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://swoogle.umbc.edu/index.php?option=com_frontpage&service=search&queryType=search_swd_ontology&view=raw&searchString=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:swoogle ;
+	queryall_provider:includedInQuery bio2rdf_query:rawrdf .
 
-<http://bio2rdf.org/provider:ncbigeneidasn1> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=asn.1&id=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
+bio2rdf_provider:ncbigeneidasn1 a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=gene&retmode=asn.1&id=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:geneid ;
+	queryall_provider:includedInQuery bio2rdf_query:asn1 .
 
-<http://bio2rdf.org/provider:ncbipubchemcidxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&cid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cid> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:data> .
+bio2rdf_provider:ncbipubchemcidxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&cid=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:cid ;
+	queryall_provider:includedInQuery bio2rdf_query:data .
 
-<http://bio2rdf.org/provider:ncbigenbankgenbankpartial> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=genbank&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:genbankpartial> .
+bio2rdf_provider:ncbigenbankgenbankpartial a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=genbank&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi;
+	queryall_provider:includedInQuery bio2rdf_query:genbankpartial .
 
-<http://bio2rdf.org/provider:ncbiomimxml> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=omim&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:omim> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:xml> .
+bio2rdf_provider:ncbiomimxml a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=omim&retmode=xml&id=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:omim ;
+	queryall_provider:includedInQuery bio2rdf_query:xml .
 
-<http://bio2rdf.org/provider:medlinepubmed> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=text&rettype=medline&id=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:medline> .
+bio2rdf_provider:medlinepubmed a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&email=bio2rdf@googlegroups.com&retmode=text&rettype=medline&id=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:medline .
 
-<http://bio2rdf.org/provider:ncbigenbankasn1> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=asn1&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:gi> , <http://bio2rdf.org/ns:ncbi>;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:asn1> .
+bio2rdf_provider:ncbigenbankasn1 a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?tool=portal&db=nuccore&dopt=asn1&sendto=on&val=${urlEncoded_uppercase_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi;
+	queryall_provider:includedInQuery bio2rdf_query:asn1 .
 
-<http://bio2rdf.org/provider:ncbihomologenerelated> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/HomoloGene/HGDownload.cgi?hid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:homologene> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:related> .
+bio2rdf_provider:ncbihomologenerelated a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/HomoloGene/HGDownload.cgi?hid=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:homologene ;
+	queryall_provider:includedInQuery bio2rdf_query:related .
 
-<http://bio2rdf.org/provider:ebiinterprouniprotispy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/ISpy?ac=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:uniprot> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
+bio2rdf_provider:ebiinterprouniprotispy a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ebi.ac.uk/interpro/ISpy?ac=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:uniprot ;
+	queryall_provider:includedInQuery bio2rdf_query:ispy .
 	
-<http://bio2rdf.org/provider:ebiinterproispy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/ISpy?ipr=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:interpro> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
+bio2rdf_provider:ebiinterproispy a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ebi.ac.uk/interpro/ISpy?ipr=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:interpro ;
+	queryall_provider:includedInQuery bio2rdf_query:ispy .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_provider: <http://purl.org/queryall/provider:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-<http://bio2rdf.org/provider:ebiinterprosignatureispy> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/interpro/ISpy?sig=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:panther> , <http://bio2rdf.org/ns:pfam> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:ispy> .
+bio2rdf_provider:ebiinterprosignatureispy a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ebi.ac.uk/interpro/ISpy?sig=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:panther , bio2rdf_ns:pfam ;
+	queryall_provider:includedInQuery bio2rdf_query:ispy .
 
-<http://bio2rdf.org/provider:ebipanditpfam> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/goldman-srv/pandit/pandit.cgi?action=browse&fam=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pfam> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pandit> .
+bio2rdf_provider:ebipanditpfam a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ebi.ac.uk/goldman-srv/pandit/pandit.cgi?action=browse&fam=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pfam ;
+	queryall_provider:includedInQuery bio2rdf_query:pandit .
 
-<http://bio2rdf.org/provider:pubmedcentraldata> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:NoCommunicationProvider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:redirect> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&pubmedid=${urlEncoded_input_2}" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:pubmedcentral> .
+bio2rdf_provider:pubmedcentraldata a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:redirect ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&pubmedid=${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:pubmedcentral .
 
 

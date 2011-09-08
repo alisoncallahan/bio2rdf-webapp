@@ -1,341 +1,350 @@
-<http://bio2rdf.org/provider:geneontologylicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.geneontology.org/GO.cite.shtml" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:go> , <http://bio2rdf.org/ns:go_association> , <http://bio2rdf.org/ns:go_evidence> , <http://bio2rdf.org/ns:go_ref> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_provider: <http://purl.org/queryall/provider:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-<http://bio2rdf.org/provider:clinicaltrialslicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.clinicaltrials.gov/ct2/info/terms" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:linkedct_trial> , <http://bio2rdf.org/ns:linkedct_intervention> , <http://bio2rdf.org/ns:linkedct_resource> , <http://bio2rdf.org/ns:linkedct_arm> , <http://bio2rdf.org/ns:linkedct_secondary_outcomes> , <http://bio2rdf.org/ns:linkedct_results_reference> , <http://bio2rdf.org/ns:linkedct_reference> , <http://bio2rdf.org/ns:linkedct_primary_outcomes> , <http://bio2rdf.org/ns:linkedct_oversight> , <http://bio2rdf.org/ns:linkedct_overall_official> , <http://bio2rdf.org/ns:linkedct_location> , <http://bio2rdf.org/ns:linkedct_link> , <http://bio2rdf.org/ns:linkedct_condition> , <http://bio2rdf.org/ns:linkedct_agent> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:geneontologylicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.geneontology.org/GO.cite.shtml" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:go , bio2rdf_ns:go_association , bio2rdf_ns:go_evidence , bio2rdf_ns:go_ref ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:irefindexlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "License URL for Irefindex" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://irefindex.uio.no/wiki/iRefIndex#License" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:irefindex> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:plusurlencodedlicense> , <http://bio2rdf.org/query:plusurlencodedlicenseendpoint>.
+bio2rdf_provider:clinicaltrialslicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.clinicaltrials.gov/ct2/info/terms" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:linkedct_trial , bio2rdf_ns:linkedct_intervention , bio2rdf_ns:linkedct_resource , bio2rdf_ns:linkedct_arm , bio2rdf_ns:linkedct_secondary_outcomes , bio2rdf_ns:linkedct_results_reference , bio2rdf_ns:linkedct_reference , bio2rdf_ns:linkedct_primary_outcomes , bio2rdf_ns:linkedct_oversight , bio2rdf_ns:linkedct_overall_official , bio2rdf_ns:linkedct_location , bio2rdf_ns:linkedct_link , bio2rdf_ns:linkedct_condition , bio2rdf_ns:linkedct_agent ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:ebidatabaseslicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ebi.ac.uk/Information/termsofuse.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chebi> , <http://bio2rdf.org/ns:interpro> , <http://bio2rdf.org/ns:intact> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:irefindexlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "License URL for Irefindex" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://irefindex.uio.no/wiki/iRefIndex#License" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:irefindex ;
+	queryall_provider:includedInQuery bio2rdf_query:plusurlencodedlicense , bio2rdf_query:plusurlencodedlicenseendpoint.
 
-<http://bio2rdf.org/provider:uniprotdatabaseslicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.uniprot.org/help/license" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:uniprot> , <http://bio2rdf.org/ns:uniref> , <http://bio2rdf.org/ns:uniparc> , <http://bio2rdf.org/ns:keywords> , <http://bio2rdf.org/ns:enzyme> , <http://bio2rdf.org/ns:citations> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:ebidatabaseslicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ebi.ac.uk/Information/termsofuse.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:chebi , bio2rdf_ns:interpro , bio2rdf_ns:intact ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:iproclasslicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pir.georgetown.edu/pirwww/about/linkpir.shtml" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:iproclass> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:uniprotdatabaseslicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.uniprot.org/help/license" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:uniref , bio2rdf_ns:uniparc , bio2rdf_ns:keywords , bio2rdf_ns:enzyme , bio2rdf_ns:citations ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:sideeffectslicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://sideeffects.embl.de/download/" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sider_sideeffects> , <http://bio2rdf.org/ns:sider_drugs> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:iproclasslicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://pir.georgetown.edu/pirwww/about/linkpir.shtml" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:iproclass ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:ncbimeshlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.nlm.nih.gov/mesh/termscon.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mesh> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:sideeffectslicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://sideeffects.embl.de/download/" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:sider_sideeffects , bio2rdf_ns:sider_drugs ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:wikipedialicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:wikipedia> ;
-	<http://purl.org/queryall/provider:needsRdfNormalisation> <http://bio2rdf.org/rdfrule:wikipedia2dbpedia> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:ncbimeshlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.nlm.nih.gov/mesh/termscon.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:mesh ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:drugbanklicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.drugbank.ca/about" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:drugbank> , <http://bio2rdf.org/ns:drugbank_ontology> , <http://bio2rdf.org/ns:drugbank_drugcategory> , <http://bio2rdf.org/ns:drugbank_drugtype> , <http://bio2rdf.org/ns:drugbank_enzymes> , <http://bio2rdf.org/ns:drugbank_drugs> , <http://bio2rdf.org/ns:drugbank_druginteractions> , <http://bio2rdf.org/ns:drugbank_targets> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:wikipedialicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:wikipedia ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:wikipedia2dbpedia ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:diseasomelicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.pnas.org/content/104/21/8685.full" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:diseasome_diseases> , <http://bio2rdf.org/ns:diseasome_genes> , <http://bio2rdf.org/ns:diseasome_chromosomallocation> , <http://bio2rdf.org/ns:diseasome_diseaseclass> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:drugbanklicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.drugbank.ca/about" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:ecocyclicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://biocyc.org/all-reg.shtml" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocyc> , <http://bio2rdf.org/ns:ecocyc> , <http://bio2rdf.org/ns:ecoo157cyc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:diseasomelicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.pnas.org/content/104/21/8685.full" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:diseasome_diseases , bio2rdf_ns:diseasome_genes , bio2rdf_ns:diseasome_chromosomallocation , bio2rdf_ns:diseasome_diseaseclass ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:nlmpubmedlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.nlm.nih.gov/databases/license/license.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:ecocyclicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://biocyc.org/all-reg.shtml" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:biocyc , bio2rdf_ns:ecocyc , bio2rdf_ns:ecoo157cyc ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:nlmpubmedlicensenotice> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://bio2rdf.org/pubmed_notice_2010-04-09.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pubmed> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:nlmpubmedlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.nlm.nih.gov/databases/license/license.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:myexperimentworkflowslicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.myexperiment.org/workflows/${urlEncoded_input_2}#license" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:myexp_workflow> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:nlmpubmedlicensenotice a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.org/pubmed_notice_2010-04-09.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:pfamlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://pfam.sanger.ac.uk/about" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pfam> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:myexperimentworkflowslicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.myexperiment.org/workflows/${urlEncoded_input_2}#license" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:myexp_workflow ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:ncbilicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ncbi.nlm.nih.gov/About/disclaimer.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:geneid> , <http://bio2rdf.org/ns:gp> , <http://bio2rdf.org/ns:genbank> , <http://bio2rdf.org/ns:taxonomy> , <http://bio2rdf.org/ns:taxon> ,  <http://bio2rdf.org/ns:homologene> , <http://bio2rdf.org/ns:dbsnp> , <http://bio2rdf.org/ns:unists> , <http://bio2rdf.org/ns:pubchem> , <http://bio2rdf.org/ns:omim> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:pfamlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://pfam.sanger.ac.uk/about" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pfam ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:ensembllicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.ensembl.org/info/about/legal/index.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ensembl> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:ncbilicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/About/disclaimer.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:geneid , bio2rdf_ns:gp , bio2rdf_ns:genbank , bio2rdf_ns:taxonomy , bio2rdf_ns:taxon ,  bio2rdf_ns:homologene , bio2rdf_ns:dbsnp , bio2rdf_ns:unists , bio2rdf_ns:pubchem , bio2rdf_ns:omim ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:hgnclicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.genenames.org/aboutHGNC.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:hgnc> , <http://bio2rdf.org/ns:hugo> , <http://bio2rdf.org/ns:symbol> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:ensembllicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.ensembl.org/info/about/legal/index.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ensembl ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:kegglicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.genome.jp/kegg/legal.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:kegg> , <http://bio2rdf.org/ns:cpd> , <http://bio2rdf.org/ns:path> , <http://bio2rdf.org/ns:dr> , <http://bio2rdf.org/ns:ec> , <http://bio2rdf.org/ns:gl> , <http://bio2rdf.org/ns:rn> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:hgnclicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.genenames.org/aboutHGNC.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:hgnc , bio2rdf_ns:hugo , bio2rdf_ns:symbol ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:mgilicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.informatics.jax.org/mgihome/other/copyright.shtml" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mgi> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:kegglicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.genome.jp/kegg/legal.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:kegg , bio2rdf_ns:cpd , bio2rdf_ns:path , bio2rdf_ns:dr , bio2rdf_ns:ec , bio2rdf_ns:gl , bio2rdf_ns:rn ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:obolicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.obofoundry.org/crit.shtml" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:obi_description> , <http://bio2rdf.org/ns:obo> , <http://bio2rdf.org/ns:a8467> , <http://bio2rdf.org/ns:aao> , <http://bio2rdf.org/ns:b8467> , <http://bio2rdf.org/ns:bila> , <http://bio2rdf.org/ns:bils> , <http://bio2rdf.org/ns:bspo> , <http://bio2rdf.org/ns:bto> , <http://bio2rdf.org/ns:caro> , <http://bio2rdf.org/ns:cl> , <http://bio2rdf.org/ns:cl-emapa> , <http://bio2rdf.org/ns:dc_cl> , <http://bio2rdf.org/ns:ddanat> , <http://bio2rdf.org/ns:doid> , <http://bio2rdf.org/ns:eco> , <http://bio2rdf.org/ns:ehda> , <http://bio2rdf.org/ns:ehdaa> , <http://bio2rdf.org/ns:ekb> , <http://bio2rdf.org/ns:ekbe> , <http://bio2rdf.org/ns:emapa> , <http://bio2rdf.org/ns:envo> , <http://bio2rdf.org/ns:eo> , <http://bio2rdf.org/ns:ev> , <http://bio2rdf.org/ns:fao> , <http://bio2rdf.org/ns:fbbi> , <http://bio2rdf.org/ns:fbbt> , <http://bio2rdf.org/ns:fbcv> , <http://bio2rdf.org/ns:fbdv> , <http://bio2rdf.org/ns:fbsp> , <http://bio2rdf.org/ns:fix> , <http://bio2rdf.org/ns:fma> , <http://bio2rdf.org/ns:gro> , <http://bio2rdf.org/ns:hp> , <http://bio2rdf.org/ns:iao> , <http://bio2rdf.org/ns:id> , <http://bio2rdf.org/ns:ido> , <http://bio2rdf.org/ns:iev> , <http://bio2rdf.org/ns:imr> , <http://bio2rdf.org/ns:ma> , <http://bio2rdf.org/ns:map6> , <http://bio2rdf.org/ns:mat> , <http://bio2rdf.org/ns:mfo> , <http://bio2rdf.org/ns:mged> , <http://bio2rdf.org/ns:mi> , <http://bio2rdf.org/ns:miro> , <http://bio2rdf.org/ns:mod> , <http://bio2rdf.org/ns:mp> , <http://bio2rdf.org/ns:mpath> , <http://bio2rdf.org/ns:ms> , <http://bio2rdf.org/ns:ncbitaxon> , <http://bio2rdf.org/ns:ncithesaurus> , <http://bio2rdf.org/ns:obi> , <http://bio2rdf.org/ns:oboinowl> , <http://bio2rdf.org/ns:obol> , <http://bio2rdf.org/ns:obo_rel> , <http://bio2rdf.org/ns:pato> , <http://bio2rdf.org/ns:plo> , <http://bio2rdf.org/ns:po> , <http://bio2rdf.org/ns:pro> , <http://bio2rdf.org/ns:propreo> , <http://bio2rdf.org/ns:pw> , <http://bio2rdf.org/ns:rex> , <http://bio2rdf.org/ns:ro> , <http://bio2rdf.org/ns:sao> , <http://bio2rdf.org/ns:sbo> , <http://bio2rdf.org/ns:snap> , <http://bio2rdf.org/ns:so> , <http://bio2rdf.org/ns:sopharm> , <http://bio2rdf.org/ns:span> , <http://bio2rdf.org/ns:spd> , <http://bio2rdf.org/ns:synonym> , <http://bio2rdf.org/ns:tads> , <http://bio2rdf.org/ns:tao> , <http://bio2rdf.org/ns:tgma> , <http://bio2rdf.org/ns:to> , <http://bio2rdf.org/ns:trans> , <http://bio2rdf.org/ns:tto> , <http://bio2rdf.org/ns:uberon> , <http://bio2rdf.org/ns:uo> , <http://bio2rdf.org/ns:wbbt> , <http://bio2rdf.org/ns:wbls> , <http://bio2rdf.org/ns:wbphenotype> , <http://bio2rdf.org/ns:xao> , <http://bio2rdf.org/ns:ypo> , <http://bio2rdf.org/ns:zfa> , <http://bio2rdf.org/ns:zfs> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:mgilicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.informatics.jax.org/mgihome/other/copyright.shtml" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:mgi ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:expasylicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.expasy.org/disclaimer.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pdb> , <http://bio2rdf.org/ns:prosite> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:obolicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.obofoundry.org/crit.shtml" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:obi_description , bio2rdf_ns:obo , bio2rdf_ns:a8467 , bio2rdf_ns:aao , bio2rdf_ns:b8467 , bio2rdf_ns:bila , bio2rdf_ns:bils , bio2rdf_ns:bspo , bio2rdf_ns:bto , bio2rdf_ns:caro , bio2rdf_ns:cl , bio2rdf_ns:cl-emapa , bio2rdf_ns:dc_cl , bio2rdf_ns:ddanat , bio2rdf_ns:doid , bio2rdf_ns:eco , bio2rdf_ns:ehda , bio2rdf_ns:ehdaa , bio2rdf_ns:ekb , bio2rdf_ns:ekbe , bio2rdf_ns:emapa , bio2rdf_ns:envo , bio2rdf_ns:eo , bio2rdf_ns:ev , bio2rdf_ns:fao , bio2rdf_ns:fbbi , bio2rdf_ns:fbbt , bio2rdf_ns:fbcv , bio2rdf_ns:fbdv , bio2rdf_ns:fbsp , bio2rdf_ns:fix , bio2rdf_ns:fma , bio2rdf_ns:gro , bio2rdf_ns:hp , bio2rdf_ns:iao , bio2rdf_ns:id , bio2rdf_ns:ido , bio2rdf_ns:iev , bio2rdf_ns:imr , bio2rdf_ns:ma , bio2rdf_ns:map6 , bio2rdf_ns:mat , bio2rdf_ns:mfo , bio2rdf_ns:mged , bio2rdf_ns:mi , bio2rdf_ns:miro , bio2rdf_ns:mod , bio2rdf_ns:mp , bio2rdf_ns:mpath , bio2rdf_ns:ms , bio2rdf_ns:ncbitaxon , bio2rdf_ns:ncithesaurus , bio2rdf_ns:obi , bio2rdf_ns:oboinowl , bio2rdf_ns:obol , bio2rdf_ns:obo_rel , bio2rdf_ns:pato , bio2rdf_ns:plo , bio2rdf_ns:po , bio2rdf_ns:pro , bio2rdf_ns:propreo , bio2rdf_ns:pw , bio2rdf_ns:rex , bio2rdf_ns:ro , bio2rdf_ns:sao , bio2rdf_ns:sbo , bio2rdf_ns:snap , bio2rdf_ns:so , bio2rdf_ns:sopharm , bio2rdf_ns:span , bio2rdf_ns:spd , bio2rdf_ns:synonym , bio2rdf_ns:tads , bio2rdf_ns:tao , bio2rdf_ns:tgma , bio2rdf_ns:to , bio2rdf_ns:trans , bio2rdf_ns:tto , bio2rdf_ns:uberon , bio2rdf_ns:uo , bio2rdf_ns:wbbt , bio2rdf_ns:wbls , bio2rdf_ns:wbphenotype , bio2rdf_ns:xao , bio2rdf_ns:ypo , bio2rdf_ns:zfa , bio2rdf_ns:zfs ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:pharmgkblicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.pharmgkb.org/home/policies/web-data.jsp" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:pharmgkb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:expasylicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.expasy.org/disclaimer.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pdb , bio2rdf_ns:prosite ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:prodomlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://prodom.prabi.fr/prodom/current/html/download.php" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:prodom> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:pharmgkblicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.pharmgkb.org/home/policies/web-data.jsp" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:reactomelicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.reactome.org/disclaimer.html" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:reactome> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:prodomlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://prodom.prabi.fr/prodom/current/html/download.php" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:prodom ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:sgdlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.yeastgenome.org/SGD-FAQ.html#download" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:sgd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:reactomelicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.reactome.org/disclaimer.html" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:reactome ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:chempedialicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://chempedia.com/downloads" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:chempedia_substance> , <http://bio2rdf.org/ns:chempedia_name> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:sgdlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.yeastgenome.org/SGD-FAQ.html#download" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:sgd ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:ctdlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://ctd.mdibl.org/about/legal.jsp" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:ctd> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:chempedialicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://chempedia.com/downloads" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:chempedia_substance , bio2rdf_ns:chempedia_name ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:mutdblicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://mutdb.org/cgi-bin/mutdb.pl?about=true" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:mutdb> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:ctdlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://ctd.mdibl.org/about/legal.jsp" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ctd ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:biocartalicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.biocarta.com/legal/terms.asp" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:biocarta> , <http://bio2rdf.org/ns:biocarta_category> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:mutdblicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://mutdb.org/cgi-bin/mutdb.pl?about=true" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:mutdb ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:worldhealthorganisationlicense> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.whocc.no/copyright_disclaimer/" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:atc> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:biocartalicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.biocarta.com/legal/terms.asp" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:biocarta , bio2rdf_ns:biocarta_category ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:cathinformation> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.cathdb.info/wiki/doku.php?id=index&idx=about" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:cath> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:worldhealthorganisationlicense a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.whocc.no/copyright_disclaimer/" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:atc ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
-<http://bio2rdf.org/provider:nmpdrinformation> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
-	<http://purl.org/dc/elements/1.1/title> "" ;
-	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;
-	<http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:nocommunication> ;
-	<http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> ;
-	<http://purl.org/queryall/provider:endpointUrl> "http://www.nmpdr.org/FIG/wiki/view.cgi/Main/WebHome" ;
-	<http://purl.org/queryall/provider:handlesNamespace> <http://bio2rdf.org/ns:nmpdr> ;
-	<http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:license> , <http://bio2rdf.org/query:licenseendpoint> .
+bio2rdf_provider:cathinformation a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.cathdb.info/wiki/doku.php?id=index&idx=about" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:cath ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
+
+bio2rdf_provider:nmpdrinformation a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://www.nmpdr.org/FIG/wiki/view.cgi/Main/WebHome" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:nmpdr ;
+	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 

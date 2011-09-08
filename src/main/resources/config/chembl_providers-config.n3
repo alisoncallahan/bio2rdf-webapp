@@ -26,7 +26,7 @@ chembl_provider:dummyuniversalfilterprovider a queryall_provider:Provider ;
 	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:includedInQuery chembl_query:dummyuniversalfilterquery ;
-	queryall_provider:needsRdfNormalisation <http://bio2rdf.org/rdfrule:sparqlownequivalentclassblanknoderemoval> , <http://bio2rdf.org/rdfrule:sparqlowlsameastrivialdelete> , <http://bio2rdf.org/rdfrule:sparqllinkedtofromunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:sparqlremoveplaintextemailaddresses> , <http://bio2rdf.org/rdfrule:sparqlobodbxrefunretrievedblanknoderemoval> , <http://bio2rdf.org/rdfrule:removeemptynamespaceucscuris> , <http://bio2rdf.org/rdfrule:sparqlremovelsid> .
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:sparqlownequivalentclassblanknoderemoval , bio2rdf_rdfrule:sparqlowlsameastrivialdelete , bio2rdf_rdfrule:sparqllinkedtofromunretrievedblanknoderemoval , bio2rdf_rdfrule:sparqlremoveplaintextemailaddresses , bio2rdf_rdfrule:sparqlobodbxrefunretrievedblanknoderemoval , bio2rdf_rdfrule:removeemptynamespaceucscuris , bio2rdf_rdfrule:sparqlremovelsid .
 
 chembl_provider:chembl2bio2rdf a queryall_provider:Provider , queryall_provider:HttpProvider ;
 	dc:title "Chembl namespaces translated to Bio2RDF URIs" ;
@@ -39,4 +39,4 @@ chembl_provider:chembl2bio2rdf a queryall_provider:Provider , queryall_provider:
 	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/chembl/sparql" ;
 	queryall_provider:handlesNamespace chembl_ns:chembl_resource , chembl_ns:chembl_target , chembl_ns:chembl_targettype , chembl_ns:chembl_activity , chembl_ns:chembl_assay , chembl_ns:chembl_molecule , chembl_ns:chembl_journal , chembl_ns:chembl_article ;
 	queryall_provider:includedInQuery chembl_query:construct ;
-	queryall_provider:needsRdfNormalisation <http://bio2rdf.org/rdfrule:farmbiochemblresource> , <http://bio2rdf.org/rdfrule:farmbiochemblmolecule> , <http://bio2rdf.org/rdfrule:farmbiochemblassay> , <http://bio2rdf.org/rdfrule:farmbiochembltarget> , <http://bio2rdf.org/rdfrule:farmbiochembltargettype> , <http://bio2rdf.org/rdfrule:farmbiochemblactivity> , <http://bio2rdf.org/rdfrule:wwwbio2rdf> , <http://bio2rdf.org/rdfrule:taxonomy2taxon> .
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:farmbiochemblresource , bio2rdf_rdfrule:farmbiochemblmolecule , bio2rdf_rdfrule:farmbiochemblassay , bio2rdf_rdfrule:farmbiochembltarget , bio2rdf_rdfrule:farmbiochembltargettype , bio2rdf_rdfrule:farmbiochemblactivity , bio2rdf_rdfrule:wwwbio2rdf , bio2rdf_rdfrule:taxonomy2taxon .

@@ -1,9 +1,16 @@
-# bio2rdf sourceforge subversion copy Id ($Id: webapp-config-bio2rdf-default.n3 962 2011-02-20 02:32:29Z p_ansell $)
-
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
+@prefix queryall_provider: <http://purl.org/queryall/provider:>.
 @prefix bio2rdf: <http://bio2rdf.org/webapp_configuration:>.
 @prefix bio2rdf_profile: <http://bio2rdf.org/profile:>.
+@prefix bio2rdf_query: <http://bio2rdf.org/query:>.
+@prefix bio2rdf_bio2rdf_resource: <http://bio2rdf.org/bio2rdf_resource:>.
+@prefix bio2rdf_go_resource: <http://bio2rdf.org/go_resource:>.
+@prefix bio2rdf_geneid_resource: <http://bio2rdf.org/geneid_resource:>.
+@prefix bio2rdf_taxonomy_resource: <http://bio2rdf.org/taxonomy_resource:>.
+@prefix bio2rdf_kegg_resource: <http://bio2rdf.org/kegg_resource:>.
+@prefix bio2rdf_drugbank_ontology: <http://bio2rdf.org/drugbank_ontology:>.
 
 bio2rdf:default a queryall:webappConfig ;
 
@@ -118,42 +125,42 @@ queryall:blacklistContactEmailAddress "bio2rdf@googlegroups.com" ;
 queryall:blacklistRedirectPage "error/blacklist" ;
 
 queryall:autogenerateIncludeStubList 
-<http://bio2rdf.org/query:html> ,
-<http://bio2rdf.org/query:unsafehtml> ,
-<http://bio2rdf.org/query:htmlfromlowercase> ,
-<http://bio2rdf.org/query:image> ,
-<http://bio2rdf.org/query:imagefromlowercase> ,
-<http://bio2rdf.org/query:genbankfull> ,
-<http://bio2rdf.org/query:genbankpartial> ,
-<http://bio2rdf.org/query:fasta> ,
-<http://bio2rdf.org/query:asn1> ,
-<http://bio2rdf.org/query:xml> ,
-<http://bio2rdf.org/query:xmlfromlowercase> ,
-<http://bio2rdf.org/query:related> ,
-<http://bio2rdf.org/query:relatedfromlowercase> ,
-<http://bio2rdf.org/query:pubmedrefs> ,
-<http://bio2rdf.org/query:pubmedcentral> ,
-<http://bio2rdf.org/query:hubmed> ,
-<http://bio2rdf.org/query:ihop> ,
-<http://bio2rdf.org/query:fulltext> ,
-<http://bio2rdf.org/query:medline> ,
-<http://bio2rdf.org/query:ispy> ;
+bio2rdf_query:html ,
+bio2rdf_query:unsafehtml ,
+bio2rdf_query:htmlfromlowercase ,
+bio2rdf_query:image ,
+bio2rdf_query:imagefromlowercase ,
+bio2rdf_query:genbankfull ,
+bio2rdf_query:genbankpartial ,
+bio2rdf_query:fasta ,
+bio2rdf_query:asn1 ,
+bio2rdf_query:xml ,
+bio2rdf_query:xmlfromlowercase ,
+bio2rdf_query:related ,
+bio2rdf_query:relatedfromlowercase ,
+bio2rdf_query:pubmedrefs ,
+bio2rdf_query:pubmedcentral ,
+bio2rdf_query:hubmed ,
+bio2rdf_query:ihop ,
+bio2rdf_query:fulltext ,
+bio2rdf_query:medline ,
+bio2rdf_query:ispy ;
 
 #TODO: make this into a list for more reliable ordering
 queryall:titleProperties 
-<http://purl.org/dc/terms/title> , <http://purl.org/dc/elements/1.1/title> , <http://bio2rdf.org/go_resource:name> , <http://www.w3.org/2000/01/rdf-schema#label> , <http://purl.uniprot.org/core/title> , <http://www.w3.org/2004/02/skos/core#prefLabel> , <http://rdfs.org/sioc/ns#name> , <http://purl.org/science/owl/sciencecommons/ggp_has_primary_symbol> , <http://bio2rdf.org/kegg_resource:systematicName> , <http://purl.org/dc/elements/1.1/identifier> , <http://purl.org/dc/terms/identifier> , <http://bio2rdf.org/drugbank_ontology:name> , <http://bio2rdf.org/geneid_resource:text> , <http://bio2rdf.org/geneid_resource:taxname> , <http://bio2rdf.org/geneid_resource:heading> , <http://xmlns.com/foaf/0.1/name> ;
+<http://purl.org/dc/terms/title> , dc:title , bio2rdf_go_resource:name , <http://www.w3.org/2000/01/rdf-schema#label> , <http://purl.uniprot.org/core/title> , <http://www.w3.org/2004/02/skos/core#prefLabel> , <http://rdfs.org/sioc/ns#name> , <http://purl.org/science/owl/sciencecommons/ggp_has_primary_symbol> , bio2rdf_kegg_resource:systematicName , <http://purl.org/dc/elements/1.1/identifier> , <http://purl.org/dc/terms/identifier> , bio2rdf_drugbank_ontology:name , bio2rdf_geneid_resource:text , bio2rdf_geneid_resource:taxname , bio2rdf_geneid_resource:heading , <http://xmlns.com/foaf/0.1/name> ;
 
 #TODO: make this into a list for more reliable ordering
 queryall:imageProperties 
-<http://bio2rdf.org/bio2rdf_resource:urlImage> , <http://bio2rdf.org/bio2rdf_resource:image> , <http://xmlns.com/foaf/0.1/thumbnail> , <http://xmlns.com/foaf/0.1/depiction> , <http://xmlns.com/foaf/0.1/img> , <http://rdf.myexperiment.org/ontologies/contributions/preview> , <http://rdf.myexperiment.org/ontologies/contributions/thumbnail> , <http://rdf.myexperiment.org/ontologies/contributions/thumbnail-big> , <http://rdfs.org/sioc/ns#avatar> , <http://bio2rdf.org/taxonomy_resource:depiction> ;
+bio2rdf_bio2rdf_resource:urlImage , bio2rdf_bio2rdf_resource:image , <http://xmlns.com/foaf/0.1/thumbnail> , <http://xmlns.com/foaf/0.1/depiction> , <http://xmlns.com/foaf/0.1/img> , <http://rdf.myexperiment.org/ontologies/contributions/preview> , <http://rdf.myexperiment.org/ontologies/contributions/thumbnail> , <http://rdf.myexperiment.org/ontologies/contributions/thumbnail-big> , <http://rdfs.org/sioc/ns#avatar> , bio2rdf_taxonomy_resource:depiction ;
 
 #TODO: make this into a list for more reliable ordering
 queryall:commentProperties 
-<http://purl.org/dc/elements/1.1/description> , <http://purl.org/dc/terms/description> , <http://purl.org/dc/elements/1.1/abstract> , <http://purl.org/dc/terms/abstract> , <http://www.w3.org/2000/01/rdf-schema#comment> , <http://purl.org/science/owl/sciencecommons/ggp_has_description> , <http://bio2rdf.org/bio2rdf_resource:synonym> , <http://bio2rdf.org/drugbank_ontology:synonym> , <http://bio2rdf.org/bio2rdf_resource:formula> , <http://www.w3.org/2004/02/skos/core#annotation> , <http://www.w3.org/2004/02/skos/core#scopeNote> ;
+<http://purl.org/dc/elements/1.1/description> , <http://purl.org/dc/terms/description> , <http://purl.org/dc/elements/1.1/abstract> , <http://purl.org/dc/terms/abstract> , <http://www.w3.org/2000/01/rdf-schema#comment> , <http://purl.org/science/owl/sciencecommons/ggp_has_description> , bio2rdf_bio2rdf_resource:synonym , bio2rdf_drugbank_ontology:synonym , bio2rdf_bio2rdf_resource:formula , <http://www.w3.org/2004/02/skos/core#annotation> , <http://www.w3.org/2004/02/skos/core#scopeNote> ;
 
 #TODO: make this into a list for more reliable ordering
 queryall:urlProperties 
-<http://bio2rdf.org/bio2rdf_resource:url> , <http://xmlns.com/foaf/0.1/page> , <http://xmlns.com/foaf/0.1/homepage> , <http://rdf.myexperiment.org/ontologies/base/human-start-page> , <http://purl.org/dc/terms/hasFormat> , <http://rdf.myexperiment.org/ontologies/base/content-url> ;
+bio2rdf_bio2rdf_resource:url , <http://xmlns.com/foaf/0.1/page> , <http://xmlns.com/foaf/0.1/homepage> , <http://rdf.myexperiment.org/ontologies/base/human-start-page> , <http://purl.org/dc/terms/hasFormat> , <http://rdf.myexperiment.org/ontologies/base/content-url> ;
 
 queryall:indexTemplate "/templates/default-index.vm" ;
 
@@ -182,11 +189,11 @@ queryall:indexBannerImagePath "static/includes-images/merged-bio2rdf-banner.jpg"
 
 queryall:indexProjectImagePath "static/includes-images/Bio2RDF.jpg" ;
 
-queryall:unknownQueryStaticAdditions <http://bio2rdf.org/query:unknownquery> ;
+queryall:unknownQueryStaticAdditions bio2rdf_query:unknownquery ;
 
 queryall:unknownQueryHttpResponseCode "400"^^xsd:int ;
 
-queryall:unknownNamespaceStaticAdditions <http://bio2rdf.org/query:unknownnamespace> ;
+queryall:unknownNamespaceStaticAdditions bio2rdf_query:unknownnamespace ;
 
 queryall:unknownNamespaceHttpResponseCode "404"^^xsd:int ;
 

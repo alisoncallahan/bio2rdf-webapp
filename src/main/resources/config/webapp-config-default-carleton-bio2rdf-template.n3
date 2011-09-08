@@ -1,5 +1,3 @@
-# bio2rdf sourceforge subversion copy Id ($Id: webapp-config-default-carleton-bio2rdf-template.n3 975 2011-02-23 00:59:00Z p_ansell $)
-
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
 @prefix bio2rdf: <http://bio2rdf.org/webapp_configuration:>.

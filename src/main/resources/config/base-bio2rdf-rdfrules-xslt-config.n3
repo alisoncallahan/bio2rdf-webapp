@@ -1,5 +1,14 @@
-<http://bio2rdf.org/rdfrule:xsltNlmPubmed> a <http://purl.org/queryall/rdfrule:NormalisationRule> , <http://purl.org/queryall/rdfrule:XsltNormalisationRule> ;
-    <http://purl.org/queryall/rdfrule:xsltStylesheet> """<?xml version="1.0" encoding="UTF-8" ?>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_rdfrule:xsltNlmPubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:XsltNormalisationRule ;
+    queryall_rdfrule:xsltStylesheet """<?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes"/>
 	<xsl:template match="/">
@@ -99,8 +108,8 @@
 	</xsl:template>
 </xsl:stylesheet>
 """ ;
-	<http://purl.org/queryall/rdfrule:stage> <http://purl.org/queryall/rdfrule:beforeResultsImport> ;
-	<http://purl.org/queryall/rdfrule:description> "XSLT transformation of a Pubmed XML document into RDF NTriples" ;
-	<http://purl.org/queryall/rdfrule:order> "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
-	<http://purl.org/queryall/profile:profileIncludeExcludeOrder> <http://purl.org/queryall/profile:excludeThenInclude> .
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+	dc:title "XSLT transformation of a Pubmed XML document into RDF NTriples" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 

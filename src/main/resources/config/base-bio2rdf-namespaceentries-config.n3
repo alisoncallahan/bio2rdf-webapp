@@ -1,5 +1,3 @@
-# bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-namespaceentries-config.n3 967 2011-02-22 00:54:48Z p_ansell $)
-
 <http://bio2rdf.org/ns:hhpid> a <http://purl.org/queryall/ns:Namespace> ;
 	<http://purl.org/queryall/ns:authority> <http://bio2rdf.org/> ;
 	<http://purl.org/queryall/ns:uriTemplate> "${authority}${namespace}${separator}${identifier}" ;

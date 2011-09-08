@@ -1,5 +1,3 @@
-# bio2rdf sourceforge subversion copy Id ($Id: base-bio2rdf-providers-config.n3 977 2011-02-28 06:21:00Z p_ansell $)
-
 <http://bio2rdf.org/provider:ncbipubmedxmltoxslt> a <http://purl.org/queryall/provider:Provider> , <http://purl.org/queryall/provider:HttpProvider> ;
 	<http://purl.org/dc/elements/1.1/title> "Pulls the latest Pubmed XML document and converts it using the XSLT stylesheet to NTriples, which is indicated through the use of text/plain as the assumedContentType." ;
 	<http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> ;

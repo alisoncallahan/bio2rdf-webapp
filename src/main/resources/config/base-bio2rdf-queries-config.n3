@@ -746,7 +746,7 @@ bio2rdf_query:prosite2golinks a queryall_query:Query , queryall_query:RegexInput
 	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
 	queryall_query:includeDefaults "false"^^xsd:boolean ;
 	queryall_query:inputRegex "^links/([\\w-]+):(.+)" ;
-	queryall_query:templateString "CONSTRUCT { ?goAnnotation bio2rdf_go_resource:has_prosite_pattern <${inputUrlEncoded_normalisedStandardUri}> .  } WHERE {  ${graphStart}   ?goAnnotation <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?o . ?o <http://www.geneontology.org/formats/oboInOwl#hasURI> \"${inputUrlEncoded_endpointSpecificUri}\"^^xsd:anyURI . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
+	queryall_query:templateString "CONSTRUCT { ?goAnnotation <http://bio2rdf.org/go_resource:has_prosite_pattern> <${inputUrlEncoded_normalisedStandardUri}> .  } WHERE {  ${graphStart}   ?goAnnotation <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?o . ?o <http://www.geneontology.org/formats/oboInOwl#hasURI> \"${inputUrlEncoded_endpointSpecificUri}\"^^xsd:anyURI . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
 	queryall_query:queryUriTemplateString "${defaultHostAddress}links/${input_1}${defaultSeparator}${input_2}" ;
 	queryall_query:standardUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	queryall_query:outputRdfFormat "application/rdf+xml" ;
@@ -804,7 +804,7 @@ bio2rdf_query:labelsearchforgo a queryall_query:Query , queryall_query:RegexInpu
 	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
 	queryall_query:includeDefaults "false"^^xsd:boolean ;
 	queryall_query:inputRegex "^label/([\\w-]+):(.+)" ;
-	queryall_query:templateString "CONSTRUCT { <${normalisedStandardUri}> bio2rdf_go_resource:name ?goName . } WHERE { ${graphStart}  <${endpointSpecificUri}> <http://bio2rdf.org/ns/go#name> ?goName ${graphEnd} } ${limit} ${sparqlOffset}" ;
+	queryall_query:templateString "CONSTRUCT { <${normalisedStandardUri}> <http://bio2rdf.org/go_resource:name> ?goName . } WHERE { ${graphStart}  <${endpointSpecificUri}> <http://bio2rdf.org/ns/go#name> ?goName ${graphEnd} } ${limit} ${sparqlOffset}" ;
 	queryall_query:queryUriTemplateString "${defaultHostAddress}label/${input_1}${defaultSeparator}${input_2}" ;
 	queryall_query:standardUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	queryall_query:outputRdfFormat "application/rdf+xml" ;
@@ -1154,7 +1154,7 @@ bio2rdf_query:goinprositeconstruct a queryall_query:Query , queryall_query:Regex
 	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
 	queryall_query:includeDefaults "false"^^xsd:boolean ;
 	queryall_query:inputRegex "^([\\w-]+):(.+)" ;
-	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedStandardUri}> bio2rdf_go_resource:has_prosite_pattern ?prositeReference .  } WHERE {  ${graphStart}  <${inputUrlEncoded_endpointSpecificUri}> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?o . ?o <http://www.geneontology.org/formats/oboInOwl#hasURI>  ?prositeReference . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
+	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedStandardUri}> <http://bio2rdf.org/go_resource:has_prosite_pattern> ?prositeReference .  } WHERE {  ${graphStart}  <${inputUrlEncoded_endpointSpecificUri}> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> ?o . ?o <http://www.geneontology.org/formats/oboInOwl#hasURI>  ?prositeReference . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
 	queryall_query:queryUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	queryall_query:standardUriTemplateString "${defaultHostAddress}${input_1}${defaultSeparator}${input_2}" ;
 	queryall_query:outputRdfFormat "application/rdf+xml" ;

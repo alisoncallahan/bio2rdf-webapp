@@ -77,7 +77,7 @@ bio2rdf_rdfrule:neurocommonsgeneaddsymboluri a queryall_rdfrule:NormalisationRul
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:symbol , bio2rdf_ns:geneid ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:addAllMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://bio2rdf.org/bio2rdf_resource:dbxref> ?symbolUri . " ;
-    queryall_rdfrule:sparqlWherePattern " ?myUri <http://purl.org/science/owl/sciencecommons/ggp_has_primary_symbol> ?primarysymbol . bind(iri(concat(\"http://bio2rdf.org/symbol:\", encode_for_uri(lcase(str(?primarySymbol))))) AS ?symbolUri)" ;
+    queryall_rdfrule:sparqlWherePattern " ?myUri ?symbolPredicate ?primarysymbol . filter(sameTerm(?symbolPredicate, iri(\"http://purl.org/science/owl/sciencecommons/ggp_has_primary_symbol\"))) . bind(iri(concat(\"http://bio2rdf.org/symbol:\", encode_for_uri(lcase(str(?primarySymbol))))) AS ?symbolUri)" ;
 	queryall_rdfrule:stage queryall_rdfrule:afterResultsToPool ;
 	dc:title "Add symbol URI based on Neurocommons gene symbol literals" ;
 	queryall_rdfrule:order "100"^^xsd:int ;

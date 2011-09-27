@@ -215,7 +215,7 @@ queryall:defaultAcceptHeader "application/rdf+xml, text/rdf+n3, text/turtle;q=0.
 
 queryall:useRequestCache "true"^^xsd:boolean ;
 
-queryall:convertAlternateNamespacePrefixesToPreferred "false"^^xsd:boolean ;
+queryall:convertAlternateNamespacePrefixesToPreferred "true"^^xsd:boolean ;
 
 queryall:useVirtuosoMaxRowsParameter "false"^^xsd:boolean ;
 

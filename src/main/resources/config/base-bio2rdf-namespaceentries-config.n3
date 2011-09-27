@@ -3959,7 +3959,7 @@ bio2rdf_ns:wikipedia a queryall_ns:Namespace , queryall_ns:ValidatingNamespace ,
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "wikipedia" ;
-#	queryall_ns:alternativePrefix "dbpedia" ;
+	queryall_ns:alternativePrefix "dbpedia" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -3970,7 +3970,7 @@ bio2rdf_ns:wikipediacategory a queryall_ns:Namespace , queryall_ns:ValidatingNam
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "wikipedia_category" ;
-#	queryall_ns:alternativePrefix "dbpedia_category" ;
+	queryall_ns:alternativePrefix "dbpedia_category" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -4011,6 +4011,7 @@ bio2rdf_ns:geneid_record a queryall_ns:Namespace , queryall_ns:ValidatingNamespa
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "geneid_record" ;
+	queryall_ns:alternativePrefix "ncbi_geneid_record" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -4021,6 +4022,7 @@ bio2rdf_ns:mquter_gene a queryall_ns:Namespace , queryall_ns:ValidatingNamespace
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "mquter_gene" ;
+	queryall_ns:alternativePrefix "mquter_geneid" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;

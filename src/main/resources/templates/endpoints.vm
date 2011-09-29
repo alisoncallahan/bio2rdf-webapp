@@ -6,8 +6,6 @@
 #else
 #set ($odd_even = "tr_odd")
 #end
-#set ($xmlEncoded_queryEndpoint = $query_bundle.queryEndpoint)
-#set ($xmlEncoded_query = $query_bundle.query)
 #set ($tempQueryTypeKey = $query_bundle.queryType.getKey())
 #set ($xmlEncoded_queryTypeKey = $tempQueryTypeKey.stringValue())
 #set ($tempProviderKey = $query_bundle.provider.getKey())
@@ -19,12 +17,6 @@
         </td>
         <td class="queryType">
             $xmlEncoded_queryTypeKey
-        </td>
-        <td class="endpoint">
-            $xmlEncoded_queryEndpoint
-        </td>
-        <td class="query">
-            $xmlEncoded_query
         </td>
       </tr>
 #end

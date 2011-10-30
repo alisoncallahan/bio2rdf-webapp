@@ -61,6 +61,24 @@
 		</dependency>
 		<dependency>
 			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-sparql</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-regex</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-xslt</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
 			<artifactId>queryall-webapp</artifactId>
 			<version>${queryall.version}</version>
 			<scope>runtime</scope>
@@ -344,8 +362,5 @@
 			<name>DBIS Maven Releases Repository</name>
 			<url>http://on.cs.unibas.ch/maven/repository</url>
 		</repository>
-		<!-- <repository> <id>repo.rasea.org</id> <name>Rasea Maven Repository 
-			(only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name> 
-			<url>http://repo.rasea.org/maven2/</url> </repository> -->
 	</repositories>
 </project>

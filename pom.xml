@@ -85,6 +85,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-provider-http</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
 			<artifactId>queryall-webapp</artifactId>
 			<version>${queryall.version}</version>
 			<scope>runtime</scope>

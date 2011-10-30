@@ -79,6 +79,30 @@
 		</dependency>
 		<dependency>
 			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-prefixmap</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-provider-http</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-querytype-regex</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-querytype-rdf</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
 			<artifactId>queryall-webapp</artifactId>
 			<version>${queryall.version}</version>
 			<scope>runtime</scope>

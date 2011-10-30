@@ -5,7 +5,7 @@
 	<groupId>org.bio2rdf</groupId>
 	<artifactId>bio2rdf-webapp</artifactId>
 	<packaging>war</packaging>
-	<version>1.1</version>
+	<version>1.2-SNAPSHOT</version>
 	<name>Bio2RDF Webapp</name>
 	<url>http://bio2rdf.org</url>
 	<inceptionYear>2007</inceptionYear>
@@ -36,9 +36,10 @@
 		<junit.version>4.10</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<sesame.version>2.5.1</sesame.version>
+		<sesame.version>2.6.0</sesame.version>
 		<sesametools.version>1.5</sesametools.version>
-		<slf4j.version>1.6.2</slf4j.version>
+		<slf4j.version>1.6.3</slf4j.version>
+		<queryall.version>1.2-SNAPSHOT</queryall.version>
 	</properties>
 	<scm>
 		<connection>scm:git:git://bio2rdf.git.sourceforge.net/gitroot/bio2rdf/bio2rdf-webapp</connection>
@@ -49,22 +50,37 @@
 		<dependency>
 			<groupId>org.queryall</groupId>
 			<artifactId>queryall-api</artifactId>
-			<version>1.1</version>
-			<type>jar</type>
+			<version>${queryall.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.queryall</groupId>
 			<artifactId>queryall-lib</artifactId>
-			<version>1.1</version>
-			<type>jar</type>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-sparql</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-regex</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-rule-xslt</artifactId>
+			<version>${queryall.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.queryall</groupId>
 			<artifactId>queryall-webapp</artifactId>
-			<version>1.1</version>
-			<type>jar</type>
+			<version>${queryall.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -77,8 +93,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<type>jar</type>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -91,8 +106,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.2</version>
-			<type>jar</type>
+			<version>${slf4j.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -348,8 +362,5 @@
 			<name>DBIS Maven Releases Repository</name>
 			<url>http://on.cs.unibas.ch/maven/repository</url>
 		</repository>
-		<!-- <repository> <id>repo.rasea.org</id> <name>Rasea Maven Repository 
-			(only for UrlRewrite-3.2.0 while it is not in the standard Maven repos)</name> 
-			<url>http://repo.rasea.org/maven2/</url> </repository> -->
 	</repositories>
 </project>

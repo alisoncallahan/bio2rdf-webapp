@@ -37,7 +37,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<sesame.version>2.6.0</sesame.version>
-		<sesametools.version>1.5</sesametools.version>
+		<sesametools.version>1.6-SNAPSHOT</sesametools.version>
 		<slf4j.version>1.6.3</slf4j.version>
 		<queryall.version>1.2-SNAPSHOT</queryall.version>
 	</properties>
@@ -49,13 +49,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.queryall</groupId>
-			<artifactId>queryall-api</artifactId>
-			<version>${queryall.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.queryall</groupId>
-			<artifactId>queryall-lib</artifactId>
+			<artifactId>queryall-webapp</artifactId>
 			<version>${queryall.version}</version>
 			<scope>runtime</scope>
 		</dependency>
@@ -98,12 +92,6 @@
 		<dependency>
 			<groupId>org.queryall</groupId>
 			<artifactId>queryall-ext-querytype-rdf</artifactId>
-			<version>${queryall.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.queryall</groupId>
-			<artifactId>queryall-webapp</artifactId>
 			<version>${queryall.version}</version>
 			<scope>runtime</scope>
 		</dependency>

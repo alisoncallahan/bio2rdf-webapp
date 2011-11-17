@@ -85,6 +85,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.queryall</groupId>
+			<artifactId>queryall-ext-provider-rdf</artifactId>
+			<version>${queryall.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.queryall</groupId>
 			<artifactId>queryall-ext-querytype-regex</artifactId>
 			<version>${queryall.version}</version>
 			<scope>runtime</scope>

@@ -29,22 +29,22 @@ bio2rdf_profile:carleton a queryall_profile:Profile ;
 bio2rdf_profile:mquter a queryall_profile:Profile ;
 	dc:title "A selected profile including providers not publically accessible but available inside the Queensland University of Technology network." ;
 	queryall_profile:order "100"^^xsd:int ;
-	queryall_profile:allowImplicitQueryInclusions "true"^^xsd:boolean ;
-	queryall_profile:allowImplicitProviderInclusions "true"^^xsd:boolean ;
-	queryall_profile:allowImplicitRdfRuleInclusions "true"^^xsd:boolean ;
-	queryall_profile:defaultProfileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_profile:includesRdfRule bio2rdf_rdfrule:ontologyhashtocolon ; 	
-	queryall_profile:includesProvider bio2rdf_provider:qutrestrictedproxy , bio2rdf_provider:mquterstatistics , bio2rdf_provider:mquterterm , bio2rdf_provider:mqutertermreverse ;
+	queryall_profile:allowImplicitQueryInclusions "false"^^xsd:boolean ;
+	queryall_profile:allowImplicitProviderInclusions "false"^^xsd:boolean ;
+	queryall_profile:allowImplicitRdfRuleInclusions "false"^^xsd:boolean ;
+	queryall_profile:defaultProfileIncludeExcludeOrder queryall_profile:includeThenExclude .
+#	queryall_profile:includesRdfRule bio2rdf_rdfrule:ontologyhashtocolon ; 	
+#	queryall_profile:includesProvider bio2rdf_provider:qutrestrictedproxy , bio2rdf_provider:mquterstatistics , bio2rdf_provider:mquterterm , bio2rdf_provider:mqutertermreverse ;
 #	bio2rdf_provider:mquterkeggrnunsafe , bio2rdf_provider:mquterkeggrnunsafereverse , bio2rdf_provider:mquterkeggpathunsafe , bio2rdf_provider:mquterkeggpathunsafereverse , bio2rdf_provider:dbpediapagelinks , bio2rdf_provider:mquterflybase , bio2rdf_provider:mquterdrugbank1 , bio2rdf_provider:mquterdrugbank2 , bio2rdf_provider:mqutertaxonomy , bio2rdf_provider:mquterlinkedct , bio2rdf_provider:mqutergo , bio2rdf_provider:mqutergoreverse , bio2rdf_provider:mquterflyted2flybase , bio2rdf_provider:mquterlinkedctreverse , bio2rdf_provider:mquterbiopatmlhtml , bio2rdf_provider:mquterkeywordsreverse , bio2rdf_provider:mquterdrugbankreverse1 , bio2rdf_provider:mquterdrugbankreverse2 , bio2rdf_provider:mquterdrugbankreverse3 , bio2rdf_provider:mquterchebi , bio2rdf_provider:mquterdrugbank , bio2rdf_provider:mquterflyted , bio2rdf_provider:mquterdrugbankreverseinchikey , bio2rdf_provider:mquterecocycreverse , bio2rdf_provider:mquterecocyc , bio2rdf_provider:mquterkegg2geneid , bio2rdf_provider:mquterkeywords , bio2rdf_provider:mquterbiopatml , bio2rdf_provider:mqutertcm , bio2rdf_provider:mquterprovenancebykey , bio2rdf_provider:mquterprovenance;
-	queryall_profile:excludesProvider bio2rdf_provider:mqutergenerif , bio2rdf_provider:mqutertagquerieslabels , bio2rdf_provider:mqutermainqueriesdnsonly , 
-	bio2rdf_provider:mqutertagqueries , bio2rdf_provider:quebecmainqueries , bio2rdf_provider:mqutermainqueries , bio2rdf_provider:bio2rdfresolvermirrors ,
+#	queryall_profile:excludesProvider bio2rdf_provider:mqutergenerif , bio2rdf_provider:mqutertagquerieslabels , bio2rdf_provider:mqutermainqueriesdnsonly , 
+#	bio2rdf_provider:mqutertagqueries , bio2rdf_provider:quebecmainqueries , bio2rdf_provider:mqutermainqueries , bio2rdf_provider:bio2rdfresolvermirrors ,
 # DBpedia and HCLS are not accessible through the QUT firewall, so using proxy instead
-    bio2rdf_provider:hclsderidbpedia , bio2rdf_provider:hclsderidbpedia2meshreverse , bio2rdf_provider:hclsderidbpedia2mesh , bio2rdf_provider:dbpediadefaultreverse , bio2rdf_provider:dbpediapagelinks , bio2rdf_provider:dbpediasecondaryreverse , bio2rdf_provider:dbpediadefault , bio2rdf_provider:hclsderiobo2dbpedia , bio2rdf_provider:hclsderimeshconstruct , bio2rdf_provider:hclsderimeshreverseconstruct ,
+#    bio2rdf_provider:hclsderidbpedia , bio2rdf_provider:hclsderidbpedia2meshreverse , bio2rdf_provider:hclsderidbpedia2mesh , bio2rdf_provider:dbpediadefaultreverse , bio2rdf_provider:dbpediapagelinks , bio2rdf_provider:dbpediasecondaryreverse , bio2rdf_provider:dbpediadefault , bio2rdf_provider:hclsderiobo2dbpedia , bio2rdf_provider:hclsderimeshconstruct , bio2rdf_provider:hclsderimeshreverseconstruct ,
 # The new OBO SPARQL endpoint is not accessible through the QUT firewall, so using proxy instead
-    bio2rdf_provider:bioontology_aeo , bio2rdf_provider:bioontology_imgt ;
+#    bio2rdf_provider:bioontology_aeo , bio2rdf_provider:bioontology_imgt ;
 #	bio2rdf_provider:fuberlindrugbank , 
 #	, bio2rdf_provider:mirroredgo , bio2rdf_provider:fuberlindrugbankreverse1 , bio2rdf_provider:fuberlindrugbankreverse2 , bio2rdf_provider:fuberlindrugbank2 , bio2rdf_provider:fuberlindrugbank1 , bio2rdf_provider:quebecdbpediareverse , bio2rdf_provider:quebecdbpedia , bio2rdf_provider:officiallinkedct , bio2rdf_provider:officiallinkedctreverse ,
-    queryall_profile:excludesQuery bio2rdf_query:catchalldefault .
+#    queryall_profile:excludesQuery bio2rdf_query:catchalldefault .
 
 bio2rdf_profile:quebec a queryall_profile:Profile ;
 	dc:title "A common profile which allows a mix of providers suitable for clients close to the Quebec region." ;

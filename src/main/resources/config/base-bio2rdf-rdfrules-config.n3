@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_rdfrule:crossref_issn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:crossref_issn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:issn ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
 	queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/issn:" ;
@@ -19,7 +19,7 @@ bio2rdf_rdfrule:crossref_issn a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:crossref_contributor a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:crossref_contributor a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:crossref_contributor ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
 	queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/crossref_contributor:" ;
@@ -31,7 +31,7 @@ bio2rdf_rdfrule:crossref_contributor a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:crossref_doi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:crossref_doi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:doi ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
 	queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/doi:" ;
@@ -43,7 +43,7 @@ bio2rdf_rdfrule:crossref_doi a queryall_rdfrule:NormalisationRule , queryall_rdf
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioontology_obo_aeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioontology_obo_aeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obo_aeo ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/obo_aeo:" ;
@@ -55,7 +55,7 @@ bio2rdf_rdfrule:bioontology_obo_aeo a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioontology_imgt_ontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioontology_imgt_ontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:imgt_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/imgt_ontology:" ;
@@ -67,7 +67,7 @@ bio2rdf_rdfrule:bioontology_imgt_ontology a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:issnurn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:issnurn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:issn ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/issn:" ;
@@ -79,7 +79,7 @@ bio2rdf_rdfrule:issnurn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:farmbiochembltarget a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochembltarget a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_target ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_target:" ;
@@ -91,7 +91,7 @@ bio2rdf_rdfrule:farmbiochembltarget a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:farmbiochemblactivity a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochemblactivity a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_activity ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_activity:" ;
@@ -103,7 +103,7 @@ bio2rdf_rdfrule:farmbiochemblactivity a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:farmbiochemblassay a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochemblassay a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_assay ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_assay:" ;
@@ -115,7 +115,7 @@ bio2rdf_rdfrule:farmbiochemblassay a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:farmbiochembljournal a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochembljournal a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_journal ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_journal:" ;
@@ -127,7 +127,7 @@ bio2rdf_rdfrule:farmbiochembljournal a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:farmbiochemblresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochemblresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_resource ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_resource:" ;
@@ -140,7 +140,7 @@ bio2rdf_rdfrule:farmbiochemblresource a queryall_rdfrule:NormalisationRule , que
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:farmbiochemblmolecule a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochemblmolecule a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_molecule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_molecule:" ;
@@ -152,7 +152,7 @@ bio2rdf_rdfrule:farmbiochemblmolecule a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:farmbiochembltargettype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:farmbiochembltargettype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_targettype ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_targettype:" ;
@@ -164,7 +164,7 @@ bio2rdf_rdfrule:farmbiochembltargettype a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:wwwbio2rdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:wwwbio2rdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_target ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/" ;
@@ -177,7 +177,7 @@ bio2rdf_rdfrule:wwwbio2rdf a queryall_rdfrule:NormalisationRule , queryall_rdfru
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:drugbankkeggdr a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankkeggdr a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:kegg , bio2rdf_ns:dr ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dr:" ;
@@ -189,7 +189,7 @@ bio2rdf_rdfrule:drugbankkeggdr a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:ontologycolontonsunderscorequeries a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:ontologycolontonsunderscorequeries a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/([\\w-]+)_resource:" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/$1:" ;
@@ -198,7 +198,7 @@ bio2rdf_rdfrule:ontologycolontonsunderscorequeries a queryall_rdfrule:Normalisat
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:ontologycolontonsunderscore a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:ontologycolontonsunderscore a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+):" ;
 	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/$1_resource:" ;
@@ -206,7 +206,7 @@ bio2rdf_rdfrule:ontologycolontonsunderscore a queryall_rdfrule:NormalisationRule
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:onlynormaliseontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:onlynormaliseontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+)#" ;
 	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/$1:" ;
@@ -214,7 +214,7 @@ bio2rdf_rdfrule:onlynormaliseontologyhashtocolon a queryall_rdfrule:Normalisatio
 	queryall_rdfrule:order "300"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:ontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:ontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+):" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/$1#" ;
@@ -225,7 +225,7 @@ bio2rdf_rdfrule:ontologyhashtocolon a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "300"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:affymetrixtaxonmappinghuman a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:affymetrixtaxonmappinghuman a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:affymetrix , bio2rdf_ns:taxon ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxon:9606" ;
@@ -237,7 +237,7 @@ bio2rdf_rdfrule:affymetrixtaxonmappinghuman a queryall_rdfrule:NormalisationRule
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geneidgdbfix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geneidgdbfix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gdb , bio2rdf_ns:geneid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/gdb:(?!GDB)" ;
@@ -249,7 +249,7 @@ bio2rdf_rdfrule:geneidgdbfix a queryall_rdfrule:NormalisationRule , queryall_rdf
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geneidgdbreversefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geneidgdbreversefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gdb , bio2rdf_ns:geneid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/gdb:GDB" ;
@@ -264,7 +264,7 @@ bio2rdf_rdfrule:geneidgdbreversefix a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "90"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:eo ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/eo:" ;
@@ -276,7 +276,7 @@ bio2rdf_rdfrule:oboeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:Re
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tripleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tripleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/ns/ns/" ;
@@ -287,7 +287,7 @@ bio2rdf_rdfrule:tripleslashns a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "350"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:doubleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:doubleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/ns/" ;
@@ -298,7 +298,7 @@ bio2rdf_rdfrule:doubleslashns a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "350"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:badnsfoaf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:badnsfoaf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:foaf ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/foaf:" ;
@@ -311,7 +311,7 @@ bio2rdf_rdfrule:badnsfoaf a queryall_rdfrule:NormalisationRule , queryall_rdfrul
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
     
-bio2rdf_rdfrule:medicaredrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:medicaredrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:medicare_drugs ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/medicare_drugs:" ;
@@ -323,7 +323,7 @@ bio2rdf_rdfrule:medicaredrugs a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dailymedorganization a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dailymedorganization a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_organization ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_organization:" ;
@@ -335,7 +335,7 @@ bio2rdf_rdfrule:dailymedorganization a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tcmingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tcmingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_ingredient ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_ingredient:" ;
@@ -347,7 +347,7 @@ bio2rdf_rdfrule:tcmingredient a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesspecconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesspecconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_spec:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/spec_concept_uuid/$1/" ;
@@ -358,7 +358,7 @@ bio2rdf_rdfrule:geospeciesspecconcept a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboenvo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboenvo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:envo ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/envo:" ;
@@ -370,7 +370,7 @@ bio2rdf_rdfrule:oboenvo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesobservationconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesobservationconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_observation:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/observation_uuid/$1/" ;
@@ -381,7 +381,7 @@ bio2rdf_rdfrule:geospeciesobservationconcept a queryall_rdfrule:NormalisationRul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctagent a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctagent a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_agent ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_agent:" ;
@@ -393,7 +393,7 @@ bio2rdf_rdfrule:linkedctagent a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:owldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:owldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
 	queryall_rdfrule:inputReplaceRegex "http://owl\\.bio2rdf\\.org/" ;
@@ -404,7 +404,7 @@ bio2rdf_rdfrule:owldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pfampbcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pfampbcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pfam:PB" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/pfam:pb" ;
@@ -415,7 +415,7 @@ bio2rdf_rdfrule:pfampbcapitalisation a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboobidescriptionfile a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboobidescriptionfile a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obi_description ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/obi_description:" ;
@@ -427,7 +427,7 @@ bio2rdf_rdfrule:oboobidescriptionfile a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboobi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboobi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obi ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/obi:" ;
@@ -439,7 +439,7 @@ bio2rdf_rdfrule:oboobi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:R
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesorderconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesorderconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_order:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/order_concept_uuid/$1/" ;
@@ -450,7 +450,7 @@ bio2rdf_rdfrule:geospeciesorderconcept a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obotrans a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obotrans a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:trans ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/trans:" ;
@@ -462,7 +462,7 @@ bio2rdf_rdfrule:obotrans a queryall_rdfrule:NormalisationRule , queryall_rdfrule
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+)\\-(.+)" ;
 	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/$1:$2" ;
@@ -470,7 +470,7 @@ bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling a queryall_rdfrule:NormalisationRu
 	queryall_rdfrule:order "150"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctarmgroup a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctarmgroup a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_arm ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_arm:" ;
@@ -482,7 +482,7 @@ bio2rdf_rdfrule:linkedctarmgroup a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugs ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugs:" ;
@@ -494,7 +494,7 @@ bio2rdf_rdfrule:drugbankdrugs a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obouberonbasic a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obouberonbasic a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:uberon ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/uberon:" ;
@@ -506,7 +506,7 @@ bio2rdf_rdfrule:obouberonbasic a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:goassociationnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:goassociationnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go_association ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go_association:" ;
@@ -518,7 +518,7 @@ bio2rdf_rdfrule:goassociationnamespace a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biocartacategorynamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:biocartacategorynamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:biocarta_category ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/biocarta_category:" ;
@@ -530,7 +530,7 @@ bio2rdf_rdfrule:biocartacategorynamespace a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsprosite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsprosite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:prosite ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prosite:" ;
@@ -542,7 +542,7 @@ bio2rdf_rdfrule:neurocommonsprosite a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonssciencepmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonssciencepmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -554,7 +554,7 @@ bio2rdf_rdfrule:neurocommonssciencepmid a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:conceptassertionpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:conceptassertionpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -566,7 +566,7 @@ bio2rdf_rdfrule:conceptassertionpmid a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dailymeddrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dailymeddrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_drugs ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_drugs:" ;
@@ -578,7 +578,7 @@ bio2rdf_rdfrule:dailymeddrugs a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tcmdisease a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tcmdisease a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_disease ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_disease:" ;
@@ -590,7 +590,7 @@ bio2rdf_rdfrule:tcmdisease a queryall_rdfrule:NormalisationRule , queryall_rdfru
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:chebisourcenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:chebisourcenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chebi_source ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chebi_source:" ;
@@ -602,7 +602,7 @@ bio2rdf_rdfrule:chebisourcenamespace a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:siderdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:siderdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sider_drugs ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sider_drugs:" ;
@@ -614,7 +614,7 @@ bio2rdf_rdfrule:siderdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfru
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obopato a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obopato a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pato ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pato:" ;
@@ -626,7 +626,7 @@ bio2rdf_rdfrule:obopato a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioguidpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioguidpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -638,7 +638,7 @@ bio2rdf_rdfrule:bioguidpmid a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioguidissn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioguidissn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:issn ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/issn:" ;
@@ -650,7 +650,7 @@ bio2rdf_rdfrule:bioguidissn a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioguidgi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioguidgi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gi ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/gi:" ;
@@ -662,7 +662,7 @@ bio2rdf_rdfrule:bioguidgi a queryall_rdfrule:NormalisationRule , queryall_rdfrul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesorders a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesorders a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_orders:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/orders/$1" ;
@@ -673,7 +673,7 @@ bio2rdf_rdfrule:geospeciesorders a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediaresourcewww a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaresourcewww a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipedia ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/wikipedia:" ;
@@ -685,7 +685,7 @@ bio2rdf_rdfrule:dbpediaresourcewww a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospecieskingdoms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospecieskingdoms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_kingdoms:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/kingdoms/$1/" ;
@@ -696,7 +696,7 @@ bio2rdf_rdfrule:geospecieskingdoms a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tcmeffect a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tcmeffect a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_effect ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_effect:" ;
@@ -708,7 +708,7 @@ bio2rdf_rdfrule:tcmeffect a queryall_rdfrule:NormalisationRule , queryall_rdfrul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pubmed2pmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pubmed2pmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -720,7 +720,7 @@ bio2rdf_rdfrule:pubmed2pmid a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankdosageforms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankdosageforms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_dosageforms ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_dosageforms:" ;
@@ -732,7 +732,7 @@ bio2rdf_rdfrule:drugbankdosageforms a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:diseasomeontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:diseasomeontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_ontology:" ;
@@ -744,7 +744,7 @@ bio2rdf_rdfrule:diseasomeontology a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obopro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obopro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pro ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pro:" ;
@@ -756,7 +756,7 @@ bio2rdf_rdfrule:obopro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:R
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankdrugcategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankdrugcategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugcategory ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugcategory:" ;
@@ -768,7 +768,7 @@ bio2rdf_rdfrule:drugbankdrugcategory a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctresultsreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctresultsreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_results_reference ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_results_reference:" ;
@@ -780,7 +780,7 @@ bio2rdf_rdfrule:linkedctresultsreference a queryall_rdfrule:NormalisationRule , 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsmesh a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsmesh a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:mesh ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/mesh:" ;
@@ -792,7 +792,7 @@ bio2rdf_rdfrule:neurocommonsmesh a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_reference ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_reference:" ;
@@ -804,7 +804,7 @@ bio2rdf_rdfrule:linkedctreference a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsncbitaxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsncbitaxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxon ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxon:" ;
@@ -816,7 +816,7 @@ bio2rdf_rdfrule:neurocommonsncbitaxonomy a queryall_rdfrule:NormalisationRule , 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:openmoleculesinchi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:openmoleculesinchi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:inchi ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/inchi:" ;
@@ -828,7 +828,7 @@ bio2rdf_rdfrule:openmoleculesinchi a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:chempedianame a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:chempedianame a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chempedia_name:([\\w-]+)/" ;
 	queryall_rdfrule:inputReplaceRegex "http://chempedia\\.com/substances/$1/naming" ;
@@ -839,7 +839,7 @@ bio2rdf_rdfrule:chempedianame a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:chempediasubstance a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:chempediasubstance a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chempedia_substance ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chempedia_substance:" ;
@@ -851,7 +851,7 @@ bio2rdf_rdfrule:chempediasubstance a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:nmrshiftdb_molecule a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:nmrshiftdb_molecule a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_molecule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_molecule:" ;
@@ -863,7 +863,7 @@ bio2rdf_rdfrule:nmrshiftdb_molecule a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:nmrshiftdb_peak a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:nmrshiftdb_peak a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_peak ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_peak:" ;
@@ -875,7 +875,7 @@ bio2rdf_rdfrule:nmrshiftdb_peak a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:nmrshiftdb_bib a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:nmrshiftdb_bib a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_bib ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_bib:" ;
@@ -887,7 +887,7 @@ bio2rdf_rdfrule:nmrshiftdb_bib a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:nmrshiftdb_spectrum a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:nmrshiftdb_spectrum a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_spectrum ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_spectrum:" ;
@@ -899,7 +899,7 @@ bio2rdf_rdfrule:nmrshiftdb_spectrum a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioguiddoi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioguiddoi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:doi ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/doi:" ;
@@ -911,7 +911,7 @@ bio2rdf_rdfrule:bioguiddoi a queryall_rdfrule:NormalisationRule , queryall_rdfru
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obobspo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obobspo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:bspo ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/bspo:" ;
@@ -923,7 +923,7 @@ bio2rdf_rdfrule:obobspo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctcondition a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctcondition a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_condition ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_condition:" ;
@@ -935,7 +935,7 @@ bio2rdf_rdfrule:linkedctcondition a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dailymedrouteofadministration a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dailymedrouteofadministration a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_routeofadministration ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_routeofadministration:" ;
@@ -947,7 +947,7 @@ bio2rdf_rdfrule:dailymedrouteofadministration a queryall_rdfrule:NormalisationRu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsscienceowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsscienceowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sciencecommons_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sciencecommons_ontology:" ;
@@ -959,7 +959,7 @@ bio2rdf_rdfrule:neurocommonsscienceowl a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude .
 
-bio2rdf_rdfrule:biopaxurls a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:biopaxurls a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "" ;
 	queryall_rdfrule:inputReplaceRegex "" ;
@@ -970,7 +970,7 @@ bio2rdf_rdfrule:biopaxurls a queryall_rdfrule:NormalisationRule , queryall_rdfru
 	queryall_rdfrule:order "30"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biopaxgofix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:biopaxgofix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go:" ;
@@ -982,7 +982,7 @@ bio2rdf_rdfrule:biopaxgofix a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:diseasomediseases a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:diseasomediseases a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_diseases ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_diseases:" ;
@@ -994,7 +994,7 @@ bio2rdf_rdfrule:diseasomediseases a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dailymedinactiveingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dailymedinactiveingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_inactiveingredient ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_inactiveingredient:" ;
@@ -1006,7 +1006,7 @@ bio2rdf_rdfrule:dailymedinactiveingredient a queryall_rdfrule:NormalisationRule 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctintervention a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctintervention a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_intervention ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_intervention:" ;
@@ -1018,7 +1018,7 @@ bio2rdf_rdfrule:linkedctintervention a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obodoid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obodoid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:doid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/doid:" ;
@@ -1030,7 +1030,7 @@ bio2rdf_rdfrule:obodoid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:taxon2taxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:taxon2taxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxonomy ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxonomy:" ;
@@ -1042,7 +1042,7 @@ bio2rdf_rdfrule:taxon2taxonomy a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pfampfcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pfampfcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pfam:PF" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/pfam:pf" ;
@@ -1053,7 +1053,7 @@ bio2rdf_rdfrule:pfampfcapitalisation a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesspecimenconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesspecimenconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_specimen:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/specimen_uuid/$1/" ;
@@ -1064,7 +1064,7 @@ bio2rdf_rdfrule:geospeciesspecimenconcept a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsproteinbysequencegeneid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsproteinbysequencegeneid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:geneid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geneid:" ;
@@ -1076,7 +1076,7 @@ bio2rdf_rdfrule:neurocommonsproteinbysequencegeneid a queryall_rdfrule:Normalisa
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:omimstatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:omimstatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:omim_status ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/omim_status:" ;
@@ -1088,7 +1088,7 @@ bio2rdf_rdfrule:omimstatusnamespace a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctsecondaryoutcomes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctsecondaryoutcomes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_secondary_outcomes ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_secondary_outcomes:" ;
@@ -1100,7 +1100,7 @@ bio2rdf_rdfrule:linkedctsecondaryoutcomes a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dailymedontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dailymedontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_ontology:" ;
@@ -1112,7 +1112,7 @@ bio2rdf_rdfrule:dailymedontology a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbanktargets a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbanktargets a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_targets ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_targets:" ;
@@ -1124,7 +1124,7 @@ bio2rdf_rdfrule:drugbanktargets a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tcmgene a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tcmgene a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_gene ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_gene:" ;
@@ -1136,7 +1136,7 @@ bio2rdf_rdfrule:tcmgene a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:diseasomegenes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:diseasomegenes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_genes ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_genes:" ;
@@ -1148,7 +1148,7 @@ bio2rdf_rdfrule:diseasomegenes a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesfamilies a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesfamilies a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_families:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/families/$1" ;
@@ -1159,7 +1159,7 @@ bio2rdf_rdfrule:geospeciesfamilies a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:prositecapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:prositecapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prosite:PS" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/prosite:ps" ;
@@ -1170,7 +1170,7 @@ bio2rdf_rdfrule:prositecapitalisation a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:taxonomy2taxon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:taxonomy2taxon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxon ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxon:" ;
@@ -1182,7 +1182,7 @@ bio2rdf_rdfrule:taxonomy2taxon a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankdruginteractions a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankdruginteractions a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_druginteractions ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_druginteractions:" ;
@@ -1194,7 +1194,7 @@ bio2rdf_rdfrule:drugbankdruginteractions a queryall_rdfrule:NormalisationRule , 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctoversight a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctoversight a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_oversight ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_oversight:" ;
@@ -1206,7 +1206,7 @@ bio2rdf_rdfrule:linkedctoversight a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbanknamespacefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbanknamespacefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugs ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugs:" ;
@@ -1218,7 +1218,7 @@ bio2rdf_rdfrule:drugbanknamespacefix a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctlocation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctlocation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_location ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_location:" ;
@@ -1230,7 +1230,7 @@ bio2rdf_rdfrule:linkedctlocation a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsgo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsgo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go:" ;
@@ -1242,7 +1242,7 @@ bio2rdf_rdfrule:neurocommonsgo a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesfamilyconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesfamilyconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_family:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/family_concept_uuid/$1/" ;
@@ -1253,7 +1253,7 @@ bio2rdf_rdfrule:geospeciesfamilyconcept a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctlink a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctlink a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_link ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_link:" ;
@@ -1265,7 +1265,7 @@ bio2rdf_rdfrule:linkedctlink a queryall_rdfrule:NormalisationRule , queryall_rdf
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesphyla a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesphyla a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_phyla:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/phyla/$1/" ;
@@ -1276,7 +1276,7 @@ bio2rdf_rdfrule:geospeciesphyla a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesordersrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesordersrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rdf/geospecies_orders:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/orders/$1.rdf" ;
@@ -1287,7 +1287,7 @@ bio2rdf_rdfrule:geospeciesordersrdf a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dailymedingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dailymedingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_ingredient ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_ingredient:" ;
@@ -1299,7 +1299,7 @@ bio2rdf_rdfrule:dailymedingredient a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesfamiliesrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesfamiliesrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rdf/geospecies_families:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/families/$1.rdf" ;
@@ -1310,7 +1310,7 @@ bio2rdf_rdfrule:geospeciesfamiliesrdf a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_ontology:" ;
@@ -1322,7 +1322,7 @@ bio2rdf_rdfrule:drugbankontology a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:medicareontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:medicareontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:medicare_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/medicare_ontology:" ;
@@ -1334,7 +1334,7 @@ bio2rdf_rdfrule:medicareontology a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:medicaredrugtype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:medicaredrugtype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:medicare_drugtype ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/medicare_drugtype:" ;
@@ -1346,7 +1346,7 @@ bio2rdf_rdfrule:medicaredrugtype a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obomiro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obomiro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:miro ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/miro:" ;
@@ -1358,7 +1358,7 @@ bio2rdf_rdfrule:obomiro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediaclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dbpediaclass ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dbpediaclass:" ;
@@ -1370,7 +1370,7 @@ bio2rdf_rdfrule:dbpediaclass a queryall_rdfrule:NormalisationRule , queryall_rdf
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediacategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediacategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipediacategory ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/wikipedia_category:" ;
@@ -1382,7 +1382,7 @@ bio2rdf_rdfrule:dbpediacategory a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:prodomcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:prodomcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prodom:PD" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/prodom:pd" ;
@@ -1393,7 +1393,7 @@ bio2rdf_rdfrule:prodomcapitalisation a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tcmmedicine a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tcmmedicine a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_medicine ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_medicine:" ;
@@ -1405,7 +1405,7 @@ bio2rdf_rdfrule:tcmmedicine a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pubmedlinks a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pubmedlinks a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -1417,7 +1417,7 @@ bio2rdf_rdfrule:pubmedlinks a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankdrugtype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankdrugtype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugtype ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugtype:" ;
@@ -1429,7 +1429,7 @@ bio2rdf_rdfrule:drugbankdrugtype a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankpubmedreferences a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankpubmedreferences a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -1441,7 +1441,7 @@ bio2rdf_rdfrule:drugbankpubmedreferences a queryall_rdfrule:NormalisationRule , 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonspmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonspmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -1453,7 +1453,7 @@ bio2rdf_rdfrule:neurocommonspmid a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:mgigeneexpressiondatabase a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:mgigeneexpressiondatabase a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:mgi_gxd ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/mgi_gxd:" ;
@@ -1465,7 +1465,7 @@ bio2rdf_rdfrule:mgigeneexpressiondatabase a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbdotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbdotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/([\\w-]+):(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://$1\\.bio2rdf\\.org/$1:$2" ;
@@ -1476,7 +1476,7 @@ bio2rdf_rdfrule:dbdotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:sidersideeffects a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:sidersideeffects a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sider_sideeffects ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sider_sideeffects:" ;
@@ -1488,7 +1488,7 @@ bio2rdf_rdfrule:sidersideeffects a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:prositepdoccapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:prositepdoccapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prosite:PDOC" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/prosite:pdoc" ;
@@ -1499,7 +1499,7 @@ bio2rdf_rdfrule:prositepdoccapitalisation a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_resource ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_resource:" ;
@@ -1511,7 +1511,7 @@ bio2rdf_rdfrule:linkedctresource a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:slashowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:slashowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/owl/" ;
@@ -1522,7 +1522,7 @@ bio2rdf_rdfrule:slashowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsgeneid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsgeneid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:geneid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geneid:" ;
@@ -1534,7 +1534,7 @@ bio2rdf_rdfrule:neurocommonsgeneid a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:goflybasefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:goflybasefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:flybase ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/flybase:" ;
@@ -1546,7 +1546,7 @@ bio2rdf_rdfrule:goflybasefix a queryall_rdfrule:NormalisationRule , queryall_rdf
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboto a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboto a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:to ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/to:" ;
@@ -1558,7 +1558,7 @@ bio2rdf_rdfrule:oboto a queryall_rdfrule:NormalisationRule , queryall_rdfrule:Re
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctprimaryoutcomes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctprimaryoutcomes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_primary_outcomes ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_primary_outcomes:" ;
@@ -1570,7 +1570,7 @@ bio2rdf_rdfrule:linkedctprimaryoutcomes a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:goevidencenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:goevidencenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go_evidence ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go_evidence:" ;
@@ -1582,7 +1582,7 @@ bio2rdf_rdfrule:goevidencenamespace a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediaproperty a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaproperty a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dbpedia_property:" ;
 	queryall_rdfrule:inputReplaceRegex "http://dbpedia\\.org/property/" ;
@@ -1593,7 +1593,7 @@ bio2rdf_rdfrule:dbpediaproperty a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:rxlistgeneric2 a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:rxlistgeneric2 a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rxlist:(\\w+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://www\\.rxlist\\.com/cgi/generic2/$1\\.htm" ;
@@ -1604,7 +1604,7 @@ bio2rdf_rdfrule:rxlistgeneric2 a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedcttrials a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedcttrials a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_trial ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_trial:" ;
@@ -1616,7 +1616,7 @@ bio2rdf_rdfrule:linkedcttrials a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:diseasomediseaseclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:diseasomediseaseclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_diseaseclass ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_diseaseclass:" ;
@@ -1628,7 +1628,7 @@ bio2rdf_rdfrule:diseasomediseaseclass a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:obogo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:obogo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go:" ;
@@ -1640,7 +1640,7 @@ bio2rdf_rdfrule:obogo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:Re
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsmeshrecord a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsmeshrecord a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:mesh ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/mesh:" ;
@@ -1652,7 +1652,7 @@ bio2rdf_rdfrule:neurocommonsmeshrecord a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesbioclassconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesbioclassconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_bioclass:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/bioclass_concept_id/$1/" ;
@@ -1663,7 +1663,7 @@ bio2rdf_rdfrule:geospeciesbioclassconcept a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonspmidrecord a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonspmidrecord a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
@@ -1675,7 +1675,7 @@ bio2rdf_rdfrule:neurocommonspmidrecord a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:interprocapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:interprocapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/interpro:IPR" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/interpro:ipr" ;
@@ -1686,7 +1686,7 @@ bio2rdf_rdfrule:interprocapitalisation a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:chebistatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:chebistatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chebi_status ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chebi_status:" ;
@@ -1698,7 +1698,7 @@ bio2rdf_rdfrule:chebistatusnamespace a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboso a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboso a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:so ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/so:" ;
@@ -1710,7 +1710,7 @@ bio2rdf_rdfrule:oboso a queryall_rdfrule:NormalisationRule , queryall_rdfrule:Re
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:rxlistgeneric a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:rxlistgeneric a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rxlist:(\\w+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://www\\.rxlist\\.com/cgi/generic/$1\\.htm" ;
@@ -1721,7 +1721,7 @@ bio2rdf_rdfrule:rxlistgeneric a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oldontologyterms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oldontologyterms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+):" ;
 	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/$1#" ;
@@ -1732,7 +1732,7 @@ bio2rdf_rdfrule:oldontologyterms a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:linkedctoverallofficial a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:linkedctoverallofficial a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_overall_official ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_overall_official:" ;
@@ -1744,7 +1744,7 @@ bio2rdf_rdfrule:linkedctoverallofficial a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbankenzymes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankenzymes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_enzymes ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_enzymes:" ;
@@ -1756,7 +1756,7 @@ bio2rdf_rdfrule:drugbankenzymes a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesobservationsrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesobservationsrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rdf/geospecies_observations:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/observations/$1.rdf" ;
@@ -1767,7 +1767,7 @@ bio2rdf_rdfrule:geospeciesobservationsrdf a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pmid2pubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pmid2pubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pmid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pmid:" ;
@@ -1779,7 +1779,7 @@ bio2rdf_rdfrule:pmid2pubmed a queryall_rdfrule:NormalisationRule , queryall_rdfr
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biopaxontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:biopaxontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "" ;
 	queryall_rdfrule:inputReplaceRegex "" ;
@@ -1790,7 +1790,7 @@ bio2rdf_rdfrule:biopaxontology a queryall_rdfrule:NormalisationRule , queryall_r
 	queryall_rdfrule:order "40"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:siderontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:siderontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sider_ontology ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sider_ontology:" ;
@@ -1802,7 +1802,7 @@ bio2rdf_rdfrule:siderontology a queryall_rdfrule:NormalisationRule , queryall_rd
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediaresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipedia ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/wikipedia:" ;
@@ -1814,7 +1814,7 @@ bio2rdf_rdfrule:dbpediaresource a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:wikipedia2dbpedia a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:wikipedia2dbpedia a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipedia ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/dbpedia:" ;
@@ -1823,7 +1823,7 @@ bio2rdf_rdfrule:wikipedia2dbpedia a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospecieslocationconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospecieslocationconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_location:(.*)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/location_uuid/$1/" ;
@@ -1834,7 +1834,7 @@ bio2rdf_rdfrule:geospecieslocationconcept a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:symboldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:symboldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:symbol ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/symbol:" ;
@@ -1846,7 +1846,7 @@ bio2rdf_rdfrule:symboldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bio2drfmisspelling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bio2drfmisspelling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:bio2rdf_resource ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/bio2rdf_resource:" ;
@@ -1858,7 +1858,7 @@ bio2rdf_rdfrule:bio2drfmisspelling a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "190"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:geospeciesobservations a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:geospeciesobservations a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_observations:([\\w-]+)" ;
 	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/observations/$1/" ;
@@ -1869,7 +1869,7 @@ bio2rdf_rdfrule:geospeciesobservations a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:tcminterlink a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:tcminterlink a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_interlink ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_interlink:" ;
@@ -1881,7 +1881,7 @@ bio2rdf_rdfrule:tcminterlink a queryall_rdfrule:NormalisationRule , queryall_rdf
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:diseasomechromosomallocation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:diseasomechromosomallocation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_chromosomallocation ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_chromosomallocation:" ;
@@ -1893,7 +1893,7 @@ bio2rdf_rdfrule:diseasomechromosomallocation a queryall_rdfrule:NormalisationRul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:ontologydotbio2rdfdotorghhpid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:ontologydotbio2rdfdotorghhpid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:hhpid_resource ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/hhpid_resource:" ;

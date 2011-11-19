@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_rdfrule:sparqlowlsameastrivialdelete a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:sparqlowlsameastrivialdelete a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://www.w3.org/2002/07/owl#sameAs> ?myUri ." ;
     queryall_rdfrule:sparqlWherePattern "?myUri <http://www.w3.org/2002/07/owl#sameAs> ?myUri ." ;
@@ -16,7 +16,7 @@ bio2rdf_rdfrule:sparqlowlsameastrivialdelete a queryall_rdfrule:NormalisationRul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:removeemptynamespaceucscuris a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:removeemptynamespaceucscuris a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri ?property <http://bio2rdf.org/ucsc:> . " ;
     queryall_rdfrule:sparqlWherePattern "?myUri ?property <http://bio2rdf.org/ucsc:> . " ;
@@ -25,7 +25,7 @@ bio2rdf_rdfrule:removeemptynamespaceucscuris a queryall_rdfrule:NormalisationRul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:sparqllinkedtofromunretrievedblanknoderemoval a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:sparqllinkedtofromunretrievedblanknoderemoval a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?blanknode . ";
     queryall_rdfrule:sparqlWherePattern "?myUri <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?blanknode . FILTER(isBlank(?blanknode)) OPTIONAL { ?blanknode ?pred ?obj } .
@@ -35,7 +35,7 @@ bio2rdf_rdfrule:sparqllinkedtofromunretrievedblanknoderemoval a queryall_rdfrule
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
  
-bio2rdf_rdfrule:sparqlobodbxrefunretrievedblanknoderemoval a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:sparqlobodbxrefunretrievedblanknoderemoval a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://bio2rdf.org/obo_resource:dbxref> ?blanknode . " ;
     queryall_rdfrule:sparqlWherePattern "?myUri <http://bio2rdf.org/obo_resource:dbxref> ?blanknode . FILTER(isBlank(?blanknode)) OPTIONAL { ?blanknode ?pred ?obj } .
@@ -45,7 +45,7 @@ bio2rdf_rdfrule:sparqlobodbxrefunretrievedblanknoderemoval a queryall_rdfrule:No
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:sparqlownequivalentclassblanknoderemoval a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:sparqlownequivalentclassblanknoderemoval a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://www.w3.org/2002/07/owl#equivalentClass> ?blanknode ." ;
     queryall_rdfrule:sparqlWherePattern "?myUri <http://www.w3.org/2002/07/owl#equivalentClass> ?blanknode . FILTER(isBlank(?blanknode)) OPTIONAL { ?blanknode ?pred ?obj } .
@@ -55,7 +55,7 @@ bio2rdf_rdfrule:sparqlownequivalentclassblanknoderemoval a queryall_rdfrule:Norm
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:sparqlremoveplaintextemailaddresses a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:sparqlremoveplaintextemailaddresses a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://xmlns.com/foaf/0.1/mbox> ?email . " ;
     queryall_rdfrule:sparqlWherePattern "?myUri <http://xmlns.com/foaf/0.1/mbox> ?email . FILTER(REGEX(str(?email), \"mailto:.*\") || REGEX(str(?email), \".*@.*\") ) " ;
@@ -64,7 +64,7 @@ bio2rdf_rdfrule:sparqlremoveplaintextemailaddresses a queryall_rdfrule:Normalisa
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:sparqlremovelsid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:sparqlremovelsid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://bio2rdf.org/bio2rdf_resource:lsid> ?lsid . " ;
     queryall_rdfrule:sparqlWherePattern " ?myUri <http://bio2rdf.org/bio2rdf_resource:lsid> ?lsid . " ;
@@ -73,7 +73,7 @@ bio2rdf_rdfrule:sparqlremovelsid a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsgeneaddsymboluri a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsgeneaddsymboluri a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:symbol , bio2rdf_ns:geneid ;
     queryall_rdfrule:sparqlMode queryall_rdfrule:addAllMatchingTriples ;
     queryall_rdfrule:sparqlConstructQueryTarget "?myUri <http://bio2rdf.org/bio2rdf_resource:dbxref> ?symbolUri . " ;
@@ -83,7 +83,7 @@ bio2rdf_rdfrule:neurocommonsgeneaddsymboluri a queryall_rdfrule:NormalisationRul
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioontology_obo_aeo_sparql a queryall_rdfrule:NormalisationRule , queryall_rdfrule:SparqlNormalisationRule ;
+bio2rdf_rdfrule:bioontology_obo_aeo_sparql a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obo_aeo ;
 	queryall_rdfrule:stage queryall_rdfrule:afterResultsImport ;
     queryall_rdfrule:sparqlConstructQueryTarget "" ;

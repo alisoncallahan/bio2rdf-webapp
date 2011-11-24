@@ -76,6 +76,42 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
         this.getWebTester().gotoPage("/admin/configuration/"+Settings.CONFIG_API_VERSION+"/json");
     }
 
+    /**
+     * Tests that the /admin/configuration/CURRENT/html interface is working correctly
+     * 
+     * WARNING: The Bio2RDF configuration HTML page is so large that HTMLUnit cannot deal with it.
+     * 
+     * DO NOT REMOVE the Ignore annotation below without reason, as it will fail after a few minutes with OutOfMemoryError
+     */
+    @Ignore
+    @Test
+    public void testCurrentApiVersionAdminConfigurationHtml()
+    {
+        this.getWebTester().gotoPage("/admin/configuration/"+Settings.CONFIG_API_VERSION+"/html");
+    }
+
+    /**
+     * Tests that the /admin/stats page was generated using the correct headers and that it wasn't interrupted
+     */
+    @Test
+    public void testAdminStats()
+    {
+        this.getWebTester().gotoPage("/admin/stats");
+        
+        this.getWebTester().assertTextPresent("Current date : ");
+        
+        this.getWebTester().assertTextPresent("Server Version : ");
+        
+        this.getWebTester().assertTextPresent("Now : ");
+        
+        this.getWebTester().assertTextPresent("Last error reset date: ");
+        this.getWebTester().assertTextPresent("Server startup date: ");
+        this.getWebTester().assertTextPresent("Reset period ");
+        
+        this.getWebTester().assertTextPresent("Client blacklist will reset in ");
+        
+    }
+
     @Override
     protected String getBaseUrl()
     {

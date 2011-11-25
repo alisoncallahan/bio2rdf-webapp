@@ -1314,7 +1314,7 @@ bio2rdf_ns:synonym a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , q
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:cl-emapa a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:cl-emapa a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -1884,7 +1884,7 @@ bio2rdf_ns:uo a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , querya
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:value-type a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:value-type a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3434,7 +3434,7 @@ bio2rdf_ns:subtilistg a queryall_ns:Namespace , queryall_ns:ValidatingNamespace 
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:swiss-prot a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:swiss-prot a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3544,7 +3544,7 @@ bio2rdf_ns:um a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , querya
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:um-bbd_enzymeid a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:um-bbd_enzymeid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3554,7 +3554,7 @@ bio2rdf_ns:um-bbd_enzymeid a <http://purl.org/queryall/ns:Namespace ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:um-bbd_pathwayid a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:um-bbd_pathwayid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3564,7 +3564,7 @@ bio2rdf_ns:um-bbd_pathwayid a <http://purl.org/queryall/ns:Namespace ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:um-bbd_reactionid a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:um-bbd_reactionid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3574,7 +3574,7 @@ bio2rdf_ns:um-bbd_reactionid a <http://purl.org/queryall/ns:Namespace ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:um-bbd_ruleid a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:um-bbd_ruleid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3634,7 +3634,7 @@ bio2rdf_ns:linkhub a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , q
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:embl-cds a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:embl-cds a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3794,7 +3794,7 @@ bio2rdf_ns:nextbio a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , q
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:pathway-interaction-db a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:pathway-interaction-db a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -3864,7 +3864,7 @@ bio2rdf_ns:tuberculist a queryall_ns:Namespace , queryall_ns:ValidatingNamespace
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:dosac-cobs-2dpage a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:dosac-cobs-2dpage a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -4908,7 +4908,7 @@ bio2rdf_ns:tng a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , query
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:gm99-gb4 a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:gm99-gb4 a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -4928,7 +4928,7 @@ bio2rdf_ns:ncbi_rh a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , q
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:nhgri-7 a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:nhgri-7 a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -4938,7 +4938,7 @@ bio2rdf_ns:nhgri-7 a <http://purl.org/queryall/ns:Namespace ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:wustl-x a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:wustl-x a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -5088,7 +5088,7 @@ bio2rdf_ns:ddbj a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , quer
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:uniprot-swiss-prot a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:uniprot-swiss-prot a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -5148,7 +5148,7 @@ bio2rdf_ns:arkdb a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , que
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:aceview-wormgenes a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:aceview-wormgenes a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -5168,7 +5168,7 @@ bio2rdf_ns:pharmgkb a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , 
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:imgt-gene-db a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:imgt-gene-db a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -5278,7 +5278,7 @@ bio2rdf_ns:ratmap a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:uniprot-trembl a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:uniprot-trembl a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -5368,7 +5368,7 @@ bio2rdf_ns:sanger a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:nucleotide-protein a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:nucleotide-protein a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -6049,7 +6049,7 @@ bio2rdf_ns:lipidmaps a queryall_ns:Namespace , queryall_ns:ValidatingNamespace ,
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:pdb-ccd a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:pdb-ccd a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -15729,7 +15729,7 @@ bio2rdf_ns:maps a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , quer
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:sabio-rk a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:sabio-rk a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -16089,7 +16089,7 @@ bio2rdf_ns:gramene a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , q
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:h-invdb a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:h-invdb a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -16109,7 +16109,7 @@ bio2rdf_ns:pdbsum a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:reproduction-2dpage a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:reproduction-2dpage a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
@@ -16149,7 +16149,7 @@ bio2rdf_ns:peptideatlas a queryall_ns:Namespace , queryall_ns:ValidatingNamespac
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:swiss-2dpage a <http://purl.org/queryall/ns:Namespace ;
+bio2rdf_ns:swiss-2dpage a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;

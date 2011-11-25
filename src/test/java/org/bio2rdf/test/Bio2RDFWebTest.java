@@ -136,6 +136,10 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
         
         this.getWebTester().assertTextPresent("Queries for this namespace (");
         this.getWebTester().assertTextPresent("Namespaces for this query (");
+        
+        // Verify that there are no providers without namespaces or namespaces without providers
+        this.getWebTester().assertTextNotPresent("NO Providers known for this namespace");
+        this.getWebTester().assertTextNotPresent("Namespaces found on providers without definitions:");
     }
 
     

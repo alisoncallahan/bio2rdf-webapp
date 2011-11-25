@@ -112,6 +112,34 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
         
     }
 
+    /**
+     * Tests that the /admin/namespaceproviders page was generated using the correct headers and that it wasn't interrupted
+     */
+    @Test
+    public void testAdminNamespaceProviders()
+    {
+        this.getWebTester().gotoPage("/admin/namespaceproviders");
+        
+        this.getWebTester().assertTextPresent("Number of namespaces that are known = ");
+        this.getWebTester().assertTextPresent("Number of namespaces that have providers = ");
+        this.getWebTester().assertTextPresent("Number of query titles = ");
+        this.getWebTester().assertTextPresent("Number of providers = ");
+        this.getWebTester().assertTextPresent("Number of rdf normalisation rules = ");
+        this.getWebTester().assertTextPresent("Number of rdf normalisation rule tests = ");
+        this.getWebTester().assertTextPresent("Number of profiles = ");
+        this.getWebTester().assertTextPresent("Number of namespace provider options = ");
+        this.getWebTester().assertTextPresent("Number of query title provider options = ");
+        this.getWebTester().assertTextPresent("Number of query title and namespace combinations = ");
+        this.getWebTester().assertTextPresent("Number of query title and namespace combination provider options = ");
+        
+        this.getWebTester().assertTextPresent("Raw complete namespace Collection");
+        
+        this.getWebTester().assertTextPresent("Queries for this namespace (");
+        this.getWebTester().assertTextPresent("Namespaces for this query (");
+    }
+
+    
+    
     @Override
     protected String getBaseUrl()
     {

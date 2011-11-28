@@ -143,6 +143,16 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     }
 
     
+    /**
+     * Tests that the /admin/test/rules page did not indicate any test failures
+     */
+    @Test
+    public void testAdminTestRules()
+    {
+        this.getWebTester().gotoPage("/admin/test/rules");
+        
+        this.getWebTester().assertTextNotPresent("Test Failure occured");
+    }
     
     @Override
     protected String getBaseUrl()

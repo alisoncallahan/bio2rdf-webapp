@@ -152,7 +152,11 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     {
         this.getWebTester().gotoPage("/admin/test/rules");
         
+        // check that there were no failures
         this.getWebTester().assertTextNotPresent("Test Failure occured");
+        
+        // also check that success message was displayed
+        this.getWebTester().assertTextPresent("All Tests passed");
     }
     
     @Override

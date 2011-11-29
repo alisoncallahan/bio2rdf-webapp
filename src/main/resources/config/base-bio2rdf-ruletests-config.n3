@@ -611,7 +611,7 @@ bio2rdf_ruletest:myexperimentpack_1 a queryall_ruletest:RuleTest , queryall_rule
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:myexperimentpack ;
 	queryall_ruletest:inputTestString "http://bio2rdf.org/myexp_pack:36" ;
-	queryall_ruletest:outputTestString "http://www.myexperiment.org/Pack/36" .
+	queryall_ruletest:outputTestString "http://www.myexperiment.org/packs/36" .
 
 bio2rdf_ruletest:drugbanknamespacefix_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;

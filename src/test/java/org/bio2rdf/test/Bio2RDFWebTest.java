@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.queryall.query.Settings;
+import org.queryall.webapp.test.AbstractQueryAllWebTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

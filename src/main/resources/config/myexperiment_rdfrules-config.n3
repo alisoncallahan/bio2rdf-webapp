@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_rdfrule:myexperimentfile a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentfile a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_file ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_file:" ;
@@ -19,7 +19,7 @@ bio2rdf_rdfrule:myexperimentfile a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentpolicy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentpolicy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_policy ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_policy:" ;
@@ -31,7 +31,7 @@ bio2rdf_rdfrule:myexperimentpolicy a queryall_rdfrule:NormalisationRule , querya
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentcreditation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentcreditation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_creditation ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_creditation:" ;
@@ -43,7 +43,7 @@ bio2rdf_rdfrule:myexperimentcreditation a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentfriendship a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentfriendship a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_friendship ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_friendship:" ;
@@ -55,7 +55,7 @@ bio2rdf_rdfrule:myexperimentfriendship a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentgroupannouncement a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentgroupannouncement a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_groupannouncement ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_groupannouncement:" ;
@@ -67,7 +67,7 @@ bio2rdf_rdfrule:myexperimentgroupannouncement a queryall_rdfrule:NormalisationRu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentworkflow a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentworkflow a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_workflow ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_workflow:" ;
@@ -79,7 +79,7 @@ bio2rdf_rdfrule:myexperimentworkflow a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentdownloads a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentdownloads a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_downloads ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_downloads:" ;
@@ -91,7 +91,7 @@ bio2rdf_rdfrule:myexperimentdownloads a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentcomment a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentcomment a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_comment ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_comment:" ;
@@ -103,7 +103,7 @@ bio2rdf_rdfrule:myexperimentcomment a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentcontenttype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentcontenttype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_contenttype ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_contenttype:" ;
@@ -115,7 +115,7 @@ bio2rdf_rdfrule:myexperimentcontenttype a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentlicense a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentlicense a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_license ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_license:" ;
@@ -127,7 +127,7 @@ bio2rdf_rdfrule:myexperimentlicense a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentrdfformat a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentrdfformat a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/myexp_([\\w-]+):(\\d+)\\.rdf" ;
 	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/rdfxml/myexp_$1:$2" ;
@@ -135,7 +135,7 @@ bio2rdf_rdfrule:myexperimentrdfformat a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentxmlformat a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentxmlformat a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/myexp_([\\w-]+):(\\d+)\\.xml" ;
 	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/xml/myexp_$1:$2" ;
@@ -143,7 +143,7 @@ bio2rdf_rdfrule:myexperimentxmlformat a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimenthtmlformat a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimenthtmlformat a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
     queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/myexp_([\\w-]+):(\\d+)\\.html" ;
 	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/html/myexp_$1:$2" ;
@@ -151,7 +151,7 @@ bio2rdf_rdfrule:myexperimenthtmlformat a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentworkflowversioncomponent a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentworkflowversioncomponent a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_workflowversioncomponent ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_workflowversioncomponent:(\\d+)-(\\d+)" ;
@@ -163,7 +163,7 @@ bio2rdf_rdfrule:myexperimentworkflowversioncomponent a queryall_rdfrule:Normalis
 	queryall_rdfrule:order "90"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimenttagstaggings a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimenttagstaggings a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_tagstaggings ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_tagstaggings:(\\d+)-(\\d+)" ;
@@ -175,7 +175,7 @@ bio2rdf_rdfrule:myexperimenttagstaggings a queryall_rdfrule:NormalisationRule , 
 	queryall_rdfrule:order "90"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentuser a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentuser a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_user ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_user:" ;
@@ -187,7 +187,7 @@ bio2rdf_rdfrule:myexperimentuser a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentmembership a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentmembership a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_membership ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_membership:" ;
@@ -199,7 +199,7 @@ bio2rdf_rdfrule:myexperimentmembership a queryall_rdfrule:NormalisationRule , qu
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentgroup a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentgroup a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_group ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_group:" ;
@@ -211,7 +211,7 @@ bio2rdf_rdfrule:myexperimentgroup a queryall_rdfrule:NormalisationRule , queryal
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentusermembership a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentusermembership a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_user_membership ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_user_membership:(\\d+):(\\d+)" ;
@@ -223,7 +223,7 @@ bio2rdf_rdfrule:myexperimentusermembership a queryall_rdfrule:NormalisationRule 
 	queryall_rdfrule:order "90"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentuserfavourite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentuserfavourite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_user_favourite ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_user_favourite:(\\d+):(\\d+)" ;
@@ -235,7 +235,7 @@ bio2rdf_rdfrule:myexperimentuserfavourite a queryall_rdfrule:NormalisationRule ,
 	queryall_rdfrule:order "90"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentwwwworkflow a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentwwwworkflow a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/html/myexp_workflow:" ;
 	queryall_rdfrule:inputReplaceRegex "http://www\\.myexperiment\\.org/workflows/" ;
@@ -246,7 +246,7 @@ bio2rdf_rdfrule:myexperimentwwwworkflow a queryall_rdfrule:NormalisationRule , q
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentlocalpackentry a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentlocalpackentry a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_localpackentry ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_localpackentry:" ;
@@ -258,7 +258,7 @@ bio2rdf_rdfrule:myexperimentlocalpackentry a queryall_rdfrule:NormalisationRule 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentviewings a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentviewings a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_viewings ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_viewings:" ;
@@ -270,7 +270,7 @@ bio2rdf_rdfrule:myexperimentviewings a queryall_rdfrule:NormalisationRule , quer
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimenttagging a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimenttagging a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_tagging ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_tagging:" ;
@@ -282,7 +282,7 @@ bio2rdf_rdfrule:myexperimenttagging a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentfavourite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentfavourite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_favourite ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_favourite:" ;
@@ -294,7 +294,7 @@ bio2rdf_rdfrule:myexperimentfavourite a queryall_rdfrule:NormalisationRule , que
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimenttag a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimenttag a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_tag ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_tag:" ;
@@ -306,7 +306,7 @@ bio2rdf_rdfrule:myexperimenttag a queryall_rdfrule:NormalisationRule , queryall_
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentworkflowversion a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentworkflowversion a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_workflowversion ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_workflowversion:" ;
@@ -318,7 +318,7 @@ bio2rdf_rdfrule:myexperimentworkflowversion a queryall_rdfrule:NormalisationRule
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:myexperimentpack a queryall_rdfrule:NormalisationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:myexperimentpack a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:myexp_pack ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
     queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/myexp_pack:" ;

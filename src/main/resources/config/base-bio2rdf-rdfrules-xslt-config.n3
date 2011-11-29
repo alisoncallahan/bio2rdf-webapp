@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_rdfrule:xsltNlmPubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:XsltNormalisationRule ;
+bio2rdf_rdfrule:xsltNlmPubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:XsltNormalisationRule ;
     queryall_rdfrule:xsltStylesheet """<?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes"/>

@@ -28,14 +28,14 @@
     </rule>
 	
 =	<rule>
-		<from>/static/(.*)</from>
+		<from>/static/(.+)</from>
 		<set name="org.queryall.servlets.StaticFileServlet.filename">$1</set>
 		<run class="org.queryall.servlets.StaticFileServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>
 
 	<rule>
-		<from>^/admin/test/rule/(.*)$</from>
+		<from>^/admin/test/rule/(.+)$</from>
 		<set name="org.queryall.servlets.RuleTesterServlet.testUri">$1</set>
 		<run class="org.queryall.servlets.RuleTesterServlet" method="doGet" />
 		<to last="true">null</to>
@@ -152,7 +152,7 @@
 	</rule>
 
 	<rule>
-		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/(rdfrule|provider|profile|query|ns|ruletest|project):.*$</from>
+		<from>^(/page|/rdfxml|/n3|/json|/ntriples|/nquads|)/(rdfrule|provider|profile|query|ns|ruletest|project):.+$</from>
 		<run class="org.queryall.servlets.ConfigurationServlet" method="doGet" />
 		<to last="true">null</to>
 	</rule>

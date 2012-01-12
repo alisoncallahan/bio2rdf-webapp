@@ -187,7 +187,7 @@ queryall:shortcutIconPath "static/includes-images/favicon.ico" ;
 
 queryall:indexBannerImagePath "static/includes-images/merged-bio2rdf-banner.jpg" ;
 
-queryall:indexProjectImagePath "static/includes-images/Bio2RDF.jpg" ;
+queryall:indexProjectImagePath "static/includes-images/Bio2rdf-logo-ob-med.png" ;
 
 queryall:unknownQueryStaticAdditions bio2rdf_query:unknownquery ;
 

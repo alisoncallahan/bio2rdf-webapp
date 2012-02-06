@@ -7,6 +7,19 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
+bio2rdf_provider:crossrefpmid2doixml a queryall_provider:Provider , queryall_provider:HttpProvider ;
+	dc:title "Searches the experimental crossref PMID to DOI conversion service using Content Negotiation to get an XML document that can then be translated using XSLT into RDF NTriples, which is indicated through the use of text/plain as the assumedContentType." ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httpgeturl ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://pmid2doi.labs.crossref.org/${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:construct ;
+	queryall_provider:acceptHeader "application/pmiddoi+xml" ;
+	queryall_provider:assumedContentType "text/plain" ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:xsltCrossRefPMID2DOI .
+	
 bio2rdf_provider:ncbipubmedxmltoxslt a queryall_provider:Provider , queryall_provider:HttpProvider ;
 	dc:title "Pulls the latest Pubmed XML document and converts it using the XSLT stylesheet to NTriples, which is indicated through the use of text/plain as the assumedContentType." ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;

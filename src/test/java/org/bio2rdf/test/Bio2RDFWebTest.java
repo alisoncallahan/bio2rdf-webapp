@@ -7,7 +7,8 @@ package org.bio2rdf.test;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.queryall.query.Settings;
+import org.queryall.utils.SettingsFactory;
+import org.queryall.webapp.test.AbstractQueryAllWebTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,7 +55,7 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     @Test
     public void testCurrentApiVersionAdminConfigurationN3()
     {
-        this.getWebTester().gotoPage("/admin/configuration/"+Settings.CONFIG_API_VERSION+"/n3");
+        this.getWebTester().gotoPage("/admin/configuration/"+SettingsFactory.CONFIG_API_VERSION+"/n3");
         
     }
     
@@ -64,7 +65,7 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     @Test
     public void testCurrentApiVersionAdminConfigurationRdfXml()
     {
-        this.getWebTester().gotoPage("/admin/configuration/"+Settings.CONFIG_API_VERSION+"/rdfxml");
+        this.getWebTester().gotoPage("/admin/configuration/"+SettingsFactory.CONFIG_API_VERSION+"/rdfxml");
     }
 
     /**
@@ -73,7 +74,7 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     @Test
     public void testCurrentApiVersionAdminConfigurationJson()
     {
-        this.getWebTester().gotoPage("/admin/configuration/"+Settings.CONFIG_API_VERSION+"/json");
+        this.getWebTester().gotoPage("/admin/configuration/"+SettingsFactory.CONFIG_API_VERSION+"/json");
     }
 
     /**
@@ -87,7 +88,7 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     @Test
     public void testCurrentApiVersionAdminConfigurationHtml()
     {
-        this.getWebTester().gotoPage("/admin/configuration/"+Settings.CONFIG_API_VERSION+"/html");
+        this.getWebTester().gotoPage("/admin/configuration/"+SettingsFactory.CONFIG_API_VERSION+"/html");
     }
 
     /**
@@ -137,9 +138,10 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
         this.getWebTester().assertTextPresent("Queries for this namespace (");
         this.getWebTester().assertTextPresent("Namespaces for this query (");
         
-        // Verify that there are no providers without namespaces or namespaces without providers
+        // Verify that there are no providers without namespaces or namespaces without providers or providers with unrecognised query types
         this.getWebTester().assertTextNotPresent("NO Providers known for this namespace");
         this.getWebTester().assertTextNotPresent("Namespaces found on providers without definitions:");
+        this.getWebTester().assertTextNotPresent("Could not find query type for URI");
     }
 
     
@@ -151,7 +153,11 @@ public class Bio2RDFWebTest extends AbstractQueryAllWebTest
     {
         this.getWebTester().gotoPage("/admin/test/rules");
         
+        // check that there were no failures
         this.getWebTester().assertTextNotPresent("Test Failure occured");
+        
+        // also check that success message was displayed
+        this.getWebTester().assertTextPresent("All Tests passed");
     }
     
     @Override

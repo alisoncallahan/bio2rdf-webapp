@@ -1,0 +1,206 @@
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+
+bio2rdf_rdfrule:neurocommonsgo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/GO#GO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/GO#GO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/go:" ;
+	dc:title "Changes neurocommons GO identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:obomiro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:miro ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/miro:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/MIRO#MIRO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/MIRO#MIRO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/miro:" ;
+	dc:title "Provides conversion between the OBO MIRO namespace and the Bio2RDF MIRO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:oboto a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:to ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/to:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/TO#TO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/TO#TO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/to:" ;
+	dc:title "Provides conversion between the OBO TO namespace and the Bio2RDF TO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:obogo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/GO#GO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/GO#GO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/go:" ;
+	dc:title "Provides conversion between the OBO GO namespace and the Bio2RDF GO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:oboso a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:so ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/so:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/SO#SO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/SO#SO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/so:" ;
+	dc:title "Provides conversion between the OBO SO namespace and the Bio2RDF SO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:obobspo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:bspo ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/bspo:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/BSPO#BSPO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/BSPO#BSPO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/bspo:" ;
+	dc:title "Provides conversion between the OBO BSPO namespace and the Bio2RDF BSPO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:obodoid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:doid ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/doid:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/DOID#DOID_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/DOID#DOID_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/doid:" ;
+	dc:title "Provides conversion between the OBO DOID namespace and the Bio2RDF DOID namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:obotrans a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:trans ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/trans:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/TRANS#TRANS_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/TRANS#TRANS_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/trans:" ;
+	dc:title "Provides conversion between the OBO TRANS namespace and the Bio2RDF TRANS namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:obouberonbasic a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:uberon ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/uberon:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/UBERON#UBERON_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/UBERON#UBERON_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/uberon:" ;
+	dc:title "Provides basic conversion between the OBO UBERON namespace and the Bio2RDF UBERON namespace for some simple URI's only" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:obopro a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pro ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pro:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/PRO#PRO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/PRO#PRO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pro:" ;
+	dc:title "Provides conversion between the OBO PRO namespace and the Bio2RDF PRO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:bioontology_obo_aeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obo_aeo ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/obo_aeo:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.obolibrary\\.org/obo/AEO\\_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.obolibrary\\.org/obo/AEO\\_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/obo_aeo:" ;
+	dc:title "Converts between the URIs used by the BioOntology SPARQL endpoint for the OBO AEO ontology and the Bio2RDF normalised URIs" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+
+bio2rdf_rdfrule:oboeo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:eo ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/eo:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/EO#EO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/EO#EO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/eo:" ;
+	dc:title "Provides conversion between the OBO EO namespace and the Bio2RDF EO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+
+bio2rdf_rdfrule:obopato a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pato ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pato:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/PATO#PATO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/PATO#PATO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pato:" ;
+	dc:title "Provides conversion between the OBO PATO namespace and the Bio2RDF PATO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:oboenvo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:envo ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/envo:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/ENVO#ENVO_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/ENVO#ENVO_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/envo:" ;
+	dc:title "Provides conversion between the OBO ENVO namespace and the Bio2RDF ENVO namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:oboobi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obi ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/obi:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.obofoundry\\.org/obo/OBI_" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.obofoundry\\.org/obo/OBI_" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/obi:" ;
+	dc:title "Provides conversion between the OBO OBI namespace and the Bio2RDF OBI namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+

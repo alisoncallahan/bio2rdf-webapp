@@ -1,0 +1,61 @@
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+
+
+
+bio2rdf_rdfrule:bioguidissn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:issn ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/issn:" ;
+	queryall_rdfrule:inputReplaceRegex "http://bioguid\\.info/issn:" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bioguid\\.info/issn:" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/issn:" ;
+	dc:title "Provides conversion between the BioGuid ISSN namespace and the Bio2RDF ISSN namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:bioguidpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
+	queryall_rdfrule:inputReplaceRegex "http://bioguid\\.info/pmid:" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bioguid\\.info/pmid:" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+	dc:title "Provides conversion between the BioGuid PMID namespace and the Bio2RDF PUBMED namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:bioguidgi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gi ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/gi:" ;
+	queryall_rdfrule:inputReplaceRegex "http://bioguid\\.info/gi:" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bioguid\\.info/gi:" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/gi:" ;
+	dc:title "Provides conversion between the BioGuid GI namespace and the Bio2RDF GI namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:bioguiddoi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:doi ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/doi:" ;
+	queryall_rdfrule:inputReplaceRegex "http://bioguid\\.info/doi:" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bioguid\\.info/doi:" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/doi:" ;
+	dc:title "Provides conversion between the BioGuid DOI namespace and the Bio2RDF PUBMED namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+

@@ -220,26 +220,12 @@
 	</dependencies>
 	<profiles>
 		<profile>
-			<id>chemblfarmbio</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<queryall.BaseConfigLocation>/config/webapp-config-default-farmbio-chembl-template.n3</queryall.BaseConfigLocation>
-				<queryall.BaseConfigUri>http://rdf.farmbio.uu.se/chembl/webapp_configuration/farmbioBaseConfig</queryall.BaseConfigUri>
-				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
-			</properties>
-			<build>
-				<finalName>chembl-farmbio-${project.version}</finalName>
-			</build>
-		</profile>
-		<profile>
 			<id>mquter</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp-config-default-mquter-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-mquter-bio2rdf-template.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:mquterBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -252,7 +238,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp-config-default-quebec-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-quebec-bio2rdf-template.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:quebecBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -265,7 +251,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp-config-default-carleton-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-carleton-bio2rdf-template.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:carletonBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -278,7 +264,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp-config-default-protech-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-protech-bio2rdf-template.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:protechBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -291,7 +277,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp-config-default-balancing-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-balancing-bio2rdf-template.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:balancingBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>

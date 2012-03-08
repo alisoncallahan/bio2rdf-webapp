@@ -236,7 +236,7 @@
 		<profile>
 			<id>mquter</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<queryall.BaseConfigLocation>/config/webapp-config-default-mquter-bio2rdf-template.n3</queryall.BaseConfigLocation>
@@ -262,7 +262,7 @@
 		<profile>
 			<id>carleton</id>
 			<activation>
-				<activeByDefault>false</activeByDefault>
+				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
 				<queryall.BaseConfigLocation>/config/webapp-config-default-carleton-bio2rdf-template.n3</queryall.BaseConfigLocation>

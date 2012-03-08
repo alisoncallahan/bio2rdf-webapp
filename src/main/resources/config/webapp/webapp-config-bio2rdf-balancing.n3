@@ -38,9 +38,9 @@ queryall:backupQueryConfigLocations
 "/config/base-bio2rdf-queries-config.n3" , 
 "/config/base-bio2rdf-ruletests-config.n3" ,
 
-"/config/myexperiment_providers-config.n3" ,
-"/config/myexperiment_namespaceentries-config.n3" ,
-"/config/myexperiment_rdfrules-config.n3" ;
+"/config/myexperiment/myexperiment_providers-config.n3" ,
+"/config/myexperiment/myexperiment_namespaceentries-config.n3" ,
+"/config/myexperiment/myexperiment_rdfrules-config.n3" ;
 
 queryall:enablePeriodicConfigurationRefresh "true"^^xsd:boolean ;
 

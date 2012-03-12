@@ -1,5 +1,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix queryall_profile: <http://purl.org/queryall/profile:> .
 @prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
 @prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
@@ -7,593 +8,591 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-
-bio2rdf_rdfrule:owldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
-	queryall_rdfrule:inputReplaceRegex "http://owl\\.bio2rdf\\.org/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://owl\\.bio2rdf\\.org/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/" ;
+bio2rdf_rdfrule:owldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://owl.bio2rdf.org/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/ns/" ;
 	dc:title "" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pfampbcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pfam:PB" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/pfam:pb" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/pfam:pb" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pfam:PB" ;
+bio2rdf_rdfrule:pfampbcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pfam ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/pfam:pb" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/pfam:PB" ;
 	dc:title "Provides a fix for a limited number of namespaces which have lowercased the private identifier section for Pfam, and hence avoids the use of the lowercase queries in this case as they have a sideeffect where they insert the lowercased URI for reference as they can't be sure it isn't more useful than the uppercased version" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:oboobidescriptionfile a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:oboobidescriptionfile a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obi_description ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/obi_description:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/__file:///data/cluster/cjm/obo/website/utils/obo-all/obi/obi\\.owl#__Description" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/__file:///data/cluster/cjm/obo/website/utils/obo-all/obi/obi\\.owl#__Description" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/obi_description:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/__file:///data/cluster/cjm/obo/website/utils/obo-all/obi/obi.owl#__Description" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/obi_description:" ;
 	dc:title "Provides conversion between the OBO OBI description namespace and the Bio2RDF OBI Description namespace" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-
-bio2rdf_rdfrule:affymetrixtaxonmappinghuman a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:affymetrixtaxonmappinghuman a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:affymetrix , bio2rdf_ns:taxon ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxon:9606" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/taxon:Homo_sapiens" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/taxon:Homo_sapiens" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/taxon:9606" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/taxon:Homo_sapiens" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/taxon:9606" ;
 	dc:title "Maps scientific taxonomy name for Homo sapiens in the Affymetrix dataset to the NCBI taxon identifier, 9606" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-bio2rdf_rdfrule:tripleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/ns/ns/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/ns/ns/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/" ;
+bio2rdf_rdfrule:tripleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/ns/ns/ns/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/ns/" ;
 	dc:title "Provides a fix for a broken rdfiser on the pubchem endpoint" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "350"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:doubleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/ns/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/ns/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/" ;
+bio2rdf_rdfrule:doubleslashns a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/ns/ns/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/ns/" ;
 	dc:title "Provides a fix for a broken rdfiser on the pubmed endpoint" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "350"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:badnsfoaf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:badnsfoaf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:foaf ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/foaf:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/foaf:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/foaf:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/foaf:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/ns/foaf:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/foaf:" ;
 	dc:title "Provides a fix for a broken rdfiser on the pubmed endpoint" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "360"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-
-
-
-
-bio2rdf_rdfrule:crossref_issn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:crossref_issn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:issn ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-	queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/issn:" ;
-	queryall_rdfrule:inputReplaceRegex "http://id\\.crossref\\.org/issn/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-	queryall_rdfrule:outputMatchRegex "http://id\\.crossref\\.org/issn/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/issn:" ;
+	queryall_rdfrule:inputPrefix "http://id.crossref.org/issn/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/issn:" ;
 	dc:title "Converts between the URIs used by the CrossRef RDF for ISSN's and the Bio2RDF ISSN namespace" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:crossref_contributor a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:crossref_contributor a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:crossref_contributor ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-	queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/crossref_contributor:" ;
-	queryall_rdfrule:inputReplaceRegex "http://id\\.crossref\\.org/contributor/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-	queryall_rdfrule:outputMatchRegex "http://id\\.crossref\\.org/contributor/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/crossref_contributor:" ;
+	queryall_rdfrule:inputPrefix "http://id.crossref.org/contributor/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/crossref_contributor:" ;
 	dc:title "Converts between the URIs used by the CrossRef RDF for Contributor's and the Bio2RDF CrossRef Contributor namespace" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:crossref_doi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:crossref_doi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:doi ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-	queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/doi:" ;
-	queryall_rdfrule:inputReplaceRegex "http://dx\\.doi\\.org/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-	queryall_rdfrule:outputMatchRegex "http://dx\\.doi\\.org/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/doi:" ;
+	queryall_rdfrule:inputPrefix "http://dx.doi.org/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/doi:" ;
 	dc:title "Converts between the URIs used for standard DOI resolution and the Bio2RDF DOI namespace" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bioontology_imgt_ontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bioontology_imgt_ontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:imgt_ontology ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/imgt_ontology:" ;
-	queryall_rdfrule:inputReplaceRegex "http://www\\.imgt\\.org/download/IMGT-ONTOLOGY/IMGT-ONTOLOGY-v1-0-0\\.owl#" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://www\\.imgt\\.org/download/IMGT-ONTOLOGY/IMGT-ONTOLOGY-v1-0-0\\.owl#" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/imgt_ontology:" ;
+    queryall_rdfrule:inputPrefix "http://www.imgt.org/download/IMGT-ONTOLOGY/IMGT-ONTOLOGY-v1-0-0.owl#" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/imgt_ontology:" ;
 	dc:title "Converts between the URIs used by the BioOntology SPARQL endpoint for the IMGT ontology and the Bio2RDF normalised URIs" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:issnurn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:issnurn a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:issn ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/issn:" ;
-	queryall_rdfrule:inputReplaceRegex "urn:issn:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "urn:issn:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/issn:" ;
+    queryall_rdfrule:inputPrefix "urn:issn:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/issn:" ;
 	dc:title "Converts between Bio2RDF and the standard URN form for ISSN numbers" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:wwwbio2rdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:wwwbio2rdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_target ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/" ;
-	queryall_rdfrule:inputReplaceRegex "http://www\\.bio2rdf\\.org/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://www\\.bio2rdf\\.org/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/" ;
+    queryall_rdfrule:inputPrefix "http://www.bio2rdf.org/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/" ;
 	dc:title "Makes www.bio2rdf.org URIs into bio2rdf.org URIs" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:drugbankkeggdr a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbankkeggdr a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:kegg , bio2rdf_ns:dr ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dr:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/kegg:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/kegg:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dr:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/kegg:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/dr:" ;
 	dc:title "Changes the use of the kegg namespace on DrugBank to the dr namespace that is used on the Kegg endpoints" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 	
 
-bio2rdf_rdfrule:goassociationnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:goassociationnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go_association ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go_association:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/go:association-" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/go:association-" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/go_association:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/go:association-" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/go_association:" ;
 	dc:title "Makes go:association-NNNNN into a namespace so it can be queried separately of go:NNNNNNN" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biocartacategorynamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:biocartacategorynamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:biocarta_category ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/biocarta_category:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/biocarta:category-" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/biocarta:category-" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/biocarta_category:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/biocarta:category-" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/biocarta_category:" ;
 	dc:title "Makes biocarta:category-NNNNN into a namespace so it can be queried separately of biocarta" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonsprosite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonsprosite a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:prosite ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prosite:" ;
-	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/obo/owl/PROSITE#PROSITE_" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://purl\\.org/obo/owl/PROSITE#PROSITE_" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/prosite:" ;
+    queryall_rdfrule:inputPrefix "http://purl.org/obo/owl/PROSITE#PROSITE_" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/prosite:" ;
 	dc:title "Changes neurocommons prosite identifier to bio2rdf identifier" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:neurocommonssciencepmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:neurocommonssciencepmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
-	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/science/article/pmid/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://purl\\.org/science/article/pmid/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+    queryall_rdfrule:inputPrefix "http://purl.org/science/article/pmid/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/pubmed:" ;
 	dc:title "Changes neurocommons article identifier to bio2rdf identifier" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:conceptassertionpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:conceptassertionpmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
-	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/concept/assertion/pmid/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://purl\\.org/concept/assertion/pmid/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+    queryall_rdfrule:inputPrefix "http://purl.org/concept/assertion/pmid/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/pubmed:" ;
 	dc:title "Changes HCLS based concept assertion pubmed article identifier to bio2rdf identifier" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-bio2rdf_rdfrule:chebisourcenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:chebisourcenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chebi_source ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chebi_source:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/chebi:source-" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/chebi:source-" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chebi_source:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/chebi:source-" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/chebi_source:" ;
 	dc:title "Makes chebi:source-XXXXX into a namespace so it can be queried separately of chebi:NNNNNNN" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-bio2rdf_rdfrule:dbpediaresourcewww a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaresourcewww a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipedia ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/wikipedia:" ;
-	queryall_rdfrule:inputReplaceRegex "http://www\\.dbpedia\\.org/resource/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://www\\.dbpedia\\.org/resource/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/wikipedia:" ;
+    queryall_rdfrule:inputPrefix "http://www.dbpedia.org/resource/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/wikipedia:" ;
 	dc:title "Transforms incorrect www.dbpedia.org resource URI's into bio2rdf.org/wikipedia: URI's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pubmed2pmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pubmed2pmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/pmid:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/pmid:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/pmid:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/pubmed:" ;
 	dc:title "Provides interconversion between the two Pubmed/Pmid namespaces, outputs to pubmed instead of pmid as pubmed is currently preferred" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biopaxurls a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "" ;
-	queryall_rdfrule:inputReplaceRegex "" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://www.biopax.org/release/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/biopax:" ;
+bio2rdf_rdfrule:biopaxurls a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://www.biopax.org/release/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/biopax:" ;
 	dc:title "Transforms biopax release URL's into bio2rdf urls" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "30"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biopaxgofix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:biopaxgofix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/go:GO:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/go:GO:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/go:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/go:GO:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/go:" ;
 	dc:title "Fixes biopax GO URL's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:taxon2taxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:taxon2taxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxonomy ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxonomy:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/taxon:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "" ;
-	queryall_rdfrule:outputReplaceRegex "" ;
+	queryall_rdfrule:inputPrefix "http://bio2rdf.org/taxon:" ;
+    queryall_rdfrule:outputPrefix "http://bio2rdf.org/taxonomy:" ;
 	dc:title "Provides interconversion between the two NCBI/Uniprot Taxon/Taxonomy namespaces, with taxon as the preferred namespace identifier so there is no output rule provided" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:taxonomy2taxon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:taxonomy2taxon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxon ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxon:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/taxonomy:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/taxonomy:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/taxon:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/taxonomy:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/taxon:" ;
 	dc:title "Provides interconversion between the two NCBI/Uniprot Taxon/Taxonomy namespaces so that owl:sameAs can at least be provided even if people don't use a standard namespace" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:drugbanknamespacefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:drugbanknamespacefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugs ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugs:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/drugbank:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/drugbank:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_drugs:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/drugbank:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/drugbank_drugs:" ;
 	dc:title "Makes drugbank namespace URI's into Bio2RDF identifiers using drugbank_drugs, and the reverse for non-conforming endpoints" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-bio2rdf_rdfrule:pfampfcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pfam:PF" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/pfam:pf" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/pfam:pf" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pfam:PF" ;
+bio2rdf_rdfrule:pfampfcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/pfam:pf" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/pfam:PF" ;
 	dc:title "Provides a fix for a limited number of namespaces which have lowercased the private identifier section for Pfam, and hence avoids the use of the lowercase queries in this case as they have a sideeffect where they insert the lowercased URI for reference as they can't be sure it isn't more useful than the uppercased version" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:omimstatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:omimstatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:omim_status ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/omim_status:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/omim:status-" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/omim:status-" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/omim_status:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/omim:status-" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/omim_status:" ;
 	dc:title "Makes omim:status-X into a namespace so it can be queried separately of omim:NNNNNNN" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:prositecapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prosite:PS" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/prosite:ps" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/prosite:ps" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/prosite:PS" ;
+bio2rdf_rdfrule:prositecapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:prosite ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/prosite:ps" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/prosite:PS" ;
 	dc:title "Provides a fix for a limited number of namespaces which have lowercased the private identifier section for Prosite, and hence avoids the use of the lowercase queries in this case as they have a sideeffect where they insert the lowercased URI for reference as they can't be sure it isn't more useful than the uppercased version" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediaclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dbpediaclass ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dbpediaclass:" ;
-	queryall_rdfrule:inputReplaceRegex "http://dbpedia\\.org/class/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://dbpedia\\.org/class/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dbpediaclass:" ;
+    queryall_rdfrule:inputPrefix "http://dbpedia.org/class/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/dbpediaclass:" ;
 	dc:title "Transforms dbpedia.org class URI's into bio2rdf.org/dbpedia: URI's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediacategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediacategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipediacategory ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/wikipedia_category:" ;
-	queryall_rdfrule:inputReplaceRegex "http://dbpedia\\.org/resource/Category:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://dbpedia\\.org/resource/Category:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/wikipedia_category:" ;
+    queryall_rdfrule:inputPrefix "http://dbpedia.org/resource/Category:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/wikipedia_category:" ;
 	dc:title "Transforms dbpedia.org category URI's into bio2rdf.org/wikipedia_category: URI's to fix up systemetic inconsistency in the way URIs are percent encoded in DBpedia" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:prodomcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prodom:PD" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/prodom:pd" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/prodom:pd" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/prodom:PD" ;
+bio2rdf_rdfrule:prodomcapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:prodom ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/prodom:pd" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/prodom:PD" ;
 	dc:title "Provides a fix for a limited number of namespaces which have lowercased the private identifier section for Prodom, and hence avoids the use of the lowercase queries in this case as they have a sideeffect where they insert the lowercased URI for reference as they can't be sure it isn't more useful than the uppercased version" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:pubmedlinks a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pubmedlinks a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/links/pubmed:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/links/pubmed:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/links/pubmed:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/pubmed:" ;
 	dc:title "Fixes and utilises references to pubmed on linkedct where the database hasn't changed so far to standard URI's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:mgigeneexpressiondatabase a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:mgigeneexpressiondatabase a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:mgi_gxd ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/mgi_gxd:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/gene_expression_database_gxd_at_mgi:MGI:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/gene_expression_database_gxd_at_mgi:MGI:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/mgi_gxd:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/gene_expression_database_gxd_at_mgi:MGI:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/mgi_gxd:" ;
 	dc:title "Provides interconversion between the long unwieldly Gene Expression Database at MGI namespace and a smaller easier to utilise namespace" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "110"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:prositepdoccapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/prosite:PDOC" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/prosite:pdoc" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/prosite:pdoc" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/prosite:PDOC" ;
+bio2rdf_rdfrule:prositepdoccapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:prosite ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/prosite:pdoc" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/prosite:PDOC" ;
 	dc:title "Provides a fix for a limited number of namespaces which have lowercased the private identifier section for Prosite, and hence avoids the use of the lowercase queries in this case as they have a sideeffect where they insert the lowercased URI for reference as they can't be sure it isn't more useful than the uppercased version" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:slashowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/owl/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/owl/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/" ;
+bio2rdf_rdfrule:slashowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/owl/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/ns/" ;
 	dc:title "Changes /owl to /ns/ as needed" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "200"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:goflybasefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:goflybasefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:flybase ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/flybase:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/fb:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/fb:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/flybase:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/fb:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/flybase:" ;
 	dc:title "Makes fb: namespaces in the go database into flybase: that is used elsewhere" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:goevidencenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:goevidencenamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go_evidence ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/go_evidence:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/go:evidence-" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/go:evidence-" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/go_evidence:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/go:evidence-" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/go_evidence:" ;
 	dc:title "Makes go:evidence-XXX into a namespace so it can be queried separately of go:NNNNNNN" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:dbpediaproperty a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dbpedia_property:" ;
-	queryall_rdfrule:inputReplaceRegex "http://dbpedia\\.org/property/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://dbpedia\\.org/property/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dbpedia_property:" ;
+bio2rdf_rdfrule:dbpediaproperty a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://dbpedia.org/property/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/dbpedia_property:" ;
 	dc:title "Transforms dbpedia.org property URI's into bio2rdf.org/dbpedia_property: URI's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:interprocapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/interpro:IPR" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/interpro:ipr" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/interpro:ipr" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/interpro:IPR" ;
+bio2rdf_rdfrule:interprocapitalisation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/interpro:ipr" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/interpro:IPR" ;
 	dc:title "Provides a fix for a limited number of namespaces which have lowercased the private identifier section for Interpro, and hence avoids the use of the lowercase queries in this case as they have a sideeffect where they insert the lowercased URI for reference as they can't be sure it isn't more useful than the uppercased version" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "50"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:chebistatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:chebistatusnamespace a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chebi_status ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chebi_status:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/chebi:status-" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/chebi:status-" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chebi_status:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/chebi:status-" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/chebi_status:" ;
 	dc:title "Makes chebi:status-X into a namespace so it can be queried separately of chebi:NNNNNNN" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:pmid2pubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:pmid2pubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pmid ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pmid:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+	queryall_rdfrule:inputPrefix "http://bio2rdf.org/pubmed:" ;
+    queryall_rdfrule:outputPrefix "http://bio2rdf.org/pmid:" ;
 	dc:title "Provides interconversion between the two Pubmed/Pmid namespaces, with pubmed as the preferred namespace identifier so there is no output rule provided" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:biopaxontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "" ;
-	queryall_rdfrule:inputReplaceRegex "" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf.org/biopax:biopax-level1.owl#" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/biopax:" ;
+bio2rdf_rdfrule:biopaxontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/biopax:biopax-level1.owl#" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/ns/biopax:" ;
 	dc:title "Transforms biopax ontology URL's into bio2rdf urls" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "40"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:dbpediaresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:dbpediaresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipedia ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/wikipedia:" ;
-	queryall_rdfrule:inputReplaceRegex "http://dbpedia\\.org/resource/" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://dbpedia\\.org/resource/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/wikipedia:" ;
+    queryall_rdfrule:inputPrefix "http://dbpedia.org/resource/" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/wikipedia:" ;
 	dc:title "Transforms dbpedia.org resource URI's into bio2rdf.org/wikipedia: URI's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:wikipedia2dbpedia a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:wikipedia2dbpedia a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:wikipedia ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/dbpedia:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/wikipedia:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/dbpedia:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/wikipedia:" ;
 	dc:title "Provides backwards compatibility with old dbpedia namespace URI's given the current bio2rdf.org/wikipedia: URI's" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 
-bio2rdf_rdfrule:symboldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:symboldotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:symbol ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/symbol:" ;
-	queryall_rdfrule:inputReplaceRegex "http://symbol\\.bio2rdf\\.org/symbol:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://symbol\\.bio2rdf\\.org/symbol:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/symbol:" ;
+    queryall_rdfrule:inputPrefix "http://symbol.bio2rdf.org/symbol:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/symbol:" ;
 	dc:title "Fixes the RDF from some databases which have experimental db.bio2rdf.org/db:id URI's instead of the standard bio2rdf.org" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:bio2drfmisspelling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:bio2drfmisspelling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:bio2rdf_resource ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/bio2rdf_resource:" ;
-	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/bio2drf_resource:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/bio2drf_resource:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/bio2rdf_resource:" ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/bio2drf_resource:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/bio2rdf_resource:" ;
 	dc:title "Fixes a misspelling in an rdfiser" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "190"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-bio2rdf_rdfrule:ontologydotbio2rdfdotorghhpid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+bio2rdf_rdfrule:ontologydotbio2rdfdotorghhpid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:hhpid_resource ;
-	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/hhpid_resource:" ;
-	queryall_rdfrule:inputReplaceRegex "http://ontology\\.bio2rdf\\.org/hhpid:" ;
-	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://ontology\\.bio2rdf\\.org/hhpid:" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/hhpid_resource:" ;
+    queryall_rdfrule:inputPrefix "http://ontology.bio2rdf.org/hhpid:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/hhpid_resource:" ;
 	dc:title "Fixes the RDF from the HHPID database that still uses ontology.bio2rdf.org/hhpid URLs instead of bio2rdf.org/hhpid_resource" ;
+    queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
+    queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
+    queryall_rdfrule:objectMappingPredicate owl:sameAs ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 

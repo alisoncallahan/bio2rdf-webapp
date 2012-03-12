@@ -1,0 +1,179 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_rdfrule:openmoleculesinchi a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:inchi ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/inchi:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf\\.openmolecules\\.net/\\?InChI=" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf\\.openmolecules\\.net/\\?InChI=" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/inchi:" ;
+	dc:title "Makes rdf.openmolecules.net InChI URI's into bio2rdf inchi URI's" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:chempedianame a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chempedia_name:([\\w-]+)/" ;
+	queryall_rdfrule:inputReplaceRegex "http://chempedia\\.com/substances/$1/naming" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://chempedia\\.com/substances/([\\w-]+)/naming" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chempedia_name:$1/" ;
+	dc:title "Makes Chempedia Substance URI's into bio2rdf chempedia substance name URI's" ;
+	queryall_rdfrule:order "120"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:chempediasubstance a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chempedia_substance ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chempedia_substance:" ;
+	queryall_rdfrule:inputReplaceRegex "http://chempedia\\.com/substances/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://chempedia\\.com/substances/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chempedia_substance:" ;
+	dc:title "Makes Chempedia Substance URI's into bio2rdf chempedia substance URI's" ;
+	queryall_rdfrule:order "110"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:nmrshiftdb_molecule a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_molecule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_molecule:" ;
+	queryall_rdfrule:inputReplaceRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?moleculeId=" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?moleculeId=" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/nmrshiftdb_molecule:" ;
+	dc:title "Makes NMRShiftDB Molecule URI's into bio2rdf nmrshiftdb molecule URI's" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:nmrshiftdb_peak a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_peak ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_peak:" ;
+	queryall_rdfrule:inputReplaceRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?peakId=" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?peakId=" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/nmrshiftdb_peak:" ;
+	dc:title "Makes NMRShiftDB Peak URI's into bio2rdf nmrshiftdb peak URI's" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:nmrshiftdb_bib a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_bib ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_bib:" ;
+	queryall_rdfrule:inputReplaceRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?bibId=" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?bibId=" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/nmrshiftdb_bib:" ;
+	dc:title "Makes NMRShiftDB Bib URI's into bio2rdf nmrshiftdb bib URI's" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:nmrshiftdb_spectrum a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:nmrshiftdb_spectrum ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/nmrshiftdb_spectrum:" ;
+	queryall_rdfrule:inputReplaceRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?spectrumId=" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://pele\\.farmbio\\.uu\\.se/nmrshiftdb/\\?spectrumId=" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/nmrshiftdb_spectrum:" ;
+	dc:title "Makes NMRShiftDB Spectrum URI's into bio2rdf nmrshiftdb spectrum URI's" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:farmbiochembltarget a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_target ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_target:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/target/t" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/target/t" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_target:" ;
+	dc:title "Makes RDF Farm Bio Chembl Target URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:farmbiochemblactivity a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_activity ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_activity:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/activitiy/a" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/activitiy/a" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_activity:" ;
+	dc:title "Makes RDF Farm Bio Chembl Activity URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:farmbiochemblassay a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_assay ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_assay:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/assay/a" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/assay/a" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_assay:" ;
+	dc:title "Makes RDF Farm Bio Chembl Assay URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:farmbiochembljournal a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_journal ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_journal:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/journal/j" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/journal/j" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_journal:" ;
+	dc:title "Makes RDF Farm Bio Chembl Journal URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:farmbiochemblresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_resource ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_resource:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/resource/r" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/resource/r" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_resource:" ;
+	dc:title "Makes RDF Farm Bio Chembl Resource URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:farmbiochemblmolecule a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_molecule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_molecule:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/molecule/m" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/molecule/m" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_molecule:" ;
+	dc:title "Makes RDF Farm Bio Chembl Molecule URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:farmbiochembltargettype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:chembl_targettype ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/chembl_targettype:" ;
+	queryall_rdfrule:inputReplaceRegex "http://rdf.farmbio.uu.se/chembl/targetType/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://rdf.farmbio.uu.se/chembl/targetType/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/chembl_targettype:" ;
+	dc:title "Makes RDF Farm Bio Chembl TargetType URIs resolvable using Bio2RDF" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+

@@ -1,0 +1,139 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+# The following need to only be used on inputs
+
+bio2rdf_rdfrule:ontologycolontonsunderscorequeries a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/([\\w-]+)_resource:" ;
+	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/$1:" ;
+	dc:title "Transforms ontology terms to the standard convention of ns_resource in queries" ;
+	queryall_rdfrule:order "200"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+# The following need to only be used on outputs
+
+bio2rdf_rdfrule:ontologycolontonsunderscore a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+):" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/$1_resource:" ;
+	dc:title "Transforms ontology terms to the standard convention of ns_resource in results" ;
+	queryall_rdfrule:order "200"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:onlynormaliseontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+)#" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/$1:" ;
+	dc:title "Transforms ontology terms using hash into the new style using colon so that the change is only applied to results, and not to inputs, as this rule is able to be used to stop at the colon level for query inputs" ;
+	queryall_rdfrule:order "300"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:ontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+):" ;
+	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/ns/$1#" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+)#" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/$1:" ;
+	dc:title "Transforms ontology terms using hash into the new style using colon so that all normalised Bio2RDF URI's can be directly resolvable. Setup to apply to all " ;
+	queryall_rdfrule:order "300"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geneidgdbfix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gdb , bio2rdf_ns:geneid ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/gdb:(?!GDB)" ;
+	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/gdb:GDB" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/gdb:GDB" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/gdb:" ;
+	dc:title "Takes off the optional prefix for GDB identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+# FIXME: There are two outputMatchRegex's active
+bio2rdf_rdfrule:geneidgdbreversefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gdb , bio2rdf_ns:geneid ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/gdb:GDB" ;
+	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/gdb:" ;
+#	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/gdb:(?!GDB)" ;
+#	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/gdb:GDB" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/gdb:GDB" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/gdb:" ;
+	dc:title "Takes off the optional prefix for GDB identifiers to make the erroneous URIs return useful information" ;
+	queryall_rdfrule:order "90"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+)\\-(.+)" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/$1:$2" ;
+	dc:title "Fixes some unintended mangling that occurred on ontology term URI's where hash was replaced with a dash" ;
+	queryall_rdfrule:order "150"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:dbdotbio2rdfdotorg a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/([\\w-]+):(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://$1\\.bio2rdf\\.org/$1:$2" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://([\\w-]+)\\.bio2rdf\\.org" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org" ;
+	dc:title "Fixes the RDF from some databases which have experimental db.bio2rdf.org/db:id URI's instead of the standard bio2rdf.org" ;
+	queryall_rdfrule:order "200"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:rxlistgeneric2 a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rxlist:(\\w+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://www\\.rxlist\\.com/cgi/generic2/$1\\.htm" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www\\.rxlist\\.com/cgi/generic2/(\\w+)\\.htm" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/rxlist:$1" ;
+	dc:title "Makes rxlist native URI's into Bio2RDF identifiers using the rxlist namespace, second type. This is incompatible with rxlistgeneric if you require the endpoint specific URI to reliably be matched by this rule." ;
+	queryall_rdfrule:order "50"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:rxlistgeneric a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rxlist:(\\w+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://www\\.rxlist\\.com/cgi/generic/$1\\.htm" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www\\.rxlist\\.com/cgi/generic/(\\w+)\\.htm" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/rxlist:$1" ;
+	dc:title "Makes rxlist native URI's into Bio2RDF identifiers using the rxlist namespace, first type" ;
+	queryall_rdfrule:order "50"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:oldontologyterms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/ns/([\\w-]+):" ;
+	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/$1#" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/([\\w-]+)#" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/ns/$1:" ;
+	dc:title "Transforms old style ontology term URI's into the new style" ;
+	queryall_rdfrule:order "120"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:bio2rdfquebecgo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
+    queryall_rdfrule:outputMatchRegex "ns:go:" ;
+	queryall_rdfrule:outputReplaceRegex "nsgo:" ;
+	dc:title "Fix for broken Virtuoso instance that has been around for years despite all efforts to detain it" ;
+	queryall_rdfrule:order "120"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+

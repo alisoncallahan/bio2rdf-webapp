@@ -128,6 +128,12 @@ bio2rdf_rdfrule:oldontologyterms a queryall_rdfrule:NormalisationRule , queryall
 	queryall_rdfrule:order "120"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
-
-
+bio2rdf_rdfrule:bio2rdfquebecgo a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:go ;
+    queryall_rdfrule:outputMatchRegex "ns:go:" ;
+	queryall_rdfrule:outputReplaceRegex "nsgo:" ;
+	dc:title "Fix for broken Virtuoso instance that has been around for years despite all efforts to detain it" ;
+	queryall_rdfrule:order "120"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 

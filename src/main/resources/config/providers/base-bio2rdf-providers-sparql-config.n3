@@ -347,7 +347,7 @@ bio2rdf_provider:mirroredgenbank a queryall_provider:Provider , queryall_provide
 	, "http://quebec.genbank.bio2rdf.org/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:genbank_record , bio2rdf_ns:genbank_resource , bio2rdf_ns:ncbi ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
-	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:mgigeneexpressiondatabase , bio2rdf_rdfrule:genbankgdbfix , bio2rdf_rdfrule:genbankgdbreversefix .
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:rootlevelontologyhashtocolon, bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:mgigeneexpressiondatabase , bio2rdf_rdfrule:genbankgdbfix , bio2rdf_rdfrule:genbankgdbreversefix .
 
 bio2rdf_provider:mirroredirefindex a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "Carleton IrefIndex" ;

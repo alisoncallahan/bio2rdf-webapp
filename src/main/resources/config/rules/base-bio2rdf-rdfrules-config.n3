@@ -46,6 +46,17 @@ bio2rdf_rdfrule:ontologyhashtocolon a queryall_rdfrule:NormalisationRule , query
 	queryall_rdfrule:order "300"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
+bio2rdf_rdfrule:rootlevelontologyhashtocolon a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/([\\w-]+)_resource:" ;
+	queryall_rdfrule:inputReplaceRegex "http://bio2rdf\\.org/$1#" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://bio2rdf\\.org/([\\w-]+)#" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/$1_resource:" ;
+	dc:title "Transforms ontology terms using hash into the new style using colon so that all normalised Bio2RDF URI's can be directly resolvable. Setup to apply to all " ;
+	queryall_rdfrule:order "300"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
 bio2rdf_rdfrule:geneidgdbfix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:gdb , bio2rdf_ns:geneid ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;

@@ -6,7 +6,7 @@
 @prefix bio2rdf_profile: <http://bio2rdf.org/profile:>.
 @prefix bio2rdf_query: <http://bio2rdf.org/query:>.
 
-bio2rdf:mquter
+bio2rdf:direct
 
 queryall:queryConfigLocations 
 "/config/providers/base-bio2rdf-providers-httpgetproxy-config.n3" , 
@@ -80,7 +80,7 @@ queryall:enableManualConfigurationRefresh "true"^^xsd:boolean ;
 
 queryall:manualConfigurationMinimumMilliseconds "120000"^^xsd:int ;
 
-queryall:activeProfiles bio2rdf_profile:mquter ;
+queryall:activeProfiles bio2rdf_profile:direct ;
 
 queryall:readTimeout "35000"^^xsd:int ;
 

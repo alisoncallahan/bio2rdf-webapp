@@ -1,0 +1,113 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+
+
+
+bio2rdf_rdfrule:neurocommonsmeshrecord a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:mesh ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/mesh:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/commons/record/mesh/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/commons/record/mesh/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/mesh:" ;
+	dc:title "Changes neurocommons mesh identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "200"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:neurocommonspmidrecord a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/commons/record/pmid/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/commons/record/pmid/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+	dc:title "Changes neurocommons article identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "200"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:neurocommonsproteinbysequencegeneid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:geneid ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geneid:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/science/protein/bysequence/ncbi_gene\\." ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/science/protein/bysequence/ncbi_gene\\." ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geneid:" ;
+	dc:title "Changes neurocommons ncbi geneid identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:neurocommonspmid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/commons/article/pmid/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/commons/article/pmid/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+	dc:title "Changes neurocommons article identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:neurocommonsgeneid a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:geneid ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geneid:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/commons/record/ncbi_gene/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/commons/record/ncbi_gene/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geneid:" ;
+	dc:title "Changes neurocommons ncbi geneid identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:neurocommonsmesh a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:mesh ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/mesh:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/commons/record/mesh/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/commons/record/mesh/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/mesh:" ;
+	dc:title "Changes neurocommons mesh identifier to bio2rdf identifier" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:neurocommonsncbitaxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxon ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/taxon:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/commons/record/ncbi_taxonomy/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/commons/record/ncbi_taxonomy/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/taxon:" ;
+	dc:title "Changes neurocommons ncbi taxonomy identifier to its corresponding bio2rdf identifier" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:neurocommonsscienceowl a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sciencecommons_ontology ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sciencecommons_ontology:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/science/owl/sciencecommons/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/science/owl/sciencecommons/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/sciencecommons_ontology:" ;
+	dc:title "Changes neurocommons owl URI's to bio2rdf ns URI's" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude .
+

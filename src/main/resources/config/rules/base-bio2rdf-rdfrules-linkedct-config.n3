@@ -1,0 +1,190 @@
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+
+
+bio2rdf_rdfrule:linkedctcondition a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_condition ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_condition:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/condition/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/condition/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_condition:" ;
+	dc:title "Makes linkedct condition form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:linkedctoversight a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_oversight ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_oversight:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/oversight/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/oversight/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_oversight:" ;
+	dc:title "Makes linkedct oversight form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:linkedctlocation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_location ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_location:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/location/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/location/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_location:" ;
+	dc:title "Makes linkedct location form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:linkedctlink a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_link ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_link:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/link/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/link/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_link:" ;
+	dc:title "Makes linkedct link form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:linkedctresource a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_resource ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_resource:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/linkedct/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/linkedct/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_resource:" ;
+	dc:title "Makes linkedct ontology form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:linkedctprimaryoutcomes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_primary_outcomes ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_primary_outcomes:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/primary_outcomes/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/primary_outcomes/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_primary_outcomes:" ;
+	dc:title "Makes linkedct primary outcomes form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:linkedcttrials a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_trial ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_trial:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/trials/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/trials/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_trial:" ;
+	dc:title "Makes linkedct trials form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:linkedctoverallofficial a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_overall_official ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_overall_official:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/overall_official/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/overall_official/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_overall_official:" ;
+	dc:title "Makes linkedct overall official form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:linkedctintervention a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_intervention ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_intervention:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/intervention/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/intervention/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_intervention:" ;
+	dc:title "Makes linkedct intervention form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:linkedctsecondaryoutcomes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_secondary_outcomes ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_secondary_outcomes:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/secondary_outcomes/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/secondary_outcomes/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_secondary_outcomes:" ;
+	dc:title "Makes linkedct secondary outcomes form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:linkedctagent a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_agent ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_agent:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/collabagency/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/collabagency/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_agent:" ;
+	dc:title "Makes linkedct collaborative agency form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:linkedctarmgroup a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_arm ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_arm:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/arm_group/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/arm_group/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_arm:" ;
+	dc:title "Makes linkedct arm group form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:linkedctresultsreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_results_reference ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_results_reference:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/results_reference/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/results_reference/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_results_reference:" ;
+	dc:title "Makes linkedct results reference form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:linkedctreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_reference ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_reference:" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/reference/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/reference/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_reference:" ;
+	dc:title "Makes linkedct reference form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+

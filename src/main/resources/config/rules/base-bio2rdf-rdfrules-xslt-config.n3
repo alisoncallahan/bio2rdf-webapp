@@ -7,7 +7,7 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_rdfrule:xsltNlmPubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:XsltNormalisationRule ;
+bio2rdf_rdfrule:xsltNlmPubmed a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:XsltNormalisationRule ;
     queryall_rdfrule:xsltStylesheet """<?xml version="1.0" encoding="UTF-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes"/>
@@ -110,6 +110,46 @@ bio2rdf_rdfrule:xsltNlmPubmed a queryall_rdfrule:NormalisationRule , queryall_rd
 """ ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
 	dc:title "XSLT transformation of a Pubmed XML document into RDF NTriples" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:xsltCrossRefPMID2DOI a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:XsltNormalisationRule ;
+    queryall_rdfrule:xsltStylesheet """<?xml version="1.0" encoding="UTF-8" ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="text" indent="no" encoding="UTF-8" omit-xml-declaration="yes"/>
+	<xsl:template match="/">
+		<xsl:variable name="pubmedid" select="//mapping/pmid"/>
+		<xsl:variable name="pubmedbmid" select="concat('pubmed:',//mapping/pmid)"/>
+		<xsl:variable name="pubmeduri" select="concat('http://bio2rdf.org/',$pubmedbmid)"/>
+		<xsl:variable name="doiid" select="//mapping/doi"/>
+		<xsl:variable name="doibmid" select="concat('doi:',//mapping/doi)"/>
+		<xsl:variable name="doiuri" select="concat('http://bio2rdf.org/',$doibmid)"/>
+
+&lt;<xsl:value-of select="$pubmeduri"/>&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://bio2rdf.org/pubmed_resource:Article&gt; .
+
+&lt;<xsl:value-of select="$pubmeduri"/>&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://purl.org/ontology/bibo/Article&gt; .
+
+&lt;<xsl:value-of select="$pubmeduri"/>&gt; &lt;http://purl.org/dc/elements/1.1/identifier&gt; "<xsl:value-of select="$pubmedbmid"/>" .
+
+&lt;<xsl:value-of select="$pubmeduri"/>&gt; &lt;http://prismstandard.org/namespaces/2.0/basic/doi&gt; "<xsl:value-of select="$doiid"/>" .
+
+&lt;<xsl:value-of select="$pubmeduri"/>&gt; &lt;http://www.w3.org/2000/01/rdf-schema#seeAlso&gt; "<xsl:value-of select="$doiuri"/>" .
+
+&lt;<xsl:value-of select="$doiuri"/>&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://bio2rdf.org/pubmed_resource:Article&gt; .
+
+&lt;<xsl:value-of select="$doiuri"/>&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://purl.org/ontology/bibo/Article&gt; .
+
+&lt;<xsl:value-of select="$doiuri"/>&gt; &lt;http://purl.org/dc/elements/1.1/identifier&gt; "<xsl:value-of select="$doibmid"/>" .
+
+&lt;<xsl:value-of select="$doiuri"/>&gt; &lt;http://prismstandard.org/namespaces/2.0/basic/doi&gt; "<xsl:value-of select="$doiid"/>" .
+
+&lt;<xsl:value-of select="$doiuri"/>&gt; &lt;http://www.w3.org/2000/01/rdf-schema#seeAlso&gt; "<xsl:value-of select="$doiuri"/>" .
+
+	</xsl:template>
+</xsl:stylesheet>
+""" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+	dc:title "XSLT transformation of a CrossRef PMID to DOI translator document into RDF NTriples" ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 

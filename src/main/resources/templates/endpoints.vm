@@ -11,13 +11,23 @@
 #set ($tempProviderKey = $query_bundle.provider.getKey())
 #set ($xmlEncoded_providerKey = $tempProviderKey.stringValue())
     
+    #foreach ($endpoint in $query_bundle.alternativeEndpointsAndQueries.keySet())
       <tr class="$odd_even">
-        <td class="provider">
-            $xmlEncoded_providerKey
-        </td>
-        <td class="queryType">
-            $xmlEncoded_queryTypeKey
-        </td>
+			#set ($xmlEncoded_endpoint = $endpoint)
+	      	<td>
+	      		$xmlEncoded_endpoint
+      		</td>
+			#set ($xmlEncoded_query = $query_bundle.alternativeEndpointsAndQueries.get($endpoint))
+	      	<td>
+	      		$xmlEncoded_query
+	      	</td>
+	        <td class="provider">
+	            $xmlEncoded_providerKey
+	        </td>
+	        <td class="queryType">
+	            $xmlEncoded_queryTypeKey
+	        </td>
       </tr>
+    #end
 #end
     </table>

@@ -1,0 +1,179 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_rdfrule:geospeciesfamilyconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_family:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/family_concept_uuid/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/family_concept_uuid/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_family:$1" ;
+	dc:title "Provides interconversion between the geospecies family concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesphyla a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_phyla:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/phyla/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/phyla/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_phyla:$1" ;
+	dc:title "Provides interconversion between the geospecies phyla URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "110"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesordersrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rdf/geospecies_orders:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/orders/$1.rdf" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/orders/([\\w-]+).rdf" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/rdf/geospecies_orders:$1" ;
+	dc:title "Provides interconversion between the geospecies orders rdf URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesfamiliesrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rdf/geospecies_families:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/families/$1.rdf" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/families/([\\w-]+).rdf" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/rdf/geospecies_families:$1" ;
+	dc:title "Provides interconversion between the geospecies families rdf URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesbioclassconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_bioclass:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/bioclass_concept_id/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/bioclass_concept_id/(\\d+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_bioclass:$1" ;
+	dc:title "Provides interconversion between the geospecies bioclass concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:geospeciesspecimenconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_specimen:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/specimen_uuid/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/specimen_uuid/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_specimen:$1" ;
+	dc:title "Provides interconversion between the geospecies specimen concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:geospeciesfamilies a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_families:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/families/$1" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/families/([\\w-]+)" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_families:$1" ;
+	dc:title "Provides interconversion between the geospecies families URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "110"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:geospeciesspecconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_spec:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/spec_concept_uuid/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/spec_concept_uuid/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_spec:$1" ;
+	dc:title "Provides interconversion between the geospecies spec concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:geospeciesobservationconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_observation:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/observation_uuid/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/observation_uuid/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_observation:$1" ;
+	dc:title "Provides interconversion between the geospecies observation concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesorderconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_order:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/order_concept_uuid/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/order_concept_uuid/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_order:$1" ;
+	dc:title "Provides interconversion between the geospecies order concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesorders a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_orders:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/orders/$1" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/orders/([\\w-]+)" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_orders:$1" ;
+	dc:title "Provides interconversion between the geospecies orders URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "110"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospecieskingdoms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_kingdoms:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/kingdoms/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/kingdoms/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_kingdoms:$1" ;
+	dc:title "Provides interconversion between the geospecies kingdoms URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "110"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:geospeciesobservationsrdf a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/rdf/geospecies_observations:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/observations/$1.rdf" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/observations/([\\w-]+).rdf" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/rdf/geospecies_observations:$1" ;
+	dc:title "Provides interconversion between the geospecies observations rdf URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospecieslocationconcept a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_location:(.*)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/location_uuid/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/location_uuid/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_location:$1" ;
+	dc:title "Provides interconversion between the geospecies location concepts and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:geospeciesobservations a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/geospecies_observations:([\\w-]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://species\\.geospecies\\.org/observations/$1/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://species\\.geospecies\\.org/observations/([\\w-]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/geospecies_observations:$1" ;
+	dc:title "Provides interconversion between the geospecies observations URL's and the equivalent Bio2RDF namespace" ;
+	queryall_rdfrule:order "110"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+

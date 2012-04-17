@@ -7,6 +7,18 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ruletest: <http://bio2rdf.org/ruletest:> .
 
+bio2rdf_ruletest:bio2rdfquebecgo_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
+    queryall_ruletest:testsStages queryall_rdfrule:beforeResultsImport ;
+	queryall_ruletest:testsRules bio2rdf_rdfrule:bio2rdfquebecgo ;
+	queryall_ruletest:inputTestString "@prefix nsgo: <http://bio2rdf.org/ns/go#> ." ;
+	queryall_ruletest:outputTestString "@prefix ns:go: <http://bio2rdf.org/ns/go#> ." .
+
+bio2rdf_ruletest:bio2rdfquebecgo_2 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
+    queryall_ruletest:testsStages queryall_rdfrule:beforeResultsImport ;
+	queryall_ruletest:testsRules bio2rdf_rdfrule:bio2rdfquebecgo ;
+	queryall_ruletest:inputTestString "nsgo:is_a <http://bio2rdf.org/go:0009329> ," ;
+	queryall_ruletest:outputTestString "ns:go:is_a <http://bio2rdf.org/go:0009329> ," .
+
 bio2rdf_ruletest:diseasomegenes_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:diseasomegenes ;
@@ -218,7 +230,7 @@ bio2rdf_ruletest:linkedctprimaryoutcomes_1 a queryall_ruletest:RuleTest , querya
 	queryall_ruletest:outputTestString "http://data.linkedct.org/resource/primary_outcomes/155" .
 
 bio2rdf_ruletest:pmid2pubmed_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
-    queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
+    queryall_ruletest:testsStages queryall_rdfrule:queryVariables ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:pmid2pubmed ;
 	queryall_ruletest:inputTestString "http://bio2rdf.org/pmid:10090" ;
 	queryall_ruletest:outputTestString "http://bio2rdf.org/pubmed:10090" .
@@ -272,7 +284,7 @@ bio2rdf_ruletest:geospecieslocationconcept_1 a queryall_ruletest:RuleTest , quer
 	queryall_ruletest:outputTestString "http://species.geospecies.org/location_uuid/1bdde98c-2d38-4d20-8da0-19f1f187f31e/" .
 
 bio2rdf_ruletest:taxon2taxonomy_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
-    queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
+    queryall_ruletest:testsStages queryall_rdfrule:queryVariables ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:taxon2taxonomy ;
 	queryall_ruletest:inputTestString "http://bio2rdf.org/taxonomy:10090" ;
 	queryall_ruletest:outputTestString "http://bio2rdf.org/taxon:10090" .
@@ -611,7 +623,7 @@ bio2rdf_ruletest:myexperimentpack_1 a queryall_ruletest:RuleTest , queryall_rule
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:myexperimentpack ;
 	queryall_ruletest:inputTestString "http://bio2rdf.org/myexp_pack:36" ;
-	queryall_ruletest:outputTestString "http://www.myexperiment.org/Pack/36" .
+	queryall_ruletest:outputTestString "http://www.myexperiment.org/packs/36" .
 
 bio2rdf_ruletest:drugbanknamespacefix_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;

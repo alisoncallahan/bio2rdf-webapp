@@ -1,13 +1,9 @@
-The urlrewritefilter-3.2.0.jar is not available using maven repositories, so you must download it manually from
+The Bio2RDF Web Application is released under the GNU Affero General Public License (AGPL) version 3.0.
 
-   http://urlrewritefilter.googlecode.com/files/urlrewritefilter-3.2.0.zip
+You can obtain a copy of the license from the following URL:
 
-and install the jar file located inside the zip file it into your maven repository using the following command, where /path/to/file is the location you downloaded the file to:
+http://www.gnu.org/licenses/agpl-3.0.txt
 
-   mvn install:install-file -DgroupId=org.tuckey -DartifactId=urlrewritefilter -Dversion=3.2.0 -Dpackaging=jar -Dfile=/path/to/urlrewritefilter-3.2.0.jar
+Copyright Peter Ansell 2009-2012
 
-You also need to download the Maven POM file from:
-
-and install it using the following command
-
-   mvn install:install-file -DgroupId=org.tuckey -DartifactId=urlrewritefilter -Dversion=3.2.0 -Dpackaging=pom -Dfile=/path/to/pom.xml
+Instructions for installing and running the development code is available on the GitHub wiki at https://github.com/bio2rdf/bio2rdf-webapp/wiki

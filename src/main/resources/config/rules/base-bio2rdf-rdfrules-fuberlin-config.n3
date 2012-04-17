@@ -1,0 +1,330 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_rdfrule:dailymedrouteofadministration a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_routeofadministration ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_routeofadministration:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/routeOfAdministration/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/routeOfAdministration/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dailymed_routeofadministration:" ;
+	dc:title "Makes dailymed routeofadministration form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:diseasomediseases a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_diseases ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_diseases:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/diseases/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/diseases/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/diseasome_diseases:" ;
+	dc:title "Makes diseasome disease form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:dailymedinactiveingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_inactiveingredient ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_inactiveingredient:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/inactiveIngredient/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/inactiveIngredient/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dailymed_inactiveingredient:" ;
+	dc:title "Makes dailymed inactiveIngredient form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:dailymedontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_ontology ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_ontology:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/dailymed/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/dailymed/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dailymed_ontology:" ;
+	dc:title "Makes dailymed ontology form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:drugbanktargets a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_targets ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_targets:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/targets/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/targets/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_targets:" ;
+	dc:title "Makes drugbank target form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:diseasomegenes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_genes ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_genes:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/genes/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/genes/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/diseasome_genes:" ;
+	dc:title "Makes diseasome gene form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:medicaredrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:medicare_drugs ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/medicare_drugs:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/medicare/resource/drugs/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/medicare/resource/drugs/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/medicare_drugs:" ;
+	dc:title "Makes medicare drugs form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:dailymedorganization a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_organization ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_organization:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/organization/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/organization/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dailymed_organization:" ;
+	dc:title "Makes dailymed organization form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:drugbankdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugs ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugs:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugs/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugs/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_drugs:" ;
+	dc:title "Makes drugbank drug URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:dailymeddrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_drugs ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_drugs:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/drugs/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/drugs/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dailymed_drugs:" ;
+	dc:title "Makes dailymed drugs form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:siderdrugs a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sider_drugs ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sider_drugs:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/drugs/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/drugs/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/sider_drugs:" ;
+	dc:title "Makes sider drug URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:drugbankdosageforms a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_dosageforms ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_dosageforms:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/dosageforms/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/dosageforms/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_dosageforms:" ;
+	dc:title "Makes drugbank dosage form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:diseasomeontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_ontology ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_ontology:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/diseasome/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/diseasome/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/diseasome_ontology:" ;
+	dc:title "Makes diseasome ontology form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:drugbankdrugcategory a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugcategory ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugcategory:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugcategory/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugcategory/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_drugcategory:" ;
+	dc:title "Makes drugbank category URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:drugbankdruginteractions a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_druginteractions ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_druginteractions:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drug_interactions/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drug_interactions/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_druginteractions:" ;
+	dc:title "Makes drugbank drug interaction URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:dailymedingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:dailymed_ingredient ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/dailymed_ingredient:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/ingredient/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/dailymed/resource/ingredient/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/dailymed_ingredient:" ;
+	dc:title "Makes dailymed ingredient form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:drugbankontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_ontology ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_ontology:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugbank/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugbank/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_ontology:" ;
+	dc:title "Makes drugbank ontology form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:medicareontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:medicare_ontology ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/medicare_ontology:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/medicare/resource/medicare/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/medicare/resource/medicare/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/medicare_ontology:" ;
+	dc:title "Makes medicare ontology form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:medicaredrugtype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:medicare_drugtype ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/medicare_drugtype:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/medicare/resource/drugtype/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/medicare/resource/drugtype/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/medicare_drugtype:" ;
+	dc:title "Makes medicare drugtype form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:drugbankdrugtype a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugtype ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_drugtype:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugtype/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/drugtype/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_drugtype:" ;
+	dc:title "Makes drugbank drugtype URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:drugbankpubmedreferences a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/references/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/references/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:" ;
+	dc:title "Makes drugbank references URI's into Bio2RDF pubmed identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:sidersideeffects a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sider_sideeffects ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sider_sideeffects:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/side_effects/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/side_effects/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/sider_sideeffects:" ;
+	dc:title "Makes sider side effects URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:diseasomediseaseclass a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_diseaseclass ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_diseaseclass:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/diseaseClass/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/diseaseClass/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/diseasome_diseaseclass:" ;
+	dc:title "Makes diseasome disease class form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:drugbankenzymes a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_enzymes ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/drugbank_enzymes:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/enzymes/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/drugbank/resource/enzymes/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/drugbank_enzymes:" ;
+	dc:title "Makes drugbank enzyme URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:siderontology a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:sider_ontology ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/sider_ontology:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/sider/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/sider/resource/sider/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/sider_ontology:" ;
+	dc:title "Makes sider ontology URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:diseasomechromosomallocation a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:diseasome_chromosomallocation ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/diseasome_chromosomallocation:" ;
+	queryall_rdfrule:inputReplaceRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/chromosomalLocation/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://www4\\.wiwiss\\.fu-berlin\\.de/diseasome/resource/chromosomalLocation/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/diseasome_chromosomallocation:" ;
+	dc:title "Makes diseasome chromosomal location form URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+

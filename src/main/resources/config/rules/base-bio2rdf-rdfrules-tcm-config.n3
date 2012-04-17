@@ -1,0 +1,94 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_rdfrule: <http://purl.org/queryall/rdfrule:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+
+
+
+
+
+bio2rdf_rdfrule:tcmmedicine a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_medicine ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_medicine:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/medicine/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/medicine/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/tcm_medicine:" ;
+	dc:title "Makes tcm medicine URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:tcmgene a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_gene ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_gene:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/gene/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/gene/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/tcm_gene:" ;
+	dc:title "Makes tcm gene URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+bio2rdf_rdfrule:tcmingredient a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_ingredient ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_ingredient:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/ingredient/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/ingredient/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/tcm_ingredient:" ;
+	dc:title "Makes tcm ingredient URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:tcmeffect a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_effect ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_effect:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/effect/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/effect/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/tcm_effect:" ;
+	dc:title "Makes tcm effect URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+
+
+bio2rdf_rdfrule:tcmdisease a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_disease ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_disease:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/disease/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/net/tcm/tcm\\.lifescience\\.ntu\\.edu\\.tw/id/disease/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/tcm_disease:" ;
+	dc:title "Makes tcm disease URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+
+bio2rdf_rdfrule:tcminterlink a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:tcm_interlink ;
+	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/tcm_interlink:" ;
+	queryall_rdfrule:inputReplaceRegex "http://purl\\.org/net/tcm/id/interlink/" ;
+	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
+    queryall_rdfrule:outputMatchRegex "http://purl\\.org/net/tcm/id/interlink/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/tcm_interlink:" ;
+	dc:title "Makes tcm interlink URI's into Bio2RDF identifiers" ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+

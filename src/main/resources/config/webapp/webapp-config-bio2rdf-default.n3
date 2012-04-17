@@ -182,7 +182,7 @@ queryall:resultsPageScriptsLocal "static/includes-scripts/script.js" ;
 
 queryall:resultsPageStylesheetsLocal "static/includes-css/html_page_styles.css" ;
 
-queryall:shortcutIconPath "static/includes-images/favicon.ico" ;
+queryall:shortcutIconPath "static/includes-images/bio2rdf-16.png" ;
 
 queryall:indexBannerImagePath "static/includes-images/merged-bio2rdf-banner.jpg" ;
 

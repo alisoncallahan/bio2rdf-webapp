@@ -1659,39 +1659,39 @@ bio2rdf_provider:mirroredbiocyc a queryall_provider:Provider , queryall_provider
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
 
 bio2rdf_provider:dbpediadefaultreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "Dbpedia, do not enable on Bio2RDF.ORG as it is too stressful on the OpenLink architecture" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
 	queryall_provider:graphUri "http://dbpedia.org" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://dbpedia.org/sparql" , "http://lod.openlinksw.com/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cas , bio2rdf_ns:chebi , bio2rdf_ns:cpd , bio2rdf_ns:drugbank , bio2rdf_ns:iupac , bio2rdf_ns:pubchem , bio2rdf_ns:refseq , bio2rdf_ns:smiles , bio2rdf_ns:symbol , bio2rdf_ns:dbpediaclass ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:dbpediaclass , bio2rdf_rdfrule:dbpediacategory .
 
 bio2rdf_provider:dbpediapagelinks a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "Dbpedia, do not enable on Bio2RDF.ORG as it is too stressful on the OpenLink architecture" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
 	queryall_provider:graphUri "http://dbpedia.org/pagelinks#" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://dbpedia.org/sparql" , "http://lod.openlinksw.com/sparql" ;
 	queryall_provider:handlesNamespace  bio2rdf_ns:wikipedia , bio2rdf_ns:wikipediacategory ;
 	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:secondaryreverseconstruct , bio2rdf_query:links ,  bio2rdf_query:linkstonamespace , bio2rdf_query:linksbynamespace ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:dbpediaclass , bio2rdf_rdfrule:dbpediacategory .
 
 bio2rdf_provider:dbpediasecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "Dbpedia, do not enable on Bio2RDF.ORG as it is too stressful on the OpenLink architecture" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
 	queryall_provider:graphUri "http://dbpedia.org" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://dbpedia.org/sparql" , "http://lod.openlinksw.com/sparql" ;
 	queryall_provider:handlesNamespace  bio2rdf_ns:wikipedia , bio2rdf_ns:wikipediacategory ;
 	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
@@ -1879,13 +1879,13 @@ bio2rdf_provider:quebecinterpro a queryall_provider:Provider , queryall_provider
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:interprocapitalisation , bio2rdf_rdfrule:prositecapitalisation , bio2rdf_rdfrule:prositepdoccapitalisation .
 
 bio2rdf_provider:dbpediadefault a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "Dbpedia, do not enable on Bio2RDF.ORG as it is too stressful on the OpenLink architecture" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
 	queryall_provider:graphUri "http://dbpedia.org" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://dbpedia.org/sparql" , "http://lod.openlinksw.com/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:wikipedia , bio2rdf_ns:wikipediacategory , bio2rdf_ns:dbpediaproperty , bio2rdf_ns:dbpediaclass ;
 	queryall_provider:includedInQuery bio2rdf_query:constructnoinclude , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:unsafelinkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;

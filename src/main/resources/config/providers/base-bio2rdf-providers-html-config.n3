@@ -11,7 +11,6 @@ bio2rdf_provider:drugbankhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.drugbank.ca/drugs/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_drugs ;
@@ -21,7 +20,6 @@ bio2rdf_provider:sangercosmichtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.sanger.ac.uk/perl/genetics/CGP/cosmic?action=gene&ln=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cosmic ;
@@ -31,7 +29,6 @@ bio2rdf_provider:oclchtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.worldcat.org/oclc/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:oclc ;
@@ -41,7 +38,6 @@ bio2rdf_provider:gdbhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gdb.org/gdb-bin/genera/accno?accessionNum=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gdb ;
@@ -51,7 +47,6 @@ bio2rdf_provider:pathhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genome.jp/dbget-bin/show_pathway?${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:path ;
@@ -61,7 +56,6 @@ bio2rdf_provider:metahtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://biocyc.org/META/new-image?object=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:metacyc ;
@@ -71,7 +65,6 @@ bio2rdf_provider:rgdhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://rgd.mcw.edu/tools/query/query.cgi?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:rgd ;
@@ -81,7 +74,6 @@ bio2rdf_provider:phosphositehtml a queryall_provider:Provider , queryall_provide
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.phosphosite.org/uniprotAccAction.do?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:phosphosite ;
@@ -91,7 +83,6 @@ bio2rdf_provider:dictybasetrialshtml a queryall_provider:Provider , queryall_pro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://dictybase.org/db/cgi-bin/gene_page.pl?primary_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:dictybase_trials ;
@@ -101,7 +92,6 @@ bio2rdf_provider:ipihtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-newId+[IPI-AllText:${urlEncoded_input_2}*]+-lv+30+-view+SeqSimpleView+-page+qResult" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ipi ;
@@ -111,7 +101,6 @@ bio2rdf_provider:rebasehtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://rebase.neb.com/rebase/enz/${urlEncoded_input_2}.html" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:rebase ;
@@ -121,7 +110,6 @@ bio2rdf_provider:chemidplushtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://chem.sis.nlm.nih.gov/chemidplus/direct.jsp?regno=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:chemidplus ;
@@ -131,7 +119,6 @@ bio2rdf_provider:cgschtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cgsc.biology.yale.edu/Site.php?ID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cgsc ;
@@ -141,7 +128,6 @@ bio2rdf_provider:cathhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cathwww.biochem.ucl.ac.uk/cgi-bin/cath/GotoCath.pl?cath=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cath ;
@@ -151,7 +137,6 @@ bio2rdf_provider:nmrshiftdbhtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://nmrshiftdb.ice.mpg.de/portal/js_pane/P-Results/nmrshiftdbaction/showDetailsFromHome/molNumber/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:nmrshiftdb_molecule ;
@@ -161,7 +146,6 @@ bio2rdf_provider:msdchemhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.rcsb.org/pdb/ligand/ligandsummary.do?hetId=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:msdchem ;
@@ -171,7 +155,6 @@ bio2rdf_provider:printshtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:prints ;
@@ -181,7 +164,6 @@ bio2rdf_provider:ncbicoghtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cog ;
@@ -191,7 +173,6 @@ bio2rdf_provider:ncbicddhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=${urlEncoded_uppercase_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cdd ;
@@ -201,7 +182,6 @@ bio2rdf_provider:mquterbiopatmlhtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.mquter.qut.edu.au/rdftag/BioPatMLTestPage.aspx?biopatmlid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:biopatml ;
@@ -211,7 +191,6 @@ bio2rdf_provider:isbnhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://en.wikipedia.org/wiki/Special:BookSources/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:isbn ;
@@ -221,7 +200,6 @@ bio2rdf_provider:smarthtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY&DOMAIN=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:smart ;
@@ -231,7 +209,6 @@ bio2rdf_provider:rcsbpdbhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.rcsb.org/pdb/explore.do?structureId=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
@@ -241,7 +218,6 @@ bio2rdf_provider:uniprothtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://purl.uniprot.org/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:uniref , bio2rdf_ns:uniparc , bio2rdf_ns:keywords , bio2rdf_ns:taxonomy , bio2rdf_ns:citations , bio2rdf_ns:nextbio ;
@@ -251,7 +227,6 @@ bio2rdf_provider:interprohtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/interpro/IEntry?ac=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:interpro ;
@@ -261,7 +236,6 @@ bio2rdf_provider:eckhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ecogene.org/geneInfo.php?eck_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:eck ;
@@ -271,7 +245,6 @@ bio2rdf_provider:sideffectsdrugsemblhtml a queryall_provider:Provider , queryall
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://sideeffects.embl.de/drugs/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sider_drugs ;
@@ -281,7 +254,6 @@ bio2rdf_provider:umbbdhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=c&compID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:um-bbd ;
@@ -291,7 +263,6 @@ bio2rdf_provider:ebisrshtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+LibInfo+-id+1DdHI1WEmGK+-lib+${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:srs ;
@@ -301,7 +272,6 @@ bio2rdf_provider:clinicaltrialshtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://clinicaltrials.gov/show/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:linkedct_trial ;
@@ -311,7 +281,6 @@ bio2rdf_provider:ncbiomimhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/omim/${urlEncoded_uppercase_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:omim ;
@@ -321,7 +290,6 @@ bio2rdf_provider:hgnchtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genenames.org/data/hgnc_data.php?hgnc_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hgnc ;
@@ -331,7 +299,6 @@ bio2rdf_provider:gopubmedhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gopubmed.org/GoMeshPubMed/gomeshpubmed/Search/Documents?m=1000&q=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gopubmed ;
@@ -341,7 +308,6 @@ bio2rdf_provider:ncbirefseqhtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=${urlEncoded_uppercase_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:refseq ;
@@ -351,7 +317,6 @@ bio2rdf_provider:cgdhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.candidagenome.org/cgi-bin/locus.pl?dbid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cgd ;
@@ -361,7 +326,6 @@ bio2rdf_provider:uniprottaxonhtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.uniprot.org/taxonomy/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
@@ -371,7 +335,6 @@ bio2rdf_provider:scophtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://scop.mrc-lmb.cam.ac.uk/scop/search.cgi?key=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:scop ;
@@ -381,7 +344,6 @@ bio2rdf_provider:unistshtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/genome/sts/sts.cgi?uid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:unists ;
@@ -391,7 +353,6 @@ bio2rdf_provider:swooglehtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://swoogle.umbc.edu/index.php?option=com_frontpage&ervice=search&queryType=search_swd_ontology&searchStart=1&searchString=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:swoogle ;
@@ -401,7 +362,6 @@ bio2rdf_provider:iproclasshtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pir.georgetown.edu/cgi-bin/ipcidmapping?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:iproclass ;
@@ -411,7 +371,6 @@ bio2rdf_provider:pirpsdhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pir.georgetown.edu/cgi-bin/pirsearch?search=entry&choice=psd&query=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pir_psd ;
@@ -421,7 +380,6 @@ bio2rdf_provider:myexperimentusershtml a queryall_provider:Provider , queryall_p
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.myexperiment.org/users/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:myexp_user ;
@@ -431,7 +389,6 @@ bio2rdf_provider:ecogenehtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ecogene.org/geneInfo.php?eg_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ecogene ;
@@ -441,7 +398,6 @@ bio2rdf_provider:mahtml a queryall_provider:Provider , queryall_provider:HttpPro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.informatics.jax.org/searches/AMA.cgi?id=MA:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ma ;
@@ -451,7 +407,6 @@ bio2rdf_provider:nistchemistrywebbookhtml a queryall_provider:Provider , queryal
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://webbook.nist.gov/cgi/cbook.cgi?ID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:nist_chemistry_webbook ;
@@ -461,7 +416,6 @@ bio2rdf_provider:dictybasehtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://dictybase.org/db/cgi-bin/gene_page.pl?dictybaseid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:dictybase ;
@@ -471,7 +425,6 @@ bio2rdf_provider:expasypdbhtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.expasy.org/cgi-bin/get-pdb.pl?${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
@@ -481,7 +434,6 @@ bio2rdf_provider:flybasehtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://flybase.org/reports/${urlEncoded_input_2}.html" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:flybase ;
@@ -491,7 +443,6 @@ bio2rdf_provider:issnhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.worldcat.org/issn/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:issn ;
@@ -501,7 +452,6 @@ bio2rdf_provider:narhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.oxfordjournals.org/nar/database/summary/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:nar ;
@@ -511,7 +461,6 @@ bio2rdf_provider:cashtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://webbook.nist.gov/cgi/cbook.cgi?ID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cas ;
@@ -521,7 +470,6 @@ bio2rdf_provider:ncbipubchemsidhtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:sid ;
@@ -531,7 +479,6 @@ bio2rdf_provider:pfamhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pfam.sanger.ac.uk/family?entry=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pfam ;
@@ -541,7 +488,6 @@ bio2rdf_provider:enwikipediahtml a queryall_provider:Provider , queryall_provide
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://en.wikipedia.org/wiki/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:wikipedia ;
@@ -551,7 +497,6 @@ bio2rdf_provider:brendahtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.brenda-enzymes.info/php/result_flat.php4?ecno=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:brenda ;
@@ -561,7 +506,6 @@ bio2rdf_provider:ncbigeneidhtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/gene/${urlEncoded_uppercase_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:geneid ;
@@ -571,7 +515,6 @@ bio2rdf_provider:ncbinucleotidehtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/nucest/${urlEncoded_uppercase_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:nucleotide ;
@@ -581,7 +524,6 @@ bio2rdf_provider:genedbpfalciparumhtml a queryall_provider:Provider , queryall_p
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genedb.org/genedb/Dispatcher?formType=navBar&submit=Search+for&organism=All%3Apombe%3Acerevisiae%3Adicty%3Aasp%3Atryp%3Aleish%3Amalaria%3Astyphi%3Aglossina&desc=yes&ohmr=%2F&name=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genedb_pfalciparum ;
@@ -591,7 +533,6 @@ bio2rdf_provider:emblhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&Submit=Go&id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:embl ;
@@ -601,7 +542,6 @@ bio2rdf_provider:expasyprositehtml a queryall_provider:Provider , queryall_provi
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://expasy.org/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:prosite , bio2rdf_ns:enzyme ;
@@ -611,7 +551,6 @@ bio2rdf_provider:cpdhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genome.jp/dbget-bin/www_bget?${urlEncoded_input_1}:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cpd , bio2rdf_ns:dr , bio2rdf_ns:ec , bio2rdf_ns:gl , bio2rdf_ns:rn ;
@@ -621,7 +560,6 @@ bio2rdf_provider:prodomhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN&query=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:prodom ;
@@ -631,7 +569,6 @@ bio2rdf_provider:mgihtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.informatics.jax.org/searches/accession_report.cgi?id=mgi:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:mgi ;
@@ -641,7 +578,6 @@ bio2rdf_provider:reactomehtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.reactome.org/cgi-bin/eventbrowser?DB=gk_current&ID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:reactome ;
@@ -651,7 +587,6 @@ bio2rdf_provider:arrayexpresshtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/microarray-as/ae/browse.html?keywords=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:arrayexpress ;
@@ -661,7 +596,6 @@ bio2rdf_provider:wikipathwayshtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.wikipathways.org/index.php/Pathway:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:wikipathways ;
@@ -671,17 +605,25 @@ bio2rdf_provider:ebigohtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/ego/DisplayGoTerm?id=GO:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:go ;
 	queryall_provider:includedInQuery bio2rdf_query:html , bio2rdf_query:htmlinclude .
 
+bio2rdf_provider:amigogohtml a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://amigo.geneontology.org/cgi-bin/amigo/go.cgi?query=GO:${urlEncoded_input_2}" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:go ;
+	queryall_provider:includedInQuery bio2rdf_query:html , bio2rdf_query:htmlinclude .
+
+
 bio2rdf_provider:ncbibiosystemshtml a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/biosystems/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:biosystems ;
@@ -691,7 +633,6 @@ bio2rdf_provider:ncbihomologenehtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/homologene/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:homologene ;
@@ -701,7 +642,6 @@ bio2rdf_provider:meshhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=&term=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:mesh ;
@@ -711,7 +651,6 @@ bio2rdf_provider:ebichebihtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:chebi ;
@@ -721,7 +660,6 @@ bio2rdf_provider:wikipediahtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://en.wikipedia.org/wiki/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:wikipedia ;
@@ -731,7 +669,6 @@ bio2rdf_provider:wikipediacategoryhtml a queryall_provider:Provider , queryall_p
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://en.wikipedia.org/wiki/Category:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:wikipediacategory ;
@@ -741,7 +678,6 @@ bio2rdf_provider:hugohtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genenames.org/data/hgnc_data.php?gd_app_sym=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hugo , bio2rdf_ns:symbol ;
@@ -751,7 +687,6 @@ bio2rdf_provider:cpathhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.pathwaycommons.org/pc/record2.do?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cpath ;
@@ -761,7 +696,6 @@ bio2rdf_provider:ncbigenbankhtml a queryall_provider:Provider , queryall_provide
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/nuccore/${urlEncoded_uppercase_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi;
@@ -771,7 +705,6 @@ bio2rdf_provider:hprdhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.hprd.org/protein/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hprd ;
@@ -781,7 +714,6 @@ bio2rdf_provider:genedbspombehtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genedb.org/genedb/Dispatcher?formType=navBar&submit=Search+for&organism=All%3Apombe%3Acerevisiae%3Adicty%3Aasp%3Atryp%3Aleish%3Amalaria%3Astyphi%3Aglossina&desc=yes&ohmr=%2F&name=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genedb_spombe ;
@@ -791,7 +723,6 @@ bio2rdf_provider:ncbipubchemcidhtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?cid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cid ;
@@ -801,7 +732,6 @@ bio2rdf_provider:ebiintacthtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/intact/search/do/search?searchString=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:intact ;
@@ -811,7 +741,6 @@ bio2rdf_provider:doihtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://dx.doi.org/${input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:doi ;
@@ -821,7 +750,6 @@ bio2rdf_provider:sideffectsemblhtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://sideeffects.embl.de/se/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sider_sideeffects ;
@@ -831,7 +759,6 @@ bio2rdf_provider:pathguidehtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.pathguide.org/fullrecord.php?organisms=all&availability=all&standards=all&order=alphabetic&DBID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pathguide ;
@@ -841,7 +768,6 @@ bio2rdf_provider:ncbipubmedhtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/pubmed/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
@@ -851,7 +777,6 @@ bio2rdf_provider:sgdhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.yeastgenome.org/cgi-bin/locus.fpl?sgdid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgd ;
@@ -861,7 +786,6 @@ bio2rdf_provider:ensemblhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ensembl.org/perl/protview?peptide=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ensembl ;
@@ -871,7 +795,6 @@ bio2rdf_provider:myexperimentworkflowshtml a queryall_provider:Provider , querya
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.myexperiment.org/workflows/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:myexp_workflow ;
@@ -881,7 +804,6 @@ bio2rdf_provider:myexperimentworkflowsxml a queryall_provider:Provider , queryal
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.myexperiment.org/workflow.xml?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:myexp_workflow ;
@@ -891,7 +813,6 @@ bio2rdf_provider:myexperimentuserxml a queryall_provider:Provider , queryall_pro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.myexperiment.org/user.xml?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:myexp_user ;
@@ -901,7 +822,6 @@ bio2rdf_provider:diphtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://dip.doe-mbi.ucla.edu/dip/Browse.cgi?D=1&PK=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:dip ;
@@ -911,7 +831,6 @@ bio2rdf_provider:biogridhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.thebiogrid.org/SearchResults/summary/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:biogrid ;
@@ -921,7 +840,6 @@ bio2rdf_provider:aceviewhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/IEB/Research/Acembly/av.cgi?c=geneid&l=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:aceview ;
@@ -931,7 +849,6 @@ bio2rdf_provider:hugenavigatorhtml a queryall_provider:Provider , queryall_provi
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://hugenavigator.net/HuGENavigator/huGEPedia.do?firstQuery=anything&typeSubmit=GO&check=y&typeOption=gene&which=2&pubOrderType=pubD&geneID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:huge_navigator ;
@@ -941,7 +858,6 @@ bio2rdf_provider:ccdshtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/CCDS/CcdsBrowse.cgi?REQUEST=CCDS&ORGANISM=0&BUILDS=CURRENTBUILDS&DATA=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ccds ;
@@ -951,7 +867,6 @@ bio2rdf_provider:mgchtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://mgc.nci.nih.gov/Genes/CloneList?ORG=Hs&LIST=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:mgc ;
@@ -961,7 +876,6 @@ bio2rdf_provider:bindhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://bind.ca/Action?idsearch=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:bind ;
@@ -972,7 +886,6 @@ bio2rdf_provider:sgnhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgn ;
@@ -982,7 +895,6 @@ bio2rdf_provider:sgnrefhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.sgn.cornell.edu/chado/publication.pl?pub_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgn_ref ;
@@ -993,7 +905,6 @@ bio2rdf_provider:seedhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.theseed.org/linkin.cgi?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:seed ;
@@ -1003,7 +914,6 @@ bio2rdf_provider:sgdlocushtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://db.yeastgenome.org/cgi-bin/locus.pl?locus=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgd_locus ;
@@ -1013,7 +923,6 @@ bio2rdf_provider:sgdrefhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgd_ref ;
@@ -1023,7 +932,6 @@ bio2rdf_provider:tgdlocushtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://db.ciliate.org/cgi-bin/locus.pl?locus=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:tgd_locus ;
@@ -1033,7 +941,6 @@ bio2rdf_provider:tgdrefhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:tgd_ref ;
@@ -1043,7 +950,6 @@ bio2rdf_provider:pamgovmdhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pamgo_vmd ;
@@ -1053,7 +959,6 @@ bio2rdf_provider:pharmgkbhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.pharmgkb.org/do/serve?objId=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb ;
@@ -1063,7 +968,6 @@ bio2rdf_provider:pohtml a queryall_provider:Provider , queryall_provider:HttpPro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:po ;
@@ -1073,7 +977,6 @@ bio2rdf_provider:pseudocaphtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://v2.pseudomonas.com/getAnnotation.do?locusID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pseudocap ;
@@ -1083,7 +986,6 @@ bio2rdf_provider:psimodhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:psimod ;
@@ -1093,7 +995,6 @@ bio2rdf_provider:songhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://song.sourceforge.net/SOterm_tables.html#${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:so ;
@@ -1103,7 +1004,6 @@ bio2rdf_provider:tairarabidopsishtml a queryall_provider:Provider , queryall_pro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://arabidopsis.org/servlets/TairObject?accession=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:tair_arabidopsis ;
@@ -1113,7 +1013,6 @@ bio2rdf_provider:tchtml a queryall_provider:Provider , queryall_provider:HttpPro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.tcdb.org/tcdb/index.php?tc=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:tc ;
@@ -1123,7 +1022,6 @@ bio2rdf_provider:dbsnphtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/SNP/snp_ref.cgi?type=rs&rs=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:dbsnp ;
@@ -1133,7 +1031,6 @@ bio2rdf_provider:pdbsumhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/pdbsum/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pdbsum ;
@@ -1143,7 +1040,6 @@ bio2rdf_provider:xenbasehtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.xenbase.org/gene/showgene.do?method=display&geneId=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:xenbase ;
@@ -1153,7 +1049,6 @@ bio2rdf_provider:zfinhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://zfin.org/cgi-bin/webdriver?MIval=aa-markerview.apg&OID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:zfin ;
@@ -1163,7 +1058,6 @@ bio2rdf_provider:agilocuscodehtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://arabidopsis.org/servlets/TairObject?type=locus&name=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:agi_locuscode ;
@@ -1173,7 +1067,6 @@ bio2rdf_provider:asaphtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "https://asap.ahabs.wisc.edu/annotation/php/feature_info.php?FeatureID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:asap ;
@@ -1184,7 +1077,6 @@ bio2rdf_provider:aspgdhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:aspgd ;
@@ -1194,7 +1086,6 @@ bio2rdf_provider:aspgdlocushtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.aspergillusgenome.org/cgi-bin/locus.pl?locus=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:aspgd_locus ;
@@ -1204,7 +1095,6 @@ bio2rdf_provider:aspgdrefhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.aspergillusgenome.org/cgi-bin/reference/reference.pl?refNo=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:aspgd_ref ;
@@ -1214,7 +1104,6 @@ bio2rdf_provider:biomodelshtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:biomodels ;
@@ -1224,7 +1113,6 @@ bio2rdf_provider:ddbjhtml a queryall_provider:Provider , queryall_provider:HttpP
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ddbj ;
@@ -1234,7 +1122,6 @@ bio2rdf_provider:echobasehtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:echobase ;
@@ -1244,7 +1131,6 @@ bio2rdf_provider:grhtml a queryall_provider:Provider , queryall_provider:HttpPro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gramene.org/db/searches/browser?search_type=All&RGN=on&query=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gr ;
@@ -1254,7 +1140,6 @@ bio2rdf_provider:grproteinhtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gramene.org/db/protein/protein_search?acc=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gr_protein ;
@@ -1264,7 +1149,6 @@ bio2rdf_provider:grgenehtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gramene.org/db/genes/search_gene?acc=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gr_gene ;
@@ -1274,7 +1158,6 @@ bio2rdf_provider:grqtlhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gr_qtl ;
@@ -1284,7 +1167,6 @@ bio2rdf_provider:grrefhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.gramene.org/db/literature/pub_search?ref_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gr_ref ;
@@ -1294,7 +1176,6 @@ bio2rdf_provider:goarefhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/QuickGO/GAnnotation?ref=GOA%5FREF%3A${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:goa_ref ;
@@ -1304,7 +1185,6 @@ bio2rdf_provider:hinvdbhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:h-invdb , bio2rdf_ns:h_inv ;
@@ -1314,7 +1194,6 @@ bio2rdf_provider:hpahtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.proteinatlas.org/tissue_profile.php?antibody_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hpa ;
@@ -1324,7 +1203,6 @@ bio2rdf_provider:hpaantibodyhtml a queryall_provider:Provider , queryall_provide
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.proteinatlas.org/antibody_info.php?antibody_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hpa_antibody ;
@@ -1334,7 +1212,6 @@ bio2rdf_provider:lifedbhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:lifedb ;
@@ -1344,7 +1221,6 @@ bio2rdf_provider:ncbigphtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ncbi.nlm.nih.gov/sites/entrez?Db=genomeprj&Cmd=Retrieve&list_uids=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:gp ;
@@ -1354,7 +1230,6 @@ bio2rdf_provider:cleanexhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.cleanex.isb-sib.ch/cgi-bin/get_doc?db=cleanex&format=nice&entry=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:cleanex ;
@@ -1364,7 +1239,6 @@ bio2rdf_provider:hogenomhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pbil.univ-lyon1.fr/cgi-bin/acnuc-ac2tree?db=HOGENOM&query=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hogenom ;
@@ -1375,7 +1249,6 @@ bio2rdf_provider:genecardshtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genecards.org/cgi-bin/carddisp.pl?gc_id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genecards ;
@@ -1385,7 +1258,6 @@ bio2rdf_provider:ctdhtml a queryall_provider:Provider , queryall_provider:HttpPr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://ctd.mdibl.org/detail.go?type=gene&db=GENE&acc=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ctd ;
@@ -1395,7 +1267,6 @@ bio2rdf_provider:hovergenhtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pbil.univ-lyon1.fr/cgi-bin/acnuc-ac2tree?db=HOVERGEN&query=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hovergen ;
@@ -1405,7 +1276,6 @@ bio2rdf_provider:pridehtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.ebi.ac.uk/pride/searchSummary.do?queryTypeSelected=identification%20accession%20number&identificationAccessionNumber=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:pride ;
@@ -1415,7 +1285,6 @@ bio2rdf_provider:inparanoidhtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://inparanoid.sbc.su.se/cgi-bin/gene_search.cgi?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:inparanoid ;
@@ -1425,7 +1294,6 @@ bio2rdf_provider:genevestigatorhtml a queryall_provider:Provider , queryall_prov
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.genevestigator.com/gv/directlink.jsp?geneIDType=SwissProt&geneIDs=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genevestigator ;
@@ -1435,7 +1303,6 @@ bio2rdf_provider:peptideatlashtml a queryall_provider:Provider , queryall_provid
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "https://db.systemsbiology.net/sbeams/cgi/PeptideAtlas/Search?action=GO&search_key=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:peptideatlas ;
@@ -1445,7 +1312,6 @@ bio2rdf_provider:ratmaphtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://ratmap.gen.gu.se/ShowSingleLocus.htm?accno=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ratmap ;
@@ -1455,7 +1321,6 @@ bio2rdf_provider:euroscarfhtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://web.uni-frankfurt.de/fb15/mikro/euroscarf/data/${urlEncoded_input_2}.html" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:euroscarf ;
@@ -1465,7 +1330,6 @@ bio2rdf_provider:chempediasubstancehtml a queryall_provider:Provider , queryall_
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://chempedia.com/substances/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:chempedia_substance ;
@@ -1475,7 +1339,6 @@ bio2rdf_provider:modbasehtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://modbase.compbio.ucsf.edu/modbase-cgi-new/model_search.cgi?searchkw=name&kword=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:modbase ;
@@ -1485,7 +1348,6 @@ bio2rdf_provider:swissmodelhtml a queryall_provider:Provider , queryall_provider
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://swissmodel.expasy.org/repository/smr.php?job=2&sptr_ac=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:swissmodel ;
@@ -1495,7 +1357,6 @@ bio2rdf_provider:ecoliwikihtml a queryall_provider:Provider , queryall_provider:
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://ecoliwiki.net/colipedia/index.php/${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ecoliwiki , bio2rdf_ns:blattner ;
@@ -1505,7 +1366,6 @@ bio2rdf_provider:ecocychtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://biocyc.org/ECOLI/NEW-IMAGE?object=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:ecocyc ;
@@ -1515,7 +1375,6 @@ bio2rdf_provider:mutdbhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://mutdb.org/cgi-bin/mutdb.pl?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:mutdb ;
@@ -1525,7 +1384,6 @@ bio2rdf_provider:genatlashtml a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://genatlas.medecine.univ-paris5.fr/gensearch.php?type=0&SYMBOL=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:genatlas ;
@@ -1535,7 +1393,6 @@ bio2rdf_provider:alfredhtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://alfred.med.yale.edu/alfred/recordinfop.asp?UNID=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:alfred ;
@@ -1545,7 +1402,6 @@ bio2rdf_provider:biocartacategoryhtml a queryall_provider:Provider , queryall_pr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.biocarta.com/genes/${urlEncoded_input_2}.asp" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:biocarta_category ;
@@ -1555,7 +1411,6 @@ bio2rdf_provider:biocartapathwayshtml a queryall_provider:Provider , queryall_pr
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.biocarta.com/pathfiles/${urlEncoded_input_2}.asp" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:biocarta ;
@@ -1565,7 +1420,6 @@ bio2rdf_provider:sabiorkhtml a queryall_provider:Provider , queryall_provider:Ht
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://sabio.villa-bosch.de/SABIORK/index2.jsp?reac=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:sabio-rk ;
@@ -1575,7 +1429,6 @@ bio2rdf_provider:patenthtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://v3.espacenet.com/textdoc?DB=EPODOC&IDX=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:patent ;
@@ -1585,7 +1438,6 @@ bio2rdf_provider:whoatchtml a queryall_provider:Provider , queryall_provider:Htt
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.whocc.no/atc_ddd_index/?code=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:atc ;
@@ -1595,7 +1447,6 @@ bio2rdf_provider:nmpdrhtml a queryall_provider:Provider , queryall_provider:Http
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.nmpdr.org/linkin.cgi?id=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:nmpdr ;

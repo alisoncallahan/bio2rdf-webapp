@@ -196,7 +196,7 @@ queryall:unknownNamespaceStaticAdditions bio2rdf_query:unknownnamespace ;
 
 queryall:unknownNamespaceHttpResponseCode "404"^^xsd:int ;
 
-queryall:tryAllEndpointsForEachProvider "true"^^xsd:boolean ;
+queryall:tryAllEndpointsForEachProvider "false"^^xsd:boolean ;
 
 queryall:pageoffsetMaxValue "20"^^xsd:int ;
 

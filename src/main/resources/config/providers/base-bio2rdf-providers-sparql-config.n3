@@ -2242,7 +2242,7 @@ bio2rdf_provider:mirroredpharmgkbreverse a queryall_provider:Provider , queryall
 #	, "http://protech.pharmgkb.bio2rdf.org/sparql" 
 #	, "http://quebec.pharmgkb.bio2rdf.org/sparql" 
 	;
-	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb , bio2rdf_ns:pharmgkb_resource , bio2rdf_ns:pharmgkb_vocabulary , bio2rdf_ns:atc , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:snomed , bio2rdf_ns:umls , bio2rdf_ns:pfam , bio2rdf_ns:prosite , bio2rdf_ns:mesh , bio2rdf_ns:pubchemcompound , bio2rdf_ns:pubchemsubstance , bio2rdf_ns:dbsnp ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb , bio2rdf_ns:pharmgkb_resource , bio2rdf_ns:pharmgkb_vocabulary , bio2rdf_ns:atc , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:snomed , bio2rdf_ns:umls , bio2rdf_ns:pfam , bio2rdf_ns:prosite , bio2rdf_ns:mesh , bio2rdf_ns:pubchemcompound , bio2rdf_ns:pubchemsubstance , bio2rdf_ns:dbsnp , bio2rdf_ns:pubmed ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pfampfcapitalisation , bio2rdf_rdfrule:pfampbcapitalisation , bio2rdf_rdfrule:prositecapitalisation , bio2rdf_rdfrule:prositepdoccapitalisation , bio2rdf_rdfrule:snomedcttosnomed , bio2rdf_rdfrule:drugbanknamespacefix .
 

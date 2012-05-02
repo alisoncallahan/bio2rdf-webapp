@@ -643,7 +643,7 @@ bio2rdf_provider:meshhtml a queryall_provider:Provider , queryall_provider:HttpP
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=&term=${urlEncoded_input_2}" ;
+	queryall_provider:endpointUrl "http://www.nlm.nih.gov/cgi/mesh/2012/MB_cgi?field=uid&term=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:mesh ;
 	queryall_provider:includedInQuery bio2rdf_query:html , bio2rdf_query:htmlinclude .
 

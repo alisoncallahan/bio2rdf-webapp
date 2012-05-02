@@ -2197,7 +2197,7 @@ bio2rdf_provider:quebecpfam a queryall_provider:Provider , queryall_provider:Htt
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pfampfcapitalisation , bio2rdf_rdfrule:pfampbcapitalisation , bio2rdf_rdfrule:prositecapitalisation , bio2rdf_rdfrule:prositepdoccapitalisation .
 
 bio2rdf_provider:mirroredpharmgkb a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "SPARQL endpoint provider for PharmGKB" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
@@ -2210,7 +2210,23 @@ bio2rdf_provider:mirroredpharmgkb a queryall_provider:Provider , queryall_provid
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksfromlowercase , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
-	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pfampfcapitalisation , bio2rdf_rdfrule:pfampbcapitalisation , bio2rdf_rdfrule:prositecapitalisation , bio2rdf_rdfrule:prositepdoccapitalisation .
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pfampfcapitalisation , bio2rdf_rdfrule:pfampbcapitalisation , bio2rdf_rdfrule:prositecapitalisation , bio2rdf_rdfrule:prositepdoccapitalisation , bio2rdf_rdfrule:snomedcttosnomed .
+
+bio2rdf_provider:mirroredpharmgkbreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Reverse construct provider for namespaces linked to from PharmGKB" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/pharmgkb" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.pharmgkb.bio2rdf.org/sparql" 
+#	, "http://protech.pharmgkb.bio2rdf.org/sparql" 
+#	, "http://quebec.pharmgkb.bio2rdf.org/sparql" 
+	;
+	queryall_provider:handlesNamespace bio2rdf_ns:snomed , bio2rdf_ns:umls , bio2rdf_ns:pfam , bio2rdf_ns:prosite , bio2rdf_ns:mesh ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pfampfcapitalisation , bio2rdf_rdfrule:pfampbcapitalisation , bio2rdf_rdfrule:prositecapitalisation , bio2rdf_rdfrule:prositepdoccapitalisation , bio2rdf_rdfrule:snomedcttosnomed .
 
 bio2rdf_provider:neurocommonsgo a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "" ;

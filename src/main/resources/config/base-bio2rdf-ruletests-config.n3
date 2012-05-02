@@ -7,6 +7,12 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ruletest: <http://bio2rdf.org/ruletest:> .
 
+bio2rdf_ruletest:snomedcttosnomed_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
+    queryall_ruletest:testsStages queryall_rdfrule:beforeResultsImport ;
+	queryall_ruletest:testsRules bio2rdf_rdfrule:snomedcttosnomed ;
+	queryall_ruletest:inputTestString "http://bio2rdf.org/snomed:161831008" ;
+	queryall_ruletest:outputTestString "http://bio2rdf.org/snomedct:161831008" .
+
 bio2rdf_ruletest:bio2rdfquebecgo_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:beforeResultsImport ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:bio2rdfquebecgo ;

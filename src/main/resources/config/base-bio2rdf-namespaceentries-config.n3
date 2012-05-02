@@ -1239,6 +1239,8 @@ bio2rdf_ns:snomed a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "snomed" ;
+# Add snomedct which is used in pharmgkb dataset as alternative here
+	queryall_ns:alternativePrefix "snomedct" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;

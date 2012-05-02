@@ -1429,11 +1429,11 @@ bio2rdf_query:primaryreverseconstructfrompubcheminchi a queryall_query:Query , q
 	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
 	queryall_query:includeDefaults "false"^^xsd:boolean ;
 	queryall_query:inputRegex "^([\\w-]+):(.+)" ;
-	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedStandardUri}> <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?s . ?s ?p ?o} WHERE { ${graphStart} ?s <${defaultHostAddress}ns/ns/ns/pubchem#InChI> \"InChI=${input_2}\" . ?s ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
+	queryall_query:templateString "CONSTRUCT { <${normalisedStandardUri}> <http://bio2rdf.org/bio2rdf_resource:linkedToFrom> ?s . ?s ?p ?o . } WHERE { ${graphStart} ?s <${defaultHostAddress}ns/ns/ns/pubchem#InChI> \"InChI=${input_2}\" . ?s ?p ?o . ${graphEnd}  } ${limit} ${sparqlOffset}" ;
 	queryall_query:queryUriTemplateString "${authority}${input_1}${separator}${input_2}" ;
 	queryall_query:standardUriTemplateString "${authority}${input_1}${separator}${input_2}" ;
 	queryall_query:outputRdfFormat "application/rdf+xml" ;
-	queryall_query:outputRdfString "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:sameAs xmlns:ns0pred=\"http://www.w3.org/2002/07/owl#\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_endpointSpecificUri}\"/></rdf:Description>" ;
+	queryall_query:outputRdfString "<rdf:Description rdf:about=\"${xmlEncoded_normalisedStandardUri}\"><ns0pred:sameAs xmlns:ns0pred=\"http://www.w3.org/2002/07/owl#\" rdf:resource=\"${xmlEncoded_endpointSpecificUri}\"/></rdf:Description>" ;
 	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_query:namespaceToHandle bio2rdf_ns:inchi ;

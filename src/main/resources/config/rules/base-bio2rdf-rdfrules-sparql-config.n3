@@ -85,6 +85,7 @@ bio2rdf_rdfrule:neurocommonsgeneaddsymboluri a queryall_rdfrule:NormalisationRul
 
 bio2rdf_rdfrule:bioontology_obo_aeo_sparql a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
 	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:obo_aeo ;
+    queryall_rdfrule:sparqlMode queryall_rdfrule:addAllMatchingTriples ;
 	queryall_rdfrule:stage queryall_rdfrule:afterResultsImport ;
     queryall_rdfrule:sparqlConstructQueryTarget "" ;
     queryall_rdfrule:sparqlWherePattern " " ;
@@ -92,4 +93,45 @@ bio2rdf_rdfrule:bioontology_obo_aeo_sparql a queryall_rdfrule:NormalisationRule 
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
+bio2rdf_rdfrule:pubchemcompoundadd a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
+	dc:title "Intelligently converts the old pubchem:... URIs to pubchemcompound:... when their type indicates that they are a compound and not a compound" ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemcompound ;
+    queryall_rdfrule:sparqlMode queryall_rdfrule:addAllMatchingTriples ;
+	queryall_rdfrule:stage queryall_rdfrule:afterResultsToPool ;
+    queryall_rdfrule:sparqlConstructQueryTarget " ?pubchemCompoundUri <http://www.w3.org/2002/07/owl#sameAs> ?pubchemUri . ?pubchemCompoundUri a <http://bio2rdf.org/pubchem_resource:Compound> . ?pubchemCompoundUri ?p ?o . " ;
+    queryall_rdfrule:sparqlWherePattern " ?pubchemUri a <http://bio2rdf.org/pubchem_resource:Compound> . ?pubchemUri ?p ?o . FILTER(isIRI(?pubchemUri) && strstarts(str(?pubchemUri), \"http://bio2rdf.org/pubchem:\")) . BIND (iri(concat(\"http://bio2rdf.org/pubchemcompound:\", encode_for_uri(substr(str(?pubchemUri), 28)))) AS ?pubchemCompoundUri) " ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:pubchemcompounddelete a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
+	dc:title "Deletes triples starting with the old pubchem:... URIs if there are any matching triples present starting with pubchem:compound." ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemcompound ;
+    queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
+	queryall_rdfrule:stage queryall_rdfrule:afterResultsToPool ;
+    queryall_rdfrule:sparqlConstructQueryTarget " ?pubchemUri ?p ?o . " ;
+    queryall_rdfrule:sparqlWherePattern " ?pubchemUri ?p ?o . FILTER(isIRI(?pubchemUri) && strstarts(str(?pubchemUri), \"http://bio2rdf.org/pubchem:\")) . BIND (iri(concat(\"http://bio2rdf.org/pubchemcompound:\", encode_for_uri(substr(str(?pubchemUri), 28)))) AS ?pubchemCompoundUri) . ?pubchemCompoundUri ?p ?o . " ;
+# NOTE: This needs to be ordered after pubchemcompoundadd
+	queryall_rdfrule:order "50"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:pubchemsubstanceadd a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
+	dc:title "Intelligently converts the old pubchem:... URIs to pubchemsubstance:... when their type indicates that they are a substance and not a compound" ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemsubstance ;
+    queryall_rdfrule:sparqlMode queryall_rdfrule:addAllMatchingTriples ;
+	queryall_rdfrule:stage queryall_rdfrule:afterResultsToPool ;
+    queryall_rdfrule:sparqlConstructQueryTarget " ?pubchemSubstanceUri <http://www.w3.org/2002/07/owl#sameAs> ?pubchemUri . ?pubchemSubstanceUri a <http://bio2rdf.org/pubchem_resource:Substance> . ?pubchemSubstanceUri ?p ?o . " ;
+    queryall_rdfrule:sparqlWherePattern " ?pubchemUri a <http://bio2rdf.org/pubchem_resource:Substance> . ?pubchemUri ?p ?o . FILTER(isIRI(?pubchemUri) && strstarts(str(?pubchemUri), \"http://bio2rdf.org/pubchem:\")) . BIND (iri(concat(\"http://bio2rdf.org/pubchemsubstance:\", encode_for_uri(substr(str(?pubchemUri), 28)))) AS ?pubchemSubstanceUri) " ;
+	queryall_rdfrule:order "100"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
+bio2rdf_rdfrule:pubchemsubstancedelete a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:SparqlNormalisationRule , queryall_rdfrule:SparqlConstructRule ;
+	dc:title "Deletes triples starting with the old pubchem:... URIs if there are any matching triples present starting with pubchem:substance." ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemsubstance ;
+    queryall_rdfrule:sparqlMode queryall_rdfrule:onlyDeleteMatchingTriples ;
+	queryall_rdfrule:stage queryall_rdfrule:afterResultsToPool ;
+    queryall_rdfrule:sparqlConstructQueryTarget " ?pubchemUri ?p ?o . " ;
+    queryall_rdfrule:sparqlWherePattern " ?pubchemUri ?p ?o . FILTER(isIRI(?pubchemUri) && strstarts(str(?pubchemUri), \"http://bio2rdf.org/pubchem:\")) . BIND (iri(concat(\"http://bio2rdf.org/pubchemsubstance:\", encode_for_uri(substr(str(?pubchemUri), 28)))) AS ?pubchemSubstanceUri) . ?pubchemSubstanceUri ?p ?o . " ;
+# NOTE: This needs to be ordered after pubchemsubstanceadd
+	queryall_rdfrule:order "50"^^xsd:int ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 	

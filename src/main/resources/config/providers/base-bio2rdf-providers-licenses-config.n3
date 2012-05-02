@@ -105,7 +105,7 @@ bio2rdf_provider:drugbanklicense a queryall_provider:Provider , queryall_provide
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.drugbank.ca/about" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets ;
 	queryall_provider:includedInQuery bio2rdf_query:license , bio2rdf_query:licenseendpoint .
 
 bio2rdf_provider:diseasomelicense a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;

@@ -649,8 +649,11 @@ bio2rdf_ns:drugbank_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamesp
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "drugbank_drugs" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+# FIXME: Remove this when references are all changed to drugbank_drugs
+	queryall_ns:alternativePrefix "drugbank" ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
+# FIXME: Confirm this identifier regex works as desired
+	queryall_ns:identifierRegex "DB[\d]+" ;
 	dc:title "" .
 
 bio2rdf_ns:statistics a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
@@ -969,16 +972,6 @@ bio2rdf_ns:dr a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , querya
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "dr" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;

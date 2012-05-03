@@ -37,7 +37,17 @@ queryall:backupQueryConfigLocations
 "/config/rules/bio2rdf-rdfrules-obo.n3" , 
 "/config/rules/bio2rdf-rdfrules-tcm.n3" , 
 
-"/config/bio2rdf-namespaceentries.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-base.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-chembl.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-dailymed.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-diseaseome.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-drugbank.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-linkedct.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-medicare.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-ndc.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-nmrshiftdb.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-sider.n3" , 
+
 "/config/bio2rdf-profiles.n3" , 
 "/config/bio2rdf-queries.n3" , 
 "/config/bio2rdf-ruletests.n3" ,

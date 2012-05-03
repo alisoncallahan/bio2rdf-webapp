@@ -33,136 +33,6 @@ bio2rdf_ns:crossref_contributor a queryall_ns:Namespace , queryall_ns:Validating
 	queryall_ns:identifierRegex "" ;
 	dc:title "CrossRef Contributor dataset" .
 
-bio2rdf_ns:ndc_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-	queryall_ns:authority <http://bio2rdf.org/> ;
-	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-	queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_resource" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Resource" .
-
-bio2rdf_ns:ndc_product a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_product" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Product" .
-
-bio2rdf_ns:ndc_schedule a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_schedule" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Schedule" .
-
-bio2rdf_ns:ndc_unit a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_unit" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Unit" .
-
-bio2rdf_ns:ndc_route a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_route" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Route" .
-
-bio2rdf_ns:ndc_facility a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_facility" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Facility" .
-
-bio2rdf_ns:ndc_package a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_package" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Package" .
-
-bio2rdf_ns:ndc_formulation a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_formulation" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Formulation" .
-
-bio2rdf_ns:ndc_firm a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_firm" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Firm" .
-
-bio2rdf_ns:ndc_dosage a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_dosage" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Dosage" .
-
-bio2rdf_ns:ndc_doseform a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_doseform" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Doseform" .
-
-bio2rdf_ns:ndc_listing a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_listing" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC Listing" .
-
-bio2rdf_ns:ndc_nda a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "ndc_nda" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "NDC New Drug Application" .
-
 bio2rdf_ns:hgnc_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -228,86 +98,6 @@ bio2rdf_ns:biocarta_category a queryall_ns:Namespace , queryall_ns:ValidatingNam
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "biocarta_category" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_article a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_article" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_resource" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_journal a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_journal" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_molecule a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_molecule" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_assay a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_assay" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_activity a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_activity" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_target a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_target" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:chembl_targettype a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "chembl_targettype" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -553,36 +343,6 @@ bio2rdf_ns:irefindex a queryall_ns:Namespace , queryall_ns:ValidatingNamespace ,
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:medicare_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "medicare_drugs" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:medicare_drugtype a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "medicare_drugtype" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:medicare_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "medicare_ontology" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-    
 bio2rdf_ns:provenance a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -591,69 +351,6 @@ bio2rdf_ns:provenance a queryall_ns:Namespace , queryall_ns:ValidatingNamespace 
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:nmrshiftdb_molecule a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "nmrshiftdb_molecule" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:nmrshiftdb_peak a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "nmrshiftdb_peak" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:nmrshiftdb_bib a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "nmrshiftdb_bib" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:nmrshiftdb_spectrum a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "nmrshiftdb_spectrum" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:nmrshiftdb_spectrumtype a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "nmrshiftdb_spectrumtype" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_drugs" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-# FIXME: Remove this when references are all changed to drugbank_drugs
-	queryall_ns:alternativePrefix "drugbank" ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-# FIXME: Confirm this identifier regex works as desired
-	queryall_ns:identifierRegex "DB[\d]+" ;
 	dc:title "" .
 
 bio2rdf_ns:statistics a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
@@ -701,66 +398,6 @@ bio2rdf_ns:wikipathways a queryall_ns:Namespace , queryall_ns:ValidatingNamespac
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "wikipathways" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:dailymed_organization a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "dailymed_organization" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:dailymed_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "dailymed_drugs" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:dailymed_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "dailymed_ontology" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:dailymed_inactiveingredient a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "dailymed_inactiveingredient" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:dailymed_routeofadministration a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "dailymed_routeofadministration" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:dailymed_ingredient a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "dailymed_ingredient" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -1385,6 +1022,8 @@ bio2rdf_ns:taxon a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , que
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "taxon" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+# Convert taxonomy to taxon per Bio2RDF GoogleGroups discussion
+	queryall_ns:alternativePrefix "taxonomy" ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
@@ -4315,215 +3954,6 @@ bio2rdf_ns:uniref a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:linkedct_trial a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_trial" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_intervention a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_intervention" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_resource" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_arm a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_arm" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_secondary_outcomes a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_secondary_outcomes" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_results_reference a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_results_reference" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_reference a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_reference" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_primary_outcomes a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_primary_outcomes" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_oversight a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_oversight" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_overall_official a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_overall_official" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_location a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_location" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_link a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_link" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_condition a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_condition" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:linkedct_agent a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "linkedct_agent" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_ontology" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_drugcategory a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_drugcategory" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_drugtype a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_drugtype" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_enzymes a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_enzymes" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_druginteractions a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_druginteractions" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_targets a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_targets" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:drugbank_dosageforms a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_dosageforms" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
 
 bio2rdf_ns:cath a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
@@ -4540,16 +3970,6 @@ bio2rdf_ns:rxlist a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "rxlist" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:diseasome_diseases a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "diseasome_diseases" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -4590,16 +4010,6 @@ bio2rdf_ns:enzyme a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "enzyme" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:taxonomy a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "taxonomy" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -4860,16 +4270,6 @@ bio2rdf_ns:umbbd a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , que
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "umbbd" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:sider_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "sider_drugs" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -5605,16 +5005,6 @@ bio2rdf_ns:xtr a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , query
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:diseasome_chromosomallocation a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "diseasome_chromosomallocation" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
 bio2rdf_ns:mcc a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -5670,16 +5060,6 @@ bio2rdf_ns:ptr a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , query
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "ptr" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:diseasome_genes a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "diseasome_genes" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -5790,16 +5170,6 @@ bio2rdf_ns:oboinowl a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , 
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "oboinowl" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:diseasome_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "diseasome_ontology" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -5930,16 +5300,6 @@ bio2rdf_ns:xla a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , query
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "xla" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:diseasome_diseaseclass a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "diseasome_diseaseclass" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -15751,36 +15111,6 @@ bio2rdf_ns:sabio-rk a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , 
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "sabio-rk" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:sider a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "sider" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:sider_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "sider_ontology" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:sider_sideeffects a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "sider_sideeffects" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;

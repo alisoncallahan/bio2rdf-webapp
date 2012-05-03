@@ -332,7 +332,7 @@ bio2rdf_rdfrule:biopaxgofix a queryall_rdfrule:NormalisationRule , queryall_rdfr
 
 bio2rdf_rdfrule:taxon2taxonomy a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxonomy ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:taxon ;
 	queryall_rdfrule:inputPrefix "http://bio2rdf.org/taxon:" ;
     queryall_rdfrule:outputPrefix "http://bio2rdf.org/taxonomy:" ;
 	dc:title "Provides interconversion between the two NCBI/Uniprot Taxon/Taxonomy namespaces, with taxon as the preferred namespace identifier so there is no output rule provided" ;

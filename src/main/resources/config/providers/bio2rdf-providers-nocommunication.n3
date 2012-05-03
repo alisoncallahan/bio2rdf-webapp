@@ -40,7 +40,7 @@ bio2rdf_provider:taxonomy2taxon a queryall_provider:Provider , queryall_provider
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:handlesNamespace bio2rdf_ns:taxonomy ;
+	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
 	queryall_provider:includedInQuery bio2rdf_query:construct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxon2taxonomy .
 

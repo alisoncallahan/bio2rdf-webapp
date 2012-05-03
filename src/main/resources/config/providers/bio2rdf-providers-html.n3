@@ -220,7 +220,7 @@ bio2rdf_provider:uniprothtml a queryall_provider:Provider , queryall_provider:Ht
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://purl.uniprot.org/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:uniref , bio2rdf_ns:uniparc , bio2rdf_ns:keywords , bio2rdf_ns:taxonomy , bio2rdf_ns:citations , bio2rdf_ns:nextbio ;
+	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:uniref , bio2rdf_ns:uniparc , bio2rdf_ns:keywords , bio2rdf_ns:taxon , bio2rdf_ns:citations , bio2rdf_ns:nextbio ;
 	queryall_provider:includedInQuery bio2rdf_query:html , bio2rdf_query:htmlinclude .
 
 bio2rdf_provider:interprohtml a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;

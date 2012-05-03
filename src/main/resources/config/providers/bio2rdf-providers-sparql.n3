@@ -1084,7 +1084,7 @@ bio2rdf_provider:mirroredtaxonomy a queryall_provider:Provider , queryall_provid
 	queryall_provider:endpointUrl "http://quebec.taxonomy.bio2rdf.org/sparql", "http://cu.taxonomy.bio2rdf.org/sparql" 
 #	, "http://protech.taxonomy.bio2rdf.org/sparql" 
 	;
-	queryall_provider:handlesNamespace bio2rdf_ns:taxonomy , bio2rdf_ns:taxon ;
+	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxonomy2taxon .
 
@@ -1099,7 +1099,7 @@ bio2rdf_provider:mirroredtaxonomyreverse a queryall_provider:Provider , queryall
 	queryall_provider:endpointUrl "http://quebec.taxonomy.bio2rdf.org/sparql", "http://cu.taxonomy.bio2rdf.org/sparql" 
 #	, "http://protech.taxonomy.bio2rdf.org/sparql" 
 	;
-	queryall_provider:handlesNamespace bio2rdf_ns:taxonomy , bio2rdf_ns:taxon ;
+	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxonomy2taxon .
 

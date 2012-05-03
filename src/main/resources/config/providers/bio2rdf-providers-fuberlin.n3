@@ -73,7 +73,7 @@ bio2rdf_provider:fuberlindrugbank2 a queryall_provider:Provider , queryall_provi
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric2 , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
 
 bio2rdf_provider:fuberlindrugbankreverse1 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "Provides a primary construct mechanism, when the dataset has no available representation, but it is still useful to have links as the representation." ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
@@ -81,7 +81,7 @@ bio2rdf_provider:fuberlindrugbankreverse1 a queryall_provider:Provider , queryal
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:rxlist , bio2rdf_ns:pubmed , bio2rdf_ns:dailymed_drugs ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rxlist , bio2rdf_ns:cas ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
 
@@ -99,7 +99,7 @@ bio2rdf_provider:fuberlindrugbankreverse2 a queryall_provider:Provider , queryal
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric2 , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
 
 bio2rdf_provider:fuberlindrugbanksecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "" ;
+	dc:title "Provides secondary construct querying when the dataset has an available representation, but it is useful to have links from other datasets. " ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
@@ -107,7 +107,7 @@ bio2rdf_provider:fuberlindrugbanksecondaryreverse a queryall_provider:Provider ,
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets , bio2rdf_ns:drugbank_dosageforms ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets , bio2rdf_ns:drugbank_dosageforms , bio2rdf_ns:pubmed , bio2rdf_ns:dailymed_drugs ;
 	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
 

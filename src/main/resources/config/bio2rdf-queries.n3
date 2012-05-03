@@ -2027,7 +2027,7 @@ bio2rdf_query:taglabels a queryall_query:Query , queryall_query:RegexInputQuery 
 	queryall_query:outputRdfFormat "application/rdf+xml" ;
 	queryall_query:outputRdfString "" ;
 	queryall_query:inRobotsTxt "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_query:namespaceToHandle bio2rdf_ns:geneid , bio2rdf_ns:mquter_gene , bio2rdf_ns:go , bio2rdf_ns:keywords , bio2rdf_ns:term , bio2rdf_ns:terminstance ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int .
 

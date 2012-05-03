@@ -8,6 +8,8 @@
 
 bio2rdf:quebec
 
+queryall:activeProfiles bio2rdf_profile:quebec ;
+
 #queryall:queryConfigLocations "http://config.bio2rdf.org/admin/configuration/5/n3" ;
 queryall:queryConfigLocations 
 "/config/providers/bio2rdf-providers-httpgetproxy.n3" , 
@@ -109,27 +111,25 @@ queryall:enableManualConfigurationRefresh "true"^^xsd:boolean ;
 
 queryall:manualConfigurationMinimumMilliseconds "120000"^^xsd:int ;
 
-queryall:activeProfiles bio2rdf_profile:quebec ;
-
 queryall:readTimeout "35000"^^xsd:int ;
 
 queryall:connectTimeout "1500"^^xsd:int ;
 
 queryall:submitStatistics "false"^^xsd:boolean ;
 
-queryall:automaticallyBlacklistClients "false"^^xsd:boolean ;
+queryall:automaticallyBlacklistClients "true"^^xsd:boolean ;
 
 queryall:blacklistResetClientBlacklistWithEndpoints "true"^^xsd:boolean ;
 
-queryall:blacklistResetPeriodMilliseconds "1440000"^^xsd:long ;
+queryall:blacklistResetPeriodMilliseconds "600000"^^xsd:long ;
 
-queryall:blacklistMaxAccumulatedFailures "15"^^xsd:int ;
+queryall:blacklistMaxAccumulatedFailures "4"^^xsd:int ;
 
-queryall:blacklistResetEndpointFailuresOnSuccess "false"^^xsd:boolean ;
+queryall:blacklistResetEndpointFailuresOnSuccess "true"^^xsd:boolean ;
 
-queryall:blacklistClientMaxQueriesPerPeriod "1500"^^xsd:int ;
+queryall:blacklistClientMaxQueriesPerPeriod "15"^^xsd:int ;
 
-queryall:blacklistMinimumQueriesBeforeBlacklistRules "150"^^xsd:int ;
+queryall:blacklistMinimumQueriesBeforeBlacklistRules "3"^^xsd:int ;
 
 queryall:blacklistPercentageOfRobotTxtQueriesBeforeAutomatic "0.75"^^xsd:float ;
 

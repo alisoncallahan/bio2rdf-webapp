@@ -13,7 +13,7 @@ bio2rdf_ns:drugbank_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamesp
 	queryall_ns:alternativePrefix "drugbank" ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 # FIXME: Confirm this identifier regex works as desired
-	queryall_ns:identifierRegex "DB[\d]+" ;
+	queryall_ns:identifierRegex "DB[\\d]+" ;
 	dc:title "" .
 
 bio2rdf_ns:drugbank_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;

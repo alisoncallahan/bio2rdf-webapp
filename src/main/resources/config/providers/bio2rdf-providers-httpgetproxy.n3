@@ -86,7 +86,7 @@ bio2rdf_provider:bioguiddoi a queryall_provider:Provider , queryall_provider:Htt
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://bioguid.info/openurl.php?display=rdf&id=doi:${input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:doi ;
 	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct ;

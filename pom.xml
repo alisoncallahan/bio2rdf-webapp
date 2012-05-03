@@ -228,7 +228,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-direct-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-direct.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:directBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -241,7 +241,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-quebec-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-quebec.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:quebecBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -254,7 +254,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-carleton-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-carleton.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:carletonBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -267,7 +267,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-protech-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-protech.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:protechBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>
@@ -280,7 +280,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<queryall.BaseConfigLocation>/config/webapp/webapp-config-default-balancing-bio2rdf-template.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-balancing.n3</queryall.BaseConfigLocation>
 				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:balancingBaseConfig</queryall.BaseConfigUri>
 				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
 			</properties>

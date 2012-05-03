@@ -1,0 +1,437 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_provider: <http://purl.org/queryall/provider:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_provider:mquterterm a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://purl.org/net/terms#TermsSparqlGraph" ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:term , bio2rdf_ns:terminstance ;
+	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct , bio2rdf_query:primaryreverseconstruct , bio2rdf_query:unsafelinks , bio2rdf_query:unsafelinksbynamespace , bio2rdf_query:unsafelinkstonamespace , bio2rdf_query:tags , bio2rdf_query:taglabels ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mqutertermreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://purl.org/net/terms#TermsSparqlGraph" ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:geneid , bio2rdf_ns:keywords , bio2rdf_ns:go ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterprovenance a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://purl.org/queryall/provenance:ProvenanceStorageGraph" ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:provenance ;
+	queryall_provider:includedInQuery bio2rdf_query:construct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterprovenancebykey a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://purl.org/queryall/provenance:ProvenanceStorageGraph" ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:includedInQuery bio2rdf_query:provenancebykey ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterstatistics a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/statistics:StatisticsGraph" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8896/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:statistics ;
+	queryall_provider:includedInQuery bio2rdf_query:construct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterdrugbank2 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rxlist ;
+	queryall_provider:includedInQuery bio2rdf_query:construct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric2 , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+
+bio2rdf_provider:mquterdrugbank1 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rxlist ;
+	queryall_provider:includedInQuery bio2rdf_query:construct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+
+bio2rdf_provider:mquterlinkedct a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/linkedct#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:linkedct_trial , bio2rdf_ns:linkedct_intervention , bio2rdf_ns:linkedct_resource , bio2rdf_ns:linkedct_arm , bio2rdf_ns:linkedct_secondary_outcomes , bio2rdf_ns:linkedct_results_reference , bio2rdf_ns:linkedct_reference , bio2rdf_ns:linkedct_primary_outcomes , bio2rdf_ns:linkedct_oversight , bio2rdf_ns:linkedct_overall_official , bio2rdf_ns:linkedct_location , bio2rdf_ns:linkedct_link , bio2rdf_ns:linkedct_condition , bio2rdf_ns:linkedct_agent ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:linkedctresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:linkedcttrials , bio2rdf_rdfrule:linkedctagent , bio2rdf_rdfrule:linkedctcondition , bio2rdf_rdfrule:linkedctlink , bio2rdf_rdfrule:linkedctlocation , bio2rdf_rdfrule:linkedctoverallofficial , bio2rdf_rdfrule:linkedctoversight , bio2rdf_rdfrule:linkedctprimaryoutcomes , bio2rdf_rdfrule:linkedctreference , bio2rdf_rdfrule:linkedctresultsreference , bio2rdf_rdfrule:linkedctsecondaryoutcomes , bio2rdf_rdfrule:linkedctarmgroup , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:pubmedlinks  , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:dbpediaresource .
+
+bio2rdf_provider:mqutergoreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/go#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:agi_locuscode , bio2rdf_ns:aracyc , bio2rdf_ns:biocyc , bio2rdf_ns:biosis , bio2rdf_ns:biosynthesis_and_function , bio2rdf_ns:brenda , bio2rdf_ns:cbs , bio2rdf_ns:cgd , bio2rdf_ns:cgd_ref , bio2rdf_ns:cgsc , bio2rdf_ns:cl , bio2rdf_ns:cog , bio2rdf_ns:ddb_ref , bio2rdf_ns:dictybase , bio2rdf_ns:dictybase_ref , bio2rdf_ns:doi , bio2rdf_ns:ec , bio2rdf_ns:echobase , bio2rdf_ns:eck , bio2rdf_ns:ecocyc , bio2rdf_ns:ecocyc_ref , bio2rdf_ns:ecogene , bio2rdf_ns:ecoliwiki , bio2rdf_ns:egad , bio2rdf_ns:embl , bio2rdf_ns:ensembl , bio2rdf_ns:fb , bio2rdf_ns:gb , bio2rdf_ns:gdb , bio2rdf_ns:genbank , bio2rdf_ns:genedb_lmajor , bio2rdf_ns:genedb_pfalciparum , bio2rdf_ns:genedb_spombe , bio2rdf_ns:genedb_tbrucei , bio2rdf_ns:genprotec , bio2rdf_ns:goc , bio2rdf_ns:go_ref , bio2rdf_ns:gr , bio2rdf_ns:gr_protein , bio2rdf_ns:gr_ref , bio2rdf_ns:hamap , bio2rdf_ns:hugo , bio2rdf_ns:img , bio2rdf_ns:ipr , bio2rdf_ns:isbm , bio2rdf_ns:isbn , bio2rdf_ns:issn , bio2rdf_ns:iuphar , bio2rdf_ns:iuphar_gpcr , bio2rdf_ns:iuphar_receptor , bio2rdf_ns:jcvi_cmr , bio2rdf_ns:jcvi_tigrfams , bio2rdf_ns:kegg , bio2rdf_ns:kegg_pathway , bio2rdf_ns:ligand , bio2rdf_ns:locusid , bio2rdf_ns:ma , bio2rdf_ns:maizegdb , bio2rdf_ns:maizegdb_locus , bio2rdf_ns:medline , bio2rdf_ns:merops , bio2rdf_ns:merops_fam , bio2rdf_ns:mesh , bio2rdf_ns:metacyc , bio2rdf_ns:mgd , bio2rdf_ns:mgi , bio2rdf_ns:mips_funcat , bio2rdf_ns:mp , bio2rdf_ns:multifun , bio2rdf_ns:ncbi , bio2rdf_ns:ncbi_gene , bio2rdf_ns:ncbi_gi , bio2rdf_ns:ncbi_gp , bio2rdf_ns:ncbi_nm , bio2rdf_ns:ncbi_np , bio2rdf_ns:pamgo , bio2rdf_ns:pamgo_vmd , bio2rdf_ns:pato , bio2rdf_ns:pir , bio2rdf_ns:pirsf , bio2rdf_ns:pmid , bio2rdf_ns:po , bio2rdf_ns:prints , bio2rdf_ns:protein_id , bio2rdf_ns:pseudocap , bio2rdf_ns:psort , bio2rdf_ns:pubchem , bio2rdf_ns:pubchem_compound , bio2rdf_ns:pubchem_substance , bio2rdf_ns:refseq , bio2rdf_ns:resid , bio2rdf_ns:rfam , bio2rdf_ns:rgd , bio2rdf_ns:rgdid , bio2rdf_ns:rnamods , bio2rdf_ns:sgd , bio2rdf_ns:sgdid , bio2rdf_ns:sgd_locus , bio2rdf_ns:sgd_ref , bio2rdf_ns:sgn , bio2rdf_ns:sgn_ref , bio2rdf_ns:smart , bio2rdf_ns:smd , bio2rdf_ns:sp , bio2rdf_ns:sp_kw , bio2rdf_ns:sp_sl , bio2rdf_ns:subtilist , bio2rdf_ns:subtilistg , bio2rdf_ns:swiss-prot , bio2rdf_ns:tair , bio2rdf_ns:tc , bio2rdf_ns:tigr , bio2rdf_ns:tigr_ath1 , bio2rdf_ns:tigr_cmr , bio2rdf_ns:tigr_egad , bio2rdf_ns:tigr_genprop , bio2rdf_ns:tigr_role , bio2rdf_ns:tigr_tba1 , bio2rdf_ns:tigr_tigrfams , bio2rdf_ns:trembl , bio2rdf_ns:um , bio2rdf_ns:um-bbd_enzymeid , bio2rdf_ns:um-bbd_pathwayid , bio2rdf_ns:um-bbd_reactionid , bio2rdf_ns:um-bbd_ruleid , bio2rdf_ns:uniprotkb , bio2rdf_ns:url , bio2rdf_ns:wb , bio2rdf_ns:wb_ref , bio2rdf_ns:wikipedia , bio2rdf_ns:wp , bio2rdf_ns:zfin , bio2rdf_ns:reactome ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pubmed2pmid , bio2rdf_rdfrule:goflybasefix , bio2rdf_rdfrule:geneidgdbreversefix .
+
+bio2rdf_provider:mqutergenerif a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/humangenerif#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:geneid ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterdrugbankreverseinchikey a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:inchikey ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstructfromdrugbankinchikey ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric2 , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+
+bio2rdf_provider:mqutertcm a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/tcm#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:tcm , bio2rdf_ns:tcm_ontology , bio2rdf_ns:tcm_gene , bio2rdf_ns:tcm_disease , bio2rdf_ns:tcm_medicine , bio2rdf_ns:tcm_ingredient , bio2rdf_ns:tcm_effect , bio2rdf_ns:tcm_interlink ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:tcmontology , bio2rdf_rdfrule:tcmgene , bio2rdf_rdfrule:tcmdisease , bio2rdf_rdfrule:tcmmedicine , bio2rdf_rdfrule:tcmingredient , bio2rdf_rdfrule:tcmeffect , bio2rdf_rdfrule:tcminterlink , bio2rdf_rdfrule:neurocommonsgeneid .
+
+bio2rdf_provider:mquterbiopatml a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/biopatml#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:biopatml ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterkegg2geneid a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/kegg2geneid#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:geneid , bio2rdf_ns:ame , bio2rdf_ns:xtr , bio2rdf_ns:xla , bio2rdf_ns:tca , bio2rdf_ns:ssc , bio2rdf_ns:spu , bio2rdf_ns:rno , bio2rdf_ns:ptr , bio2rdf_ns:osa , bio2rdf_ns:oaa , bio2rdf_ns:mmu , bio2rdf_ns:mdo , bio2rdf_ns:mcc , bio2rdf_ns:hsa , bio2rdf_ns:gga , bio2rdf_ns:dre , bio2rdf_ns:cfa , bio2rdf_ns:bta ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:labelsearchforgo ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterkeggrnunsafe a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/kegg_rn#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8897/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rn ;
+	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct , bio2rdf_query:unsafelinkstonamespace , bio2rdf_query:unsafelinks , bio2rdf_query:unsafelinksbynamespace ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:drugbanknamespacefix .
+
+bio2rdf_provider:mquterkeggrnunsafereverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/kegg_rn#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8897/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rn ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:drugbanknamespacefix .
+
+bio2rdf_provider:mquterkeggpathunsafe a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/kegg_path#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8897/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:path ;
+	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct , bio2rdf_query:unsafelinkstonamespace , bio2rdf_query:unsafelinks , bio2rdf_query:unsafelinksbynamespace ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:drugbanknamespacefix .
+
+bio2rdf_provider:mquterkeggpathunsafereverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/kegg_path#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8897/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:path , bio2rdf_ns:rn , bio2rdf_ns:cpd ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:drugbanknamespacefix .
+
+bio2rdf_provider:mquterlinkedctreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/linkedct#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:linkedct_trial , bio2rdf_ns:linkedct_intervention , bio2rdf_ns:linkedct_arm , bio2rdf_ns:linkedct_secondary_outcomes , bio2rdf_ns:linkedct_results_reference , bio2rdf_ns:linkedct_reference , bio2rdf_ns:linkedct_primary_outcomes , bio2rdf_ns:linkedct_oversight , bio2rdf_ns:linkedct_overall_official , bio2rdf_ns:linkedct_location , bio2rdf_ns:linkedct_link , bio2rdf_ns:linkedct_condition , bio2rdf_ns:linkedct_agent , bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:linkedctresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:linkedcttrials , bio2rdf_rdfrule:linkedctagent , bio2rdf_rdfrule:linkedctcondition , bio2rdf_rdfrule:linkedctlink , bio2rdf_rdfrule:linkedctlocation , bio2rdf_rdfrule:linkedctoverallofficial , bio2rdf_rdfrule:linkedctoversight , bio2rdf_rdfrule:linkedctprimaryoutcomes , bio2rdf_rdfrule:linkedctreference , bio2rdf_rdfrule:linkedctresultsreference , bio2rdf_rdfrule:linkedctsecondaryoutcomes , bio2rdf_rdfrule:linkedctarmgroup , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:pubmedlinks , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:dbpediaresource .
+
+bio2rdf_provider:mquterecocycreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/ecocyc#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ecocyc , bio2rdf_ns:entrez , bio2rdf_ns:ecol199310cyc , bio2rdf_ns:sfle198214cyc , bio2rdf_ns:shigellacyc , bio2rdf_ns:echobase , bio2rdf_ns:blattner , bio2rdf_ns:modbase , bio2rdf_ns:swissmodel , bio2rdf_ns:cgsc , bio2rdf_ns:refseq , bio2rdf_ns:asap ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterkeywords a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/keywords#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8894/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:keywords ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterflyted a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://openflydata.org/flyted#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8895/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:flyted ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:labelsearchforgo ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterflyted2flybase a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://openflydata.org/flyted2flybase#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8895/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:flyted2flybase ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:labelsearchforgo ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterflybase a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://openflydata.org/flybase#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8895/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:flybase ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:labelsearchforgo ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterdrugbank a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets , bio2rdf_ns:drugbank_dosageforms ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric , bio2rdf_rdfrule:rxlistgeneric2 , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+
+bio2rdf_provider:mquterdrugbankreverse2 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:rxlist ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric2 , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+
+bio2rdf_provider:mquterdrugbankreverse1 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:cas , bio2rdf_ns:rxlist , bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets , bio2rdf_ns:drugbank_dosageforms , bio2rdf_ns:diseasome_diseases , bio2rdf_ns:pfam , bio2rdf_ns:symbol , bio2rdf_ns:kegg , bio2rdf_ns:cpd , bio2rdf_ns:uniprot ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+
+bio2rdf_provider:mquterdrugbankreverse3 a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/drugbank#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:wikipedia ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:rxlistgeneric , bio2rdf_rdfrule:drugbankdruginteractions , bio2rdf_rdfrule:drugbankdosageforms , bio2rdf_rdfrule:drugbankdrugs , bio2rdf_rdfrule:drugbankenzymes , bio2rdf_rdfrule:drugbankpubmedreferences ,  bio2rdf_rdfrule:drugbankdrugtype , bio2rdf_rdfrule:drugbankdrugcategory , bio2rdf_rdfrule:drugbankontology , bio2rdf_rdfrule:drugbanktargets , bio2rdf_rdfrule:dailymeddrugs , bio2rdf_rdfrule:diseasomediseases , bio2rdf_rdfrule:dbpediaresource , bio2rdf_rdfrule:linkedctintervention , bio2rdf_rdfrule:symboldotbio2rdfdotorg , bio2rdf_rdfrule:drugbankkeggdr .
+    
+bio2rdf_provider:mqutertaxonomy a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/taxonomy#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:taxon , bio2rdf_ns:taxonomy ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterecocyc a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/ecocyc#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ecocyc , bio2rdf_ns:entrez , bio2rdf_ns:ecoo157cyc , bio2rdf_ns:ecol199310cyc , bio2rdf_ns:sfle198214cyc , bio2rdf_ns:shigellacyc , bio2rdf_ns:ecogene , bio2rdf_ns:blattner , bio2rdf_ns:modbase , bio2rdf_ns:swissmodel , bio2rdf_ns:cgsc ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:nsinterlinksbetweentypes ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterkeywordsreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/keywords#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8894/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:go ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
+
+bio2rdf_provider:mquterchebi a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/chebi" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8892/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:chebi , bio2rdf_ns:chebi_status , bio2rdf_ns:chebi_source ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling , bio2rdf_rdfrule:owldotbio2rdfdotorg , bio2rdf_rdfrule:dbdotbio2rdfdotorg , bio2rdf_rdfrule:slashowl , bio2rdf_rdfrule:oldontologyterms , bio2rdf_rdfrule:chebistatusnamespace , bio2rdf_rdfrule:chebisourcenamespace .
+
+bio2rdf_provider:mqutergo a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ns/go#" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://bio2rdf.mquter.qut.edu.au:8890/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:go , bio2rdf_ns:go_association , bio2rdf_ns:go_evidence ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:labelsearchforgo ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pubmed2pmid , bio2rdf_rdfrule:goflybasefix .
+

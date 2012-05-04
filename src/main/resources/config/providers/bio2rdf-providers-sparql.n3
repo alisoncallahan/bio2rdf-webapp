@@ -795,11 +795,12 @@ bio2rdf_provider:mirroredhgncreverse a queryall_provider:Provider , queryall_pro
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
-	queryall_provider:graphUri "" ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/hgnc" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.hgnc.bio2rdf.org/sparql", "http://quebec.hgnc.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.hgnc.bio2rdf.org/sparql"
+#	, "http://quebec.hgnc.bio2rdf.org/sparql" 
 #	, "http://protech.hgnc.bio2rdf.org/sparql"
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:chr , bio2rdf_ns:ensembl , bio2rdf_ns:gdb , bio2rdf_ns:gene , bio2rdf_ns:hugo , bio2rdf_ns:refseq , bio2rdf_ns:symbol , bio2rdf_ns:hgnc_resource , bio2rdf_ns:hgnc_record , bio2rdf_ns:cosmic , bio2rdf_ns:ccds , bio2rdf_ns:ncbi , bio2rdf_ns:omim , bio2rdf_ns:uniprot , bio2rdf_ns:ucsc , bio2rdf_ns:rgd , bio2rdf_ns:vega , bio2rdf_ns:ec , bio2rdf_ns:orphanet ;
@@ -933,19 +934,20 @@ bio2rdf_provider:mirroredpubmed a queryall_provider:Provider , queryall_provider
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:doubleslashns , bio2rdf_rdfrule:badnsfoaf , bio2rdf_rdfrule:bio2drfmisspelling .
 
-bio2rdf_provider:mirroredsymbolfromlowercase a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+bio2rdf_provider:mirroredsymbol a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
-	queryall_provider:graphUri "" ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/hgnc" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.hgnc.bio2rdf.org/sparql", "http://quebec.hgnc.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.hgnc.bio2rdf.org/sparql"
+#	, "http://quebec.hgnc.bio2rdf.org/sparql" 
 #	, "http://protech.hgnc.bio2rdf.org/sparql"
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:hugo , bio2rdf_ns:symbol , bio2rdf_ns:gene ;
-	queryall_provider:includedInQuery bio2rdf_query:constructfromlowercase , bio2rdf_query:linksfromlowercase , bio2rdf_query:countlinksfromlowercase , bio2rdf_query:counttriplesfromlowercase .
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct, bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples .
 #	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
 
 bio2rdf_provider:mirroredchebiprimaryreverseconstruct a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
@@ -1008,11 +1010,12 @@ bio2rdf_provider:mirroredhgnc a queryall_provider:Provider , queryall_provider:H
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
-	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
-	queryall_provider:graphUri "" ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/hgnc" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.hgnc.bio2rdf.org/sparql", "http://quebec.hgnc.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.hgnc.bio2rdf.org/sparql"
+#	, "http://quebec.hgnc.bio2rdf.org/sparql" 
 #	, "http://protech.hgnc.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:hgnc , bio2rdf_ns:hugo , bio2rdf_ns:hgnc_resource , bio2rdf_ns:hgnc_record ;

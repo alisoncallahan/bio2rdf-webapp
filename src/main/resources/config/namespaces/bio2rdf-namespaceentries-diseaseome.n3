@@ -1,0 +1,55 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_ns: <http://purl.org/queryall/ns:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_ns:diseasome_diseases a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "diseasome_diseases" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:diseasome_chromosomallocation a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "diseasome_chromosomallocation" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:diseasome_genes a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "diseasome_genes" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:diseasome_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "diseasome_ontology" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:diseasome_diseaseclass a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "diseasome_diseaseclass" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+

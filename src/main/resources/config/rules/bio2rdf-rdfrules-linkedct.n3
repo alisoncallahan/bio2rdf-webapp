@@ -176,13 +176,13 @@ bio2rdf_rdfrule:linkedctresultsreference a queryall_rdfrule:NormalisationRule , 
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
 bio2rdf_rdfrule:linkedctreference a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule , queryall_rdfrule:RegexNormalisationRule ;
-	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:linkedct_reference ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:pubmed ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables ;
-    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/linkedct_reference:" ;
-	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/reference/" ;
+    queryall_rdfrule:inputMatchRegex "http://bio2rdf\\.org/pubmed:([\\d]+)" ;
+	queryall_rdfrule:inputReplaceRegex "http://data\\.linkedct\\.org/resource/reference/pmid$1/" ;
 	queryall_rdfrule:stage queryall_rdfrule:beforeResultsImport ;
-    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/reference/" ;
-	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/linkedct_reference:" ;
+    queryall_rdfrule:outputMatchRegex "http://data\\.linkedct\\.org/resource/reference/pmid([\\d]+)/" ;
+	queryall_rdfrule:outputReplaceRegex "http://bio2rdf\\.org/pubmed:$1" ;
 	dc:title "Makes linkedct reference form URI's into Bio2RDF identifiers" ;
 	queryall_rdfrule:order "100"^^xsd:int ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .

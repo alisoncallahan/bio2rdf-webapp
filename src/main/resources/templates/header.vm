@@ -44,8 +44,22 @@ $debugString
 #set ($xmlEncoded_nextpagelabel = $nextpagelabel)
     <link rel="next" href="$xmlEncoded_nextpagelink" />
 #end
-    <link rel="stylesheet" type="text/css" href="${xmlEncoded_server_base}static/includes-css/html_page_styles.css" />
-    <script type="text/javascript" src="${xmlEncoded_server_base}static/includes-scripts/script.js"></script>
+#foreach ($next_stylesheet in $stylesheets)
+#set ($xmlEncoded_next_stylesheet = $next_stylesheet)
+<link rel="stylesheet" type="text/css" href="${xmlEncoded_next_stylesheet}" media="all" />
+#end
+#foreach ($next_local_stylesheet in $local_stylesheets)
+#set ($xmlEncoded_next_local_stylesheet = $next_local_stylesheet)
+<link rel="stylesheet" type="text/css" href="${xmlEncoded_server_base}${xmlEncoded_next_local_stylesheet}" media="all" />
+#end
+#foreach ($next_script in $scripts)
+#set ($xmlEncoded_next_script = $next_script)
+<script type="text/javascript" src="${xmlEncoded_next_script}"></script>
+#end
+#foreach ($next_local_script in $local_scripts)
+#set ($xmlEncoded_next_local_script = $next_local_script)
+<script type="text/javascript" src="${xmlEncoded_server_base}${xmlEncoded_next_local_script}"></script>
+#end
   </head>
   <body onload="init();">
     <div id="header">

@@ -224,7 +224,7 @@ bio2rdf_provider:ncbipubchemxml a queryall_provider:Provider , queryall_provider
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&sid=${urlEncoded_input_2}" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:sid ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemsubstance ;
 	queryall_provider:includedInQuery bio2rdf_query:xml .
 
 bio2rdf_provider:swooglerdf a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;
@@ -254,7 +254,7 @@ bio2rdf_provider:ncbipubchemcidxml a queryall_provider:Provider , queryall_provi
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?disopt=DisplayXML&cid=${urlEncoded_input_2}" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:cid ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubchemcompound ;
 	queryall_provider:includedInQuery bio2rdf_query:data .
 
 bio2rdf_provider:ncbigenbankgenbankpartial a queryall_provider:Provider , queryall_provider:NoCommunicationProvider , queryall_provider:HttpProvider ;

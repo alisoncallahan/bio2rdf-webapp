@@ -1,0 +1,135 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_ns: <http://purl.org/queryall/ns:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_ns:ndc_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_resource" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Resource" .
+
+bio2rdf_ns:ndc_product a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_product" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Product" .
+
+bio2rdf_ns:ndc_schedule a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_schedule" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Schedule" .
+
+bio2rdf_ns:ndc_unit a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_unit" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Unit" .
+
+bio2rdf_ns:ndc_route a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_route" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Route" .
+
+bio2rdf_ns:ndc_facility a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_facility" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Facility" .
+
+bio2rdf_ns:ndc_package a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_package" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Package" .
+
+bio2rdf_ns:ndc_formulation a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_formulation" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Formulation" .
+
+bio2rdf_ns:ndc_firm a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_firm" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Firm" .
+
+bio2rdf_ns:ndc_dosage a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_dosage" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Dosage" .
+
+bio2rdf_ns:ndc_doseform a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_doseform" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Doseform" .
+
+bio2rdf_ns:ndc_listing a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_listing" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Listing" .
+
+bio2rdf_ns:ndc_nda a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_nda" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC New Drug Application" .
+

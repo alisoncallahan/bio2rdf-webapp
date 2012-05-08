@@ -1,0 +1,152 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_profile: <http://purl.org/queryall/profile:> .
+@prefix queryall_provider: <http://purl.org/queryall/provider:> .
+@prefix bio2rdf_provider: <http://bio2rdf.org/provider:> .
+@prefix bio2rdf_query: <http://bio2rdf.org/query:> .
+@prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_provider:nmrshiftdb a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:nmrshiftdb_molecule , bio2rdf_ns:nmrshiftdb_spectrum , bio2rdf_ns:nmrshiftdb_peak , bio2rdf_ns:nmrshiftdb_bib ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:links , bio2rdf_query:linkstonamespace , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:nmrshiftdb_molecule , bio2rdf_rdfrule:nmrshiftdb_spectrum , bio2rdf_rdfrule:nmrshiftdb_peak , bio2rdf_rdfrule:nmrshiftdb_bib .
+
+bio2rdf_provider:nmrshiftdbreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:cas , bio2rdf_ns:nmrshiftdb_spectrum , bio2rdf_ns:nmrshiftdb_peak , bio2rdf_ns:nmrshiftdb_bib ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:nmrshiftdb_molecule , bio2rdf_rdfrule:nmrshiftdb_spectrum , bio2rdf_rdfrule:nmrshiftdb_peak , bio2rdf_rdfrule:nmrshiftdb_bib .
+
+bio2rdf_provider:nmrshiftdbdoireverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:doi ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstructfromdoifornmrshiftdbspectrum ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:nmrshiftdb_molecule , bio2rdf_rdfrule:nmrshiftdb_spectrum , bio2rdf_rdfrule:nmrshiftdb_peak , bio2rdf_rdfrule:nmrshiftdb_bib .
+
+bio2rdf_provider:nmrshiftdbinchireverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:inchi ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstructfromblueobeliskinchi , bio2rdf_query:spectrumfrominchi ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:nmrshiftdb_molecule , bio2rdf_rdfrule:nmrshiftdb_spectrum , bio2rdf_rdfrule:nmrshiftdb_peak , bio2rdf_rdfrule:nmrshiftdb_bib .
+
+bio2rdf_provider:nmrshiftdbinchikeyreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:inchikey ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstructfromblueobeliskinchikey , bio2rdf_query:spectrumfrominchikey ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:nmrshiftdb_molecule , bio2rdf_rdfrule:nmrshiftdb_spectrum , bio2rdf_rdfrule:nmrshiftdb_peak , bio2rdf_rdfrule:nmrshiftdb_bib .
+
+bio2rdf_provider:nmrshiftdbspectrumtype a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/nmrshiftdb/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:nmrshiftdb_spectrumtype ;
+	queryall_provider:includedInQuery bio2rdf_query:linksfromnmrshiftdbspectrumtype ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:nmrshiftdb_spectrum , bio2rdf_rdfrule:nmrshiftdb_peak , bio2rdf_rdfrule:nmrshiftdb_bib .
+
+bio2rdf_provider:chempedia a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://chempedia.org/" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/cc0/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:chempedia_substance , bio2rdf_ns:chempedia_name ;
+	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:chempedianame , bio2rdf_rdfrule:chempediasubstance .
+
+bio2rdf_provider:chempediareverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://chempedia.org/" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/cc0/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:chempedia_substance , bio2rdf_ns:chempedia_name ;
+	queryall_provider:includedInQuery bio2rdf_query:unsafesecondaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:chempedianame , bio2rdf_rdfrule:chempediasubstance .
+
+bio2rdf_provider:chempediainchireverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://chempedia.org/" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/cc0/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:inchi ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstructfromiupacinchi ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:openmoleculesinchi , bio2rdf_rdfrule:chempedianame , bio2rdf_rdfrule:chempediasubstance .
+
+bio2rdf_provider:chembl a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/chembl/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:chembl_resource , bio2rdf_ns:chembl_target , bio2rdf_ns:chembl_targettype , bio2rdf_ns:chembl_activity , bio2rdf_ns:chembl_assay , bio2rdf_ns:chembl_molecule , bio2rdf_ns:chembl_journal , bio2rdf_ns:chembl_article , bio2rdf_ns:chembl_journal ;
+	queryall_provider:includedInQuery bio2rdf_query:construct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:farmbiochemblresource , bio2rdf_rdfrule:farmbiochemblmolecule , bio2rdf_rdfrule:farmbiochemblassay , bio2rdf_rdfrule:farmbiochembltarget , bio2rdf_rdfrule:farmbiochembltargettype , bio2rdf_rdfrule:farmbiochemblactivity , bio2rdf_rdfrule:farmbiochembljournal , bio2rdf_rdfrule:taxonomy2taxon .
+
+bio2rdf_provider:chemblsecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
+	queryall_provider:graphUri "" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://rdf.farmbio.uu.se/chembl/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:uniprot , bio2rdf_ns:pubmed , bio2rdf_ns:ebi , bio2rdf_ns:chebi , bio2rdf_ns:chembl_resource , bio2rdf_ns:chembl_target , bio2rdf_ns:chembl_targettype , bio2rdf_ns:chembl_activity , bio2rdf_ns:chembl_assay , bio2rdf_ns:chembl_molecule , bio2rdf_ns:chembl_journal , bio2rdf_ns:chembl_article ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:farmbiochemblresource , bio2rdf_rdfrule:farmbiochemblmolecule , bio2rdf_rdfrule:farmbiochemblassay , bio2rdf_rdfrule:farmbiochembltarget , bio2rdf_rdfrule:farmbiochembltargettype , bio2rdf_rdfrule:farmbiochemblactivity , bio2rdf_rdfrule:farmbiochembljournal , bio2rdf_rdfrule:taxonomy2taxon .
+

@@ -1,5 +1,5 @@
     <table class="description">
-      <tr><th width="25%">Endpoint</th><th>Query</th><th>Query Type</th><th>Provider</th></tr>
+      <tr><th width="25%">Endpoint</th><th>Query</th><th>Provider</th><th>Query Type</th></tr>
 #foreach ($query_bundle in $query_bundles)
 #if ($velocityCount % 2 == 0)
 #set ($odd_even = "tr_even")

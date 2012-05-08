@@ -8,65 +8,95 @@
 
 bio2rdf:direct
 
+queryall:activeProfiles bio2rdf_profile:direct ;
+
 queryall:queryConfigLocations 
-"/config/providers/base-bio2rdf-providers-httpgetproxy-config.n3" , 
-"/config/providers/base-bio2rdf-providers-httpgetredirect-config.n3" , 
-"/config/providers/base-bio2rdf-providers-nocommunication-config.n3" , 
-"/config/providers/base-bio2rdf-providers-sparql-config.n3" , 
-"/config/providers/base-bio2rdf-providers-html-config.n3" , 
-"/config/providers/base-bio2rdf-providers-image-config.n3" , 
-"/config/providers/base-bio2rdf-providers-fasta-config.n3" , 
-"/config/providers/base-bio2rdf-providers-licenses-config.n3" , 
+"/config/providers/bio2rdf-providers-httpgetproxy.n3" , 
+"/config/providers/bio2rdf-providers-httpgetredirect.n3" , 
+"/config/providers/bio2rdf-providers-nocommunication.n3" , 
+"/config/providers/bio2rdf-providers-sparql.n3" , 
+"/config/providers/bio2rdf-providers-html.n3" , 
+"/config/providers/bio2rdf-providers-image.n3" , 
+"/config/providers/bio2rdf-providers-fasta.n3" , 
+"/config/providers/bio2rdf-providers-licenses.n3" , 
+"/config/providers/bio2rdf-providers-farmbio.n3" , 
+"/config/providers/bio2rdf-providers-fuberlin.n3" , 
+"/config/providers/bio2rdf-providers-linkedct.n3" , 
+"/config/providers/bio2rdf-providers-mquter.n3" , 
 
-"/config/rules/base-bio2rdf-rdfrules-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-prefixmapping-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-sparql-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-xslt-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-bioguid-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-chembl-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-fuberlin-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-geospecies-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-linkedct-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-neurocommons-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-obo-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-tcm-config.n3" , 
+"/config/rules/bio2rdf-rdfrules-base.n3" , 
+"/config/rules/bio2rdf-rdfrules-prefixmapping.n3" , 
+"/config/rules/bio2rdf-rdfrules-sparql.n3" , 
+"/config/rules/bio2rdf-rdfrules-xslt.n3" , 
+"/config/rules/bio2rdf-rdfrules-bioguid.n3" , 
+"/config/rules/bio2rdf-rdfrules-chembl.n3" , 
+"/config/rules/bio2rdf-rdfrules-fuberlin.n3" , 
+"/config/rules/bio2rdf-rdfrules-geospecies.n3" , 
+"/config/rules/bio2rdf-rdfrules-linkedct.n3" , 
+"/config/rules/bio2rdf-rdfrules-neurocommons.n3" , 
+"/config/rules/bio2rdf-rdfrules-obo.n3" , 
+"/config/rules/bio2rdf-rdfrules-tcm.n3" , 
 
-"/config/base-bio2rdf-namespaceentries-config.n3" , 
-"/config/base-bio2rdf-profiles-config.n3" , 
-"/config/base-bio2rdf-queries-config.n3" , 
-"/config/base-bio2rdf-ruletests-config.n3" ,
+"/config/namespaces/bio2rdf-namespaceentries-base.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-chembl.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-dailymed.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-diseaseome.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-drugbank.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-linkedct.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-medicare.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-ndc.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-nmrshiftdb.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-sider.n3" , 
+
+"/config/bio2rdf-profiles.n3" , 
+"/config/bio2rdf-queries.n3" , 
+"/config/bio2rdf-ruletests.n3" ,
 
 "/config/myexperiment/myexperiment_providers-config.n3" ,
 "/config/myexperiment/myexperiment_namespaceentries-config.n3" ,
 "/config/myexperiment/myexperiment_rdfrules-config.n3" ;
 
 queryall:backupQueryConfigLocations 
-"/config/providers/base-bio2rdf-providers-httpgetproxy-config.n3" , 
-"/config/providers/base-bio2rdf-providers-httpgetredirect-config.n3" , 
-"/config/providers/base-bio2rdf-providers-nocommunication-config.n3" , 
-"/config/providers/base-bio2rdf-providers-sparql-config.n3" , 
-"/config/providers/base-bio2rdf-providers-html-config.n3" , 
-"/config/providers/base-bio2rdf-providers-image-config.n3" , 
-"/config/providers/base-bio2rdf-providers-fasta-config.n3" , 
-"/config/providers/base-bio2rdf-providers-licenses-config.n3" , 
+"/config/providers/bio2rdf-providers-httpgetproxy.n3" , 
+"/config/providers/bio2rdf-providers-httpgetredirect.n3" , 
+"/config/providers/bio2rdf-providers-nocommunication.n3" , 
+"/config/providers/bio2rdf-providers-sparql.n3" , 
+"/config/providers/bio2rdf-providers-html.n3" , 
+"/config/providers/bio2rdf-providers-image.n3" , 
+"/config/providers/bio2rdf-providers-fasta.n3" , 
+"/config/providers/bio2rdf-providers-licenses.n3" , 
+"/config/providers/bio2rdf-providers-farmbio.n3" , 
+"/config/providers/bio2rdf-providers-fuberlin.n3" , 
+"/config/providers/bio2rdf-providers-linkedct.n3" , 
+"/config/providers/bio2rdf-providers-mquter.n3" , 
 
-"/config/rules/base-bio2rdf-rdfrules-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-prefixmapping-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-sparql-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-xslt-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-bioguid-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-chembl-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-fuberlin-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-geospecies-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-linkedct-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-neurocommons-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-obo-config.n3" , 
-"/config/rules/base-bio2rdf-rdfrules-tcm-config.n3" , 
+"/config/rules/bio2rdf-rdfrules-base.n3" , 
+"/config/rules/bio2rdf-rdfrules-prefixmapping.n3" , 
+"/config/rules/bio2rdf-rdfrules-sparql.n3" , 
+"/config/rules/bio2rdf-rdfrules-xslt.n3" , 
+"/config/rules/bio2rdf-rdfrules-bioguid.n3" , 
+"/config/rules/bio2rdf-rdfrules-chembl.n3" , 
+"/config/rules/bio2rdf-rdfrules-fuberlin.n3" , 
+"/config/rules/bio2rdf-rdfrules-geospecies.n3" , 
+"/config/rules/bio2rdf-rdfrules-linkedct.n3" , 
+"/config/rules/bio2rdf-rdfrules-neurocommons.n3" , 
+"/config/rules/bio2rdf-rdfrules-obo.n3" , 
+"/config/rules/bio2rdf-rdfrules-tcm.n3" , 
 
-"/config/base-bio2rdf-namespaceentries-config.n3" , 
-"/config/base-bio2rdf-profiles-config.n3" , 
-"/config/base-bio2rdf-queries-config.n3" , 
-"/config/base-bio2rdf-ruletests-config.n3" ,
+"/config/namespaces/bio2rdf-namespaceentries-base.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-chembl.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-dailymed.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-diseaseome.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-drugbank.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-linkedct.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-medicare.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-ndc.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-nmrshiftdb.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-sider.n3" , 
+
+"/config/bio2rdf-profiles.n3" , 
+"/config/bio2rdf-queries.n3" , 
+"/config/bio2rdf-ruletests.n3" ,
 
 "/config/myexperiment/myexperiment_providers-config.n3" ,
 "/config/myexperiment/myexperiment_namespaceentries-config.n3" ,
@@ -80,8 +110,6 @@ queryall:enableManualConfigurationRefresh "true"^^xsd:boolean ;
 
 queryall:manualConfigurationMinimumMilliseconds "120000"^^xsd:int ;
 
-queryall:activeProfiles bio2rdf_profile:direct ;
-
 queryall:readTimeout "35000"^^xsd:int ;
 
 queryall:connectTimeout "1500"^^xsd:int ;
@@ -92,7 +120,7 @@ queryall:automaticallyBlacklistClients "true"^^xsd:boolean ;
 
 queryall:blacklistResetClientBlacklistWithEndpoints "true"^^xsd:boolean ;
 
-queryall:blacklistResetPeriodMilliseconds "120000"^^xsd:long ;
+queryall:blacklistResetPeriodMilliseconds "600000"^^xsd:long ;
 
 queryall:blacklistMaxAccumulatedFailures "4"^^xsd:int ;
 

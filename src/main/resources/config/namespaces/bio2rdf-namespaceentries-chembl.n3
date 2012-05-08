@@ -1,0 +1,85 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall_ns: <http://purl.org/queryall/ns:> .
+@prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
+
+bio2rdf_ns:chembl_article a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_article" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_resource" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_journal a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_journal" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_molecule a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_molecule" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_assay a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_assay" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_activity a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_activity" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_target a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_target" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:chembl_targettype a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chembl_targettype" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+

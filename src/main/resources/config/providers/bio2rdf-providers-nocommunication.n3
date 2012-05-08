@@ -7,6 +7,15 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
+bio2rdf_provider:dummyuniversalfilterprovider a queryall_provider:Provider , queryall_provider:NoCommunicationProvider ;
+	dc:title "This provider contains a universal query type, and a set of normalisation rules that will filter all queries" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
+	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:includedInQuery bio2rdf_query:dummyuniversalfilterquery ;
+	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:sparqlownequivalentclassblanknoderemoval , bio2rdf_rdfrule:sparqlowlsameastrivialdelete , bio2rdf_rdfrule:sparqllinkedtofromunretrievedblanknoderemoval , bio2rdf_rdfrule:sparqlremoveplaintextemailaddresses , bio2rdf_rdfrule:sparqlobodbxrefunretrievedblanknoderemoval , bio2rdf_rdfrule:removeemptynamespaceucscuris , bio2rdf_rdfrule:sparqlremovelsid , bio2rdf_rdfrule:neurocommonsgeneaddsymboluri , bio2rdf_rdfrule:bio2rdfurldelete .
+
 bio2rdf_provider:lsidproxyinsertion a queryall_provider:Provider , queryall_provider:NoCommunicationProvider ;
 	dc:title "" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
@@ -31,18 +40,9 @@ bio2rdf_provider:taxonomy2taxon a queryall_provider:Provider , queryall_provider
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:handlesNamespace bio2rdf_ns:taxonomy ;
+	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
 	queryall_provider:includedInQuery bio2rdf_query:construct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxon2taxonomy .
-
-bio2rdf_provider:dummyuniversalfilterprovider a queryall_provider:Provider , queryall_provider:NoCommunicationProvider ;
-	dc:title "This provider contains a universal query type, and a set of normalisation rules that will filter all queries" ;
-	queryall_provider:resolutionStrategy queryall_provider:proxy ;
-	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
-	queryall_provider:isDefaultSource "true"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:includedInQuery bio2rdf_query:dummyuniversalfilterquery ;
-	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:sparqlownequivalentclassblanknoderemoval , bio2rdf_rdfrule:sparqlowlsameastrivialdelete , bio2rdf_rdfrule:sparqllinkedtofromunretrievedblanknoderemoval , bio2rdf_rdfrule:sparqlremoveplaintextemailaddresses , bio2rdf_rdfrule:sparqlobodbxrefunretrievedblanknoderemoval , bio2rdf_rdfrule:removeemptynamespaceucscuris , bio2rdf_rdfrule:sparqlremovelsid , bio2rdf_rdfrule:neurocommonsgeneaddsymboluri .
 
 bio2rdf_provider:i18ntestprovider a queryall_provider:Provider , queryall_provider:NoCommunicationProvider ;
 	dc:title "Test provider for i18n support" ;

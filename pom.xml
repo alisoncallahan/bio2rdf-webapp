@@ -361,6 +361,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
+					<systemPropertyVariables>
+						<log4j.configuration>test.log4j.properties</log4j.configuration>
+					</systemPropertyVariables>
 					<excludes>
 						<exclude>**/*AcceptanceTest.java</exclude>
 						<exclude>**/*IntegrationTest.java</exclude>
@@ -376,6 +379,9 @@
 						</goals>
 						<configuration>
 							<skip>false</skip>
+							<systemPropertyVariables>
+								<log4j.configuration>test.log4j.properties</log4j.configuration>
+							</systemPropertyVariables>
 							<excludes>
 								<exclude>**/*UnitTest.java</exclude>
 							</excludes>
@@ -404,10 +410,12 @@
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
-					<!-- <requestLog implementation="org.mortbay.jetty.NCSARequestLog"> 
-						<filename>target/yyyy_mm_dd.request.log</filename> <retainDays>90</retainDays> 
-						<append>true</append> <extended>false</extended> <logTimeZone>UTC+10</logTimeZone> 
-						</requestLog> -->
+					<systemProperties>
+						<systemProperty>
+							<name>log4j.configuration</name>
+							<value>test.log4j.properties</value>
+						</systemProperty>
+					</systemProperties>
 				</configuration>
 				<executions>
 					<execution>
@@ -417,6 +425,12 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
+							<systemProperties>
+								<systemProperty>
+									<name>log4j.configuration</name>
+									<value>test.log4j.properties</value>
+								</systemProperty>
+							</systemProperties>
 							<scanIntervalSeconds>0</scanIntervalSeconds>
 							<daemon>true</daemon>
 						</configuration>

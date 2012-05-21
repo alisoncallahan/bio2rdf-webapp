@@ -60,7 +60,7 @@
 		</form>
 	</div>
 	<div id="footer" style="text-align: center;">
-	<ul>
+	<ul style="list-style-type: none;">
         	<li><a href="http://groups.google.com/group/bio2rdf">Send your comments to the project team</a>.</li>
         	<li>See the <a href="http://github.com/bio2rdf">Bio2RDF GitHub page</a> to download and use this software. </li> 
 		<li>Get more information about available Bio2RDF datasets <a href="https://github.com/bio2rdf/bio2rdf-scripts/wiki/Bio2RDF-Datasets">here</a>.</li>

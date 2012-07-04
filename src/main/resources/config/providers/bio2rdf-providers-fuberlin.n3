@@ -40,7 +40,7 @@ bio2rdf_provider:fuberlindrugbank a queryall_provider:Provider , queryall_provid
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets , bio2rdf_ns:drugbank_dosageforms ;
 	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:sparqlregexsearch , bio2rdf_query:sparqlregexsearchbynamespace ;
@@ -53,7 +53,7 @@ bio2rdf_provider:fuberlindrugbank1 a queryall_provider:Provider , queryall_provi
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:rxlist ;
 	queryall_provider:includedInQuery bio2rdf_query:construct ;
@@ -66,7 +66,7 @@ bio2rdf_provider:fuberlindrugbank2 a queryall_provider:Provider , queryall_provi
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:rxlist ;
 	queryall_provider:includedInQuery bio2rdf_query:construct ;
@@ -79,7 +79,7 @@ bio2rdf_provider:fuberlindrugbankreverse1 a queryall_provider:Provider , queryal
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:rxlist , bio2rdf_ns:cas ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
@@ -92,7 +92,7 @@ bio2rdf_provider:fuberlindrugbankreverse2 a queryall_provider:Provider , queryal
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:rxlist ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
@@ -105,7 +105,7 @@ bio2rdf_provider:fuberlindrugbanksecondaryreverse a queryall_provider:Provider ,
 	queryall_provider:requiresGraphUri "false"^^xsd:boolean ;
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
-	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
 	queryall_provider:endpointUrl "http://www4.wiwiss.fu-berlin.de/drugbank/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_ontology , bio2rdf_ns:drugbank_drugcategory , bio2rdf_ns:drugbank_drugtype , bio2rdf_ns:drugbank_enzymes , bio2rdf_ns:drugbank_drugs , bio2rdf_ns:drugbank_druginteractions , bio2rdf_ns:drugbank_targets , bio2rdf_ns:drugbank_dosageforms , bio2rdf_ns:pubmed , bio2rdf_ns:dailymed_drugs ;
 	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;

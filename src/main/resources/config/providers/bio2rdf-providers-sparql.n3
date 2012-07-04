@@ -7,6 +7,30 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
+bio2rdf_provider:carletondrugbank a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Contains the Carleton University version of the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql/" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_resource , bio2rdf_ns:drugbank_vocabulary ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace .
+
+bio2rdf_provider:carletondrugbanksecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_resource , bio2rdf_ns:drugbank_vocabulary ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
 bio2rdf_provider:carletonndc a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "Contains the NDC dataset" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;

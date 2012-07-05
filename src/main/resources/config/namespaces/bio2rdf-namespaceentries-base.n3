@@ -203,6 +203,26 @@ bio2rdf_ns:ctd a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , query
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
+bio2rdf_ns:ctd_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ctd_resource" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:ctd_vocabulary a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ctd_vocabulary" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
 bio2rdf_ns:inparanoid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -393,6 +413,86 @@ bio2rdf_ns:registry_agent a queryall_ns:Namespace , queryall_ns:ValidatingNamesp
 	queryall_ns:identifierRegex "" ;
 	dc:title "Namespace for the Bio2RDF Agent Registry" .
 
+bio2rdf_ns:irefindex a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "irefindex" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:crogid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "crogid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:icrogid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "icrogid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:irogid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "irogid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:rogid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "rogid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:crigid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "crigid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:irigid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "irigid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:rigid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "rigid" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
 bio2rdf_ns:grid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -403,11 +503,11 @@ bio2rdf_ns:grid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , quer
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:irefindex a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+bio2rdf_ns:ophid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "irefindex" ;
+	queryall_ns:preferredPrefix "ophid" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -1483,6 +1583,10 @@ bio2rdf_ns:uniprot a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , q
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "uniprot" ;
+	queryall_ns:alternativePrefix "swissprot" ;
+	queryall_ns:alternativePrefix "uniprotkb" ;
+	queryall_ns:alternativePrefix "uniprot-swiss-prot" ;
+	queryall_ns:alternativePrefix "uniprot-trembl" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
@@ -3290,16 +3394,6 @@ bio2rdf_ns:um-bbd_ruleid a queryall_ns:Namespace , queryall_ns:ValidatingNamespa
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:uniprotkb a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "uniprotkb" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
 bio2rdf_ns:wb_ref a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -4555,16 +4649,6 @@ bio2rdf_ns:ddbj a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , quer
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .
 
-bio2rdf_ns:uniprot-swiss-prot a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "uniprot-swiss-prot" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
 bio2rdf_ns:dbest a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -4760,16 +4844,6 @@ bio2rdf_ns:ratmap a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , qu
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
 	queryall_ns:preferredPrefix "ratmap" ;
-	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-	queryall_ns:identifierRegex "" ;
-	dc:title "" .
-
-bio2rdf_ns:uniprot-trembl a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "uniprot-trembl" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;

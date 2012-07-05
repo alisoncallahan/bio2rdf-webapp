@@ -20,7 +20,7 @@ bio2rdf_provider:carletondrugbank a queryall_provider:Provider , queryall_provid
 	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace .
 
 bio2rdf_provider:carletondrugbanksecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
-	dc:title "Fetches b2r:linkedToFrom" ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton DrugBank endpoint for Drugbank resources that have primary descriptions in the Drugbank dataset" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
 	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
@@ -30,6 +30,30 @@ bio2rdf_provider:carletondrugbanksecondaryreverse a queryall_provider:Provider ,
 	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_resource , bio2rdf_ns:drugbank_vocabulary ;
 	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
+bio2rdf_provider:carletondrugbankexternalsecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton DrugBank endpoint for Drugbank resources that have primary descriptions external to the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb , bio2rdf_ns:uniprot , bio2rdf_ns:pubmed , bio2rdf_ns:taxon , bio2rdf_ns:genbank , bio2rdf_ns:hgnc , bio2rdf_ns:pfam , bio2rdf_ns:pubchemcompound , bio2rdf_ns:pubchemsubstance ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
+bio2rdf_provider:carletondrugbankexternalprimaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton DrugBank endpoint for Drugbank resources that have no currently available descriptions external to the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:cas , bio2rdf_ns:atc , bio2rdf_ns:ahfs , bio2rdf_ns:dpd , bio2rdf_ns:genecards , bio2rdf_ns:genatlas , bio2rdf_ns:hprd , bio2rdf_ns:bindingdb , bio2rdf_ns:chemspider ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct .
 
 bio2rdf_provider:carletonndc a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "Contains the NDC dataset" ;

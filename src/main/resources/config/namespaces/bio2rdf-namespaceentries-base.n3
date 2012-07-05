@@ -33,6 +33,46 @@ bio2rdf_ns:drugbank_vocabulary a queryall_ns:Namespace , queryall_ns:ValidatingN
 	queryall_ns:identifierRegex "" ;
 	dc:title "Identifiers for ontology definitions created by the Bio2RDF project for RDF version of the Drugbank dataset." .
 
+bio2rdf_ns:chemspider a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "chemspider" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:bindingdb a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "bindingdb" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:dpd a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "dpd" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
+bio2rdf_ns:ahfs a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ahfs" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "" .
+
 bio2rdf_ns:hhpid a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
 	queryall_ns:authority <http://bio2rdf.org/> ;
 	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;

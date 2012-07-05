@@ -7,6 +7,54 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
+bio2rdf_provider:carletondrugbank a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Contains the Carleton University version of the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql/" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_resource , bio2rdf_ns:drugbank_vocabulary ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace .
+
+bio2rdf_provider:carletondrugbanksecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton DrugBank endpoint for Drugbank resources that have primary descriptions in the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank , bio2rdf_ns:drugbank_resource , bio2rdf_ns:drugbank_vocabulary ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
+bio2rdf_provider:carletondrugbankexternalsecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton DrugBank endpoint for Drugbank resources that have primary descriptions external to the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:pharmgkb , bio2rdf_ns:uniprot , bio2rdf_ns:pubmed , bio2rdf_ns:taxon , bio2rdf_ns:genbank , bio2rdf_ns:hgnc , bio2rdf_ns:pfam , bio2rdf_ns:pubchemcompound , bio2rdf_ns:pubchemsubstance ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
+bio2rdf_provider:carletondrugbankexternalprimaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton DrugBank endpoint for Drugbank resources that have no currently available descriptions external to the Drugbank dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/drugbank" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.drugbank.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:cas , bio2rdf_ns:atc , bio2rdf_ns:ahfs , bio2rdf_ns:dpd , bio2rdf_ns:genecards , bio2rdf_ns:genatlas , bio2rdf_ns:hprd , bio2rdf_ns:bindingdb , bio2rdf_ns:chemspider ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct .
+
 bio2rdf_provider:carletonndc a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "Contains the NDC dataset" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
@@ -1617,7 +1665,7 @@ bio2rdf_provider:mirroreduniprotreverseprimary a queryall_provider:Provider , qu
 	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
-	queryall_provider:handlesNamespace bio2rdf_ns:dbsnp , bio2rdf_ns:cgd , bio2rdf_ns:brenda , bio2rdf_ns:linkhub , bio2rdf_ns:annotation , bio2rdf_ns:unigene , bio2rdf_ns:intact , bio2rdf_ns:smr , bio2rdf_ns:cleanex , bio2rdf_ns:ensembl , bio2rdf_ns:hamap , bio2rdf_ns:rgd , bio2rdf_ns:smart , bio2rdf_ns:pir , bio2rdf_ns:medline , bio2rdf_ns:locations , bio2rdf_ns:core , bio2rdf_ns:isoforms , bio2rdf_ns:pride , bio2rdf_ns:phosphosite , bio2rdf_ns:ipi , bio2rdf_ns:embl , bio2rdf_ns:arrayexpress , bio2rdf_ns:bgee , bio2rdf_ns:germonline , bio2rdf_ns:hovergen , bio2rdf_ns:nextbio , bio2rdf_ns:pathway-interaction-db , bio2rdf_ns:hogenom , bio2rdf_ns:nmpdr , bio2rdf_ns:genomereviews , bio2rdf_ns:genecards , bio2rdf_ns:genefarm , bio2rdf_ns:gramene , bio2rdf_ns:h-invdb , bio2rdf_ns:pdbsum , bio2rdf_ns:reproduction-2dpage , bio2rdf_ns:cazy , bio2rdf_ns:xenbase , bio2rdf_ns:orphanet , bio2rdf_ns:peptideatlas , bio2rdf_ns:swiss-2dpage , bio2rdf_ns:wormpep , bio2rdf_ns:tuberculist , bio2rdf_ns:dosac-cobs-2dpage , bio2rdf_ns:hssp ;
+	queryall_provider:handlesNamespace bio2rdf_ns:merops , bio2rdf_ns:embl-cds , bio2rdf_ns:panther , bio2rdf_ns:dbsnp , bio2rdf_ns:cgd , bio2rdf_ns:brenda , bio2rdf_ns:linkhub , bio2rdf_ns:annotation , bio2rdf_ns:unigene , bio2rdf_ns:intact , bio2rdf_ns:smr , bio2rdf_ns:cleanex , bio2rdf_ns:ensembl , bio2rdf_ns:hamap , bio2rdf_ns:rgd , bio2rdf_ns:smart , bio2rdf_ns:pir , bio2rdf_ns:medline , bio2rdf_ns:locations , bio2rdf_ns:core , bio2rdf_ns:isoforms , bio2rdf_ns:pride , bio2rdf_ns:phosphosite , bio2rdf_ns:ipi , bio2rdf_ns:embl , bio2rdf_ns:arrayexpress , bio2rdf_ns:bgee , bio2rdf_ns:germonline , bio2rdf_ns:hovergen , bio2rdf_ns:nextbio , bio2rdf_ns:pathway-interaction-db , bio2rdf_ns:hogenom , bio2rdf_ns:nmpdr , bio2rdf_ns:genomereviews , bio2rdf_ns:genecards , bio2rdf_ns:genefarm , bio2rdf_ns:gramene , bio2rdf_ns:h-invdb , bio2rdf_ns:pdbsum , bio2rdf_ns:reproduction-2dpage , bio2rdf_ns:cazy , bio2rdf_ns:xenbase , bio2rdf_ns:orphanet , bio2rdf_ns:peptideatlas , bio2rdf_ns:swiss-2dpage , bio2rdf_ns:wormpep , bio2rdf_ns:tuberculist , bio2rdf_ns:dosac-cobs-2dpage , bio2rdf_ns:hssp ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxonomy2taxon , bio2rdf_rdfrule:drugbanknamespacefix .
 

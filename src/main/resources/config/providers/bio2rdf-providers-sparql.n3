@@ -7,6 +7,54 @@
 @prefix bio2rdf_rdfrule: <http://bio2rdf.org/rdfrule:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
+bio2rdf_provider:carletonctd a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Contains the Carleton University version of the ctd dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ctd" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.ctd.bio2rdf.org/sparql/" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ctd , bio2rdf_ns:ctd_resource , bio2rdf_ns:ctd_vocabulary ;
+	queryall_provider:includedInQuery bio2rdf_query:construct , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace .
+
+bio2rdf_provider:carletonctdsecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton ctd endpoint for ctd resources that have primary descriptions in the ctd dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ctd" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.ctd.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ctd , bio2rdf_ns:ctd_resource , bio2rdf_ns:ctd_vocabulary ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
+bio2rdf_provider:carletonctdexternalsecondaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton ctd endpoint for ctd resources that have primary descriptions external to the ctd dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ctd" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.ctd.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:omim , bio2rdf_ns:mesh , bio2rdf_ns:pubmed ;
+	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct .
+
+bio2rdf_provider:carletonctdexternalprimaryreverse a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
+	dc:title "Fetches b2r:linkedToFrom from the Carleton ctd endpoint for ctd resources that have no currently available descriptions external to the ctd dataset" ;
+	queryall_provider:resolutionStrategy queryall_provider:proxy ;
+	queryall_provider:resolutionMethod queryall_provider:httppostsparql ;
+	queryall_provider:requiresGraphUri "true"^^xsd:boolean ;
+	queryall_provider:graphUri "http://bio2rdf.org/ctd" ;
+	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_provider:endpointUrl "http://cu.ctd.bio2rdf.org/sparql" ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ctd_resource ;
+	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct .
+
 bio2rdf_provider:carletondrugbank a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:SparqlProvider ;
 	dc:title "Contains the Carleton University version of the Drugbank dataset" ;
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
@@ -253,7 +301,7 @@ bio2rdf_provider:mirroredgoreverse a queryall_provider:Provider , queryall_provi
 	queryall_provider:endpointUrl "http://cu.go.bio2rdf.org/sparql", "http://quebec.go.bio2rdf.org/sparql" 
 #	, "http://protech.go.bio2rdf.org/sparql" 
 	;
-	queryall_provider:handlesNamespace bio2rdf_ns:agi_locuscode , bio2rdf_ns:aracyc , bio2rdf_ns:biocyc , bio2rdf_ns:biosis , bio2rdf_ns:biosynthesis_and_function , bio2rdf_ns:brenda , bio2rdf_ns:cbs , bio2rdf_ns:cgd , bio2rdf_ns:cgd_ref , bio2rdf_ns:cgsc , bio2rdf_ns:cl , bio2rdf_ns:cog , bio2rdf_ns:ddb_ref , bio2rdf_ns:dictybase , bio2rdf_ns:dictybase_ref , bio2rdf_ns:doi , bio2rdf_ns:ec , bio2rdf_ns:echobase , bio2rdf_ns:eck , bio2rdf_ns:ecocyc , bio2rdf_ns:ecocyc_ref , bio2rdf_ns:ecogene , bio2rdf_ns:ecoliwiki , bio2rdf_ns:egad , bio2rdf_ns:embl , bio2rdf_ns:ensembl , bio2rdf_ns:fb , bio2rdf_ns:gb , bio2rdf_ns:gdb , bio2rdf_ns:genbank , bio2rdf_ns:genedb_lmajor , bio2rdf_ns:genedb_pfalciparum , bio2rdf_ns:genedb_spombe , bio2rdf_ns:genedb_tbrucei , bio2rdf_ns:genprotec , bio2rdf_ns:goc , bio2rdf_ns:go_ref , bio2rdf_ns:gr , bio2rdf_ns:gr_protein , bio2rdf_ns:gr_ref , bio2rdf_ns:hamap , bio2rdf_ns:hugo , bio2rdf_ns:img , bio2rdf_ns:ipr , bio2rdf_ns:isbm , bio2rdf_ns:isbn , bio2rdf_ns:issn , bio2rdf_ns:iuphar , bio2rdf_ns:iuphar_gpcr , bio2rdf_ns:iuphar_receptor , bio2rdf_ns:jcvi_cmr , bio2rdf_ns:jcvi_tigrfams , bio2rdf_ns:kegg , bio2rdf_ns:kegg_pathway , bio2rdf_ns:ligand , bio2rdf_ns:locusid , bio2rdf_ns:ma , bio2rdf_ns:maizegdb , bio2rdf_ns:maizegdb_locus , bio2rdf_ns:medline , bio2rdf_ns:merops , bio2rdf_ns:merops_fam , bio2rdf_ns:mesh , bio2rdf_ns:metacyc , bio2rdf_ns:mgd , bio2rdf_ns:mgi , bio2rdf_ns:mips_funcat , bio2rdf_ns:mp , bio2rdf_ns:multifun , bio2rdf_ns:ncbi , bio2rdf_ns:ncbi_gene , bio2rdf_ns:ncbi_gi , bio2rdf_ns:ncbi_gp , bio2rdf_ns:ncbi_nm , bio2rdf_ns:ncbi_np , bio2rdf_ns:pamgo , bio2rdf_ns:pamgo_vmd , bio2rdf_ns:pato , bio2rdf_ns:pir , bio2rdf_ns:pirsf , bio2rdf_ns:pmid , bio2rdf_ns:po , bio2rdf_ns:prints , bio2rdf_ns:protein_id , bio2rdf_ns:pseudocap , bio2rdf_ns:psort , bio2rdf_ns:pubchem , bio2rdf_ns:pubchem_compound , bio2rdf_ns:pubchem_substance , bio2rdf_ns:refseq , bio2rdf_ns:resid , bio2rdf_ns:rfam , bio2rdf_ns:rgd , bio2rdf_ns:rgdid , bio2rdf_ns:rnamods , bio2rdf_ns:sgd , bio2rdf_ns:sgdid , bio2rdf_ns:sgd_locus , bio2rdf_ns:sgd_ref , bio2rdf_ns:sgn , bio2rdf_ns:sgn_ref , bio2rdf_ns:smart , bio2rdf_ns:smd , bio2rdf_ns:sp , bio2rdf_ns:sp_kw , bio2rdf_ns:sp_sl , bio2rdf_ns:subtilist , bio2rdf_ns:subtilistg , bio2rdf_ns:swiss-prot , bio2rdf_ns:tair , bio2rdf_ns:tc , bio2rdf_ns:tigr , bio2rdf_ns:tigr_ath1 , bio2rdf_ns:tigr_cmr , bio2rdf_ns:tigr_egad , bio2rdf_ns:tigr_genprop , bio2rdf_ns:tigr_role , bio2rdf_ns:tigr_tba1 , bio2rdf_ns:tigr_tigrfams , bio2rdf_ns:trembl , bio2rdf_ns:um , bio2rdf_ns:um-bbd_enzymeid , bio2rdf_ns:um-bbd_pathwayid , bio2rdf_ns:um-bbd_reactionid , bio2rdf_ns:um-bbd_ruleid , bio2rdf_ns:uniprotkb , bio2rdf_ns:url , bio2rdf_ns:wb , bio2rdf_ns:wb_ref , bio2rdf_ns:wikipedia , bio2rdf_ns:wp , bio2rdf_ns:zfin ;
+	queryall_provider:handlesNamespace bio2rdf_ns:agi_locuscode , bio2rdf_ns:aracyc , bio2rdf_ns:biocyc , bio2rdf_ns:biosis , bio2rdf_ns:biosynthesis_and_function , bio2rdf_ns:brenda , bio2rdf_ns:cbs , bio2rdf_ns:cgd , bio2rdf_ns:cgd_ref , bio2rdf_ns:cgsc , bio2rdf_ns:cl , bio2rdf_ns:cog , bio2rdf_ns:ddb_ref , bio2rdf_ns:dictybase , bio2rdf_ns:dictybase_ref , bio2rdf_ns:doi , bio2rdf_ns:ec , bio2rdf_ns:echobase , bio2rdf_ns:eck , bio2rdf_ns:ecocyc , bio2rdf_ns:ecocyc_ref , bio2rdf_ns:ecogene , bio2rdf_ns:ecoliwiki , bio2rdf_ns:egad , bio2rdf_ns:embl , bio2rdf_ns:ensembl , bio2rdf_ns:fb , bio2rdf_ns:gb , bio2rdf_ns:gdb , bio2rdf_ns:genbank , bio2rdf_ns:genedb_lmajor , bio2rdf_ns:genedb_pfalciparum , bio2rdf_ns:genedb_spombe , bio2rdf_ns:genedb_tbrucei , bio2rdf_ns:genprotec , bio2rdf_ns:goc , bio2rdf_ns:go_ref , bio2rdf_ns:gr , bio2rdf_ns:gr_protein , bio2rdf_ns:gr_ref , bio2rdf_ns:hamap , bio2rdf_ns:hugo , bio2rdf_ns:img , bio2rdf_ns:ipr , bio2rdf_ns:isbm , bio2rdf_ns:isbn , bio2rdf_ns:issn , bio2rdf_ns:iuphar , bio2rdf_ns:iuphar_gpcr , bio2rdf_ns:iuphar_receptor , bio2rdf_ns:jcvi_cmr , bio2rdf_ns:jcvi_tigrfams , bio2rdf_ns:kegg , bio2rdf_ns:kegg_pathway , bio2rdf_ns:ligand , bio2rdf_ns:locusid , bio2rdf_ns:ma , bio2rdf_ns:maizegdb , bio2rdf_ns:maizegdb_locus , bio2rdf_ns:medline , bio2rdf_ns:merops , bio2rdf_ns:merops_fam , bio2rdf_ns:mesh , bio2rdf_ns:metacyc , bio2rdf_ns:mgd , bio2rdf_ns:mgi , bio2rdf_ns:mips_funcat , bio2rdf_ns:mp , bio2rdf_ns:multifun , bio2rdf_ns:ncbi , bio2rdf_ns:ncbi_gene , bio2rdf_ns:ncbi_gi , bio2rdf_ns:ncbi_gp , bio2rdf_ns:ncbi_nm , bio2rdf_ns:ncbi_np , bio2rdf_ns:pamgo , bio2rdf_ns:pamgo_vmd , bio2rdf_ns:pato , bio2rdf_ns:pir , bio2rdf_ns:pirsf , bio2rdf_ns:pmid , bio2rdf_ns:po , bio2rdf_ns:prints , bio2rdf_ns:protein_id , bio2rdf_ns:pseudocap , bio2rdf_ns:psort , bio2rdf_ns:pubchem , bio2rdf_ns:pubchem_compound , bio2rdf_ns:pubchem_substance , bio2rdf_ns:refseq , bio2rdf_ns:resid , bio2rdf_ns:rfam , bio2rdf_ns:rgd , bio2rdf_ns:rgdid , bio2rdf_ns:rnamods , bio2rdf_ns:sgd , bio2rdf_ns:sgdid , bio2rdf_ns:sgd_locus , bio2rdf_ns:sgd_ref , bio2rdf_ns:sgn , bio2rdf_ns:sgn_ref , bio2rdf_ns:smart , bio2rdf_ns:smd , bio2rdf_ns:sp , bio2rdf_ns:sp_kw , bio2rdf_ns:sp_sl , bio2rdf_ns:subtilist , bio2rdf_ns:subtilistg , bio2rdf_ns:swiss-prot , bio2rdf_ns:tair , bio2rdf_ns:tc , bio2rdf_ns:tigr , bio2rdf_ns:tigr_ath1 , bio2rdf_ns:tigr_cmr , bio2rdf_ns:tigr_egad , bio2rdf_ns:tigr_genprop , bio2rdf_ns:tigr_role , bio2rdf_ns:tigr_tba1 , bio2rdf_ns:tigr_tigrfams , bio2rdf_ns:trembl , bio2rdf_ns:um , bio2rdf_ns:um-bbd_enzymeid , bio2rdf_ns:um-bbd_pathwayid , bio2rdf_ns:um-bbd_reactionid , bio2rdf_ns:um-bbd_ruleid , bio2rdf_ns:uniprot , bio2rdf_ns:url , bio2rdf_ns:wb , bio2rdf_ns:wb_ref , bio2rdf_ns:wikipedia , bio2rdf_ns:wp , bio2rdf_ns:zfin ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:pubmed2pmid , bio2rdf_rdfrule:goassociationnamespace , bio2rdf_rdfrule:goflybasefix , bio2rdf_rdfrule:goevidencenamespace , bio2rdf_rdfrule:geneidgdbreversefix , bio2rdf_rdfrule:bio2rdfquebecgo .
 
@@ -413,7 +461,7 @@ bio2rdf_provider:mirroredirefindexreverseprimary a queryall_provider:Provider , 
 	queryall_provider:endpointUrl "http://cu.irefindex.bio2rdf.org/sparql" 
 #	, "http://protech.irefindex.bio2rdf.org/sparql" 
 	, "http://quebec.irefindex.bio2rdf.org/sparql" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:grid , bio2rdf_ns:mi , bio2rdf_ns:mint ;
+	queryall_provider:handlesNamespace bio2rdf_ns:grid , bio2rdf_ns:mi , bio2rdf_ns:mint , bio2rdf_ns:rogid , bio2rdf_ns:icrogid , bio2rdf_ns:irogid , bio2rdf_ns:crogid , bio2rdf_ns:crigid , bio2rdf_ns:rigid , bio2rdf_ns:irigid , bio2rdf_ns:grid , bio2rdf_ns:intact , bio2rdf_ns:hprd , bio2rdf_ns:mint , bio2rdf_ns:ophid ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
 
@@ -428,7 +476,7 @@ bio2rdf_provider:mirroredirefindexreversesecondary a queryall_provider:Provider 
 	queryall_provider:endpointUrl "http://cu.irefindex.bio2rdf.org/sparql" 
 #	, "http://protech.irefindex.bio2rdf.org/sparql" 
 	, "http://quebec.irefindex.bio2rdf.org/sparql" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:pubmed ;
+	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:pubmed , bio2rdf_ns:refseq , bio2rdf_ns:geneid , bio2rdf_ns:taxon , bio2rdf_ns:uniprot ;
 	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
 
@@ -747,7 +795,7 @@ bio2rdf_provider:mirroredgeneidreverse a queryall_provider:Provider , queryall_p
 #	, "http://protech.geneid.bio2rdf.org/sparql"
 #	, "http://quebec.geneid.bio2rdf.org/sparql" 
 	;
-	queryall_provider:handlesNamespace bio2rdf_ns:ncbi , bio2rdf_ns:pubmed , bio2rdf_ns:geneid_resource , bio2rdf_ns:snornabase , bio2rdf_ns:dictybase , bio2rdf_ns:sptrembl , bio2rdf_ns:human_abc , bio2rdf_ns:pbr , bio2rdf_ns:cytochrome_p450_homepage , bio2rdf_ns:ddbj , bio2rdf_ns:uniprot-swiss-prot , bio2rdf_ns:dbest , bio2rdf_ns:qtl_database , bio2rdf_ns:jgi , bio2rdf_ns:maizegdb , bio2rdf_ns:hssp , bio2rdf_ns:arkdb , bio2rdf_ns:aceview-wormgenes , bio2rdf_ns:imgt-gene-db , bio2rdf_ns:inra , bio2rdf_ns:the_human_olfactory , bio2rdf_ns:mirbase , bio2rdf_ns:kiaa , bio2rdf_ns:hgmd , bio2rdf_ns:xenbase , bio2rdf_ns:newentry , bio2rdf_ns:pathema , bio2rdf_ns:huge_navigator , bio2rdf_ns:ratmap , bio2rdf_ns:uniprot-trembl , bio2rdf_ns:sgd , bio2rdf_ns:hugenet , bio2rdf_ns:gxd , bio2rdf_ns:cgnc , bio2rdf_ns:vog , bio2rdf_ns:zfin , bio2rdf_ns:genedb , bio2rdf_ns:goa , bio2rdf_ns:gdb , bio2rdf_ns:bind , bio2rdf_ns:sanger , bio2rdf_ns:nucleotide-protein , bio2rdf_ns:rhizobase , bio2rdf_ns:hprd , bio2rdf_ns:wormbase , bio2rdf_ns:hgnc , bio2rdf_ns:cyanobase , bio2rdf_ns:tair , bio2rdf_ns:flybase , bio2rdf_ns:ucsc , bio2rdf_ns:aceview , bio2rdf_ns:homologene , bio2rdf_ns:locus_tag , bio2rdf_ns:ccds , bio2rdf_ns:mgc , bio2rdf_ns:rgd , bio2rdf_ns:ensembl , bio2rdf_ns:vectorbase , bio2rdf_ns:atcc , bio2rdf_ns:cog , bio2rdf_ns:tigr , bio2rdf_ns:biogrid , bio2rdf_ns:unigene , bio2rdf_ns:modelmaker , bio2rdf_ns:evidence_viewer , bio2rdf_ns:locusid , bio2rdf_ns:id , bio2rdf_ns:cdd , bio2rdf_ns:nucleotide , bio2rdf_ns:protein , bio2rdf_ns:proteinid , bio2rdf_ns:gi , bio2rdf_ns:genbank , bio2rdf_ns:mgi_gxd , bio2rdf_ns:unists , bio2rdf_ns:reactome ;
+	queryall_provider:handlesNamespace bio2rdf_ns:ncbi , bio2rdf_ns:pubmed , bio2rdf_ns:geneid_resource , bio2rdf_ns:snornabase , bio2rdf_ns:dictybase , bio2rdf_ns:sptrembl , bio2rdf_ns:human_abc , bio2rdf_ns:pbr , bio2rdf_ns:cytochrome_p450_homepage , bio2rdf_ns:ddbj , bio2rdf_ns:uniprot , bio2rdf_ns:dbest , bio2rdf_ns:qtl_database , bio2rdf_ns:jgi , bio2rdf_ns:maizegdb , bio2rdf_ns:hssp , bio2rdf_ns:arkdb , bio2rdf_ns:aceview-wormgenes , bio2rdf_ns:imgt-gene-db , bio2rdf_ns:inra , bio2rdf_ns:the_human_olfactory , bio2rdf_ns:mirbase , bio2rdf_ns:kiaa , bio2rdf_ns:hgmd , bio2rdf_ns:xenbase , bio2rdf_ns:newentry , bio2rdf_ns:pathema , bio2rdf_ns:huge_navigator , bio2rdf_ns:ratmap , bio2rdf_ns:uniprot , bio2rdf_ns:sgd , bio2rdf_ns:hugenet , bio2rdf_ns:gxd , bio2rdf_ns:cgnc , bio2rdf_ns:vog , bio2rdf_ns:zfin , bio2rdf_ns:genedb , bio2rdf_ns:goa , bio2rdf_ns:gdb , bio2rdf_ns:bind , bio2rdf_ns:sanger , bio2rdf_ns:nucleotide-protein , bio2rdf_ns:rhizobase , bio2rdf_ns:hprd , bio2rdf_ns:wormbase , bio2rdf_ns:hgnc , bio2rdf_ns:cyanobase , bio2rdf_ns:tair , bio2rdf_ns:flybase , bio2rdf_ns:ucsc , bio2rdf_ns:aceview , bio2rdf_ns:homologene , bio2rdf_ns:locus_tag , bio2rdf_ns:ccds , bio2rdf_ns:mgc , bio2rdf_ns:rgd , bio2rdf_ns:ensembl , bio2rdf_ns:vectorbase , bio2rdf_ns:atcc , bio2rdf_ns:cog , bio2rdf_ns:tigr , bio2rdf_ns:biogrid , bio2rdf_ns:unigene , bio2rdf_ns:modelmaker , bio2rdf_ns:evidence_viewer , bio2rdf_ns:locusid , bio2rdf_ns:id , bio2rdf_ns:cdd , bio2rdf_ns:nucleotide , bio2rdf_ns:protein , bio2rdf_ns:proteinid , bio2rdf_ns:gi , bio2rdf_ns:genbank , bio2rdf_ns:mgi_gxd , bio2rdf_ns:unists , bio2rdf_ns:reactome ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:mgigeneexpressiondatabase , bio2rdf_rdfrule:geneidgdbfix , bio2rdf_rdfrule:geneidgdbreversefix .
 

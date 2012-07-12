@@ -679,7 +679,7 @@ bio2rdf_provider:hugohtml a queryall_provider:Provider , queryall_provider:HttpP
 	queryall_provider:resolutionStrategy queryall_provider:proxy ;
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://www.genenames.org/data/hgnc_data.php?gd_app_sym=${urlEncoded_input_2}" ;
+	queryall_provider:endpointUrl "http://www.genenames.org/data/hgnc_data.php?match=${urlEncoded_input_2}" ;
 	queryall_provider:handlesNamespace bio2rdf_ns:hugo , bio2rdf_ns:symbol ;
 	queryall_provider:includedInQuery bio2rdf_query:html , bio2rdf_query:htmlinclude .
 

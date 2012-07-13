@@ -3,6 +3,16 @@
 @prefix queryall_ns: <http://purl.org/queryall/ns:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
+bio2rdf_ns:ndc_vocabulary a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc_vocabulary" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC Vocabulary" .
+
 bio2rdf_ns:ndc_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
 	queryall_ns:authority <http://bio2rdf.org/> ;
 	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
@@ -12,6 +22,16 @@ bio2rdf_ns:ndc_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespac
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "NDC Resource" .
+
+bio2rdf_ns:ndc a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+    queryall_ns:authority <http://bio2rdf.org/> ;
+    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+    queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "ndc" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "NDC main namespace" .
 
 bio2rdf_ns:ndc_product a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;

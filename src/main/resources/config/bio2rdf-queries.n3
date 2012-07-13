@@ -1913,7 +1913,7 @@ bio2rdf_query:virtuosobifcontainsquicksearchbynamespace a queryall_query:Query ,
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
-	queryall_query:includeQueryType bio2rdf_query:virtuosobifcontainssearchbynamespace .
+	queryall_query:includeQueryType bio2rdf_query:virtuosobifcontainsquicksearchbynamespace .
 
 bio2rdf_query:virtuosobifcontainssearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;

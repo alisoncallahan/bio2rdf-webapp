@@ -13,7 +13,7 @@ bio2rdf_provider:drugbankhtml a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:resolutionMethod queryall_provider:nocommunication ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://www.drugbank.ca/drugs/${urlEncoded_input_2}" ;
-	queryall_provider:handlesNamespace bio2rdf_ns:drugbank_drugs ;
+	queryall_provider:handlesNamespace bio2rdf_ns:drugbank ;
 	queryall_provider:includedInQuery bio2rdf_query:html , bio2rdf_query:htmlinclude .
 
 bio2rdf_provider:sangercosmichtml a queryall_provider:Provider , queryall_provider:HttpProvider , queryall_provider:NoCommunicationProvider ;

@@ -3,17 +3,36 @@
 @prefix queryall_ns: <http://purl.org/queryall/ns:> .
 @prefix bio2rdf_ns: <http://bio2rdf.org/ns:> .
 
-bio2rdf_ns:drugbank_drugs a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
-    queryall_ns:authority <http://bio2rdf.org/> ;
-    queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
-    queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_drugs" ;
+bio2rdf_ns:drugbank a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "drugbank" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
-	queryall_ns:alternativePrefix "" ;
-	queryall_ns:validationPossible "false"^^xsd:boolean ;
-# FIXME: Confirm this identifier regex works as desired
+	queryall_ns:alternativePrefix "drugbank_drugs" ;
+	queryall_ns:validationPossible "true"^^xsd:boolean ;
 	queryall_ns:identifierRegex "DB[\\d]+" ;
-	dc:title "The FU Berlin Drugbank namespace for drug identifiers." .
+	dc:title "The DrugBank database. See drugbank_drugs for the FU Berlin drugbank namespace." .
+
+bio2rdf_ns:drugbank_resource a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "drugbank_resource" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "Unstable resource identifiers created by the Bio2RDF project to identify non-drug items in the Drugbank dataset." .
+
+bio2rdf_ns:drugbank_vocabulary a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
+	queryall_ns:authority <http://bio2rdf.org/> ;
+	queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
+	queryall_ns:separator ":" ;
+	queryall_ns:preferredPrefix "drugbank_vocabulary" ;
+	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:validationPossible "false"^^xsd:boolean ;
+	queryall_ns:identifierRegex "" ;
+	dc:title "Identifiers for ontology definitions created by the Bio2RDF project for RDF version of the Drugbank dataset." .
 
 bio2rdf_ns:drugbank_ontology a queryall_ns:Namespace , queryall_ns:ValidatingNamespace , queryall_ns:RegexValidatingNamespace ;
     queryall_ns:authority <http://bio2rdf.org/> ;
@@ -69,8 +88,9 @@ bio2rdf_ns:drugbank_targets a queryall_ns:Namespace , queryall_ns:ValidatingName
     queryall_ns:authority <http://bio2rdf.org/> ;
     queryall_ns:uriTemplate "${authority}${namespace}${separator}${identifier}" ;
     queryall_ns:separator ":" ;
-	queryall_ns:preferredPrefix "drugbank_targets" ;
+	queryall_ns:preferredPrefix "drugbank_target" ;
 	queryall_ns:convertToPreferred "true"^^xsd:boolean ;
+	queryall_ns:alternativePrefix "drugbank_targets" ;
 	queryall_ns:validationPossible "false"^^xsd:boolean ;
 	queryall_ns:identifierRegex "" ;
 	dc:title "" .

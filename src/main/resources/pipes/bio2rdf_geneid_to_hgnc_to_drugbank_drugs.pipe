@@ -43,7 +43,7 @@
                <source>
                   <pipe-call pipeid="bio2rdf_basic_from_uri">
                      <para name="bio2rdf_uri">${{drugbanktarget}}</para>
-                     <para name="query_type">/linksns/drugbank_drugs/</para>
+                     <para name="query_type">/linksns/drugbank/</para>
                      <para name="server_address">${server_address}</para>
                   </pipe-call>
                </source>
@@ -96,7 +96,7 @@
                <source>
                   <pipe-call pipeid="bio2rdf_basic_from_uri" x="57" y="464">
                      <para name="bio2rdf_uri">${{drugbanktarget}}</para>
-                     <para name="query_type">/linksns/drugbank_drugs/</para>
+                     <para name="query_type">/linksns/drugbank/</para>
                      <para name="server_address">
                         <parameter x="647" y="266">
                            <id>server_address</id>

@@ -220,7 +220,7 @@ bio2rdf_ruletest:geospeciesbioclassconcept_1 a queryall_ruletest:RuleTest , quer
 bio2rdf_ruletest:drugbankdrugs_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:drugbankdrugs ;
-	queryall_ruletest:inputTestString "http://bio2rdf.org/drugbank_drugs:DB00277" ;
+	queryall_ruletest:inputTestString "http://bio2rdf.org/drugbank:DB00277" ;
 	queryall_ruletest:outputTestString "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/DB00277" .
 
 bio2rdf_ruletest:oboenvo_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
@@ -634,8 +634,8 @@ bio2rdf_ruletest:myexperimentpack_1 a queryall_ruletest:RuleTest , queryall_rule
 bio2rdf_ruletest:drugbanknamespacefix_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;
 	queryall_ruletest:testsRules bio2rdf_rdfrule:drugbanknamespacefix ;
-	queryall_ruletest:inputTestString "http://bio2rdf.org/drugbank_drugs:DB00694" ;
-	queryall_ruletest:outputTestString "http://bio2rdf.org/drugbank:DB00694" .
+	queryall_ruletest:inputTestString "http://bio2rdf.org/drugbank:DB00694" ;
+	queryall_ruletest:outputTestString "http://bio2rdf.org/drugbank_drugs:DB00694" .
 
 bio2rdf_ruletest:oboso_1 a queryall_ruletest:RuleTest , queryall_ruletest:StringRuleTest ;
     queryall_ruletest:testsStages queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport ;

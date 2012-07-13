@@ -356,10 +356,10 @@ bio2rdf_rdfrule:taxonomy2taxon a queryall_rdfrule:NormalisationRule , queryall_r
 
 bio2rdf_rdfrule:drugbanknamespacefix a queryall_rdfrule:NormalisationRule , queryall_rdfrule:TransformationRule, queryall_rdfrule:PrefixMappingNormalisationRule ;
 	queryall_rdfrule:stage queryall_rdfrule:queryVariables , queryall_rdfrule:beforeResultsImport , queryall_rdfrule:afterResultsImport ;
-	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank_drugs ;
-    queryall_rdfrule:inputPrefix "http://bio2rdf.org/drugbank:" ;
-	queryall_rdfrule:outputPrefix "http://bio2rdf.org/drugbank_drugs:" ;
-	dc:title "Makes drugbank namespace URI's into Bio2RDF identifiers using drugbank_drugs, and the reverse for non-conforming endpoints" ;
+	queryall_rdfrule:hasRelatedNamespace bio2rdf_ns:drugbank ;
+    queryall_rdfrule:inputPrefix "http://bio2rdf.org/drugbank_drugs:" ;
+	queryall_rdfrule:outputPrefix "http://bio2rdf.org/drugbank:" ;
+	dc:title "Makes drugbank_drugs namespace URI's into canonical Bio2RDF identifiers using drugbank, and the reverse for non-conforming endpoints" ;
     queryall_rdfrule:subjectMappingPredicate owl:sameAs ;
     queryall_rdfrule:predicateMappingPredicate owl:equivalentProperty ;
     queryall_rdfrule:objectMappingPredicate owl:sameAs ;

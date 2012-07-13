@@ -2,15 +2,15 @@
 <rdf:RDF 
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
-        xmlns:bio2rdf="http://bio2rdf.org/ns/bio2rdf:"
+        xmlns:bio2rdf="http://bio2rdf.org/bio2rdf_resource:"
 >
     <rdf:Description rdf:about="http://bio2rdf.org/demo">
-        <rdf:type rdf:resource="http://bio2rdf.org/ns/bio2rdf:demo"/>
+        <rdf:type rdf:resource="http://bio2rdf.org/bio2rdf_resource:demo"/>
         <rdfs:label>Bio2RDF.org: Proxy to Linked Bioinformatics Data</rdfs:label>
         <rdfs:comment>Bio2RDF.org is a project whose goal is to provide a linked data experience over bioinformatics databases. http://bio2rdf.org/demo is the demonstration page for this service. It contains URIs that can be crawled using tools such as the Tabulator (http://www.w3.org/2005/ajar/tab).</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://bio2rdf.org/demo#describe">
-        <rdf:type rdf:resource="http://bio2rdf.org/ns/bio2rdf:Describe"/>
+        <rdf:type rdf:resource="http://bio2rdf.org/bio2rdf_resource:Describe"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/biocyc:biochemicalReaction352732"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/cellmap:CPATH-1"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/chebi:18133"/>
@@ -19,7 +19,7 @@
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/dailymed_ingredient:titanium_dioxide"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/diseasome_diseases:1689"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/dr:D00001"/>
-        <bio2rdf:xRef rdf:resource="http://bio2rdf.org/drugbank_drugs:DB01171"/>
+        <bio2rdf:xRef rdf:resource="http://bio2rdf.org/drugbank:DB01171"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/ec:2.7.1.1"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/ecocyc:TU00423"/>
         <bio2rdf:xRef rdf:resource="http://bio2rdf.org/geneid:15275"/>
@@ -48,12 +48,12 @@
     </rdf:Description>
 
     <rdf:Description rdf:about="http://bio2rdf.org/demo#links">
-        <rdf:type rdf:resource="http://bio2rdf.org/ns/bio2rdf:Links"/>
+        <rdf:type rdf:resource="http://bio2rdf.org/bio2rdf_resource:Links"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/biocyc:biochemicalReaction219456"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/cellmap:CPATH-1"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/chebi:18133"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/ec:2.7.1.1"/>
-		<bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/ecocyc:TU00423"/>
+        <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/ecocyc:TU00423"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/geneid:15275"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/go:0004396"/>
         <bio2rdf:xLinks rdf:resource="http://bio2rdf.org/links/hgnc:4922"/>
@@ -65,27 +65,27 @@
     </rdf:Description>
 
     <rdf:Description rdf:about="http://bio2rdf.org/demo#hexokinaseSearch">
-        <rdf:type rdf:resource="http://bio2rdf.org/ns/bio2rdf:Search"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/biocyc/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/cellmap/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/chebi/hexose"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/cpath/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/wikipedia/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/dr/Menatetrenone"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/ec/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/geneid/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/gl/glucosaminyldiphosphodolichol"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/go/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/hgnc/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/homologene/HK1"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/inoh/kappa"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/iproclass/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/kegg/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/omim/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/path/glycolysis"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/pdb/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/pid/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/protein/hexokinase"/>
-        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/searchns/taxonomy/sapiens"/>
+        <rdf:type rdf:resource="http://bio2rdf.org/bio2rdf_resource:Search"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/biocyc/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/cellmap/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/chebi/hexose"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/cpath/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/wikipedia/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/dr/Menatetrenone"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/ec/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/geneid/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/gl/glucosaminyldiphosphodolichol"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/go/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/hgnc/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/homologene/HK1"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/inoh/kappa"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/iproclass/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/kegg/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/omim/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/path/glycolysis"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/pdb/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/pid/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/protein/hexokinase"/>
+        <bio2rdf:xSearch rdf:resource="http://bio2rdf.org/quicksearchns/taxonomy/sapiens"/>
     </rdf:Description>
 </rdf:RDF>

@@ -147,7 +147,8 @@ bio2rdf_provider:mirroredrelease a queryall_provider:Provider , queryall_provide
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.release.bio2rdf.org/sparql" , "http://cu.release.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.release.bio2rdf.org/sparql" 
+# 	, "http://quebec.release.bio2rdf.org/sparql" , 
 #	, "http://protech.release.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:release ;
@@ -176,7 +177,8 @@ bio2rdf_provider:mirroredbiocarta a queryall_provider:Provider , queryall_provid
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.biocarta.bio2rdf.org/sparql" 
 #	, "http://protech.biocarta.bio2rdf.org/sparql" 
-	, "http://quebec.biocarta.bio2rdf.org/sparql" ;
+#	, "http://quebec.biocarta.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:biocarta , bio2rdf_ns:biocarta_category ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:biocartacategorynamespace .
@@ -191,7 +193,8 @@ bio2rdf_provider:mirroredbiocartareverse a queryall_provider:Provider , queryall
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.biocarta.bio2rdf.org/sparql" 
 #	, "http://protech.biocarta.bio2rdf.org/sparql" 
-	, "http://quebec.biocarta.bio2rdf.org/sparql" ;
+#	, "http://quebec.biocarta.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:biocarta , bio2rdf_ns:biocarta_category , bio2rdf_ns:gene ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:biocartacategorynamespace.
@@ -204,7 +207,9 @@ bio2rdf_provider:mirroredbiopax a queryall_provider:Provider , queryall_provider
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.biopax.bio2rdf.org/sparql" ,"http://quebec.biopax.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl 
+	"http://cu.biopax.bio2rdf.org/sparql" 
+#	, "http://quebec.biopax.bio2rdf.org/sparql" 
 #	, "http://protech.biopax.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:biopax , bio2rdf_ns:cpath ;
@@ -219,7 +224,8 @@ bio2rdf_provider:mirroredbiopaxreverse a queryall_provider:Provider , queryall_p
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.biopax.bio2rdf.org/sparql" ,"http://quebec.biopax.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.biopax.bio2rdf.org/sparql" 
+#	, "http://quebec.biopax.bio2rdf.org/sparql" 
 #	, "http://protech.biopax.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:biopax , bio2rdf_ns:cpath , bio2rdf_ns:ensembl ;
@@ -234,7 +240,8 @@ bio2rdf_provider:mirroredoboreverse a queryall_provider:Provider , queryall_prov
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.obo.bio2rdf.org/sparql" , "http://quebec.obo.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.obo.bio2rdf.org/sparql" 
+#	, "http://quebec.obo.bio2rdf.org/sparql" 
 #	, "http://protech.obo.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:obi_description , bio2rdf_ns:a8467 , bio2rdf_ns:ekb , bio2rdf_ns:aao , bio2rdf_ns:b8467 , bio2rdf_ns:ekbe , bio2rdf_ns:go , bio2rdf_ns:bila , bio2rdf_ns:caro , bio2rdf_ns:bils , bio2rdf_ns:bspo , bio2rdf_ns:fbcv , bio2rdf_ns:fbql , bio2rdf_ns:fma , bio2rdf_ns:bto , bio2rdf_ns:beilstein , bio2rdf_ns:chebi , bio2rdf_ns:chemidplus , bio2rdf_ns:come , bio2rdf_ns:cpd , bio2rdf_ns:dr , bio2rdf_ns:drugbank , bio2rdf_ns:gl , bio2rdf_ns:gmelin , bio2rdf_ns:lipid_maps , bio2rdf_ns:molbase , bio2rdf_ns:msdchem , bio2rdf_ns:nist_chemistry_webbook , bio2rdf_ns:patent , bio2rdf_ns:pdb , bio2rdf_ns:resid , bio2rdf_ns:um-bbd , bio2rdf_ns:webelements , bio2rdf_ns:cl , bio2rdf_ns:fao , bio2rdf_ns:fbbt , bio2rdf_ns:map6 , bio2rdf_ns:dc_cl , bio2rdf_ns:uberon , bio2rdf_ns:ddanat , bio2rdf_ns:doid , bio2rdf_ns:generif , bio2rdf_ns:icd10 , bio2rdf_ns:icd9 , bio2rdf_ns:mim93 , bio2rdf_ns:msh , bio2rdf_ns:nci , bio2rdf_ns:snomed , bio2rdf_ns:umls , bio2rdf_ns:eco , bio2rdf_ns:tair , bio2rdf_ns:ehda , bio2rdf_ns:stage , bio2rdf_ns:ehdaa , bio2rdf_ns:synonym , bio2rdf_ns:cl-emapa , bio2rdf_ns:envo , bio2rdf_ns:ftt , bio2rdf_ns:geonames , bio2rdf_ns:ma , bio2rdf_ns:tgn , bio2rdf_ns:wikipedia , bio2rdf_ns:eo , bio2rdf_ns:taxon , bio2rdf_ns:ev , bio2rdf_ns:fbbi , bio2rdf_ns:fbbi_root , bio2rdf_ns:fb , bio2rdf_ns:fbbt_root , bio2rdf_ns:fbdv , bio2rdf_ns:fbsp , bio2rdf_ns:fix , bio2rdf_ns:ec , bio2rdf_ns:genprotec , bio2rdf_ns:hamap ,  bio2rdf_ns:metacyc , bio2rdf_ns:mips_funcat , bio2rdf_ns:multifun , bio2rdf_ns:pfam , bio2rdf_ns:pirsf , bio2rdf_ns:prints , bio2rdf_ns:prosite , bio2rdf_ns:reactome , bio2rdf_ns:rfam , bio2rdf_ns:smart , bio2rdf_ns:sp_kw , bio2rdf_ns:tigr , bio2rdf_ns:gro , bio2rdf_ns:hp , bio2rdf_ns:http , bio2rdf_ns:__file , bio2rdf_ns:iao , bio2rdf_ns:snap , bio2rdf_ns:ns , bio2rdf_ns:ido , bio2rdf_ns:iev , bio2rdf_ns:kegg , bio2rdf_ns:mesh , bio2rdf_ns:mi , bio2rdf_ns:pubmed , bio2rdf_ns:imr , bio2rdf_ns:ipr , bio2rdf_ns:uniprot , bio2rdf_ns:mat , bio2rdf_ns:mfo , bio2rdf_ns:mged , bio2rdf_ns:miro , bio2rdf_ns:mod , bio2rdf_ns:mgi , bio2rdf_ns:mp , bio2rdf_ns:mpath , bio2rdf_ns:ms , bio2rdf_ns:uo , bio2rdf_ns:value-type , bio2rdf_ns:obi , bio2rdf_ns:cas , bio2rdf_ns:fda , bio2rdf_ns:locus_id , bio2rdf_ns:ncithesaurus , bio2rdf_ns:omim , bio2rdf_ns:ncbitaxon , bio2rdf_ns:pato , bio2rdf_ns:span , bio2rdf_ns:oboformat , bio2rdf_ns:url , bio2rdf_ns:bfo , bio2rdf_ns:obol , bio2rdf_ns:obo_rel , bio2rdf_ns:owl , bio2rdf_ns:image , bio2rdf_ns:plo , bio2rdf_ns:isbn , bio2rdf_ns:po , bio2rdf_ns:soy , bio2rdf_ns:panther , bio2rdf_ns:pro , bio2rdf_ns:propreo , bio2rdf_ns:pw , bio2rdf_ns:rex , bio2rdf_ns:ro , bio2rdf_ns:sao , bio2rdf_ns:sbo , bio2rdf_ns:rnamod , bio2rdf_ns:so , bio2rdf_ns:sopharm , bio2rdf_ns:spd , bio2rdf_ns:tads , bio2rdf_ns:tao , bio2rdf_ns:zfa , bio2rdf_ns:zfin , bio2rdf_ns:tgma , bio2rdf_ns:scale , bio2rdf_ns:to , bio2rdf_ns:trans , bio2rdf_ns:doi , bio2rdf_ns:tto , bio2rdf_ns:birnlex_anatomy , bio2rdf_ns:gaid , bio2rdf_ns:miaa , bio2rdf_ns:null , bio2rdf_ns:wbbt , bio2rdf_ns:xao , bio2rdf_ns:wb , bio2rdf_ns:wbls , bio2rdf_ns:wbphenotype , bio2rdf_ns:ypo , bio2rdf_ns:zfs ;
@@ -264,7 +271,8 @@ bio2rdf_provider:quebecaffymetrixreverse a queryall_provider:Provider , queryall
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.affymetrix.bio2rdf.org/sparql" 
 #	, "http://protech.affymetrix.bio2rdf.org/sparql" 
-	, "http://quebec.affymetrix.bio2rdf.org/sparql" ;
+#	, "http://quebec.affymetrix.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:affymetrix , bio2rdf_ns:agi , bio2rdf_ns:ensembl , bio2rdf_ns:flybase , bio2rdf_ns:genbank , bio2rdf_ns:GenMAPP , bio2rdf_ns:refseq , bio2rdf_ns:rgd , bio2rdf_ns:sgd , bio2rdf_ns:unigene , bio2rdf_ns:wormbase ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:affymetrixtaxonmappinghuman .
@@ -277,7 +285,8 @@ bio2rdf_provider:mirroredmgi a queryall_provider:Provider , queryall_provider:Ht
 	queryall_provider:graphUri "http://bio2rdf.org/mgi" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.mgi.bio2rdf.org/sparql", "http://quebec.mgi.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.mgi.bio2rdf.org/sparql"
+#	, "http://quebec.mgi.bio2rdf.org/sparql" 
 #	, "http://protech.mgi.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:mgi , bio2rdf_ns:symbol ;
@@ -294,7 +303,8 @@ bio2rdf_provider:mirroredpubchemcompound a queryall_provider:Provider , queryall
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubchem.bio2rdf.org/sparql" 
 #	, "http://protech.pubchem.bio2rdf.org/sparql" 
-	, "http://quebec.pubchem.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubchem.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemcompound ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:tripleslashns , bio2rdf_rdfrule:pubchemcompoundadd , bio2rdf_rdfrule:pubchemcompounddelete , bio2rdf_rdfrule:pubchemcompoundtopubchem .
@@ -309,7 +319,8 @@ bio2rdf_provider:mirroredpubchemsubstance a queryall_provider:Provider , queryal
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubchem.bio2rdf.org/sparql" 
 #	, "http://protech.pubchem.bio2rdf.org/sparql" 
-	, "http://quebec.pubchem.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubchem.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubchem , bio2rdf_ns:pubchemsubstance ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:tripleslashns , bio2rdf_rdfrule:pubchemsubstanceadd , bio2rdf_rdfrule:pubchemsubstancedelete , bio2rdf_rdfrule:pubchemsubstancetopubchem .
@@ -322,7 +333,8 @@ bio2rdf_provider:mirroredgoreverse a queryall_provider:Provider , queryall_provi
 	queryall_provider:graphUri "http://bio2rdf.org/go" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.go.bio2rdf.org/sparql", "http://quebec.go.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.go.bio2rdf.org/sparql"
+#	, "http://quebec.go.bio2rdf.org/sparql" 
 #	, "http://protech.go.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:agi_locuscode , bio2rdf_ns:aracyc , bio2rdf_ns:biocyc , bio2rdf_ns:biosis , bio2rdf_ns:biosynthesis_and_function , bio2rdf_ns:brenda , bio2rdf_ns:cbs , bio2rdf_ns:cgd , bio2rdf_ns:cgd_ref , bio2rdf_ns:cgsc , bio2rdf_ns:cl , bio2rdf_ns:cog , bio2rdf_ns:ddb_ref , bio2rdf_ns:dictybase , bio2rdf_ns:dictybase_ref , bio2rdf_ns:doi , bio2rdf_ns:ec , bio2rdf_ns:echobase , bio2rdf_ns:eck , bio2rdf_ns:ecocyc , bio2rdf_ns:ecocyc_ref , bio2rdf_ns:ecogene , bio2rdf_ns:ecoliwiki , bio2rdf_ns:egad , bio2rdf_ns:embl , bio2rdf_ns:ensembl , bio2rdf_ns:fb , bio2rdf_ns:gb , bio2rdf_ns:gdb , bio2rdf_ns:genbank , bio2rdf_ns:genedb_lmajor , bio2rdf_ns:genedb_pfalciparum , bio2rdf_ns:genedb_spombe , bio2rdf_ns:genedb_tbrucei , bio2rdf_ns:genprotec , bio2rdf_ns:goc , bio2rdf_ns:go_ref , bio2rdf_ns:gr , bio2rdf_ns:gr_protein , bio2rdf_ns:gr_ref , bio2rdf_ns:hamap , bio2rdf_ns:hugo , bio2rdf_ns:img , bio2rdf_ns:ipr , bio2rdf_ns:isbm , bio2rdf_ns:isbn , bio2rdf_ns:issn , bio2rdf_ns:iuphar , bio2rdf_ns:iuphar_gpcr , bio2rdf_ns:iuphar_receptor , bio2rdf_ns:jcvi_cmr , bio2rdf_ns:jcvi_tigrfams , bio2rdf_ns:kegg , bio2rdf_ns:kegg_pathway , bio2rdf_ns:ligand , bio2rdf_ns:locusid , bio2rdf_ns:ma , bio2rdf_ns:maizegdb , bio2rdf_ns:maizegdb_locus , bio2rdf_ns:medline , bio2rdf_ns:merops , bio2rdf_ns:merops_fam , bio2rdf_ns:mesh , bio2rdf_ns:metacyc , bio2rdf_ns:mgd , bio2rdf_ns:mgi , bio2rdf_ns:mips_funcat , bio2rdf_ns:mp , bio2rdf_ns:multifun , bio2rdf_ns:ncbi , bio2rdf_ns:ncbi_gene , bio2rdf_ns:ncbi_gi , bio2rdf_ns:ncbi_gp , bio2rdf_ns:ncbi_nm , bio2rdf_ns:ncbi_np , bio2rdf_ns:pamgo , bio2rdf_ns:pamgo_vmd , bio2rdf_ns:pato , bio2rdf_ns:pir , bio2rdf_ns:pirsf , bio2rdf_ns:pmid , bio2rdf_ns:po , bio2rdf_ns:prints , bio2rdf_ns:protein_id , bio2rdf_ns:pseudocap , bio2rdf_ns:psort , bio2rdf_ns:pubchem , bio2rdf_ns:pubchem_compound , bio2rdf_ns:pubchem_substance , bio2rdf_ns:refseq , bio2rdf_ns:resid , bio2rdf_ns:rfam , bio2rdf_ns:rgd , bio2rdf_ns:rgdid , bio2rdf_ns:rnamods , bio2rdf_ns:sgd , bio2rdf_ns:sgdid , bio2rdf_ns:sgd_locus , bio2rdf_ns:sgd_ref , bio2rdf_ns:sgn , bio2rdf_ns:sgn_ref , bio2rdf_ns:smart , bio2rdf_ns:smd , bio2rdf_ns:sp , bio2rdf_ns:sp_kw , bio2rdf_ns:sp_sl , bio2rdf_ns:subtilist , bio2rdf_ns:subtilistg , bio2rdf_ns:swiss-prot , bio2rdf_ns:tair , bio2rdf_ns:tc , bio2rdf_ns:tigr , bio2rdf_ns:tigr_ath1 , bio2rdf_ns:tigr_cmr , bio2rdf_ns:tigr_egad , bio2rdf_ns:tigr_genprop , bio2rdf_ns:tigr_role , bio2rdf_ns:tigr_tba1 , bio2rdf_ns:tigr_tigrfams , bio2rdf_ns:trembl , bio2rdf_ns:um , bio2rdf_ns:um-bbd_enzymeid , bio2rdf_ns:um-bbd_pathwayid , bio2rdf_ns:um-bbd_reactionid , bio2rdf_ns:um-bbd_ruleid , bio2rdf_ns:uniprot , bio2rdf_ns:url , bio2rdf_ns:wb , bio2rdf_ns:wb_ref , bio2rdf_ns:wikipedia , bio2rdf_ns:wp , bio2rdf_ns:zfin ;
@@ -337,7 +349,8 @@ bio2rdf_provider:mirroreduniprot a queryall_provider:Provider , queryall_provide
 	queryall_provider:graphUri "http://bio2rdf.org/uniprot" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql"
+#	, "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:linkhub , bio2rdf_ns:embl-cds , bio2rdf_ns:rgd , bio2rdf_ns:annotation , bio2rdf_ns:unigene , bio2rdf_ns:isoforms , bio2rdf_ns:embl , bio2rdf_ns:tigrfams , bio2rdf_ns:citations , bio2rdf_ns:refseq , bio2rdf_ns:hamap , bio2rdf_ns:panther , bio2rdf_ns:pirsf , bio2rdf_ns:prints , bio2rdf_ns:smr , bio2rdf_ns:smart , bio2rdf_ns:ensembl , bio2rdf_ns:sgd , bio2rdf_ns:pir , bio2rdf_ns:intact , bio2rdf_ns:locations , bio2rdf_ns:core , bio2rdf_ns:pride , bio2rdf_ns:phosphosite , bio2rdf_ns:arrayexpress , bio2rdf_ns:bgee , bio2rdf_ns:germonline , bio2rdf_ns:hovergen , bio2rdf_ns:nextbio , bio2rdf_ns:pathway-interaction-db , bio2rdf_ns:hogenom , bio2rdf_ns:nmpdr , bio2rdf_ns:genomereviews , bio2rdf_ns:xenbase , bio2rdf_ns:wormpep , bio2rdf_ns:tuberculist , bio2rdf_ns:dosac-cobs-2dpage , bio2rdf_ns:hssp ;
@@ -352,7 +365,9 @@ bio2rdf_provider:mirroredunists a queryall_provider:Provider , queryall_provider
 	queryall_provider:graphUri "http://bio2rdf.org/unists" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:includeThenExclude ;
-	queryall_provider:endpointUrl "http://cu.unists.bio2rdf.org/sparql", "http://quebec.unists.bio2rdf.org/sparql" ;
+	queryall_provider:endpointUrl "http://cu.unists.bio2rdf.org/sparql"
+#	, "http://quebec.unists.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:unists , bio2rdf_ns:decode , bio2rdf_ns:marker ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:oldontologyterms .
@@ -380,7 +395,8 @@ bio2rdf_provider:mirrorediproclass a queryall_provider:Provider , queryall_provi
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.iproclass.bio2rdf.org/sparql" 
 #	, "http://protech.iproclass.bio2rdf.org/sparql" 
-	, "http://quebec.iproclass.bio2rdf.org/sparql" ;
+#	, "http://quebec.iproclass.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:iproclass ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxonomy2taxon .
@@ -408,7 +424,8 @@ bio2rdf_provider:mirroredpubmedunsafe a queryall_provider:Provider , queryall_pr
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubmed.bio2rdf.org/sparql" 
 #	, "http://protech.pubmed.bio2rdf.org/sparql" 
-	, "http://quebec.pubmed.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubmed.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:foaf , bio2rdf_ns:pchem , bio2rdf_ns:journal ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct , bio2rdf_query:unsafeconstruct , bio2rdf_query:unsafelinks , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:countlinksbynamespace ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:doubleslashns , bio2rdf_rdfrule:badnsfoaf , bio2rdf_rdfrule:bio2drfmisspelling .
@@ -421,7 +438,8 @@ bio2rdf_provider:mirroredhomologenereverse a queryall_provider:Provider , querya
 	queryall_provider:graphUri "http://bio2rdf.org/homologene" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.homologene.bio2rdf.org/sparql", "http://quebec.homologene.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.homologene.bio2rdf.org/sparql"
+#	, "http://quebec.homologene.bio2rdf.org/sparql" 
 #	, "http://protech.homologene.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:gene , bio2rdf_ns:proteinid , bio2rdf_ns:gi ;
@@ -454,7 +472,8 @@ bio2rdf_provider:mirroredgenbank a queryall_provider:Provider , queryall_provide
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.genbank.bio2rdf.org/sparql" 
 #	, "http://protech.genbank.bio2rdf.org/sparql"
-	, "http://quebec.genbank.bio2rdf.org/sparql" ;
+#	, "http://quebec.genbank.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:genbank_record , bio2rdf_ns:genbank_resource , bio2rdf_ns:ncbi ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:rootlevelontologyhashtocolon, bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:mgigeneexpressiondatabase , bio2rdf_rdfrule:genbankgdbfix , bio2rdf_rdfrule:genbankgdbreversefix .
@@ -469,7 +488,8 @@ bio2rdf_provider:mirroredirefindex a queryall_provider:Provider , queryall_provi
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.irefindex.bio2rdf.org/sparql" 
 #	, "http://protech.irefindex.bio2rdf.org/sparql" 
-	, "http://quebec.irefindex.bio2rdf.org/sparql" ;
+#	, "http://quebec.irefindex.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:irefindex ;
 	queryall_provider:includedInQuery bio2rdf_query:plusurlencodedconstruct , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -484,7 +504,8 @@ bio2rdf_provider:mirroredirefindexreverseprimary a queryall_provider:Provider , 
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.irefindex.bio2rdf.org/sparql" 
 #	, "http://protech.irefindex.bio2rdf.org/sparql" 
-	, "http://quebec.irefindex.bio2rdf.org/sparql" ;
+#	, "http://quebec.irefindex.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:grid , bio2rdf_ns:mi , bio2rdf_ns:mint , bio2rdf_ns:rogid , bio2rdf_ns:icrogid , bio2rdf_ns:irogid , bio2rdf_ns:crogid , bio2rdf_ns:crigid , bio2rdf_ns:rigid , bio2rdf_ns:irigid , bio2rdf_ns:grid , bio2rdf_ns:intact , bio2rdf_ns:hprd , bio2rdf_ns:mint , bio2rdf_ns:ophid ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -499,7 +520,8 @@ bio2rdf_provider:mirroredirefindexreversesecondary a queryall_provider:Provider 
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.irefindex.bio2rdf.org/sparql" 
 #	, "http://protech.irefindex.bio2rdf.org/sparql" 
-	, "http://quebec.irefindex.bio2rdf.org/sparql" ;
+#	, "http://quebec.irefindex.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:pubmed , bio2rdf_ns:refseq , bio2rdf_ns:geneid , bio2rdf_ns:taxon , bio2rdf_ns:uniprot ;
 	queryall_provider:includedInQuery bio2rdf_query:secondaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -514,7 +536,8 @@ bio2rdf_provider:mirroredirefindexplusurlencodedreverse a queryall_provider:Prov
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.irefindex.bio2rdf.org/sparql" 
 #	, "http://protech.irefindex.bio2rdf.org/sparql" 
-	, "http://quebec.irefindex.bio2rdf.org/sparql" ;
+#	, "http://quebec.irefindex.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:irefindex ;
 	queryall_provider:includedInQuery bio2rdf_query:plusurlencodedprimaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -529,7 +552,8 @@ bio2rdf_provider:mirroreduniparcreverse a queryall_provider:Provider , queryall_
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.uniparc.bio2rdf.org/sparql" 
 #	, "http://protech.uniparc.bio2rdf.org/sparql" 
-	, "http://quebec.uniparc.bio2rdf.org/sparql" ;
+#	, "http://quebec.uniparc.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:gi , bio2rdf_ns:embl-cds , bio2rdf_ns:emblwgs , bio2rdf_ns:embl_anncon , bio2rdf_ns:embl_tpa , bio2rdf_ns:ensembl , bio2rdf_ns:epo , bio2rdf_ns:flybase , bio2rdf_ns:h_inv , bio2rdf_ns:ipi , bio2rdf_ns:isoforms , bio2rdf_ns:jpo , bio2rdf_ns:kipo , bio2rdf_ns:pir , bio2rdf_ns:pirarc , bio2rdf_ns:prf , bio2rdf_ns:refseq , bio2rdf_ns:remtrembl , bio2rdf_ns:tair_arabidopsis , bio2rdf_ns:tremblnew , bio2rdf_ns:trome , bio2rdf_ns:unimes , bio2rdf_ns:uspto , bio2rdf_ns:vega , bio2rdf_ns:wormbase ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxonomy2taxon .
@@ -544,7 +568,8 @@ bio2rdf_provider:mirrorediproclassreverse a queryall_provider:Provider , queryal
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.iproclass.bio2rdf.org/sparql" 
 #	, "http://protech.iproclass.bio2rdf.org/sparql" 
-    , "http://quebec.iproclass.bio2rdf.org/sparql" ;
+#	, "http://quebec.iproclass.bio2rdf.org/sparql" 
+    ;
 	queryall_provider:handlesNamespace bio2rdf_ns:embl , bio2rdf_ns:ensembl , bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi, bio2rdf_ns:ipi , bio2rdf_ns:pirsf , bio2rdf_ns:pir_psd , bio2rdf_ns:refseq , bio2rdf_ns:unigene , bio2rdf_ns:uniparc , bio2rdf_ns:uniref ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -571,7 +596,8 @@ bio2rdf_provider:mirroredgo a queryall_provider:Provider , queryall_provider:Htt
 	queryall_provider:graphUri "http://bio2rdf.org/go" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.go.bio2rdf.org/sparql", "http://quebec.go.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.go.bio2rdf.org/sparql"
+#	, "http://quebec.go.bio2rdf.org/sparql" 
 #	, "http://protech.go.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:go , bio2rdf_ns:go_association , bio2rdf_ns:go_evidence ;
@@ -586,7 +612,8 @@ bio2rdf_provider:mirroredinoh a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:graphUri "http://bio2rdf.org/inoh" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.inoh.bio2rdf.org/sparql" , "http://cu.inoh.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.inoh.bio2rdf.org/sparql" 
+#	, "http://quebec.inoh.bio2rdf.org/sparql" 
 #	, "http://protech.inoh.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:inoh ;
@@ -601,7 +628,8 @@ bio2rdf_provider:mirroredligand a queryall_provider:Provider , queryall_provider
 	queryall_provider:graphUri "http://bio2rdf.org/ligand" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.ligand.bio2rdf.org/sparql" , "http://cu.ligand.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.ligand.bio2rdf.org/sparql" 
+#	, "http://quebec.ligand.bio2rdf.org/sparql" 
 #	, "http://protech.ligand.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:ligand ;
@@ -616,7 +644,8 @@ bio2rdf_provider:mirroreduniprotunsafe a queryall_provider:Provider , queryall_p
 	queryall_provider:graphUri "http://bio2rdf.org/uniprot" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql"
+#	, "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:gene3d , bio2rdf_ns:dip ;
@@ -631,7 +660,9 @@ bio2rdf_provider:mirroredunistsreverse a queryall_provider:Provider , queryall_p
 	queryall_provider:graphUri "http://bio2rdf.org/unists" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.unists.bio2rdf.org/sparql", "http://quebec.unists.bio2rdf.org/sparql" ;
+	queryall_provider:endpointUrl "http://cu.unists.bio2rdf.org/sparql"
+#	, "http://quebec.unists.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:chromosome , bio2rdf_ns:locus ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:oldontologyterms .
@@ -644,7 +675,8 @@ bio2rdf_provider:mirroredhomologene a queryall_provider:Provider , queryall_prov
 	queryall_provider:graphUri "http://bio2rdf.org/homologene" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.homologene.bio2rdf.org/sparql", "http://quebec.homologene.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.homologene.bio2rdf.org/sparql"
+#	, "http://quebec.homologene.bio2rdf.org/sparql" 
 #	, "http://protech.homologene.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:homologene ;
@@ -660,7 +692,7 @@ bio2rdf_provider:mirroredcpathreverse a queryall_provider:Provider , queryall_pr
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.cpath.bio2rdf.org/sparql"
-	, "http://quebec.cpath.bio2rdf.org/sparql" 
+#	, "http://quebec.cpath.bio2rdf.org/sparql" 
 #	, "http://protech.cpath.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:afcs , bio2rdf_ns:cabri , bio2rdf_ns:camjedb , bio2rdf_ns:cas , bio2rdf_ns:chemicalabstracts , bio2rdf_ns:cpath , bio2rdf_ns:cpd , bio2rdf_ns:cygd , bio2rdf_ns:doi , bio2rdf_ns:ecocyc , bio2rdf_ns:embl , bio2rdf_ns:encode , bio2rdf_ns:ensembl , bio2rdf_ns:flybase , bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi, bio2rdf_ns:gl , bio2rdf_ns:hprd , bio2rdf_ns:huge , bio2rdf_ns:humancyc , bio2rdf_ns:imex , bio2rdf_ns:intact , bio2rdf_ns:intenz , bio2rdf_ns:ipi , bio2rdf_ns:ligand , bio2rdf_ns:mint , bio2rdf_ns:nci , bio2rdf_ns:pir , bio2rdf_ns:psimi , bio2rdf_ns:psimod , bio2rdf_ns:pubchem , bio2rdf_ns:refeq , bio2rdf_ns:refseq , bio2rdf_ns:resid , bio2rdf_ns:rgd , bio2rdf_ns:sgd , bio2rdf_ns:symbol , bio2rdf_ns:umbbd , bio2rdf_ns:uniparc , bio2rdf_ns:wormbase ;
@@ -753,9 +785,8 @@ bio2rdf_provider:mirroredmesh a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:graphUri "http://bio2rdf.org/mesh" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl 
-		"http://cu.mesh.bio2rdf.org/sparql" 
-	, "http://quebec.mesh.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.mesh.bio2rdf.org/sparql" 
+#	, "http://quebec.mesh.bio2rdf.org/sparql" 
 #	, "http://protech.mesh.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:mesh ;
@@ -772,7 +803,8 @@ bio2rdf_provider:mirroredpid a queryall_provider:Provider , queryall_provider:Ht
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pid.bio2rdf.org/sparql" 
 #	, "http://protech.pid.bio2rdf.org/sparql" 
-	, "http://quebec.pid.bio2rdf.org/sparql" ;
+#	, "http://quebec.pid.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pid ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling , bio2rdf_rdfrule:owldotbio2rdfdotorg , bio2rdf_rdfrule:dbdotbio2rdfdotorg , bio2rdf_rdfrule:slashowl , bio2rdf_rdfrule:oldontologyterms , bio2rdf_rdfrule:biopaxurls , bio2rdf_rdfrule:biopaxontology .
@@ -787,7 +819,8 @@ bio2rdf_provider:mirroredprotein a queryall_provider:Provider , queryall_provide
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.protein.bio2rdf.org/sparql" 
 #	, "http://protech.protein.bio2rdf.org/sparql" 
-	, "http://quebec.protein.bio2rdf.org/sparql" ;
+#	, "http://quebec.protein.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:protein ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:proteinlinks ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:owldotbio2rdfdotorgunmangling , bio2rdf_rdfrule:owldotbio2rdfdotorg , bio2rdf_rdfrule:dbdotbio2rdfdotorg , bio2rdf_rdfrule:slashowl , bio2rdf_rdfrule:oldontologyterms .
@@ -800,7 +833,8 @@ bio2rdf_provider:mirroreduniprotreversedoi a queryall_provider:Provider , querya
 	queryall_provider:graphUri "http://bio2rdf.org/uniprot" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql"
+#	, "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:doi ;
@@ -831,7 +865,8 @@ bio2rdf_provider:mirroredec a queryall_provider:Provider , queryall_provider:Htt
 	queryall_provider:graphUri "http://bio2rdf.org/ec" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.ec.bio2rdf.org/sparql", "http://quebec.ec.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.ec.bio2rdf.org/sparql"
+#	, "http://quebec.ec.bio2rdf.org/sparql" 
 #	, "http://protech.ec.bio2rdf.org/sparql"
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:ec ;
@@ -859,7 +894,8 @@ bio2rdf_provider:mirroredkeggreverse a queryall_provider:Provider , queryall_pro
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql", "http://quebec.kegg.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql"
+#	, "http://quebec.kegg.bio2rdf.org/sparql" 
 #	, "http://protech.kegg.bio2rdf.org/sparql" 
 	;
 # NOTE: This cannot be prefixed as it exposes a design flaw in Turtle/N3, possibly inherited from XML
@@ -876,7 +912,8 @@ bio2rdf_provider:mirroredkeggreverseunsafe a queryall_provider:Provider , querya
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql", "http://quebec.kegg.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql"
+#	, "http://quebec.kegg.bio2rdf.org/sparql" 
 #	, "http://protech.kegg.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:kegg , bio2rdf_ns:kegg_gene ;
@@ -891,7 +928,8 @@ bio2rdf_provider:mirroredobo a queryall_provider:Provider , queryall_provider:Ht
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.obo.bio2rdf.org/sparql" , "http://quebec.obo.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.obo.bio2rdf.org/sparql" 
+#	, "http://quebec.obo.bio2rdf.org/sparql" 
 #	, "http://protech.obo.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:obi_description , bio2rdf_ns:obo , bio2rdf_ns:a8467 , bio2rdf_ns:aao , bio2rdf_ns:b8467 , bio2rdf_ns:bila , bio2rdf_ns:bils , bio2rdf_ns:bspo , bio2rdf_ns:bto , bio2rdf_ns:caro , bio2rdf_ns:chebi , bio2rdf_ns:cl , bio2rdf_ns:cl-emapa , bio2rdf_ns:dc_cl , bio2rdf_ns:ddanat , bio2rdf_ns:doid , bio2rdf_ns:eco , bio2rdf_ns:ehda , bio2rdf_ns:ehdaa , bio2rdf_ns:ekb , bio2rdf_ns:ekbe , bio2rdf_ns:emapa , bio2rdf_ns:envo , bio2rdf_ns:eo , bio2rdf_ns:ev , bio2rdf_ns:fao , bio2rdf_ns:fbbi , bio2rdf_ns:fbbt , bio2rdf_ns:fbcv , bio2rdf_ns:fbdv , bio2rdf_ns:fbsp , bio2rdf_ns:fix , bio2rdf_ns:fma , bio2rdf_ns:go , bio2rdf_ns:gro , bio2rdf_ns:hp , bio2rdf_ns:http , bio2rdf_ns:iao , bio2rdf_ns:id , bio2rdf_ns:ido , bio2rdf_ns:iev , bio2rdf_ns:imr , bio2rdf_ns:ma , bio2rdf_ns:map6 , bio2rdf_ns:mat , bio2rdf_ns:mfo , bio2rdf_ns:mged , bio2rdf_ns:mi , bio2rdf_ns:miro , bio2rdf_ns:mod , bio2rdf_ns:mp , bio2rdf_ns:mpath , bio2rdf_ns:ms , bio2rdf_ns:ncbitaxon , bio2rdf_ns:ncithesaurus , bio2rdf_ns:obi , bio2rdf_ns:oboinowl , bio2rdf_ns:obol , bio2rdf_ns:obo_rel , bio2rdf_ns:pato , bio2rdf_ns:plo , bio2rdf_ns:po , bio2rdf_ns:pro , bio2rdf_ns:propreo , bio2rdf_ns:pw , bio2rdf_ns:rex , bio2rdf_ns:ro , bio2rdf_ns:sao , bio2rdf_ns:sbo , bio2rdf_ns:snap , bio2rdf_ns:so , bio2rdf_ns:sopharm , bio2rdf_ns:span , bio2rdf_ns:spd , bio2rdf_ns:synonym , bio2rdf_ns:tads , bio2rdf_ns:tao , bio2rdf_ns:tgma , bio2rdf_ns:to , bio2rdf_ns:trans , bio2rdf_ns:tto , bio2rdf_ns:uberon , bio2rdf_ns:uo , bio2rdf_ns:wbbt , bio2rdf_ns:wbls , bio2rdf_ns:wbphenotype , bio2rdf_ns:xao , bio2rdf_ns:ypo , bio2rdf_ns:zfa , bio2rdf_ns:zfs ;
@@ -948,7 +986,8 @@ bio2rdf_provider:mirroredomim a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.omim.bio2rdf.org/sparql", "http://quebec.omim.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.omim.bio2rdf.org/sparql"
+#	, "http://quebec.omim.bio2rdf.org/sparql" 
 #	, "http://protech.omim.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:omim , bio2rdf_ns:omim_status , bio2rdf_ns:omim_resource , bio2rdf_ns:omim_record ;
@@ -965,7 +1004,8 @@ bio2rdf_provider:mirroreduniparc a queryall_provider:Provider , queryall_provide
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.uniparc.bio2rdf.org/sparql" 
 #	, "http://protech.uniparc.bio2rdf.org/sparql" 
-	, "http://quebec.uniparc.bio2rdf.org/sparql" ;
+#	, "http://quebec.uniparc.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:embl-cds , bio2rdf_ns:emblwgs , bio2rdf_ns:embl_anncon , bio2rdf_ns:embl_tpa , bio2rdf_ns:ensembl , bio2rdf_ns:flybase , bio2rdf_ns:h_inv , bio2rdf_ns:ipi , bio2rdf_ns:isoforms , bio2rdf_ns:prf , bio2rdf_ns:refseq , bio2rdf_ns:tair_arabidopsis , bio2rdf_ns:trome , bio2rdf_ns:unimes , bio2rdf_ns:uniparc , bio2rdf_ns:uspto , bio2rdf_ns:vega , bio2rdf_ns:wormbase ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:taxonomy2taxon .
@@ -993,7 +1033,8 @@ bio2rdf_provider:quebecprimaryreverseconstructfrompubcheminchi a queryall_provid
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubchem.bio2rdf.org/sparql" 
 #	, "http://protech.pubchem.bio2rdf.org/sparql" 
-	, "http://quebec.pubchem.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubchem.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:inchi ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstructfrompubcheminchi ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:tripleslashns , bio2rdf_rdfrule:pubchemcompoundadd , bio2rdf_rdfrule:pubchemcompounddelete , bio2rdf_rdfrule:pubchemsubstanceadd , bio2rdf_rdfrule:pubchemsubstancedelete .
@@ -1006,7 +1047,8 @@ bio2rdf_provider:mirroreduniprotreverseunsafe a queryall_provider:Provider , que
 	queryall_provider:graphUri "http://bio2rdf.org/uniprot" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql"
+#	, "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:gene3d ;
@@ -1049,7 +1091,8 @@ bio2rdf_provider:mirroredpubmed a queryall_provider:Provider , queryall_provider
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubmed.bio2rdf.org/sparql" 
 #	, "http://protech.pubmed.bio2rdf.org/sparql" 
-	, "http://quebec.pubmed.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubmed.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubmed ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:doubleslashns , bio2rdf_rdfrule:badnsfoaf , bio2rdf_rdfrule:bio2drfmisspelling .
@@ -1078,7 +1121,8 @@ bio2rdf_provider:mirroredchebiprimaryreverseconstruct a queryall_provider:Provid
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.chebi.bio2rdf.org/sparql", "http://quebec.chebi.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.chebi.bio2rdf.org/sparql"
+#	, "http://quebec.chebi.bio2rdf.org/sparql" 
 #	, "http://protech.chebi.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubmed , bio2rdf_ns:arrayexpress , bio2rdf_ns:beilstein , bio2rdf_ns:biomodels , bio2rdf_ns:brenda , bio2rdf_ns:cas , bio2rdf_ns:come , bio2rdf_ns:cpd , bio2rdf_ns:dr , bio2rdf_ns:gl , bio2rdf_ns:gmelin , bio2rdf_ns:intact , bio2rdf_ns:maps , bio2rdf_ns:molbase , bio2rdf_ns:msdchem , bio2rdf_ns:patent , bio2rdf_ns:pubchem , bio2rdf_ns:reactome , bio2rdf_ns:resid , bio2rdf_ns:sabio-rk , bio2rdf_ns:um-bbd , bio2rdf_ns:webelements ;
@@ -1093,7 +1137,8 @@ bio2rdf_provider:mirroredreactomereverse a queryall_provider:Provider , queryall
 	queryall_provider:graphUri "http://bio2rdf.org/reactome" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.reactome.bio2rdf.org/sparql", "http://quebec.reactome.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.reactome.bio2rdf.org/sparql"
+#	, "http://quebec.reactome.bio2rdf.org/sparql" 
 #	, "http://protech.reactome.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:reactome , bio2rdf_ns:broad , bio2rdf_ns:pubchemcompound , bio2rdf_ns:cme , bio2rdf_ns:dictybase , bio2rdf_ns:embl , bio2rdf_ns:ensembl , bio2rdf_ns:entrez , bio2rdf_ns:flybase , bio2rdf_ns:genedb , bio2rdf_ns:jgi , bio2rdf_ns:plasmodb , bio2rdf_ns:sgd , bio2rdf_ns:tigr , bio2rdf_ns:wormbase ;
@@ -1150,7 +1195,8 @@ bio2rdf_provider:mirroredmgireverse a queryall_provider:Provider , queryall_prov
 	queryall_provider:graphUri "http://bio2rdf.org/mgi" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.mgi.bio2rdf.org/sparql" , "http://quebec.mgi.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.mgi.bio2rdf.org/sparql" 
+#	, "http://quebec.mgi.bio2rdf.org/sparql" 
 #	, "http://protech.mgi.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:ensembl , bio2rdf_ns:locus , bio2rdf_ns:gene , bio2rdf_ns:chr , bio2rdf_ns:chromosome , bio2rdf_ns:symbol ;
@@ -1165,7 +1211,8 @@ bio2rdf_provider:mirroredchebi a queryall_provider:Provider , queryall_provider:
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.chebi.bio2rdf.org/sparql", "http://quebec.chebi.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.chebi.bio2rdf.org/sparql"
+#	, "http://quebec.chebi.bio2rdf.org/sparql" 
 #	, "http://protech.chebi.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:chebi , bio2rdf_ns:chebi_status , bio2rdf_ns:chebi_source ;
@@ -1193,7 +1240,8 @@ bio2rdf_provider:mirroredsgdreverse a queryall_provider:Provider , queryall_prov
 	queryall_provider:graphUri "http://bio2rdf.org/sgd" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.sgd.bio2rdf.org/sparql", "http://quebec.sgd.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.sgd.bio2rdf.org/sparql"
+#	, "http://quebec.sgd.bio2rdf.org/sparql" 
 #	, "http://protech.sgd.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgd ;
@@ -1208,7 +1256,8 @@ bio2rdf_provider:mirroredtaxonomy a queryall_provider:Provider , queryall_provid
 	queryall_provider:graphUri "http://bio2rdf.org/taxonomy" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.taxonomy.bio2rdf.org/sparql", "http://cu.taxonomy.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.taxonomy.bio2rdf.org/sparql"
+#	, "http://quebec.taxonomy.bio2rdf.org/sparql" 
 #	, "http://protech.taxonomy.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
@@ -1223,7 +1272,8 @@ bio2rdf_provider:mirroredtaxonomyreverse a queryall_provider:Provider , queryall
 	queryall_provider:graphUri "http://bio2rdf.org/taxonomy" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.taxonomy.bio2rdf.org/sparql", "http://cu.taxonomy.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.taxonomy.bio2rdf.org/sparql"
+#	, "http://quebec.taxonomy.bio2rdf.org/sparql" 
 #	, "http://protech.taxonomy.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:taxon ;
@@ -1251,7 +1301,8 @@ bio2rdf_provider:mirroredbiocyc a queryall_provider:Provider , queryall_provider
 	queryall_provider:graphUri "http://bio2rdf.org/biocyc" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.biocyc.bio2rdf.org/sparql", "http://quebec.biocyc.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.biocyc.bio2rdf.org/sparql"
+#	, "http://quebec.biocyc.bio2rdf.org/sparql" 
 #	, "http://protech.biocyc.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:biocyc ;
@@ -1346,9 +1397,8 @@ bio2rdf_provider:mirroredmeshreverse a queryall_provider:Provider , queryall_pro
 	queryall_provider:graphUri "http://bio2rdf.org/mesh" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl 
-		"http://cu.mesh.bio2rdf.org/sparql", 
-		"http://quebec.mesh.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.mesh.bio2rdf.org/sparql" 
+#	, "http://quebec.mesh.bio2rdf.org/sparql" 
 #	, "http://protech.mesh.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:mesh ;
@@ -1363,7 +1413,9 @@ bio2rdf_provider:mirroredpdb a queryall_provider:Provider , queryall_provider:Ht
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.pdb.bio2rdf.org/sparql", "http://quebec.pdb.bio2rdf.org/sparql" ;
+	queryall_provider:endpointUrl "http://cu.pdb.bio2rdf.org/sparql"
+#	, "http://quebec.pdb.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pdb ;
 	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct , bio2rdf_query:labelsearch , bio2rdf_query:unsafelinkstonamespace , bio2rdf_query:unsafelinks , bio2rdf_query:unsafelinksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:issnurn .
@@ -1378,7 +1430,8 @@ bio2rdf_provider:bio2rdfregistry a queryall_provider:Provider , queryall_provide
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.registry.bio2rdf.org/sparql" 
 #	, "http://protech.registry.bio2rdf.org/sparql" 
-	, "http://quebec.registry.bio2rdf.org/sparql" ;
+#	, "http://quebec.registry.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:registry_dataset , bio2rdf_ns:registry_namespace , bio2rdf_ns:registry_agent , bio2rdf_ns:serv ;
 	queryall_provider:includedInQuery bio2rdf_query:unsafeconstruct , bio2rdf_query:unsafelinkstonamespace , bio2rdf_query:unsafelinks , bio2rdf_query:labelsearch , bio2rdf_query:unsafelinksbynamespace ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -1419,7 +1472,8 @@ bio2rdf_provider:mirroredreactome a queryall_provider:Provider , queryall_provid
 	queryall_provider:graphUri "http://bio2rdf.org/reactome" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.reactome.bio2rdf.org/sparql", "http://quebec.reactome.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.reactome.bio2rdf.org/sparql"
+#	, "http://quebec.reactome.bio2rdf.org/sparql" 
 #	, "http://protech.reactome.bio2rdf.org/sparl" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:reactome ;
@@ -1436,7 +1490,8 @@ bio2rdf_provider:quebecpubchemreverse a queryall_provider:Provider , queryall_pr
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubchem.bio2rdf.org/sparql" 
 #	, "http://protech.pubchem.bio2rdf.org/sparql" 
-	, "http://quebec.pubchem.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubchem.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:gi ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:tripleslashns , bio2rdf_rdfrule:pubchemcompoundadd , bio2rdf_rdfrule:pubchemcompounddelete , bio2rdf_rdfrule:pubchemsubstanceadd , bio2rdf_rdfrule:pubchemsubstancedelete .
@@ -1501,7 +1556,9 @@ bio2rdf_provider:mirroredpdbreverse a queryall_provider:Provider , queryall_prov
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.pdb.bio2rdf.org/sparql", "http://cu.pdb.bio2rdf.org/sparql" ;
+	queryall_provider:endpointUrl "http://cu.pdb.bio2rdf.org/sparql"
+#	, "http://quebec.pdb.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:reactome ;
 	queryall_provider:includedInQuery bio2rdf_query:unsafeprimaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:issnurn.
@@ -1514,7 +1571,9 @@ bio2rdf_provider:mirroredpdbreverseunsafe a queryall_provider:Provider , queryal
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://quebec.pdb.bio2rdf.org/sparql", "http://quebec.pdb.bio2rdf.org/sparql" ;
+	queryall_provider:endpointUrl "http://cu.pdb.bio2rdf.org/sparql"
+#	, "http://quebec.pdb.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:foaf , bio2rdf_ns:issn ;
 	queryall_provider:includedInQuery bio2rdf_query:unsafeprimaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:issnurn .
@@ -1579,7 +1638,8 @@ bio2rdf_provider:mirroredkegg a queryall_provider:Provider , queryall_provider:H
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql", "http://quebec.kegg.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql"
+#	, "http://quebec.kegg.bio2rdf.org/sparql" 
 #	, "http://protech.kegg.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:kegg , bio2rdf_ns:rn , bio2rdf_ns:gl , bio2rdf_ns:dr , bio2rdf_ns:cpd , bio2rdf_ns:path , bio2rdf_ns:kegg_gene ;
@@ -1594,7 +1654,8 @@ bio2rdf_provider:mirroredkeggunsafe a queryall_provider:Provider , queryall_prov
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql", "http://quebec.kegg.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.kegg.bio2rdf.org/sparql"
+#	, "http://quebec.kegg.bio2rdf.org/sparql" 
 #	, "http://protech.kegg.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:kegg , bio2rdf_ns:kegg_gene ;
@@ -1637,7 +1698,8 @@ bio2rdf_provider:mirroredaffymetrixresource a queryall_provider:Provider , query
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.affymetrix.bio2rdf.org/sparql" 
 #	, "http://protech.affymetrix.bio2rdf.org/sparql" 
-	, "http://quebec.affymetrix.bio2rdf.org/sparql" ;
+#	, "http://quebec.affymetrix.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:affymetrix_resource ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount , bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:onlynormaliseontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:affymetrixtaxonmappinghuman .
@@ -1734,7 +1796,8 @@ bio2rdf_provider:mirroreduniprotreverseprimary a queryall_provider:Provider , qu
 	queryall_provider:graphUri "http://bio2rdf.org/uniprot" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql"
+#	, "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:merops , bio2rdf_ns:embl-cds , bio2rdf_ns:panther , bio2rdf_ns:dbsnp , bio2rdf_ns:cgd , bio2rdf_ns:brenda , bio2rdf_ns:linkhub , bio2rdf_ns:annotation , bio2rdf_ns:unigene , bio2rdf_ns:intact , bio2rdf_ns:smr , bio2rdf_ns:cleanex , bio2rdf_ns:ensembl , bio2rdf_ns:hamap , bio2rdf_ns:rgd , bio2rdf_ns:smart , bio2rdf_ns:pir , bio2rdf_ns:medline , bio2rdf_ns:locations , bio2rdf_ns:core , bio2rdf_ns:isoforms , bio2rdf_ns:pride , bio2rdf_ns:phosphosite , bio2rdf_ns:ipi , bio2rdf_ns:embl , bio2rdf_ns:arrayexpress , bio2rdf_ns:bgee , bio2rdf_ns:germonline , bio2rdf_ns:hovergen , bio2rdf_ns:nextbio , bio2rdf_ns:pathway-interaction-db , bio2rdf_ns:hogenom , bio2rdf_ns:nmpdr , bio2rdf_ns:genomereviews , bio2rdf_ns:genecards , bio2rdf_ns:genefarm , bio2rdf_ns:gramene , bio2rdf_ns:h-invdb , bio2rdf_ns:pdbsum , bio2rdf_ns:reproduction-2dpage , bio2rdf_ns:cazy , bio2rdf_ns:xenbase , bio2rdf_ns:orphanet , bio2rdf_ns:peptideatlas , bio2rdf_ns:swiss-2dpage , bio2rdf_ns:wormpep , bio2rdf_ns:tuberculist , bio2rdf_ns:dosac-cobs-2dpage , bio2rdf_ns:hssp ;
@@ -1749,7 +1812,8 @@ bio2rdf_provider:mirroreduniprotreversesecondary a queryall_provider:Provider , 
 	queryall_provider:graphUri "http://bio2rdf.org/uniprot" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql", "http://quebec.uniprot.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.uniprot.bio2rdf.org/sparql"
+#	, "http://quebec.uniprot.bio2rdf.org/sparql" 
 #	, "http://protech.uniprot.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:uniprot , bio2rdf_ns:prosite , bio2rdf_ns:citations , bio2rdf_ns:pubmed ;
@@ -1764,7 +1828,8 @@ bio2rdf_provider:mirroredomimreverse a queryall_provider:Provider , queryall_pro
 	queryall_provider:graphUri "" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.omim.bio2rdf.org/sparql", "http://quebec.omim.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.omim.bio2rdf.org/sparql"
+#	, "http://quebec.omim.bio2rdf.org/sparql" 
 #	, "http://protech.omim.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:pubmed , bio2rdf_ns:omim , bio2rdf_ns:omim_resource , bio2rdf_ns:omim_record , bio2rdf_ns:foaf , bio2rdf_ns:gene , bio2rdf_ns:locus , bio2rdf_ns:mim , bio2rdf_ns:symbol ;
@@ -1781,7 +1846,8 @@ bio2rdf_provider:mirroredpubmedreverse a queryall_provider:Provider , queryall_p
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.pubmed.bio2rdf.org/sparql" 
 #	, "http://protech.pubmed.bio2rdf.org/sparql" 
-	, "http://quebec.pubmed.bio2rdf.org/sparql" ;
+#	, "http://quebec.pubmed.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:genbank ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore , bio2rdf_rdfrule:doubleslashns , bio2rdf_rdfrule:badnsfoaf , bio2rdf_rdfrule:bio2drfmisspelling .
@@ -1808,7 +1874,7 @@ bio2rdf_provider:mirroredcpath a queryall_provider:Provider , queryall_provider:
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.cpath.bio2rdf.org/sparql"
-	, "http://quebec.cpath.bio2rdf.org/sparql" 
+#	, "http://quebec.cpath.bio2rdf.org/sparql" 
 #	, "http://protech.cpath.bio2rdf.org/sparql"
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:cpath ;
@@ -1836,7 +1902,8 @@ bio2rdf_provider:mirroredsgd a queryall_provider:Provider , queryall_provider:Ht
 	queryall_provider:graphUri "http://bio2rdf.org/sgd" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.sgd.bio2rdf.org/sparql", "http://quebec.sgd.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.sgd.bio2rdf.org/sparql"
+#	, "http://quebec.sgd.bio2rdf.org/sparql" 
 #	, "http://protech.sgd.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:sgd , bio2rdf_ns:biogrid , bio2rdf_ns:candida , bio2rdf_ns:cgd , bio2rdf_ns:dip , bio2rdf_ns:ebi , bio2rdf_ns:euroscarf , bio2rdf_ns:genbank , bio2rdf_ns:germ , bio2rdf_ns:iubmb , bio2rdf_ns:metacyc ;
@@ -1851,7 +1918,8 @@ bio2rdf_provider:mirroredsgdunsafe a queryall_provider:Provider , queryall_provi
 	queryall_provider:graphUri "http://bio2rdf.org/sgd" ;
 	queryall_provider:isDefaultSource "false"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
-	queryall_provider:endpointUrl "http://cu.sgd.bio2rdf.org/sparql", "http://quebec.sgd.bio2rdf.org/sparql" 
+	queryall_provider:endpointUrl "http://cu.sgd.bio2rdf.org/sparql"
+#	, "http://quebec.sgd.bio2rdf.org/sparql" 
 #	, "http://protech.sgd.bio2rdf.org/sparql" 
 	;
 	queryall_provider:handlesNamespace bio2rdf_ns:dip ;
@@ -1868,7 +1936,8 @@ bio2rdf_provider:mirrroedbind a queryall_provider:Provider , queryall_provider:H
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.bind.bio2rdf.org/sparql" 
 #	, "http://protech.bind.bio2rdf.org/sparql" 
-	, "http://quebec.bind.bio2rdf.org/sparql" ;
+#	, "http://quebec.bind.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:bind , bio2rdf_ns:genbank , bio2rdf_ns:gi , bio2rdf_ns:ncbi, bio2rdf_ns:cog ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -1883,7 +1952,8 @@ bio2rdf_provider:mirroredbindreverse a queryall_provider:Provider , queryall_pro
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.bind.bio2rdf.org/sparql" 
 #	, "http://protech.bind.bio2rdf.org/sparql" 
-	, "http://quebec.bind.bio2rdf.org/sparql" ;
+#	, "http://quebec.bind.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:genbank , bio2rdf_ns:bind , bio2rdf_ns:gi , bio2rdf_ns:flybase , bio2rdf_ns:go , bio2rdf_ns:mmdb , bio2rdf_ns:pubmed ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologyhashtocolon , bio2rdf_rdfrule:ontologycolontonsunderscore .
@@ -1924,7 +1994,8 @@ bio2rdf_provider:mirrroedhhpid a queryall_provider:Provider , queryall_provider:
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.hhpid.bio2rdf.org/sparql" 
 #	, "http://protech.hhpid.bio2rdf.org/sparql" 
-	, "http://quebec.hhpid.bio2rdf.org/sparql" ;
+#	, "http://quebec.hhpid.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:hhpid , bio2rdf_ns:hhpid_resource ;
 	queryall_provider:includedInQuery bio2rdf_query:constructdnsonly , bio2rdf_query:construct , bio2rdf_query:constructnoextras , bio2rdf_query:constructnodefaults , bio2rdf_query:labelsearch , bio2rdf_query:linkstonamespace , bio2rdf_query:links , bio2rdf_query:linksbynamespace , bio2rdf_query:virtuosobifcontainssearch , bio2rdf_query:virtuosobifcontainsquicksearchbynamespace , bio2rdf_query:virtuosobifcontainssearchbynamespace , bio2rdf_query:index , bio2rdf_query:countlinks , bio2rdf_query:countlinksbynamespace , bio2rdf_query:counttriples , bio2rdf_query:namespacebytype , bio2rdf_query:namespaceuricount , bio2rdf_query:namespacecount ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologydotbio2rdfdotorghhpid .
@@ -1939,7 +2010,8 @@ bio2rdf_provider:mirroredhhpidreverse a queryall_provider:Provider , queryall_pr
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
 	queryall_provider:endpointUrl "http://cu.hhpid.bio2rdf.org/sparql" 
 #	, "http://protech.hhpid.bio2rdf.org/sparql" 
-	, "http://quebec.hhpid.bio2rdf.org/sparql" ;
+#	, "http://quebec.hhpid.bio2rdf.org/sparql" 
+	;
 	queryall_provider:handlesNamespace bio2rdf_ns:hhpid , bio2rdf_ns:hhpid_resource , bio2rdf_ns:geneid , bio2rdf_ns:pubmed , bio2rdf_ns:ncbi ;
 	queryall_provider:includedInQuery bio2rdf_query:primaryreverseconstruct ;
 	queryall_provider:needsRdfNormalisation bio2rdf_rdfrule:ontologydotbio2rdfdotorghhpid .

@@ -37,8 +37,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<sesame.version>2.6.9</sesame.version>
-		<sesametools.version>1.6</sesametools.version>
-		<slf4j.version>1.6.6</slf4j.version>
+		<sesametools.version>1.7-SNAPSHOT</sesametools.version>
+		<slf4j.version>1.7.1</slf4j.version>
 		<queryall.version>1.3.3-SNAPSHOT</queryall.version>
 	</properties>
 	<prerequisites>
@@ -174,13 +174,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>net.fortytwo.sesametools</groupId>
-			<artifactId>nquads</artifactId>
-			<version>${sesametools.version}</version>
-			<type>jar</type>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.openrdf.sesame</groupId>
 			<artifactId>sesame-queryparser-sparql</artifactId>
 			<version>${sesame.version}</version>
@@ -260,6 +253,14 @@
 			</properties>
 			<!-- <build> <finalName>${project.artifactId}-carleton-${project.version}</finalName> 
 				</build> -->
+		</profile>
+		<profile>
+			<id>release2</id>
+			<properties>
+				<queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-release2.n3</queryall.BaseConfigLocation>
+				<queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:release2BaseConfig</queryall.BaseConfigUri>
+				<queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
+			</properties>
 		</profile>
 		<profile>
 			<id>protech</id>

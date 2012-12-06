@@ -1,0 +1,16 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
+@prefix bio2rdf: <http://bio2rdf.org/webapp_configuration:>.
+
+bio2rdf:release2BaseConfig
+
+a queryall:defaultConfig ;
+
+queryall:webappConfigLocations 
+"/config/webapp/webapp-config-bio2rdf-default.n3" , 
+#"http://config.bio2rdf.org/admin/webappconfiguration/5/n3" , 
+ "/config/webapp/webapp-config-bio2rdf-release2.n3" ;
+
+queryall:activeWebappConfigs bio2rdf:default , bio2rdf:release2 .
+
+

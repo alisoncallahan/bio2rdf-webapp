@@ -36,6 +36,16 @@ bio2rdf_profile:carleton a queryall_profile:Profile ;
 	queryall_profile:excludesProvider bio2rdf_provider:quebecmainqueries , bio2rdf_provider:mqutermainqueries , bio2rdf_provider:bio2rdfresolvermirrors , bio2rdf_provider:qutrestrictedproxy ;
     queryall_profile:excludesQuery bio2rdf_query:catchalldefault .
 
+bio2rdf_profile:release2 a queryall_profile:Profile ;
+	dc:title "Bio2RDF Release2 profile" ;
+	queryall_profile:order "100"^^xsd:int ;
+	queryall_profile:allowImplicitQueryInclusions "true"^^xsd:boolean ;
+	queryall_profile:allowImplicitProviderInclusions "true"^^xsd:boolean ;
+	queryall_profile:allowImplicitRdfRuleInclusions "true"^^xsd:boolean ;
+	queryall_profile:defaultProfileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_profile:excludesProvider bio2rdf_provider:quebecmainqueries , bio2rdf_provider:mqutermainqueries , bio2rdf_provider:bio2rdfresolvermirrors , bio2rdf_provider:qutrestrictedproxy ;
+    queryall_profile:excludesQuery bio2rdf_query:catchalldefault .
+
 bio2rdf_profile:mquter a queryall_profile:Profile ;
 	dc:title "A selected profile including providers not publically accessible but available inside the Queensland University of Technology network." ;
 	queryall_profile:order "100"^^xsd:int ;

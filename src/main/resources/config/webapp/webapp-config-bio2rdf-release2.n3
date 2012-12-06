@@ -1,0 +1,229 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix queryall: <http://purl.org/queryall/webapp_configuration:>.
+@prefix queryall_provider: <http://purl.org/queryall/provider:>.
+@prefix bio2rdf: <http://bio2rdf.org/webapp_configuration:>.
+@prefix bio2rdf_profile: <http://bio2rdf.org/profile:>.
+@prefix bio2rdf_query: <http://bio2rdf.org/query:>.
+
+bio2rdf:release2
+
+queryall:activeProfiles bio2rdf_profile:release2 ;
+
+#queryall:queryConfigLocations "http://config.bio2rdf.org/admin/configuration/5/n3" ;
+queryall:queryConfigLocations 
+"/config/providers/bio2rdf-providers-httpgetproxy.n3" , 
+"/config/providers/bio2rdf-providers-httpgetredirect.n3" , 
+"/config/providers/bio2rdf-providers-nocommunication.n3" , 
+"/config/providers/bio2rdf-providers-release2-sparql.n3" , 
+"/config/providers/bio2rdf-providers-html.n3" , 
+"/config/providers/bio2rdf-providers-image.n3" , 
+"/config/providers/bio2rdf-providers-fasta.n3" , 
+"/config/providers/bio2rdf-providers-licenses.n3" , 
+"/config/providers/bio2rdf-providers-farmbio.n3" , 
+"/config/providers/bio2rdf-providers-fuberlin.n3" , 
+"/config/providers/bio2rdf-providers-linkedct.n3" , 
+"/config/providers/bio2rdf-providers-mquter.n3" , 
+
+"/config/rules/bio2rdf-rdfrules-base.n3" , 
+"/config/rules/bio2rdf-rdfrules-prefixmapping.n3" , 
+"/config/rules/bio2rdf-rdfrules-sparql.n3" , 
+"/config/rules/bio2rdf-rdfrules-xslt.n3" , 
+"/config/rules/bio2rdf-rdfrules-bioguid.n3" , 
+"/config/rules/bio2rdf-rdfrules-chembl.n3" , 
+"/config/rules/bio2rdf-rdfrules-fuberlin.n3" , 
+"/config/rules/bio2rdf-rdfrules-geospecies.n3" , 
+"/config/rules/bio2rdf-rdfrules-linkedct.n3" , 
+"/config/rules/bio2rdf-rdfrules-neurocommons.n3" , 
+"/config/rules/bio2rdf-rdfrules-obo.n3" , 
+"/config/rules/bio2rdf-rdfrules-tcm.n3" , 
+
+"/config/namespaces/bio2rdf-namespaceentries-release2.n3",
+"/config/namespaces/bio2rdf-namespaceentries-base.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-chembl.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-dailymed.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-diseaseome.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-drugbank.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-linkedct.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-medicare.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-ndc.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-nmrshiftdb.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-sider.n3" , 
+
+"/config/bio2rdf-profiles.n3" , 
+"/config/bio2rdf-queries.n3" , 
+"/config/bio2rdf-ruletests.n3" ,
+
+"/config/myexperiment/myexperiment_providers-config.n3" ,
+"/config/myexperiment/myexperiment_namespaceentries-config.n3" ,
+"/config/myexperiment/myexperiment_rdfrules-config.n3" ;
+
+queryall:backupQueryConfigLocations 
+"/config/providers/bio2rdf-providers-httpgetproxy.n3" , 
+"/config/providers/bio2rdf-providers-httpgetredirect.n3" , 
+"/config/providers/bio2rdf-providers-nocommunication.n3" , 
+"/config/providers/bio2rdf-providers-release2-sparql.n3" , 
+"/config/providers/bio2rdf-providers-html.n3" , 
+"/config/providers/bio2rdf-providers-image.n3" , 
+"/config/providers/bio2rdf-providers-fasta.n3" , 
+"/config/providers/bio2rdf-providers-licenses.n3" , 
+"/config/providers/bio2rdf-providers-farmbio.n3" , 
+"/config/providers/bio2rdf-providers-fuberlin.n3" , 
+"/config/providers/bio2rdf-providers-linkedct.n3" , 
+"/config/providers/bio2rdf-providers-mquter.n3" , 
+
+"/config/rules/bio2rdf-rdfrules-base.n3" , 
+"/config/rules/bio2rdf-rdfrules-prefixmapping.n3" , 
+"/config/rules/bio2rdf-rdfrules-sparql.n3" , 
+"/config/rules/bio2rdf-rdfrules-xslt.n3" , 
+"/config/rules/bio2rdf-rdfrules-bioguid.n3" , 
+"/config/rules/bio2rdf-rdfrules-chembl.n3" , 
+"/config/rules/bio2rdf-rdfrules-fuberlin.n3" , 
+"/config/rules/bio2rdf-rdfrules-geospecies.n3" , 
+"/config/rules/bio2rdf-rdfrules-linkedct.n3" , 
+"/config/rules/bio2rdf-rdfrules-neurocommons.n3" , 
+"/config/rules/bio2rdf-rdfrules-obo.n3" , 
+"/config/rules/bio2rdf-rdfrules-tcm.n3" , 
+
+"/config/namespaces/bio2rdf-namespaceentries-release2.n3",
+"/config/namespaces/bio2rdf-namespaceentries-base.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-chembl.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-dailymed.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-diseaseome.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-drugbank.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-linkedct.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-medicare.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-ndc.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-nmrshiftdb.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-sider.n3" , 
+
+"/config/bio2rdf-profiles.n3" , 
+"/config/bio2rdf-queries.n3" , 
+"/config/bio2rdf-ruletests.n3" ,
+
+"/config/myexperiment/myexperiment_providers-config.n3" ,
+"/config/myexperiment/myexperiment_namespaceentries-config.n3" ,
+"/config/myexperiment/myexperiment_rdfrules-config.n3" ;
+
+
+queryall:enablePeriodicConfigurationRefresh "true"^^xsd:boolean ;
+
+queryall:periodicConfigurationMilliseconds "43200000"^^xsd:long ;
+
+queryall:enableManualConfigurationRefresh "true"^^xsd:boolean ;
+
+queryall:manualConfigurationMinimumMilliseconds "120000"^^xsd:int ;
+
+queryall:readTimeout "35000"^^xsd:int ;
+
+queryall:connectTimeout "1500"^^xsd:int ;
+
+queryall:submitStatistics "false"^^xsd:boolean ;
+
+queryall:automaticallyBlacklistClients "true"^^xsd:boolean ;
+
+queryall:blacklistResetClientBlacklistWithEndpoints "true"^^xsd:boolean ;
+
+queryall:blacklistResetPeriodMilliseconds "600000"^^xsd:long ;
+
+queryall:blacklistMaxAccumulatedFailures "4"^^xsd:int ;
+
+queryall:blacklistResetEndpointFailuresOnSuccess "true"^^xsd:boolean ;
+
+queryall:blacklistClientMaxQueriesPerPeriod "15"^^xsd:int ;
+
+queryall:blacklistMinimumQueriesBeforeBlacklistRules "3"^^xsd:int ;
+
+queryall:blacklistPercentageOfRobotTxtQueriesBeforeAutomatic "0.75"^^xsd:float ;
+
+queryall:blacklistBaseClientIPAddresses 
+"58.212.227.208" , 
+"88.72.244.12" , 
+"140.203.154.197" , 
+"140.203.154.182" , 
+"66.249.68.27" , 
+"66.249.68.38" ;
+
+queryall:whitelistBaseClientIPAddresses 
+"127.0.0.1" , 
+"::1" , 
+"0:0:0:0:0:0:0:1" , 
+"0:0:0:0:0:0:0:1%0" , 
+"132.203.117.5" , 
+"131.181.206.143" , 
+"131.181.206.7" , 
+"134.117.53.81" ;
+
+queryall:blacklistBaseUserAgents 
+"Falconsbot" , 
+"msnbot" , 
+"Googlebot" , 
+"hclsreport" , 
+"heritrix" , 
+"Sogou" , 
+"Twiceler" , 
+"Baiduspider" , 
+"sindice" ;
+
+queryall:useHardcodedRequestHostname "true"^^xsd:boolean ;
+
+queryall:hardcodedRequestHostname "http://bio2rdf.org/" ;
+
+queryall:useHardcodedRequestContext "true"^^xsd:boolean ;
+
+queryall:hardcodedRequestContext "" ;
+
+queryall:includeNonProfileMatchedRdfRules "false"^^xsd:boolean ;
+
+queryall:recogniseImplicitRdfRuleInclusions "true"^^xsd:boolean ;
+
+queryall:includeNonProfileMatchedProviders "false"^^xsd:boolean ;
+
+queryall:recogniseImplicitProviderInclusions "true"^^xsd:boolean ;
+
+queryall:includeNonProfileMatchedQueries "false"^^xsd:boolean ;
+
+queryall:recogniseImplicitQueryInclusions "true"^^xsd:boolean ;
+
+queryall:statisticsSubmitStatistics "false"^^xsd:boolean ;
+
+queryall:statisticsServerApiVersion "1"^^xsd:int ;
+
+queryall:statisticsServerMethod queryall_provider:httppostsparql ;
+
+queryall:statisticsServerUrl "http://bio2rdf.mquter.qut.edu.au/admin/submitstats" ;
+
+queryall:statisticsServerUseGraphUri "false"^^xsd:boolean ;
+
+queryall:statisticsServerGraphUri "" ;
+
+queryall:statisticsToSubmit 
+
+queryall:statisticsItemProfiles ,
+queryall:statisticsItemSuccessfulProviders ,
+queryall:statisticsItemErrorProviders ,
+queryall:statisticsItemConfigLocations ,
+queryall:statisticsItemQueryTypes ,
+queryall:statisticsItemNamespaces ,
+queryall:statisticsItemConfigApiVersion ,
+queryall:statisticsItemReadTimeout ,
+queryall:statisticsItemConnectTimeout ,
+queryall:statisticsItemUserHostAddress ,
+queryall:statisticsItemUserAgent ,
+queryall:statisticsItemRealHostName ,
+queryall:statisticsItemQueryString ,
+queryall:statisticsItemResponseTime ,
+queryall:statisticsItemSumLatency ,
+queryall:statisticsItemSumQueries ,
+queryall:statisticsItemStdevLatency ,
+queryall:statisticsItemSumErrors ,
+queryall:statisticsItemSumErrorLatency ,
+queryall:statisticsItemStdevErrorLatency ;
+
+.
+
+
+
+
+
+

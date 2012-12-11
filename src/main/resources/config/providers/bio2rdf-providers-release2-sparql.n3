@@ -2,7 +2,7 @@
 <http://bio2rdf.org/provider:carleton.affymetrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.affymetrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.affymetrix> <http://purl.org/dc/elements/1.1/title> "Contains the affymetrix dataset" .
-<http://bio2rdf.org/provider:carleton.affymetrix> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.affymetrix> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.affymetrix> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.affymetrix> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.affymetrix> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -67,7 +67,7 @@
 <http://bio2rdf.org/provider:carleton.biomodels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.biomodels> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.biomodels> <http://purl.org/dc/elements/1.1/title> "Contains the biomodels dataset" .
-<http://bio2rdf.org/provider:carleton.biomodels> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.biomodels> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.biomodels> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.biomodels> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.biomodels> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -123,7 +123,7 @@
 <http://bio2rdf.org/provider:carleton.ctd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.ctd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.ctd> <http://purl.org/dc/elements/1.1/title> "Contains the ctd dataset" .
-<http://bio2rdf.org/provider:carleton.ctd> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.ctd> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.ctd> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.ctd> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.ctd> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -155,7 +155,7 @@
 <http://bio2rdf.org/provider:carleton.drugbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.drugbank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.drugbank> <http://purl.org/dc/elements/1.1/title> "Contains the drugbank dataset" .
-<http://bio2rdf.org/provider:carleton.drugbank> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.drugbank> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.drugbank> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.drugbank> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.drugbank> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -206,7 +206,7 @@
 <http://bio2rdf.org/provider:carleton.gene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.gene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.gene> <http://purl.org/dc/elements/1.1/title> "Contains the gene dataset" .
-<http://bio2rdf.org/provider:carleton.gene> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.gene> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.gene> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.gene> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.gene> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -241,7 +241,7 @@
 <http://bio2rdf.org/provider:carleton.goa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.goa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.goa> <http://purl.org/dc/elements/1.1/title> "Contains the goa dataset" .
-<http://bio2rdf.org/provider:carleton.goa> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.goa> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.goa> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.goa> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.goa> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -271,7 +271,7 @@
 <http://bio2rdf.org/provider:carleton.hgnc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.hgnc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.hgnc> <http://purl.org/dc/elements/1.1/title> "Contains the hgnc dataset" .
-<http://bio2rdf.org/provider:carleton.hgnc> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.hgnc> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.hgnc> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.hgnc> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.hgnc> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -305,7 +305,7 @@
 <http://bio2rdf.org/provider:carleton.homologene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.homologene> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.homologene> <http://purl.org/dc/elements/1.1/title> "Contains the homologene dataset" .
-<http://bio2rdf.org/provider:carleton.homologene> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.homologene> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.homologene> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.homologene> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.homologene> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -331,7 +331,7 @@
 <http://bio2rdf.org/provider:carleton.interpro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.interpro> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.interpro> <http://purl.org/dc/elements/1.1/title> "Contains the interpro dataset" .
-<http://bio2rdf.org/provider:carleton.interpro> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.interpro> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.interpro> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.interpro> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.interpro> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -372,7 +372,7 @@
 <http://bio2rdf.org/provider:carleton.iproclass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.iproclass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.iproclass> <http://purl.org/dc/elements/1.1/title> "Contains the iproclass dataset" .
-<http://bio2rdf.org/provider:carleton.iproclass> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.iproclass> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.iproclass> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.iproclass> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.iproclass> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -408,7 +408,7 @@
 <http://bio2rdf.org/provider:carleton.irefindex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.irefindex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.irefindex> <http://purl.org/dc/elements/1.1/title> "Contains the irefindex dataset" .
-<http://bio2rdf.org/provider:carleton.irefindex> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.irefindex> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.irefindex> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.irefindex> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.irefindex> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -470,7 +470,7 @@
 <http://bio2rdf.org/provider:carleton.mesh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.mesh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.mesh> <http://purl.org/dc/elements/1.1/title> "Contains the mesh dataset" .
-<http://bio2rdf.org/provider:carleton.mesh> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.mesh> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.mesh> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.mesh> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.mesh> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -493,7 +493,7 @@
 <http://bio2rdf.org/provider:carleton.ncbo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.ncbo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.ncbo> <http://purl.org/dc/elements/1.1/title> "Contains the ncbo dataset" .
-<http://bio2rdf.org/provider:carleton.ncbo> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.ncbo> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.ncbo> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.ncbo> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.ncbo> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -912,7 +912,7 @@
 <http://bio2rdf.org/provider:carleton.ndc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.ndc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.ndc> <http://purl.org/dc/elements/1.1/title> "Contains the ndc dataset" .
-<http://bio2rdf.org/provider:carleton.ndc> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.ndc> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.ndc> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.ndc> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.ndc> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -936,7 +936,7 @@
 <http://bio2rdf.org/provider:carleton.omim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.omim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.omim> <http://purl.org/dc/elements/1.1/title> "Contains the omim dataset" .
-<http://bio2rdf.org/provider:carleton.omim> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.omim> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.omim> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.omim> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.omim> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -974,7 +974,7 @@
 <http://bio2rdf.org/provider:carleton.pharmgkb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.pharmgkb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.pharmgkb> <http://purl.org/dc/elements/1.1/title> "Contains the pharmgkb dataset" .
-<http://bio2rdf.org/provider:carleton.pharmgkb> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.pharmgkb> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.pharmgkb> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.pharmgkb> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.pharmgkb> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -1038,7 +1038,7 @@
 <http://bio2rdf.org/provider:carleton.sabiork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.sabiork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.sabiork> <http://purl.org/dc/elements/1.1/title> "Contains the sabiork dataset" .
-<http://bio2rdf.org/provider:carleton.sabiork> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.sabiork> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.sabiork> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.sabiork> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.sabiork> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -1072,7 +1072,7 @@
 <http://bio2rdf.org/provider:carleton.sgd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.sgd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.sgd> <http://purl.org/dc/elements/1.1/title> "Contains the sgd dataset" .
-<http://bio2rdf.org/provider:carleton.sgd> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.sgd> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.sgd> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.sgd> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.sgd> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -1129,7 +1129,7 @@
 <http://bio2rdf.org/provider:carleton.taxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:HttpProvider> .
 <http://bio2rdf.org/provider:carleton.taxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/provider:SparqlProvider> .
 <http://bio2rdf.org/provider:carleton.taxon> <http://purl.org/dc/elements/1.1/title> "Contains the taxon dataset" .
-<http://bio2rdf.org/provider:carleton.taxon> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:queryall_provider:proxy> .
+<http://bio2rdf.org/provider:carleton.taxon> <http://purl.org/queryall/provider:resolutionStrategy> <http://purl.org/queryall/provider:proxy> .
 <http://bio2rdf.org/provider:carleton.taxon> <http://purl.org/queryall/provider:resolutionMethod> <http://purl.org/queryall/provider:httppostsparql> .
 <http://bio2rdf.org/provider:carleton.taxon> <http://purl.org/queryall/provider:requiresGraphUri> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/provider:carleton.taxon> <http://purl.org/queryall/provider:isDefaultSource> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .

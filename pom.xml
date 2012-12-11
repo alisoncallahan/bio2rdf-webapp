@@ -262,6 +262,17 @@
                 </build> -->
         </profile>
         <profile>
+            <id>release2</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <queryall.BaseConfigLocation>/config/webapp/webapp-base-bio2rdf-release2.n3</queryall.BaseConfigLocation>
+                <queryall.BaseConfigUri>http://bio2rdf.org/webapp_configuration:release2BaseConfig</queryall.BaseConfigUri>
+                <queryall.BaseConfigMimeFormat>text/rdf+n3</queryall.BaseConfigMimeFormat>
+            </properties>
+        </profile>
+        <profile>
             <id>protech</id>
             <activation>
                 <activeByDefault>false</activeByDefault>

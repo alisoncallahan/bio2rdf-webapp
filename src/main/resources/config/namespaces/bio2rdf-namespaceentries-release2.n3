@@ -17455,3 +17455,13 @@
 <http://bio2rdf.org/ns:bio2rdf_vocabulary> <http://purl.org/queryall/ns:validationPossible> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://bio2rdf.org/ns:bio2rdf_vocabulary> <http://purl.org/queryall/ns:identifierRegex> "" .
 <http://bio2rdf.org/ns:bio2rdf_vocabulary> <http://purl.org/dc/elements/1.1/title> "Bio2RDF: linked data for the life sciences vocabulary " .
+<http://bio2rdf.org/ns:uniprot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/ns:Namespace> .
+<http://bio2rdf.org/ns:uniprot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/queryall/ns:RegexValidatingNamespace> .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:authority> <http://purl.uniprot.org/> .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:uriTemplate> "${authority}${namespace}${separator}${identifier}" .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:separator> "/" .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:preferredPrefix> "uniprot" .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:convertToPreferred> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:validationPossible> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/queryall/ns:identifierRegex> "" .
+<http://bio2rdf.org/ns:uniprot> <http://purl.org/dc/elements/1.1/title> "Uniprot" .

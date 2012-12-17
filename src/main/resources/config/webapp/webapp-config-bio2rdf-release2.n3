@@ -20,10 +20,6 @@ queryall:queryConfigLocations
 "/config/providers/bio2rdf-providers-image.n3" , 
 "/config/providers/bio2rdf-providers-fasta.n3" , 
 "/config/providers/bio2rdf-providers-licenses.n3" , 
-"/config/providers/bio2rdf-providers-farmbio.n3" , 
-"/config/providers/bio2rdf-providers-fuberlin.n3" , 
-"/config/providers/bio2rdf-providers-linkedct.n3" , 
-"/config/providers/bio2rdf-providers-mquter.n3" , 
 
 "/config/rules/bio2rdf-rdfrules-base.n3" , 
 "/config/rules/bio2rdf-rdfrules-prefixmapping.n3" , 
@@ -48,7 +44,7 @@ queryall:queryConfigLocations
 "/config/namespaces/bio2rdf-namespaceentries-medicare.n3" , 
 "/config/namespaces/bio2rdf-namespaceentries-ndc.n3" , 
 "/config/namespaces/bio2rdf-namespaceentries-nmrshiftdb.n3" , 
-"/config/namespaces/bio2rdf-namespaceentries-sider.n3" , 
+"/config/namespaces/bio2rdf-namespaceentries-sider.n3" ,
 
 "/config/bio2rdf-profiles.n3" , 
 "/config/bio2rdf-queries.n3" , 
@@ -67,10 +63,6 @@ queryall:backupQueryConfigLocations
 "/config/providers/bio2rdf-providers-image.n3" , 
 "/config/providers/bio2rdf-providers-fasta.n3" , 
 "/config/providers/bio2rdf-providers-licenses.n3" , 
-"/config/providers/bio2rdf-providers-farmbio.n3" , 
-"/config/providers/bio2rdf-providers-fuberlin.n3" , 
-"/config/providers/bio2rdf-providers-linkedct.n3" , 
-"/config/providers/bio2rdf-providers-mquter.n3" , 
 
 "/config/rules/bio2rdf-rdfrules-base.n3" , 
 "/config/rules/bio2rdf-rdfrules-prefixmapping.n3" , 

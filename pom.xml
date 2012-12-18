@@ -39,7 +39,7 @@
         <sesame.version>2.7-SNAPSHOT</sesame.version>
         <sesametools.version>1.7-SNAPSHOT</sesametools.version>
         <slf4j.version>1.7.2</slf4j.version>
-        <queryall.version>1.3.3-SNAPSHOT</queryall.version>
+        <queryall.version>1.4-SNAPSHOT</queryall.version>
     </properties>
     <prerequisites>
         <maven>2.2.1</maven>
@@ -51,14 +51,14 @@
     </scm>
     <dependencies>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-webapp</artifactId>
             <version>${queryall.version}</version>
             <type>jar</type>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-webapp</artifactId>
             <version>${queryall.version}</version>
             <type>test-jar</type>
@@ -91,49 +91,49 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-rule-sparql</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-rule-regex</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-rule-xslt</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-rule-prefixmap</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-provider-http</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-provider-rdf</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-querytype-regex</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.queryall</groupId>
+            <groupId>com.github.ansell.queryall</groupId>
             <artifactId>queryall-ext-querytype-rdf</artifactId>
             <version>${queryall.version}</version>
             <scope>runtime</scope>

@@ -852,6 +852,23 @@ bio2rdf_query:virtuosobifcontainssearch a queryall_query:Query , queryall_query:
 	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
 	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
 
+bio2rdf_query:sparql11containssearch a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
+    queryall_query:isDummyQueryType "false"^^xsd:boolean ;
+    queryall_query:isPageable "true"^^xsd:boolean ;
+	dc:title "sparql11containssearch" ;
+	queryall_query:handleAllNamespaces "true"^^xsd:boolean ;
+	queryall_query:isNamespaceSpecific "false"^^xsd:boolean ;
+	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
+	queryall_query:includeDefaults "false"^^xsd:boolean ;
+	queryall_query:inputRegex "^search/(.+)" ;
+	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedQueryUri}> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bio2rdf.org/bio2rdf_resource:SearchResults> . <${inputUrlEncoded_normalisedQueryUri}> <http://bio2rdf.org/bio2rdf_resource:hasSearchResult> ?s .  <${inputUrlEncoded_normalisedQueryUri}> <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?s . ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . ?s <http://purl.org/dc/elements/1.1/title> ?title . ?s <http://purl.org/dc/terms/title> ?dctermstitle . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?skoslabel . ?s ?p ?o .  } WHERE { ${graphStart} ?s ?p ?o . FILTER(contains(str(?o), '\"${ntriplesEncoded_input_1}\"')) OPTIONAL { ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . } OPTIONAL { ?s <http://purl.org/dc/elements/1.1/title> ?title . } OPTIONAL{ ?s <http://purl.org/dc/terms/title> ?dctermstitle . }  OPTIONAL{ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . } OPTIONAL { ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?skoslabel . } ${graphEnd} } ${limit} ${sparqlOffset}" ;
+	queryall_query:queryUriTemplateString "${defaultHostAddress}search/${input_1}" ;
+	queryall_query:standardUriTemplateString "${defaultHostAddress}search/${input_1}" ;
+	queryall_query:outputRdfFormat "application/rdf+xml" ;
+	queryall_query:outputRdfString "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:hasSearchResults xmlns:ns0pred=\"${xmlEncoded_defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${xmlEncoded_inputUrlEncoded_normalisedQueryUri}\"/></rdf:Description>" ;
+	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude .
+
 bio2rdf_query:sparqlregexsearch a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
@@ -1915,6 +1932,26 @@ bio2rdf_query:virtuosobifcontainsquicksearchbynamespace a queryall_query:Query ,
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:virtuosobifcontainsquicksearchbynamespace .
 
+bio2rdf_query:sparql11containsquicksearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
+    queryall_query:isDummyQueryType "false"^^xsd:boolean ;
+    queryall_query:isPageable "true"^^xsd:boolean ;
+	dc:title "sparql11containsquicksearchbynamespace" ;
+	queryall_query:handleAllNamespaces "true"^^xsd:boolean ;
+	queryall_query:isNamespaceSpecific "true"^^xsd:boolean ;
+	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
+	queryall_query:includeDefaults "false"^^xsd:boolean ;
+	queryall_query:inputRegex "^quicksearchns/([\\w-]+)/(.+)" ;
+	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedQueryUri}> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bio2rdf.org/bio2rdf_resource:SearchResults> . <${inputUrlEncoded_normalisedQueryUri}> <http://bio2rdf.org/bio2rdf_resource:hasSearchResult> ?s .  <${inputUrlEncoded_normalisedQueryUri}> <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?s . ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . ?s <http://purl.org/dc/elements/1.1/title> ?title . ?s <http://purl.org/dc/terms/title> ?dctermstitle . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?skoslabel . ?s ?p ?o .  } WHERE { ${graphStart} ?s ?p ?o . FILTER(contains(str(?o), '\"${ntriplesEncoded_input_2}\"')) OPTIONAL { ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . } OPTIONAL { ?s <http://purl.org/dc/elements/1.1/title> ?title . }  OPTIONAL{ ?s <http://purl.org/dc/terms/title> ?dctermstitle . }  OPTIONAL{ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . } OPTIONAL { ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?skoslabel . } ${graphEnd} } ${quicklimit} ${sparqlOffset}" ;
+	queryall_query:queryUriTemplateString "${authority}quicksearchns/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
+	queryall_query:standardUriTemplateString "${authority}quicksearchns/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
+	queryall_query:outputRdfFormat "application/rdf+xml" ;
+	queryall_query:outputRdfString "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:hasGlobalSearch xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${defaultHostAddress}search/${xmlEncoded_urlEncoded_input_2}\"/></rdf:Description>" ;
+	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
+	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
+	queryall_query:includeQueryType bio2rdf_query:sparql11containsquicksearchbynamespace .
+
 bio2rdf_query:virtuosobifcontainssearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;
     queryall_query:isPageable "true"^^xsd:boolean ;
@@ -1934,6 +1971,26 @@ bio2rdf_query:virtuosobifcontainssearchbynamespace a queryall_query:Query , quer
 	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
 	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
 	queryall_query:includeQueryType bio2rdf_query:virtuosobifcontainssearchbynamespace .
+
+bio2rdf_query:sparql11containssearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
+    queryall_query:isDummyQueryType "false"^^xsd:boolean ;
+    queryall_query:isPageable "true"^^xsd:boolean ;
+	dc:title "sparql11containssearchbynamespace" ;
+	queryall_query:handleAllNamespaces "true"^^xsd:boolean ;
+	queryall_query:isNamespaceSpecific "true"^^xsd:boolean ;
+	queryall_query:namespaceMatchMethod queryall_query:namespaceMatchAny ;
+	queryall_query:includeDefaults "false"^^xsd:boolean ;
+	queryall_query:inputRegex "^searchns/([\\w-]+)/(.+)" ;
+	queryall_query:templateString "CONSTRUCT { <${inputUrlEncoded_normalisedQueryUri}> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bio2rdf.org/bio2rdf_resource:SearchResults> . <${inputUrlEncoded_normalisedQueryUri}> <http://bio2rdf.org/bio2rdf_resource:hasSearchResult> ?s .  <${inputUrlEncoded_normalisedQueryUri}> <http://www.w3.org/2000/01/rdf-schema#seeAlso> ?s . ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . ?s <http://purl.org/dc/elements/1.1/title> ?title . ?s <http://purl.org/dc/terms/title> ?dctermstitle . ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?skoslabel . ?s ?p ?o .  } WHERE { ${graphStart} ?s ?p ?o . FILTER(contains(str(?o), '\"${ntriplesEncoded_input_2}\"')) OPTIONAL { ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . } OPTIONAL { ?s <http://purl.org/dc/elements/1.1/title> ?title . }  OPTIONAL{ ?s <http://purl.org/dc/terms/title> ?dctermstitle . }  OPTIONAL{ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type . } OPTIONAL { ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?skoslabel . } ${graphEnd} } ${limit} ${sparqlOffset}" ;
+	queryall_query:queryUriTemplateString "${authority}searchns/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
+	queryall_query:standardUriTemplateString "${authority}searchns/${urlEncoded_input_1}/${urlEncoded_input_2}" ;
+	queryall_query:outputRdfFormat "application/rdf+xml" ;
+	queryall_query:outputRdfString "<rdf:Description rdf:about=\"${xmlEncoded_inputUrlEncoded_normalisedStandardUri}\"><ns0pred:hasGlobalSearch xmlns:ns0pred=\"${defaultHostAddress}bio2rdf_resource:\" rdf:resource=\"${defaultHostAddress}search/${xmlEncoded_urlEncoded_input_2}\"/></rdf:Description>" ;
+	queryall_query:inRobotsTxt "true"^^xsd:boolean ;
+	queryall_profile:profileIncludeExcludeOrder queryall_profile:excludeThenInclude ;
+	queryall_query:hasPublicIdentifierIndex "1"^^xsd:int ;
+	queryall_query:hasNamespaceInputIndex "1"^^xsd:int ;
+	queryall_query:includeQueryType bio2rdf_query:sparql11containssearchbynamespace .
 
 bio2rdf_query:sparqlregexsearchbynamespace a queryall_query:Query , queryall_query:RegexInputQuery , queryall_query:SparqlProcessorQuery , queryall_query:RdfOutputQuery ;
     queryall_query:isDummyQueryType "false"^^xsd:boolean ;

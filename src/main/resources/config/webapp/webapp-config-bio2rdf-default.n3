@@ -170,11 +170,12 @@ queryall:errorTemplate "/templates/error.vm" ;
 
 queryall:indexPageScripts "https://www.google.com/jsapi" ;
 
-queryall:indexPageScriptsLocal "static/includes-scripts/script.js" , "static/includes-scripts/gfdynamicfeedcontrol.js" ;
+queryall:indexPageScriptsLocal "static/includes-scripts/script.js" ; 
+#, "static/includes-scripts/gfdynamicfeedcontrol.js" ;
 
 #queryall:indexPageStylesheets "http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css" ;
 
-queryall:indexPageStylesheetsLocal "static/includes-css/gfdynamicfeedcontrol.css" ;
+#queryall:indexPageStylesheetsLocal "static/includes-css/gfdynamicfeedcontrol.css" ;
 
 #queryall:resultsPageScripts "https://www.google.com/jsapi" ;
 

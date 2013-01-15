@@ -36,8 +36,8 @@
         <junit.version>4.11</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <sesame.version>2.7-SNAPSHOT</sesame.version>
-        <sesametools.version>1.7-SNAPSHOT</sesametools.version>
+        <sesame.version>2.7.0-beta1</sesame.version>
+        <sesamerioextensions.version>0.2</sesamerioextensions.version>
         <slf4j.version>1.7.2</slf4j.version>
         <queryall.version>1.4-SNAPSHOT</queryall.version>
     </properties>
@@ -174,9 +174,9 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>net.fortytwo.sesametools</groupId>
-            <artifactId>rdfjson</artifactId>
-            <version>${sesametools.version}</version>
+            <groupId>com.github.ansell.sesame-rio-extensions</groupId>
+            <artifactId>sesame-rio-extensions-rdfjson</artifactId>
+            <version>${sesamerioextensions.version}</version>
             <type>jar</type>
             <scope>runtime</scope>
         </dependency>

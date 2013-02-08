@@ -12,45 +12,28 @@
 		<form name="form1" action="/noscript/" onsubmit="document.location='${xmlEncoded_server_base}${xmlEncoded_project_html_url_prefix}'+form1.id.value+'${xmlEncoded_project_html_url_suffix}';return false;" method="POST">
 			<select name="selectvalue" size="1" onChange="form1.id.value = this.options[this.selectedIndex].value;">
 				<option value="" selected="selected" >Select an ID example</option>
-				<option value="ensembl:ensmusg00000058618">Ensembl gene, ensembl:ensmusg00000058618</option>
-				<option value="go:0032283">OBO GO term, go:0032283</option>
-				<option value="chebi:16526">OBO ChEBI compound, chebi:16526</option>
-				<option value="ncithesaurus:Topical_Anti-Infective_Agent">NCI Thesauras term, ncithesaurus:Topical_Anti-Infective_Agent</option>
-				<option value="geneid:15275">NCBI gene, geneid:15275</option>
-				<option value="gi:94471496">NCBI identifier, gi:94471496</option>
-				<option value="genbank:AC008393">NCBI sequence, genbank:AC008393</option>
-				<option value="mesh:D005615">NCBI mesh definition, mesh:D005615</option>
-				<option value="pubmed:11992264">NCBI article, pubmed:11992264</option>
-				<option value="omim:602080">NCBI disease, omim:602080</option>
-				<option value="cpd:C00011">Kegg compound, cpd:C00011</option>
-				<option value="dr:D00001">Kegg drug, dr:D00001</option>
-				<option value="ec:2.2.1.6">Kegg enzyme, ec:2.2.1.6</option>
-				<option value="gl:00144">Kegg glycan, gl:00144</option>
-				<option value="rn:R00014">Kegg reaction, rn:R00014</option>
-				<option value="path:mmu00010">Kegg pathway, path:mmu00010</option>
-				<option value="mgi:94903">MGI gene, mgi:94903</option>
-				<option value="pdb:1A19">PDB structure, pdb:1A19</option>
-				<option value="uniprot:P26838">UniProt protein, uniprot:P26838</option>
-				<option value="keywords:814">UniProt keyword, keywords:814</option>
-				<option value="enzyme:2.3.1.28">UniProt enzyme, enzyme:2.3.1.28</option>
+				<option value="go:0032283">plastid acetate CoA-transferase complex [go:0032283], from bioportal endpoint</option>
+				<option value="chebi:16526">carbon dioxide [chebi:16526], from bioportal endpoint</option>
+				<option value="omim:602080">PAGET DISEASE OF BONE; PDB [omim:602080], from omim endpoint</option>
+				<option value="geneid:37191">Serotonin receptor 1B (symbol:5-HT1B,taxon:7227) [geneid:37191], from ctd endpoint</option>
 				<option value="taxonomy:9606">UniProt taxonomy, taxonomy:9606</option>
-				<option value="citations:8177218">UniProt article, citations:8177218</option>
-				<option value="uniref:UniRef50_P26838">UniProt cluster, uniref:UniRef50_P26838</option>
-				<option value="uniparc:UIP000012703C">UniProt sequence, uniparc:UPI000012703C</option>
-				<option value="search/Paget">Search for "Paget" in Bio2RDF</option>
+				<option value="drugbank:DB00143"> Glutathione [drugbank:DB00143], from drugbank endpoint</option>
+				<option value="mgi:1915119"> polyadenylate-binding protein-interacting protein 2 (Paip2, ) [mgi:1915119] , from mgi endpoint</option>
+				<option value="pharmgkb:PA128406956"> fluorouracil [pharmgkb:PA128406956], from pharmgkb endpoint</option>
+				<option value="affymetrix:1415765_at"> probeset 1415765_at on GeneChip HT Mouse Genome MG-430B (Mus musculus) [affymetrix:1415765_at], from affymetrix </option>
+				<option value="sgd:S000006169">ORF [sgd:S000006169], from sgd endpoint</option>
+				<option value="ndc:0781-1034">Trifluoperazine Hydrochloride (5 mg/1 trifluoperazine hydrochloride) [ndc:0781-1034], from ndc endpoint </option>
+				<option value="homologene:8260"> HomoloGene Group homologene:8260 [homologene:8260], from homologene  endpoint</option>
+				<option value="dip:DIP-57266E"> 3 component complex identified by protein cross-linking with a bifunctional reagent [dip:DIP-57266E], from irefindex endpoint </option>
+				<option value="hgnc:24086"> APOBEC1 complementation factor [hgnc:24086], from hgnc endpoint </option>
+				<option value="interpro:IPR009407"> Viral polyprotein, parechovirus P3B (VPP_parechovir_P3B) Domain [interpro:IPR009407], from interpro endpoint </option>
+				<option value="sabiork:protein29513_167039_Q48WG5_noname">protein-Npi-phosphohistidine---sugar phosphotransferase(Enzyme) , from sabiork endpoint </option>
 				<option value="search/hexokinase">Search for "hexokinase" in Bio2RDF</option>
-				<option value="searchns/geneid/parkinson">Text search for "parkinson" in EntrezGene</option>
+				<option value="searchns/drugbank/aspirin">Text search for "aspirin" in DrugBank endpoint</option>
 				<option value="searchns/mapviewer/9606-5-178m-180m">Search for NCBI gene list from Map Viewer, mapview:9606-5-178m-180m</option>
 				<option value="searchns/mesh/parkinson">Text search for "parkinson" in MeSH</option>
-				<option value="searchns/omim/parkinson">Text search for "parkinson" in OMIM</option>
-				<option value="searchns/uniprot/parkinson">Text search for "parkinson" in UniProt</option>
 				<option value="searchns/kegg/parkinson">Text search for "parkinson" in Kegg</option>
 				<option value="searchns/geneid/parp1">Text search for "parp1" in EntrezGene</option>
-				<option value="searchns/uniprot/parp1">Text search for "parp1" in UniProt</option>
-				<option value="searchns/geneid/paget">Text search for "paget" in EntrezGene</option>
-				<option value="searchns/omim/paget">Text search for "paget" in OMIM</option>
-				<option value="searchns/omim/Morissette">Text search for "Morissette" in OMIM</option>
-				<option value="searchns/pubmed/Morissette,J">Text search for "Morissette,J" in Pubmed</option>
 			</select>
 			<input type="text" name="id" size="30" maxlength="150" />
 			<input type="submit" value="Submit" />

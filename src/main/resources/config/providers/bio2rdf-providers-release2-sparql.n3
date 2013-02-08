@@ -1169,3 +1169,5 @@
 <http://bio2rdf.org/provider:uniprot> <http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:sparql11containssearchbynamespace> .
 <http://bio2rdf.org/provider:uniprot> <http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:countlinks> .
 <http://bio2rdf.org/provider:uniprot> <http://purl.org/queryall/provider:includedInQuery> <http://bio2rdf.org/query:countlinksbynamespace> .
+
+

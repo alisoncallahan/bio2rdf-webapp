@@ -12,25 +12,23 @@
 		<form name="form1" action="/noscript/" onsubmit="document.location='${xmlEncoded_server_base}${xmlEncoded_project_html_url_prefix}'+form1.id.value+'${xmlEncoded_project_html_url_suffix}';return false;" method="POST">
 			<select name="selectvalue" size="1" onChange="form1.id.value = this.options[this.selectedIndex].value;">
 				<option value="" selected="selected" >Select an ID example</option>
-				<option value="go:0032283">plastid acetate CoA-transferase complex [go:0032283], from bioportal endpoint</option>
-				<option value="chebi:16526">carbon dioxide [chebi:16526], from bioportal endpoint</option>
-				<option value="omim:602080">PAGET DISEASE OF BONE; PDB [omim:602080], from omim endpoint</option>
-				<option value="geneid:37191">Serotonin receptor 1B (symbol:5-HT1B,taxon:7227) [geneid:37191], from ctd endpoint</option>
-				<option value="taxonomy:9606">UniProt taxonomy, taxonomy:9606</option>
-				<option value="drugbank:DB00143"> Glutathione [drugbank:DB00143], from drugbank endpoint</option>
-				<option value="mgi:1915119"> polyadenylate-binding protein-interacting protein 2 (Paip2, ) [mgi:1915119] , from mgi endpoint</option>
-				<option value="pharmgkb:PA128406956"> fluorouracil [pharmgkb:PA128406956], from pharmgkb endpoint</option>
-				<option value="affymetrix:1415765_at"> probeset 1415765_at on GeneChip HT Mouse Genome MG-430B (Mus musculus) [affymetrix:1415765_at], from affymetrix </option>
-				<option value="sgd:S000006169">ORF [sgd:S000006169], from sgd endpoint</option>
-				<option value="ndc:0781-1034">Trifluoperazine Hydrochloride (5 mg/1 trifluoperazine hydrochloride) [ndc:0781-1034], from ndc endpoint </option>
-				<option value="homologene:8260"> HomoloGene Group homologene:8260 [homologene:8260], from homologene  endpoint</option>
-				<option value="dip:DIP-57266E"> 3 component complex identified by protein cross-linking with a bifunctional reagent [dip:DIP-57266E], from irefindex endpoint </option>
-				<option value="hgnc:24086"> APOBEC1 complementation factor [hgnc:24086], from hgnc endpoint </option>
-				<option value="interpro:IPR009407"> Viral polyprotein, parechovirus P3B (VPP_parechovir_P3B) Domain [interpro:IPR009407], from interpro endpoint </option>
-				<option value="sabiork:protein29513_167039_Q48WG5_noname">protein-Npi-phosphohistidine---sugar phosphotransferase(Enzyme) , from sabiork endpoint </option>
+				<option value="go:0032283">plastid acetate CoA-transferase complex [go:0032283]</option>
+				<option value="chebi:16526">carbon dioxide [chebi:16526]</option>
+				<option value="omim:602080">PAGET DISEASE OF BONE; PDB [omim:602080]</option>
+				<option value="geneid:37191">Serotonin receptor 1B (symbol:5-HT1B,taxon:7227) [geneid:37191]</option>
+				<option value="taxonomy:9606">Homo Sapiens [taxon:9606]</option>
+				<option value="drugbank:DB00143"> Glutathione [drugbank:DB00143]</option>
+				<option value="go:0005813"> Centrosome [go:0005813]</option>
+				<option value="pharmgkb:PA128406956"> fluorouracil [pharmgkb:PA128406956]</option>
+				<option value="affymetrix:1415765_at"> probeset 1415765_at on GeneChip HT Mouse Genome MG-430B (Mus musculus) [affymetrix:1415765_at] </option>
+				<option value="sgd:S000006169"> GAL4 [sgd:S000006169]</option>
+				<option value="ndc:0781-1034">Trifluoperazine Hydrochloride (5 mg/1 trifluoperazine hydrochloride) [ndc:0781-1034]</option>
+				<option value="homologene:8260"> HomoloGene Group 8260 [homologene:8260]</option>
+				<option value="dip:DIP-57266E"> 3 component complex identified by protein cross-linking with a bifunctional reagent [dip:DIP-57266E] </option>
+				<option value="hgnc:24086"> APOBEC1 complementation factor [hgnc:24086] </option>
+				<option value="interpro:IPR009407"> Viral polyprotein, parechovirus P3B (VPP_parechovir_P3B) Domain [interpro:IPR009407]</option>
 				<option value="search/hexokinase">Search for "hexokinase" in Bio2RDF</option>
-				<option value="searchns/drugbank/aspirin">Text search for "aspirin" in DrugBank endpoint</option>
-				<option value="searchns/mapviewer/9606-5-178m-180m">Search for NCBI gene list from Map Viewer, mapview:9606-5-178m-180m</option>
+				<option value="searchns/drugbank/aspirin">Text search for "aspirin" in DrugBank</option>
 				<option value="searchns/mesh/parkinson">Text search for "parkinson" in MeSH</option>
 				<option value="searchns/kegg/parkinson">Text search for "parkinson" in Kegg</option>
 				<option value="searchns/geneid/parp1">Text search for "parp1" in EntrezGene</option>
@@ -42,7 +40,6 @@
 	<div id="footer" style="text-align: center;">
 		<ul style="list-style-type: none;">
 			<li><a href="http://groups.google.com/group/bio2rdf">Send your comments to the project team</a>.</li>
-			<li>See the <a href="http://github.com/bio2rdf">Bio2RDF GitHub page</a> to download and use this software. </li> 
 			<li>Get more information about available Bio2RDF datasets <a href="https://github.com/bio2rdf/bio2rdf-scripts/wiki">here</a>.</li>
 		</ul>
     </div>
